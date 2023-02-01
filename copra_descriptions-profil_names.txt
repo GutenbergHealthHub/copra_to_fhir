@@ -1,0 +1,1833 @@
+Patient;Atemfrequenz;42
+Archivdruck-Pfad;Arterieller Druck;48
+Archivdruck-Hash;Venöser Druck;50
+Rate der ersten Gabe. Ist die Rate 0, dann ist das Medikament diskontinuierlich.;Ionisiertes Kalzium aus Nierenersatzverfahren;42
+Gesamtvolumen der Mischung.;Atemzugvolumen-Einstellung;58
+DSer COPRArang der Mischung. Dieser ist gleich dem Rang des ersten Medikamentes in der Mischung.;Eingestellte und gemessene Parameter;38
+Name der Mischung. Dieser ergibt sich aus der Liste der Medikamente.;Körpertemperatur unter der Zunge;45
+"Name des Wirkstoffes, auf den sich die Gabe bezieht. Wird für den Event ""Schnelle Medikamentengabe V2"" benötigt.";Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;38
+Name der Organisationseinheit;Dauer Hämodialysesitzung;46
+Beschreibung der Organisationseinheit;Einstellung-Einatmungszeit-Beatmung;47
+Automatendaten werden in diesem Intervall an den Patienten geschrieben;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;42
+Zuordnung Ort zu Organisationseinheit;Einstellung-Ausatmungszeit-Beatmung;47
+Zuordnung Beginn;Einstellung-Einatmungszeit-Beatmung;43
+Zuordnung Ende;Linksv. Herzindex durch Indikatorverdünnung;44
+Zuordnung Link auf Ort;Dauer Hämodialysesitzung;44
+Name des Clients (Workstation);Inspiratorische Sauerstofffraktion eingestellt;46
+Zuordnung Computer zu Behandlungsort;Parameter von Beatmung;48
+Zuordnung Computer zu Drucker;Körpertemperatur unter der Zunge;43
+Wert wird bei die Berechtigungsfunktion 'Unbegrenzter Zeitraum, wenn Computerberechtigung' verwendet. Wert ungleich 0, dann gesetzt.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;33
+Information über gestellte Medikamente pro Tag;Eingestellte und gemessene Parameter;52
+Leistungsobjekt;Beatmung;43
+ExtLeistungsID;Unterstützungsdruck Beatmung;49
+Leistungstext;Beatmung;48
+ExtMaterialNr;Rechtsatrialer Druck;55
+Einrichtung;Beatmung;53
+Leistungsklasse;Sauerstoffgasfluss;48
+Extetrne Nummer;Körpertemperatur Nasen-Rachen-Raum;46
+Extetrne Nummer Schweiz;Mechanische-Atemfrequenz-Beatmet;44
+EANNR;Beatmung;46
+Leistung gueltig ab;Atemzugvolumen-Einstellung;53
+Leistung gueltig bis;Atemzugvolumen-Einstellung;48
+Leistung loeschen am;Einstellung-Einatmungszeit-Beatmung;51
+Leistungstyp;Beatmung;50
+Abrechnung-Stationaer;Rechtsatrialer Druck;54
+Abrechnung-Ambulant;Beatmung;44
+Textabweichung erlaubt;Blutdruck Generisch;44
+Leistungseinheit;Zeitverhältnis-Ein-Ausatmung;51
+Flag-Hauskatalog;Rechtsatrialer Druck;39
+Basis-Mengeneinheit;Zeitverhältnis-Ein-Ausatmung;48
+Einzelabgabe moeglich;Ideales Körpergewicht;49
+Leistungserbringer-Objekt;Mittlerer Beatmungsdruck;45
+ExtLeisterbringerID;Ideales Körpergewicht;46
+Nachname;Dynamische Kompliance;41
+Vorname;Herzzeitvolumen;36
+Titel;Substituatfluss;40
+Anrede;Atemfrequenz;44
+Mitarbeitertyp;Körpertemperatur Blut;41
+Geschlecht;Körpergewicht;45
+Geburtsdatum;Blutdruck;48
+Sprache;Exspiratorischer Gasfluss;44
+Telefonnummer;Spontanes-Atemzugvolumen;43
+Strasse;Substituatfluss;45
+Name des Patiente;Dynamische Kompliance;53
+Transientes Objekt für Filterkriterien;Spontane-Mechanische-Atemfrequenz-Beatmet;46
+Filtervariable für ein Beginndatum;Intrakranieller Druck ICP;48
+Filtervariable für die Dauer in Stunden;Dauer extrakorporaler Gasaustausch;53
+Variable kann als Attribut verwendet werden;Ionisiertes Kalzium aus Nierenersatzverfahren;45
+Variable kann als Attribut verwendet werden;Ionisiertes Kalzium aus Nierenersatzverfahren;45
+Verweis von der Ziel-Behandlung auf die Quell-Behandlung einer Zusammenführung;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;43
+Name des Gerätetyps;Körpertemperatur unter der Zunge;45
+Verweis von der Quell-Behandlung auf die Ziel-Behandlung einer Zusammenführung;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;43
+Herzfrequenz;Herzfrequenz;100
+Atemfrequenz;Spontane-Atemfrequenz-Beatmet;100
+Puls;Puls;100
+Zentralvenöser Druck;Zentralvenöser Druck;100
+Körpertemperatur;Körpertemperatur Generisch;100
+Körpertemperatur Messkanal 2;Körpertemperatur Blut;86
+Sauerstoffsättigung;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;100
+arterielle Sauerstoffsättigung;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;77
+venöse Sauerstoffsättigung;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;86
+nichtinvasiver Blutdruck;Blutdruck;100
+arterielle Blutdruck;Blutdruck;100
+ASA-Klassifikation (Behandlungsrisiko);Inspiratorische Sauerstofffraktion gemessen;43
+Diagnosen des Patienten;Dauer Hämodialysesitzung;48
+Erhebungszeitpunkt der Diagnose;Dauer Hämodialysesitzung;52
+Liste der medizinisch/pflegerischen Fachkräfte;Mechanische-Atemfrequenz-Beatmet;44
+Familienname des Mitarbeiters;Linksatrialer Druck;46
+Vorname des Mitarbeiters;Parameter von Beatmung;52
+Titel des Mitarbeiters;Dauer Hämodialysesitzung;44
+NYHA-Kalassifikation für Anaesthesie;Eingestellter inspiratorischer Gasfluss;49
+Verweis auf die für diese Behandlung gültige Prämedikation;Beatmungszeit auf niedrigem Druck;45
+Chargen-Nummer der Blutkonserve;Körpertemperatur Blut;51
+Diagnosennummer;Linksventrikulärer Druck;47
+Person die die Diagnose erhoben hat;Eingestellte und gemessene Parameter;45
+Nummer der Massnahme;Zentralvenöser Druck;46
+Dokumentationszeit;Zentralvenöser Druck;49
+Vorname des Patiente;Parameter von Beatmung;52
+Adresse des Patienten: Strasse + Hausnummer;Ionisiertes Kalzium aus Nierenersatzverfahren;47
+Nationalität des Patienten;Parameter von Beatmung;47
+"Der Patient wurde 'wohin?' verlegt? ";Körpertemperatur unter der Zunge;48
+hat der Patient einen Organspenderausweis?;Positiv-endexpiratorischer Druck;47
+Patientenverfügung;Atemzugvolumen-Einstellung;47
+Anschrift des Patientenbetreuers;Linksventrikulärer Herzindex;51
+Telefonnummer des Patienten;Spontane-Atemfrequenz-Beatmet;43
+aktuelle Schwangerschaftswoche des Babys;Mechanische-Atemfrequenz-Beatmet;47
+Schwangerschaftswoche, in welcher das Baby geboren wurde;Linksv. Schlagvolumen durch Indikatorverdünnung;40
+OP-Tag;Kopfumfang;50
+Auswahl der Kliniken;Dynamische Kompliance;49
+Extravasales Lungenwasser;Extrakorporale Verfahren;49
+Intrathorakales Blutvolumen;Spontanes-Atemzugvolumen;55
+"Schlagvolumenabweichung ";Atemzugvolumen-Einstellung;57
+Herzindex;Linksventrikulärer Herzindex;100
+"Index des systemischen Gefäßwiderstandes ";Systemischer vaskulärer Widerstandsindex;52
+VTe / ex. Atemzugvolumen (Tidal Volumen expir.);Spontanes-Atemzugvolumen;74
+Mindest Volumen sp;Herzzeitvolumen;55
+Mindest Volumen tot.;Substituatvolumen;61
+Frequenz tot.;Atemfrequenz;67
+FiO2;Inspiratorischer Gasfluss;21
+Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT);Spontanes-Atemzugvolumen;74
+Positiver endexspiratorischer Druck (PEEP);Positiv-endexpiratorischer Druck;89
+Atemzeitverhältnis (I:E);Zeitverhältnis-Ein-Ausatmung;67
+Inspiratorische Flowrate;Inspiratorische Sauerstofffraktion gemessen;77
+O²- Konzentration im Inspirationsgemisch (FiO2);Inspiratorische Sauerstofffraktion gemessen;56
+Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB);Inspiratorische Sauerstofffraktion gemessen;52
+Atemminutenvolumen (AMV);Substituatvolumen;56
+Beatmungsfrequenz (f/AF);Atemfrequenz;65
+Anordnung Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT);Spontanes-Atemzugvolumen;74
+Anordnung Positiver endexspiratorischer Druck (PEEP);Positiv-endexpiratorischer Druck;78
+Anordnung Atemzeitverhältnis (I:E);Zeitverhältnis-Ein-Ausatmung;66
+Anordnung Inspiratorische Flowrate;Inspiratorischer Gasfluss;64
+Anordnung Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB);Inspiratorische Sauerstofffraktion gemessen;52
+Anordnung Atemminutenvolumen (AMV);Atemzugvolumen-Einstellung;52
+Anordnung Beatmungsfrequenz (f/AF);Einstellung-Ausatmungszeit-Beatmung;54
+beatmungs-Verordung;Parameter von Beatmung;63
+Anordnung O² Konzentration im Inspirationsgemisch (FiO2);Inspiratorische Sauerstofffraktion gemessen;52
+Geburtsdatum des Patienten;Körpertemperatur unter der Zunge;49
+HFOV Frequenz;Atemfrequenz;64
+Inspirationszeit in %;Inspiratorischer Gasfluss;55
+Inspiratorische Pause (I:E);Inspiratorische Sauerstofffraktion gemessen;75
+Interm PEEP;Körpertemperatur Atemwege;46
+HFOV Mitteldruck;Arterieller Druck;48
+Pmax, Maximaldruck;Maximaler Beatmungsdruck;54
+HFOV Powereinstellung;Atemzugvolumen-Einstellung;60
+Respiratory Rate (spontan);Körpertemperatur Stirn;58
+Respiratory Minute Volume;Herzzeitvolumen;55
+Respiratory Rate (Volume/Flow);Herzzeitvolumen;51
+Peak Airway Pressure;Körpergroesse;50
+Apnea Duration;Körpertemperatur Stirn;46
+beinhaltet Ruhen und Schlafen, Befinden, Krampfanfälle, Sedierung, Schmerzdiagnose;Spontane-Mechanische-Atemfrequenz-Beatmet;44
+Für Monitoringdatenübernahme;Monitoring und Vitaldaten;59
+Schrittmacherdrähte;Körpertemperatur Generisch;42
+Atemwegszugang;Beatmung;55
+Herzrhythmus;Herzfrequenz;50
+mit SQL select getdate();Einstellung-Einatmungszeit-Beatmung;42
+Verlegungszeit im Verlegungsprotokoll mit Datum und Uhrzeit;Einstellung-Ausatmungszeit-Beatmung;45
+Nervensysteme;Venöser Druck;48
+Alter des Patienten in Jahren;Spontane-Atemfrequenz-Beatmet;48
+Aufnahmegewicht (fallbezogen);Körpergewicht Percentil altersabhängig;48
+Größe Patient (fallbezogen);Atemzugvolumen-Einstellung;45
+Körperoberfläche des Patienten (fallbezogen);Körpergewicht Percentil altersabhängig;50
+Patientenadresse: PLZ;Körpergrösse Percentil;45
+Patientenadresse: Ort;Körpergroesse;50
+Patientenadresse: Land;Zentralvenöser Druck;45
+Körperoberfläche des Patienten ohne Fallbezug;Körpergewicht Percentil altersabhängig;48
+Compliance;Dynamische Kompliance;65
+CO2-Production;Positiv-endexpiratorischer Druck;35
+Resistance;Körpergroesse;45
+Spont Minute Volume;Substituatvolumen;50
+Mean Airway Pressure;Körpergroesse;44
+Breathing Frequency;Atemfrequenz;58
+Minimum Airway Pressure;Körpergroesse;40
+Intrinsic PEEP;Körpertemperatur Generisch;51
+Plateau Druck;Linksatrialer Druck;62
+Patient_Verlusst_ExtrakorporaleAbnahme;Blutfluss extrakorporaler Gasaustausch;58
+Patient_Blutverlusst;Substituatfluss;51
+Blutgruppe des Patienten;Körpertemperatur Blut;50
+Verordnung Ziel-Atemfrequenz;Atemfrequenz;100
+Angeordnete Ziel-Atemfrequenz für Pflege;Atemfrequenz;100
+Verantwortlicher Arzt für den zugeordneten Bettplatz;Spontane-Mechanische-Atemfrequenz-Beatmet;48
+Bettplatz für Zuordnung der verantwortlichen Mitarbeiter;Parameter von extrakorporalen Verfahren;49
+Verantwortliche Pflegekraft für den zugeordneten Bettplatz;Körpertemperatur unter der Zunge;45
+Physiotherapie;Dynamische Kompliance;40
+Kopfumfang des Patienten (Kinder);Kopfumfang;100
+Geschlecht des Patienten;Eingestellte und gemessene Parameter;47
+Herz Funktion Kammerfüllung;Einstellung-Ausatmungszeit-Beatmung;43
+Linksartrialer enddiastolischer Druck;Linksatrialer Druck;68
+Herz Funktion Reizbildung;Herzzeitvolumen;45
+Diastolischer Druck;Positiv-endexpiratorischer Druck;67
+Herzfrequenz;Herzfrequenz;100
+Pulse;Puls;89
+Systolischer Druck;Venöser Druck;60
+Wasserhaushalt;Körpertemperatur nasal;40
+Kerntemperatur;Körpertemperatur Kern;82
+intrav. Flüss.-Therapie;Inspiratorischer Gasfluss;58
+enterale Ernährung (Sonde);Extrakorporale Verfahren;51
+parentale Ernährung;Parameter von Beatmung;55
+Transpoort eines Intensivpatienten;Inspiratorische Sauerstofffraktion eingestellt;50
+zentralvenöser Zugang;Zentralvenöser Druck;81
+Verbesserung der Lufu.;Venöser Druck;55
+Labor / Midi;Dauer Hämodialysesitzung;36
+Standard Monitoring;Monitoring und Vitaldaten;69
+Temperatur 1a;Körpertemperatur Achsel;69
+Temperatur 1b;Körpertemperatur Blut;73
+Temperatur 2a;Körpertemperatur Achsel;69
+Temperatur 2b;Körpertemperatur Blut;73
+Temperatur 3a;Körpertemperatur Achsel;69
+Temperatur 3b;Körpertemperatur Blut;73
+Sauerstoffsättigung Pulsoxymetrie;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;100
+Pulsrate errechnet aus der SpO2 Messung;Parameter von Beatmung;46
+End-tidales CO2;Zentralvenöser Druck;53
+Rechtsatrial Mitteldruck;Rechtsatrialer Druck;82
+Pulmunaler Wedgedruck;Pulmonalarterieller wedge Blutdruck;54
+Mittlerer pulmonale arterieller Druck;Arterieller Druck;100
+Herzleistung;Herzzeitvolumen;67
+"Linksseitiger Herzkranzperfusionsdruck ";Linksventrikulärer Herzindex;55
+"Linksventrikulärer Schlagarbeit ";Linksventrikulärer Druck;85
+"Linksventrikulärer Schlagarbeitsindex ";Linksventrikulärer Druck;85
+"Pulmunaler Gefäßwiderstand ";Pulmonalvaskulärer Widerstandsindex;45
+"Pulmunaler Gefäßwiderstandsindex ";Pulmonalvaskulärer Widerstandsindex;53
+"Rate-/Druck-Produkt ";Venöser Druck;59
+"Rechtsvetrikulärer Schlagarbeit ";Rechtsventrikulärer Druck;63
+"Rechtsvetrikulärer Schlagarbeitsindex ";Linksventrikulaeres Schlagvolumenindex;65
+"Schlagvolumen ";Linksventrikulaeres Schlagvolumen;100
+"Index des Schlagvolumens ";Linksventrikulaeres Schlagvolumen;60
+"Pulmonaler Gesamtgefäßwiderstand ";Pulmonalarterieller Blutdruck;47
+"Gesamtgefäßwiderstand ";Systemischer vaskulärer Widerstandsindex;48
+"Pulskontur-Herzzeitvolumen ";Herzzeitvolumen;100
+"Herzindex (kontinuirlich) ";Linksventrikulärer Herzindex;64
+Schlagvolumenindex  (PICCO Modul Dräger Monitoring);Linksventrikulaeres Schlagvolumenindex;64
+"Systemischer Gefäßwiderstand (PICCO Modul Dräger Monitoring) ";Systemischer vaskulärer Widerstandsindex;62
+"Index des systemischen Gefäßwiderstandes (PICCO Modul Dräger Monitoring)  ";Monitoring und Vitaldaten;57
+"Index der linken Ventrikelkontraktilität  ";Linksventrikulärer Herzindex;64
+"Herzzeitvolumen (PICCO Modul Dräger Monitoring) ";Herzzeitvolumen;100
+"Globales enddiastolisches Volumen ";Exspiratorischer Gasfluss;55
+Gewicht des Patienten;Ideales Körpergewicht;54
+"Index des enddiastolisches Volumen ";Positiv-endexpiratorischer Druck;52
+"Extravaskuläres Lungenwasser ";Blutfluss durch cardiovasculäres Gerät;48
+"Extravaskuläres Lungenwasserindex ";Pulmonalvaskulärer Widerstandsindex;55
+"Globale Auswurffraktion ";Substituatvolumen;40
+"Index des extravaskulären Thermovolumens ";Linksventrikulaeres Schlagvolumen;50
+"Pulmonalvaskuläer Permeabilitätsindex ";Pulmonalarterieller Blutdruck;53
+Pulmunalarterieller Druck;Pulmonalarterieller Blutdruck;89
+Herzzeitvolumen;Herzzeitvolumen;100
+Pulmonalkapillardruck;Arterieller Druck;53
+Linksventrikulärer Mitteldruck;Linksventrikulärer Druck;88
+Rechtsventrikulärer Mitteldruck;Rechtsventrikulärer Druck;89
+Arrhythmie Drägermonitoring, VES/min;Monitoring und Vitaldaten;51
+Inspirationszeit I:E;Inspiratorischer Gasfluss;53
+GCS Erwachsene;Exspiratorischer Gasfluss;46
+GCS Kinder;Venöser Druck;45
+TransmembranDruck;Arterieller Druck;53
+Arterieller Druck;Arterieller Druck;100
+Zentraler Venendruck;Zentralvenöser Druck;77
+Systemic vascular resistance;Systemischer vaskulärer Widerstandsindex;45
+Systemic vascular resistance index;Linksventrikulärer Herzindex;46
+Pulmonalkapillardruck;Arterieller Druck;53
+HerzindexHerzindex;Linksventrikulärer Herzindex;58
+HerzfrequenzHerzfrequenz;Herzfrequenz;67
+Schlagvolumen-Variation;Linksventrikulaeres Schlagvolumen;72
+Intrathorakales Blutvolumen;Spontanes-Atemzugvolumen;55
+Intrathorakaler Blutvolumenindex;Blutflussindex extrakorporaler Gasaustausch;56
+Herzzeitvolumen;Herzzeitvolumen;100
+ml/b;Beatmung;33
+Cardiac output / -index;Blutfluss durch cardiovasculäres Gerät;39
+SchlagvolumenindexSchlagvolumenindex;Linksventrikulaeres Schlagvolumenindex;65
+Systemic vascular resistance;Systemischer vaskulärer Widerstandsindex;45
+Systemic vascular resistance index;Linksventrikulärer Herzindex;46
+Herzzeitvolumen;Herzzeitvolumen;100
+Herzindex;Linksventrikulärer Herzindex;100
+Schlagvolumen;Linksventrikulaeres Schlagvolumen;100
+Schlagvolumenindex;Linksventrikulaeres Schlagvolumenindex;100
+Schlagvolumen Variation;Linksventrikulaeres Schlagvolumen;72
+Systemischer Gefäßwiderstand;Systemischer vaskulärer Widerstandsindex;74
+Systemischer Gefäßwiderstandsindex;Systemischer vaskulärer Widerstandsindex;85
+Pulmonaler vasculärer Widerstand;Pulmonalvaskulärer Widerstandsindex;83
+Pulmonaler vasculärer Widerstandsindex;Pulmonalvaskulärer Widerstandsindex;93
+Intrathorakales Blutvolumen;Spontanes-Atemzugvolumen;55
+Extravasales Lungenwasser;Extrakorporale Verfahren;49
+Größe des Patienten;Körpertemperatur unter der Zunge;50
+Schlagvolumen;Linksventrikulaeres Schlagvolumen;100
+Identifikation des Patiente;Linksv. Herzindex durch Indikatorverdünnung;44
+Oxidationswasser in ml (einfuhrrelevant);Endexpiratorischer Kohlendioxidpartialdruck;44
+Perspiratio Insensibilis in ml (Ausfuhrrelevant in der Bilanz);Inspiratorische Sauerstofffraktion gemessen;40
+Perspiratio Sensibilis in ml (ausfuhrrelevant in der Bilanz);Zeitverhältnis-Ein-Ausatmung;44
+Volumenrate bei kontinuierlichen Medikamentengabe.;Linksventrikulaeres Schlagvolumenindex;46
+I:E Inspiration;Inspiratorischer Gasfluss;50
+I:E Exspiration;Exspiratorischer Gasfluss;50
+Pulsdruckabweichung;Blutdruck Generisch;53
+Herzfunktionsindex;Herzfrequenz;47
+Herzindex;Linksventrikulärer Herzindex;100
+Index des intrathorakalen Blutvolumens;Blutflussindex extrakorporaler Gasaustausch;54
+Pkontrol (mbar/frequenz/AZ/min);Spontane-Atemfrequenz-Beatmet;62
+Exspiratorische Triggersensibilität;Exspiratorischer Gasfluss;64
+Amplitude bei HFOV;Atemzugvolumen-Waehrend-Beatmung;40
+Form der Gabe.;Dynamische Kompliance;41
+angeordnete Citratdosis;Zeitverhältnis-Ein-Ausatmung;48
+Bezeichnug der Calcium Lösung;Atemzugvolumen-Einstellung;48
+"CPAP Einstellung in der Maßeinheit cm H2O, Verwendung bei F120 und CF 800";Atemzugvolumen-Einstellung;59
+Isolierte Ultrafiltration/Bergström;Inspiratorische Sauerstofffraktion eingestellt;52
+gemessener CPAP in der Maßeinheit cm H2O;Körpertemperatur Speiseroehre;42
+"Pimax (Maximaler inspiratorischer Atemwegsdruck)  ";Inspiratorischer Gasfluss;78
+"gemeesener IPAP (Inspiratorisch Positiver Atemwegsdruck) ";Positiv-endexpiratorischer Druck;65
+" gemessener EPAP (=Expiratorisch Positiver Atemwegsdruck)  ";Atemwegsdruck bei mittlerem expiratorischem Gasfluss;72
+"Ti/Ttot (Inspirationszeit/Dauer des ganzen Zyklus) ";Inspiratorische Sauerstofffraktion gemessen;46
+"Patientenleck - Die Leckage die aufgrund Masken- bzw. Helmleckage unabhängig der Sollleckage gemessen wird  ";Eingestellte und gemessene Parameter;39
+Die gemessene Gesamtleckage inclusive der bestehenden Sollleckage;Eingestellte und gemessene Parameter;46
+"Pat.Trig (Prozentsatz der vom Patienten ausgelösten Atemzüge) ";Spontane-Atemfrequenz-Beatmet;47
+" eingestellter IPAP Wert";Eingestellter inspiratorischer Gasfluss;72
+" eingestellter EPAP Wert";Eingestellter inspiratorischer Gasfluss;72
+"IPAP-Anstiegszeit in Sekunden eingestellt ";Einstellung-Ausatmungszeit-Beatmung;55
+System vorfüllen mit Flüssigkeiten aus einer Auswahlliste;Einstellung-Ausatmungszeit-Beatmung;47
+Oszillationsfrequenz Gerät: Alpha Vision Modus: HFO;Dauer Hämodialysesitzung;42
+Mittlerer Atemwegsdruck (MAP);Mittlerer Beatmungsdruck;78
+Schlagvolumen (SV) in engl. (cycle volume);Linksventrikulaeres Schlagvolumen;60
+Basis Continousflow;Substituatfluss;41
+Druckeinstellung für manuell ausgelösten Atemhub;Atemzugvolumen-Einstellung;58
+gemessener Mittlerer Atemwegsdruck unter HFO bei Alpha Vision;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;58
+Dauer des manuell durchgeführten Atemhubs;Blutfluss durch cardiovasculäres Gerät;53
+gemessener Basis Continousflow;Eingestellte und gemessene Parameter;45
+Verordnung Schlauchsystem;Einstellung-Ausatmungszeit-Beatmung;43
+"Pressure Support, Alpha Vision";Horowitz-In-Arteriellem-Blut;46
+Anstiegszeit (Rampenzeit) Alpha Vision;Einstellung-Ausatmungszeit-Beatmung;48
+positiv inspiratorischer Druck;Positiv-endexpiratorischer Druck;90
+eingestellte maximale Inspirationszeit beim G5 im Modus NIV;Eingestellte und gemessene Parameter;53
+Einstelungswert für die Inspirationszeit;Eingestellter inspiratorischer Gasfluss;59
+Einstellwert: Zeiteinstellung des oberes Druckniveau beim G 5 im Modus DuoPAP;Einstellung-Einatmungszeit-Beatmung;50
+prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird;Spontane-Mechanische-Atemfrequenz-Beatmet;45
+Einstellwert oberes Druckniveau im beim G 5 im Modus DuoPAP;Pulmonalarterieller wedge Blutdruck;44
+Einstellwert oberes Druckniveau beim G 5 im Modus P SIMV;Positiv-endexpiratorischer Druck;45
+Einstellwert: Druckunterstützung beim G 5  bei Spontanatemzügen;Einstellung-Einatmungszeit-Beatmung;45
+Einstellwert: Peep bzw. CPAP Niveau in verschiedenen Modi beim G 5;Eingestellter inspiratorischer Gasfluss;43
+Einstellwert: Zeiteinstellung für das untere Druckniveau beim G5 im Modus APRV;Einstellung-Einatmungszeit-Beatmung;50
+Einstellwert: unteres Druckniveau beim G 5 im Modus APRV;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;45
+appliziertes Dialysat für Multifiltrate;Ionisiertes Kalzium aus Nierenersatzverfahren;43
+Einstellwert: I:E Verhältnis;Zeitverhältnis-Ein-Ausatmung;57
+Messwert: Beatmungsspitzendruck;Mittlerer Beatmungsdruck;70
+Messwert: Beatmungsmitteldruck;Mittlerer Beatmungsdruck;72
+Messwert: Beatmungsdruck Peep / CPAP;Mittlerer Beatmungsdruck;74
+"Messwert, exspiratorisches Tidalvolumen Einheit: ml";Inspiratorische Sauerstofffraktion eingestellt;59
+Inspiratorischer Peakflow, ein Monitoring-Parameter;Inspiratorischer Gasfluss;78
+Inspirationszeit in Sekunden, Monitoring-Parameter;Parameter von Beatmung;58
+Inspiratorische Flow-Resistance, ein Monitoring-Parameter;Parameter von Beatmung;58
+Exspiratorische Flow-Resistance, ein Monitoring-Parameter;Endexpiratorischer Kohlendioxidpartialdruck;59
+Statische Compliance, ein Monitoringwert;Monitoring und Vitaldaten;47
+Inspiratorische Zeitkonstante, ein Monitoring Parameter;Parameter von Beatmung;58
+Exspiratorische Zeitkonstante, ein Monitoring-Parameter;Parameter von Beatmung;58
+Index für schnelle Flachatmung (Rapid Shallow Breathing Index), Monitoring Parameter;Parameter von Beatmung;58
+Zusätzlich auferlegte Atemarbeit, ein Monitoring Parameter;Parameter von Beatmung;58
+Unerwarteter positiver endexspiratorischer Druck, ein Monitoring-Parameter;Positiv-endexpiratorischer Druck;61
+Druck Zeit Produkt (Pressure Time Product), ein Monitoring Parameter;Venöser Druck;59
+Leckagevolumen, ein Monitoring-Parameter;Eingestellte und gemessene Parameter;59
+Exspiratorischer Peakflow, ein Monitoring-Parameter;Exspiratorischer Gasfluss;78
+Exspirationzeit, ein Monitoring-Parameter;Eingestellte und gemessene Parameter;58
+Dialysekonzentrat mit Listenauswahl;Zentralvenöser Druck;44
+Dialysekonzentrat Verordnung String;Einstellung-Ausatmungszeit-Beatmung;46
+Sauerstoffeinstellung in der Maßeinheit Vol %;Einstellung-Einatmungszeit-Beatmung;55
+Messwert des Sauerstoffgehalt in der Maßeinheit Vol %;Inspiratorische Sauerstofffraktion gemessen;54
+gemessenes I:E Verhältnis;Zeitverhältnis-Ein-Ausatmung;55
+VO Gefäßzugang extracorporale Verfahren;Extrakorporale Verfahren;75
+Filter  für extrakorporale Verfahren;Extrakorporale Verfahren;100
+Hämofiltrationslösung extrakorporale Verfahren;Extrakorporale Verfahren;100
+Predilution Postdilution extrakorporale Verfahren;Extrakorporale Verfahren;100
+Exspiratorische Triggersensitivität, eine Parametereinstellung;Exspiratorischer Gasfluss;52
+Antikoagulation Medikament;Monitoring und Vitaldaten;43
+Spüllösung zum Vorbereiten des extrakorporalen Verfahrens;Parameter von extrakorporalen Verfahren;66
+Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;42
+Eine Parametereinstellung. Anstiegszeit des Drucks bei druckkontrollierten und druckunterstützten Atemzyklus.;Eingestellte und gemessene Parameter;41
+max Blutpumpengeschwindigkeit VO;Maximaler Beatmungsdruck;43
+Anzahl der Atemzyklen pro Minute, Parametereinstellung;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;53
+Ultrafiltrationsrate;Inspiratorischer Gasfluss;44
+Substituat in ml/h;Substituatfluss;61
+Substituatbolus in ml;Substituatfluss;72
+Sauerstoffeinstellung;Sauerstoffgasfluss;67
+Temperatur in Celsius;Körpertemperatur Gelenk;65
+Przentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus;Atemzugvolumen-Einstellung;48
+Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet;Körpergewicht Percentil altersabhängig;38
+Blutpumpengeschwindigkeit;Blutdruck Generisch;50
+Ultrafiltrationsrate;Inspiratorischer Gasfluss;44
+Umsatz ml/h;Körpertemperatur Achsel;36
+Temperatur in Celsius;Körpertemperatur Gelenk;65
+Blutpumpengeschwindigkeit;Blutdruck Generisch;50
+Entzugsrate ml/h;Parameter von Beatmung;47
+"Umsatz, Austausch, Substituat ml/h";Substituatfluss;51
+Temperatur Celcius;Körpertemperatur Achsel;70
+Blutpumpengeschwindigkeit ml/min;Einstellung-Einatmungszeit-Beatmung;48
+Ultrafiltrationsrate ml/h;Eingestellter inspiratorischer Gasfluss;44
+Umsatz, Austausch Substituat ml/h;Substituatfluss;51
+Substituatbolus ml;Substituatfluss;79
+Tempertatu Celsius;Körpertemperatur Achsel;65
+Blutpumpengeschwindigkeit;Blutdruck Generisch;50
+Ultrafiltrationsrate;Inspiratorischer Gasfluss;44
+Austausch, Substituat, ml/h;Substituatfluss;50
+Temperatur Celcius;Körpertemperatur Achsel;70
+Blutpumpengeschwindigkeit;Blutdruck Generisch;50
+Entzugsrate, Ultrafiltrationsrate;Eingestellter inspiratorischer Gasfluss;54
+Umsatz, Substituat;Substituatfluss;75
+arterieller Druck;Arterieller Druck;100
+venöser Druck;Venöser Druck;100
+Transmembrandruck;Arterieller Druck;53
+Kumulativwert;Linksatrialer Druck;44
+Menge bei diskontinuierlichen Medikamentengaben.;Eingestellte und gemessene Parameter;43
+Plateau-Atemwegsdruck, ein Monitoring-Parameter;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;59
+Minimaler Atemwegsdruck, ein Monitoring Parameter;Parameter von Beatmung;58
+"Exspiratorisches Minutenvolumen, Monitoring-Parameter ";Parameter von Beatmung;58
+Gesamtatemfrequenz, ein Monitoring Parameter;Eingestellte und gemessene Parameter;63
+Spontane Atemfrequenz;Spontane-Atemfrequenz-Beatmet;100
+Sauerstoffkonzentration des abgegebenen Gasgemisches;Inspiratorische Sauerstofffraktion gemessen;63
+"Inspiratorischer Druck, mit Pinsp wird der Zieldruck (zusätzlich zu PEEP/CPAP) bezeichnet, der im Modus ASV während der Inspirationsphase abgegeben wird";Inspiratorischer Gasfluss;78
+Atemweg-Okklusionsdruck, ein Monitoring-Parameter;Parameter von Beatmung;58
+Dialysatlösung, Beutel;Dauer Hämodialysesitzung;60
+Dialysatrate;Linksatrialer Druck;52
+Gialysatrate;Linksatrialer Druck;45
+kumulatives Dialysatvol;Substituatvolumen;45
+Citratbeutel;Atemfrequenz;42
+Calciumbeutel;Atemzugvolumen-Einstellung;41
+Dosierung;Beatmung;47
+Ca-rate;Rechtsatrialer Druck;44
+Beutel;Beatmung;43
+Beutel;Beatmung;43
+Citratrate;Linksatrialer Druck;48
+Calciumrate;Linksatrialer Druck;40
+kumulativ Citrat;Pulmonalarterieller Blutdruck;40
+Zeitpunkt der Medikamentengabe;Dauer Hämodialysesitzung;49
+kumulativ;Kopfumfang;42
+Citratrate;Linksatrialer Druck;48
+Calciumrate;Linksatrialer Druck;40
+Plasmarate;Parameter von Beatmung;44
+Plasmarate;Parameter von Beatmung;44
+Plasmarate;Parameter von Beatmung;44
+Kumulativ;Kopfumfang;42
+Kumulativ;Kopfumfang;42
+kumulativ;Kopfumfang;42
+Eingestellte Sauerstoffzufuhr;Inspiratorische Sauerstofffraktion eingestellt;67
+gemessene Druckdifferenz im HFOV Modus;Druckdifferenz Beatmung;76
+gemessene Sauerstoffgehalt des Gasgemisches;Eingestellte und gemessene Parameter;51
+Einstellgrösse: Druck bzw. Flowtrigger;Venöser Druck;59
+Exspirationserkennung 10 - 45% des Peak Flow;Endexpiratorischer Kohlendioxidpartialdruck;45
+Messwert: Anzahl der gemessenen spontanen Atemzüge;Spontane-Atemfrequenz-Beatmet;55
+gemessenes spontanes Atemminutenvolumen;Spontanes-Atemzugvolumen;70
+gemessenes Tidalvolumen;Substituatvolumen;60
+Plasmaaustauschvolumen kumulativ;Substituatvolumen;49
+Eingestelltes CPAP Niveau;Eingestellte und gemessene Parameter;56
+Einstellwert: Größe des Gasflusses beim F 120;Eingestellter inspiratorischer Gasfluss;54
+Einstellparameter: Sauerstoffgehalt des Gasgemisches;Inspiratorische Sauerstofffraktion eingestellt;64
+Einstellgröße Gasfluss Sauerstoff;Eingestellter inspiratorischer Gasfluss;66
+Einstellgröße: Gasfluss Druckluft;Exspiratorischer Gasfluss;55
+Sauerstoffgehalt des eingestellten Gasgemisches CF 800;Inspiratorische Sauerstofffraktion eingestellt;62
+eingestelltes CPAP Niveau;Eingestellte und gemessene Parameter;56
+Dialysatlösung;Dauer Hämodialysesitzung;56
+Spülung zur Vorbereitung;Körpertemperatur Blut;47
+Druck vor Filter Hämoperfusion;Venöser Druck;59
+Filter;Blutdruck;40
+HFLösung;Kopfumfang;47
+Option;Kopfumfang;38
+Spüldauer;Venöser Druck;40
+Füllen des Systems;Spontanes-Atemzugvolumen;44
+Variable wird verwendet für Multifiltrate und ADM 08;Pulmonalarterieller wedge Blutdruck;42
+Calciumlösung;Beatmung;50
+Citratlösung;Beatmung;53
+Einstellparameter CPAP im Modus CPAP;Eingestellte und gemessene Parameter;57
+Einstellparameter: O2 Konzentration des Gasgemisches;Inspiratorische Sauerstofffraktion eingestellt;56
+Messparameter: gemessene Atemfrequenz;Atemfrequenz;100
+Messwert: gemessenes CPAP Niveau;Eingestellte und gemessene Parameter;51
+Messwert: gemessenes AMV;Eingestellte und gemessene Parameter;51
+Messwert: gemessene O2 Konzentration des Gasgemisches;Eingestellte und gemessene Parameter;52
+Messwert: gemessenes Tidalvolumen;Eingestellte und gemessene Parameter;50
+Einstellwert: Zeiteinstellung für die Inspirationszeit;Einstellung-Einatmungszeit-Beatmung;57
+Einstellwert: eingestellte Mindestatemfrequenz im ST Moodus;Eingestellte und gemessene Parameter;55
+Medikament;Beatmung;44
+Medikament;Beatmung;44
+Einstellwert: eingestelltes Peep bzw. CPAP Niveau;Eingestellte und gemessene Parameter;53
+Messwert: gemessener positiver endexspiratorischer Druck;Positiv-endexpiratorischer Druck;74
+Ultrafiltrationsziel;Intrakranieller Druck ICP;44
+Ultrafiltrationsrate;Inspiratorischer Gasfluss;44
+Isolierte Ultrafiltration;Inspiratorische Sauerstofffraktion eingestellt;48
+Isolierte Ultrafiltration;Inspiratorische Sauerstofffraktion eingestellt;48
+Auswahl für die Applikationsform von NIV Anwendungen;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;43
+Kumulativer Entzug, bilanzrelevant;Atemzugvolumen-Waehrend-Beatmung;43
+Einstellwert: eingestellter Basisfluss im Beatmungssystem;Eingestellter inspiratorischer Gasfluss;61
+Verordnung für ein Medikament.;Linksv. Herzindex durch Indikatorverdünnung;49
+"Einstellwert: eingestellte Oszillationsfrequenz ";Inspiratorische Sauerstofffraktion eingestellt;57
+Einstellwert: prozentualer Anteil der Inspirationszeit bezogen auf den gesamtem Atemzyklus;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;42
+Einstellwert: prozentuale Kolbenauslenkung;Eingestellte und gemessene Parameter;52
+Einstellwert: eingestellter mittlerer Atemwegsdruck;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;63
+Einstellwert: O2 Konzentration des Gasgemisches;Inspiratorische Sauerstofffraktion eingestellt;54
+Messwert: gemessene Druckamplitude;Eingestellte und gemessene Parameter;52
+Messwert: gemessene O2 Konzentration des Gasgemisches;Eingestellte und gemessene Parameter;52
+Dialysekonzentrat 6 liter gesamt;Zentralvenöser Druck;47
+Dialyskonzentratbehälter;Zentralvenöser Druck;52
+Einstellwert: eingestelltes Tidalvolumen;Eingestellte und gemessene Parameter;59
+Einstellwert: eingestellter Spitzenfluss;Eingestellte und gemessene Parameter;59
+Einstellwert: eingestellte Atemfrequenz;Atemfrequenz;100
+Einstellwert: eingestellte Apnoefrequenz;Eingestellte und gemessene Parameter;59
+Einstellwert: Plateauphase in Sekunden;Eingestellte und gemessene Parameter;55
+Einstellwert: Inspirationszeit in Sekunden;Inspiratorische Sauerstofffraktion eingestellt;60
+Einstellwert: eingestellte Druckdifferenz;Druckdifferenz Beatmung;76
+Messwert: gemessener Plateaudruck;Exspiratorischer Sauerstoffpartialdruck;54
+Messwert: gemessenes Atemminutenvolumen;Eingestellte und gemessene Parameter;59
+Messwert: gemessene Atemfrequenz;Atemfrequenz;100
+Messwert: gemessenes I:E Verhältnis;Zeitverhältnis-Ein-Ausatmung;53
+eingestellte O2 Konzentration des Gases;Eingestellte und gemessene Parameter;61
+eingestellter Inspirationfluss;Eingestellter inspiratorischer Gasfluss;70
+eingestellt mandatorische Atemfrquenz;Mechanische-Atemfrequenz-Beatmet;72
+eingestelltes Verhältnis zwischen Inspiration und Exspiration;Eingestellter inspiratorischer Gasfluss;61
+eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau;Eingestellte und gemessene Parameter;62
+eingestelltes Tidalvolumen;Eingestellte und gemessene Parameter;58
+eingestellte Druckbegrenzung;Eingestellte und gemessene Parameter;60
+einstellte IMV Frequenz im SIMV Modus;Eingestellte und gemessene Parameter;49
+eingestelltes PEEP Niveau;Eingestellte und gemessene Parameter;62
+eingestelltes CPAP Niveau;Eingestellte und gemessene Parameter;56
+eingestellte Druckunterstüzung;Eingestellte und gemessene Parameter;59
+eingestelltes oberes Druckniveau;Zentralvenöser Druck;55
+eingestellte Triggerschwelle (Flowtrigger);Eingestellter inspiratorischer Gasfluss;61
+gemessenes Atemminutenvolumen;Spontanes-Atemzugvolumen;64
+gemessene O2 Konzentration im Inspirationsgas;Inspiratorische Sauerstofffraktion gemessen;64
+gemessener Beatmungsspitzendruck;Mittlerer Beatmungsdruck;68
+gemessener Plateaudruck (inspiratorischer Beatmungsdruck);Inspiratorischer Gasfluss;78
+gemessener positer endexspiratorischer Druck;Positiv-endexpiratorischer Druck;79
+gemessener Beatmungsmitteldruck;Mittlerer Beatmungsdruck;69
+gemessenes exspiratorisches Tidalvolumen;Exspiratorischer Gasfluss;62
+gemessene Atemfrequenz;Atemfrequenz;100
+gemessener Atemwegswiderstand;Systemischer vaskulärer Widerstandsindex;53
+gemessene Lungencompliance;Dynamische Kompliance;55
+gemessenes spontanes Atemminutenvolumen;Spontanes-Atemzugvolumen;70
+gemessene spontane Atemfrequenz;Atemfrequenz;100
+gemessenes CPAP Niveau;Eingestellte und gemessene Parameter;45
+"kleinster gemessener Beatmungsdruck während des Atemzyklus ";Mittlerer Beatmungsdruck;74
+Ergebnis eines Messmanövers im Modus IPPV, IPPV assist;Ionisiertes Kalzium aus Nierenersatzverfahren;46
+"Messergebnis eines Messmanövers im ASB Spontan Modus ";Spontanes-Plus-Mechanisches-Atemzugvolumen;52
+eingestellte O2 Konzentration des Frischgases;Inspiratorische Sauerstofffraktion eingestellt;59
+eingestellte absolute Inspirationszeit;Eingestellter inspiratorischer Gasfluss;62
+eingestellte Atemfrequenz;Atemfrequenz;100
+eingestellte Anstiegszeit vom unteren zum oberen Druckniveau;Eingestellte und gemessene Parameter;54
+eingestelltes oberes Druckniveau;Zentralvenöser Druck;55
+eingestelltes PEEP Niveau;Eingestellte und gemessene Parameter;62
+eingestellte Druckunterstützung;Eingestellte und gemessene Parameter;58
+Einstellgröße des Flowtriggers;Eingestellter inspiratorischer Gasfluss;51
+Einstellgröße für das Tidalvolumen;Substituatvolumen;50
+Einstellgröße für das Tidalvolumen in der Apnoeeinstellung;Einstellung-Einatmungszeit-Beatmung;49
+eingestellte Atemfrequenz in der Apnoeventilation;Atemfrequenz;100
+Einstellgröße für die Tubuskompensation;Eingestellter inspiratorischer Gasfluss;48
+Einstellgröße für den Flowassist im Modus PPS;Eingestellter inspiratorischer Gasfluss;49
+Einstellgröße für den VolAssist im PPS Modus;Eingestellter inspiratorischer Gasfluss;45
+Zeiteinstellung für das obere Druckniveau im APRV Modus;Einstellung-Einatmungszeit-Beatmung;52
+Zeiteinstellung für das untere Druckniveau im APRV Modus;Einstellung-Einatmungszeit-Beatmung;51
+Druckeinstellung für das obere Druckniveau im APRV Modus;Beatmungszeit auf niedrigem Druck;43
+Druckeinstellung für das untere Druckniveau im APRV Modus;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;43
+gemessene O2 Konzentration des inspiratorischen Atemgasgemisches;Inspiratorische Sauerstofffraktion gemessen;62
+gemessener Atemwegsspitzendruck;Mittlerer Beatmungsdruck;55
+gemessener Plataeudruck wähend der Inspiration;Inspiratorische Sauerstofffraktion gemessen;55
+gemessener Atemwegsmitteldruck;Mittlerer Beatmungsdruck;56
+gemessener positiver endexspiratorischer Druck;Positiv-endexpiratorischer Druck;82
+gemessener minimaler Atemwegsdruck während des Atemzyklus;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;54
+gemessenes Atemminutenvolumen;Spontanes-Atemzugvolumen;64
+gemessenes spontanes Atemminutenvolumen;Spontanes-Atemzugvolumen;70
+gemessenes Leckagevolumen pro Minute;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;60
+gemessene Gesamtatemfrequenz;Eingestellte und gemessene Parameter;62
+gemessene spontane Atemfrequenz;Atemfrequenz;100
+gemessene mandatorische Atemfrequenz;Atemfrequenz;100
+gemessenes exspiratorisches Tidalvolumen;Exspiratorischer Gasfluss;62
+gemessenes inspiratorisches Tidalvolumen;Inspiratorische Sauerstofffraktion gemessen;70
+gemessener Atemwegswiderstand;Systemischer vaskulärer Widerstandsindex;53
+gemessene Lungencompliance;Dynamische Kompliance;55
+gemessener Intrinsic Peep nach Meßmanöver;Inspiratorische Sauerstofffraktion gemessen;51
+gemessenes getrapptes Luftvolumen nach Meßmanöver;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;48
+gemessener P0.1 Druck nach Meßmanöver;Venöser Druck;59
+Einstellwert: Tidalvolumen;Linksventrikulaeres Schlagvolumen;55
+Hochdruckalarmgrenze im 'ASV Modus;Blutdruck Generisch;42
+"Desinfektionsprogramme Gerät ";Inspiratorische Sauerstofffraktion eingestellt;47
+Kathetertyp;Körpertemperatur Achsel;42
+Listenauswahl;Körpertemperatur nasal;41
+Listenanhang;Beatmung;40
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Medtronic 5348;Parameter von Beatmung;39
+Medtronic 5348;Parameter von Beatmung;39
+Medtronic 5348;Parameter von Beatmung;39
+Medtronic 5348;Parameter von Beatmung;39
+Medtronic 5375;Parameter von Beatmung;39
+Medtronic 5375;Parameter von Beatmung;39
+Medtronic 5375;Parameter von Beatmung;39
+Medtronic 5388;Parameter von Beatmung;39
+Medtronic 5388;Parameter von Beatmung;39
+Medtronic 5388;Parameter von Beatmung;39
+Medtronic 5388;Parameter von Beatmung;39
+Medtronic 5388;Parameter von Beatmung;39
+Medtronic 5388;Parameter von Beatmung;39
+Medtronic 5388;Parameter von Beatmung;39
+Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben;Inspiratorische Sauerstofffraktion gemessen;52
+Die inspiratorische Bemühung des Patienten ( Flow),  die das Beatmungsgerät veranlässt, einen Atemhub abzugeben;Inspiratorische Sauerstofffraktion gemessen;52
+eingestellte mandatorische AF;Eingestellter inspiratorischer Gasfluss;71
+eingestelltes Tidalvolumen;Eingestellte und gemessene Parameter;58
+eingestellter Spitzengasfluss;Eingestellter inspiratorischer Gasfluss;65
+Zeiteinstellung für die Plateauphase im Modus CMV und SIMV;Einstellung-Einatmungszeit-Beatmung;52
+eingestelltes PEEP Niveau;Eingestellte und gemessene Parameter;62
+eingestellter Flowtrigger: Schwellenwertt für die inspiratorische Bemühung des Patienten um die Druckunterstützung auszulösen;Inspiratorische Sauerstofffraktion gemessen;52
+eingestellte Sauerstoffkonzentration des inspiratorischen Atemgases;Inspiratorische Sauerstofffraktion eingestellt;78
+eingestelltes oberes Druckniveau im Modus P-CMV und P-SIMV;Eingestellte und gemessene Parameter;52
+eingestellte Inspirationszeit eines Atemzuges;Eingestellte und gemessene Parameter;64
+eingestellte Druckunterstützung bei dem Gerät Avea;Eingestellte und gemessene Parameter;55
+Zeiteinstellung des oberen Druckniveaus im Modus APRV / BiPhasisch;Einstellung-Einatmungszeit-Beatmung;48
+Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch;Einstellung-Einatmungszeit-Beatmung;48
+eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch;Beatmungszeit auf niedrigem Druck;42
+eingestelltes unteres Druckniveau im Modus APRV / BiPhasisch;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;42
+gemessenes Tidalvolumen;Substituatvolumen;60
+gemessener Atemwegsspitzendruck;Mittlerer Beatmungsdruck;55
+gemessenes exspiratorisches Volumen;Exspiratorischer Gasfluss;67
+gemessene Inspirationszeit;Inspiratorische Sauerstofffraktion gemessen;61
+gemessenes PEEP Niveau;Inspiratorische Sauerstofffraktion gemessen;46
+gemessenes I zu E Verhältnis;Zeitverhältnis-Ein-Ausatmung;52
+gemessene Exspirationszeit;Exspiratorischer Gasfluss;59
+errechneter Quotient zwischen Frequenz und Tidalvolumen;Mechanische-Atemfrequenz-Beatmet;53
+gemessener Atemwegsmitteldruck;Mittlerer Beatmungsdruck;56
+gemessene Atemfrequenz;Atemfrequenz;100
+gemessenes mandatorisches Tidalvolumen;Inspiratorische Sauerstofffraktion gemessen;59
+gemessenes spontanes Tidalvolumen;Spontanes-Atemzugvolumen;67
+gemessenes inspiratorisches Tidalvolumen;Inspiratorische Sauerstofffraktion gemessen;70
+gemessenes spontanes Atemminutenvolumen;Spontanes-Atemzugvolumen;70
+gemessene spontane Atemfrequenz;Atemfrequenz;100
+gemessene mandatorische Atemfrequenz;Atemfrequenz;100
+gemessener Plateaudruck;Eingestellte und gemessene Parameter;54
+gemessene Sauerstoffkonzentration im Atemgas;Inspiratorische Sauerstofffraktion gemessen;62
+gemessene statische Compliance;Eingestellte und gemessene Parameter;55
+gemessener AutoPEEP;Eingestellte und gemessene Parameter;51
+Liste;Puls;44
+Liste;Puls;44
+LIste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Drainagen_SekretmlKum: Drainagen-Sekret Kumulativ zur Dokumentation, nicht bilanzrelevant;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;40
+Gefäßdefinition;Herzzeitvolumen;43
+Katheterart;Körpertemperatur Stirn;50
+Bezeichnung;Beatmung;53
+Bezeichnung;Beatmung;53
+Patient Allergie - Datum;Spontane-Atemfrequenz-Beatmet;47
+Patient Besonderheit Datum;Substituatvolumen;47
+Dokumentation der Markierung des Katheters bzgl. der Lage bzw. Tiefe;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;42
+Dokumentation der Markierung des Atemwegszugang bzgl. der Tiefe bezogen auf die Anlagedokumentation;Beatmungszeit auf niedrigem Druck;38
+Dokumentation der Markierung der enteralen Sonde;Körpertemperatur unter der Zunge;51
+Gerät zur Sekretmobilisation;Körpertemperatur Kern;51
+Wunddokumentation der Tiefe bei Aufnahme oder erstem AUftreten;Spontane-Atemfrequenz-Beatmet;44
+Dekubitusgröße bei Aufnahme;Einstellung-Ausatmungszeit-Beatmung;47
+Decubitustiefe bei Aufnahme;Zeitverhältnis-Ein-Ausatmung;48
+Beobachtungsbeschreibung mit Liste hinterlegt;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;52
+Gefäßzugang;Kopfumfang;53
+Schlauchsystembeschichtung relevant;Dauer Hämodialysesitzung;45
+Kathetertyp;Körpertemperatur Achsel;42
+Dokumentation des aktuellen Füllstandes vom Auffangbehälter;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;46
+Gerätetyp;Körpertemperatur Gelenk;40
+Gerät auswählen;Blutfluss durch cardiovasculäres Gerät;47
+Hypothermiebehandlung;Atemzugvolumen-Einstellung;43
+Hypothermiebehandlung;Atemzugvolumen-Einstellung;43
+Liste;Puls;44
+Liste;Puls;44
+Bilanzrelevante Dokumentation der Sekretmenge, gefördert über die V.A.C. Pumpe;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;40
+Dokumentation des Füllstandes vom Auffangbehälter der VAC Pumpe;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;44
+Dokumentation des Füllstandes des Auffangbehälters der V.A.C. Pumpe im Rahmen der Dekubitusversorgung;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;41
+Bilanzrelevante Dokumentation der Sekretfördermenge im Rahmen der Dekubitusversorgung;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;42
+Dokumentation eines internen Pacer;Eingestellte und gemessene Parameter;46
+GCS Aufnahme;Parameter von Beatmung;41
+Hypothermiebehandlung;Atemzugvolumen-Einstellung;43
+Hypothermiebehandlung;Atemzugvolumen-Einstellung;43
+Liste;Puls;44
+Gerät auswählen;Blutfluss durch cardiovasculäres Gerät;47
+Listenauswahl;Körpertemperatur nasal;41
+Geräteauswahl;Körpertemperatur nasal;55
+0=Vorerkrankungen, 1=Hauptdiagnose, ab 2 sonstige Diagnosen;Inspiratorische Sauerstofffraktion gemessen;40
+Temperatur bei der PICCO Messung;Körpertemperatur Kern;58
+Bluttemperatur bei der HZV Messung;Körpertemperatur unter der Zunge;62
+Beschreibung der Magensaftes;Maximaler Beatmungsdruck;46
+Dokumentation der eingestellten Temperatur am ECMO Gerät;Körpertemperatur Atemwege;51
+Dokumentationsmöglichkeit des Füllstandes des Auffangbehältnisses für den Magensaft;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;42
+Eingestellter Temperaturwert an der ECMO (Gerät);Eingestellter inspiratorischer Gasfluss;55
+"Dokumentation der Tätigkeit ""Flushen"" bei Einsatz eines ECMO Verfahrens";Ionisiertes Kalzium aus Nierenersatzverfahren;46
+"Dokumentation der Tätigkeit ""Flushen"" bei Einsatz eines ILA Verfahrens";Ionisiertes Kalzium aus Nierenersatzverfahren;45
+Angeordnete Temperatureinstellung bei ECMO Verfahren;Extrakorporale Verfahren;55
+Statusdokumentation eines implantierten AICD;Inspiratorische Sauerstofffraktion eingestellt;51
+Listenauswahl;Körpertemperatur nasal;41
+Liste;Puls;44
+Liste;Puls;44
+Dokumentation der eingestellten Tubuskompensation;Eingestellte und gemessene Parameter;45
+Dokumentation der zeitlichen Dauer der CPR.;Körpertemperatur unter der Zunge;46
+Dokumentierte Dauer der pflegerischen Assistenz bei therapeutischen, diagnostischen und oder operativen Interventionen.;Ionisiertes Kalzium aus Nierenersatzverfahren;37
+Dokumentation durchgeführter diagnostischer Maßnahmen.;Ionisiertes Kalzium aus Nierenersatzverfahren;46
+indirekte Lichtreaktion;Inspiratorische Sauerstofffraktion eingestellt;49
+indirekte Lichtreaktion;Inspiratorische Sauerstofffraktion eingestellt;49
+Zeitpunkt für den die Pupillenreaktion erfasst wurde.;Körpertemperatur unter der Zunge;44
+indirekte Lichtreaktion;Inspiratorische Sauerstofffraktion eingestellt;49
+indirekte Lichtreaktion;Inspiratorische Sauerstofffraktion eingestellt;49
+Zeitpunkt für den die Pupillenreaktion erfasst wurde.;Körpertemperatur unter der Zunge;44
+Liste;Puls;44
+Liste;Puls;44
+Über eine Messsonde transcutan gemessener Prozentwert;Eingestellte und gemessene Parameter;57
+Über eine Sonde gemessener regionaler cerebraler Blutfluss.;Hämodialyse Blutfluss;62
+transcutan gemessener pCO2 Wert.;Inspiratorische Sauerstofffraktion gemessen;49
+Zielwert für den ICP Wert unter Hirndrucktherapie;Körpertemperatur unter der Zunge;53
+Zielwert für den CPP unter Hirndrucktherapie;Körpertemperatur unter der Zunge;51
+Zielwert für den intraparenchymen Sauerstoffpartialdruck ermittelt über PtiO2 Sonde;Exspiratorischer Sauerstoffpartialdruck;72
+Gemessener Sauerstoffpartialdruck im Parenchym;Exspiratorischer Sauerstoffpartialdruck;72
+Über eine Messsonde transcutan gemessener Prozentwert;Eingestellte und gemessene Parameter;57
+Dokumentationsmöglichkeit für die Zielvorgabe des Natriumwertes;Ionisiertes Kalzium aus Nierenersatzverfahren;45
+Dokumentationsmöglichkeit für die Zielvorgabe des Kaliumwertes;Ionisiertes Kalzium aus Nierenersatzverfahren;50
+"Anordnungsmöglichkeit bzgl. der Drainagenhöhe ";Beatmungszeit auf niedrigem Druck;45
+Anordnungsmöglichkeit für den Sog einer Drainage;Einstellung-Ausatmungszeit-Beatmung;47
+Dokumentation der Applikationsform bei Atemtherapie mittels EzPAP;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;41
+Messung des PAP unter der Atemtherapie EzPAP;Körpertemperatur unter der Zunge;56
+Liste;Puls;44
+Liste;Puls;44
+Rotationswinkel;Atemzugvolumen-Einstellung;39
+Rotationswinkel;Atemzugvolumen-Einstellung;39
+Rotationszeit/Haltezeit;Spontanes-Atemzugvolumen;47
+Haltedauer;Körpertemperatur Harnblase;46
+Schläge /sek;Dynamische Kompliance;39
+Listeneintrag;Atemzugvolumen-Einstellung;41
+Listenauswahl;Körpertemperatur nasal;41
+Einstellung der Lage;Atemzugvolumen-Einstellung;71
+Liste;Puls;44
+Dokumentation der Versorgung von einen sterbenden Patienten.;Parameter von extrakorporalen Verfahren;47
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Beschreibung der Eigenschaft des Sekrets NRR;Körpergewicht Percentil altersabhängig;45
+Beschreibung der Menge des Trachealsekrets im Verlegungsbericht.;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;44
+Beschreibung der Menge des Sekrets NRR im Verlegungsbericht.;Einstellung-Einatmungszeit-Beatmung;45
+Rchmond Atation Sedtion Sale bei Vrlegung;Dauer Hämodialysesitzung;47
+Freitext;Herzzeitvolumen;43
+Dokumentation des Zugangswegs bei Schrittmachertherapie im Pflegeverlegungsbericht;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;41
+Pupillendokumentation im Pflegeverlegungsbericht.;Körpergewicht Percentil altersabhängig;43
+Pupillendokumentation im Pflegeverlegungsbericht.;Körpergewicht Percentil altersabhängig;43
+Dokumentation der Pupillenisokorie im Pflegeverlegungsbericht.;Linksv. Schlagvolumenindex durch Indikatorverd.;42
+Dokumentation des Cornealreflexes im Pflegeverlegungsbericht.;Ideales Körpergewicht;40
+Dokumentation de4s Cornealreflexes im Pflegeverlegungsbericht.;Ideales Körpergewicht;40
+Listendoku zusätzl. Personal;Sauerstoffgasfluss;45
+Dokumentation des Sekretverlustes über den Dekubitus in ml.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;42
+Dokumentation des Sekretverlustes über die Wunden und Defekte in ml.;Eingestellte und gemessene Parameter;39
+Zeile für einen automatisierten Eintrag, für das Merkmal Sterbebegleitung in INPULS.;Ionisiertes Kalzium aus Nierenersatzverfahren;41
+Messung des Horowitz-Indexes;Horowitz-In-Arteriellem-Blut;57
+Einstellwert des NO bei NO Beatmung;Beatmung;100
+Messwert der  NO Konzentration bei NO Beatmung;Beatmung;100
+Messwert der NO2 Konzentration bei NO Beatmung;Beatmung;100
+Referenz auf die Verordnung, welche durch diese Gabe erfüllt wurde.;Linksv. Schlagvolumen durch Indikatorverdünnung;46
+Einheit des Medikamentengabe-Objektes;Linksv. Herzindex durch Indikatorverdünnung;46
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Liste;Puls;44
+Marker für die Sterbebegleitung in Inpuls 48 h prä Exitus;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;44
+Liste;Puls;44
+Liste;Puls;44
+Ist eine Aufnahme geplant chirurgisch, ungeplant chirurgisch oder medizinisch;Spontane-Mechanische-Atemfrequenz-Beatmet;46
+Temperatureinstellung am Gerät Airvo;Einstellung-Ausatmungszeit-Beatmung;63
+Einstellunggröße  des Flows am Gerät;Atemzugvolumen-Einstellung;52
+Dokumentation des eingestellten O2 Flusses, welcher am Gerät Airvo angeschlossen ist.;Eingestellter inspiratorischer Gasfluss;45
+Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;38
+Beschreibung der Schnittstelle vom Gerät zum Patienten;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;46
+Dokumentation des Apllikationsweges;Linksventrikulaeres Schlagvolumenindex;47
+Liste Highflow Highflow CPAP;Körpertemperatur Leiste;39
+"Edi-Mindestwert ";Linksatrialer Druck;47
+"Edi-Spitzenwert ";Körpertemperatur Kern;46
+"Shallow Breathing Index (Index für flache Atmung) ";Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;57
+"P0.1 ";Puls;25
+"Elastanz ";Beatmung;50
+"Atemarbeit, Patient ";Atemfrequenz;53
+"Atemarbeit, Ventilator ";Körpergewicht Percentil altersabhängig;49
+"Exstiratorische Resistenz ";Exspiratorischer Gasfluss;68
+"Inspiratorische Resistenz ";Inspiratorische Sauerstofffraktion gemessen;75
+"Statische Compliance ";Dynamische Kompliance;49
+"Dynamische Charakteristika ";Dynamische Kompliance;65
+"Gemessene Sauerstoffkonzentration ";Inspiratorische Sauerstofffraktion gemessen;68
+"Endexspiratorischer Flow ";Exspiratorischer Gasfluss;78
+"Exsp. Tidalvolumen ";Substituatvolumen;65
+"Insp. Tidalvolumen ";Substituatvolumen;65
+"Leckage in % ";Ideales Körpergewicht;40
+"MVe [l/min] ";Monitoring und Vitaldaten;35
+"Insp. Minutenvolumen ";Substituatvolumen;61
+"Spontanes exsp. Minutenvolumen ";Spontanes-Atemzugvolumen;75
+"Atemfrequenz ";Spontane-Atemfrequenz-Beatmet;100
+"Spontane Atemzüge pro Minute ";Spontanes-Atemzugvolumen;67
+"Continuous Positive Airway Pressure ";Positiv-endexpiratorischer Druck;42
+"Positiver Endexsp. Druck ";Positiv-endexpiratorischer Druck;73
+"Mittlerer Atemwegsdruck ";Mittlerer Beatmungsdruck;85
+"Atemwegsdruck Pause ";Atemwegsdruck bei mittlerem expiratorischem Gasfluss;81
+"Atemdruck Spitze ";Mittlerer Beatmungsdruck;60
+"Backup Ti [s] ";Linksatrialer Druck;40
+"Backup I:E [Einstellung] ";Atemzugvolumen-Einstellung;67
+"Backup DK über PEEP [cmH2O] ";Beatmungszeit auf niedrigem Druck;42
+"Backup Frequenz [n/min] ";Atemfrequenz;55
+"Backup Vt [ml] ";Parameter von Beatmung;41
+"Automode Triggerfenster (s) ";Körpertemperatur Atemwege;45
+"Gewicht (kg) ";Körpergewicht;64
+"EDI Trigger ";Linksatrialer Druck;47
+"Nava Pegel ";Ideales Körpergewicht;40
+"Sauerstoffkonzentration ";Sauerstoffgasfluss;54
+"zeit unteres Druckniveau (tniedrig) ";Zentralvenöser Druck;50
+"zeit oberes Druckniveau (thoch) ";Positiv-endexpiratorischer Druck;52
+"PEEP ";Körpergroesse;38
+"Druckunterstüzung hoch (cmH2O) ";Unterstützungsdruck Beatmung;52
+"Phoch (cmH2O) ";Dynamische Kompliance;31
+"Phoch (cmH2O) ";Dynamische Kompliance;31
+"DU über PEEP ";Körpertemperatur Brust;50
+"DK über PEEP ";Körpertemperatur Kern;52
+"Drucktrigger ";Linksatrialer Druck;65
+"Flowtrigger ";Linksatrialer Druck;40
+"TPause (%) ";Puls;60
+"TPause (s) ";Puls;50
+"I:E [Einstellung] ";Atemzugvolumen-Einstellung;85
+"End. Insp. Zyklusende (% des Spitzenflows) ";Linksv. Schlagvolumenindex durch Indikatorverd.;44
+"Insp.-Anstiegszeit (%) ";Einstellung-Ausatmungszeit-Beatmung;50
+"Insp.-Anstiegszeit (s) ";Einstellung-Ausatmungszeit-Beatmung;48
+"Pausendauer [s] ";Körpertemperatur nasal;41
+"Pausendauer ";Venöser Druck;43
+"Ti (s) ";Körpergrösse Percentil;33
+"CMV Frequenz ";Atemfrequenz;75
+"SIMV Frequenz ";Atemfrequenz;64
+"Atemfrequenz ";Spontane-Atemfrequenz-Beatmet;100
+"Tidalvolumen ";Substituatvolumen;69
+PLZ;Puls;57
+Dokumentation der durchgeführten Spitzfußprophylaxe.;Körpertemperatur unter der Zunge;43
+Dokumentation der Füllstandsmenge des Auffandbehälters.;Systemischer vaskulärer Widerstandsindex;42
+Dokumentation des Wechsels der Beatmungsbeutels.;Mittlerer Beatmungsdruck;48
+Dokumentation des Wechsels der Beatmungsmasken.;Mittlerer Beatmungsdruck;49
+Dokumentation des prozentualen Anteil des Aufblasens des Ballons.;Spontane-Atemfrequenz-Beatmet;45
+Dokumentation des prozentualen Anteils des Leersaugens des Ballons.;Ionisiertes Kalzium aus Nierenersatzverfahren;47
+Dokumentation des Unterstützungsdruckes.;Unterstützungsdruck Beatmung;71
+Dokumentation des verwendeten Ballonkatheters.;Ionisiertes Kalzium aus Nierenersatzverfahren;47
+Dokumentation des Ballonvolumens.;Spontanes-Atemzugvolumen;54
+Dokumentation der gewählten EG Ableitung für den IABP Einsatz.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;47
+Dokumentation der IABP Frequenz.;Atemfrequenz;47
+Dokumentation des ausgewählten Triggers der IABP.;Linksv. Herzzeitvolumen durch Indikatorverdünnung;43
+Dokumentation des gemessenen Blutdruckes unter IABP.;Pulmonalarterieller Blutdruck;48
+Inhalte der Prämedikation;Ideales Körpergewicht;50
+Präanästhetische Anordnung Option.;Inspiratorischer Gasfluss;50
+Präanästhetische Anordnung nüchtern ab definiertertem Zeitpunkt.;Spontane-Mechanische-Atemfrequenz-Beatmet;46
+Präanästhetische Anordnung spezielle Untersuchung.;Einstellung-Einatmungszeit-Beatmung;46
+Präanästhetische Anordnung BZ Tagesprofil.;Spontane-Mechanische-Atemfrequenz-Beatmet;48
+Präanästhetische Anordnung Gerinnung.;Einstellung-Einatmungszeit-Beatmung;49
+Präanästhetische Anordnung Wiedervorstellung.;Einstellung-Einatmungszeit-Beatmung;52
+Präanästhetische Anordnung aktuelles EKG;Mechanische-Atemfrequenz-Beatmet;49
+Präanästhetische Anordnung Schilddrüsenwerte.;Spontane-Mechanische-Atemfrequenz-Beatmet;46
+Präanästhetische Anordnung aktuelles Labor.;Mechanische-Atemfrequenz-Beatmet;47
+Präanästhetische Anordnung nüchtern bleiben.;Mechanische-Atemfrequenz-Beatmet;50
+Name des Anästhesisten, der die Prämedikation erstellt.;Eingestellte und gemessene Parameter;48
+Präanästhetische Anordnung: Anzahl der anzufordernden Einheiten an Eigenblut.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;40
+Präanästhetische Anordnung: Anzahl der anzufordernden Einheiten an TKs.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;40
+Präanästhetische Anordnung: Anzahl der anzufordernden Einheiten an FFPs.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;40
+Präanästhetische Anordnung: Anzahl der anzufordernden Einheiten an EKs.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;40
+Dokumentation des geplanten OP Datums.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;49
+Dokumentation freier Arztwahl;Atemzugvolumen-Waehrend-Beatmung;43
+Ort;Körpergewicht;27
+Dokumentation der vorläufigen Diagnose;Linksv. Schlagvolumen durch Indikatorverdünnung;49
+Dokumentation der Art des geplanten Eingriffes.;Spontane-Mechanische-Atemfrequenz-Beatmet;46
+Dokumentation der klinischen Fachrichtung der OP;Linksv. Schlagvolumen durch Indikatorverdünnung;47
+Dokumentation, wenn OSAS CPAP versorgt ist.;Inspiratorische Sauerstofffraktion gemessen;43
+Dokumentation, wenn OSAS vorliegt.;Monitoring und Vitaldaten;42
+Dokumentation, wenn Opiatgewöhnung vorliegt.;Einstellung-Einatmungszeit-Beatmung;45
+Dokumentation, wenn eine Infektion vorliegt.;Zeitverhältnis-Ein-Ausatmung;46
+Dokumentation, wenn schwieriger Atemweg bekannt ist.;Spontane-Mechanische-Atemfrequenz-Beatmet;51
+Dokumentation, wenn PONV vorliegt.;Monitoring und Vitaldaten;46
+Dokumentation, wenn MH-Disposition vorliegt;Monitoring und Vitaldaten;42
+Dokumentation, wenn Reflux besteht.;Substituatvolumen;48
+Dokumentation Anästhesierelevanter Vorerkrankungen des Patienten.;Ionisiertes Kalzium aus Nierenersatzverfahren;44
+Dokumentation früherer durchgeführter Anästhesien;Ionisiertes Kalzium aus Nierenersatzverfahren;48
+Doku Noteingriff.;Zentralvenöser Druck;46
+Doku Dringlicher Eingriff.;Positiv-endexpiratorischer Druck;46
+Doku Wahleingriff.;Dauer Hämodialysesitzung;45
+Doku einer vorliegenden Patientenverfügung.;Linksv. Herzindex durch Indikatorverdünnung;51
+Doku ASA Hirntod.;Inspiratorischer Gasfluss;39
+Doku ASA V.;Venöser Druck;36
+Doku ASA IV.;Zeitverhältnis-Ein-Ausatmung;37
+Doku ASA III.;Zeitverhältnis-Ein-Ausatmung;41
+Doku ASA II.;Zeitverhältnis-Ein-Ausatmung;37
+Doku ASA I.;Mittlerer Beatmungsdruck;35
+Doku Einwilligung DE.;Atemzugvolumen-Einstellung;52
+Doku Einwilligung ICU.;Atemzugvolumen-Einstellung;47
+Doku Einwilligung BK.;Atemzugvolumen-Einstellung;48
+Doku Einwilligung DIB.;Atemzugvolumen-Einstellung;47
+Doku Einwilligung Fem. Katheter.;Linksatrialer Druck;45
+Doku Einwilligung Art. Katheter.;Atemzugvolumen-Einstellung;46
+Doku Einwilligung BTx.;Atemzugvolumen-Einstellung;51
+Doku Einwilligung TEE.;Atemzugvolumen-Einstellung;47
+Doku Einwilligung PAK.;Atemzugvolumen-Einstellung;47
+Doku Einwilligung ZVK.;Atemzugvolumen-Einstellung;47
+Doku Einwilligung thorakale PDA.;Linksatrialer Druck;48
+Doku Einwilligung Plexusanästhesie.;Linksatrialer Druck;42
+Doku Einwilligung Chefvwertreter.;Atemzugvolumen-Einstellung;45
+Doku Einwilligung QEA.;Atemzugvolumen-Einstellung;47
+Doku Einwilligung PDA.;Atemzugvolumen-Einstellung;47
+Doku Einwilligung SpA.;Atemzugvolumen-Einstellung;47
+Doku Einwilligung AS.;Atemzugvolumen-Einstellung;52
+Doku Einwilligung Deep Sedierung.;Einstellung-Einatmungszeit-Beatmung;48
+Doku Einwilligung Sedierung.;Einstellung-Einatmungszeit-Beatmung;48
+Doku Einwilligung fieberoptische Intubation.;Inspiratorische Sauerstofffraktion eingestellt;49
+Doku Einwilligung Kaudale.;Linksatrialer Druck;50
+Doku Einwilligung ITN.;Monitoring und Vitaldaten;48
+Doku Neurologie Option 2.;Positiv-endexpiratorischer Druck;46
+Doku Neurologie ICP Erhöhung.;Beatmungszeit auf niedrigem Druck;47
+Doku Neurologie Krampfleiden.;Körpertemperatur Leiste;44
+Doku Neurologie Parese.;Körpergroesse;47
+Doku Neurologie Wert.;Zentralvenöser Druck;46
+Doku Neurologie Option 1.;Positiv-endexpiratorischer Druck;46
+Doku Neurologie GCS.;Venöser Druck;45
+Doku Neurologie Ischämie.;Dynamische Kompliance;50
+Doku Neurologie ohne pathologischen Befund.;Blutdruck Generisch;43
+Doku Allergien Option 2.;Horowitz-In-Arteriellem-Blut;47
+Doku Allergie Kontrastmittel.;Horowitz-In-Arteriellem-Blut;43
+Doku Allergie Kontakt.;Arterieller Druck;47
+Doku Allergie Allergiepass;Arterieller Druck;56
+Doku Allergien Option 1.;Horowitz-In-Arteriellem-Blut;47
+Doku Allergie Antibiotikum.;Linksventrikulärer Herzindex;38
+Doku Allergien Pollen.;Arterieller Druck;42
+Doku Allergie Keine;Arterieller Druck;50
+Doku Medikation AT Antagonist.;Einstellung-Ausatmungszeit-Beatmung;44
+Doku Medikation Analgetikum.;Parameter von Beatmung;41
+Doku Medikation Antidiabetikum.;Parameter von Beatmung;42
+Doku Medikation Keine.;Linksv. Herzindex durch Indikatorverdünnung;48
+Doku Medikation Option 3.;Positiv-endexpiratorischer Druck;46
+Doku Medikation Antikoagulans.;Linksventrikulaeres Schlagvolumenindex;45
+Doku Medikation Sartan.;Linksatrialer Druck;49
+Doku Medikation ACE Hemmer.;Körpertemperatur Achsel;46
+Doku Medikation Option 1.;Positiv-endexpiratorischer Druck;46
+Doku Medikation Nitrat.;Monitoring und Vitaldaten;47
+Doku Medikation Antiarrhythmikum;Horowitz-In-Arteriellem-Blut;40
+Doku Medikation NNR Hormon;Linksv. Herzindex durch Indikatorverdünnung;48
+Doku Medikation Option 2.;Positiv-endexpiratorischer Druck;46
+Doku Medikation Beta blocker.;Körpertemperatur Blut;42
+Doku Medikation Kalziumantagonist;Ionisiertes Kalzium aus Nierenersatzverfahren;41
+Doku Medikation Diuretikum.;Linksv. Herzzeitvolumen durch Indikatorverdünnung;44
+Dokumentation Stoffwechsel Zusatzoption;Inspiratorische Sauerstofffraktion gemessen;49
+Doku Stoffwechsel Hyperthyreose.;Körpergroesse;47
+Doku Stoffwechsel Immobilisation.;Ionisiertes Kalzium aus Nierenersatzverfahren;39
+Doku Stoffwechsel Gravidität / Gestose.;Körpertemperatur Trommelfell;42
+Doku Stoffwechsel C2H5OH Tagesdosis.;Sauerstoffgasfluss;38
+Doku Stoffwechsel ohne pathologischen Befund.;Positiv-endexpiratorischer Druck;45
+Doku Stoffwechsel Niereninsuffizienz.;Ionisiertes Kalzium aus Nierenersatzverfahren;42
+Doku Stoffwechsel C2H5OH.;Sauerstoffgasfluss;38
+Doku Stoffwechsel Hepathopathie.;Dauer extrakorporaler Gasaustausch;43
+Doku Stoffwechsel Diabetes.;Beatmungszeit auf hohem Druck;44
+Dokumentation der Mallampati Klassifikation.;Linksv. Herzzeitvolumen durch Indikatorverdünnung;42
+Dokumentation der Mallampati Klassifikation.;Linksv. Herzzeitvolumen durch Indikatorverdünnung;42
+Dokumentation der Mallampati Klassifikation.;Linksv. Herzzeitvolumen durch Indikatorverdünnung;42
+Dokumentation der Mallampati Klassifikation.;Linksv. Herzzeitvolumen durch Indikatorverdünnung;42
+Dokumentation der Mallampati Klassifikation.;Linksv. Herzzeitvolumen durch Indikatorverdünnung;42
+Dokumentation des Abstandes Kinnspitze Kehlkopf.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;44
+Dokumentation des Abstandes Kinnspitze Kehlkopf.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;44
+Dokumentation des Abstandes Kinnspitze Kehlkopf.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;44
+Dokumentation des Abstandes Kinnspitze Kehlkopf.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;44
+Dokumentation der Möglichkeit zur Kopfreklination;Linksv. Herzzeitvolumen durch Indikatorverdünnung;42
+Dokumentation der Möglichkeit zur Kopfreklination;Linksv. Herzzeitvolumen durch Indikatorverdünnung;42
+Dokumentation der Möglichkeit zur Kopfreklination;Linksv. Herzzeitvolumen durch Indikatorverdünnung;42
+"Dokumentation der Möglichkeit zur Kopfreklination ";Linksv. Herzzeitvolumen durch Indikatorverdünnung;42
+Dokumentation der Sauerstoffsättigung.;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;67
+Dokumentation des Blutdruckes.;Pulmonalarterieller Blutdruck;55
+Dokumentation der Pulsfrequenz.;Atemfrequenz;48
+Dokumentation der Aufnahmeart.;Parameter von Beatmung;47
+Dokumentation der Aufnahmeart.;Parameter von Beatmung;47
+Dokumentation der Aufnahmeart.;Parameter von Beatmung;47
+Land;Beatmung;33
+Dokumentation der Aufnahmeart.;Parameter von Beatmung;47
+Dokumentation des Patientengewichts.;Ideales Körpergewicht;51
+Dokumentation der Patienntengröße.;Körpertemperatur unter der Zunge;52
+Dokumentation der Klinik und der Station des Patienten;Inspiratorische Sauerstofffraktion gemessen;45
+Dokumentation einer BGA;Zentralvenöser Druck;48
+Doku des Thrombozyten Wertes.;Atemzugvolumen-Waehrend-Beatmung;40
+Doku des Hb Wertes.;Ideales Körpergewicht;42
+Doku des Leukozyten Wertes.;Atemzugvolumen-Waehrend-Beatmung;41
+Doku des Fibrinogen Wertes.;Ideales Körpergewicht;43
+Doku des APPT Wertes.;Blutfluss durch cardiovasculäres Gerät;43
+Doku des INR Wertes.;Ideales Körpergewicht;46
+Doku des Quick Wertes.;Zentralvenöser Druck;45
+Doku des TSH Wertes.;Mittlerer Beatmungsdruck;42
+Doku des Glucose Wertes.;Spontanes-Atemzugvolumen;43
+Doku des Gamma GT Wertes.;Atemzugvolumen-Waehrend-Beatmung;43
+Doku des GOT Wertes.;Mittlerer Beatmungsdruck;42
+Doku des CRP Wertes.;Blutfluss durch cardiovasculäres Gerät;44
+Doku des CK Wertes.;Venöser Druck;47
+Doku des GPT Wertes.;Ideales Körpergewicht;46
+Doku des Harnstoo N Wertes.;Atemzugvolumen-Waehrend-Beatmung;41
+Doku des Creatinin Wertes.;Mittlerer Beatmungsdruck;45
+Doku des Calcium Wertes.;Blutfluss durch cardiovasculäres Gerät;44
+Doku des Kalium Wertes.;Ionisiertes Kalzium aus Nierenersatzverfahren;45
+Doku des Natrium Wertes.;Linksatrialer Druck;48
+Doku Herz Kreislauf Ödeme.;Atemzugvolumen-Einstellung;44
+Doku Herz Kreislauf AVK;Atemzugvolumen-Einstellung;45
+Doku Herz Kreislauf Schrittmacher.;Dauer extrakorporaler Gasaustausch;48
+Doku Herz Kreislauf Arrhythmie;Horowitz-In-Arteriellem-Blut;45
+Doku Herz Kreislauf Vitium.;Herzzeitvolumen;44
+Doku Herz Kreislauf Allen Test rechts.;Blutfluss durch cardiovasculäres Gerät;44
+Doku Herz Kreislauf Allen Test links.;Linksv. Herzindex durch Indikatorverdünnung;47
+Doku Herz Kreislauf Allen Test.;Körpertemperatur Gelenk;42
+Doku Herz Kreislauf Infarkt.;Linksv. Herzindex durch Indikatorverdünnung;47
+Doku Herz Kreislauf Herzinsuffizinez.;Linksv. Herzindex durch Indikatorverdünnung;44
+Doku Herz Kreislauf KHK.;Herzzeitvolumen;42
+Doku Herz Kreislauf Flüssigkeits / Volumen Defizit.;Linksventrikulaeres Schlagvolumen;48
+Doku Herz Kreislauf Hypotonieneigung.;Linksv. Herzindex durch Indikatorverdünnung;47
+Doku Herz Kreislauf Hypertonie;Körpertemperatur Kern;48
+"Doku Herz Kreislauf ";Herzzeitvolumen;47
+Doku Herz Kreislauf Ruhe EKG.;Dauer extrakorporaler Gasaustausch;45
+Doku Lunge Röntgen Thorax.;Linksventrikulärer Druck;43
+Doku Lunge Auskultation.;Substituatvolumen;45
+Doku Lunge FEV1.;Venöser Druck;44
+Doku Lunge FVC.;Venöser Druck;46
+Doku Lunge Beatmungseinstellung.;Einstellung-Einatmungszeit-Beatmung;61
+Doku Lunge Anzahle der Pack Years.;Körpertemperatur Harnblase;41
+Doku Lunge Pack Years.;Beatmungszeit auf niedrigem Druck;44
+Doku Lunge Beatmung vorhanden ja/nein.;Beatmung;100
+Doku Lunge COPD.;Kopfumfang;40
+EMail;Körpertemperatur vaginal;36
+Doku Lunge ohne pathologischen Befund.;Blutdruck Generisch;46
+Doku Lunge Asthma Bronchiale.;Dauer Hämodialysesitzung;43
+Doku Lunge Inspiratorischer Stridor.;Inspiratorischer Gasfluss;78
+Doku Lunge Restriktion.;Parameter von Beatmung;45
+Doku Lunge Infekt.;Linksatrialer Druck;50
+Doku Kardiologische Diagnostik P LV.;Linksventrikulaeres Schlagvolumen;41
+Doku Kardiologische Diagnostik R/L Shunt.;Exspiratorischer Gasfluss;43
+Doku Kardiologische Diagnostik EF.;Ideales Körpergewicht;42
+Doku Kardiologische Diagnostik L/R Shunt.;Exspiratorischer Gasfluss;43
+Doku Kardiologische Diagnostik dP.;Ideales Körpergewicht;42
+Doku Kardiologische Diagnostik P AO.;Inspiratorischer Gasfluss;43
+Doku Kardiologische Diagnostik P LA.;Linksventrikulaeres Schlagvolumen;41
+Doku kardiologische Diagnostik CI.;Ideales Körpergewicht;42
+Doku Kardiologische Diagnostik PCWP.;Dynamische Kompliance;39
+Doku Kardiologische Diagnostik P PA.;Spontanes-Plus-Mechanisches-Atemzugvolumen;42
+Doku Kardiologische Diagnostik P RV.;Positiv-endexpiratorischer Druck;42
+Doku Kardiologische Diagnostik P RA.;Eingestellter inspiratorischer Gasfluss;41
+Doku Kardilogische Diagnostik Option 2.;Positiv-endexpiratorischer Druck;46
+Doku Kardiologische Diagnostik Option 1.;Positiv-endexpiratorischer Druck;45
+Doku Kardiologische Diagnostik UKG / Angio;Inspiratorischer Gasfluss;40
+Dokumentation von welcher Person das Medikament verabreicht wurde.;Parameter von extrakorporalen Verfahren;46
+Dokumentation der Applikationsform des verordneten Medikaments.;Ionisiertes Kalzium aus Nierenersatzverfahren;47
+Dokumentation der Dosis des verordneten Medikaments.;Linksv. Herzzeitvolumen durch Indikatorverdünnung;45
+Dokumentation des Medikamentes, welche als Prämedikation appliziert werden soll.;Ionisiertes Kalzium aus Nierenersatzverfahren;46
+Dokumentation der Uhrzeit zu der  die Prämedikation appliziert werden soll.;Körpertemperatur unter der Zunge;44
+Dokumentation des Tages an dem die Prämedikation appliziert werden soll. In der Regel Vorabend des OP Tages oder OP Tag.;Ionisiertes Kalzium aus Nierenersatzverfahren;39
+Vertretung;Beatmung;56
+Dokumentation des eingestellten PEEP.;Atemzugvolumen-Einstellung;52
+Dokumentation des Alters des Patienten.;Spontane-Atemfrequenz-Beatmet;48
+Dokumentation des eingestellten Pmax.;Atemzugvolumen-Einstellung;52
+Dokumentation des eingestellten Triggers.;Atemzugvolumen-Einstellung;52
+Dokumentation der eingestellten Rampenzeit.;Eingestellte und gemessene Parameter;49
+Dokumentation der Inspirationszeit. Verhältnis zwischen Tip und Tinsp. 0 bis 60 %.;Einstellung-Einatmungszeit-Beatmung;43
+Dokumentation der Inspirationszeit.;Positiv-endexpiratorischer Druck;45
+Dokumentation des eingestellten Pressure Support.;Eingestellte und gemessene Parameter;50
+Dokumentation der eingestellten Frequenz.;Atemzugvolumen-Einstellung;52
+Dokumentation ders eingestellten Vt.;Atemzugvolumen-Einstellung;52
+Dokumentation des gemessenen Beatmungsspitzendruck.;Beatmungszeit auf niedrigem Druck;55
+Dokumentation des gemessenen Plateaudruckes.;Eingestellte und gemessene Parameter;53
+Dokumentation des gemessenen PEEPs.;Eingestellte und gemessene Parameter;51
+Dokumention des gemessenen endtidalen;Eingestellte und gemessene Parameter;49
+Inspiratorisch gemessenes CO2.;Inspiratorischer Gasfluss;70
+Gemessenes Atemminutenvolumen.;Spontanes-Atemzugvolumen;64
+Gemessenes Tidalvolumen.;Substituatvolumen;60
+Gemessene Atemfrequenz.;Atemfrequenz;100
+Gemessene Leckage.;Eingestellte und gemessene Parameter;69
+Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.;Eingestellte und gemessene Parameter;53
+Gemessene inspiratorische O2 Konzentration.;Inspiratorische Sauerstofffraktion gemessen;78
+Gemessene exspiratorische O2 Konzentration.;Exspiratorischer Gasfluss;57
+Gemessener MAC Wert. (endexspiratorische mittlere alveoläre Konzentration);Atemwegsdruck bei mittlerem expiratorischem Gasfluss;52
+"Inspiratorisch gemessene Halothan Konzentration. ";Inspiratorische Sauerstofffraktion gemessen;71
+Exspiratorisch gemessene Halothankonzentration.;Inspiratorische Sauerstofffraktion gemessen;54
+Inspiratorisch gemessene Enfluran Konzentration.;Inspiratorische Sauerstofffraktion gemessen;71
+Exspiratorisch gemessene Enfluran Kozentration.;Inspiratorische Sauerstofffraktion eingestellt;57
+Inspiratorisch gemessene Isofluran.;Inspiratorische Sauerstofffraktion gemessen;78
+Exspiratorisch gemessene Isofluran Konzentration.;Inspiratorische Sauerstofffraktion gemessen;57
+Inspiratorisch gemessene Desfluran Konzentration.;Inspiratorische Sauerstofffraktion gemessen;70
+Exspiratorisch gemessene Desfluran Konzentration.;Inspiratorische Sauerstofffraktion gemessen;57
+Inspiratorisch gemessene Sevofluran Konzentration.;Inspiratorische Sauerstofffraktion gemessen;70
+Exspiratorisch gemessene Sevofluran Konzentration.;Exspiratorischer Gasfluss;57
+Gemessener Frischgas Flow.;Eingestellte und gemessene Parameter;46
+An der Flowröhre eingestellter O2 Frischgasflow.;Eingestellter inspiratorischer Gasfluss;54
+An der Flowröhre eingestellter Frischgas Flow für Air.;Eingestellter inspiratorischer Gasfluss;53
+Eingestellter Inspiration Druck.;Eingestellter inspiratorischer Gasfluss;71
+Eingestellte Mindestfrequenz (Apnoeventilation) in dme Modus Pressure Support.;Eingestellte und gemessene Parameter;50
+Dokumentation des eingestellten I : E.;Atemzugvolumen-Einstellung;52
+Arztdoku S. 10;Sauerstoffgasfluss;39
+Vt in der Backupeinstellung;Zeitverhältnis-Ein-Ausatmung;52
+Frequenzeinstellung inder Backupeinstellung.;Einstellung-Ausatmungszeit-Beatmung;56
+Apnoezeiteinstellung in der Backupeinstellung.;Einstellung-Ausatmungszeit-Beatmung;57
+gemessenes Schlagvolumen;Linksventrikulaeres Schlagvolumen;70
+Wert des gemessenen Schlagvolumenindex.;Linksventrikulaeres Schlagvolumenindex;64
+Gesamt Frischgasfluss (Summe aus O2 + AIR);Exspiratorischer Gasfluss;51
+Eingestelter Patientengewicht am Pallas;Eingestellter inspiratorischer Gasfluss;59
+Gemesener Atemwegsmitteldruck;Mittlerer Beatmungsdruck;57
+Test;Beatmung;33
+Freitext;Herzzeitvolumen;43
+Inspirationszeit maximal;Maximaler Beatmungsdruck;50
+Aktiv;Beatmung;31
+Grundfrequenz;Herzfrequenz;72
+Empfindlichkeit;Linksventrikulärer Herzindex;43
+Stimulation;Substituatvolumen;57
+Listenauswahl;Körpertemperatur nasal;41
+Listenauswahl;Körpertemperatur nasal;41
+Grundfrequenz;Herzfrequenz;72
+Empfindlichkeit;Linksventrikulärer Herzindex;43
+Empfindlichkeit Ventrikel;Linksventrikulärer Herzindex;58
+Stimulation Vorhof;Substituatvolumen;46
+Stimulation Ventrikel;Linksventrikulärer Druck;55
+AV Überleitungszeit;Beatmungszeit auf hohem Druck;55
+Überstimulationsfrequenz Vorhof;Atemfrequenz;48
+Rapid Pacing Stimulationsfrequenz;Atemfrequenz;49
+postventrikuläre atriale Refraktärzeit;Linksventrikulärer Herzindex;54
+atriale Refraktärzeit;Ideales Körpergewicht;55
+ventrikuläre Stimulationsfrequenz;Linksventrikulärer Druck;58
+obere Frequenzbegrenzung;Spontane-Atemfrequenz-Beatmet;53
+Liste;Puls;44
+abhängig in ES der Sense-Liste;Körpergewicht Percentil altersabhängig;49
+Art d.Narkosegas;Arterieller Druck;42
+kontrollierte Wassertemperatur, gemessener Wert;Körpertemperatur Generisch;56
+Name des Anästhesisten, der als entlassender Anästhesist auf dem Ausdruck des Anästhesieprotokolls erscheint.;Ionisiertes Kalzium aus Nierenersatzverfahren;39
+Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.;Parameter von Beatmung;58
+entspricht der SR Anzeige am Gerät. Burst Supression Ratio;Inspiratorische Sauerstofffraktion eingestellt;49
+neu angelegt am 18.05.2012;Einstellung-Einatmungszeit-Beatmung;39
+Neuanlage 18.05.2012 String;Einstellung-Einatmungszeit-Beatmung;35
+Anlage 18.05.2012 String;Dauer Hämodialysesitzung;34
+Anlage 18.05.2012;Monitoring und Vitaldaten;29
+Listenauswahl;Körpertemperatur nasal;41
+Listenauswahl;Körpertemperatur nasal;41
+Der dokumentierte Füllstand des Auffangbehälters der subglotischen Absaugung.;Ionisiertes Kalzium aus Nierenersatzverfahren;42
+Dokumentierte Menge des extrahierten subglottischen Sekrets.;Ionisiertes Kalzium aus Nierenersatzverfahren;44
+Der am Gerät gemessene Sog bei der Verwendung eines Gerätes zur subglottischen Absaugung.;Eingestellte und gemessene Parameter;42
+Der eingestellte Modus am Gerät beim Einsatz der subglottischen Absaugung.;Eingestellte und gemessene Parameter;50
+Dokumentierter Zeitpunkt, zu dem der Aufwachversuch abgebrochen wurde.;Körpertemperatur unter der Zunge;42
+Gründe für den Abbruch des dokumentierten Aufwachversuches.;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;42
+Möglichkeit Freitext zu einem Aufwachversuch zu dokumentieren.;Ionisiertes Kalzium aus Nierenersatzverfahren;41
+CAM ICU Einschätzung des dokumentierten Aufwachversuches.;Einstellung-Ausatmungszeit-Beatmung;44
+Beurteilung der Motorik im dokumentierten Aufwachversuches.;Beatmungszeit auf niedrigem Druck;44
+Beurteilung des Augen öffnens im dokumentierten Aufwachversuches.;Ionisiertes Kalzium aus Nierenersatzverfahren;43
+Beurteilung der Schutzreflexe im dokumentierten Aufwachversuches.;Ionisiertes Kalzium aus Nierenersatzverfahren;44
+Beurteilung der Vegetativen Reaktion im dokumentierten Aufwachversuches.;Ionisiertes Kalzium aus Nierenersatzverfahren;45
+Dokumentation des  Aufwachversuches. Dürchführung Ja /Nein.;Linksv. Herzindex durch Indikatorverdünnung;45
+Datum des dokumentierten Aufwachversuches.;Ionisiertes Kalzium aus Nierenersatzverfahren;44
+Eingestelltes Körpergewicht beim respirator C2.;Körpergewicht;100
+Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben.;Inspiratorische Sauerstofffraktion gemessen;52
+Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.;Atemzugvolumen-Einstellung;59
+Eingestellter PEEP, CPAP oder Ptief am C2.;Eingestellter inspiratorischer Gasfluss;56
+Eingestellter Pkontrol oder Phoch am C2.;Eingestellter inspiratorischer Gasfluss;54
+"Eingestellte CMV Frequenz bei dem Respirator C2  in den Beatmungsmodi DUOPAP, APVcmv, Pcmv, ";Eingestellte und gemessene Parameter;50
+Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.;Inspiratorische Sauerstofffraktion eingestellt;45
+Eingestelltes Körpergewicht.;Körpergewicht;100
+"Eingestellte CMV Frequenz bei dem Respirator G5 in den Beatmungsmodi DUOPAP, APVcmv, Pcmv, ";Eingestellte und gemessene Parameter;50
+Eingestellt SIMV Frequenz bei dem Respirator G5 in den Beatmungsmodi APVsimv, Psimv.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;46
+Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.;Eingestellter inspiratorischer Gasfluss;46
+Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;47
+Person, die die Wertsachen angenommen hat;Atemzugvolumen-Waehrend-Beatmung;50
+Ob alle Wertsachen vollständig ausgehändigt wurden (Ja/Nein);Ionisiertes Kalzium aus Nierenersatzverfahren;42
+post operative Empfehlung der Pflege bei Verlegung AWR 24h;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;46
+Verknüpfung zum entsprechenden Fall zu dem ein Befund erhoben wurde (muss also ggf. bei Abfrage immer mit berücksichtigt werden!);Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;35
+freigebender Arzt der übermittelnden Einrichtung;Atemzugvolumen-Waehrend-Beatmung;46
+Flag für das logische Löschen;Dynamische Kompliance;46
+Name des Subsystems, ggf. bereits geändert durch den Trigger;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;46
+Dokumentation des Füllstandes des Urinauffang.;Atemzugvolumen-Einstellung;42
+Dokunentiertes Datum, wenn eine Dekanülierungsplan abgeschlossen wurde.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;43
+Datum des Anlagezeitpunkts des Dekanülierungsplans.;Spontane-Mechanische-Atemfrequenz-Beatmet;47
+0/1-Repräsentation des Storno-Flags aus SAP;Ionisiertes Kalzium aus Nierenersatzverfahren;41
+Transientes Objekt für die temporäre Aufnahme der Vorwerte für die medizinische Dokumentation Untersuchung körperlicher Status;Ionisiertes Kalzium aus Nierenersatzverfahren;38
+Erhebungszeitpunkt des BPS Scores.;Beatmungszeit auf hohem Druck;48
+Dokumentation ob eine Versorgungsvollmacht vorliegt.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;42
+Dokumentation des ärztlichen Aufnahmebfundes zur Rubrik Abdomen.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;44
+Befundsdokumentation des Aufnahme EKGs;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;47
+Dokumentierender Mitarbeiter.;Körpertemperatur Leiste;48
+Link zu einem Befundobjekt;Einstellung-Einatmungszeit-Beatmung;43
+"Beinhaltet den Namen der Bettplätze, wie er aus SAP bekannt ist. ";Ionisiertes Kalzium aus Nierenersatzverfahren;45
+Laufende Nummer aus SAP, zur eindeutigen Identifikation eines Datensatzes;Ionisiertes Kalzium aus Nierenersatzverfahren;43
+Keim-Objekt für die Zuordnung von Antibiogrammen und das Speichern der Erregerinformationen;Atemwegsdruck bei null expiratorischem Gasfluss;39
+Objektstruktur für die Aufnahme von strukturierten Antibiogrammen;Parameter von extrakorporalen Verfahren;45
+Winkel der Extremitätenlagerung/Bett/Kopf;Linksv. Herzzeitvolumen durch Indikatorverdünnung;46
+Spüllösung die intermittierend appliziert wird, Wert wirdals Bilanzwert verrechnet;Ionisiertes Kalzium aus Nierenersatzverfahren;39
+Dokumentation Oxygenator - Liste;Körpertemperatur Leiste;42
+%Systole Verhältnis Systolendauer zur Diastolendauer;Zeitverhältnis-Ein-Ausatmung;44
+Verhältnis Systole zur Diastolendauer;Zeitverhältnis-Ein-Ausatmung;51
+Liste - Doku Durchführung;Körpertemperatur Leiste;45
+Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Liste durchgeführt;Körpertemperatur Leiste;51
+"Liste ";Puls;44
+"Liste ";Puls;44
+bei luftblasen, Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Liste durchgeführt;Körpertemperatur Leiste;51
+Delta P2/P3;Ideales Körpergewicht;32
+Liste;Puls;44
+interne (durch Presenter erhoben) oder externer (durch Schnittstelle) Befund;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;41
+Welcher Befundtyp (Beispiel: Konsil, Bildgebung etc.);Einstellung-Einatmungszeit-Beatmung;41
+Objekt für die Keime von mikrobiologischen Befunden;Spontane-Mechanische-Atemfrequenz-Beatmet;44
+Erregername zur eindeutigen Identifikation des Objekts;Eingestellter inspiratorischer Gasfluss;41
+Antibiogrammobjekt für die MiBi-Befunde;Beatmungszeit auf niedrigem Druck;39
+Link zum Keim eines Antibiogramm-Objekts;Beatmungszeit auf hohem Druck;41
+Wirkstoffbezeichnung;Kopfumfang;40
+Wirkstoffsensibilität;Sauerstoffgasfluss;42
+Für die Filterung auf der Seite Massnahmen, Bildgebung, Diagnostik und Konsile nach Herkunft (extern, d.h. über Schnittstelle, oder intern, d.h. über Presenter dokumentiert);Eingestellte und gemessene Parameter;32
+Messung nur unter ASV Intellivent;Eingestellte und gemessene Parameter;52
+Negativ Wert/positiv Wert;Positiv-endexpiratorischer Druck;58
+Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Bereich Decimal - bis +;Körpergewicht Percentil altersabhängig;44
+Bereich Decimal - bis +;Körpergewicht Percentil altersabhängig;44
+Uhrzeit;Herzzeitvolumen;55
+Zeit zwishen 2 SBT;Einstellung-Einatmungszeit-Beatmung;45
+Zeit bis zum Start STB;Beatmungszeit auf hohem Druck;43
+Tabellen-Object-Variable für den Befundtest aus der Virologie;Beatmungszeit auf niedrigem Druck;43
+Auf was getestet wurde;Beatmungszeit auf niedrigem Druck;47
+Anpassung für automatische Gerätedataenübernahme mit IBUS;Systemischer vaskulärer Widerstandsindex;41
+Anpassung für IBUS Anbindung;Unterstützungsdruck Beatmung;44
+Anpassung IBUS Anbindung;Einstellung-Einatmungszeit-Beatmung;44
+Anpassung für IBUS Anbindung;Unterstützungsdruck Beatmung;44
+Anpassung für IBUS Anbindung;Unterstützungsdruck Beatmung;44
+Anpassung für IBUS;Zeitverhältnis-Ein-Ausatmung;41
+Anpassung für IBUS Anbindung;Unterstützungsdruck Beatmung;44
+Anpassung für IBUS Anbindung;Unterstützungsdruck Beatmung;44
+Anpassung aufgrund IBUS Anbindung;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;40
+Anpassung für die automatische Datenübermnahme IBUS;Inspiratorische Sauerstofffraktion gemessen;41
+Anpassung für die automatische Datenübernahme IBUS;Inspiratorische Sauerstofffraktion gemessen;42
+Änderung für die automatische Datenübernahme IBUS;Einstellung-Ausatmungszeit-Beatmung;47
+Anpassung für automatische Datenübernahme IBUS;Inspiratorische Sauerstofffraktion gemessen;44
+Neuanlage im Zuge der IBUS Anbindung;Einstellung-Einatmungszeit-Beatmung;45
+Anpassung im Zuge der automatischen Geräteanbindung über IBUS. Änderung in ml;Systemischer vaskulärer Widerstandsindex;45
+"Anpassung analog zu Geräten mit automatischer Datenübernahme Änderung in ml ";Systemischer vaskulärer Widerstandsindex;41
+automatische Datenübernahme IBUS;Mechanische-Atemfrequenz-Beatmet;44
+Anpassung im Zuge der automatischen Datenübernahme IBUS;Systemischer vaskulärer Widerstandsindex;43
+neue Variable für automatische Datenübernahme IBUS;Beatmungszeit auf niedrigem Druck;42
+Texteintrag;Beatmung;42
+Anlage für IBUS Datenübermittlung;Unterstützungsdruck Beatmung;48
+Anlage für IBUS Datenübermittlung;Unterstützungsdruck Beatmung;48
+Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur;Eingestellte und gemessene Parameter;53
+manueller Modus;Arterieller Druck;56
+Filtermöglichkeit für Systeme (Eingeführt für den Filter auf MLAB/Viro und MiBi-Befunde);Eingestellte und gemessene Parameter;40
+Wert gemessen am Ventilator;Inspiratorische Sauerstofffraktion gemessen;54
+VT/IBW;Beatmung;29
+Flag für eine Fotodokumentation. Gibtkeine Information über Aufnahmezeitpunkt und Anzahl der Fotos;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;36
+Enthällt den ConnectionString für die Remote-Verbindung zum COPRA-Pumpeninterface. Dieser folgt dem Schema tcp:--COMPUTERNAME:PORT/ENDPUNKTNAME.;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;34
+Eindeutige Identifikation innerhalb des Geratetyp-Namensraums (z.B. Seriennummer);Ionisiertes Kalzium aus Nierenersatzverfahren;41
+Name des Geräts, der innerhalb des Gerätetyps eindeutig ist, damit Mitarbeiter ihn aus der Liste zuordnen können;Ionisiertes Kalzium aus Nierenersatzverfahren;40
+Verknüpfung zwischen Patient und einem Gerät;Körpertemperatur unter der Zunge;47
+Leistungserbringer gueltig ab;Einstellung-Einatmungszeit-Beatmung;50
+Oberer Druckniveau;Venöser Druck;60
+Leistungserbringer gueltig bis;Einstellung-Einatmungszeit-Beatmung;49
+Dienststellung;Atemzugvolumen-Einstellung;50
+Archivdruck;Arterieller Druck;57
+Archivdruck-Hashalgorithmus;Rechtsatrialer Druck;47
+Archivdruck-Beginn;Venöser Druck;53
+Archivdruck-Ende;Venöser Druck;64
+Archivdruck-Intervall;Linksatrialer Druck;60
+Archivdruck-Container;Zentralvenöser Druck;60
+Archivdruck-ContainerVersion;Intrakranieller Druck ICP;53
+Archivdruck-Fehlernachricht;Blutdruck Generisch;52
+Archivdruck-Druckdatum;Arterieller Druck;51
+Archivdruck-Status;Zentralvenöser Druck;49
+Archivdruck-Druckobjekt;Arterieller Druck;50
+Objekt für die Geratedefinition;Körpertemperatur unter der Zunge;43
+Filtervariable Prämedikation Nachname;Parameter von extrakorporalen Verfahren;45
+Systemischer Gefäßwiderstand;Systemischer vaskulärer Widerstandsindex;74
+Schrittmacher AV-Intervall;Inspiratorischer Gasfluss;47
+Schrittmacher Frequenz;Mechanische-Atemfrequenz-Beatmet;59
+Schrittmacher Empfindlichkeit;Linksventrikulärer Herzindex;46
+Schrittmacher Ausgangsleistung (Output) Ventrikel;Körpergewicht Percentil altersabhängig;48
+Schrittmacher Ausgangsleistung (Output) Atrium;Beatmungszeit auf hohem Druck;47
+Schrittmachermodus;Exspiratorischer Gasfluss;42
+Schrittmacher Art;Rechtsatrialer Druck;49
+Zerebraler Perfusionsdruck;Zentralvenöser Druck;58
+Intrakranialer Druck;Intrakranieller Druck ICP;84
+zweiter arterieller Blutdruck;Blutdruck;100
+"zweiter nichtinvasiver Blutdruck ";Blutdruck;100
+Linksatrial  Mitteldruck;Linksatrialer Druck;62
+Ereignisse Vitlaparameter Graphisch als Listenauswahl;Eingestellte und gemessene Parameter;47
+arterieller Blutdruck 1;Blutdruck;100
+Schwangerschaftswoche zum Zeitpunkt der Geburt in ganzen Tagen;Inspiratorische Sauerstofffraktion eingestellt;41
+errechneter Geburtstermin;Rechtsventrikulärer Druck;49
+Kopfumfang des Patienten in Zentimetern;Kopfumfang;100
+Zuletzt selektierter Perzentilendatensatz des Patienten;Körpertemperatur unter der Zunge;47
+Bezugsgewicht des Patienten in kg;Einstellung-Ausatmungszeit-Beatmung;47
+Geburtsgewicht des Patienten in Kilogramm;Körpergewicht Percentil altersabhängig;44
+Bewegungsnummer für die eindeutige Identifizierung der Behandlung;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;50
+Behandlungabschluß;Beatmung;48
+Medizinischer Behandlungsabschluss;Inspiratorischer Gasfluss;54
+Behandlung_LEP_Ereignis;Parameter von Beatmung;44
+Fall;Arterieller Druck;29
+Aufnahmezeitpunkt für den Fall;Einstellung-Ausatmungszeit-Beatmung;47
+Entlassungszeitpunkt für den Fall;Einstellung-Einatmungszeit-Beatmung;54
+Identifikationsnummer des Falles;Inspiratorischer Gasfluss;49
+Behandlung;Beatmung;67
+Behandlungsort;Beatmung;55
+Belegung eines Behandlungsortes;Einstellung-Ausatmungszeit-Beatmung;52
+Medikamentengabe;Zentralvenöser Druck;46
+Medikament;Beatmung;44
+Grund der Nicht-Nachverordnung von einer Gabe;Linksv. Herzindex durch Indikatorverdünnung;51
+Medikament einer Verordnung;Linksv. Herzindex durch Indikatorverdünnung;53
+Darstellung der Medikamentengabe als Objekt;Einstellung-Ausatmungszeit-Beatmung;46
+nichtinvasiver Blutdruck 1;Blutdruck;100
+Behandlung_LEP_Information;Parameter von Beatmung;50
+Behandlung_LEP_Zeitstrahl;Einstellung-Einatmungszeit-Beatmung;47
+Typ der Behandlung;Parameter von Beatmung;50
+Status des Ausdrucks;Zentralvenöser Druck;51
+Name des Behandlungsortes;Maximaler Beatmungsdruck;49
+Der Behandlungsort ist kein Bettplatz;Einstellung-Ausatmungszeit-Beatmung;50
+Anfangszeitpunkt der Belegung eines Behandlungsortes;Einstellung-Ausatmungszeit-Beatmung;53
+Endzeitpunkt der Belegung eines Behandlungsortes;Einstellung-Ausatmungszeit-Beatmung;48
+Grund der Belegung eines Behandlungsortes;Einstellung-Ausatmungszeit-Beatmung;50
+Medikamentenmischung;Beatmung;50
+Organisationseinheit;Zeitverhältnis-Ein-Ausatmung;47
+Verordnung von Serien;Linksv. Herzindex durch Indikatorverdünnung;48
+Wird beim Dokumentieren und Nachverordnen einer Gabe erzeugt.;Eingestellte und gemessene Parameter;44
+Computer;Blutdruck;35
+INPULS-Pflegekategorie;Linksatrialer Druck;44
+gemeldete Beatmungsstunden (in Minuten);Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;59
+Tag für den die Pflegekategorie erhoben wurde;Körpertemperatur Generisch;43
+Gemeldet am;Atemfrequenz;43
+Pflegekategorie;Körpertemperatur Leiste;43
+"IDs der INPULS-Kriterien, welche zur Kategorie geführt haben ... und der zusätzlichen Kategorien";Ionisiertes Kalzium aus Nierenersatzverfahren;42
+Transporte;Körpertemperatur Speiseroehre;42
+Betrachtungszeitraum in Minuten;Einstellung-Ausatmungszeit-Beatmung;58
+Pfad für den Export der INPULS-Kategorien;Endexpiratorischer Kohlendioxidpartialdruck;46
+IDs der INPULS-Kriterien, welche zur Höherstufung der Kategorie dienen;Eingestellter inspiratorischer Gasfluss;45
+IDs der INPULS-Kriterien, welche als Basis zur Kategorie dienen;Körpertemperatur Halswirbelsaeule;43
+Zeitpunkte der INPULS-Pflegekategorie-Exporte für diese OE;Körpertemperatur unter der Zunge;45
+fachliche Organisationseinheit der Behandlung;Einstellung-Einatmungszeit-Beatmung;48
+pflegerische Organisationseinheit der Behandlung;Einstellung-Einatmungszeit-Beatmung;51
+Beginn der Behandlung;Atemzugvolumen-Waehrend-Beatmung;49
+Ende der Behandlung;Druckdifferenz Beatmung;57
+Code der Diagnose;Dauer Hämodialysesitzung;45
+Bezeichnung der Diagnose;Druckdifferenz Beatmung;47
+Typ der Diagnose;Dauer Hämodialysesitzung;51
+In diesem Objekt werden Verordnungsanforderungen und -befunde zu Diagnostik bzw. Konsilen eingetragen.;Ionisiertes Kalzium aus Nierenersatzverfahren;38
+Diagnostik- bzw. Konsilanforderung angemeldet;Eingestellter inspiratorischer Gasfluss;44
+Befund zur Diagnostik- bzw. Konsilanforderung;Einstellung-Einatmungszeit-Beatmung;44
+Zeitpunkt, zu dem die Diagnostik- bzw. Konsilanforderung geschrieben wurde;Linksv. Herzindex durch Indikatorverdünnung;39
+Fragestellung zur Diagnostik- bzw. Konsilanforderung;Eingestellter inspiratorischer Gasfluss;43
+Zeitpunkt der erledigten Diagnostik- bzw. Konsilanforderung;Linksv. Herzzeitvolumen durch Indikatorverdünnung;48
+Name des Arztes, der die Diagnostik- bzw. Konsilanforderung befundet.;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;42
+Kategorie, ob es sich um Diagnostik- oder Konsilanforderung handelt.;Linksventrikulaeres Schlagvolumen;41
+Lokalisation der zu befundenden Region;Druckdifferenz Beatmung;43
+Methode der Diagnostik bzw. des Konsils;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;40
+Transientes Objekt für Filterkriterien;Spontane-Mechanische-Atemfrequenz-Beatmet;46
+Filtervariable für ein Beginndatum;Intrakranieller Druck ICP;48
+Filtervariable für ein Endedatum;Zeitverhältnis-Ein-Ausatmung;45
+Filtervariable für eine Ganzzahl;Blutflussindex extrakorporaler Gasaustausch;46
+Filtervariable ein Ja-/Nein-Feld;Extrakorporale Verfahren;44
+Filtervariable ein Ja-/Nein-Feld;Extrakorporale Verfahren;44
+Filtervariable für die VO-Kategorie;Parameter von extrakorporalen Verfahren;49
+Status der Verordnung/Aufgabe (z.B. offen oder erledigt);Linksv. Herzzeitvolumen durch Indikatorverdünnung;46
+Termin für die Untersuchung/Massnahme;Körpertemperatur unter der Zunge;51
+Wiederholung der Untersuchung/Massnahme für x Tage;Körpertemperatur unter der Zunge;45
+Anzeigetext der Anordnung/Aufgabe (verwendet für Darstellung in ObjectLine));Einstellung-Ausatmungszeit-Beatmung;43
+mehrfache Zeiten für Anordnung/Aufgabe;Parameter von extrakorporalen Verfahren;47
+Zeit für Anordnung/Aufgabe;Parameter von Beatmung;43
+wird zur Anzeige in ObjektLines verwendet und dynamisch angelegt bzw. geändert;Eingestellte und gemessene Parameter;39
+Filtervariable für die VO-Methode;Parameter von extrakorporalen Verfahren;51
+Filtervariable für den VO-Status;Dauer extrakorporaler Gasaustausch;52
+Filtervariable für die VO-Termin Von;Parameter von extrakorporalen Verfahren;51
+Filtervariable für die VO-Termin Bis;Parameter von extrakorporalen Verfahren;46
+Filtervariable für die Schicht, deren Aufgaben in der Verordnungsliste dargestellt werden sollen.;Eingestellte und gemessene Parameter;42
+Schema für Verordnungen;Körpertemperatur unter der Zunge;45
+Filtervariable für einen Namen;Extrakorporale Verfahren;49
+Filtervariable für einen Ort/eine Stadt;Linksventrikulärer Herzindex;46
+Filtervariable für eine Postleitzahl;Positiv-endexpiratorischer Druck;48
+Filtervariable für eine externe ID;Eingestellte und gemessene Parameter;49
+Filter Objekt für multiple String;Spontane-Atemfrequenz-Beatmet;46
+Filtervariable für einen multiplen String;Linksventrikulaeres Schlagvolumenindex;44
+Objekt mit Links auf die zugehörigen Durchführungsobjekte;Beatmungszeit auf niedrigem Druck;45
+Texteintrag zum zugehörigen Durchführungsobjekt der VO;Körpertemperatur unter der Zunge;43
+Link zum zugehörigen Durchführungsobjekt der VO;Beatmungszeit auf niedrigem Druck;44
+Variable die Berechtigungen für Neuanlage enthält;Beatmungszeit auf niedrigem Druck;43
+Intervall zwischen den Wiederholungen der Untersuchung/Massnahme in x Tagen;Eingestellte und gemessene Parameter;40
+Filtervariable um AO absteigend sortieren;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;43
+Filtervariable um Labor auszublenden;Linksventrikulaeres Schlagvolumen;43
+Filtervariable für Freitextsuche;Ideales Körpergewicht;47
+Gibt an ob die Verordnung nicht visiert ist;Linksv. Herzindex durch Indikatorverdünnung;48
+Kopierstatus der Verordnung;Körpertemperatur unter der Zunge;62
+Link auf Leistungsanforderungsobjekt zur Anordnung;Einstellung-Einatmungszeit-Beatmung;45
+Filtervariable Prämedikation Nachname;Parameter von extrakorporalen Verfahren;45
+Filtervariable Prämedikation Fallnummer;Parameter von extrakorporalen Verfahren;42
+Filtervariable PrämedikationGeburtsdatum;Körpertemperatur Harnblase;44
+Filtervariable Prämedikation OP Saal;Körpergewicht Percentil altersabhängig;42
+Filtervariable Prämedikation OP Datum;Horowitz-In-Arteriellem-Blut;44
+Filtervariable Prämedikation Datum;Parameter von Beatmung;44
+Filtervariable Prämedikation Freigabestatus;Körpergewicht Percentil altersabhängig;46
+Besucherverinbarung für den Patienten;Einstellung-Einatmungszeit-Beatmung;48
+Telefonummer des Patientenbetreuers;Körpertemperatur unter der Zunge;48
+Betreuer des Patienten;Spontane-Atemfrequenz-Beatmet;51
+Muttersprache des Patienten;Körpertemperatur unter der Zunge;48
+Religion des Patienten;Parameter von Beatmung;45
+Angehoerigen-Telefon;Monitoring und Vitaldaten;49
+Nachname des Angehörigen;Spontanes-Atemzugvolumen;47
+Familienstand des Patienten;Parameter von Beatmung;45
+Handy Nummer der Angehörigen des Patienten;Eingestellte und gemessene Parameter;44
+Berufliche Telefonnummer der Angehörigen des Patienten;Körpertemperatur Generisch;44
+Beruf des Patienten;Parameter von Beatmung;49
+Arbeitgeber des Patienten;Eingestellte und gemessene Parameter;49
+Score-Variablen zur Erfassung des Braden-Scores zu einem beliebigen Zeitpunkt in der Zeitachse;Eingestellte und gemessene Parameter;37
+Lokalisation des Atemwegszuganges;Atemzugvolumen-Einstellung;47
+Lokalisation der enteralen Sonde;Zentralvenöser Druck;51
+Beschreibung der Wunde, mit Listenauswahl;Systemischer vaskulärer Widerstandsindex;46
+Gerät zur Sekretmobilisation, Listenanhang;Körpertemperatur Generisch;49
+Dokumentation von durchgeführten Systemwechseln bei Enteralen Sonden;Parameter von extrakorporalen Verfahren;42
+Dokumentation des eingestellten Modus der V.A.C. Pumpe;Eingestellte und gemessene Parameter;45
+Dokumentation der eingestellten Intensität der V.A.C. Pumpe;Eingestellte und gemessene Parameter;45
+Verlaufsdokumentation bzgl. des Dekubitusgrades;Linksventrikulaeres Schlagvolumenindex;43
+Verlaufdokumentation der Beobachtung bzgl. des Dekubitus;Einstellung-Einatmungszeit-Beatmung;47
+Dokumentation des V.A.C. Pumpen Modus bei Dekubiti;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;40
+Dokumentation der V.A.C. Pumpen Einstellung bzgl. der Intensität;Atemzugvolumen-Einstellung;59
+Dokumentation der ersten Beobachtung bzgl. Messsonden bei Aufnahme oder Anlage;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;45
+Dokumentation der Erstbeobachtung bzgl. Drainagen bei Anlage oder Aufnahme;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;42
+Dokumentation bei Anlege oder Aufnahme;Spontane-Mechanische-Atemfrequenz-Beatmet;46
+Dokumentation der Erstbeobachtung bzgl. Harnwege bei Anlage oder Aufnahme;Atemzugvolumen-Waehrend-Beatmung;44
+Erste Beobachtungbzgl. des Dekubitus bei Aufnahme oder erstem Erkennen;Beatmungszeit auf niedrigem Druck;47
+Beschreibung der Dekubitustiefe bei Aufnahme oder Erstbeobachtung;Einstellung-Ausatmungszeit-Beatmung;42
+Dokumentation der Wundtiefe bei Aufnahme oder Erstauftreten;Beatmungszeit auf niedrigem Druck;43
+Beschreibung des Lippenstatus bei Aufnahme;Einstellung-Ausatmungszeit-Beatmung;49
+Beschreibung des Haarstatus bei Aufnahme;Einstellung-Ausatmungszeit-Beatmung;45
+Beschreibung des Zahnstatus bei Aufnahme;Einstellung-Ausatmungszeit-Beatmung;48
+Beschreibung des Ohrenstatus rechts bei Aufnahme;Spontane-Mechanische-Atemfrequenz-Beatmet;45
+Beschreibung des Ohrenstatus links bei Aufnahme;Spontanes-Plus-Mechanisches-Atemzugvolumen;47
+Beschreibung des Nasenstatus rechts bei Aufnahme;Spontanes-Plus-Mechanisches-Atemzugvolumen;44
+Beschreibung des Nasenstatus links bei Aufnahme;Spontanes-Plus-Mechanisches-Atemzugvolumen;47
+Dokumentation der Mege des Nasen- und Rachensekrets;Körpertemperatur Nasen-Rachen-Raum;53
+Beschreibung des Sprachverhaltens des Patienten;Zeitverhältnis-Ein-Ausatmung;49
+Dokumentation des Sprachverhaltens des Patienten bei Aufnahme;Ionisiertes Kalzium aus Nierenersatzverfahren;45
+Dokumentation der Ohrenpflege rechts ab dem 22.02.2010;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;37
+Dokumentation des Ohrenstatus links ab dem 22.02.2010;Spontanes-Plus-Mechanisches-Atemzugvolumen;40
+Dokumentation der Nasenpflege links ab dem 22.02.2010.;Linksv. Schlagvolumen durch Indikatorverdünnung;41
+Dokumentation des Nasenstatus links ab dem 22.02.2010.;Spontanes-Plus-Mechanisches-Atemzugvolumen;40
+Dokumentation der Augenpflege links ab dem 22.02.2010;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;38
+Dokumentation des Augensekrets links ab dem 22.02.2010;Linksv. Herzzeitvolumen durch Indikatorverdünnung;40
+Beschreibung des AugenStatus links ab 23.02.2010;Einstellung-Ausatmungszeit-Beatmung;43
+Dokumentation von Angehörigengesprächen.;Inspiratorische Sauerstofffraktion gemessen;48
+Dokumentation von Angehörigenbetreuung;Parameter von Beatmung;47
+Dokumentation eines Angehörigengesprächs;Spontanes-Atemzugvolumen;45
+Dokumenttion der Versorgung verstorbener Patienten.;Parameter von extrakorporalen Verfahren;47
+Liste;Puls;44
+Beurteilung der Sprache im Verlegungsbericht Pflege;Körpertemperatur unter der Zunge;49
+Dokumentation des Dekubitus Zusatzrisikos bei Verlegung;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;45
+Dokumentation des Status der Lagerungsmaßnahmen bei Verlegung;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;45
+Dokumentation des Mobilisationsgrad zum Zeitpunkt der Verlegung;Linksv. Herzzeitvolumen durch Indikatorverdünnung;47
+Dokumentation des Status des Schluckaktes;Spontanes-Plus-Mechanisches-Atemzugvolumen;48
+Dokumentation des Nasenstatus im Pflegeverlegungsbericht;Körpertemperatur unter der Zunge;41
+Dokumentation des Nasenstus links im Pflegeverlegungsbericht;Linksv. Schlagvolumen durch Indikatorverdünnung;42
+Dokumentation des Ohrenstatus rechts im Pflegeverlegungsbericht;Ionisiertes Kalzium aus Nierenersatzverfahren;41
+Dokumentation des Ohrenstatus links im Pflegeverlegungsbericht;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;41
+Dokumentation der Körperpflege des Patienten, die durch das Pflegepersonal übernommen wird.;Linksv. Herzindex durch Indikatorverdünnung;41
+Dokumentation der assistierten Körperpflege im Pflegeverlegungsbericht.;Ionisiertes Kalzium aus Nierenersatzverfahren;42
+Dokumentation der selbstständigen Körperpflege des Pat. im Pflegeverlegungsbericht.;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;43
+Dokumentation des Zahnstatus zum Zeitpunkt der Verlegung im Pflegeverlegungsbericht.;Einstellung-Ausatmungszeit-Beatmung;39
+Dokumentation des Haarstatus bei Verlegung im Pflegeverlegungsbericht.;Ionisiertes Kalzium aus Nierenersatzverfahren;42
+Dokumentation des Lippenstatus zum Zeitpunkt der Verlegung im Pflegeverlegungsbericht.;Körpertemperatur unter der Zunge;40
+Dokumentation des Urogenitalstatus zum Zeitpunkt der Verlegung im Pflegeverlegungsbericht.;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;40
+Der letzte in der Verlaufsdokumentation ermittelter Braden Score, der in den Pflegeverlegungsbericht gespiegelt wird.;Inspiratorische Sauerstofffraktion eingestellt;37
+Dokumentation der Urinbeschaffenheit zum zeitpunkt der Verlegung;Linksv. Herzzeitvolumen durch Indikatorverdünnung;43
+Dokumentation der Stuhlbeschaffenheit zum zeitpunkt der Verlegung;Linksv. Herzzeitvolumen durch Indikatorverdünnung;41
+Dokumentation des Ventilationsstatus zum Zeitpunkt der Verlegung;Linksv. Herzzeitvolumen durch Indikatorverdünnung;45
+Liste;Puls;44
+Dokumentationsmöglichkeit für den Qualitätscheck (Kontrollle der eingestellten Verfahrensparameter) des Dialyse- bzw. Hämofiltrationsgerät.;Ionisiertes Kalzium aus Nierenersatzverfahren;36
+"Dekanülierungsplan des Patienten. Anlage mehrerer Pläne ist möglich. ";Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;47
+Objekt für die Tabelle der körperlichen Untersuchung der ärztlichen Dokumentation;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;42
+Bemerkung zu einer Diagnose;Einstellung-Einatmungszeit-Beatmung;58
+Dokumentation des Aufnahmegrunds in der Dokumentation Medizinischer Dienst.;Einstellung-Ausatmungszeit-Beatmung;44
+Dokumentation des Patientengewichtes bei Aufnahme.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;43
+Dokumentation der Patientengröße bei Aufnahme.;Einstellung-Ausatmungszeit-Beatmung;46
+Dokumentation der Aufnahmeart.;Parameter von Beatmung;47
+ICD-Katalogtext wie er aus SAP übermittelt wird;Beatmungszeit auf niedrigem Druck;41
+Hilfsmittel;Hämodialyse Blutfluss;39
+Listenauswahl;Körpertemperatur nasal;41
+Herzfrequenz Zielwert;Herzfrequenz;100
+RR Zielwert;Arterieller Druck;50
+MAP Zielwert;Arterieller Druck;41
+ZVD Zielwert;Arterieller Druck;48
+Temperatur Zielwert;Körpertemperatur Leiste;68
+ICP Zielwert;Intrakranieller Druck ICP;49
+CPP Zielwert;Zentralvenöser Druck;45
+SpO2 Zielwert;Zentralvenöser Druck;38
+BZ Zielwert;Zentralvenöser Druck;40
+Bilanz Zielwert;Mittlerer Beatmungsdruck;41
+Kostform Intervention;Linksventrikulärer Herzindex;42
+Lagerung Intervention;Linksventrikulaeres Schlagvolumen;48
+BZ-Kontrolle Messintervall;Atemzugvolumen-Einstellung;46
+Bilanz Messintervall;Parameter von Beatmung;48
+Spez.Gew. Messintervall;Zentralvenöser Druck;44
+Gewicht Messintervall;Körpertemperatur Generisch;48
+ICP Messintervall;Intrakranieller Druck ICP;52
+ZVD Messintervall;Arterieller Druck;41
+Pupillen Zielwert;Intrakranieller Druck ICP;43
+"Bewusstsein Messintervall ";Einstellung-Ausatmungszeit-Beatmung;50
+Globaler Zwischenspeicherfür die Fallnummer für die Verwendung in Dialogen die aufgrund der Var-Struktur nicht an das Fallobjekt kommen.;Linksv. Herzzeitvolumen durch Indikatorverdünnung;35
+Dokumentation des gemessenen Blutdruckes unter IABP;Pulmonalarterieller Blutdruck;48
+Dokumentation des prozentualen Anteils des Aufblasens des Ballons;Spontane-Mechanische-Atemfrequenz-Beatmet;45
+Dokumentation der gewählten EKG Ableitung für den IABP Einsatz;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;46
+Dokumentation des Unterstützungdruckes;Unterstützungsdruck Beatmung;69
+Dokumentation der IABP Frequenz;Atemfrequenz;47
+Dokumentation des ausgewählten Triggers der IABP;Linksv. Herzzeitvolumen durch Indikatorverdünnung;43
+Dokumentation des prozentualen Anteils des Leersaugens des Ballons;Ionisiertes Kalzium aus Nierenersatzverfahren;47
+Liste;Puls;44
+Liste;Puls;44
+Gegangen ohne Arztkontakt;Parameter von extrakorporalen Verfahren;44
+Auslandsaufenthalt in den letzten 6 Monaten?;Zeitverhältnis-Ein-Ausatmung;46
+Auslandsaufenthalt in den letzten 6 Monaten?;Zeitverhältnis-Ein-Ausatmung;46
+CODE zum Überspringen der Pflichtfelder Vitalparameter - Anforderung für IT Lizenz;Eingestellte und gemessene Parameter;42
+Freitextfeld;Arterieller Druck;41
+Pat. wird unter Reanimstionsbedingungen aufgenommen;Atemzugvolumen-Waehrend-Beatmung;44
+RR_systolisch Zielwert;Systemischer vaskulärer Widerstandsindex;46
+RR_diastolisch Zielwert;Positiv-endexpiratorischer Druck;47
+Atemfrequenz Zielwert;Atemfrequenz;100
+GCS Zielwert;Zentralvenöser Druck;45
+NRS Zielwert;Zentralvenöser Druck;45
+Raumzuweisungsvariable Notaufnahme;Einstellung-Ausatmungszeit-Beatmung;43
+Eingestelltes Körpergewicht;Körpergewicht;100
+Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben;Inspiratorische Sauerstofffraktion gemessen;52
+Exspiratorische Triggersensitivität, eine Parametereinstellung;Exspiratorischer Gasfluss;52
+"Eingestellte CMV Frequenz bei dem Respirator G5 in den Beatmungsmodi DUOPAP, APVcmv, Pcmv, ";Eingestellte und gemessene Parameter;50
+Eingestellt SIMV Frequenz bei dem Respirator T1 in den Beatmungsmodi APVsimv, Psimv.;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;46
+Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.;Eingestellter inspiratorischer Gasfluss;46
+Beatmung_ES_T1_Psupport;Beatmung;52
+Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi;Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;47
+prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird;Spontane-Mechanische-Atemfrequenz-Beatmet;45
+Einstelungswert für die Inspirationszeit;Eingestellter inspiratorischer Gasfluss;59
+Sauerstoffeinstellung;Sauerstoffgasfluss;67
+Für die Kopie Aufnahmemedikation--> Entlassmedikation;Linksv. Herzzeitvolumen durch Indikatorverdünnung;42
+Implementierung für anamnestische Erhebung des Status innerhalb d. Active X Anwendung;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;39
+Allergiestatus unbekannt fallbezogen - Active X Plugin;Systemischer vaskulärer Widerstandsindex;40
+Fall_Allergie_nichtErhoben - Active X Plugin;Körpergewicht Percentil altersabhängig;44
+Status nicht bekannt;Unterstützungsdruck Beatmung;51
+Peaklfowmeter Messung in % mit Definition <> Messung exspirat. Spitzenfluss;Eingestellte und gemessene Parameter;45
+Listenanhang mit positiv und negativ Auswahl;Einstellung-Ausatmungszeit-Beatmung;46
+Peakflowmessung mit Angabe > <, daher String;Einstellung-Ausatmungszeit-Beatmung;49
+COPY Vormedikation--Entlassmedikation;Linksv. Herzzeitvolumen durch Indikatorverdünnung;43
+bezogen auf kontinuierliche Verordnungen;Linksv. Herzzeitvolumen durch Indikatorverdünnung;48
+Listeneintrag -Fotodokumentation durchgeführt;Linksv. Herzzeitvolumen durch Indikatorverdünnung;47
+Verlaufseintrag bei Erstellung einer Fotodokumentation. Dient nur als Durchführungsnachweis;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;40
+Neuanlage für B_Entlassbefund, da diese den falschen Datentyp hat;Spontane-Mechanische-Atemfrequenz-Beatmet;44
+Behandlungsdiagnose;Maximaler Beatmungsdruck;51
+Relevante Vorgeschichte;Mechanische-Atemfrequenz-Beatmet;51
+Ort der Messung ABP1;Dauer Hämodialysesitzung;47
+Ort der Messung ABP2;Dauer Hämodialysesitzung;47
+Liste hinterlegt, definierte Peepeinstellungen über Ventil;Einstellung-Einatmungszeit-Beatmung;51
+Pertionealdialyse Auslaufmenge in ml;Zeitverhältnis-Ein-Ausatmung;54
+Auslaufzeit;Zeitverhältnis-Ein-Ausatmung;47
+Einlaufhöhe in cm;Einstellung-Einatmungszeit-Beatmung;43
+Peritonealdialyse Einlaufmenge in ml;Zeitverhältnis-Ein-Ausatmung;51
+Apnoezeit;Körpergewicht;48
+Einstellung der Luftfeuchtigkeit im Inkubator;Einstellung-Einatmungszeit-Beatmung;60
+Einstellung der Luftemperatur;Atemzugvolumen-Einstellung;62
+Einstellung der O2-Konzentration im Inkubator;Atemzugvolumen-Einstellung;59
+Messung der Luftfeuchtigkeit im Inkubator;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;48
+Messung der Luftemperatur im Inkubator;Körpertemperatur unter der Zunge;61
+Messung der O2-Konzentration im Inkubator;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;46
+Einstellwert: Zeiteinstellung für das untere Druckniveau;Einstellung-Einatmungszeit-Beatmung;56
+Einstellwert: Tidalvolumen;Linksventrikulaeres Schlagvolumen;55
+Unerwarteter positiver endexspiratorischer Druck;Positiv-endexpiratorischer Druck;80
+Statische Compliance;Dynamische Kompliance;49
+Exspiratorisches Minutenvolumen;Exspiratorischer Gasfluss;64
+Exspiratorischer Peakflow;Exspiratorischer Gasfluss;80
+Spontane Atemfrequenz;Spontane-Atemfrequenz-Beatmet;100
+Gesamtfrequenz;Atemfrequenz;77
+gemessenes I:E Verhältnis;Zeitverhältnis-Ein-Ausatmung;55
+Inspiratorischer Peakflow;Inspiratorischer Gasfluss;80
+Sauerstoffkonzentration des abgegebenen Gasgemisches;Inspiratorische Sauerstofffraktion gemessen;63
+Atemweg-Okklusionsdruck, ein Monitoring-Parameter;Parameter von Beatmung;58
+Messwert: Beatmungsdruck Peep/CPAP;Mittlerer Beatmungsdruck;74
+"Inspiratorischer Druck, mit Pinsp wird der Zieldruck (zusätzlich zu PEEP/CPAP) bezeichnet, der im Modus ASV während der Inspirationsphase abgegeben wird";Inspiratorischer Gasfluss;78
+Messwert: Beatmungsmitteldruck;Mittlerer Beatmungsdruck;72
+Minimaler Atemwegsdruck, ein Monitoring Parameter;Parameter von Beatmung;58
+Plateau-Atemwegsdruck;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;76
+Druck Zeit Produkt (Pressure Time Product);Venöser Druck;59
+Inspiratorische Flow-Resistance;Inspiratorischer Gasfluss;68
+Index für schnelle Flachatmung (Rapid Shallow Breathing Index);Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;50
+Wert gemessen am Ventilator;Inspiratorische Sauerstofffraktion gemessen;54
+Inspirationszeit in Sekunden;Einstellung-Einatmungszeit-Beatmung;54
+Leckagevolumen;Herzzeitvolumen;62
+"Messwert, exspiratorisches Tidalvolumen";Exspiratorischer Sauerstoffpartialdruck;65
+eingestellte maximale Inspirationszeit im Modus NIV;Inspiratorische Sauerstofffraktion eingestellt;58
+Prozentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus;Atemzugvolumen-Einstellung;48
+Einstellwert oberes Druckniveau im Modus DuoPAP;Pulmonalarterieller wedge Blutdruck;46
+Einstellwert: unteres Druckniveau im Modus APRV;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;45
+Peritonealdialyse - Einlaufhöhe in cm;Einstellung-Einatmungszeit-Beatmung;46
+Liste;Puls;44
+Aktualisierung der Variablenstruktur , Bestehdner Ramsay Score als String Variable wird hierdurch abgelöst;Sauerstoffsättigung im art. Blut durch Pulsoxymetrie;38
+eingestelltes Körpergewicht;Körpergewicht;100
+Eingestellter PEEP, CPAP oder Ptief;Eingestellte und gemessene Parameter;57
+Inspiratorischer Druck;Inspiratorischer Gasfluss;84
+Eingestellte CMV Frequenz;Eingestellte und gemessene Parameter;65
+Eingestellte SIMV Frequenz;Eingestellte und gemessene Parameter;63
+Inspirationszeit max;Exspiratorischer Gasfluss;49
+Exspiratorisches Minutenvolumen;Exspiratorischer Gasfluss;64
+spontanes Atemminutenvolumen;Spontanes-Atemzugvolumen;85
+Spontane Atemfrequenz;Spontane-Atemfrequenz-Beatmet;100
+Gesamtatemfrequenz;Atemfrequenz;80
+Endtidaler CO2-Partialdruck;Endexpiratorischer Kohlendioxidpartialdruck;57
+Plateau- oder endinspiratorischer Druck;Positiv-endexpiratorischer Druck;71
+Inspiratorischer Druck;Inspiratorischer Gasfluss;84
+AutoPEEP oder intrinsischer PEEP;Körpertemperatur Speiseroehre;50
+Verhältnis Inspirationszeit:Exspirationszeit;Zeitverhältnis-Ein-Ausatmung;57
+Exspiratorischer Peakflow;Exspiratorischer Gasfluss;80
+Inspiratorischer Peakflow;Inspiratorischer Gasfluss;80
+Exspiratorische Zeitkonstante;Exspiratorischer Gasfluss;63
+Inspiratorische Flow-Resistance;Inspiratorischer Gasfluss;68
+Statische Compliance;Dynamische Kompliance;49
+Atemwegs-Okklusionsdruck;Unterstützungsdruck Beatmung;55
+"Index für schnelle Flachatmung („Rapid Shallow Breathing Index“) ";Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;50
+Ectopic Status Label;Exspiratorischer Gasfluss;44
+Arrhytmia Rhytm Status label;Körpertemperatur Nasen-Rachen-Raum;46
+Windelgewicht in g. Wird in Bilanz als ml verrechnet;Körpergewicht Percentil altersabhängig;45
+Magenrestesatz Intervention;Linksventrikulaeres Schlagvolumen;47
+"Kopfumfang Grenzwert ";Kopfumfang;100
+tcpO2 Grenzwert;Spontane-Atemfrequenz-Beatmet;41
+Verordnung AP Ersatz;Extrakorporale Verfahren;45
+Stuhlgang Messintervall;Atemzugvolumen-Einstellung;45
+Magensonde Messintervall;Atemzugvolumen-Einstellung;48
+UrinStix Messintervall;Körpertemperatur Stirn;47
+tcpO2 Messintervall;Substituatvolumen;39
+Kopfumfang Messintervall;Kopfumfang;100
+Gewicht Zielwert;Körpergewicht;50
+Kopfumfang Zielwert;Kopfumfang;100
+tcpO2 Zielwert;Zentralvenöser Druck;42
+SaO2 Zielwert;Arterieller Druck;40
+Herkunftsland der Mutter;Zentralvenöser Druck;47
+Geburtsdatum der Mutter;Körpertemperatur unter der Zunge;56
+Alkoholgebrauch während der Schwangerschaft;Körpergewicht Percentil altersabhängig;46
+Alkoholgebrauch während der Schwangerschaft;Körpergewicht Percentil altersabhängig;46
+Nikotingebrauch während der Schwangerschaft;Ionisiertes Kalzium aus Nierenersatzverfahren;44
+Nikotingebrauch während der Schwangerschaft;Ionisiertes Kalzium aus Nierenersatzverfahren;44
+Insulinapplikation während der Schwangerschaft;Inspiratorische Sauerstofffraktion eingestellt;48
+Insulinapplikation während der Schwangerschaft;Inspiratorische Sauerstofffraktion eingestellt;48
+Ernährungszustand bei Aufnahme;Einstellung-Einatmungszeit-Beatmung;47
+Allgemeinzustand bei Aufnahme;Eingestellte und gemessene Parameter;43
+Impfungen nach STIKO durchgeführt;Körpertemperatur Nasen-Rachen-Raum;46
+Standard Base Excess;Eingestellte und gemessene Parameter;43
+Menge der Nahrung in ml, die getrunken wurde. Die Menge wird nicht mit der Bilanz verrechnet;Pulmonalarterieller wedge Blutdruck;40
+Menge der Nahrung in ml, die gestillt wurde. Die Menge wird nicht mit der Bilanz verrechnet;Eingestellte und gemessene Parameter;41
+Menge der Nahrung in ml, die sondiert wurde. Die Menge wird nicht mit der Bilanz verrechnet;Spontane-Mechanische-Atemfrequenz-Beatmet;40
+Mittlerer Arterieller Blutdruck;Blutdruck;100
+Wachheit/Aufmerksamkeit;Beatmungszeit auf hohem Druck;54
+Schwangerschaftswoche;Sauerstoffgasfluss;41
+"Betreuung nach AWMF bei Kindern mit Geb. Gew. unter 1500g ";Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;45
+Kopfumfang bit cm;Kopfumfang;100
+Nichtinvaiver Blutdruck linkes Bein;Blutdruck;100
+Nichtinvasiver Blutdruck rechtes Bein;Blutdruck;100
+Nichtinvasiver Blutdruck linker Arm;Blutdruck;100
+Nichtinvasiver Blutdruck rechter Arm;Blutdruck;100
+Ort der Messung NBP1;Dauer Hämodialysesitzung;47
+transcutan gemessener pO2 Wert.;Inspiratorische Sauerstofffraktion gemessen;49
+Soziale_Besonderheiten, z.B. Familiensituation;Monitoring und Vitaldaten;41
+Parameter im Modus Highflow - ab 08.06.2017;Parameter von Beatmung;58
+Elternanleitung;Dauer Hämodialysesitzung;53
+Pupillenform links bei Aufnahme;Einstellung-Ausatmungszeit-Beatmung;45
+Pupillenform rechts bei Aufnahme;Zeitverhältnis-Ein-Ausatmung;47
+Cornealreflex links bei Aufnahme;Zeitverhältnis-Ein-Ausatmung;44
+Cornealreflex rechts bei Aufnahem;Zeitverhältnis-Ein-Ausatmung;47
+Pupillenkontrolle links bei Aufnahme (Pupillenweite | Pupillenrekation);Linksventrikulaeres Schlagvolumenindex;40
+Pupillenkontrolle rechts bei Aufnahme (Pupillenweite | Pupillenreaktion);Beatmungsvolumen-Pro-Minute-Machineller-Beatmung;41
+Stuhlgang Intervention;Atemzugvolumen-Einstellung;50
+Magensonde Intervention;Linksventrikulaeres Schlagvolumenindex;49
+Stuhlgang Messintervall;Atemzugvolumen-Einstellung;45
+Stuhltherapie Intervention;Linksventrikulärer Druck;45
+"Urinstix Messinterval ";Körpertemperatur Stirn;48
+Drainagen/Sog Intervention;Zeitverhältnis-Ein-Ausatmung;49
+Fototherapie Intervention Wert;Linksventrikulärer Herzindex;53
+Fototherapie Intervention Maßnahme;Linksventrikulärer Herzindex;47
+Magenrestersatz Intervention;Linksventrikulaeres Schlagvolumen;46
+Nahrungsersatz Intervention;Ionisiertes Kalzium aus Nierenersatzverfahren;44
+AP_Ersatz Intervention;Körpergrösse Percentil;52
+Sonstige Intervention;Spontanes-Atemzugvolumen;49
+Herzfrequenz Grenzwert;Herzfrequenz;100
+Herzfrequenz Messintervall;Herzfrequenz;100
+Respiration Grenzwert;Körpertemperatur Generisch;52
+Respiration Messintervall;Inspiratorische Sauerstofffraktion gemessen;50
+Respiration Zielwert;Exspiratorischer Gasfluss;49
+SpO2 Messintervall;Substituatfluss;42
+SpO2 Grenzwert;Spontane-Atemfrequenz-Beatmet;47
+tcpO2 Messintervall;Substituatvolumen;39
+tcpO2 Zielwert;Zentralvenöser Druck;42
+"tcpCO2 Zielwert ";Zentralvenöser Druck;41
+tcpO2 Grenzwert;Spontane-Atemfrequenz-Beatmet;41
+tcpCO2 Grenzwert;Spontane-Atemfrequenz-Beatmet;40
+etCO2 Grenzwert;Blutdruck Generisch;47
+etCO2 Messintervall;Parameter von Beatmung;44
+"etCO2 Zielwert ";Mittlerer Beatmungsdruck;42
+ABP Grenzwert;Blutdruck Generisch;44
+ABP Messintervall;Intrakranieller Druck ICP;43
+"ABP Zielwert ";Arterieller Druck;41
+NBP Grenzwert;Körpertemperatur nasal;41
+NBP Messintervall;Atemzugvolumen-Einstellung;42
+"NBP Zielwert ";Zentralvenöser Druck;39
+PAP Grenzwert;Körpertemperatur Gelenk;46
+"PAP Messintervall ";Eingestellter inspiratorischer Gasfluss;39
+"PAP Zielwert ";Arterieller Druck;41
+LAP Grenzwert;Körpergrösse Percentil;42
+"LAP Messintervall ";Intrakranieller Druck ICP;43
+"LAP Zielwert ";Arterieller Druck;41
+"Temperatur Grenzwert ";Körpertemperatur Generisch;71
+Temperatur Messintervall;Körpertemperatur Kern;64
+Gewicht Grenzwert;Körpertemperatur Generisch;52
+Gewicht Messintervall;Körpertemperatur Generisch;48
+Gewicht Zielwert;Körpergewicht;50
+Bilanz Grenzwert;Blutdruck Generisch;46
+ZVD Grenzwert;Parameter von Beatmung;40
+ICP Grenzwert;Blutdruck Generisch;44
+Scoreerhebung Messintervall;Eingestellte und gemessene Parameter;48
+Sonstige Messintervall;Systemischer vaskulärer Widerstandsindex;46
+Einstellung des Neigungswinkels;Einstellung-Einatmungszeit-Beatmung;64
+Verordnung des Neigungswinkels;Einstellung-Einatmungszeit-Beatmung;46
+Liste;Puls;44
+Dokumentation von Interventionen (Operationen, andere Maßnahmen);Parameter von extrakorporalen Verfahren;46
+Blutgruppenspezifität der Mutter;Körpertemperatur unter der Zunge;48
+Neutrophile Granulozyten absolut;Pulmonalarterieller Blutdruck;46
+"automatisch berechnet aus Pset ml/h ";Positiv-endexpiratorischer Druck;45
+Listenauswahl;Körpertemperatur nasal;41
+Liste Ja Nein;Dynamische Kompliance;41
+Liste Gefäßauswahl;Körpertemperatur Leiste;47
+Delta Temperatur zentral/Temperatur peripher;Körpertemperatur rektal;69
+Verantwortlicher Mitarbeiter;Eingestellter inspiratorischer Gasfluss;51
+"Körperlänge Messintervall ";Körpergroesse;57
+"Kopfumfang Messintervall ";Kopfumfang;100
+tcpCO2 Messintervall;Substituatvolumen;38
+Die/Der verantwortliche Arzt/Ärztin der/die die Reakarte freigibt.;Mechanische-Atemfrequenz-Beatmet;48
+Der/Die verantwortliche Pflegekraft der/die die Reakarte freigibt;Körpertemperatur unter der Zunge;43
+Auswahl von nummerisch einzugebenden Profilen;Spontane-Mechanische-Atemfrequenz-Beatmet;47
+Gabe von Atemgasen;Parameter von Beatmung;55
+Eingestellter Basisfluss im Beatmungssystem;Eingestellter inspiratorischer Gasfluss;63
+Eingestellte Oszillationsfrequenz;Inspiratorische Sauerstofffraktion eingestellt;56
+Prozentualer Anteil der Insp.Zeit bezogen auf den gesamten Atemzyklus;Spontane-Mechanische-Atemfrequenz-Beatmet;44
+Prozentuale Kolbenauslenkung;Parameter von Beatmung;48
+Eingestellter mittlerer Atemwegsdruck;Mittlerer Beatmungsdruck;66
+O2 Konzentration des Gasgemisches;Dynamische Kompliance;48
+gemessene Druckamplitude;Eingestellte und gemessene Parameter;55
+Gemessene O2 Konzentration;Eingestellte und gemessene Parameter;55
+Ein/Aus;Ionisiertes Kalzium aus Nierenersatzverfahren;60
+Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Liste ein aus;Zeitverhältnis-Ein-Ausatmung;55
+Zeit zwischen 2 SBT;Beatmungszeit auf hohem Druck;46
+Zeit bis zum Start SBT;Beatmungszeit auf hohem Druck;43
+Einstellung Tidalvolumen;Atemzugvolumen-Einstellung;80
+"eingestellte maximale Inspirationszeit ";Inspiratorische Sauerstofffraktion eingestellt;62
+Die Nummer der Waage, mit der das Gewicht ermittelt wurde.;Eingestellte und gemessene Parameter;45
+MAD Messintervall;Zentralvenöser Druck;44
+"MAD Zielwert ";Zentralvenöser Druck;45
+"MAD Grenzwert ";Körpertemperatur Myokard;50
+Gibt an welchen Inhalt die Windel hat;Einstellung-Ausatmungszeit-Beatmung;42
+"Menge des Stuhlgangs der vom AP oral in den AP aboral umgefüllt wird. Der Wert wird in der Bilanz als ""Plus"" verrechnet";Parameter von extrakorporalen Verfahren;36
+Differenz zwischen dem aktuellen Gewicht und dem Gewicht des letzten Eintrags;Mechanische-Atemfrequenz-Beatmet;45
+I:E Verhältnis (Messung);Zeitverhältnis-Ein-Ausatmung;58
+Validierender Mitarbeiter der Verordnung Medikation für den Zeitraum 06:00 bis 06:00 am aktuellen Tag. Diskontinuierlich.;Ionisiertes Kalzium aus Nierenersatzverfahren;37
+linksartrialer Druck;Linksatrialer Druck;97
+rechtsartrialer Druck;Rechtsatrialer Druck;98
+"Left Cardiac Work Index ";Linksventrikulärer Herzindex;48
+intracranieller Druck;Intrakranieller Druck ICP;87
+Anlage im Rahmen PhilipsMonitoring;Monitoring und Vitaldaten;47
+Anlage im Rahmen PhilipsMonitoring;Monitoring und Vitaldaten;47
+Anlage im Rahmen PhilipsMonitoring;Monitoring und Vitaldaten;47
+Anlage im Rahmen PhilipsMonitoring;Monitoring und Vitaldaten;47
+Anlage im Rahmen PhilipsMonitoring;Monitoring und Vitaldaten;47
+Anlage im Rahmen PhilipsMonitoring;Monitoring und Vitaldaten;47
+Anlage im Rahmen Philips Monitoring;Monitoring und Vitaldaten;60
+Temperatur iat keinem spezieelnMessort über das Monitoring zugeordnet.;Monitoring und Vitaldaten;57
+Anlage im Rahmen PhilipsMonitoring;Monitoring und Vitaldaten;47
+Anlage für Philips Monitoring;Monitoring und Vitaldaten;57
+Anlage für Philips Monitoring;Monitoring und Vitaldaten;57
+2. artereille Messung, ab 201712 im Rahmen Umstellung Philips Monitoring;Monitoring und Vitaldaten;57
+Umstellung PhilipsMonitoring;Monitoring und Vitaldaten;57
+Score FOUR = Full Outline of UnResponsiveness.;Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie;44
+Hinweis bei abgeschlossener Behandlung - Anzeige Datum behandlungsende;Einstellung-Ausatmungszeit-Beatmung;41
+Kalium Zielwert;Zeitverhältnis-Ein-Ausatmung;43
+24h_Urin Zielwert;Linksventrikulärer Herzindex;45
+paO2 Zielwert;Arterieller Druck;40
+PEEP Zielwert;Körpertemperatur Leiste;46
+RASS Zielwert;Zentralvenöser Druck;44
+NRS Zielwert;Zentralvenöser Druck;45
+Beatmungsmodus Zielwert;Mittlerer Beatmungsdruck;68
+Sedierung Zielwert;Zentralvenöser Druck;49
+RRT Zielwert;Arterieller Druck;48
+Kost Zielwert;Zentralvenöser Druck;44
+Mobilisation Zielwert;Zeitverhältnis-Ein-Ausatmung;46
+Freitext Zielwert;Arterieller Druck;47
+Parameter Cerebrospinales Fluidmanagement;Parameter von Beatmung;58
+Parameter Cerebrospinales Fluidmanagement;Parameter von Beatmung;58
+Parameter Cwerebrospinales Fluidmanagement;Parameter von Beatmung;58
+Auswahl Gerätetyp Cerebrospinales Fluidmanagement;Ionisiertes Kalzium aus Nierenersatzverfahren;45
+cerebrale Sauerstoffsättigung links;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;69
+cerbebrale Sauerstoffsättigung rechts;Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie;67
+spezifische Gewicht Refraktometer;Körpertemperatur Speiseroehre;52
+Listenauswahl Beatmungsoption intelli;Einstellung-Einatmungszeit-Beatmung;56
+Spectral Edge Frequency;Rechtsatrialer Druck;51
+EEG - Spectral Edge Frequency Channel 1;Körpergewicht Percentil altersabhängig;44
+EEG - Spectral Edge Frequency Channel 2;Körpergewicht Percentil altersabhängig;44
+EEG - Total Power - Channel 1;Körpertemperatur Achsel;47
+EEG - Total Power - Channel 2;Körpertemperatur Achsel;47
+Fixierungsgrund;Beatmungszeit auf niedrigem Druck;42
+Art und Umfang der Fixierung;Körpertemperatur unter der Zunge;51
+Dokumentierte Dauer der pflegerischen Assistenz bei pflegerischen Maßnahmen - Interventionen mit Zeitaufwand;Ionisiertes Kalzium aus Nierenersatzverfahren;40
+Balken für Kontinuierliches EEG Monitoring;Monitoring und Vitaldaten;57
+Einstellung Sauerstoff Flow;Atemzugvolumen-Einstellung;59
+Objekt für Speicherung der temporären Daten des klinischen Auftrags;Ionisiertes Kalzium aus Nierenersatzverfahren;45
+Diagnose für klinischen Auftrag;Blutdruck Generisch;49
+letzter Eintrag Verlaufsgewicht innerhalb der Behandlung;Blutflussindex extrakorporaler Gasaustausch;44
+Lungenersatzverfahren;Ionisiertes Kalzium aus Nierenersatzverfahren;61
+Leberersatztherapie;Körpertemperatur Gelenk;44
+alternative Bezeichnung für den Behandlungsort (z.B. Langbezeichung);Einstellung-Ausatmungszeit-Beatmung;42
+0-Klinik, 1-fachliche OE, 2-pflegerische OE;Dynamische Kompliance;44
+Gibt an, ob Ao aus Vorbehandlungen in eine behandlung dieser OE kopiert werden sollen;Ionisiertes Kalzium aus Nierenersatzverfahren;40
+wer hat die Akte angelegt;Atemzugvolumen-Waehrend-Beatmung;49
+Arztkontakt erfolgt !;Körpertemperatur Harnblase;41
+ScVO2 Zielwert;Zentralvenöser Druck;42
+SAP Zielwert;Arterieller Druck;41
+Rass Nacht Zielwert;Arterieller Druck;44
+pH-art Zielwert;Arterieller Druck;50
+Monitoring Zielwert;Monitoring und Vitaldaten;69
+Massnahmen Zielwert;Zeitverhältnis-Ein-Ausatmung;52
+Diagnostik Labor PoC Zielwert;Linksventrikulaeres Schlagvolumen;42
+Cl Zielwert;Zentralvenöser Druck;47
+ACT Zielwert;Arterieller Druck;48
+geplanter Verlegungszeitpunkt;Einstellung-Einatmungszeit-Beatmung;47
+Verlegungsplanung to do;Linksv. Schlagvolumen durch Indikatorverdünnung;44
+geplante Verlegung - Station;Zeitverhältnis-Ein-Ausatmung;45
+Parameter im Modus Highflow;Parameter von Beatmung;58
+Blutverlust intraoperativ;Blutfluss extrakorporaler Gasaustausch;54
+l/min;Hämodialyse Blutfluss;32
+Dokumentation ob der Spontanatemtest bestanden wurde.;Spontanes-Atemzugvolumen;45
+Verordnung der Zeitvorgabe der Entwöhnungsphase;Körpertemperatur unter der Zunge;44
+Verordnung der Einstellung des FiO2 während der Entwöhnungsphase;Atemzugvolumen-Einstellung;59
+Verordnung der Einstellung des PEEP/CPAP während der Entwöhnungsphase;Atemzugvolumen-Einstellung;59
+Verordnung der Einstellung des Flusses während der Entwöhnungsphase;Atemzugvolumen-Einstellung;59
+Verordnung der Einstellung des Psupport während der Entwöhnungsphase;Atemzugvolumen-Einstellung;59
+Verordnung der Einstellung des Beatmungsmodus während der Entwöhnungsphase;Atemzugvolumen-Einstellung;59
+Verordnung der Entwöhnungsmethode während der Entwöhnungsphase;Einstellung-Einatmungszeit-Beatmung;44
+FIO2 passt zu PEEP;Körpertemperatur Brust;41
+dient ausschließlich zu Testzwecken;Ionisiertes Kalzium aus Nierenersatzverfahren;48
+Gerätekonfiguration DokumentationVentilation ICU_IMC;Inspiratorische Sauerstofffraktion gemessen;45
+VO Monitoring Auscheidung/Intervall;Monitoring und Vitaldaten;60
+Zusatzgerät bei einer ECMO Therapie;Atemwegsdruck bei mittlerem expiratorischem Gasfluss;47
+Filter - O2Flow zur Ausspülung CO2;Zeitverhältnis-Ein-Ausatmung;45
