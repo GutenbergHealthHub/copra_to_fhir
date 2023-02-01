@@ -91,6 +91,22 @@ CREATE TABLE icu_copra.python_match (
 
 
 --
+-- Name: v_python_match; Type: VIEW; Schema: icu_copra; Owner: -
+--
+
+CREATE VIEW icu_copra.v_python_match AS
+ SELECT DISTINCT p.profiles,
+    p.loinc_short_name,
+    v.name,
+    v.description,
+    c.score_set
+   FROM ((icu_copra.fhir_profiles_all p
+     JOIN icu_copra.python_match c ON ((((p.profiles)::text = (c.profile_names_loinc_short_names)::text) OR ((p.loinc_short_name)::text = (c.profile_names_loinc_short_names)::text))))
+     JOIN icu_copra.copra_config_vars v ON ((((v.description)::text = (c.copra_names_descriptions)::text) OR (((v.name)::text = (c.copra_names_descriptions)::text) AND (v.co6_config_variabletypes_id = ANY (ARRAY[(3)::bigint, (6)::bigint, (12)::bigint]))))))
+  ORDER BY c.score_set DESC, p.profiles;
+
+
+--
 -- Name: fhir_profiles_all id; Type: DEFAULT; Schema: icu_copra; Owner: -
 --
 
