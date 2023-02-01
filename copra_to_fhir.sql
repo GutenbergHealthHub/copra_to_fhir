@@ -102,7 +102,8 @@ CREATE VIEW icu_copra.v_python_match AS
     c.score_set
    FROM ((icu_copra.fhir_profiles_all p
      JOIN icu_copra.python_match c ON ((((p.profiles)::text = (c.profile_names_loinc_short_names)::text) OR ((p.loinc_short_name)::text = (c.profile_names_loinc_short_names)::text))))
-     JOIN icu_copra.copra_config_vars v ON ((((v.description)::text = (c.copra_names_descriptions)::text) OR (((v.name)::text = (c.copra_names_descriptions)::text) AND (v.co6_config_variabletypes_id = ANY (ARRAY[(3)::bigint, (6)::bigint, (12)::bigint]))))))
+     JOIN icu_copra.copra_config_vars v ON ((((v.description)::text = (c.copra_names_descriptions)::text) OR ((v.name)::text = (c.copra_names_descriptions)::text))))
+  WHERE ((v.parent = ANY (ARRAY[(1)::bigint, (20)::bigint])) AND (v.co6_config_variabletypes_id = ANY (ARRAY[(3)::bigint, (6)::bigint, (12)::bigint])))
   ORDER BY c.score_set DESC, p.profiles;
 
 
