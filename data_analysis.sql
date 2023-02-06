@@ -41,7 +41,6 @@ update icu_copra.python_match set deleted = true where name = 'PICCO_ABP' and sc
 
 
 -- Atemfrequenz
-
 select * from icu_copra.python_match pm where profiles = 'Atemfrequenz' order by score_set desc;
 
 update icu_copra.python_match 
@@ -50,7 +49,6 @@ set deleted = true where profiles = 'Atemfrequenz' and name not in ('Beatmung_MS
   'Beatmung_MS_T1_fTotal', 'AF');
 
 -- Blutdruck
-
 select * from icu_copra.python_match pm where profiles = 'Blutdruck' order by score_set desc;
 
 update icu_copra.python_match set deleted = true where profiles = 'Blutdruck' and name not in ('P_NBP_reArm',
@@ -58,7 +56,6 @@ update icu_copra.python_match set deleted = true where profiles = 'Blutdruck' an
  
 
 -- Dynamische Kompliance
-
 select * from icu_copra.python_match pm where profiles = 'Dynamische Kompliance' order by score_set desc;
 
 update icu_copra.python_match set deleted = true where profiles = 'Dynamische Kompliance' and name not in (
@@ -67,7 +64,6 @@ update icu_copra.python_match set deleted = true where profiles = 'Dynamische Ko
 
 
 -- Herzfrequenz
-
 select * from icu_copra.python_match pm where profiles = 'Herzfrequenz' order by score_set desc;
 
 update icu_copra.python_match set deleted = true where profiles = 'Herzfrequenz' and name not in (
@@ -77,19 +73,81 @@ update icu_copra.python_match set deleted = true where profiles = 'Herzfrequenz'
 
 
 -- Herzzeitvolumen
-
 select * from icu_copra.python_match pm where profiles = 'Herzzeitvolumen' order by score_set desc;
 
 update icu_copra.python_match set deleted = true where profiles = 'Herzzeitvolumen' and name not in (
   'HZV', 'PICCO_HZV', 'VigilanceC_HZV'
 );
 
--- Inspiratorische Sauerstofffraktion gemessen
 
+-- Inspiratorische Sauerstofffraktion gemessen
 select * from icu_copra.python_match pm where profiles = 'Inspiratorische Sauerstofffraktion gemessen' order by score_set desc;
 
 update icu_copra.python_match set deleted = true where profiles = 'Inspiratorische Sauerstofffraktion gemessen' and name not in (
   'Beatmung_Messung_FiO2', 'Beatmung_MS_Avea_FiO2', 'Beatmung_MS_Evita4_FiO2', 'Beatmung_MS_Pallas_O2_insp'
 );
+
+
+-- Intrakranieller Druck ICP
+select * from icu_copra.python_match pm where profiles = 'Intrakranieller Druck ICP' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Intrakranieller Druck ICP' and name not in (
+  'ICP', 'ICP1'
+);
+
+
+-- Kopfumfang
+select * from icu_copra.python_match pm where profiles = 'Kopfumfang' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Kopfumfang' and name not in (
+  'COPRA_Patient_Kopfumfang', 'Patient_Kopfumfang', 'Patient_Kopfumfang_Aufnahme', 'Patient_Kopfumfang_bit'
+);
+
+
+-- Körpergewicht
+select * from icu_copra.python_match pm where profiles = 'Körpergewicht' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Körpergewicht' and name not in (
+  'Patient_Gewicht'
+);
+
+
+-- Körpertemperatur Generisch
+select * from icu_copra.python_match pm where profiles = 'Körpertemperatur Generisch' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Körpertemperatur Generisch' and name not in (
+  'T_K', 'T_K2'
+);
+
+
+-- Linksventrikulaeres Schlagvolumen
+select * from icu_copra.python_match pm where profiles = 'Linksventrikulaeres Schlagvolumen' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Linksventrikulaeres Schlagvolumen';
+
+
+-- Linksventrikulärer Herzindex
+select * from icu_copra.python_match pm where profiles = 'Linksventrikulärer Herzindex' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Linksventrikulärer Herzindex';
+
+
+-- Puls
+select * from icu_copra.python_match pm where profiles = 'Puls' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Puls' and "name" not in (
+  'Puls'
+);
+
+
+-- Sauerstoffsättigung im art. Blut durch Pulsoxymetrie
+select * from icu_copra.python_match pm where profiles = 'Sauerstoffsättigung im art. Blut durch Pulsoxymetrie' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Sauerstoffsättigung im art. Blut durch Pulsoxymetrie';
+
+
+-- Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie
+
+
 
 select * from icu_copra.python_match pm where score_set = 100 and not deleted order by profiles;
