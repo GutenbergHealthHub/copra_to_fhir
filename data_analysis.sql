@@ -147,7 +147,165 @@ update icu_copra.python_match set deleted = true where profiles = 'Sauerstoffsä
 
 
 -- Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie
+select * from icu_copra.python_match pm where profiles = 'Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie';
+
+
+-- Spontane-Atemfrequenz-Beatmet
+select * from icu_copra.python_match pm where profiles = 'Spontane-Atemfrequenz-Beatmet' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Spontane-Atemfrequenz-Beatmet' and "name" not in (
+  'Beatmung_MS_G5_fspontan', 'Beatmung_MS_T1_fSpontan', 'P_Beatmung_MS_C3_fSpontan'
+);
+
+
+--Substituatvolumen
+select * from icu_copra.python_match pm where profiles = 'Substituatvolumen' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Substituatvolumen' and "name" not in (
+  'Nierenersatzverfahren_VO_SubstituatVolumen', 'Nierenersatzverfahren_Mess_SubstituatVolumen'
+);
+
+
+-- Venöser Druck
+select * from icu_copra.python_match pm where profiles = 'Venöser Druck' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Venöser Druck' and "name" not in (
+  'Nierenverfahren_MS_Multi_venDruck'
+);
+
+
+-- Zentralvenöser Druck
+select * from icu_copra.python_match pm where profiles = 'Zentralvenöser Druck' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Zentralvenöser Druck' and "name" not in (
+  'ZVD', 'PICCO_ZVD'
+);
+
+
+-- Rechtsatrialer Druck
+select * from icu_copra.python_match pm where profiles = 'Rechtsatrialer Druck' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Rechtsatrialer Druck' and "name" not in (
+  'RAP1', 'RAP'
+);
+
+
+-- Linksatrialer Druck
+select * from icu_copra.python_match pm where profiles = 'Linksatrialer Druck' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Linksatrialer Druck' and "name" not in (
+  'LAP1', 'LAP'
+);
+
+
+-- Pulmonalvaskulärer Widerstandsindex
+select * from icu_copra.python_match pm where profiles = 'Pulmonalvaskulärer Widerstandsindex' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Pulmonalvaskulärer Widerstandsindex' and "name" not in (
+  'VigilanceC_PVRI', 'PVRI'
+);
+
+
+-- Positiv-endexpiratorischer Druck
+select * from icu_copra.python_match pm where profiles = 'Positiv-endexpiratorischer Druck' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Positiv-endexpiratorischer Druck' and "name" not in (
+  'Beatmung_Einstellung_PEEP', 'Beatmung_MS_Evita4_PEEP', 'Beatmung_MS_Evita2_Ppeep', 'Beatmung_Anordnung_PEEP', 'Beatmung_MS_VisionA_PEEP', 'Beatmung_ES_Leoni_PEEP', 'Beatmung_ES_Servoi_PEEP'
+);
+
+
+-- Pulmonalvaskulärer Widerstandsindex
+select * from icu_copra.python_match pm where profiles = 'Pulmonalvaskulärer Widerstandsindex' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Pulmonalvaskulärer Widerstandsindex' and "name" not in (
+  'VigilanceC_PVRI', 'PVRI'
+);
+
+
+-- Pulmonalarterieller Blutdruck
+select * from icu_copra.python_match pm where profiles = 'Pulmonalarterieller Blutdruck' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Pulmonalarterieller Blutdruck' and "name" not in (
+  'PAP'
+);
+
+
+-- Linksventrikulärer Druck
+select * from icu_copra.python_match pm where profiles = 'Linksventrikulärer Druck' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Linksventrikulärer Druck' and "name" not in (
+  'LVP'
+);
+
+
+-- Körpertemperatur rektal
+select * from icu_copra.python_match pm where profiles = 'Körpertemperatur rektal' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Körpertemperatur rektal' and "name" not in (
+  'P_Temperatur_Rektal'
+);
+
+
+-- Unterstützungsdruck Beatmung
+select * from icu_copra.python_match pm where profiles = 'Unterstützungsdruck Beatmung' order by score_set desc;
+--select * from icu_copra.python_match pm where "name" like '%Psupport%'
+update icu_copra.python_match set deleted = true where profiles = 'Unterstützungsdruck Beatmung' and "name" not in (
+  'Beatmung_ES_T1_Psupport', 'Beatmung_ES_G5_Psupport', 'Beatmung_ES_Servoi_Psupport', 'Beatmung_Einstellung_Psupport', 'Beatmung_ES_Heimbeatmung_Psupport'
+);
+
+
+-- Intrakranieller Druck ICP
+select * from icu_copra.python_match pm where profiles = 'Intrakranieller Druck ICP' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Intrakranieller Druck ICP' and "name" not in (
+  'ICP1', 'P_CSF_MS_LiqouGuard_ICP', 'ICP'
+);
+
+
+-- Ionisiertes Kalzium aus Nierenersatzverfahren
+select * from icu_copra.python_match pm where profiles = 'Ionisiertes Kalzium aus Nierenersatzverfahren' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Ionisiertes Kalzium aus Nierenersatzverfahren' and "name" not in (
+  'Nierenersatzverfahren_Mess_CalciumFluss', 'Nierenersatzverfahren_VO_Calcium', 'Nierenersatzverfahren_VO_CalciumLoesung', 'Nierenverfahren_ES_Multi_CalciumFiltrat', 
+  'Nierenverfahren_MS_Multi_Calciumfluss', 'Nierenverfahren_VO_Multi_Calcium'
+);
+
+
+-- Inspiratorische Sauerstofffraktion gemessen
+select * from icu_copra.python_match pm where profiles = 'Inspiratorische Sauerstofffraktion gemessen' order by score_set desc;
+
+update icu_copra.python_match set deleted = false where profiles = 'Inspiratorische Sauerstofffraktion gemessen' and "name" in (
+  'CardioHelpMaquet_VO_FiO2', 'Beatmung_ES_Zephyros_FIO2', 'CardioHelpMaquet_ES_FiO2'
+);
 
 
 
-select * from icu_copra.python_match pm where score_set = 100 and not deleted order by profiles;
+-- Arterieller Druck
+select * from icu_copra.python_match pm where profiles = 'Arterieller Druck' order by score_set desc;
+
+update icu_copra.python_match set deleted = false where profiles = 'Arterieller Druck' and "name" in (
+  'Nierenverfahren_MS_Multi_artDruck'
+);
+
+
+-- Intrakranieller Druck ICP
+select * from icu_copra.python_match pm where profiles = 'Intrakranieller Druck ICP' order by score_set desc;
+
+update icu_copra.python_match set deleted = false where profiles = 'Intrakranieller Druck ICP' and "name" in (
+  'P_CSF_MS_LiqouGuard_ICP'
+);
+
+
+-- 
+select * from icu_copra.python_match pm where profiles = '' order by score_set desc;
+
+update icu_copra.python_match set deleted = false where profiles = '' and "name" in (
+  ''
+);
+
+select * from icu_copra.python_match pm where score_set < 100 and not deleted order by score_set desc;
+
+
+select * from icu_copra.python_match pm where score_set = 100 and deleted order by profiles ;
