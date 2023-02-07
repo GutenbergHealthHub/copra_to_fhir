@@ -298,14 +298,62 @@ update icu_copra.python_match set deleted = false where profiles = 'Intrakraniel
 );
 
 
--- 
-select * from icu_copra.python_match pm where profiles = '' order by score_set desc;
+-- Atemwegsdruck bei mittlerem expiratorischem Gasfluss
+select * from icu_copra.python_match pm where profiles = 'Atemwegsdruck bei mittlerem expiratorischem Gasfluss' order by score_set desc;
 
-update icu_copra.python_match set deleted = false where profiles = '' and "name" in (
-  ''
+update icu_copra.python_match set deleted = true where profiles = 'Atemwegsdruck bei mittlerem expiratorischem Gasfluss';
+
+
+-- Atemwegsdruck bei null expiratorischem Gasfluss
+select * from icu_copra.python_match pm where profiles = 'Atemwegsdruck bei null expiratorischem Gasfluss' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Atemwegsdruck bei mittlerem expiratorischem Gasfluss';
+
+
+
+select * from icu_copra.python_match pm where profiles = 'Arterieller Druck';
+update icu_copra.fhir_profiles_all set analyzed = true where id = 15;
+
+select * from icu_copra.python_match pm where profiles = 'Atemfrequenz';
+update icu_copra.fhir_profiles_all set analyzed = true where id = 51;
+
+select * from icu_copra.python_match pm where profiles = 'Atemwegsdruck bei mittlerem expiratorischem Gasfluss';
+update icu_copra.fhir_profiles_all set analyzed = true where id = 22;
+
+
+select * from icu_copra.python_match pm where profiles = 'Atemwegsdruck bei null expiratorischem Gasfluss';
+update icu_copra.fhir_profiles_all set analyzed = true where id = 21;
+
+
+select * from icu_copra.python_match pm where profiles = 'Atemzugvolumen-Einstellung';
+
+-- Atemzugvolumen-Einstellung
+select * from icu_copra.python_match pm where profiles = 'Atemzugvolumen-Einstellung' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Atemzugvolumen-Einstellung' and "name" not in (
+  'Beatmung_ES_Heimbeatmung_Vt', 'Beatmung_ES_T1_Vt', 'Beatmung_Einstellung_VT', 'Beatmung_ES_G5_Vt', 'Beatmung_ES_Evita4_Vt', 'Beatmung_ES_Evita2_Vt'
+  'Beatmung_ES_VisionA_Vt'
 );
 
-select * from icu_copra.python_match pm where score_set < 100 and not deleted order by score_set desc;
+
+-- Atemzugvolumen-Waehrend-Beatmung
+select * from icu_copra.python_match pm where profiles = 'Atemzugvolumen-Waehrend-Beatmung' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Atemzugvolumen-Waehrend-Beatmung';
 
 
-select * from icu_copra.python_match pm where score_set = 100 and deleted order by profiles ;
+-- Beatmungsvolumen-Pro-Minute-Machineller-Beatmung
+select * from icu_copra.python_match pm where profiles = 'Beatmungsvolumen-Pro-Minute-Machineller-Beatmung' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Atemzugvolumen-Einstellung' and "name" not in (
+  'Beatmung_ES_Heimbeatmung_Vt', 'Beatmung_ES_T1_Vt', 'Beatmung_Einstellung_VT', 'Beatmung_ES_G5_Vt', 'Beatmung_ES_Evita4_Vt', 'Beatmung_ES_Evita2_Vt'
+  'Beatmung_ES_VisionA_Vt'
+);
+
+
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 16;
+
+
+select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles ;
+
