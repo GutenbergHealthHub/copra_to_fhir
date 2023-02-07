@@ -352,8 +352,11 @@ update icu_copra.python_match set deleted = true where profiles = 'Atemzugvolume
 
 
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 16;
+update icu_copra.fhir_profiles_all set analyzed = true where id = 73;
 
 
-select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles ;
+select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
+
+
+select * from icu_copra.python_match pm where profiles = 'Zentralvenöser Druck';
 

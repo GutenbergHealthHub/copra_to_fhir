@@ -6667,6 +6667,7 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 46	Mechanische-Atemfrequenz-Beatmet	Observation	250876000	33438-3	151586	Breaths.mechanical on vent	{Breaths}/min	f
 49	Pulmonalarterieller wedge Blutdruck	Observation	118433006	75994-4	150052	PAW pressure	mm[Hg]	f
 52	Kopfumfang	Observation	363811000	9843-4	\N	Head Circumf OFC	cm	f
+73	Zentralvenöser Druck	Observation	71420008	60985-9	150084	CVP	mm[Hg]	t
 53	Körpergroesse	Observation	1153637007	8302-2	\N	Body height	cm	f
 55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	f
 57	Ideales Körpergewicht	Observation	170804003	50064-5	\N	Ideal bdy weight	kg	f
@@ -6680,7 +6681,6 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 69	Herzzeitvolumen	Observation	82799009	8741-1	150276	LV Output	L/min	f
 71	Linksv. Herzzeitvolumen durch Indikatorverdünnung	Observation	\N	8737-9	\N	LV Output Indicator dilution	L/min	f
 72	Herzfrequenz	Observation	364075005	8867-4	147842	Heart rate	/min	f
-73	Zentralvenöser Druck	Observation	71420008	60985-9	150084	CVP	mm[Hg]	f
 75	Linksatrialer Druck	Observation	276762004	85354-9	\N	Blood pressure panel with all children optional	\N	f
 78	Linksventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 80	Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
