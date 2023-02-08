@@ -345,18 +345,20 @@ update icu_copra.python_match set deleted = true where profiles = 'Atemzugvolume
 
 
 
-select * from icu_copra.python_match pm where profiles = 'Blutdruck' order by score_set desc;
+select * from icu_copra.python_match pm where profiles = 'Sauerstoffgasfluss' order by score_set desc;
 
-update icu_copra.python_match set deleted = true where profiles = 'Beatmungszeit auf hohem Druck'
+update icu_copra.python_match set deleted = true where profiles = 'Ideales Körpergewicht' and name not in (
+  'Beatmung_MS_HorowitzINPULS', 'Beatmung_Messung_Horrowitz', 'Beatmung_ES_T1_Sauerstoff', 'Beatmung_ES_Pallas_Frischgas_O2', 'Beatmung_MS_Pallas_Frischgas_Flow_gesamt',
+  'Beatmung_ES_CF800_SauerstoffFlow', 'Beatmung_ES_F120_Flow'
+);
 
 
-
-
-
-update icu_copra.fhir_profiles_all set analyzed = true where id = 80;
+update icu_copra.fhir_profiles_all set analyzed = true where id = 6;
 
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
+
+select * from icu_copra.copra_config_vars ccv where name = 'Beatmung_ES_CF800_SauerstoffFlow';
 
 
 
