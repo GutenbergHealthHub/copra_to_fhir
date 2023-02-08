@@ -336,27 +336,27 @@ update icu_copra.python_match set deleted = true where profiles = 'Atemzugvolume
 );
 
 
--- Atemzugvolumen-Waehrend-Beatmung
-select * from icu_copra.python_match pm where profiles = 'Atemzugvolumen-Waehrend-Beatmung' order by score_set desc;
+-- Substituatfluss
+update icu_copra.python_match set deleted = true where profiles = 'Substituatfluss' and "name" not in (
+  'Nierenverfahren_VO_Multi_Substituat', 'Nierenverfahren_ES_Multi_Substituat', 'Nierenverfahren_ES_BM25_Umsatz'
+);
 
 update icu_copra.python_match set deleted = true where profiles = 'Atemzugvolumen-Waehrend-Beatmung';
 
 
--- Beatmungsvolumen-Pro-Minute-Machineller-Beatmung
-select * from icu_copra.python_match pm where profiles = 'Beatmungsvolumen-Pro-Minute-Machineller-Beatmung' order by score_set desc;
 
-update icu_copra.python_match set deleted = true where profiles = 'Atemzugvolumen-Einstellung' and "name" not in (
-  'Beatmung_ES_Heimbeatmung_Vt', 'Beatmung_ES_T1_Vt', 'Beatmung_Einstellung_VT', 'Beatmung_ES_G5_Vt', 'Beatmung_ES_Evita4_Vt', 'Beatmung_ES_Evita2_Vt'
-  'Beatmung_ES_VisionA_Vt'
-);
+select * from icu_copra.python_match pm where profiles = 'Blutdruck' order by score_set desc;
+
+update icu_copra.python_match set deleted = true where profiles = 'Beatmungszeit auf hohem Druck'
 
 
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 73;
+
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 80;
 
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
 
-select * from icu_copra.python_match pm where profiles = 'Zentralvenöser Druck';
 

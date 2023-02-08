@@ -6631,7 +6631,6 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 --
 
 COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc_short_name, unit, analyzed) FROM stdin;
-1	Extrakorporale Verfahren	Procedure	\N	\N	\N	\N	\N	f
 2	Eingestellte und gemessene Parameter	DeviceMetric	\N	\N	\N	\N	\N	f
 3	Parameter von extrakorporalen Verfahren	Observation	\N	\N	\N	\N	\N	f
 17	Eingestellte und gemessene Parameter	DeviceMetric	\N	\N	\N	\N	\N	f
@@ -6642,8 +6641,7 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 6	Sauerstoffgasfluss	Observation	79063001	19941-4	\N	Gas flow.O2 O2 delivery sys	L/min	f
 7	Dauer Hämodialysesitzung	Observation	445940005	\N	\N	\N	h	f
 8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	\N	mL/min	f
-9	Substituatfluss	Observation	708513005	\N	\N	\N	mL/h	f
-10	Substituatvolumen	Observation	708514004	\N	\N	\N	L	f
+10	Substituatvolumen	Observation	708514004	\N	\N	\N	L	t
 12	Blutfluss extrakorporaler Gasaustausch	Observation	251288004	\N	\N	\N	L/min	f
 13	Blutflussindex extrakorporaler Gasaustausch	Observation	251289007	\N	\N	\N	L/(min.m2)	f
 14	Venöser Druck	Observation	252076005	\N	\N	\N	mm[Hg]	f
@@ -6656,9 +6654,9 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 29	Inspiratorische Sauerstofffraktion gemessen	Observation	250774007	71835-3	\N	FIO2	1	f
 31	Exspiratorischer Gasfluss	Observation	\N	60792-9	151944	Expiratory gas flow on vent Airway	L/min	f
 32	Inspiratorischer Gasfluss	Observation	\N	60794-5	151948	Insp gas flow on vent Airway	L/min	f
-34	Beatmungszeit auf niedrigem Druck	Observation	\N	76229-4	16929864	Low press hold time set Vent	s	f
-35	Beatmungszeit auf hohem Druck	Observation	\N	76190-8	16929860	High press hold time set Vent	s	f
-37	Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Observation	250875001	76009-0	152004	Inspired min Vol MV	L/min	f
+72	Herzfrequenz	Observation	364075005	8867-4	147842	Heart rate	/min	t
+34	Beatmungszeit auf niedrigem Druck	Observation	\N	76229-4	16929864	Low press hold time set Vent	s	t
+35	Beatmungszeit auf hohem Druck	Observation	\N	76190-8	16929860	High press hold time set Vent	s	t
 38	Spontanes-Atemzugvolumen	Observation	250816009	20116-0	\N	Spont VT on vent	mL	f
 16	Beatmung	Procedure	\N	\N	\N	\N	\N	t
 42	Einstellung-Ausatmungszeit-Beatmung	Observation	250820008	76187-4	\N	Exp hold time set Vent	s	f
@@ -6666,7 +6664,7 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 45	Spontane-Atemfrequenz-Beatmet	Observation	271625008	\N	152498	\N	/min	f
 46	Mechanische-Atemfrequenz-Beatmet	Observation	250876000	33438-3	151586	Breaths.mechanical on vent	{Breaths}/min	f
 49	Pulmonalarterieller wedge Blutdruck	Observation	118433006	75994-4	150052	PAW pressure	mm[Hg]	f
-52	Kopfumfang	Observation	363811000	9843-4	\N	Head Circumf OFC	cm	f
+69	Herzzeitvolumen	Observation	82799009	8741-1	150276	LV Output	L/min	t
 73	Zentralvenöser Druck	Observation	71420008	60985-9	150084	CVP	mm[Hg]	t
 53	Körpergroesse	Observation	1153637007	8302-2	\N	Body height	cm	f
 55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	f
@@ -6678,9 +6676,10 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 65	Linksv. Schlagvolumen durch Indikatorverdünnung	Observation	\N	8771-8	\N	LV SV Indicator dilution	mL	f
 66	Pulmonalvaskulärer Widerstandsindex	Observation	276902009	8834-4	152852	PV RI	dyn.s/cm5/m2	f
 67	Systemischer vaskulärer Widerstandsindex	Observation	276900001	8837-7	149760	SV RI	dyn.s/cm5/m2	f
-69	Herzzeitvolumen	Observation	82799009	8741-1	150276	LV Output	L/min	f
+9	Substituatfluss	Observation	708513005	\N	\N	\N	mL/h	t
 71	Linksv. Herzzeitvolumen durch Indikatorverdünnung	Observation	\N	8737-9	\N	LV Output Indicator dilution	L/min	f
-72	Herzfrequenz	Observation	364075005	8867-4	147842	Heart rate	/min	f
+1	Extrakorporale Verfahren	Procedure	\N	\N	\N	\N	\N	t
+37	Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Observation	250875001	76009-0	152004	Inspired min Vol MV	L/min	t
 75	Linksatrialer Druck	Observation	276762004	85354-9	\N	Blood pressure panel with all children optional	\N	f
 78	Linksventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 80	Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
@@ -6699,6 +6698,7 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 99	Körpertemperatur Speiseroehre	Observation	431598003	60836-4	\N	Esoph temp	Cel	f
 101	Körpertemperatur Trommelfell	Observation	415974002	8333-7	\N	Tymp memb temp	Cel	f
 15	Arterieller Druck	Observation	386534000	\N	\N	\N	mm[Hg]	t
+52	Kopfumfang	Observation	363811000	9843-4	\N	Head Circumf OFC	cm	t
 11	Dauer extrakorporaler Gasaustausch	Observation	251286000	\N	\N	\N	h	f
 19	Unterstützungsdruck Beatmung	Observation	\N	20079-0	\N	Pressure support setting Vent	cm[H2O]	f
 24	Positiv-endexpiratorischer Druck	Observation	250854009	76248-4	151976	PEEP on vent Respiratory	cm[H2O]	f
@@ -6865,7 +6865,6 @@ Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_MS_G5_PTP	Druck Zeit P
 Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_MS_T1_PTP	Druck Zeit Produkt (Pressure Time Product)	80	f
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Calcium	\N	79	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita2_Ppeep	gemessener positer endexspiratorischer Druck	79	f
-Substituatfluss	\N	Nierenverfahren_ES_Multi_SubstituatBolus	Substituatbolus ml	79	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_G5_ExspFlow	Exspiratorischer Peakflow, ein Monitoring-Parameter	78	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_Evita2_Pplat	gemessener Plateaudruck (inspiratorischer Beatmungsdruck)	78	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_G5_InspFlow	Inspiratorischer Peakflow, ein Monitoring-Parameter	78	f
@@ -6895,6 +6894,7 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverf
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Dialysat	\N	78	t
 Arterieller Druck	\N	Nierenverfahren_MS_Multi_artDruck	arterieller Druck	100	f
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	76	t
+Substituatfluss	\N	Nierenverfahren_ES_Multi_SubstituatBolus	Substituatbolus ml	79	t
 Körpertemperatur Generisch	Body temperature	Temp1a	Temperatur 1a	76	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Temp3a	Temperatur 3a	76	f
 Körpertemperatur Gelenk	Body temperature	Temp1a	Temperatur 1a	76	f
@@ -6923,7 +6923,6 @@ Körpertemperatur vaginal	Body temperature	Temp2a	Temperatur 2a	76	f
 Körpertemperatur vaginal	Body temperature	Temp3a	Temperatur 3a	76	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_Beatmung_ES_O2Flow	l/min	75	f
 Linksventrikulaeres Schlagvolumenindex	LV SVI	p-SVI	Schlagvolumenindex  (PICCO Modul Dräger Monitoring)	75	f
-Substituatfluss	\N	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat	75	f
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_Doku_Bolusgabe	\N	42	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_PeepCPAP	Messwert: Beatmungsdruck Peep / CPAP	74	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_PeepCPAP	Messwert: Beatmungsdruck Peep/CPAP	74	f
@@ -6937,6 +6936,7 @@ Körpertemperatur Generisch	Body temperature	Temp2a	Temperatur 2a	76	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Austausch	\N	75	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	PVR	"Pulmunaler Gefäßwiderstand "	75	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Calcium	\N	75	t
+Substituatfluss	\N	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat	75	t
 Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVR	Systemischer Gefäßwiderstand	74	f
 Hämodialyse Blutfluss	\N	Hemolung_MS_Blutfluss	\N	73	f
 Körpertemperatur Blut	Blood temp	Temp1b	Temperatur 1b	73	f
@@ -6961,7 +6961,6 @@ Körpertemperatur Blut	Blood temp	P_Temperatur_DeltaT	Delta Temperatur zentral/T
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_Frequenz	eingestellt mandatorische Atemfrquenz	72	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck	72	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck	72	f
-Substituatfluss	\N	Nierenverfahren_VO_Multi_SubstituatBolus	Substituatbolus in ml	72	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Avea_Frequenz	eingestellte mandatorische AF	71	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Pallas_Pinsp	Eingestellter Inspiration Druck.	71	f
 Atemfrequenz	Resp rate	Nierenverfahren_VO_Multi_Calcium	Ca-rate	73	t
@@ -6972,6 +6971,7 @@ Linksventrikulaeres Schlagvolumen	LV SV	PICCO_SVV	Schlagvolumen-Variation	72	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Blutfluss	\N	73	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	p-SVRI	"Index des systemischen Gefäßwiderstandes (PICCO Modul Dräger Monitoring)  "	73	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Citrat	\N	73	t
+Substituatfluss	\N	Nierenverfahren_VO_Multi_SubstituatBolus	Substituatbolus in ml	72	t
 Körpertemperatur unter der Zunge	Oral temp	Untersuchung_Status_Koerpertemperatur	\N	71	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita2_InspFlow	eingestellter Inspirationfluss	70	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_Pallas_inCO2	Inspiratorisch gemessenes CO2.	70	f
@@ -7474,7 +7474,6 @@ Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_Inspirati
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Servoi_I_E	I:E Verhältnis (Messung)	58	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_AutoCat_ES_Unterstützungsverhältnis	Liste	58	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Servoi_Flow	Parameter im Modus Highflow	57	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Hypothermie_ArticSun_Doku_Behandlungsmodi	Liste	57	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_MS_T1_Rinsp	Inspiratorische Flow-Resistance	57	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	P_Beatmung_MS_C3_Rinsp	Inspiratorische Flow-Resistance	57	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	P_Impella_Impella_MS_Flow	\N	57	f
@@ -7500,6 +7499,7 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_IsoUFRate	Isolierte Ultrafiltration	57	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_IsoUFZeit_	Isolierte Ultrafiltration	57	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Hemolung_VO_Gasfluss	\N	57	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Hypothermie_ArticSun_Doku_Behandlungsmodi	Liste	57	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_T1_Body_Wt	Eingestelltes Körpergewicht	57	f
 Körpergrösse Percentil	Body height Prctl	Patient_Groesse	Größe des Patienten	57	f
 Körpertemperatur Achsel	Axil temp	CardioHelpMaquet_VO_TemperaturSoll	\N	57	f
@@ -7640,9 +7640,6 @@ Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_P
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontVe	gemessenes spontanes Atemminutenvolumen	56	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_Flow	Inspiratorische Flowrate	56	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_C3_Timax	Inspirationszeit max	56	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Patient_Groesse	Größe des Patienten	55	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Osypka203H_ES_AV_DLY	AV Überleitungszeit	55	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_MS_Pallas_Ppeak	Dokumentation des gemessenen Beatmungsspitzendruck.	55	f
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita2_Compliance	gemessene Lungencompliance	55	f
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita4_Compliance	gemessene Lungencompliance	55	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Leoni_Flow	\N	55	f
@@ -7654,6 +7651,9 @@ Atemfrequenz	Resp rate	Beatmung_Messung_Frequenz	Frequenz tot.	67	t
 Atemfrequenz	Resp rate	Beatmung_Einstellung_FrequenzHFOV	HFOV Frequenz	64	t
 Substituatvolumen	\N	Beatmung_Einstellung_AMV	Atemminutenvolumen (AMV)	56	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_artDruck	\N	55	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_MS_Pallas_Ppeak	Dokumentation des gemessenen Beatmungsspitzendruck.	55	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Patient_Groesse	Größe des Patienten	55	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Osypka203H_ES_AV_DLY	AV Überleitungszeit	55	t
 Körpertemperatur vaginal	Body temperature	Temp3b	Temperatur 3b	83	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_CF800_DruckluftFlow	Einstellgröße: Gasfluss Druckluft	55	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	SpO2	Sauerstoffsättigung Pulsoxymetrie	55	f
@@ -7737,7 +7737,6 @@ Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_Doku_ILA
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_Doku_ILAactivve_Nullfluss	bei luftblasen, Liste ein aus	55	f
 Atemfrequenz	Resp rate	Hypothermie_Coolgard_Doku-Rate	\N	62	t
 Atemfrequenz	Resp rate	Hypothermie_Coolgard_VO_Rate	\N	62	t
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_PD_Doku_Auslaufzeit	\N	54	f
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_VisionA_AFSpontan	Messwert: Anzahl der gemessenen spontanen Atemzüge	55	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Schrittmacher_Doku_Drähte	\N	55	t
 Zentralvenöser Druck	CVP	Beatmung_ES_Evita2_Pinsp	eingestelltes oberes Druckniveau	55	t
@@ -7747,7 +7746,7 @@ Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita2_ASB	eingestellte Druckunterstüzung	54	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita4_ASB	eingestellte Druckunterstützung	54	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_VisionA_Vt	Einstellwert: eingestelltes Tidalvolumen	54	t
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Score_DGAI_AufnBeatmungsstundenbiszurAufnahme	\N	54	f
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_PD_Doku_Auslaufzeit	\N	54	t
 Blutflussindex extrakorporaler Gasaustausch	\N	ITBVI	Index des intrathorakalen Blutvolumens	54	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_C2_Pkontrol_Phoch	Eingestellter Pkontrol oder Phoch am C2.	54	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_F120_Flow	Einstellwert: Größe des Gasflusses beim F 120	54	f
@@ -7793,6 +7792,7 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverf
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_Bilanz	\N	54	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_BlutvolumenKum	\N	54	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_IsoUFVolumenKumulativ	\N	54	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Score_DGAI_AufnBeatmungsstundenbiszurAufnahme	\N	54	t
 Atemfrequenz	Resp rate	Schrittmacher_Osypka101H_ES_Rate	Grundfrequenz	62	t
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	PICCO_ITBVI	Intrathorakaler Blutvolumenindex	54	f
 Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_Einstellung_Pmax	Pmax, Maximaldruck	54	f
@@ -7809,12 +7809,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_SpontanAMV	gemessenes spontanes Atemminutenvolumen	54	f
 Spontanes-Atemzugvolumen	Spont VT on vent	IABP_DatascopeCS300_ES_Doku_Ballonvolumen	Dokumentation des Ballonvolumens.	54	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Patient_KO	Körperoberfläche des Patienten ohne Fallbezug	54	f
-Substituatfluss	\N	NEV_CRRT_ES_Multi_SubstituatBolus	\N	54	f
-Substituatfluss	\N	NEV_CRRT_VO_Multi_SubstituatBolus	\N	54	f
-Substituatfluss	\N	NEV_HD_ES_4008onl_Substituatbolus	\N	54	f
-Substituatfluss	\N	NEV_HD_VO_4008onl_Substituatbolus	\N	54	f
-Substituatfluss	\N	P_ADVOS_ES_ADVOS_CitratFluss	\N	54	f
-Substituatfluss	\N	P_ADVOS_VO_ADVOS_CitratFluss	\N	54	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_T1_Psupport	Beatmung_ES_T1_Psupport	54	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Messung_Inspirationszeit	\N	54	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	EinweisenderArzt_Titel	\N	54	f
@@ -7850,6 +7844,12 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenerstazverf
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_ARDS	\N	53	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Messung_MV	Mindest Volumen tot.	53	t
 Atemzugvolumen-Einstellung	VT setting Vent	P_Beatmung_ES_C3_Vt	\N	53	t
+Substituatfluss	\N	NEV_CRRT_ES_Multi_SubstituatBolus	\N	54	t
+Substituatfluss	\N	NEV_CRRT_VO_Multi_SubstituatBolus	\N	54	t
+Substituatfluss	\N	NEV_HD_ES_4008onl_Substituatbolus	\N	54	t
+Substituatfluss	\N	NEV_HD_VO_4008onl_Substituatbolus	\N	54	t
+Substituatfluss	\N	P_ADVOS_ES_ADVOS_CitratFluss	\N	54	t
+Substituatfluss	\N	P_ADVOS_VO_ADVOS_CitratFluss	\N	54	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	COPRA_Patient_Geburtsgewicht	Geburtsgewicht des Patienten in Kilogramm	53	f
 Körpergroesse	Body height	Beatmung_ES_C2_Body_Wt	Eingestelltes Körpergewicht beim respirator C2.	53	f
 Körpergroesse	Body height	Beatmung_ES_G5_Body_Wt	Eingestelltes Körpergewicht.	53	f
@@ -7928,7 +7928,6 @@ Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_drei_ES_AusgangA
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_drei_ES_AusgangV	Medtronic 5388	53	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Zephyros_By-Flow	\N	52	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_INVOS_Doku_rSO2_rechts	cerbebrale Sauerstoffsättigung rechts	52	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Osypka203H_ES_result_Betriebsart	abhängig in ES der Sense-Liste	52	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Wertsachen_Kleidungsstuecke	\N	52	f
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_VO_Multi_BlutflussMax	\N	52	f
 Dauer Hämodialysesitzung	\N	NEV_CRRT_VO_Dialysatloesung	\N	52	f
@@ -7954,6 +7953,7 @@ Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Anordnung_AMV	Anordnung Atemminutenvolumen (AMV)	52	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Airvo_FlowSetting	Einstellunggröße  des Flows am Gerät	52	t
 Atemzugvolumen-Waehrend-Beatmung	Vt on vent Vent	Beatmung_Anordnung_VT	Anordnung Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)	52	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Osypka203H_ES_result_Betriebsart	abhängig in ES der Sense-Liste	52	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_G5_ETS	Exspiratorische Triggersensitivität, eine Parametereinstellung	52	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_T1_ETS	Exspiratorische Triggersensitivität, eine Parametereinstellung	52	f
 Hämodialyse Blutfluss	\N	NEV_HD_VO_4008onl_BlutflussMax	\N	52	f
@@ -8057,8 +8057,6 @@ Rechtsatrialer Druck	Blood pressure panel with all children optional	NEV_CRRT_MS
 Linksventrikulärer Druck	Blood pressure panel with all children optional	SM-Output_Ventrikel	Schrittmacher Ausgangsleistung (Output) Ventrikel	52	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_VTi	\N	52	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Fontanelle_Beurteilung	\N	52	f
-Substituatfluss	\N	P_NEV_HD_ES_5008onl_Substituatbolus	\N	52	f
-Substituatfluss	\N	P_NEV_HD_VO_5008onl_Substituatbolus	\N	52	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_Einstellung_Psupport	\N	52	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Heimbeatmung_Psupport	\N	52	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_Vt_Backup	Vt in der Backupeinstellung	52	f
@@ -8073,7 +8071,6 @@ Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Hypothermie_ArticSun_VO_Behandlungsmodi	Liste	51	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Multi_Plasma_Volumen	\N	51	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_Filter	\N	51	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_CRRT_MS_Multi_Behandlungszeit_Aktuell__min	Anpassung für die automatische Datenübermnahme IBUS	51	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Inpuls_Erfassung_Kriterien_1	\N	51	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Inpuls_Erfassung_Kriterien_2	\N	51	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Inpuls_Erfassung_Kriterien_3	\N	51	f
@@ -8105,6 +8102,9 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_PSV	\N	51	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_F_CMV	"Eingestellte CMV Frequenz bei dem Respirator G5 in den Beatmungsmodi DUOPAP, APVcmv, Pcmv, "	51	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Thoch	\N	51	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Ttief	Einstellwert: Zeiteinstellung für das untere Druckniveau	51	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_CRRT_MS_Multi_Behandlungszeit_Aktuell__min	Anpassung für die automatische Datenübermnahme IBUS	51	t
+Substituatfluss	\N	P_NEV_HD_ES_5008onl_Substituatbolus	\N	52	t
+Substituatfluss	\N	P_NEV_HD_VO_5008onl_Substituatbolus	\N	52	t
 Körpertemperatur Stirn	Body temperature	NEV_Apherese_MS_Multi_artDruck	\N	51	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Inpuls_Erfassung_Kategorie	\N	51	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_MS_3100A_O2Konzentration	Gemessene O2 Konzentration	51	f
@@ -8167,7 +8167,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_Sensitivity	\N	51	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_fSpontan	Spontane Atemfrequenz	51	f
 Substituatfluss	\N	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h	51	f
-Substituatfluss	\N	Patient_Blutverlusst	Patient_Blutverlusst	51	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_Vti	gemessenes inspiratorisches Tidalvolumen	51	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Evita4_Vt	gemessenes inspiratorisches Tidalvolumen	51	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_G5_TE	Exspirationzeit, ein Monitoring-Parameter	51	f
@@ -8197,7 +8196,7 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Servoi_Ti	"Ti (s) "	50	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator T1 in den Beatmungsmodi APVsimv, Psimv.	50	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Timaxi	eingestellte maximale Inspirationszeit im Modus NIV	50	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_Evita4_MV	gemessenes Atemminutenvolumen	50	t
-Beatmungszeit auf hohem Druck	High press hold time set Vent	IABP_AutoCat_MS_Mitteldruck	\N	50	f
+Substituatfluss	\N	Patient_Blutverlusst	Patient_Blutverlusst	51	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Nierenverfahren_ES_ADM_Blutfluss	Blutpumpengeschwindigkeit	50	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Nierenverfahren_ES_BM25_Blutfluss	Blutpumpengeschwindigkeit	50	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Nierenverfahren_VO_ADM_BlutflussMax	Blutpumpengeschwindigkeit	50	f
@@ -8245,6 +8244,7 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Mult
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_DCMFETTotal	\N	50	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_Bilanz_ml	neue Variable für automatische Datenübernahme IBUS	50	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_UFProfil	\N	50	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	IABP_AutoCat_MS_Mitteldruck	\N	50	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer2_Status	\N	50	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Strasse	\N	50	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	f
@@ -8392,8 +8392,6 @@ Blutdruck	Blood pressure panel with all children optional	Fall_Wertsachen_Papier
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	COPRA_Patient_Kopfumfang	Kopfumfang des Patienten in Zentimetern	49	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_INVOS_Doku_rSO2_links	cerebrale Sauerstoffsättigung links	49	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Filter	\N	49	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Hypothemie_Coolgard_Doku_Behandlungsmodi	Listenauswahl	49	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_PD_Doku_Auslaufmenge	\N	49	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Fall_Wertsachen_Papiere_Ort	\N	49	f
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008HS_BlutflussSNPumpe	\N	49	f
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008onl_BlutflussSNPumpe	\N	49	f
@@ -8416,6 +8414,8 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_Thoch	\N	49	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_TiMax	\N	49	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_Ttief	\N	49	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_VolAssist	\N	49	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_PD_Doku_Auslaufmenge	\N	49	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Hypothemie_Coolgard_Doku_Behandlungsmodi	Listenauswahl	49	t
 Monitoring und Vitaldaten	\N	Untersuchung_ZNS_Motorik	\N	49	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Evita2_Anstiegszeit	eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau	49	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Evita4_VtApnoe	Einstellgröße für das Tidalvolumen in der Apnoeeinstellung	49	f
@@ -8577,8 +8577,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Fuellen_Mit	\N	48	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_VO_Fuellen_Mit	\N	48	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_Beatmung_MS_C3_ExspMinVol	Exspiratorisches Minutenvolumen	48	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_PD_VO_Auslaufzeit	Auslaufzeit	48	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_PD_Doku_Bemerkung	\N	48	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	48	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_T1_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	48	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Wertsachen_Kleidungsstuecke_Ort	\N	48	f
@@ -8621,6 +8619,8 @@ Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_TApnoe	\N	48	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_G5_ProzentMinVol	Przentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus	48	t
 Atemzugvolumen-Waehrend-Beatmung	Vt on vent Vent	etCO2	End-tidales CO2	48	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_PD_Doku_Bemerkung	\N	48	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_PD_VO_Auslaufzeit	Auslaufzeit	48	t
 Ideales Körpergewicht	Ideal bdy weight	NIRSrechts_MS	\N	48	f
 Ideales Körpergewicht	Ideal bdy weight	P_Impella_Impella_MS_PurgeFlow	\N	48	f
 Ideales Körpergewicht	Ideal bdy weight	Untersuchung_Kopf_Hals	\N	48	f
@@ -8882,11 +8882,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_T1_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi	47	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.	47	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_Bolus	\N	47	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_T1_CO2Elim_Target_Shift	\N	47	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008HS_Rest_Zeit	\N	47	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	SM_Output_Atrium	Schrittmacher Ausgangsleistung (Output) Atrium	47	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_Apherese_MS_Multil_venDruck	\N	47	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_ISOUFZeit	\N	47	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Fall_Wertsachen_Kleidungsstuecke	\N	47	f
 Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_DOKU_Oxygenator	\N	47	f
 Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_DOKU_OxygenatorTest	\N	47	f
@@ -8923,6 +8918,11 @@ Herzfrequenz	Heart rate	Angehoerige1_Vorname	\N	47	t
 Herzfrequenz	Heart rate	Angehoerige2_Strasse	\N	47	t
 Herzzeitvolumen	LV Output	NEV_Apherese_VO_Multi_Plasma_Volumen	\N	47	t
 Atemzugvolumen-Einstellung	VT setting Vent	Patient_Verfuegung	Patientenverfügung	47	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_Apherese_MS_Multil_venDruck	\N	47	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_ISOUFZeit	\N	47	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_T1_CO2Elim_Target_Shift	\N	47	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008HS_Rest_Zeit	\N	47	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	SM_Output_Atrium	Schrittmacher Ausgangsleistung (Output) Atrium	47	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	47	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_Apherese_Doku_Bolus_Antikoag	\N	47	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Messung_FlowAssist	\N	47	f
@@ -9030,7 +9030,6 @@ Linksventrikulärer Herzindex	LV Cardiac index	F_Therapieeinschraenkung	\N	47	t
 Linksatrialer Druck	Blood pressure panel with all children optional	HZV_Platzhalter	\N	47	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	NEV_PD_Doku_Verweildauer	\N	47	t
 Körpertemperatur rektal	Rectal temp	P_Beatmung_MS_C3_fTotal	Gesamtatemfrequenz	47	t
-Beatmungszeit auf hohem Druck	High press hold time set Vent	P_ADVOS_MS_ADVOS_artDruck	\N	46	f
 Spontane-Atemfrequenz-Beatmet	\N	NEV_Apherese_ES_Multi_Temp	Anlage 18.05.2012	47	t
 Monitoring und Vitaldaten	\N	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	47	f
 Monitoring und Vitaldaten	\N	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	47	f
@@ -9078,6 +9077,7 @@ Rechtsatrialer Druck	Blood pressure panel with all children optional	HeartWare_R
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Pallas_PEEP	Dokumentation des eingestellten PEEP.	47	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Messung_IntrinsicPEEP	Intrinsic PEEP	47	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	IABP_Trigger	\N	47	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	P_ADVOS_MS_ADVOS_artDruck	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Kein_Recruitment	\N	47	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pkontrol	\N	47	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Psupport	\N	47	f
@@ -9096,9 +9096,6 @@ Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Spezifitaet	\N	47	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Inpuls_Erfassung_Transporte_Anzahl	\N	47	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_CRRT_VO_SpülloesungAntikoag	\N	47	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_SpüllösungAntikoag	\N	47	f
-Substituatfluss	\N	NEV_CRRT_ES_Multi_Substituat	\N	47	f
-Substituatfluss	\N	NEV_HD_ES_4008onl_Substituat	\N	47	f
-Substituatfluss	\N	Nierenverfahren_VO_Multi_SubstituatBolus	Substituatbolus in ml	47	f
 Systemischer vaskulärer Widerstandsindex	SV RI	Vigileo_SVRI	Systemic vascular resistance index	47	f
 Monitoring und Vitaldaten	\N	PICCO_ZVD	Zentraler Venendruck	29	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Hausarzt_Telefon	\N	47	f
@@ -9120,6 +9117,9 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_C2_F_CMV	"Eingestellte CM
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_C2_Pasvlimit	\N	46	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_C2_Thoch	\N	46	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_C2_Timax	Inspirationszeit maximal	46	t
+Substituatfluss	\N	NEV_CRRT_ES_Multi_Substituat	\N	47	t
+Substituatfluss	\N	NEV_HD_ES_4008onl_Substituat	\N	47	t
+Substituatfluss	\N	Nierenverfahren_VO_Multi_SubstituatBolus	Substituatbolus in ml	47	t
 Körpertemperatur Harnblase	Bdy temp Bladder	P_ADVOS_MS_ADVOS_artDruck	\N	46	f
 Körpertemperatur Achsel	Axil temp	P_ADVOS_VO_Filter	\N	46	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_Einstellung_Pkontrol	Pkontrol (mbar/frequenz/AZ/min)	46	f
@@ -9129,14 +9129,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	IABP_CARDIOSAVE_ES_EKG_Ableitung	Dokumentation der gewählten EKG Ableitung für den IABP Einsatz	46	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_FuellenMit	\N	46	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h	46	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Angehoerige1_TelefonMobil	Handy Nummer der Angehörigen des Patienten	46	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_T1_Zeit_zw2_SBT	Zeit zwischen 2 SBT	46	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Fall_Wertsachen_Kleidungsstuecke_Ort	\N	46	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_Doku_Abschlussbeurteilung	\N	46	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Score_DGAI_AufnArzt	\N	46	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Servoi_Automode_Triggerfenster	"Automode Triggerfenster (s) "	46	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Fall_Wertsachen_Prothese	\N	46	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Fall_Wertsachen_Prothese_Ort	\N	46	f
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	f
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	46	f
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_MS_Multi_Citratfluss	\N	46	f
@@ -9160,6 +9152,14 @@ Dynamische Kompliance	Compliance.dynamic Lung	Nierenersatzverfahren_VO_Schlauchs
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_G5_Thoch	Einstellwert: Zeiteinstellung des oberes Druckniveau beim G 5 im Modus DuoPAP	46	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_G5_Timax	eingestellte maximale Inspirationszeit beim G5 im Modus NIV	46	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Messung_ASB	\N	46	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Servoi_Automode_Triggerfenster	"Automode Triggerfenster (s) "	46	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Fall_Wertsachen_Prothese	\N	46	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Fall_Wertsachen_Prothese_Ort	\N	46	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Angehoerige1_TelefonMobil	Handy Nummer der Angehörigen des Patienten	46	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_T1_Zeit_zw2_SBT	Zeit zwischen 2 SBT	46	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Fall_Wertsachen_Kleidungsstuecke_Ort	\N	46	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_Doku_Abschlussbeurteilung	\N	46	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Score_DGAI_AufnArzt	\N	46	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Beatmung_MS_Evita2_IntrinsicPEEP	Ergebnis eines Messmanövers im Modus IPPV, IPPV assist	46	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Servoi_End_Insp_Zyklusende	"End. Insp. Zyklusende (% des Spitzenflows) "	46	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_VisionA_Vt	Einstellwert: eingestelltes Tidalvolumen	46	f
@@ -9410,9 +9410,9 @@ Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Strasse	Adresse des Patienten:
 Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Vorname	Vorname des Patiente	46	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	IABP_DatascopeCS300_ES_Doku_Ballonvolumen	Dokumentation des Ballonvolumens.	46	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_4008HS_Iso_UFZeit	\N	46	f
-Substituatfluss	\N	Nierenverfahren_VO_4008onl_Substituatbolus	\N	46	f
 Puls	\N	ABP	arterielle Blutdruck	29	t
 Substituatvolumen	\N	Schrittmacher_Osypka203H_ES_A_STIM	Stimulation Vorhof	46	t
+Substituatfluss	\N	Nierenverfahren_VO_4008onl_Substituatbolus	\N	46	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_T1_Psupport	Beatmung_ES_T1_Psupport	46	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Messung_InspiratorischePause	\N	46	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Pallas_Isofluran_insp	Inspiratorisch gemessene Isofluran.	46	f
@@ -9428,9 +9428,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apheres
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubVolKum_ml	Anpassung für IBUS Anbindung	45	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_PD_VO_Einlaufzeit	\N	45	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_Filter	Filter  für extrakorporale Verfahren	45	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	akt._Schwangerschaftwoche	aktuelle Schwangerschaftswoche des Babys	45	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008HS_TMP	\N	45	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onl_Dialyse_Zeit	\N	45	f
 Dauer extrakorporaler Gasaustausch	\N	IABP_Datascope_ES_Triggerauswahl	Liste	45	f
 Dauer Hämodialysesitzung	\N	IABP_Datascope_ES_EKGAbleitung	Liste	45	f
 Dauer Hämodialysesitzung	\N	Lungenersatzverfahren_Doku_Schlauchsystem	Schlauchsystembeschichtung relevant	45	f
@@ -9462,6 +9459,9 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_Pmax	Pmax, Maxim
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_ZeitHoch	\N	45	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Sauerstoff	Sauerstoffeinstellung	45	t
 Atemzugvolumen-Waehrend-Beatmung	Vt on vent Vent	Beatmung_Anordnung_BV	beatmungs-Verordung	45	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onl_Dialyse_Zeit	\N	45	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	akt._Schwangerschaftwoche	aktuelle Schwangerschaftswoche des Babys	45	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008HS_TMP	\N	45	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_Airvo_FlowSetting	Einstellunggröße  des Flows am Gerät	45	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_Pallas_Frischgas_Air	An der Flowröhre eingestellter Frischgas Flow für Air.	45	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Evita4_PEEP	gemessener positiver endexspiratorischer Druck	45	f
@@ -9715,16 +9715,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apheres
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008HS_IsoUFZiel	\N	44	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Plasma	\N	44	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Umsatz	\N	44	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_Apherese_VO_Bolus_Antikoag	\N	44	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_Doku_Abschlussbegründung	\N	44	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_VO_4008HS_Start_Na	\N	44	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_PD_VO_Einlaufzeit	\N	44	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_IsoUFZeit_	Isolierte Ultrafiltration	44	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_Blutfluss	\N	44	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_ISOUFRate	\N	44	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_ISOUFZiel	\N	44	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Patient_Strasse	Adresse des Patienten: Strasse + Hausnummer	44	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_VO_5008onl_StartNa	\N	44	f
 Blutfluss durch cardiovasculäres Gerät	\N	P_ADVOS_Doku_AbschlussUrteil	\N	44	f
 Dauer Hämodialysesitzung	\N	NEV_PD_Doku_Zykluszeit	\N	44	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_T1_Frequenz_Backup	\N	44	f
@@ -9747,6 +9737,16 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita4_ASB	eingestellte D
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_G5_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator G5 in den Beatmungsmodi APVsimv, Psimv.	44	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Pallas_IzuE	Dokumentation des eingestellten I : E.	44	t
 Atemzugvolumen-Waehrend-Beatmung	Vt on vent Vent	NEV_HD_Doku_FuellenMit	\N	44	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_IsoUFZeit_	Isolierte Ultrafiltration	44	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_Blutfluss	\N	44	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_ISOUFRate	\N	44	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_ISOUFZiel	\N	44	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Patient_Strasse	Adresse des Patienten: Strasse + Hausnummer	44	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_VO_5008onl_StartNa	\N	44	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_Apherese_VO_Bolus_Antikoag	\N	44	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_Doku_Abschlussbegründung	\N	44	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_VO_4008HS_Start_Na	\N	44	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_PD_VO_Einlaufzeit	\N	44	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_VisionA_Ti	Einstellwert: Inspirationszeit in Sekunden	44	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Fall_Wertsachen_Kleidungsstuecke	\N	44	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Fall_Wertsachen_Kleidungsstuecke_Ort	\N	44	f
@@ -10045,9 +10045,9 @@ Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_ES_4008onl_BasisNa	\N	44	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_Doku_FüllenMit	Füllen des Systems	44	f
 Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_VO_5008onl_IsoUFZeit	\N	44	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	P_Spezifitaet_Mutter	Blutgruppenspezifität der Mutter	44	f
-Substituatfluss	\N	P_NEV_HD_ES_5008onl_Substituat	\N	44	f
 Atemfrequenz	Resp rate	Beatmung_TM_Pallas_TEST	Test	46	t
 Spontane-Atemfrequenz-Beatmet	\N	NEV_Apherese_VO_SpülloesungAntikoag	\N	44	t
+Substituatfluss	\N	P_NEV_HD_ES_5008onl_Substituat	\N	44	t
 Systemischer vaskulärer Widerstandsindex	SV RI	ITBV	Intrathorakales Blutvolumen	44	f
 Systemischer vaskulärer Widerstandsindex	SV RI	NIRS	Über eine Messsonde transcutan gemessener Prozentwert	44	f
 Systemischer vaskulärer Widerstandsindex	SV RI	P_Waermesysteme_FisherPaykel_VO_Prozent	\N	44	f
@@ -10085,6 +10085,7 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_Evita2_AMV	gemessenes Ate
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_Evita2_frequenz	gemessene Atemfrequenz	43	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_Evita4_frequenz	gemessene Gesamtatemfrequenz	43	t
 Atemzugvolumen-Einstellung	VT setting Vent	Fontanelle_Beurteilung	\N	43	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_G5_ZeitStartSBT	Zeit bis zum Start STB	43	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_Evita2_Frequenzimv	einstellte IMV Frequenz im SIMV Modus	43	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_G5_InspFlow	Inspiratorischer Peakflow, ein Monitoring-Parameter	43	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.	43	f
@@ -10101,18 +10102,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersat
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_ES_Multi_Blutfluss	Blutpumpengeschwindigkeit ml/min	43	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss	43	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Schrittmacher_Osypka203H_ES_A_STIM	Stimulation Vorhof	43	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_G5_ZeitStartSBT	Zeit bis zum Start STB	43	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_T1_ZeitStartSBT	Zeit bis zum Start SBT	43	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Hypothermie_ArticSun_MS_Hoechstwassertemp	Anlage für IBUS Datenübermittlung	43	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Evita4_Phoch	Druckeinstellung für das obere Druckniveau im APRV Modus	43	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_VO_4008onl_Fluss	\N	43	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_PD_Doku_Bilanz	\N	43	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_Fluss	\N	43	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_ADM_Blutfluss	Blutpumpengeschwindigkeit	43	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_Multi_Dialysat	\N	43	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Schrittmacher_drei_ES_VentrikelintervallAV	Medtronic 5388	43	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Giraffe_ES_O2	Einstellung der O2-Konzentration im Inkubator	43	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Giraffe_MS_O2	Messung der O2-Konzentration im Inkubator	43	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_Pallas_T_Rampe	Dokumentation der eingestellten Rampenzeit.	43	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Fall_Wertsachen_Pflegeuntensilien_Ort	\N	43	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Fall_Wertsachen_Wertgegenstaende_Ort	\N	43	f
@@ -10129,6 +10118,15 @@ Atemfrequenz	Resp rate	RAP1	rechtsartrialer Druck	46	t
 Puls	\N	Ort_Temperatur1a_Messung	Liste	44	t
 Puls	\N	LAP	Linksatrial  Mitteldruck	29	t
 Atemzugvolumen-Waehrend-Beatmung	Vt on vent Vent	Nierenverfahren_MS_UltrafiltratmengeKum	Kumulativer Entzug, bilanzrelevant	43	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Evita4_Phoch	Druckeinstellung für das obere Druckniveau im APRV Modus	43	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_VO_4008onl_Fluss	\N	43	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_PD_Doku_Bilanz	\N	43	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_Fluss	\N	43	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_ADM_Blutfluss	Blutpumpengeschwindigkeit	43	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_Multi_Dialysat	\N	43	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Schrittmacher_drei_ES_VentrikelintervallAV	Medtronic 5388	43	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_T1_ZeitStartSBT	Zeit bis zum Start SBT	43	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Hypothermie_ArticSun_MS_Hoechstwassertemp	Anlage für IBUS Datenübermittlung	43	t
 Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_SVI	SchlagvolumenindexSchlagvolumenindex	67	f
 Dauer Hämodialysesitzung	\N	NEV_HD_VO_4008HS_Dialysezeit	\N	43	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_AbnahmeKumulat	\N	43	f
@@ -10622,24 +10620,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersat
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_ZielKalium	\N	42	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SubVolKum	\N	42	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_IsoUFZiel	\N	42	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_MS_Evita4_frequenz	gemessene Gesamtatemfrequenz	42	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	P_Therapiebetten_VO_Lifetherm_Strahler	\N	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Avea_DruckHoch	eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_MS_VisionA_AFSpontan	Messwert: Anzahl der gemessenen spontanen Atemzüge	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_CRRT_Doku_AbschlussBegruendung	\N	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_CRRT_MS_Multi_Bilanz_ml	neue Variable für automatische Datenübernahme IBUS	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_VO_4008onl_StartNa	\N	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_PD_Doku_Auslaufhoehe	\N	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_BasisNa	\N	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_Multi_Blutfluss	Blutpumpengeschwindigkeit ml/min	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_Multi_Calciumloesung	Beutel	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_4008onl_effBlutfluss	\N	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_VO_5008onl_Fluss	\N	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Schrittmacher_Doku_Drähte	\N	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Atom_ES_Luftfeuchtigkeit	\N	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_VO_Rotorest_liRotWinkel	\N	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_VO_Rotorest_reRotWinkel	\N	42	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_VO_Triadyne_liDrehWinkel	\N	42	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_Pmax	Hochdruckalarmgrenze im 'ASV Modus	42	f
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPAufblasen	Dokumentation des prozentualen Anteils des Aufblasens des Ballons	42	f
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.	42	f
@@ -10652,6 +10632,19 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Messung_IMVFrequenz	\N	42	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_C2_IEVerhaeltnis	\N	42	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_Evita2_Pmax	gemessener Beatmungsspitzendruck	42	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_G5_IEVerhaeltnis	gemessenes I:E Verhältnis	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Avea_DruckHoch	eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_MS_VisionA_AFSpontan	Messwert: Anzahl der gemessenen spontanen Atemzüge	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_CRRT_Doku_AbschlussBegruendung	\N	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_CRRT_MS_Multi_Bilanz_ml	neue Variable für automatische Datenübernahme IBUS	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_VO_4008onl_StartNa	\N	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_PD_Doku_Auslaufhoehe	\N	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_BasisNa	\N	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_Multi_Blutfluss	Blutpumpengeschwindigkeit ml/min	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_Multi_Calciumloesung	Beutel	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_4008onl_effBlutfluss	\N	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_VO_5008onl_Fluss	\N	42	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_MS_Evita4_frequenz	gemessene Gesamtatemfrequenz	42	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	P_Therapiebetten_VO_Lifetherm_Strahler	\N	42	t
 Dauer extrakorporaler Gasaustausch	\N	IABP_DatascopeCS100_ES_Triggerauswahl	\N	42	f
 Dauer extrakorporaler Gasaustausch	\N	IABP_Datascope_MS_SystoleDiastole	\N	42	f
 Dauer Hämodialysesitzung	\N	Beatmung_ES_VisionA_Oszillationsfrequenz	Oszillationsfrequenz Gerät: Alpha Vision Modus: HFO	42	f
@@ -10974,13 +10967,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Bilanzziel	\N	41	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_ISOUF	\N	41	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_4008HS_ISOUFZiel	\N	41	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Angehoerige1_TelefonArbeit	Berufliche Telefonnummer der Angehörigen des Patienten	41	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_MS_Evita4_P01	gemessener P0.1 Druck nach Meßmanöver	41	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008HS_Leitfähigkeit	\N	41	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Defi_ES_Ausgang	\N	41	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_drei_ES_AusgangA	Medtronic 5388	41	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_drei_ES_AusgangV	Medtronic 5388	41	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Osypka101H_ES_HighRateSTIM	Listenauswahl	41	f
 Atemfrequenz	Resp rate	P_Beatmung_ES_C3_HLI	\N	41	t
 Substituatvolumen	\N	IABP_AutoCat_MS_SystoleDiastole	\N	42	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Optiflow_PEEP	Liste hinterlegt, definierte Peepeinstellungen über Ventil	42	t
@@ -10996,19 +10982,15 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_G5_ExpMinVol	"Exspiratori
 Atemzugvolumen-Einstellung	VT setting Vent	Nierenersatzverfahren_VO_ISOUFZeit	Isolierte Ultrafiltration/Bergström	41	t
 Atemzugvolumen-Einstellung	VT setting Vent	Nierenverfahren_VO_Calciumloesung	Calciumbeutel	41	t
 Atemzugvolumen-Waehrend-Beatmung	Vt on vent Vent	NEV_HD_VO_4008onl_SollNa	\N	41	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Angehoerige1_TelefonArbeit	Berufliche Telefonnummer der Angehörigen des Patienten	41	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_MS_Evita4_P01	gemessener P0.1 Druck nach Meßmanöver	41	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008HS_Leitfähigkeit	\N	41	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Defi_ES_Ausgang	\N	41	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_drei_ES_AusgangA	Medtronic 5388	41	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_drei_ES_AusgangV	Medtronic 5388	41	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Osypka101H_ES_HighRateSTIM	Listenauswahl	41	t
 Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVR	Systemic vascular resistance	57	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Osypka203H_ES_Highrate_StimRate	Überstimulationsfrequenz Vorhof	41	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Therapiebetten_VO_Triadyne_reDrehWinkel	\N	41	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008onl_Leitfähigkeit	\N	41	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_Blutfluss	\N	41	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_Fluss	\N	41	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_IsoUFRate	Isolierte Ultrafiltration	41	f
 Parameter von Beatmung	\N	P_ADVOS_VO_Filter	\N	41	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_IsoUFZiel	\N	41	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Schrittmacher_Doku_Reizschwelle	\N	41	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Schrittmacher_Siemens_ES_Empfindlichkeit	\N	41	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_VO_Rotorest_liVerweildauer	\N	41	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_VO_Rotorest_reVerweildauer	\N	41	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_Messung_AutoTubuskompentationAus	\N	41	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_MS_Pallas_MAC_exsp	Gemessener MAC Wert. (endexspiratorische mittlere alveoläre Konzentration)	41	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Fall_Wertsachen_Wertgegenstaende	\N	41	f
@@ -11034,6 +11016,17 @@ Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_C2_PEEP_C
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_G5_Frequenz_Backup	Frequenzeinstellung inder Backupeinstellung.	41	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Heimbeatmung_Ti_Backup	\N	41	f
 Blutdruck	Blood pressure panel with all children optional	Beatmung_Messung_AutoTubuskompentationAus	\N	41	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008onl_Leitfähigkeit	\N	41	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_Blutfluss	\N	41	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_Fluss	\N	41	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_IsoUFRate	Isolierte Ultrafiltration	41	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_IsoUFZiel	\N	41	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Schrittmacher_Doku_Reizschwelle	\N	41	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Schrittmacher_Siemens_ES_Empfindlichkeit	\N	41	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_VO_Rotorest_liVerweildauer	\N	41	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_VO_Rotorest_reVerweildauer	\N	41	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Osypka203H_ES_Highrate_StimRate	Überstimulationsfrequenz Vorhof	41	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Therapiebetten_VO_Triadyne_reDrehWinkel	\N	41	t
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_MS_Multi_artDruck	arterieller Druck	41	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Servoi_Backup_DK_ueber_PEEP	"Backup DK über PEEP [cmH2O] "	41	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Avea_PIP	gemessener Atemwegsspitzendruck	41	f
@@ -11297,7 +11290,6 @@ Spontanes-Atemzugvolumen	Spont VT on vent	P_Spezifitaet_Mutter	Blutgruppenspezif
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	P_NEV_HD_ES_5008onl_SollNa	\N	41	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	SonstVerfahren_VO_Hypothermiegerä_Kuehlrate	Hypothermiebehandlung	41	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	SonstVerfahren_VO_Hypothermiegerät_Kuehlverfahren	Liste	41	f
-Substituatfluss	\N	Beatmung_ES_VisionA_HFOBaseFlow	Basis Continousflow	41	f
 Systemischer vaskulärer Widerstandsindex	SV RI	NEV_Apherese_MS_Multi_Behandlungs_Zeit_min	Anpassung für automatische Gerätedataenübernahme mit IBUS	41	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Angehoerige1_Verwandschaftsgrad	\N	41	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	EinweisenderArzt_Fax	\N	41	f
@@ -11312,17 +11304,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersat
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_ES_5008onl_SollNa	\N	40	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SollNa	\N	40	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_BlutflussSNPumpe	\N	40	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_CRRT_MS_Multi_UltrafiltrationlKum_ml	Neuanlage im Zuge der IBUS Anbindung	40	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_VisionA_PEEPCPAP	Einstellwert: eingestelltes Peep bzw. CPAP Niveau	40	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Fall_Nummer	Identifikationsnummer des Falles	40	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	F_Reakarte_VerantwortlichePflegekraft	Der/Die verantwortliche Pflegekraft der/die die Reakarte freigibt	40	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	IABP_DatascopeCS300_ES_Doku_Ballonvolumen	Dokumentation des Ballonvolumens.	40	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_Doku_FuellenMit	\N	40	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_VO_4008HS_Fluss	\N	40	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_Bicarbonat	\N	40	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_Therapiebetten_Doku_Lifetherm_ES_Neigung	Einstellung des Neigungswinkels	40	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Schrittmacher_zwei_ES_Empfindlichkeit	Medtronic 5375	40	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Waermesysteme_Warmtouch_Doku_Geblaese	Liste	40	f
 Atemfrequenz	Resp rate	SM_Frequenz	Schrittmacher Frequenz	40	t
 Blutdruck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienFiO2	\N	40	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_MS_Pallas_Sevofluran_insp	Inspiratorisch gemessene Sevofluran Konzentration.	41	t
@@ -11338,6 +11319,13 @@ Atemzugvolumen-Einstellung	VT setting Vent	Schrittmacher_Osypka203H_ES_Highrate_
 Atemzugvolumen-Waehrend-Beatmung	Vt on vent Vent	Beatmung_Messung_Amplitude	Amplitude bei HFOV	40	t
 Atemzugvolumen-Waehrend-Beatmung	Vt on vent Vent	VAD_Vakuum_Doku	\N	40	t
 Atemzugvolumen-Waehrend-Beatmung	Vt on vent Vent	Vigileo_CO	\N	40	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_VisionA_PEEPCPAP	Einstellwert: eingestelltes Peep bzw. CPAP Niveau	40	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Fall_Nummer	Identifikationsnummer des Falles	40	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	F_Reakarte_VerantwortlichePflegekraft	Der/Die verantwortliche Pflegekraft der/die die Reakarte freigibt	40	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	IABP_DatascopeCS300_ES_Doku_Ballonvolumen	Dokumentation des Ballonvolumens.	40	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_Doku_FuellenMit	\N	40	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_CRRT_MS_Multi_UltrafiltrationlKum_ml	Neuanlage im Zuge der IBUS Anbindung	40	t
+Substituatfluss	\N	Beatmung_ES_VisionA_HFOBaseFlow	Basis Continousflow	41	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_artDruck	\N	40	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienFiO2	\N	40	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienSpO2	\N	40	f
@@ -11629,26 +11617,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_HarnstoffZiel	\N	39	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_Multi_UltrafiltrationMax	Ultrafiltrationsrate	39	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Oxidationswasser	Oxidationswasser in ml (einfuhrrelevant)	39	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Avea_DruckNiedrig	eingestelltes unteres Druckniveau im Modus APRV / BiPhasisch	39	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Hypothermie_ArticSun_ES_Hoechsttwassertemp	\N	39	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008HS_IsoUFVolKum	\N	39	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum	\N	39	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Nierenersatzverfahren_Mess_BilanzGleichUFVolumen	\N	39	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Nierenverfahren_VO_4008HS_StartNatrium	\N	39	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	P_Therapiebetten_VO_Lifetherm_Neigung	Verordnung des Neigungswinkels	39	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onl_BlutflussSNPumpe	\N	39	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onll_Blutfluss	\N	39	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008onl_BlutvolKum	\N	39	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenersatzverfahren_Einstellung_FuellenMit	System vorfüllen mit Flüssigkeiten aus einer Auswahlliste	39	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_4008HS_effBlutfluss	\N	39	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_VO_4008onl_BlutflussSNPumpe	\N	39	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_ADVOS_MS_ADVOS_Ultrafiltratmengekum_ml	\N	39	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_ES_5008onl_Blutfluss	\N	39	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_ES_5008onl_IsoUFZiel	\N	39	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_MS_5008onl_Leitfaehigkeit	\N	39	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_MS_5008_onl_Ultrafiltratmengekum_ml	\N	39	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_Therapiebetten_Doku_Lifetherm_ES_Strahler	\N	39	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Triadyne_DruckBeine	\N	39	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienPzvCO2	\N	39	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_Evita2_Anstiegszeit	eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau	39	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_Pallas_Inspirationspause_Tip_Tinsp	Dokumentation der Inspirationszeit. Verhältnis zwischen Tip und Tinsp. 0 bis 60 %.	39	f
@@ -11664,6 +11632,24 @@ Blutfluss durch cardiovasculäres Gerät	\N	Vigileo_COCI	Cardiac output / -index
 Dauer Hämodialysesitzung	\N	NEV_HD_Doku_SpüllösungAntikoag	\N	39	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_CF800_O2Konzentration	Sauerstoffgehalt des eingestellten Gasgemisches CF 800	39	f
 Blutdruck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienPzvCO2	\N	39	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onl_BlutflussSNPumpe	\N	39	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onll_Blutfluss	\N	39	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008onl_BlutvolKum	\N	39	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenersatzverfahren_Einstellung_FuellenMit	System vorfüllen mit Flüssigkeiten aus einer Auswahlliste	39	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_4008HS_effBlutfluss	\N	39	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_VO_4008onl_BlutflussSNPumpe	\N	39	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_ADVOS_MS_ADVOS_Ultrafiltratmengekum_ml	\N	39	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_ES_5008onl_Blutfluss	\N	39	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_ES_5008onl_IsoUFZiel	\N	39	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_MS_5008onl_Leitfaehigkeit	\N	39	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_MS_5008_onl_Ultrafiltratmengekum_ml	\N	39	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Avea_DruckNiedrig	eingestelltes unteres Druckniveau im Modus APRV / BiPhasisch	39	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Hypothermie_ArticSun_ES_Hoechsttwassertemp	\N	39	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008HS_IsoUFVolKum	\N	39	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum	\N	39	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Nierenersatzverfahren_Mess_BilanzGleichUFVolumen	\N	39	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Nierenverfahren_VO_4008HS_StartNatrium	\N	39	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	P_Therapiebetten_VO_Lifetherm_Neigung	Verordnung des Neigungswinkels	39	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Evita4_Thoch	Zeiteinstellung für das obere Druckniveau im APRV Modus	39	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_G5_Frequenz	Anzahl der Atemzyklen pro Minute, Parametereinstellung	39	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_NarkosegasSevofluran	\N	39	f
@@ -11904,22 +11890,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersat
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Schlauchsystem	Verordnung Schlauchsystem	38	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_IsoUFVolKum	\N	38	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SubBolusVolKum	\N	38	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_drei_ES_Basisfrequenz	Medtronic 5388	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_MS_Evita4_Pmin	gemessener minimaler Atemwegsdruck während des Atemzyklus	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP.	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Lungenersatzverfahren_Doku_ILAactivve_Flussreg	Liste ein aus	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Lungenersatzverfahren_ES_ILAactivve_Blutfluss	\N	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum_ml	Anpassung im Zuge der automatischen Datenübernahme IBUS	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008onl_effBlutfluss	\N	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_VO_4008HS_Blutfluss_Max	\N	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_VO_4008onl_BlutflussMax	\N	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_4008HS_BlutvolumenKum	\N	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_VO_4008onl_Blutfluss	\N	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_ES_5008onl_BlutflussSNPumpe	\N	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_ES_5008onl_Fluss	\N	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_MS_5008onl_BlutvolKum	\N	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Schrittmacher_Defi_ES_Frequenz	\N	38	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Triadyne_DruckKoerper	\N	38	f
 Atemfrequenz	Resp rate	CO	Herzleistung	38	t
 Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_Evita4_fApnoe	eingestellte Atemfrequenz in der Apnoeventilation	38	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_Anordnung_SauerstoffFlow	\N	39	t
@@ -11931,6 +11901,13 @@ Unterstützungsdruck Beatmung	Pressure support setting Vent	Nierenersatzverfahre
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	IABP_DatascopeCS100_MS_SystoleMittelDiastole	\N	38	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_BiPAPV_Gesamtleckage	Die gemessene Gesamtleckage inclusive der bestehenden Sollleckage	38	t
 Atemzugvolumen-Einstellung	VT setting Vent	Schrittmacher_Osypka101H_ES_STIM	Stimulation	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_MS_Evita4_Pmin	gemessener minimaler Atemwegsdruck während des Atemzyklus	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP.	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Lungenersatzverfahren_Doku_ILAactivve_Flussreg	Liste ein aus	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Lungenersatzverfahren_ES_ILAactivve_Blutfluss	\N	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum_ml	Anpassung im Zuge der automatischen Datenübernahme IBUS	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008onl_effBlutfluss	\N	38	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_drei_ES_Basisfrequenz	Medtronic 5388	38	t
 Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_T1_Ttief	Einstellwert: Zeiteinstellung für das untere Druckniveau	38	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_C2_F_SIMV	Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.	38	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_Evita4_fApnoe	eingestellte Atemfrequenz in der Apnoeventilation	38	f
@@ -12117,18 +12094,6 @@ Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_SubstituatRate	\N	38	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Mess_UFZiel	\N	38	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_HD_Doku_SpüllösungAntikoag	\N	37	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008HS_IsoUFVolKum_ml	Anpassung für IBUS Anbindung	37	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Nierenverfahren_MS_4008HS_ISOUFVolumenKum	\N	37	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Patient_Nierenverfahren_VO_4008HS_StartNatrium	\N	37	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_BlutflussSNPumpe	\N	37	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_4008onl_BlutvolumenKumulativ	\N	37	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_VO_4008HS_BlutflussSNPumpe	\N	37	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_VO_4008HS_Fluss	\N	37	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_CSF_MS_LiquoGuard_Liquorfluss	"automatisch berechnet aus Pset ml/h "	37	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_MS_5008onl_effBlutfluss	\N	37	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Giraffe_ES_Luftfeuchtigkeit	Einstellung der Luftfeuchtigkeit im Inkubator	37	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Giraffe_MS_Luftfeuchtigkeit	Messung der Luftfeuchtigkeit im Inkubator	37	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Triadyne_DruckSchulter	\N	37	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator G5 in den Beatmungsmodi APVsimv, Psimv.	37	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_Ttief	Einstellwert: Zeiteinstellung für das untere Druckniveau beim G5 im Modus APRV	37	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_MS_Avea_fVt	errechneter Quotient zwischen Frequenz und Tidalvolumen	37	f
@@ -12157,6 +12122,16 @@ Herzzeitvolumen	LV Output	Hausarzt_Land	\N	43	t
 Venöser Druck	\N	RVSA	"Rechtsvetrikulärer Schlagarbeit "	38	t
 Venöser Druck	\N	VigilanceC_PVR	Pulmonaler vasculärer Widerstand	38	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_ES_Avea_InspPause	Zeiteinstellung für die Plateauphase im Modus CMV und SIMV	37	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_BlutflussSNPumpe	\N	37	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_4008onl_BlutvolumenKumulativ	\N	37	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_VO_4008HS_BlutflussSNPumpe	\N	37	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_VO_4008HS_Fluss	\N	37	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_CSF_MS_LiquoGuard_Liquorfluss	"automatisch berechnet aus Pset ml/h "	37	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_MS_5008onl_effBlutfluss	\N	37	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Giraffe_ES_Luftfeuchtigkeit	Einstellung der Luftfeuchtigkeit im Inkubator	37	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008HS_IsoUFVolKum_ml	Anpassung für IBUS Anbindung	37	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Nierenverfahren_MS_4008HS_ISOUFVolumenKum	\N	37	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Patient_Nierenverfahren_VO_4008HS_StartNatrium	\N	37	t
 Körpertemperatur Generisch	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_BiPAPV_AF	Einstellwert: eingestellte Mindestatemfrequenz im ST Moodus	37	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	NEV_HD_MS_4008onl_Leitfähigkeit	\N	37	f
@@ -12219,13 +12194,9 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_Doku_SpuelbeutelInitialdosis	\N	37	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_4008HS_UFProfil	\N	37	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Patient_Kopfumfang_bit	Kopfumfang bit cm	37	f
-Substituatfluss	\N	Hausarzt_PLZ	\N	37	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_Spueldauer	\N	36	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_ES_5008onl_IsoUFZiel	\N	36	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_IsoUFZiel	\N	36	f
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Heimbeatmung_Drucktrigger	\N	36	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008HS_Fluss	\N	36	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008HS_UFZiel	\N	36	f
 Atemfrequenz	Resp rate	Verlegung_wo	"Der Patient wurde 'wohin?' verlegt? "	42	t
 Atemfrequenz	Resp rate	IABP_Frequenz	\N	36	t
 Puls	\N	PWP	Pulmunaler Wedgedruck	29	t
@@ -12249,9 +12220,12 @@ Atemzugvolumen-Einstellung	VT setting Vent	p-SV	Schlagvolumen	36	t
 Atemzugvolumen-Einstellung	VT setting Vent	Schlagvolumen	gemessenes Schlagvolumen	36	t
 Atemzugvolumen-Einstellung	VT setting Vent	VigilanceC_SI	\N	36	t
 Atemzugvolumen-Einstellung	VT setting Vent	VigilanceC_SV	Schlagvolumen	36	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008HS_Fluss	\N	36	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008HS_UFZiel	\N	36	t
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Heimbeatmung_Drucktrigger	\N	36	t
+Substituatfluss	\N	Hausarzt_PLZ	\N	37	t
 Atemfrequenz	Resp rate	Beatmung_MS_Avea_Frequenz	gemessene Atemfrequenz	100	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	PICCO_HF	HerzfrequenzHerzfrequenz	30	t
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_Multi_DruckvorFilterDruck	\N	36	f
 Blutdruck Generisch	Blood pressure panel with all children optional	ART	2. artereille Messung, ab 201712 im Rahmen Umstellung Philips Monitoring	36	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_PEEP_CPAP_Ptief	Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.	36	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_Thoch	Einstellwert: Zeiteinstellung des oberes Druckniveau beim G 5 im Modus DuoPAP	36	f
@@ -12298,6 +12272,7 @@ Linksatrialer Druck	Blood pressure panel with all children optional	ART	2. arter
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_PEEP_CPAP_Ptief	Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.	36	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Thoch	Einstellwert: Zeiteinstellung des oberes Druckniveau beim G 5 im Modus DuoPAP	36	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_PEEP_CPAP_Ptief	Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.	36	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_Multi_DruckvorFilterDruck	\N	36	t
 Linksatrialer Druck	Blood pressure panel with all children optional	NEV_Apherese_MS_Multi_Behandlungs_Zeit_min	Anpassung für automatische Gerätedataenübernahme mit IBUS	36	t
 Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_P1	\N	36	f
 Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_P2	\N	36	f
@@ -13506,6 +13481,31 @@ Atemzugvolumen-Einstellung	VT setting Vent	PICCO_SVV	Schlagvolumen-Variation	42	
 Atemzugvolumen-Einstellung	VT setting Vent	P_Impella_Impella_Spuelloesung	\N	42	t
 Atemzugvolumen-Einstellung	VT setting Vent	P_Weaning_Abbruchgrund	\N	42	t
 Atemzugvolumen-Einstellung	VT setting Vent	VigilanceC_SVV	Schlagvolumen Variation	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Giraffe_ES_O2	Einstellung der O2-Konzentration im Inkubator	43	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Giraffe_MS_O2	Messung der O2-Konzentration im Inkubator	43	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Schrittmacher_Doku_Drähte	\N	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Atom_ES_Luftfeuchtigkeit	\N	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_VO_Rotorest_liRotWinkel	\N	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_VO_Rotorest_reRotWinkel	\N	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_VO_Triadyne_liDrehWinkel	\N	42	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_VO_4008HS_Fluss	\N	40	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008onl_Bicarbonat	\N	40	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_Therapiebetten_Doku_Lifetherm_ES_Neigung	Einstellung des Neigungswinkels	40	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Schrittmacher_zwei_ES_Empfindlichkeit	Medtronic 5375	40	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Waermesysteme_Warmtouch_Doku_Geblaese	Liste	40	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_Therapiebetten_Doku_Lifetherm_ES_Strahler	\N	39	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Triadyne_DruckBeine	\N	39	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_VO_4008HS_Blutfluss_Max	\N	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_VO_4008onl_BlutflussMax	\N	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_4008HS_BlutvolumenKum	\N	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_VO_4008onl_Blutfluss	\N	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_ES_5008onl_BlutflussSNPumpe	\N	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_ES_5008onl_Fluss	\N	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	P_NEV_HD_MS_5008onl_BlutvolKum	\N	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Schrittmacher_Defi_ES_Frequenz	\N	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Triadyne_DruckKoerper	\N	38	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Giraffe_MS_Luftfeuchtigkeit	Messung der Luftfeuchtigkeit im Inkubator	37	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Therapiebetten_Doku_Triadyne_DruckSchulter	\N	37	t
 Körpertemperatur Kern	Body temperature	Betreuer_Status	\N	52	f
 Parameter von Beatmung	\N	Betreuer2_Ort	\N	51	f
 Hämodialyse Blutfluss	\N	P_NEV_HD_VO_5008onl_BlutflussMax	\N	50	f
@@ -13520,6 +13520,9 @@ Substituatvolumen	\N	Vigileo_SVI	SchlagvolumenindexSchlagvolumenindex	36	t
 Venöser Druck	\N	PICCO_SVRI	Systemic vascular resistance index	36	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_MS_VisionA_MAP	gemessener Mittlerer Atemwegsdruck unter HFO bei Alpha Vision	36	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Nierenersatzverfahren_Mess_ZufuhrSubstituat	\N	36	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onl_UFZiel	\N	35	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008HS_effBlutfluss	\N	35	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008HS_Leitfähigkeit	\N	35	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenverfahren_MS_Multi_CalciumvolumenKumulativ	kumulativ	36	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Pmean	Gemesener Atemwegsmitteldruck	36	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_P01	Atemwegs-Okklusionsdruck	36	f
@@ -13529,9 +13532,6 @@ Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_ES_4008onl_UFProfil	\N	35	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_4008HS_UFZiel	\N	35	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_ADVOS_Doku_AbschlussBegruendung	\N	35	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onl_UFZiel	\N	35	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008HS_effBlutfluss	\N	35	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008HS_Leitfähigkeit	\N	35	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_Groeße	Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet	35	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_Phoch	Einstellwert oberes Druckniveau im beim G 5 im Modus DuoPAP	35	f
 Blutdruck Generisch	Blood pressure panel with all children optional	NeurochirurgischeMessungen_Platzhalter	\N	35	f
@@ -13559,7 +13559,6 @@ Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatm
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NeurochirurgischeMessungen_Platzhalter	\N	35	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_MS_VisionA_Amplitude	gemessene Druckdifferenz im HFOV Modus	35	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_Mess_UmsatzKumulati	\N	35	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_4008onl_IsoUFVolumenKumulativ	\N	34	f
 Dauer Hämodialysesitzung	\N	Hausarzt_Fax	\N	34	f
 Dauer Hämodialysesitzung	\N	NEV_Apherese_VO_Multi_Temp	Anlage 18.05.2012 String	34	f
 Ideales Körpergewicht	Ideal bdy weight	Nierenverfahren_MS_ADM_verabreichtesPlasma	kumulativ	34	f
@@ -13590,6 +13589,7 @@ Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmu
 Linksventrikulärer Druck	Blood pressure panel with all children optional	NeurochirurgischeMessungen_Platzhalter	\N	35	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	PtiO2Druck	Gemessener Sauerstoffpartialdruck im Parenchym	35	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Score_DGAI_AufnBeatmungsstundenbiszurAufnahme	\N	35	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_4008onl_IsoUFVolumenKumulativ	\N	34	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_Avea_FlowTrigger	eingestellter Flowtrigger: Schwellenwertt für die inspiratorische Bemühung des Patienten um die Druckunterstützung auszulösen	33	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_Druckrampe	Eine Parametereinstellung. Anstiegszeit des Drucks bei druckkontrollierten und druckunterstützten Atemzyklus.	33	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	P_CSF_MS_LiqouGuard_Pcsf	\N	33	f
@@ -13634,7 +13634,6 @@ Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmu
 Linksventrikulärer Druck	Blood pressure panel with all children optional	SVRI	"Index des systemischen Gefäßwiderstandes "	30	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Avea_FlowTrigger	eingestellter Flowtrigger: Schwellenwertt für die inspiratorische Bemühung des Patienten um die Druckunterstützung auszulösen	33	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Druckrampe	Eine Parametereinstellung. Anstiegszeit des Drucks bei druckkontrollierten und druckunterstützten Atemzyklus.	33	f
-Substituatfluss	\N	BIS	Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.	33	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_C2_Pmax	Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.	32	f
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_MS_Pallas_Cpat	Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.	32	f
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	PWP	Pulmunaler Wedgedruck	32	f
@@ -13642,7 +13641,6 @@ Hämodialyse Blutfluss	\N	P_Beatmung_ES_O2Flow	l/min	32	f
 Ideales Körpergewicht	Ideal bdy weight	Lungenersatzverfahren_MS_ILAactivve_DeltaP	Delta P2/P3	32	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_C2_Pmax	Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.	32	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_MS_Pallas_Cpat	Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.	32	f
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_Apherese_VO_Multi_Temp	Anlage 18.05.2012 String	31	f
 Maximaler Beatmungsdruck	Press.max on vent Airway	IABP_EKG	\N	31	f
 Blutdruck	Blood pressure panel with all children optional	LCWI	"Left Cardiac Work Index "	31	t
 Dynamische Kompliance	Compliance.dynamic Lung	PC	Pulmonalkapillardruck	32	t
@@ -13670,6 +13668,8 @@ Unterstützungsdruck Beatmung	Pressure support setting Vent	Schrittmacher_Osypka
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Schrittmacher_Osypka203H_ES_Rate	Grundfrequenz	33	t
 Atemzugvolumen-Einstellung	VT setting Vent	GEDV	"Globales enddiastolisches Volumen "	32	t
 Atemzugvolumen-Einstellung	VT setting Vent	NEV_HD_VO_4008HS_UF_Ziel	\N	32	t
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_Apherese_VO_Multi_Temp	Anlage 18.05.2012 String	31	t
+Substituatfluss	\N	BIS	Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.	33	t
 Herzfrequenz	Heart rate	HF	Herzfrequenz	29	f
 Monitoring und Vitaldaten	\N	NEV_Apherese_ES_Multi_Temp	Anlage 18.05.2012	29	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	NIRS	Über eine Messsonde transcutan gemessener Prozentwert	28	f
