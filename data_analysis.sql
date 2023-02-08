@@ -341,7 +341,7 @@ update icu_copra.python_match set deleted = true where profiles = 'Substituatflu
   'Nierenverfahren_VO_Multi_Substituat', 'Nierenverfahren_ES_Multi_Substituat', 'Nierenverfahren_ES_BM25_Umsatz'
 );
 
-update icu_copra.python_match set deleted = true where profiles = 'Atemzugvolumen-Waehrend-Beatmung';
+update icu_copra.python_match set deleted = true where profiles = 'Spontane-Mechanische-Atemfrequenz-Beatmet';
 
 
 
@@ -353,7 +353,7 @@ update icu_copra.python_match set deleted = true where profiles = 'Ideales Körp
 );
 
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 6;
+update icu_copra.fhir_profiles_all set analyzed = true where id = 44;
 
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;

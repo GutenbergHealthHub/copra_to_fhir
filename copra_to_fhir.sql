@@ -6707,7 +6707,6 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 33	Eingestellter inspiratorischer Gasfluss	Observation	\N	76275-7	\N	Insp flow set Vent	L/min	f
 36	Spontanes-Plus-Mechanisches-Atemzugvolumen	Observation	\N	20118-6	\N	Spont+mech VT on vent	mL	f
 41	Zeitverhältnis-Ein-Ausatmung	Observation	250822000	75931-6	151832	Insp/Exp time Ratio	{ratio}	f
-44	Spontane-Mechanische-Atemfrequenz-Beatmet	Observation	250810003	19840-8	152490	Breaths.spont+mech on vent	/min	f
 56	Körpergrösse Percentil	Observation	1153605006	8303-0	\N	Body height Prctl	%	f
 58	Körpertemperatur Kern	Observation	276885007	8310-5	150368	Body temperature	Cel	f
 60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	f
@@ -6732,6 +6731,7 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 54	Körpergewicht	Observation	27113001	29463-7	\N	Weight	kg	t
 50	Intrakranieller Druck ICP	Observation	250844005	60956-0	153608	ICP	mm[Hg]	t
 100	Körpertemperatur rektal	Observation	307047009	8332-9	188420	Rectal temp	Cel	t
+44	Spontane-Mechanische-Atemfrequenz-Beatmet	Observation	250810003	19840-8	152490	Breaths.spont+mech on vent	/min	t
 \.
 
 
@@ -6950,8 +6950,25 @@ Körpertemperatur Stirn	Body temperature	Temp3a	Temperatur 3a	76	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_Beatmung_ES_O2Flow	l/min	75	f
 Körpertemperatur vaginal	Body temperature	Temp2a	Temperatur 2a	76	t
 Körpertemperatur vaginal	Body temperature	Temp3a	Temperatur 3a	76	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_ProzentMinVol	Prozentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus	52	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Ptief	Einstellwert: unteres Druckniveau im Modus APRV	52	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_MV	\N	52	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pinsp	"Inspiratorischer Druck, mit Pinsp wird der Zieldruck (zusätzlich zu PEEP/CPAP) bezeichnet, der im Modus ASV während der Inspirationsphase abgegeben wird"	52	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Rinsp	Inspiratorische Flow-Resistance	52	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_VTE	\N	52	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_fSpontan	Spontane Atemfrequenz	51	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_petCO2	\N	51	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_TI	Inspirationszeit in Sekunden	51	t
 Linksventrikulaeres Schlagvolumenindex	LV SVI	p-SVI	Schlagvolumenindex  (PICCO Modul Dräger Monitoring)	75	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_VT_IBW	\N	51	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_RepeatCount	\N	51	t
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_Doku_Bolusgabe	\N	42	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_Sensitivity	\N	51	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_fSpontan	Spontane Atemfrequenz	51	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Ti	Einstellwert: Inspirationszeit in Sekunden	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Pmean	Mean Airway Pressure	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Power	\N	50	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_PeepCPAP	Messwert: Beatmungsdruck Peep / CPAP	74	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_PeepCPAP	Messwert: Beatmungsdruck Peep/CPAP	74	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_VisionA_PEEP	Messwert: gemessener positiver endexspiratorischer Druck	74	f
@@ -6969,6 +6986,9 @@ Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVR	Systemischer Gef�
 Hämodialyse Blutfluss	\N	Hemolung_MS_Blutfluss	\N	73	f
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	73	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Mvspont	\N	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Vte	"Exsp. Tidalvolumen "	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Vti	"Insp. Tidalvolumen "	50	t
 Körpertemperatur Blut	Blood temp	Temp1b	Temperatur 1b	73	f
 Körpertemperatur Blut	Blood temp	Temp2b	Temperatur 2b	73	f
 Körpertemperatur Blut	Blood temp	Temp3b	Temperatur 3b	73	f
@@ -6983,14 +7003,31 @@ Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Naso	Anlage im
 Körpertemperatur Stirn	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
 Linksventrikulaeres Schlagvolumenindex	LV SVI	LVSAI	"Linksventrikulärer Schlagarbeitsindex "	73	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	PtiO2Druck	Gemessener Sauerstoffpartialdruck im Parenchym	72	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_P01	Atemweg-Okklusionsdruck, ein Monitoring-Parameter	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_CRRT_VO_Option	\N	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_SBT_Zeitraum_nach	\N	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_MVspn	spontanes Atemminutenvolumen	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Pkontrol	Einstellwert oberes Druckniveau beim G 5 im Modus P SIMV	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Zeit_zw2_SBT	Zeit zwishen 2 SBT	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_Pinsp	\N	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_TInsp	\N	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Pmax	\N	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_ETS	Exspirationserkennung 10 - 45% des Peak Flow	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Plateau	Einstellwert: Plateauphase in Sekunden	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_TApnoe	Apnea Duration	49	t
 Dauer extrakorporaler Gasaustausch	\N	HeartWare_Watt_Doku	\N	42	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	49	t
 Körpertemperatur Achsel	Axil temp	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	72	f
 Körpertemperatur Blut	Blood temp	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	72	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Ppeak	\N	49	t
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_Frequenz	eingestellt mandatorische Atemfrquenz	72	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck	72	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck	72	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Avea_Frequenz	eingestellte mandatorische AF	71	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Pallas_Pinsp	Eingestellter Inspiration Druck.	71	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_ExspFlow	Exspiratorischer Peakflow	49	t
 Atemfrequenz	Resp rate	Nierenverfahren_VO_Multi_Calcium	Ca-rate	73	t
 Herzfrequenz	Heart rate	Schrittmacher_Osypka101H_ES_Rate	Grundfrequenz	72	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Enfluran_insp	Inspiratorisch gemessene Enfluran Konzentration.	71	t
@@ -7000,11 +7037,44 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverf
 Pulmonalvaskulärer Widerstandsindex	PV RI	p-SVRI	"Index des systemischen Gefäßwiderstandes (PICCO Modul Dräger Monitoring)  "	73	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Citrat	\N	73	t
 Substituatfluss	\N	Nierenverfahren_VO_Multi_SubstituatBolus	Substituatbolus in ml	72	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_InspFlow	Inspiratorischer Peakflow	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_VCO2	\N	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_VLeckage	Leckagevolumen	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_PIP	positiv inspiratorischer Druck	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_Plateau	Messwert: gemessener Plateaudruck	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	F_Sozialanamnese_Betreuung_Schule_Klasse	\N	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Patient_Kopfumfang_Aufnahme	\N	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Patient_Sprache	Muttersprache des Patienten	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Aufnahme_Schwangerschaft_sonstigeString	\N	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_ProzentVol	\N	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Ti	\N	49	t
 Körpertemperatur unter der Zunge	Oral temp	Untersuchung_Status_Koerpertemperatur	\N	71	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_TE	\N	49	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita2_InspFlow	eingestellter Inspirationfluss	70	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_Pallas_inCO2	Inspiratorisch gemessenes CO2.	70	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_TI	\N	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_ProzentMinVol	Messung nur unter ASV Intellivent	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_FreqHZ	\N	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Pmean	Gemesener Atemwegsmitteldruck	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Pplat	"Atemwegsdruck Pause "	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_PEEP	Messwert: gemessener positiver endexspiratorischer Druck	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_CO2Elim_Target_Shift	\N	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Oxygen_Target_Shift	\N	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_SHT	\N	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_IE	\N	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_MVspn	spontanes Atemminutenvolumen	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_PTP	\N	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Pmin	Minimum Airway Pressure	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Pplateau	Plateau Druck	47	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_CalciumFluss	\N	70	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_ZeitHoch	\N	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_TE	Exspirationzeit, ein Monitoring-Parameter	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_TI	Inspirationszeit in Sekunden, Monitoring-Parameter	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_O2	"Gemessene Sauerstoffkonzentration "	47	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_CalciumLoesung	Bezeichnug der Calcium Lösung	70	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Pmin	\N	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	COPRA_Patient_Bezugsgewicht	Bezugsgewicht des Patienten in kg	47	t
 Körpertemperatur Achsel	Axil temp	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	70	f
 Körpertemperatur Achsel	Axil temp	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	70	f
 Körpertemperatur Atemwege	Airway temp	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	70	f
@@ -7023,6 +7093,9 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverf
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_SubBolus	\N	71	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_Apherese_VO_SpülloesungAntikoag	\N	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_Option	Predilution Postdilution extrakorporale Verfahren	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_HLI	Liste ein aus	46	t
 Körpertemperatur Achsel	Axil temp	Temp1a	Temperatur 1a	69	f
 Körpertemperatur Achsel	Axil temp	Temp2a	Temperatur 2a	69	f
 Körpertemperatur Achsel	Axil temp	Temp3a	Temperatur 3a	69	f
@@ -7032,6 +7105,7 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta T
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Kein_Recruitment	Liste ein aus	46	t
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
 Körpertemperatur Kern	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
@@ -7050,6 +7124,17 @@ Hämodialyse Blutfluss	\N	Hemolung_VO_Blutfluss	\N	68	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_T1_Rinsp	Inspiratorische Flow-Resistance	68	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_Beatmung_MS_C3_Rinsp	Inspiratorische Flow-Resistance	68	f
 Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVV	Schlagvolumen-Variation	57	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_passiver_Patient	Liste ein aus	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Quick_Wean	Liste ein aus	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_SHT	Liste ein aus	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_Frequenz	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_T_Rampe	Dokumentation der eingestellten Rampenzeit.	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Gewicht	"Gewicht (kg) "	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Flowtrigger	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_HLI	Liste ein aus	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Kein_Recruitment	Liste ein aus	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_passiver_Patient	Liste ein aus	46	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmax	gemessener Beatmungsspitzendruck	68	f
 Blutfluss durch cardiovasculäres Gerät	\N	VAD_Blutfluss_Doku	\N	67	f
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_T1_Cstat	Statische Compliance	67	t
@@ -7065,12 +7150,23 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Avea_Ve
 Herzfrequenz	Heart rate	PICCO_HF	HerzfrequenzHerzfrequenz	67	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_VisionA_O2Konzentration	Eingestellte Sauerstoffzufuhr	67	f
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Quick_Wean	Liste ein aus	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Zephyros_Pinsp	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Zephyros_Tinsp	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Pinsp	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_BiPAPV_PatientenTrigger	"Pat.Trig (Prozentsatz der vom Patienten ausgelösten Atemzüge) "	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_InsFlow	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_Pmittel	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita2_frequenzspon	gemessene spontane Atemfrequenz	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck	46	t
 Körpertemperatur Brust	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
 Körpertemperatur Brust	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_I_E	I:E Verhältnis (Messung)	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_MVi	"Insp. Minutenvolumen "	46	t
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
 Körpertemperatur Kern	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
@@ -7090,6 +7186,8 @@ Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_T1_Sauerstoff	Sauerst
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Avea_SpontVte	gemessenes spontanes Tidalvolumen	67	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_I:E	Atemzeitverhältnis (I:E)	67	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_CF800_SauerstoffFlow	Einstellgröße Gasfluss Sauerstoff	66	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Ti_Tges	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_HFOBaseFlow	gemessener Basis Continousflow	46	t
 Herzzeitvolumen	LV Output	CO	Herzleistung	67	t
 Linksventrikulaeres Schlagvolumen	LV SV	LVSA	"Linksventrikulärer Schlagarbeit "	67	t
 Linksventrikulaeres Schlagvolumen	LV SV	p-SV	Schlagvolumen	67	t
@@ -7113,6 +7211,13 @@ Hämodialyse Blutfluss	\N	P_ADVOS_ES_ADVOS_Blutfluss	\N	65	f
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
 Körpertemperatur vaginal	Body temperature	T_K	Körpertemperatur	65	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Pplat	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Lungenersatzverfahren_Doku_ILAactivve_Flussreg	Liste ein aus	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_MS_4008HS_Rest_Zeit_min	Anpassung für IBUS Anbindung	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_PD_VO_Einlaufhoehe	Einlaufhöhe in cm	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_Option	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pasvlimit	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_PEEP_CPAP	\N	46	t
 Körpertemperatur Achsel	Axil temp	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	65	f
 Körpertemperatur Achsel	Axil temp	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	65	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
@@ -7147,6 +7252,8 @@ Körpertemperatur Stirn	Body temperature	T_K	Körpertemperatur	65	f
 Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_SVI	SchlagvolumenindexSchlagvolumenindex	65	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_I:EExsp	I:E Exspiration	65	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_I:EInsp	I:E Inspiration	65	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pinsp	Inspiratorischer Druck	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pkontrol_Phoch	\N	46	t
 Atemfrequenz	Resp rate	Beatmung_Einstellung_AF	Beatmungsfrequenz (f/AF)	65	t
 Körpertemperatur Generisch	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
 Körpertemperatur Generisch	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
@@ -7157,6 +7264,13 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_T1_ExpM
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	P_Beatmung_MS_C3_ExspMinVol	Exspiratorisches Minutenvolumen	64	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Anordnung_Flow	Anordnung Inspiratorische Flowrate	64	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_F120_O2Konzentration	Einstellparameter: Sauerstoffgehalt des Gasgemisches	64	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_ProzentMinVol	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Ptief	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_SBT_Psupp_max	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_SBT_Zeitraum_bevor	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Thoch	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Timax	Inspirationszeit max	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Ttief	\N	46	t
 Körpertemperatur Kern	Body temperature	Ort_Temperatur1a_Messung	Liste	64	f
 Körpertemperatur Kern	Body temperature	Ort_Temperatur1b_Messung	Liste	64	f
 Körpertemperatur Kern	Body temperature	Ort_Temperatur2a_Messung	Liste	64	f
@@ -7168,12 +7282,25 @@ Linksventrikulaeres Schlagvolumenindex	LV SVI	Schlagvolumenindex	Wert des gemess
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Evita2_AMV	gemessenes Atemminutenvolumen	64	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Evita4_MV	gemessenes Atemminutenvolumen	64	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Pallas_MV	Gemessenes Atemminutenvolumen.	64	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_Frequenz	\N	46	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	P_Beatmung_ES_3100A_BiasFlow	Eingestellter Basisfluss im Beatmungssystem	63	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	63	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	P_Beatmung_MS_C3_RCexsp	Exspiratorische Zeitkonstante	63	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Pinsp	Inspiratorischer Druck	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Ppeak	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_ProzentMinVol	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Rinsp	Inspiratorische Flow-Resistance	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_ExspFlow	\N	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_Pplateau	\N	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_ExspFlow	Exspiratorischer Peakflow, ein Monitoring-Parameter	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_InspFlow	Inspiratorischer Peakflow, ein Monitoring-Parameter	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pplateau	Plateau-Atemwegsdruck, ein Monitoring-Parameter	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_PTP	Druck Zeit Produkt (Pressure Time Product), ein Monitoring Parameter	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_VLeckage	Leckagevolumen, ein Monitoring-Parameter	45	t
 Körpertemperatur Achsel	Axil temp	NEV_Apherese_ES_Multi_Temperatur	\N	63	f
 Körpertemperatur Achsel	Axil temp	NEV_Apherese_VO_Multi_Temperatur	\N	63	f
 Parameter von Beatmung	\N	Beatmung_Anordnung_BV	beatmungs-Verordung	63	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Heimbeatmung_Pmittel	\N	45	t
 Blutdruck	Blood pressure panel with all children optional	PtiO2Druck	Gemessener Sauerstoffpartialdruck im Parenchym	63	t
 Herzfrequenz	Heart rate	Hausarzt_Ort	\N	64	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita2_O2Konzentration	gemessene O2 Konzentration im Inspirationsgas	64	t
@@ -7187,6 +7314,8 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverf
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_KontrSchlsys	Liste	64	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_ES_3100B_Mitteldruck	Einstellwert: eingestellter mittlerer Atemwegsdruck	63	t
 Arterieller Druck	\N	PICCO_ABP	Arterieller Druck	100	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_PEEP	Dokumentation des gemessenen PEEPs.	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Cdyn	"Dynamische Charakteristika "	45	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Vt	Einstellwert: Tidalvolumen	62	f
 Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_MS_Blutfluss	\N	62	f
 Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_VO_Blutfluss	\N	62	f
@@ -7218,6 +7347,15 @@ Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_MS_HorowitzINP
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_CF800_O2Konzentration	Sauerstoffgehalt des eingestellten Gasgemisches CF 800	62	f
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_FiO2	gemessene Sauerstoffkonzentration im Atemgas	62	f
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita4_FiO2	gemessene O2 Konzentration des inspiratorischen Atemgasgemisches	62	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_P0_1	"P0.1 "	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_PEEP	"Positiver Endexsp. Druck "	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_RSB	Index für schnelle Flachatmung (Rapid Shallow Breathing Index)	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_O2	\N	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	IABP_CARDIOSAVE_ES_IABPAufblasen	Dokumentation des prozentualen Anteils des Aufblasens des Ballons	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_Apherese_Doku_SpülloesungAntikoag	\N	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_ES_4008HS_SollNa	\N	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_SollNatrium	\N	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_3100A_Inspirationszeit	Prozentualer Anteil der Insp.Zeit bezogen auf den gesamten Atemzyklus	45	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate	62	f
 Körpertemperatur unter der Zunge	Oral temp	NEV_Apherese_ES_Multi_Temp	Anlage 18.05.2012	62	f
 Körpertemperatur unter der Zunge	Oral temp	NEV_Apherese_VO_Multi_Temp	Anlage 18.05.2012 String	62	f
@@ -7246,6 +7384,12 @@ Körpertemperatur vaginal	Body temperature	P_Temperatur_generic	Anlage für Phil
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_3100B_BiasFlow	Einstellwert: eingestellter Basisfluss im Beatmungssystem	61	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita2_Flowtrigger	eingestellte Triggerschwelle (Flowtrigger)	61	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita2_VerhaeltnisTiTe	eingestelltes Verhältnis zwischen Inspiration und Exspiration	61	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Spont	\N	61	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_F_SIMV	Eingestellte SIMV Frequenz	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_PEEP_CPAP_Ptief	Eingestellter PEEP, CPAP oder Ptief	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Quick_Wean	\N	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Sauerstoff	\N	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_PeepCPAPPtief	\N	45	t
 Körpertemperatur Achsel	Axil temp	NEV_HD_ES_4008HS_Temperatur	\N	61	f
 Körpertemperatur Achsel	Axil temp	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	61	f
 Körpertemperatur Brust	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	61	f
@@ -7253,6 +7397,7 @@ Körpertemperatur Brust	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	61	f
 Körpertemperatur Brust	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_FrequencyCough	\N	45	t
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Körpertemperatur Kern	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
@@ -7260,13 +7405,16 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_generic	Anlag
 Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Körpertemperatur Stirn	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Körpertemperatur unter der Zunge	Oral temp	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	61	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Spont	\N	61	f
 Substituatfluss	\N	Nierenverfahren_VO_Multi_Substituat	Substituat in ml/h	61	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_Mvleck	gemessenes Leckagevolumen pro Minute	60	f
 Dauer Hämodialysesitzung	\N	Nierenverfahren_VO_Dialysatlösung	Dialysatlösung, Beutel	60	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Therapiebetten_Doku_Giraffe_ES_Luftfeuchtigkeit	Einstellung der Luftfeuchtigkeit im Inkubator	60	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	tcpO2	transcutan gemessener pO2 Wert.	60	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_VisionA_Ti	Einstellwert: Inspirationszeit in Sekunden	60	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_RCexsp	Exspiratorische Zeitkonstante	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Sauerstoff	\N	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_O2Konzentration	Einstellwert: O2 Konzentration des Gasgemisches	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_IEVerhaeltnis	Einstellwert: I:E Verhältnis	44	t
 Herzfrequenz	Heart rate	Hausarzt_Name	\N	61	t
 Herzfrequenz	Heart rate	Nierenverfahren_ES_Multi_CitratBlut	Citratrate	60	t
 Herzfrequenz	Heart rate	Nierenverfahren_MS_Multi_Citratfluss	Citratrate	60	t
@@ -7280,6 +7428,10 @@ Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_G5_AutoPee
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOAirFlow	\N	61	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	61	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ILAAnalogIn	\N	61	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_SBT_Zeitraum_bevor	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_HFFrequenz	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_TriggerVol	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Pinsp	Eingestellter Inspiration Druck.	44	t
 Körpertemperatur Atemwege	Airway temp	Nierenverfahren_ES_ADM_Temperatur	\N	60	f
 Körpertemperatur Brust	Body temperature	Ort_Temperatur1a_Messung	Liste	60	f
 Körpertemperatur Brust	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
@@ -7302,6 +7454,11 @@ Körpertemperatur Gelenk	Body temperature	Ort_Temperatur2b_Messung	\N	60	f
 Körpertemperatur Gelenk	Body temperature	Ort_Temperatur3a_Messung	\N	60	f
 Körpertemperatur Gelenk	Body temperature	Ort_Temperatur3b_Messung	\N	60	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Tinsp	Dokumentation der Inspirationszeit.	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_DU_ueber_Phoch	"Druckunterstüzung hoch (cmH2O) "	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Nava_Pegel	"Nava Pegel "	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Frequenz	Einstellwert: eingestellte Atemfrequenz	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_FlowTrigger	\N	44	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur1a_Messung	Liste	60	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur2a_Messung	Liste	60	f
@@ -7367,10 +7524,14 @@ Körpertemperatur vaginal	Body temperature	Ort_Temperatur2b_Messung	\N	60	t
 Körpertemperatur vaginal	Body temperature	Ort_Temperatur3a_Messung	\N	60	t
 Körpertemperatur vaginal	Body temperature	Ort_Temperatur3b_Messung	\N	60	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_IPPVFrequenz	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_ZeitNiedrig	\N	44	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_Calciumfluss	Calciumrate	59	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_3100B_O2Konzentration	Messwert: gemessene O2 Konzentration des Gasgemisches	44	t
 Körpertemperatur Achsel	Axil temp	Nierenverfahren_ES_4008HS_Temperatur	\N	59	f
 Körpertemperatur Brust	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	f
 Körpertemperatur Brust	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	44	t
 Linksventrikulaeres Schlagvolumen	LV SV	Beatmung_ES_VisionA_Schlagvolumen	Schlagvolumen (SV) in engl. (cycle volume)	60	t
 Substituatvolumen	\N	Beatmung_MS_Avea_Vte	gemessenes Tidalvolumen	60	t
 Substituatvolumen	\N	Beatmung_MS_Pallas_Vt	Gemessenes Tidalvolumen.	60	t
@@ -7381,6 +7542,7 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverf
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_C2_Pmax	Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.	59	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Flow	Einstellung Sauerstoff Flow	59	t
 Atemzugvolumen-Einstellung	VT setting Vent	Therapiebetten_Doku_Giraffe_ES_O2	Einstellung der O2-Konzentration im Inkubator	59	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck	44	t
 Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	f
@@ -7398,6 +7560,11 @@ Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Tem
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	f
 Körpertemperatur vaginal	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_etCO2	Dokumention des gemessenen endtidalen	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Ppeak	Dokumentation des gemessenen Beatmungsspitzendruck.	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Pplat	Dokumentation des gemessenen Plateaudruckes.	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Ppeak	"Atemdruck Spitze "	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck	44	t
 Körpertemperatur Halswirbelsaeule	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	f
 Körpertemperatur Halswirbelsaeule	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
@@ -7439,7 +7606,6 @@ Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	SM_Frequenz	Schrittmacher Frequenz	59	f
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Citratloesung	Citratbeutel	59	f
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Dialysekonzentrat	Dialyskonzentratbehälter	59	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Mve_spont	"Spontanes exsp. Minutenvolumen "	59	f
 Venöser Druck	\N	Beatmung_ES_VisionA_Trigger	Einstellgrösse: Druck bzw. Flowtrigger	59	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_RTX_Time	\N	59	f
 Venöser Druck	\N	Beatmung_MS_Evita4_P01	gemessener P0.1 Druck nach Meßmanöver	59	t
@@ -7455,12 +7621,19 @@ Körpertemperatur vaginal	Body temperature	Nierenverfahren_ES_Multi_Temperatur	T
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	t
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Mve_spont	"Spontanes exsp. Minutenvolumen "	59	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_MVe	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Tve	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Tvi	\N	44	t
 Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	58	f
 Körpertemperatur Blut	Blood temp	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	58	f
 Körpertemperatur Blut	Blood temp	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	58	f
 Körpertemperatur Brust	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_Apherese_Doku_Spuel_Dauer	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_ES_4008HS_StartNa	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_VO_4008HS_Soll_Na	\N	44	t
 Körpertemperatur Halswirbelsaeule	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	58	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
 Körpertemperatur Kern	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
@@ -7477,6 +7650,7 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverf
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_P1	\N	58	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_P2	\N	58	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_VisionA_SISetting	Druckeinstellung für manuell ausgelösten Atemhub	58	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_MVSpontan	Mindest Volumen sp	58	t
 Körpertemperatur Stirn	Body temperature	Beatmung_Messung_AFSpontan	Respiratory Rate (spontan)	58	f
 Körpertemperatur Stirn	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
 Parameter von Beatmung	\N	Beatmung_ES_G5_Flow	Parameter im Modus Highflow - ab 08.06.2017	58	f
@@ -7494,8 +7668,6 @@ Parameter von Beatmung	\N	Beatmung_MS_T1_Pmin	Minimaler Atemwegsdruck, ein Monit
 Parameter von Beatmung	\N	Betreuer_Vorname	\N	58	f
 Parameter von Beatmung	\N	BIS	Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.	58	f
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss	58	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_MVSpontan	Mindest Volumen sp	58	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Mvspont	\N	58	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_Inspirationszeit	Inspirationszeit in %	58	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Servoi_I_E	I:E Verhältnis (Messung)	58	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_AutoCat_ES_Unterstützungsverhältnis	Liste	58	f
@@ -7514,6 +7686,9 @@ Körpertemperatur vaginal	Body temperature	Temp2b	Temperatur 2b	83	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_MS_HorowitzINPULS	Messung des Horowitz-Indexes	57	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Pallas_Enfluran_exsp	Exspiratorisch gemessene Enfluran Kozentration.	57	f
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Mvspont	\N	58	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NIRS	Über eine Messsonde transcutan gemessener Prozentwert	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NIRSlinks_MS	Über eine Messsonde transcutan gemessener Prozentwert	44	t
 Körpertemperatur Harnblase	Bdy temp Bladder	NEV_HD_MS_4008onl_TMP	\N	35	f
 Herzfrequenz	Heart rate	Lungenersatzverfahren_Kathetertyp	Katheterart	57	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Desfluran_exsp	Exspiratorisch gemessene Desfluran Konzentration.	57	t
@@ -7530,6 +7705,17 @@ Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Hypothermie_ArticSun_Doku_Behandlungsmodi	Liste	57	t
 Körpertemperatur vaginal	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	t
 Körpertemperatur vaginal	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Freq_Spontan	\N	57	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_fSpontan	Spontane Atemfrequenz	57	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Patient_Spezifitaet	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_3100A_Inspirationszeit	Prozentualer Anteil der Insp.Zeit bezogen auf den gesamten Atemzyklus	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_3100A_Leistung	Prozentuale Kolbenauslenkung	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_chronHyperkapnie	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Plateau	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_ZeitStartSBT	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_CoughAssist_Oszillation	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Pmittel	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pinsp	"Inspiratorischer Druck, mit Pinsp wird der Zieldruck (zusätzlich zu PEEP/CPAP) bezeichnet, der im Modus ASV während der Inspirationsphase abgegeben wird"	43	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_T1_Body_Wt	Eingestelltes Körpergewicht	57	f
 Körpergrösse Percentil	Body height Prctl	Patient_Groesse	Größe des Patienten	57	f
 Körpertemperatur Achsel	Axil temp	CardioHelpMaquet_VO_TemperaturSoll	\N	57	f
@@ -7542,6 +7728,7 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_ES_5008onl_Tempera
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
 Körpertemperatur Gelenk	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
 Körpertemperatur Gelenk	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Ppeak	Messwert: Beatmungsspitzendruck	43	t
 Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
 Körpertemperatur Kern	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
@@ -7561,8 +7748,6 @@ Monitoring und Vitaldaten	\N	P_Beatmung_MS_AnaConDa_MAC	Umstellung PhilipsMonito
 Monitoring und Vitaldaten	\N	P_Temperatur_generic	Anlage für Philips Monitoring	57	f
 Monitoring und Vitaldaten	\N	P_Temperatur_Kern	Anlage für Philips Monitoring	57	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Anordnung_PEEP	Anordnung Positiver endexspiratorischer Druck (PEEP)	57	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Freq_Spontan	\N	57	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_fSpontan	Spontane Atemfrequenz	57	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Messung_AMVSpontan	Spont Minute Volume	57	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_IEVerhaeltnis	Einstellwert: I:E Verhältnis	57	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_MS_C3_IEVerhaeltnis	Verhältnis Inspirationszeit:Exspirationszeit	57	f
@@ -7588,6 +7773,16 @@ Hämodialyse Blutfluss	\N	NEV_HD_MS_4008onl_effBlutfluss	\N	56	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_BiPAPV_O2Konzentration	Einstellparameter: O2 Konzentration des Gasgemisches	56	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_ES_3100A_Frequenz	Eingestellte Oszillationsfrequenz	56	f
 Ideales Körpergewicht	Ideal bdy weight	PICCO_ABP	Arterieller Druck	34	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_RCinsp	Inspiratorische Zeitkonstante, ein Monitoring Parameter	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Rinsp	Inspiratorische Flow-Resistance, ein Monitoring-Parameter	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_MV	Gemessenes Atemminutenvolumen.	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_AF	"Atemfrequenz "	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Hypothermie_ArticSun_ES_Hoechsttwassertemp	\N	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_BM25_Umsatz	Umsatz ml/h	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_3100A_O2Konzentration	O2 Konzentration des Gasgemisches	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Tubuskompensation	\N	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_3100A_O2Konzentration	Gemessene O2 Konzentration	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_P01	Atemwegs-Okklusionsdruck	43	t
 Körpergroesse	Body height	Besonderheiten	\N	56	f
 Körpertemperatur Atemwege	Airway temp	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	56	f
 Körpertemperatur Brust	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	f
@@ -7605,6 +7800,7 @@ Körpertemperatur Gelenk	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
 Körpertemperatur Gelenk	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	f
 Körpertemperatur Gelenk	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	f
 Körpertemperatur Gelenk	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_PeepCPAP	\N	43	t
 Arterieller Druck	\N	Hypothermie_ArticSun_ES_Wasserziel	manueller Modus	56	t
 Körpertemperatur Generisch	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	56	t
 Körpertemperatur Generisch	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	t
@@ -7661,11 +7857,11 @@ Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_Pmean	gemes
 Parameter von Beatmung	\N	Betreuer2_Vorname	\N	56	f
 Parameter von extrakorporalen Verfahren	\N	Hypothermie_VO_Kuehlverfahren	Liste	56	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_PEEP	Positiver endexspiratorischer Druck (PEEP)	56	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontVe	gemessenes spontanes Atemminutenvolumen	56	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_Flow	Inspiratorische Flowrate	56	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_C3_Timax	Inspirationszeit max	56	f
 Körpertemperatur vaginal	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	t
 Körpertemperatur vaginal	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontVe	gemessenes spontanes Atemminutenvolumen	56	t
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita2_Compliance	gemessene Lungencompliance	55	f
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita4_Compliance	gemessene Lungencompliance	55	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Leoni_Flow	\N	55	f
@@ -7680,6 +7876,8 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_MS_Pallas_Ppeak	Dokumentation des gemessenen Beatmungsspitzendruck.	55	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Patient_Groesse	Größe des Patienten	55	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Osypka203H_ES_AV_DLY	AV Überleitungszeit	55	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Pplateau	Plateau- oder endinspiratorischer Druck	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Heimbeatmung_Flowtrigger	\N	42	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_CF800_DruckluftFlow	Einstellgröße: Gasfluss Druckluft	55	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	SpO2	Sauerstoffsättigung Pulsoxymetrie	55	f
 Hämodialyse Blutfluss	\N	Patient_Blutverlusst	Patient_Blutverlusst	55	f
@@ -7687,6 +7885,17 @@ Körpertemperatur vaginal	Body temperature	Temp3b	Temperatur 3b	83	t
 Körpertemperatur vaginal	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
 Ideales Körpergewicht	Ideal bdy weight	Schrittmacher_Osypka203H_ES_ARP	atriale Refraktärzeit	55	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Einstellung_Inspirationszeit	Inspirationszeit in %	55	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Optiflow_O2Flow	\N	42	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Frequenz	Dokumentation der eingestellten Frequenz.	42	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Trigger	Dokumentation des eingestellten Triggers.	42	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Oszillationsfrequenz	Oszillationsfrequenz Gerät: Alpha Vision Modus: HFO	42	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_SauerstoffFlow	\N	42	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita2_Pmittel	gemessener Beatmungsmitteldruck	42	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_MV_Leck	Gemessene Leckage.	42	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Edi_peak	"Edi-Spitzenwert "	42	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_SBI	"Shallow Breathing Index (Index für flache Atmung) "	42	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Ppeak	\N	42	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_R	\N	42	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Multi_Calcium	Ca-rate	55	f
 Körpertemperatur Achsel	Axil temp	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	55	f
 Körpertemperatur Atemwege	Airway temp	Hypothermie_Coolgard_VO_Zieltemperatur	\N	55	f
@@ -7734,15 +7943,15 @@ Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_Ppeak	gemes
 Parameter von Beatmung	\N	Atmung_Stimulation	\N	55	f
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008onl_Bicarbonat	\N	55	f
 Parameter von extrakorporalen Verfahren	\N	SonstVerfahren_VO_Hypothermiegerät_Kathetertyp	Liste	55	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi	55	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontVte	gemessenes spontanes Tidalvolumen	55	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_PTP	Druck Zeit Produkt (Pressure Time Product)	55	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi	55	t
 Spontanes-Atemzugvolumen	Spont VT on vent	ITBV	Intrathorakales Blutvolumen	55	f
 Spontanes-Atemzugvolumen	Spont VT on vent	PICCO_ITBV	Intrathorakales Blutvolumen	55	f
 Spontanes-Atemzugvolumen	Spont VT on vent	P_Spontanatemtest	Dokumentation ob der Spontanatemtest bestanden wurde.	55	f
 Spontanes-Atemzugvolumen	Spont VT on vent	VigilanceC_ITBV	Intrathorakales Blutvolumen	55	f
 Systemischer vaskulärer Widerstandsindex	SV RI	Beatmung_MS_G5_VT_IBW	VT/IBW	55	f
 Systemischer vaskulärer Widerstandsindex	SV RI	SM_Art	Schrittmacher Art	55	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontVte	gemessenes spontanes Tidalvolumen	55	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_PTP	Druck Zeit Produkt (Pressure Time Product)	55	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_InspiratorischePause	Inspiratorische Pause (I:E)	55	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_ARDS	Liste ein aus	55	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_Chron_Hyperkapnie	Liste ein aus	55	f
@@ -7761,8 +7970,11 @@ Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_T1_IEVerhaeltnis	g
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_ACAT_ES_Unterstuetzungsverhaeltnis	Liste	55	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_Doku_ILAactivve_Flussreg	Liste ein aus	55	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_Doku_ILAactivve_Nullfluss	bei luftblasen, Liste ein aus	55	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_VO_4008HS_Na_Profil	\N	42	t
 Atemfrequenz	Resp rate	Hypothermie_Coolgard_Doku-Rate	\N	62	t
 Atemfrequenz	Resp rate	Hypothermie_Coolgard_VO_Rate	\N	62	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_VO_4008HS_UF_Profil	\N	42	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_Mess_Blutfluss	\N	42	t
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_VisionA_AFSpontan	Messwert: Anzahl der gemessenen spontanen Atemzüge	55	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Schrittmacher_Doku_Drähte	\N	55	t
 Zentralvenöser Druck	CVP	Beatmung_ES_Evita2_Pinsp	eingestelltes oberes Druckniveau	55	t
@@ -7792,6 +8004,10 @@ Hämodialyse Blutfluss	\N	P_NEV_HD_MS_5008onl_effBlutfluss	\N	54	f
 Körpertemperatur vaginal	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_3100B_O2Konzentration	Einstellwert: O2 Konzentration des Gasgemisches	54	f
 Ideales Körpergewicht	Ideal bdy weight	Patient_Gewicht	Gewicht des Patienten	54	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_MS_4008HS_Restzeit	\N	40	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Schrittmacher_Osypka101H_ES_Betriebsart	Listenauswahl	40	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Schrittmacher_Osypka203H_ES_Betriebsart	Liste	40	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Untersuchung_Status_Wasserhaushalt	\N	40	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Beatmung_ES_C3_Body_Wt	eingestelltes Körpergewicht	54	f
 Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	54	f
 Körpertemperatur Blut	Blood temp	NEV_HD_VO_4008onl_Temperatur	\N	54	f
@@ -7820,6 +8036,7 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_IsoUFVolumenKumulativ	\N	54	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Score_DGAI_AufnBeatmungsstundenbiszurAufnahme	\N	54	t
 Atemfrequenz	Resp rate	Schrittmacher_Osypka101H_ES_Rate	Grundfrequenz	62	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_FlowInsp	\N	54	t
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	PICCO_ITBVI	Intrathorakaler Blutvolumenindex	54	f
 Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_Einstellung_Pmax	Pmax, Maximaldruck	54	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_Volumen	eingestelltes Tidalvolumen	54	f
@@ -7829,10 +8046,6 @@ Parameter von Beatmung	\N	P_Therapiebetten_VO_Lifetherm_Neigung	Verordnung des N
 Parameter von extrakorporalen Verfahren	\N	Lungenersatzverfahren_VO_Zugang	Gefäßdefinition	54	f
 Parameter von extrakorporalen Verfahren	\N	SonstVerfahren_VO_Hypothermiegerä_Kuehlrate	Hypothermiebehandlung	54	f
 Pulmonalarterieller wedge Blutdruck	PAW pressure	PWP	Pulmunaler Wedgedruck	54	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_FlowInsp	\N	54	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_Psupport	\N	54	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_Mvspont	\N	54	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_SpontanAMV	gemessenes spontanes Atemminutenvolumen	54	f
 Spontanes-Atemzugvolumen	Spont VT on vent	IABP_DatascopeCS300_ES_Doku_Ballonvolumen	Dokumentation des Ballonvolumens.	54	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Patient_KO	Körperoberfläche des Patienten ohne Fallbezug	54	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_T1_Psupport	Beatmung_ES_T1_Psupport	54	f
@@ -7858,6 +8071,9 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	CardioHelpMaquet_VO
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	IABP_EKG	\N	53	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_MS_HorowitzINPULS	Messung des Horowitz-Indexes	53	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Einstellung_InspirationszeitIE	Inspirationszeit I:E	53	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_Psupport	\N	54	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_Mvspont	\N	54	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_SpontanAMV	gemessenes spontanes Atemminutenvolumen	54	t
 Arterieller Druck	\N	PC	Pulmonalkapillardruck	53	t
 Arterieller Druck	\N	IABP_Abiomed_Impella_LVDruck	\N	53	t
 Atemfrequenz	Resp rate	Patient_SpO2r	\N	55	t
@@ -7938,13 +8154,6 @@ Parameter von Beatmung	\N	NEV_CRRT_VO_Multi_praeF	\N	53	f
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008onl_Dialysekonzentrat	Dialysekonzentrat 6 liter gesamt	53	f
 Körpertemperatur Leiste	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	f
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Zugang	VO Gefäßzugang extracorporale Verfahren	53	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_fSpontan	\N	53	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_fspontan	Spontane Atemfrequenz	53	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Pmean	\N	53	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	53	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	53	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_SpO2	Wert gemessen am Ventilator	53	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	COPRA_Patient_Bezugsgewicht	Bezugsgewicht des Patienten in kg	53	f
 Systemischer vaskulärer Widerstandsindex	SV RI	Beatmung_MS_Evita2_Resistance	gemessener Atemwegswiderstand	53	f
 Systemischer vaskulärer Widerstandsindex	SV RI	Beatmung_MS_Evita4_Resistance	gemessener Atemwegswiderstand	53	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_Te	gemessene Exspirationszeit	53	f
@@ -7952,8 +8161,15 @@ Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_Ti	gemessene 
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_VisionA_IEVerhaeltnis	Messwert: gemessenes I:E Verhältnis	53	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_drei_ES_AusgangA	Medtronic 5388	53	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_drei_ES_AusgangV	Medtronic 5388	53	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_fSpontan	\N	53	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_fspontan	Spontane Atemfrequenz	53	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Pmean	\N	53	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Zephyros_By-Flow	\N	52	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_INVOS_Doku_rSO2_rechts	cerbebrale Sauerstoffsättigung rechts	52	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	53	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	53	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_SpO2	Wert gemessen am Ventilator	53	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	COPRA_Patient_Bezugsgewicht	Bezugsgewicht des Patienten in kg	53	t
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_VO_Multi_BlutflussMax	\N	52	f
 Dauer Hämodialysesitzung	\N	NEV_CRRT_VO_Dialysatloesung	\N	52	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Patient_Geschlecht	Geschlecht des Patienten	52	f
@@ -8062,26 +8278,20 @@ Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Leoni_PEEP
 Pulmonalarterieller wedge Blutdruck	PAW pressure	Patient_Strasse	Adresse des Patienten: Strasse + Hausnummer	52	f
 Pulmonalarterieller wedge Blutdruck	PAW pressure	P_NBP_reArm	Nichtinvasiver Blutdruck rechter Arm	52	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Schrittmacher_drei_ES_VentrikelintervallAV	Medtronic 5388	52	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_TApnoe	\N	52	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Chron_Hyperkapnie	\N	52	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Phoch	Einstellwert oberes Druckniveau im Modus DuoPAP	52	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Pinsp	\N	52	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_ProzentMinVol	Prozentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus	52	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Ptief	Einstellwert: unteres Druckniveau im Modus APRV	52	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_MV	\N	52	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pinsp	"Inspiratorischer Druck, mit Pinsp wird der Zieldruck (zusätzlich zu PEEP/CPAP) bezeichnet, der im Modus ASV während der Inspirationsphase abgegeben wird"	52	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Rinsp	Inspiratorische Flow-Resistance	52	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_VTE	\N	52	f
 Atemfrequenz	Resp rate	Patient_SpO2_l	\N	52	t
 Atemfrequenz	Resp rate	Patient_SpO2po	\N	52	t
 Linksventrikulärer Herzindex	LV Cardiac index	NEV_CRRT_VO_Multi_Dialysat	\N	52	t
 Spontane-Atemfrequenz-Beatmet	\N	IABPneu_Datascope_ES_IABPFrequenz	\N	52	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	NEV_CRRT_MS_Multi_artDruck	\N	52	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	SM-Output_Ventrikel	Schrittmacher Ausgangsleistung (Output) Ventrikel	52	t
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_VTi	\N	52	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_TApnoe	\N	52	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Chron_Hyperkapnie	\N	52	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Phoch	Einstellwert oberes Druckniveau im Modus DuoPAP	52	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Pinsp	\N	52	t
 Spontanes-Atemzugvolumen	Spont VT on vent	Fontanelle_Beurteilung	\N	52	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_Einstellung_Psupport	\N	52	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Heimbeatmung_Psupport	\N	52	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_VTi	\N	52	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_Vt_Backup	Vt in der Backupeinstellung	52	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_IE	gemessenes I zu E Verhältnis	52	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Patient_ID	Identifikation des Patiente	52	f
@@ -8175,20 +8385,9 @@ Parameter von Beatmung	\N	NEV_CRRT_VO_CitratLoesung	\N	51	f
 Parameter von Beatmung	\N	Patient_Beruf	Beruf des Patienten	51	f
 Parameter von extrakorporalen Verfahren	\N	SonstVerfahren_VO_Hypothermiegerät_Kuehlverfahren	Liste	51	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Anordnung_PEEP	Anordnung Positiver endexspiratorischer Druck (PEEP)	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_ProzentVol	\N	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Vt	Dokumentation ders eingestellten Vt.	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Pkontrol_Phoch	\N	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Tpause_Prozent	"TPause (%) "	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Vt	"Tidalvolumen "	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_fspontan	Spontane Atemfrequenz	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Vt	Gemessenes Tidalvolumen.	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_fSpontan	Spontane Atemfrequenz	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_petCO2	\N	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_TI	Inspirationszeit in Sekunden	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_VT_IBW	\N	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_RepeatCount	\N	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_Sensitivity	\N	51	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_fSpontan	Spontane Atemfrequenz	51	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_ProzentVol	\N	51	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Vt	Dokumentation ders eingestellten Vt.	51	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Pkontrol_Phoch	\N	51	t
 Substituatfluss	\N	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h	51	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_Vti	gemessenes inspiratorisches Tidalvolumen	51	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Evita4_Vt	gemessenes inspiratorisches Tidalvolumen	51	f
@@ -8197,6 +8396,10 @@ Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_T1_TI	Inspirations
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_VO_ILAactivve_Systole	Verhältnis Systole zur Diastolendauer	51	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_PD_VO_Einlaufmenge	Peritonealdialyse Einlaufmenge in ml	51	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Siemens_ES_Ausgang	\N	51	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Tpause_Prozent	"TPause (%) "	51	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Vt	"Tidalvolumen "	51	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_fspontan	Spontane Atemfrequenz	51	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Vt	Gemessenes Tidalvolumen.	51	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_T1_RSB	Index für schnelle Flachatmung (Rapid Shallow Breathing Index)	50	f
 Arterieller Druck	\N	CardioHelpMaquet_MS_DruckVenoes	\N	50	t
 Atemfrequenz	Resp rate	Betreuer_PLZ	\N	50	t
@@ -8364,38 +8567,20 @@ Parameter von Beatmung	\N	NEV_CRRT_VO_CalciumLoesung	\N	50	f
 Parameter von Beatmung	\N	Patient_AufnKO	Körperoberfläche des Patienten (fallbezogen)	50	f
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Option	Predilution Postdilution extrakorporale Verfahren	50	f
 Pulmonalarterieller wedge Blutdruck	PAW pressure	P_NBP_reBein	Nichtinvasiver Blutdruck rechtes Bein	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_ETS	Exspiratorische Triggersensitivität, eine Parametereinstellung	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Oxygen_Target_Shift	Bereich Decimal - bis +	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_PRec	\N	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_NO	Einstellwert des NO bei NO Beatmung	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Oxygen_Target_Shift	\N	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_PS	"Pressure Support, Alpha Vision"	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Ti	Einstellwert: Inspirationszeit in Sekunden	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Pmean	Mean Airway Pressure	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Power	\N	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Mvspont	\N	50	f
 Puls	\N	LVSA	"Linksventrikulärer Schlagarbeit "	50	t
 Puls	\N	p-SV	Schlagvolumen	50	t
 Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	SaO2 % BldA	Beatmung_MS_NO2	Messwert der NO2 Konzentration bei NO Beatmung	50	t
 Spontane-Atemfrequenz-Beatmet	\N	Datenuebernahme_TestvariableDec	\N	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_ETS	Exspiratorische Triggersensitivität, eine Parametereinstellung	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Oxygen_Target_Shift	Bereich Decimal - bis +	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_PRec	\N	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_NO	Einstellwert des NO bei NO Beatmung	50	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	IABP_RR	\N	50	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	PPV	Pulsdruckabweichung	50	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	TPR	"Pulmonaler Gesamtgefäßwiderstand "	50	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	TVR	"Gesamtgefäßwiderstand "	50	t
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_VTE	"Messwert, exspiratorisches Tidalvolumen Einheit: ml"	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_VTi	\N	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Leck	\N	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Texp	\N	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_NO	Messwert der  NO Konzentration bei NO Beatmung	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Vee	"Endexspiratorischer Flow "	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Vte	"Exsp. Tidalvolumen "	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Vti	"Insp. Tidalvolumen "	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_P01	Atemweg-Okklusionsdruck, ein Monitoring-Parameter	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_CRRT_VO_Option	\N	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_SBT_Zeitraum_nach	\N	50	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_MVspn	spontanes Atemminutenvolumen	50	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Oxygen_Target_Shift	\N	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_PS	"Pressure Support, Alpha Vision"	50	t
 Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_VO_4008onl_Iso_UFZeit	\N	50	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Land	Patientenadresse: Land	50	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Patient_Gewicht	Gewicht des Patienten	50	f
@@ -8408,12 +8593,18 @@ Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_Apherese_MS_Multi_UFRBFRVe
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Patient_Nationalitaet	Nationalität des Patienten	50	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_zwei_ES_Ausgang	Medtronic 5375	50	f
 Blutdruck	Blood pressure panel with all children optional	Fall_Wertsachen_Papiere_Ort	\N	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_VTE	"Messwert, exspiratorisches Tidalvolumen Einheit: ml"	50	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	COPRA_Patient_Kopfumfang	Kopfumfang des Patienten in Zentimetern	49	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_INVOS_Doku_rSO2_links	cerebrale Sauerstoffsättigung links	49	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_VTi	\N	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Leck	\N	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Texp	\N	50	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Filter	\N	49	f
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008HS_BlutflussSNPumpe	\N	49	f
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008onl_BlutflussSNPumpe	\N	49	f
 Dauer Hämodialysesitzung	\N	NEV_CRRT_ES_Multi_Dialysat	\N	49	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_NO	Messwert der  NO Konzentration bei NO Beatmung	50	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Vee	"Endexspiratorischer Flow "	50	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_Doku_Zephyros_Option	Liste Highflow Highflow CPAP	49	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita4_FlowAssist	Einstellgröße für den Flowassist im Modus PPS	49	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_G5_Flow	Parameter im Modus Highflow - ab 08.06.2017	49	f
@@ -8538,38 +8729,9 @@ Arterieller Druck	\N	Verlauf_Arzt	\N	48	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Messung_PEEP	\N	49	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Fall_Wertsachen_Papiere_Ort	\N	49	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Papiere_Ort	\N	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Anordnung_BV	beatmungs-Verordung	49	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Papiere_Ort	\N	49	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Pallas_Frischgas_O2	An der Flowröhre eingestellter O2 Frischgasflow.	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Anordnung_BV	beatmungs-Verordung	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Pkontrol	\N	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Psupport	\N	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_passiver_Patient	Liste ein aus	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Pkontrol	Einstellwert oberes Druckniveau beim G 5 im Modus P SIMV	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Zeit_zw2_SBT	Zeit zwishen 2 SBT	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_Pinsp	\N	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_TInsp	\N	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Pmax	\N	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_ETS	Exspirationserkennung 10 - 45% des Peak Flow	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Plateau	Einstellwert: Plateauphase in Sekunden	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_TApnoe	Apnea Duration	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Ppeak	\N	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_ExspFlow	Exspiratorischer Peakflow	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_InspFlow	Inspiratorischer Peakflow	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_VCO2	\N	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_VLeckage	Leckagevolumen	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_PIP	positiv inspiratorischer Druck	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_Plateau	Messwert: gemessener Plateaudruck	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	F_Sozialanamnese_Betreuung_Schule_Klasse	\N	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Patient_Kopfumfang_Aufnahme	\N	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Patient_Sprache	Muttersprache des Patienten	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Aufnahme_Schwangerschaft_sonstigeString	\N	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_ProzentVol	\N	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Ti	\N	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_TE	\N	49	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_TI	\N	49	f
 Spontanes-Atemzugvolumen	Spont VT on vent	P_Spontanatemtest	Dokumentation ob der Spontanatemtest bestanden wurde.	49	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_Konzentrat	\N	49	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_Option	\N	49	f
@@ -8580,6 +8742,9 @@ Atemfrequenz	Resp rate	Lungenersatzverfahren_Doku_Kathetertyp	Kathetertyp	50	t
 Atemfrequenz	Resp rate	Patient_PLZ	Patientenadresse: PLZ	50	t
 Atemfrequenz	Resp rate	Patient_Sprache	Muttersprache des Patienten	50	t
 Atemfrequenz	Resp rate	AF	Atemfrequenz	48	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Pkontrol	\N	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Psupport	\N	49	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_passiver_Patient	Liste ein aus	49	t
 Arterieller Druck	\N	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	48	t
 Atemfrequenz	Resp rate	Patient_Vorname	Vorname des Patiente	50	t
 Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	SaO2 % Bld Preductal PulseOx	PLS	Pulsrate errechnet aus der SpO2 Messung	49	t
@@ -8830,16 +8995,16 @@ Parameter von Beatmung	\N	Patient_Besucherregelung	Besucherverinbarung für den 
 Parameter von Beatmung	\N	P_Beatmung_ES_3100A_Leistung	Prozentuale Kolbenauslenkung	48	f
 Parameter von extrakorporalen Verfahren	\N	P_Therapiebetten_VO_DraegerBabytherm_Strahler	\N	48	f
 Parameter von extrakorporalen Verfahren	\N	Untersuchung_Kontrolle_Laufraten	Arztdoku S. 10	48	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_BIPAPT1	\N	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_BIPAPT2	\N	48	t
 Pulmonalarterieller wedge Blutdruck	PAW pressure	Patient_Land	Patientenadresse: Land	48	f
 Pulmonalarterieller wedge Blutdruck	PAW pressure	P_Beatmung_ES_RTX_InspPressure	\N	48	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_I:E	Atemzeitverhältnis (I:E)	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_I:EExsp	I:E Exspiration	48	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	48	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	48	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Therapiebetten_Doku_Triadyne_DruckBeine	\N	48	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_FlowAssist	Einstellgröße für den Flowassist im Modus PPS	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_BIPAPT1	\N	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_BIPAPT2	\N	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_I:E	Atemzeitverhältnis (I:E)	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_I:EExsp	I:E Exspiration	48	f
 Arterieller Druck	\N	NEV_CRRT_MS_Multi_venDruck	\N	47	t
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_ES_Pallas_Alter	Dokumentation des Alters des Patienten.	48	t
 Zentralvenöser Druck	CVP	ZVD	Zentralvenöser Druck	33	f
@@ -8852,35 +9017,24 @@ Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Be
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_T1_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	48	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	48	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP.	48	t
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_I:EInsp	I:E Inspiration	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Ptief	\N	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Chron_Hyperkapnie	Liste ein aus	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_ProzentMinVol	Przentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Ptief	Einstellwert: unteres Druckniveau beim G 5 im Modus APRV	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_SBT_Zeitraum_nach	Uhrzeit	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_Sauerstoff	\N	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Phoch	"Phoch (cmH2O) "	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Pasvlimit	\N	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Expirationszeit	\N	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontAF	gemessene spontane Atemfrequenz	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_ProzentMinVol	Messung nur unter ASV Intellivent	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_FreqHZ	\N	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Pmean	Gemesener Atemwegsmitteldruck	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Pplat	"Atemwegsdruck Pause "	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_PEEP	Messwert: gemessener positiver endexspiratorischer Druck	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_CO2Elim_Target_Shift	\N	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Oxygen_Target_Shift	\N	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_SHT	\N	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_IE	\N	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_MVspn	spontanes Atemminutenvolumen	48	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_PTP	\N	48	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_I:EInsp	I:E Inspiration	48	t
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Servoi_Afspont	"Spontane Atemzüge pro Minute "	48	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Beatmung_MS_Avea_SpontVte	gemessenes spontanes Tidalvolumen	48	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Inpuls_Erfassung_Transporte_Dauer	\N	48	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Ptief	\N	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Chron_Hyperkapnie	Liste ein aus	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_ProzentMinVol	Przentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Ptief	Einstellwert: unteres Druckniveau beim G 5 im Modus APRV	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_SBT_Zeitraum_nach	Uhrzeit	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_Sauerstoff	\N	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Phoch	"Phoch (cmH2O) "	48	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_InspirationszeitIE	Inspirationszeit I:E	48	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_BiPAPV_CPAP	Einstellparameter CPAP im Modus CPAP	48	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Messung_ExpirationszeitI:E	\N	48	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_VO_CitratDosis	angeordnete Citratdosis	48	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Pasvlimit	\N	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Expirationszeit	\N	48	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontAF	gemessene spontane Atemfrequenz	48	t
 Atemfrequenz	Resp rate	Allergie	\N	47	t
 Atemfrequenz	Resp rate	Beatmung_MS_C2_RCexsp	\N	47	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Evita4_frequenz	eingestellte Atemfrequenz	48	t
@@ -9047,10 +9201,12 @@ Linksventrikulärer Herzindex	LV Cardiac index	F_Therapieeinschraenkung	\N	47	t
 Linksatrialer Druck	Blood pressure panel with all children optional	HZV_Platzhalter	\N	47	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	NEV_PD_Doku_Verweildauer	\N	47	t
 Körpertemperatur rektal	Rectal temp	P_Beatmung_MS_C3_fTotal	Gesamtatemfrequenz	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Doku_Zephyros_Option	Liste Highflow Highflow CPAP	47	t
 Spontane-Atemfrequenz-Beatmet	\N	NEV_Apherese_ES_Multi_Temp	Anlage 18.05.2012	47	t
 Monitoring und Vitaldaten	\N	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	47	f
 Monitoring und Vitaldaten	\N	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	47	f
 Monitoring und Vitaldaten	\N	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	47	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_Inspirationszeit	Einstellwert: prozentualer Anteil der Inspirationszeit bezogen auf den gesamtem Atemzyklus	47	t
 Monitoring und Vitaldaten	\N	TempDelta	Anlage im Rahmen PhilipsMonitoring	47	f
 Parameter von Beatmung	\N	Betreuer_TelefonMobil	\N	47	f
 Parameter von Beatmung	\N	NEV_CRRT_VO_BolusAntikoag	\N	47	f
@@ -9063,48 +9219,26 @@ Parameter von extrakorporalen Verfahren	\N	P_Therapiebetten_VO_Lifetherm_Strahle
 Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_BariAir_rePause	\N	47	f
 Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Triadyne_rePause	\N	47	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Servoi_PEEP	"PEEP "	47	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Pkontrol_Phoch	Eingestellter Pkontrol oder Phoch am C2.	47	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita4_PEEP	gemessener positiver endexspiratorischer Druck	47	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi.	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_HFAmplitude	\N	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_O2	"Sauerstoffkonzentration "	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Pausendauer_Prozent	"Pausendauer "	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Pkontrol_Backup	\N	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Leistung	\N	47	t
 Pulmonalarterieller wedge Blutdruck	PAW pressure	Patient_PeaklowMessung	Peaklfowmeter Messung in % mit Definition <> Messung exspirat. Spitzenfluss	47	f
 Pulmonalarterieller wedge Blutdruck	PAW pressure	P_SEF	Spectral Edge Frequency	47	f
 Pulmonalarterieller wedge Blutdruck	PAW pressure	Therapiebetten_Doku_Triadyne_DruckSchulter	\N	47	f
 Pulmonalarterieller wedge Blutdruck	PAW pressure	Wertsachen_Papiere	\N	47	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Hausarzt_Strasse	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Doku_Zephyros_Option	Liste Highflow Highflow CPAP	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_Inspirationszeit	Einstellwert: prozentualer Anteil der Inspirationszeit bezogen auf den gesamtem Atemzyklus	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Pkontrol_Phoch	Eingestellter Pkontrol oder Phoch am C2.	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi.	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_HFAmplitude	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_O2	"Sauerstoffkonzentration "	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Pausendauer_Prozent	"Pausendauer "	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Pkontrol_Backup	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Leistung	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Pmin	Minimum Airway Pressure	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Pplateau	Plateau Druck	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_ZeitHoch	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_TE	Exspirationzeit, ein Monitoring-Parameter	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_TI	Inspirationszeit in Sekunden, Monitoring-Parameter	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_O2	"Gemessene Sauerstoffkonzentration "	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Pmin	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	COPRA_Patient_Bezugsgewicht	Bezugsgewicht des Patienten in kg	47	f
 Atemfrequenz	Resp rate	Nierenverfahren_VO_Citratloesung	Citratbeutel	48	t
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_Apherese_VO_SpülloesungAntikoag	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_Option	Predilution Postdilution extrakorporale Verfahren	47	f
 Atemfrequenz	Resp rate	Patient_Ort	Patientenadresse: Ort	48	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	HeartWare_RPM_Doku	\N	47	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Pallas_PEEP	Dokumentation des eingestellten PEEP.	47	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Messung_IntrinsicPEEP	Intrinsic PEEP	47	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	IABP_Trigger	\N	47	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	P_ADVOS_MS_ADVOS_artDruck	\N	46	t
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Kein_Recruitment	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pkontrol	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Psupport	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Zeit_zw2_SBT	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_O2Konzentration	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_InspFlow	Inspiratorischer Peakflow	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Pmin	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_VLeckage	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_NO2	\N	47	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_NEV_HD_ES_5008onl_NaProfil	Auswahl von nummerisch einzugebenden Profilen	47	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Angehoerige1_Name	Nachname des Angehörigen	47	f
 Spontanes-Atemzugvolumen	Spont VT on vent	F_Sozialanamnese_Betreuung_Sonstiges	\N	47	f
 Spontanes-Atemzugvolumen	Spont VT on vent	IABP_Doku_Ballonvolumen	\N	47	f
@@ -9114,15 +9248,25 @@ Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Inpuls_Erfassun
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_CRRT_VO_SpülloesungAntikoag	\N	47	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_SpüllösungAntikoag	\N	47	f
 Systemischer vaskulärer Widerstandsindex	SV RI	Vigileo_SVRI	Systemic vascular resistance index	47	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Kein_Recruitment	\N	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pkontrol	\N	47	t
 Monitoring und Vitaldaten	\N	PICCO_ZVD	Zentraler Venendruck	29	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Psupport	\N	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Zeit_zw2_SBT	\N	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_O2Konzentration	\N	47	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Hausarzt_Telefon	\N	47	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_1	\N	47	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_2	\N	47	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_3	\N	47	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_4	\N	47	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_PD_VO_Auslaufzeit	Auslaufzeit	47	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_InspFlow	Inspiratorischer Peakflow	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Pmin	\N	47	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_HD_MS_4008onl_Rest_Zeit_min	Anpassung für IBUS Anbindung	46	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Patient_Kopfumfang	Kopfumfang des Patienten (Kinder)	46	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_VLeckage	\N	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_NO2	\N	47	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_NEV_HD_ES_5008onl_NaProfil	Auswahl von nummerisch einzugebenden Profilen	47	t
 Substituatvolumen	\N	P_NEV_HD_VO_5008onl_Substituatrate	\N	47	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_VisionA_ApneaRate	Einstellwert: eingestellte Apnoefrequenz	47	t
 Zentralvenöser Druck	CVP	Aufnahme_Herkunftsland_Mutter	Herkunftsland der Mutter	47	t
@@ -9351,17 +9495,17 @@ Parameter von Beatmung	\N	Hypothermie_ArticSun_VO_KuehlWaermeRate_neu	\N	46	f
 Parameter von Beatmung	\N	PLS	Pulsrate errechnet aus der SpO2 Messung	46	f
 Parameter von extrakorporalen Verfahren	\N	NEV_Apherese_VO_Antikoagulation	\N	46	f
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_BM25_Umsatz	Umsatz ml/h	46	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_DruckHoch	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_Druckrampe	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Plateau	\N	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_ARDS	Liste ein aus	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Chron_Hyperkapnie	Liste ein aus	46	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_CO2Elim_Target_Shift	Bereich Decimal - bis +	46	t
 Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_ES_T1_Phoch	Einstellwert oberes Druckniveau im Modus DuoPAP	46	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Hypothermie_ArticSun_Doku_KuehlWaermerate	\N	46	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	46	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_Flowtrigger	Einstellgröße des Flowtriggers	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_DruckHoch	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_Druckrampe	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Plateau	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_ARDS	Liste ein aus	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Chron_Hyperkapnie	Liste ein aus	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_CO2Elim_Target_Shift	Bereich Decimal - bis +	46	f
 Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	SaO2 % Bld Preductal PulseOx	Beatmung_Messung_Pplateau	Plateau Druck	46	t
 Spontane-Atemfrequenz-Beatmet	\N	NEV_Apherese_VO_Fuellen_Mit	\N	46	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	t
@@ -9372,53 +9516,6 @@ Pulmonalvaskulärer Widerstandsindex	PV RI	PICCO_PC	Pulmonalkapillardruck	46	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	P_RhySta	Arrhytmia Rhytm Status label	46	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	46	t
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_HLI	Liste ein aus	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Kein_Recruitment	Liste ein aus	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_passiver_Patient	Liste ein aus	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Quick_Wean	Liste ein aus	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_SHT	Liste ein aus	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_Frequenz	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_T_Rampe	Dokumentation der eingestellten Rampenzeit.	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Gewicht	"Gewicht (kg) "	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Flowtrigger	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_HLI	Liste ein aus	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Kein_Recruitment	Liste ein aus	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_passiver_Patient	Liste ein aus	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Quick_Wean	Liste ein aus	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Zephyros_Pinsp	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Zephyros_Tinsp	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Pinsp	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_BiPAPV_PatientenTrigger	"Pat.Trig (Prozentsatz der vom Patienten ausgelösten Atemzüge) "	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_InsFlow	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_Pmittel	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita2_frequenzspon	gemessene spontane Atemfrequenz	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_I_E	I:E Verhältnis (Messung)	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_MVi	"Insp. Minutenvolumen "	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Ti_Tges	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_HFOBaseFlow	gemessener Basis Continousflow	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Pplat	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Lungenersatzverfahren_Doku_ILAactivve_Flussreg	Liste ein aus	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_MS_4008HS_Rest_Zeit_min	Anpassung für IBUS Anbindung	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_PD_VO_Einlaufhoehe	Einlaufhöhe in cm	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_Option	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pasvlimit	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_PEEP_CPAP	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pinsp	Inspiratorischer Druck	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pkontrol_Phoch	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_ProzentMinVol	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Ptief	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_SBT_Psupp_max	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_SBT_Zeitraum_bevor	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Thoch	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Timax	Inspirationszeit max	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Ttief	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_Frequenz	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Pinsp	Inspiratorischer Druck	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Ppeak	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_ProzentMinVol	\N	46	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Rinsp	Inspiratorische Flow-Resistance	46	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_ISOUFZeit	\N	46	f
 Spontanes-Atemzugvolumen	Spont VT on vent	P_ADVOS_MS_ADVOS_venDruck	\N	46	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Strasse	Adresse des Patienten: Strasse + Hausnummer	46	f
@@ -9628,6 +9725,7 @@ Linksventrikulärer Herzindex	LV Cardiac index	CardioHelpMaquet_DOKU_HB	\N	45	t
 Puls	\N	CPP	Zerebraler Perfusionsdruck	29	t
 Linksatrialer Druck	Blood pressure panel with all children optional	IABP_Trigger	\N	45	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_AF	Beatmungsfrequenz (f/AF)	45	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Frequenz	gemessene Atemfrequenz	45	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Inpuls_Erfassung_Transporte_Anzahl	\N	45	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Abnahme	\N	45	f
@@ -9651,64 +9749,36 @@ Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008HS_UFZiel	\N	4
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Plasmaloesung	\N	45	f
 Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Giraffe_ES_O2_Konzentration	\N	45	f
 Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Triadyne_mittePause	\N	45	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Evita2_InspFlow	eingestellter Inspirationfluss	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_F120_O2Konzentration	Einstellparameter: Sauerstoffgehalt des Gasgemisches	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Frequenz	Anzahl der Atemzyklen pro Minute, Parametereinstellung	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Tubuskompensation	Dokumentation der eingestellten Tubuskompensation	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_Flush	\N	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Pniedrig	"Phoch (cmH2O) "	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_SIMV_Frequenz	"SIMV Frequenz "	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Tpause_s	"TPause (s) "	45	t
 Spontanes-Atemzugvolumen	Spont VT on vent	P_ADVOS_MS_ADVOS_Calcium_postFilter	\N	45	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Airvo_O2Konzentration	Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.	45	f
 Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_VO_ADVOS_CitratFluss	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_AF	Beatmungsfrequenz (f/AF)	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Evita2_InspFlow	eingestellter Inspirationfluss	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_F120_O2Konzentration	Einstellparameter: Sauerstoffgehalt des Gasgemisches	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Frequenz	Anzahl der Atemzyklen pro Minute, Parametereinstellung	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Tubuskompensation	Dokumentation der eingestellten Tubuskompensation	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_Flush	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Pniedrig	"Phoch (cmH2O) "	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_SIMV_Frequenz	"SIMV Frequenz "	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Tpause_s	"TPause (s) "	45	f
 Atemfrequenz	Resp rate	Beatmung_MS_G5_RCexsp	Exspiratorische Zeitkonstante, ein Monitoring-Parameter	47	t
 Spontane-Atemfrequenz-Beatmet	\N	IABP_DatascopeCS300_ES_IABPAufblasen	Dokumentation des prozentualen Anteil des Aufblasens des Ballons.	45	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	P_INVOS_Doku_rSO2_rechts	cerbebrale Sauerstoffsättigung rechts	45	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_G5_Pkontrol	Einstellwert oberes Druckniveau beim G 5 im Modus P SIMV	45	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Pallas_Tinsp	Dokumentation der Inspirationszeit.	45	t
 Blutdruck Generisch	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_artDruck	\N	44	t
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_ZeitStartSBT	Zeit bis zum Start SBT	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Zeit_zw2_SBT	Zeit zwischen 2 SBT	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Trigger	Einstellgrösse: Druck bzw. Flowtrigger	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_intermPEEP	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_ExspFlow	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_Pplateau	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_ExspFlow	Exspiratorischer Peakflow, ein Monitoring-Parameter	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_InspFlow	Inspiratorischer Peakflow, ein Monitoring-Parameter	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pplateau	Plateau-Atemwegsdruck, ein Monitoring-Parameter	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_PTP	Druck Zeit Produkt (Pressure Time Product), ein Monitoring Parameter	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_VLeckage	Leckagevolumen, ein Monitoring-Parameter	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Heimbeatmung_Pmittel	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_PEEP	Dokumentation des gemessenen PEEPs.	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Cdyn	"Dynamische Charakteristika "	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_P0_1	"P0.1 "	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_PEEP	"Positiver Endexsp. Druck "	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_RSB	Index für schnelle Flachatmung (Rapid Shallow Breathing Index)	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_O2	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	IABP_CARDIOSAVE_ES_IABPAufblasen	Dokumentation des prozentualen Anteils des Aufblasens des Ballons	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_Apherese_Doku_SpülloesungAntikoag	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_ES_4008HS_SollNa	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_SollNatrium	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_3100A_Inspirationszeit	Prozentualer Anteil der Insp.Zeit bezogen auf den gesamten Atemzyklus	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_F_SIMV	Eingestellte SIMV Frequenz	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_PEEP_CPAP_Ptief	Eingestellter PEEP, CPAP oder Ptief	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Quick_Wean	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Sauerstoff	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_PeepCPAPPtief	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_FrequencyCough	\N	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_RCexsp	Exspiratorische Zeitkonstante	45	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Sauerstoff	\N	45	f
 Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_VO_4008onl_Bicarbonat	\N	45	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_Bicarbonat	\N	45	f
 Spontanes-Atemzugvolumen	Spont VT on vent	P_ADVOS_VO_CalciumLoesung	\N	45	f
 Spontanes-Atemzugvolumen	Spont VT on vent	P_Spontanatemtest	Dokumentation ob der Spontanatemtest bestanden wurde.	45	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_ZeitStartSBT	Zeit bis zum Start SBT	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Zeit_zw2_SBT	Zeit zwischen 2 SBT	45	t
 Systemischer vaskulärer Widerstandsindex	SV RI	NEV_Apherese_MS_OctoNova_PlasmaVolKum_ml	Anpassung im Zuge der automatischen Geräteanbindung über IBUS. Änderung in ml	45	f
 Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVR	Systemic vascular resistance	45	f
 Systemischer vaskulärer Widerstandsindex	SV RI	Vigileo_SVR	Systemic vascular resistance	45	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Trigger	Einstellgrösse: Druck bzw. Flowtrigger	45	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_intermPEEP	\N	45	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Evita2_InspFlow	eingestellter Inspirationfluss	45	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Servoi_EDI_Trigger	"EDI Trigger "	45	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_ACAT_ES_Inflation	\N	45	f
@@ -10005,47 +10075,10 @@ Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Nierenverfahren_ES_400
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Nierenverfahren_MS_4008onl_TMP	\N	44	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	PCCI	"Herzindex (kontinuirlich) "	44	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	RCWI	\N	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Aufnahme_Geburtslage_andere_text	\N	44	t
 Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_VO_ADVOS_CalciumFluss	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Aufnahme_Geburtslage_andere_text	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_AMV	Atemminutenvolumen (AMV)	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_O2Konzentration	Einstellwert: O2 Konzentration des Gasgemisches	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_IEVerhaeltnis	Einstellwert: I:E Verhältnis	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_SBT_Frrequenz	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_SBT_Zeitraum_bevor	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_HFFrequenz	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_TriggerVol	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Pinsp	Eingestellter Inspiration Druck.	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Tinsp	Dokumentation der Inspirationszeit.	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_DU_ueber_Phoch	"Druckunterstüzung hoch (cmH2O) "	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Nava_Pegel	"Nava Pegel "	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Frequenz	Einstellwert: eingestellte Atemfrequenz	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_FlowTrigger	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_IPPVFrequenz	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_ZeitNiedrig	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_3100B_O2Konzentration	Messwert: gemessene O2 Konzentration des Gasgemisches	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_etCO2	Dokumention des gemessenen endtidalen	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Ppeak	Dokumentation des gemessenen Beatmungsspitzendruck.	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Pplat	Dokumentation des gemessenen Plateaudruckes.	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Ppeak	"Atemdruck Spitze "	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_MVe	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Tve	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Tvi	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_Apherese_Doku_Spuel_Dauer	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_ES_4008HS_StartNa	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_VO_4008HS_Soll_Na	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NIRS	Über eine Messsonde transcutan gemessener Prozentwert	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NIRSlinks_MS	Über eine Messsonde transcutan gemessener Prozentwert	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Patient_Spezifitaet	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_3100A_Inspirationszeit	Prozentualer Anteil der Insp.Zeit bezogen auf den gesamten Atemzyklus	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_3100A_Leistung	Prozentuale Kolbenauslenkung	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_chronHyperkapnie	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Plateau	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_ZeitStartSBT	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_CoughAssist_Oszillation	\N	44	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Pmittel	\N	44	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_AMV	Atemminutenvolumen (AMV)	44	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_SBT_Frrequenz	\N	44	t
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_VisionA_AFSpontan	Messwert: Anzahl der gemessenen spontanen Atemzüge	44	f
 Spontanes-Atemzugvolumen	Spont VT on vent	NEV_CRRT_MS_Multi_CalciumVolKum	\N	44	f
 Spontanes-Atemzugvolumen	Spont VT on vent	NEV_CRRT_MS_Multi_CitratvolKum	\N	44	f
@@ -10526,6 +10559,12 @@ Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IA
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP.	43	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	NEV_Apherese_Doku_AbschlussUrteil	Listenauswahl	43	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Nierenersatzverfahren_Dokumentation_Abschluss	\N	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_BiPAPV_IPAPAnstiegszeit	"IPAP-Anstiegszeit in Sekunden eingestellt "	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Groeße	Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Pkontrol_Backup	\N	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Sauerstoff	Sauerstoffeinstellung	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Flowtrigger	"Flowtrigger "	43	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_IntrinsicPEEP	Intrinsic PEEP	43	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Pallas_T_Rampe	Dokumentation der eingestellten Rampenzeit.	43	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Pflegeuntensilien_Ort	\N	43	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Wertgegenstaende_Ort	\N	43	f
@@ -10538,36 +10577,15 @@ Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_3100B_O2Konzentration
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_VolAssist	Einstellgröße für den VolAssist im PPS Modus	43	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ2	\N	43	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Waermesysteme_BairHugger_VO_Geblaese	\N	43	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_Cstat	\N	43	t
 Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	CardioHelpMaquet_MS_Blutfluss	\N	43	f
 Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	CardioHelpMaquet_VO_Blutfluss	\N	43	f
 Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_Doku_SpuelloesungAntikoag1	\N	43	f
 Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_ES_ADVOS_Blutfluss	\N	43	f
 Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_VO_ADVOS_UFRateMax	\N	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_BiPAPV_IPAPAnstiegszeit	"IPAP-Anstiegszeit in Sekunden eingestellt "	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Groeße	Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Pkontrol_Backup	\N	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Sauerstoff	Sauerstoffeinstellung	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Flowtrigger	"Flowtrigger "	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_IntrinsicPEEP	Intrinsic PEEP	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_Cstat	\N	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pinsp	"Inspiratorischer Druck, mit Pinsp wird der Zieldruck (zusätzlich zu PEEP/CPAP) bezeichnet, der im Modus ASV während der Inspirationsphase abgegeben wird"	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Ppeak	Messwert: Beatmungsspitzendruck	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_RCinsp	Inspiratorische Zeitkonstante, ein Monitoring Parameter	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Rinsp	Inspiratorische Flow-Resistance, ein Monitoring-Parameter	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_MV	Gemessenes Atemminutenvolumen.	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_AF	"Atemfrequenz "	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_spAF	\N	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Hypothermie_ArticSun_ES_Hoechsttwassertemp	\N	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_BM25_Umsatz	Umsatz ml/h	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_3100A_O2Konzentration	O2 Konzentration des Gasgemisches	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Tubuskompensation	\N	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_3100A_O2Konzentration	Gemessene O2 Konzentration	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_P01	Atemwegs-Okklusionsdruck	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_PeepCPAP	\N	43	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Pplateau	Plateau- oder endinspiratorischer Druck	43	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_spAF	\N	43	t
 Spontane-Atemfrequenz-Beatmet	\N	NEV_Apherese_Doku_SpülloesungAntikoag	\N	43	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	43	t
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_RSB	"Index für schnelle Flachatmung („Rapid Shallow Breathing Index“) "	43	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Messung_AFSpontan	Respiratory Rate (spontan)	43	f
 Spontanes-Atemzugvolumen	Spont VT on vent	NEV_CRRT_MS_Multi_DialysatvolKum	\N	43	f
 Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_ES_4008onl_NaProfil	\N	43	f
@@ -10583,6 +10601,7 @@ Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzver
 Systemischer vaskulärer Widerstandsindex	SV RI	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum_ml	Anpassung im Zuge der automatischen Datenübernahme IBUS	43	f
 Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_ZVD	Zentraler Venendruck	43	f
 Systemischer vaskulärer Widerstandsindex	SV RI	P_Waermesysteme_FisherPaykel_Doku_Prozent	\N	43	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_RSB	"Index für schnelle Flachatmung („Rapid Shallow Breathing Index“) "	43	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Evita2_VerhaeltnisTiTe	eingestelltes Verhältnis zwischen Inspiration und Exspiration	43	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Servoi_Backup_Ti	"Backup Ti [s] "	43	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	LAP	Linksatrial  Mitteldruck	43	f
@@ -10900,33 +10919,17 @@ Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_BariAir_liDrehwinke
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_G5_PeepCPAP	Messwert: Beatmungsdruck Peep / CPAP	42	t
 Hämodialyse Blutfluss	\N	IABP_Aufblasen	\N	41	f
 Parameter von Beatmung	\N	NEV_PD_VO_Einlaufhoehe	Einlaufhöhe in cm	41	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_Frequenz	"Einstellwert: eingestellte Oszillationsfrequenz "	42	t
 Pulmonalarterieller wedge Blutdruck	PAW pressure	Nierenverfahren_MS_Bilanz	Variable wird verwendet für Multifiltrate und ADM 08	42	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_Leistung	Einstellwert: prozentuale Kolbenauslenkung	42	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Flowtrigger	\N	42	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPAufblasen	Dokumentation des prozentualen Anteils des Aufblasens des Ballons	42	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.	42	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IstSoziale_Besonderheit	Soziale_Besonderheiten, z.B. Familiensituation	42	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	P_Spontanatemtest	Dokumentation ob der Spontanatemtest bestanden wurde.	42	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Zephyros_Endflow	\N	42	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Waermesysteme_BairHugger_Doku_Geblaese	Liste	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_Frequenz	"Einstellwert: eingestellte Oszillationsfrequenz "	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_Leistung	Einstellwert: prozentuale Kolbenauslenkung	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Flowtrigger	\N	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Flowtrigger	Die inspiratorische Bemühung des Patienten ( Flow),  die das Beatmungsgerät veranlässt, einen Atemhub abzugeben	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_ZeitStartSBT	Zeit bis zum Start STB	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Heimbeatmung_Flowtrigger	\N	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Optiflow_O2Flow	\N	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Frequenz	Dokumentation der eingestellten Frequenz.	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Trigger	Dokumentation des eingestellten Triggers.	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Oszillationsfrequenz	Oszillationsfrequenz Gerät: Alpha Vision Modus: HFO	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_SauerstoffFlow	\N	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita2_Pmittel	gemessener Beatmungsmitteldruck	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_MV_Leck	Gemessene Leckage.	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Edi_peak	"Edi-Spitzenwert "	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_SBI	"Shallow Breathing Index (Index für flache Atmung) "	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Ppeak	\N	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_R	\N	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_VO_4008HS_Na_Profil	\N	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_VO_4008HS_UF_Profil	\N	42	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_Mess_Blutfluss	\N	42	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Flowtrigger	Die inspiratorische Bemühung des Patienten ( Flow),  die das Beatmungsgerät veranlässt, einen Atemhub abzugeben	42	t
 Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_Dialysekonzentrat	Dialysekonzentrat 6 liter gesamt	42	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_Fluss	\N	42	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_ISOUFZiel	\N	42	f
@@ -10944,6 +10947,7 @@ Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Schrittmacher_Siemens_
 Pulmonalvaskulärer Widerstandsindex	PV RI	VigilanceC_PVR	Pulmonaler vasculärer Widerstand	42	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.	42	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IstSoziale_Besonderheit	Soziale_Besonderheiten, z.B. Familiensituation	42	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_ZeitStartSBT	Zeit bis zum Start STB	42	t
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Beatmung_MS_G5_Pplateau	Plateau-Atemwegsdruck, ein Monitoring-Parameter	42	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_CRRT_Doku_SpülloesungAntikoag	\N	42	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_AutoCat_ES_Deflation	\N	42	f
@@ -11248,6 +11252,17 @@ Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	NE
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Nierenverfahren_MS_Bilanz	Variable wird verwendet für Multifiltrate und ADM 08	41	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	P_Patient_Gewicht_Differenz	Differenz zwischen dem aktuellen Gewicht und dem Gewicht des letzten Eintrags	41	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Schwangerschaftswoche	Schwangerschaftswoche, in welcher das Baby geboren wurde	41	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_DruckTrigger	\N	41	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Heimbeatmung_Frequenz	\N	41	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Okklussionsdruck	\N	41	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita2_Pmax	gemessener Beatmungsspitzendruck	41	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_RSB	Index für schnelle Flachatmung (Rapid Shallow Breathing Index), Monitoring Parameter	41	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Lungenersatzverfahren_MS_ECMO_ACT	\N	41	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_StartNatrium	\N	41	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_SubBolus	\N	41	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_UFProfil	\N	41	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_MS_UltrafiltratmengeKum	Kumulativer Entzug, bilanzrelevant	41	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_4008HS_SollNatrium	\N	41	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Messung_AutoTubuskompentationAus	\N	41	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_MS_Pallas_MAC_exsp	Gemessener MAC Wert. (endexspiratorische mittlere alveoläre Konzentration)	41	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Wertgegenstaende	\N	41	f
@@ -11266,19 +11281,8 @@ Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	IABP_AutoCat_ES_Modus	Liste	41	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_CSF_MS_LiquoGuard_Liquorfluss	"automatisch berechnet aus Pset ml/h "	41	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Schwangerschaftswoche	Schwangerschaftswoche, in welcher das Baby geboren wurde	41	f
 Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat	41	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_DruckTrigger	\N	41	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Heimbeatmung_Frequenz	\N	41	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Okklussionsdruck	\N	41	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita2_Pmax	gemessener Beatmungsspitzendruck	41	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_RSB	Index für schnelle Flachatmung (Rapid Shallow Breathing Index), Monitoring Parameter	41	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Lungenersatzverfahren_MS_ECMO_ACT	\N	41	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_StartNatrium	\N	41	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_SubBolus	\N	41	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_UFProfil	\N	41	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_MS_UltrafiltratmengeKum	Kumulativer Entzug, bilanzrelevant	41	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_4008HS_SollNatrium	\N	41	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_BM25_Plasmavolumen	\N	41	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Flowtrigger	\N	41	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_BM25_Plasmavolumen	\N	41	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Flowtrigger	\N	41	t
 Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_ES_5008onl_NaProfil	Auswahl von nummerisch einzugebenden Profilen	41	f
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Beatmung_MS_Pallas_MAC_exsp	Gemessener MAC Wert. (endexspiratorische mittlere alveoläre Konzentration)	41	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Wertgegenstaende	\N	41	t
@@ -11558,16 +11562,6 @@ Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	SaO2 % BldA	Nierenverfahre
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_CF800_SauerstoffFlow	Einstellgröße Gasfluss Sauerstoff	40	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	NEV_HD_VO_Zugang	\N	40	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_Impella_Impella_Doku_Verschlusssystem	Liste Ja Nein	40	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontVe	gemessenes spontanes Atemminutenvolumen	40	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita2_MVspon	gemessenes spontanes Atemminutenvolumen	40	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita4_MVspn	gemessenes spontanes Atemminutenvolumen	40	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_SpontanAMV	gemessenes spontanes Atemminutenvolumen	40	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Hypothermie_Coolgard_VO_Behandlungsmodi	\N	40	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_Mess_Leitfähigkeit	\N	40	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_MS_4008HS_Restzeit	\N	40	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Schrittmacher_Osypka101H_ES_Betriebsart	Listenauswahl	40	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Schrittmacher_Osypka203H_ES_Betriebsart	Liste	40	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Untersuchung_Status_Wasserhaushalt	\N	40	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Messung_CO2	CO2-Production	40	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Hypothermie_VO_Kuehlverfahren	Liste	40	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_Mess_PF	\N	40	f
@@ -11577,12 +11571,18 @@ Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVRI	Systemischer Gef
 Systemischer vaskulärer Widerstandsindex	SV RI	Vigileo_CI	\N	40	f
 Venöser Druck	\N	Nierenverfahren_Doku_Spueldauer	Spüldauer	40	t
 Venöser Druck	\N	SM_Modus	Schrittmachermodus	40	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontVe	gemessenes spontanes Atemminutenvolumen	40	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita2_MVspon	gemessenes spontanes Atemminutenvolumen	40	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita4_MVspn	gemessenes spontanes Atemminutenvolumen	40	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_SpontanAMV	gemessenes spontanes Atemminutenvolumen	40	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Hypothermie_ArticSun_MS_Wasserstand	Texteintrag	40	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_Temperatur	\N	40	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenverfahren_MS_Multi_CitratvolumenKumulativ	kumulativ Citrat	40	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Oxidationswasser	Oxidationswasser in ml (einfuhrrelevant)	40	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	SM_AV_Intervall	Schrittmacher AV-Intervall	40	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Hypothermie_Coolgard_VO_Behandlungsmodi	\N	40	t
 Atemfrequenz	Resp rate	Beatmung_MS_Pallas_Frequenz	Gemessene Atemfrequenz.	39	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_Mess_Leitfähigkeit	\N	40	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILAactivve_Fluss	\N	39	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_GasflussMax	\N	39	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_BlutflussSNPumpe	\N	39	f
@@ -11827,6 +11827,10 @@ Parameter von Beatmung	\N	Schrittmacher_zwei_ES_Frequenz	Medtronic 5375	39	f
 Atemfrequenz	Resp rate	Beatmung_ES_Evita4_frequenz	eingestellte Atemfrequenz	100	t
 Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	P_NEV_HD_MS_5008onl_artDruck	\N	38	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_4008HS_artDruck	\N	38	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	IABP_Datascope_ES_Unterstützungsdruck	\N	39	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_Spueldauer	\N	39	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_ES_BM25_Umsatz	Austausch, Substituat, ml/h	39	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_MS_BM25_UmsatzvolumenKumulativ	\N	39	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienPzvCO2	\N	39	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Evita2_Anstiegszeit	eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau	39	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Pallas_Inspirationspause_Tip_Tinsp	Dokumentation der Inspirationszeit. Verhältnis zwischen Tip und Tinsp. 0 bis 60 %.	39	f
@@ -11843,10 +11847,6 @@ Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Nierenverfahren_ES_ADM_PlasmaAust
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ1	\N	39	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ3	\N	39	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Untersuchung_Kontrolle_Laufraten	Arztdoku S. 10	39	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	IABP_Datascope_ES_Unterstützungsdruck	\N	39	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_Spueldauer	\N	39	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_ES_BM25_Umsatz	Austausch, Substituat, ml/h	39	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_MS_BM25_UmsatzvolumenKumulativ	\N	39	f
 Atemfrequenz	Resp rate	Beatmung_ES_C2_Pmax	Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.	43	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienPzvCO2	\N	39	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_Evita2_Anstiegszeit	eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau	39	t
@@ -11860,11 +11860,11 @@ Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	F_
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_SubBolusVolKum_ml	Anpassung IBUS Anbindung	39	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Nierenersatzverfahren_Einstell_PatFluessigkeitRate	\N	39	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Schrittmacher_drei_ES_ÜberstimulationsFreq	\N	39	t
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_3100A_Mitteldruck	Eingestellter mittlerer Atemwegsdruck	39	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Schrittmacher_Osypka203H_ES_result_Betriebsart	abhängig in ES der Sense-Liste	39	f
 Spontanes-Atemzugvolumen	Spont VT on vent	NEV_CRRT_Doku_SpülloesungAntikoag	\N	39	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_NatriumProfil	\N	39	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_Mess_UFR	\N	39	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_3100A_Mitteldruck	Eingestellter mittlerer Atemwegsdruck	39	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Schrittmacher_Osypka203H_ES_result_Betriebsart	abhängig in ES der Sense-Liste	39	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_SollNatrium	\N	39	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_StartNatrium	\N	39	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_SubstituatVolumen	\N	39	f
@@ -12031,6 +12031,9 @@ Linksventrikulärer Druck	Blood pressure panel with all children optional	P_Waer
 Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	SaO2 % BldA	Hausarzt_Fax	\N	38	t
 Pulmonalarterieller wedge Blutdruck	PAW pressure	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum_ml	Anpassung im Zuge der automatischen Datenübernahme IBUS	38	f
 Pulmonalarterieller wedge Blutdruck	PAW pressure	WeitereBlutdruecke_Platzhalter	\N	38	f
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h	38	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_MS_4008HS_SollNatrium	\N	38	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Untersuchung_Kontrolle_Laufraten	Arztdoku S. 10	38	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_C2_F_SIMV	Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.	38	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Evita4_fApnoe	eingestellte Atemfrequenz in der Apnoeventilation	38	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Pmax	Hochdruckalarmgrenze im 'ASV Modus	38	f
@@ -12043,9 +12046,6 @@ Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Avea_PeakFlow	eingest
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_CSF_MS_LiquoGuard_Fuellstand	\N	38	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_Waermesysteme_InfantWarmer_Doku_Power	\N	38	f
 Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	IABP_DatascopeCS300_ES_Doku_Ballonkatheter	Dokumentation des verwendeten Ballonkatheters.	38	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h	38	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_MS_4008HS_SollNatrium	\N	38	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Untersuchung_Kontrolle_Laufraten	Arztdoku S. 10	38	f
 Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_ES_4008onl_SollNa	\N	38	f
 Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_MS_4008onl_IsoUFVolKum	\N	38	f
 Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_MS_4008onl_SollNa	\N	38	f
@@ -12161,6 +12161,12 @@ Linksventrikulärer Druck	Blood pressure panel with all children optional	Nieren
 Linksventrikulärer Druck	Blood pressure panel with all children optional	rCBF	Über eine Sonde gemessener regionaler cerebraler Blutfluss.	37	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_HD_MS_4008onl_Rest_Zeit_min	Anpassung für IBUS Anbindung	37	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Beatmung_MS_Avea_fVt	errechneter Quotient zwischen Frequenz und Tidalvolumen	37	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben.	37	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	37	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Druckrampe	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	37	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_Doku_SpuelbeutelInitialdosis	\N	37	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_4008HS_UFProfil	\N	37	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Patient_Kopfumfang_bit	Kopfumfang bit cm	37	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator G5 in den Beatmungsmodi APVsimv, Psimv.	37	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Ttief	Einstellwert: Zeiteinstellung für das untere Druckniveau beim G5 im Modus APRV	37	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_MS_Avea_fVt	errechneter Quotient zwischen Frequenz und Tidalvolumen	37	f
@@ -12169,12 +12175,6 @@ Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Niere
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	rCBF	Über eine Sonde gemessener regionaler cerebraler Blutfluss.	37	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	EVLW/EV	Extravasales Lungenwasser	37	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	VigilanceC_EVLW	Extravasales Lungenwasser	37	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben.	37	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	37	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Druckrampe	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	37	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_Doku_SpuelbeutelInitialdosis	\N	37	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_4008HS_UFProfil	\N	37	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Patient_Kopfumfang_bit	Kopfumfang bit cm	37	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_Spueldauer	\N	36	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_ES_5008onl_IsoUFZiel	\N	36	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_IsoUFZiel	\N	36	f
@@ -13527,9 +13527,9 @@ Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_
 Blutdruck Generisch	Blood pressure panel with all children optional	NeurochirurgischeMessungen_Platzhalter	\N	35	t
 Venöser Druck	\N	PICCO_SVRI	Systemic vascular resistance index	36	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_PD_Doku_Mischung_Lsg1_Lsg2	\N	35	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Pmean	Gemesener Atemwegsmitteldruck	36	t
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_P01	Atemwegs-Okklusionsdruck	36	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenverfahren_MS_Multi_CalciumvolumenKumulativ	kumulativ	36	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Pmean	Gemesener Atemwegsmitteldruck	36	f
-Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_P01	Atemwegs-Okklusionsdruck	36	f
 Spontanes-Atemzugvolumen	Spont VT on vent	IABP_AutoCat_ES_Unterstützungsdruck	\N	36	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Untersuchung_ZNS_Motorik	\N	36	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_CRRT_ES_Multi_Temp	neu angelegt am 18.05.2012	35	f
