@@ -107,6 +107,18 @@ CREATE TABLE icu_copra.python_match_tmp (
 
 
 --
+-- Name: thesis_matched; Type: TABLE; Schema: icu_copra; Owner: -
+--
+
+CREATE TABLE icu_copra.thesis_matched (
+    conf_var_name character varying NOT NULL,
+    profile_name character varying NOT NULL,
+    conf_var_unit character varying,
+    valuequantity_code character varying
+);
+
+
+--
 -- Name: v_python_match; Type: VIEW; Schema: icu_copra; Owner: -
 --
 
@@ -6634,10 +6646,11 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 3	Parameter von extrakorporalen Verfahren	Observation	\N	\N	\N	\N	\N	f
 18	Parameter von Beatmung	Observation	\N	\N	\N	\N	\N	f
 48	Monitoring und Vitaldaten	Observation	\N	\N	\N	\N	\N	f
-4	Blutfluss durch cardiovasculäres Gerät	Observation	444479000	\N	\N	\N	L/min	f
-5	Ionisiertes Kalzium aus Nierenersatzverfahren	Observation	\N	83064-6	\N	Ca-I BldCRRT-sCnc	mmol/L	f
-7	Dauer Hämodialysesitzung	Observation	445940005	\N	\N	\N	h	f
-8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	\N	mL/min	f
+7	Dauer Hämodialysesitzung	Observation	445940005	\N	\N	\N	h	t
+23	Druckdifferenz Beatmung	Observation	\N	76154-4	\N	Away press delta on vent PressDiff	cm[H2O]	t
+53	Körpergroesse	Observation	1153637007	8302-2	\N	Body height	cm	t
+8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	\N	mL/min	t
+5	Ionisiertes Kalzium aus Nierenersatzverfahren	Observation	\N	83064-6	\N	Ca-I BldCRRT-sCnc	mmol/L	t
 10	Substituatvolumen	Observation	708514004	\N	\N	\N	L	t
 14	Venöser Druck	Observation	252076005	\N	\N	\N	mm[Hg]	t
 12	Blutfluss extrakorporaler Gasaustausch	Observation	251288004	\N	\N	\N	L/min	f
@@ -6646,7 +6659,6 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 22	Atemwegsdruck bei mittlerem expiratorischem Gasfluss	Observation	\N	20056-8	\N	PAW @ mean exp flow on vent	cm[H2O]	t
 20	Endexpiratorischer Kohlendioxidpartialdruck	Observation	250790007	19891-1	151708	pCO2 end exp ExG	mm[Hg]	f
 40	Atemzugvolumen-Einstellung	Observation	416811008	20112-9	16929196	VT setting Vent	mL	t
-23	Druckdifferenz Beatmung	Observation	\N	76154-4	\N	Away press delta on vent PressDiff	cm[H2O]	f
 25	Dynamische Kompliance	Observation	250823005	60827-3	151692	Compliance.dynamic Lung	mL/cm[H2O]	t
 27	Mittlerer Beatmungsdruck	Observation	698821009	76530-5	151975	Mean Pres on vent Airway	cm[H2O]	f
 29	Inspiratorische Sauerstofffraktion gemessen	Observation	250774007	71835-3	\N	FIO2	1	f
@@ -6664,7 +6676,7 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 49	Pulmonalarterieller wedge Blutdruck	Observation	118433006	75994-4	150052	PAW pressure	mm[Hg]	f
 69	Herzzeitvolumen	Observation	82799009	8741-1	150276	LV Output	L/min	t
 73	Zentralvenöser Druck	Observation	71420008	60985-9	150084	CVP	mm[Hg]	t
-53	Körpergroesse	Observation	1153637007	8302-2	\N	Body height	cm	f
+4	Blutfluss durch cardiovasculäres Gerät	Observation	444479000	\N	\N	\N	L/min	t
 55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	f
 2	Eingestellte und gemessene Parameter	DeviceMetric	\N	\N	\N	\N	\N	t
 59	Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	Observation	\N	59407-7	160296	SaO2 % Bld Preductal PulseOx	%	f
@@ -6678,7 +6690,6 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 71	Linksv. Herzzeitvolumen durch Indikatorverdünnung	Observation	\N	8737-9	\N	LV Output Indicator dilution	L/min	f
 1	Extrakorporale Verfahren	Procedure	\N	\N	\N	\N	\N	t
 37	Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Observation	250875001	76009-0	152004	Inspired min Vol MV	L/min	t
-75	Linksatrialer Druck	Observation	276762004	85354-9	\N	Blood pressure panel with all children optional	\N	f
 78	Linksventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 57	Ideales Körpergewicht	Observation	170804003	50064-5	\N	Ideal bdy weight	kg	t
 81	Puls	Observation	8499008	\N	149514	\N	/min	t
@@ -6706,14 +6717,11 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 30	Inspiratorische Sauerstofffraktion eingestellt	Observation	250774007	19994-3	\N	O2/Total gas setting VFr Vent	%	f
 33	Eingestellter inspiratorischer Gasfluss	Observation	\N	76275-7	\N	Insp flow set Vent	L/min	f
 36	Spontanes-Plus-Mechanisches-Atemzugvolumen	Observation	\N	20118-6	\N	Spont+mech VT on vent	mL	f
-41	Zeitverhältnis-Ein-Ausatmung	Observation	250822000	75931-6	151832	Insp/Exp time Ratio	{ratio}	f
 56	Körpergrösse Percentil	Observation	1153605006	8303-0	\N	Body height Prctl	%	f
-58	Körpertemperatur Kern	Observation	276885007	8310-5	150368	Body temperature	Cel	f
 60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	f
 64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	f
 68	Linksventrikulärer Herzindex	Observation	54993008	75919-1	149772	LV Cardiac index	L/(min.m2)	f
 70	Linksv. Herzindex durch Indikatorverdünnung	Observation	\N	8751-0	\N	LV Cardiac index Indicator dilution	L/min/m2	f
-76	Rechtsatrialer Druck	Observation	276755008	85354-9	\N	Blood pressure panel with all children optional	\N	f
 77	Rechtsventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 79	Pulmonalarterieller Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	f
@@ -6732,6 +6740,10 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 50	Intrakranieller Druck ICP	Observation	250844005	60956-0	153608	ICP	mm[Hg]	t
 100	Körpertemperatur rektal	Observation	307047009	8332-9	188420	Rectal temp	Cel	t
 44	Spontane-Mechanische-Atemfrequenz-Beatmet	Observation	250810003	19840-8	152490	Breaths.spont+mech on vent	/min	t
+75	Linksatrialer Druck	Observation	276762004	85354-9	\N	Blood pressure panel with all children optional	\N	t
+76	Rechtsatrialer Druck	Observation	276755008	85354-9	\N	Blood pressure panel with all children optional	\N	t
+41	Zeitverhältnis-Ein-Ausatmung	Observation	250822000	75931-6	151832	Insp/Exp time Ratio	{ratio}	t
+58	Körpertemperatur Kern	Observation	276885007	8310-5	150368	Body temperature	Cel	t
 \.
 
 
@@ -6808,6 +6820,8 @@ Körpertemperatur vaginal	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	
 Substituatvolumen	\N	Nierenersatzverfahren_Mess_SubstituatVolumen	\N	100	f
 Intrakranieller Druck ICP	ICP	ICP1	intracranieller Druck	87	f
 Intrakranieller Druck ICP	ICP	ICP1	intracranieller Druck	86	f
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Pallas_Pplat	Dokumentation des gemessenen Plateaudruckes.	42	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_VisionA_AMVtotal	Messwert: gemessenes Atemminutenvolumen	42	t
 Körpertemperatur Blut	Blood temp	T_K2	Körpertemperatur Messkanal 2	86	f
 Körpertemperatur Kern	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	86	f
 Spontanes-Atemzugvolumen	Spont VT on vent	P_Beatmung_MS_C3_MVspn	spontanes Atemminutenvolumen	85	f
@@ -6815,6 +6829,7 @@ Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVRI	Systemischer Gef
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_Beatmung_ES_C3_Pinsp	Inspiratorischer Druck	84	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_Beatmung_MS_C3_Pinsp	Inspiratorischer Druck	84	f
 Intrakranieller Druck ICP	ICP	ICP	Intrakranialer Druck	84	f
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_Dialysatvolumen	\N	42	t
 Körpertemperatur Brust	Body temperature	Temp1b	Temperatur 1b	83	f
 Körpertemperatur Brust	Body temperature	Temp2b	Temperatur 2b	83	f
 Körpertemperatur Brust	Body temperature	Temp3b	Temperatur 3b	83	f
@@ -6829,9 +6844,6 @@ Körpertemperatur vaginal	Body temperature	IABP_Leersaugen	\N	52	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Temp1b	Temperatur 1b	83	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Temp2b	Temperatur 2b	83	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Temp3b	Temperatur 3b	83	f
-Körpertemperatur Kern	Body temperature	Temp1b	Temperatur 1b	83	f
-Körpertemperatur Kern	Body temperature	Temp2b	Temperatur 2b	83	f
-Körpertemperatur Kern	Body temperature	Temp3b	Temperatur 3b	83	f
 Körpertemperatur Leiste	Body temperature	Temp1b	Temperatur 1b	83	f
 Körpertemperatur Leiste	Body temperature	Temp2b	Temperatur 2b	83	f
 Körpertemperatur Leiste	Body temperature	Temp3b	Temperatur 3b	83	f
@@ -6845,6 +6857,7 @@ Körpertemperatur Stirn	Body temperature	Temp1b	Temperatur 1b	83	f
 Körpertemperatur Stirn	Body temperature	Temp2b	Temperatur 2b	83	f
 Körpertemperatur Stirn	Body temperature	Temp3b	Temperatur 3b	83	f
 Körpertemperatur vaginal	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	t
+Körpertemperatur Kern	Body temperature	Temp1b	Temperatur 1b	83	t
 Körpertemperatur vaginal	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	t
 Körpertemperatur vaginal	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita4_PEEP	gemessener positiver endexspiratorischer Druck	82	f
@@ -6869,10 +6882,6 @@ Körpertemperatur Generisch	Body temperature	Temp1b	Temperatur 1b	83	t
 Puls	\N	PLS	Pulsrate errechnet aus der SpO2 Messung	86	t
 Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	SaO2 % Bld Preductal PulseOx	SvO2	venöse Sauerstoffsättigung	86	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	IABP_Unterstützungsdruck	\N	88	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Fluß	\N	86	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_UFR	\N	86	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_PF	\N	84	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UFR	\N	82	t
 Körpertemperatur vaginal	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_Beatmung_MS_C3_InspFlow	Inspiratorischer Peakflow	80	f
 Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_Anordnung_ASB	Anordnung Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)	80	f
@@ -6887,39 +6896,43 @@ Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_MS_T1_PTP	Druck Zeit P
 Körpertemperatur vaginal	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	t
 Körpertemperatur vaginal	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	t
 Körpertemperatur vaginal	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Calcium	\N	79	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita2_Ppeep	gemessener positer endexspiratorischer Druck	79	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_G5_ExspFlow	Exspiratorischer Peakflow, ein Monitoring-Parameter	78	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_Evita2_Pplat	gemessener Plateaudruck (inspiratorischer Beatmungsdruck)	78	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_G5_InspFlow	Inspiratorischer Peakflow, ein Monitoring-Parameter	78	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Avea_FiO2	eingestellte Sauerstoffkonzentration des inspiratorischen Atemgases	78	f
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_O2_insp	Gemessene inspiratorische O2 Konzentration.	78	f
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_VisionA_DeltaP	Einstellwert: eingestellte Druckdifferenz	76	t
 Körpertemperatur vaginal	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	t
 Körpertemperatur vaginal	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	78	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Anordnung_PEEP	Anordnung Positiver endexspiratorischer Druck (PEEP)	78	f
 Atemfrequenz	Resp rate	Beatmung_MS_T1_fTotal	Gesamtfrequenz	77	f
 Körpertemperatur vaginal	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	t
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_VisionA_DeltaP	Einstellwert: eingestellte Druckdifferenz	76	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_VisionA_Amplitude	gemessene Druckdifferenz im HFOV Modus	76	f
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Calcium	\N	79	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Fluss	\N	79	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Bilanz	\N	78	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UFZiel	\N	78	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_CreaZiel	\N	78	t
 Körpertemperatur Blut	Blood temp	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	76	f
 Körpertemperatur Brust	Body temperature	Temp1a	Temperatur 1a	76	f
 Körpertemperatur Brust	Body temperature	Temp2a	Temperatur 2a	76	f
 Körpertemperatur Brust	Body temperature	Temp3a	Temperatur 3a	76	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	Temp1a	Temperatur 1a	76	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	Temp2a	Temperatur 2a	76	f
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	P_Beatmung_ES_3100A_Frequenz	Eingestellte Oszillationsfrequenz	42	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Isofluran_insp	Inspiratorisch gemessene Isofluran.	78	t
 Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	SaO2 % Bld Preductal PulseOx	SaO2	arterielle Sauerstoffsättigung	77	t
 Zentralvenöser Druck	CVP	PICCO_ZVD	Zentraler Venendruck	77	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_T1_AutoPeep	Unerwarteter positiver endexspiratorischer Druck	80	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	IABP_ACAT_ES_Unterstützungsdruck	\N	80	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	IABP_AutoCat_ES_Unterstützungsdruck	\N	80	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Fluss	\N	79	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Bilanz	\N	78	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UFZiel	\N	78	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_CreaZiel	\N	78	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Dialysat	\N	78	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS100_ES_IABPFrequenz	\N	41	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Dokumentation_HFLoesung	\N	41	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Dokumentation_Verfahren	\N	41	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_Dialysekonzentrat	\N	41	t
 Arterieller Druck	\N	Nierenverfahren_MS_Multi_artDruck	arterieller Druck	100	f
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	76	t
 Substituatfluss	\N	Nierenverfahren_ES_Multi_SubstituatBolus	Substituatbolus ml	79	t
@@ -6932,9 +6945,6 @@ Körpertemperatur vaginal	Body temperature	Temp1a	Temperatur 1a	76	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Temp1a	Temperatur 1a	76	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Temp2a	Temperatur 2a	76	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Temp3a	Temperatur 3a	76	f
-Körpertemperatur Kern	Body temperature	Temp1a	Temperatur 1a	76	f
-Körpertemperatur Kern	Body temperature	Temp2a	Temperatur 2a	76	f
-Körpertemperatur Kern	Body temperature	Temp3a	Temperatur 3a	76	f
 Körpertemperatur Leiste	Body temperature	Temp1a	Temperatur 1a	76	f
 Körpertemperatur Leiste	Body temperature	Temp2a	Temperatur 2a	76	f
 Körpertemperatur Leiste	Body temperature	Temp3a	Temperatur 3a	76	f
@@ -6962,13 +6972,14 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Linksventrikulaeres Schlagvolumenindex	LV SVI	p-SVI	Schlagvolumenindex  (PICCO Modul Dräger Monitoring)	75	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_VT_IBW	\N	51	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_RepeatCount	\N	51	t
-Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_Doku_Bolusgabe	\N	42	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_Sensitivity	\N	51	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_fSpontan	Spontane Atemfrequenz	51	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	50	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Ti	Einstellwert: Inspirationszeit in Sekunden	50	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Pmean	Mean Airway Pressure	50	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Power	\N	50	t
+Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_Doku_Bolusgabe	\N	42	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Austausch	\N	75	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_PeepCPAP	Messwert: Beatmungsdruck Peep / CPAP	74	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_PeepCPAP	Messwert: Beatmungsdruck Peep/CPAP	74	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_VisionA_PEEP	Messwert: gemessener positiver endexspiratorischer Druck	74	f
@@ -6978,12 +6989,13 @@ Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Messung_VTeMl	VTe / ex. Atemz
 Systemischer vaskulärer Widerstandsindex	SV RI	SVR	Systemischer Gefäßwiderstand	74	f
 Arterieller Druck	\N	PAM	Mittlerer pulmonale arterieller Druck	100	t
 Körpertemperatur Generisch	Body temperature	Temp2a	Temperatur 2a	76	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Austausch	\N	75	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	P_Beatmung_ES_C3_Tubusgroesse	\N	41	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	PVR	"Pulmunaler Gefäßwiderstand "	75	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Calcium	\N	75	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS100_ES_IABPLeersaugen	\N	39	t
 Substituatfluss	\N	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat	75	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Calcium	\N	75	t
+Körpertemperatur Kern	Body temperature	Temp1a	Temperatur 1a	76	t
 Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVR	Systemischer Gefäßwiderstand	74	f
-Hämodialyse Blutfluss	\N	Hemolung_MS_Blutfluss	\N	73	f
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	73	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Mvspont	\N	50	t
@@ -6996,7 +7008,6 @@ Körpertemperatur Brust	Body temperature	P_Temperatur_Naso	Anlage im Rahmen Phil
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
-Körpertemperatur Kern	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
 Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
@@ -7028,15 +7039,22 @@ Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_Pmittel	Messwer
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Avea_Frequenz	eingestellte mandatorische AF	71	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Pallas_Pinsp	Eingestellter Inspiration Druck.	71	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_ExspFlow	Exspiratorischer Peakflow	49	t
+Hämodialyse Blutfluss	\N	Hemolung_MS_Blutfluss	\N	73	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Blutfluss	\N	73	t
 Atemfrequenz	Resp rate	Nierenverfahren_VO_Multi_Calcium	Ca-rate	73	t
 Herzfrequenz	Heart rate	Schrittmacher_Osypka101H_ES_Rate	Grundfrequenz	72	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Enfluran_insp	Inspiratorisch gemessene Enfluran Konzentration.	71	t
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
 Linksventrikulaeres Schlagvolumen	LV SV	PICCO_SVV	Schlagvolumen-Variation	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Blutfluss	\N	73	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	39	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	p-SVRI	"Index des systemischen Gefäßwiderstandes (PICCO Modul Dräger Monitoring)  "	73	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Citrat	\N	73	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABPneu_Datascope_ES_IABPFrequenz	\N	39	t
 Substituatfluss	\N	Nierenverfahren_VO_Multi_SubstituatBolus	Substituatbolus in ml	72	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Citrat	\N	73	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_HD_ES_4008onl_Fluss	\N	39	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_PD_Doku_Auslaufzeit	\N	39	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_AktuellesNatrium	\N	39	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_AustauschrateKumulativ	\N	39	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_InspFlow	Inspiratorischer Peakflow	49	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	49	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_VCO2	\N	49	t
@@ -7067,12 +7085,12 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_PTP	\N	48	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Pmin	Minimum Airway Pressure	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Pplateau	Plateau Druck	47	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_CalciumFluss	\N	70	f
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_KumuliertesBlutvolumen	\N	39	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_ZeitHoch	\N	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_TE	Exspirationzeit, ein Monitoring-Parameter	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_TI	Inspirationszeit in Sekunden, Monitoring-Parameter	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_O2	"Gemessene Sauerstoffkonzentration "	47	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_CalciumLoesung	Bezeichnug der Calcium Lösung	70	f
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenverfahren_MS_Multi_venDruck	venöser Druck	39	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Pmin	\N	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	COPRA_Patient_Bezugsgewicht	Bezugsgewicht des Patienten in kg	47	t
 Körpertemperatur Achsel	Axil temp	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	70	f
@@ -7084,13 +7102,10 @@ Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Avea_SpontVe	gemessenes sp
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Evita2_MVspon	gemessenes spontanes Atemminutenvolumen	70	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Evita4_MVspn	gemessenes spontanes Atemminutenvolumen	70	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_VisionA_SpontanAMV	gemessenes spontanes Atemminutenvolumen	70	f
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenverfahren_MS_Multi_UFRBFRVerhaeltnis	\N	37	t
 Linksventrikulaeres Schlagvolumen	LV SV	Schlagvolumen	gemessenes Schlagvolumen	70	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	P_Beatmung_MS_C3_Pplateau	Plateau- oder endinspiratorischer Druck	71	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	IABP_DatascopeCS300_ES_Unterstützungsdruck	Dokumentation des Unterstützungsdruckes.	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_ISOUFRate	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_ISOUFZeit	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_ISOUFZiel	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_SubBolus	\N	71	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_Apherese_VO_SpülloesungAntikoag	\N	47	t
@@ -7108,8 +7123,6 @@ Körpertemperatur Gelenk	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen P
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Kein_Recruitment	Liste ein aus	46	t
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
-Körpertemperatur Kern	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
-Körpertemperatur Kern	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
@@ -7120,7 +7133,6 @@ Körpertemperatur Stirn	Body temperature	P_Temperatur_DeltaT	Delta Temperatur ze
 Körpertemperatur Stirn	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmittel	gemessener Beatmungsmitteldruck	69	f
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Messung_Compliance	Compliance	68	f
-Hämodialyse Blutfluss	\N	Hemolung_VO_Blutfluss	\N	68	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_T1_Rinsp	Inspiratorische Flow-Resistance	68	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_Beatmung_MS_C3_Rinsp	Inspiratorische Flow-Resistance	68	f
 Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVV	Schlagvolumen-Variation	57	f
@@ -7136,7 +7148,7 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Kein_Recruitment	Liste ein aus	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_passiver_Patient	Liste ein aus	46	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmax	gemessener Beatmungsspitzendruck	68	f
-Blutfluss durch cardiovasculäres Gerät	\N	VAD_Blutfluss_Doku	\N	67	f
+Blutfluss durch cardiovasculäres Gerät	\N	VAD_Blutfluss_Doku	\N	67	t
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_T1_Cstat	Statische Compliance	67	t
 Körpertemperatur Generisch	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
 Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	SaO2 % Bld Preductal PulseOx	P_INVOS_Doku_rSO2_links	cerebrale Sauerstoffsättigung links	69	t
@@ -7144,7 +7156,11 @@ Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Messung_AMV	R
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Messung_Flow	Respiratory Rate (Volume/Flow)	69	t
 Körpertemperatur rektal	Rectal temp	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	IABP_CARDIOSAVE_ES_Unterstuetzungsdruck	Dokumentation des Unterstützungdruckes	69	t
+Körpertemperatur Kern	Body temperature	Temp2b	Temperatur 2b	83	t
+Hämodialyse Blutfluss	\N	Hemolung_VO_Blutfluss	\N	68	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_BehandlungsZeit	\N	69	t
+Körpertemperatur Kern	Body temperature	Temp3b	Temperatur 3b	83	t
+Körpertemperatur Kern	Body temperature	Temp2a	Temperatur 2a	76	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Avea_Ve	gemessenes exspiratorisches Volumen	67	f
 Herzfrequenz	Heart rate	PICCO_HF	HerzfrequenzHerzfrequenz	67	f
@@ -7169,7 +7185,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_MVi	"Insp. Minutenvolumen "	46	t
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
-Körpertemperatur Kern	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
 Körpertemperatur Kern	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
@@ -7188,26 +7203,27 @@ Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_I:E	Atemz
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_CF800_SauerstoffFlow	Einstellgröße Gasfluss Sauerstoff	66	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Ti_Tges	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_HFOBaseFlow	gemessener Basis Continousflow	46	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILASystem	\N	67	t
 Herzzeitvolumen	LV Output	CO	Herzleistung	67	t
 Linksventrikulaeres Schlagvolumen	LV SV	LVSA	"Linksventrikulärer Schlagarbeit "	67	t
 Linksventrikulaeres Schlagvolumen	LV SV	p-SV	Schlagvolumen	67	t
 Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	SaO2 % BldA	SM_Art	Schrittmacher Art	67	t
 Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	SaO2 % Bld Preductal PulseOx	P_INVOS_Doku_rSO2_rechts	cerbebrale Sauerstoffsättigung rechts	67	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILASystem	\N	67	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Blutfluss	\N	67	t
+Körpertemperatur Kern	Body temperature	Temp3a	Temperatur 3a	76	t
+Körpertemperatur Kern	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Messung_AFSpontan	Respiratory Rate (spontan)	67	t
 Zentralvenöser Druck	CVP	CPP	Zerebraler Perfusionsdruck	67	t
 Zentralvenöser Druck	CVP	LVP	Linksventrikulärer Mitteldruck	67	t
 Zentralvenöser Druck	CVP	RVP	Rechtsventrikulärer Mitteldruck	67	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	PVPI	"Pulmonalvaskuläer Permeabilitätsindex "	67	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	SVRI	"Index des systemischen Gefäßwiderstandes "	67	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Blutfluss	\N	67	t
+Körpertemperatur Kern	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_3100A_Mitteldruck	Eingestellter mittlerer Atemwegsdruck	66	f
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_SpülloesungAntikoagulanz	Spüllösung zum Vorbereiten des extrakorporalen Verfahrens	66	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	66	f
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Messung_Compliance	Compliance	65	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Avea_PeakFlow	eingestellter Spitzengasfluss	65	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Inpuls_Erfassung_Beatmungszeit	\N	65	f
-Hämodialyse Blutfluss	\N	P_ADVOS_ES_ADVOS_Blutfluss	\N	65	f
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
 Körpertemperatur vaginal	Body temperature	T_K	Körpertemperatur	65	t
@@ -7235,8 +7251,6 @@ Körpertemperatur Generisch	Body temperature	T_K	Körpertemperatur	65	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
 Körpertemperatur Halswirbelsaeule	Body temperature	T_K	Körpertemperatur	65	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
 Körpertemperatur Kern	Body temperature	T_K	Körpertemperatur	65	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
@@ -7250,20 +7264,27 @@ Körpertemperatur Stirn	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temp
 Körpertemperatur Stirn	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
 Körpertemperatur Stirn	Body temperature	T_K	Körpertemperatur	65	f
 Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_SVI	SchlagvolumenindexSchlagvolumenindex	65	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_I:EExsp	I:E Exspiration	65	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_I:EInsp	I:E Inspiration	65	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pinsp	Inspiratorischer Druck	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pkontrol_Phoch	\N	46	t
 Atemfrequenz	Resp rate	Beatmung_Einstellung_AF	Beatmungsfrequenz (f/AF)	65	t
 Körpertemperatur Generisch	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
 Körpertemperatur Generisch	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
+Körpertemperatur Kern	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	66	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_I:EExsp	I:E Exspiration	65	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_I:EInsp	I:E Inspiration	65	t
+Hämodialyse Blutfluss	\N	P_ADVOS_ES_ADVOS_Blutfluss	\N	65	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_DialysatMultifiltrate	appliziertes Dialysat für Multifiltrate	66	t
+Körpertemperatur Kern	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	P_Therapiebetten_Doku_Lifetherm_ES_Neigung	Einstellung des Neigungswinkels	64	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_Einstellung_ETS	Exspiratorische Triggersensibilität	64	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_T1_ExpMinVol	Exspiratorisches Minutenvolumen	64	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	P_Beatmung_MS_C3_ExspMinVol	Exspiratorisches Minutenvolumen	64	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Anordnung_Flow	Anordnung Inspiratorische Flowrate	64	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_F120_O2Konzentration	Einstellparameter: Sauerstoffgehalt des Gasgemisches	64	f
+Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
+Körpertemperatur Kern	Body temperature	Ort_Temperatur1a_Messung	Liste	64	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_ProzentMinVol	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Ptief	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_SBT_Psupp_max	\N	46	t
@@ -7271,12 +7292,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Thoch	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Timax	Inspirationszeit max	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Ttief	\N	46	t
-Körpertemperatur Kern	Body temperature	Ort_Temperatur1a_Messung	Liste	64	f
-Körpertemperatur Kern	Body temperature	Ort_Temperatur1b_Messung	Liste	64	f
-Körpertemperatur Kern	Body temperature	Ort_Temperatur2a_Messung	Liste	64	f
-Körpertemperatur Kern	Body temperature	Ort_Temperatur2b_Messung	\N	64	f
-Körpertemperatur Kern	Body temperature	Ort_Temperatur3a_Messung	\N	64	f
-Körpertemperatur Kern	Body temperature	Ort_Temperatur3b_Messung	\N	64	f
 Linksventrikulaeres Schlagvolumenindex	LV SVI	p-SVI	Schlagvolumenindex  (PICCO Modul Dräger Monitoring)	64	f
 Linksventrikulaeres Schlagvolumenindex	LV SVI	Schlagvolumenindex	Wert des gemessenen Schlagvolumenindex.	64	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Evita2_AMV	gemessenes Atemminutenvolumen	64	f
@@ -7301,6 +7316,7 @@ Körpertemperatur Achsel	Axil temp	NEV_Apherese_ES_Multi_Temperatur	\N	63	f
 Körpertemperatur Achsel	Axil temp	NEV_Apherese_VO_Multi_Temperatur	\N	63	f
 Parameter von Beatmung	\N	Beatmung_Anordnung_BV	beatmungs-Verordung	63	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Heimbeatmung_Pmittel	\N	45	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ILAPressure	\N	64	t
 Blutdruck	Blood pressure panel with all children optional	PtiO2Druck	Gemessener Sauerstoffpartialdruck im Parenchym	63	t
 Herzfrequenz	Heart rate	Hausarzt_Ort	\N	64	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita2_O2Konzentration	gemessene O2 Konzentration im Inspirationsgas	64	t
@@ -7309,9 +7325,8 @@ Körpertemperatur Generisch	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N
 Körpertemperatur rektal	Rectal temp	P_EctSta	Ectopic Status Label	63	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	IABP_CARDIOSAVE_ES_Unterstuetzungsdruck	Dokumentation des Unterstützungdruckes	64	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	IABP_Unterstützung	\N	64	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ILAPressure	\N	64	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOInspiratorischSaO2	\N	64	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_KontrSchlsys	Liste	64	t
+Körpertemperatur Kern	Body temperature	Ort_Temperatur1b_Messung	Liste	64	t
+Körpertemperatur Kern	Body temperature	Ort_Temperatur2a_Messung	Liste	64	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_ES_3100B_Mitteldruck	Einstellwert: eingestellter mittlerer Atemwegsdruck	63	t
 Arterieller Druck	\N	PICCO_ABP	Arterieller Druck	100	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_PEEP	Dokumentation des gemessenen PEEPs.	45	t
@@ -7319,30 +7334,26 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Vt	Einstellwert: Tidalvolumen	62	f
 Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_MS_Blutfluss	\N	62	f
 Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_VO_Blutfluss	\N	62	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Lungenersatzverfahren_MS_ILAactivve_DeltaP	Delta P2/P3	62	f
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita2_Compliance	gemessene Lungencompliance	62	f
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita4_Compliance	gemessene Lungencompliance	62	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita4_Tinsp	eingestellte absolute Inspirationszeit	62	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Evita2_Vte	gemessenes exspiratorisches Tidalvolumen	62	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Evita4_Vte	gemessenes exspiratorisches Tidalvolumen	62	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	SpO2_2	\N	62	f
-Hämodialyse Blutfluss	\N	HeartWare_Blutfluss_Doku	\N	62	f
-Hämodialyse Blutfluss	\N	Lungenersatzverfahren_Doku_ILA_Blutfluss	\N	62	f
-Hämodialyse Blutfluss	\N	NEV_Apherese_ES_Multi_Blutfluss	\N	62	f
-Hämodialyse Blutfluss	\N	NEV_CRRT_ES_Multi_Blutfluss	\N	62	f
-Hämodialyse Blutfluss	\N	NEV_HD_ES_4008HS_Blutfluss	\N	62	f
-Hämodialyse Blutfluss	\N	NEV_HD_ES_4008onll_Blutfluss	\N	62	f
-Hämodialyse Blutfluss	\N	NEV_HD_VO_4008HS_Blutfluss_Max	\N	62	f
-Hämodialyse Blutfluss	\N	NEV_HD_VO_4008HS_Blutfluss_SN_Pumpe	\N	62	f
-Hämodialyse Blutfluss	\N	Nierenverfahren_ES_4008HS_Blutfluss	\N	62	f
-Hämodialyse Blutfluss	\N	Nierenverfahren_ES_4008onl_Blutfluss	\N	62	f
-Hämodialyse Blutfluss	\N	Nierenverfahren_ES_ADM_Blutfluss	Blutpumpengeschwindigkeit	62	f
-Hämodialyse Blutfluss	\N	Nierenverfahren_ES_BM25_Blutfluss	Blutpumpengeschwindigkeit	62	f
-Hämodialyse Blutfluss	\N	Nierenverfahren_ES_Multi_Blutfluss	Blutpumpengeschwindigkeit ml/min	62	f
-Hämodialyse Blutfluss	\N	Nierenverfahren_VO_4008onl_Blutfluss	\N	62	f
-Hämodialyse Blutfluss	\N	P_NEV_HD_ES_5008onl_Blutfluss	\N	62	f
-Hämodialyse Blutfluss	\N	P_NEV_HD_ES_Genius_Blutfluss	\N	62	f
-Hämodialyse Blutfluss	\N	rCBF	Über eine Sonde gemessener regionaler cerebraler Blutfluss.	62	f
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Lungenersatzverfahren_MS_ILAactivve_DeltaP	Delta P2/P3	62	t
+Körpertemperatur Kern	Body temperature	Ort_Temperatur2b_Messung	\N	64	t
+Körpertemperatur Kern	Body temperature	Ort_Temperatur3a_Messung	\N	64	t
+Körpertemperatur Kern	Body temperature	Ort_Temperatur3b_Messung	\N	64	t
+Körpertemperatur Kern	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	t
+Körpertemperatur Kern	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	t
+Körpertemperatur Kern	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	t
+Körpertemperatur Kern	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	t
+Körpertemperatur Kern	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_MS_HorowitzINPULS	Messung des Horowitz-Indexes	62	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_CF800_O2Konzentration	Sauerstoffgehalt des eingestellten Gasgemisches CF 800	62	f
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_FiO2	gemessene Sauerstoffkonzentration im Atemgas	62	f
@@ -7356,7 +7367,7 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_Apheres
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_ES_4008HS_SollNa	\N	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_SollNatrium	\N	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_3100A_Inspirationszeit	Prozentualer Anteil der Insp.Zeit bezogen auf den gesamten Atemzyklus	45	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate	62	f
+Hämodialyse Blutfluss	\N	HeartWare_Blutfluss_Doku	\N	62	t
 Körpertemperatur unter der Zunge	Oral temp	NEV_Apherese_ES_Multi_Temp	Anlage 18.05.2012	62	f
 Körpertemperatur unter der Zunge	Oral temp	NEV_Apherese_VO_Multi_Temp	Anlage 18.05.2012 String	62	f
 Körpertemperatur unter der Zunge	Oral temp	NEV_CRRT_ES_Multi_Temp	neu angelegt am 18.05.2012	62	f
@@ -7371,19 +7382,21 @@ Herzfrequenz	Heart rate	Hausarzt_Strasse	\N	62	t
 Herzfrequenz	Heart rate	Hausarzt_Vorname	\N	62	t
 Herzzeitvolumen	LV Output	Beatmung_MS_T1_VLeckage	Leckagevolumen	62	t
 Körpertemperatur Generisch	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	62	t
+Atemzugvolumen-Einstellung	VT setting Vent	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	62	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate	62	f
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOATZ	\N	62	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	62	t
-Atemzugvolumen-Einstellung	VT setting Vent	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	62	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_InspirationszeitIE	Inspirationszeit I:E	62	t
 Körpertemperatur unter der Zunge	Oral temp	P_Waermesysteme_BarkeyWaermepaddels_Doku_Temp	\N	62	f
 Körpertemperatur unter der Zunge	Oral temp	TempBT	Bluttemperatur bei der HZV Messung	62	f
 Linksatrialer Druck	Blood pressure panel with all children optional	LAP	Linksatrial  Mitteldruck	62	f
 Parameter von extrakorporalen Verfahren	\N	Patient_Verlusst_ExtrakorporaleAbnahme	Patient_Verlusst_ExtrakorporaleAbnahme	62	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_InspirationszeitIE	Inspirationszeit I:E	62	f
 Körpertemperatur vaginal	Body temperature	Temp1b	Temperatur 1b	83	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_3100B_BiasFlow	Einstellwert: eingestellter Basisfluss im Beatmungssystem	61	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita2_Flowtrigger	eingestellte Triggerschwelle (Flowtrigger)	61	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita2_VerhaeltnisTiTe	eingestelltes Verhältnis zwischen Inspiration und Exspiration	61	f
+Körpertemperatur Kern	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Spont	\N	61	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_F_SIMV	Eingestellte SIMV Frequenz	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_PEEP_CPAP_Ptief	Eingestellter PEEP, CPAP oder Ptief	45	t
@@ -7399,7 +7412,6 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_generic	Anlage
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_FrequencyCough	\N	45	t
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
-Körpertemperatur Kern	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
@@ -7407,7 +7419,6 @@ Körpertemperatur Stirn	Body temperature	P_Temperatur_generic	Anlage für Philip
 Körpertemperatur unter der Zunge	Oral temp	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	61	f
 Substituatfluss	\N	Nierenverfahren_VO_Multi_Substituat	Substituat in ml/h	61	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_Mvleck	gemessenes Leckagevolumen pro Minute	60	f
-Dauer Hämodialysesitzung	\N	Nierenverfahren_VO_Dialysatlösung	Dialysatlösung, Beutel	60	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Therapiebetten_Doku_Giraffe_ES_Luftfeuchtigkeit	Einstellung der Luftfeuchtigkeit im Inkubator	60	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	tcpO2	transcutan gemessener pO2 Wert.	60	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_VisionA_Ti	Einstellwert: Inspirationszeit in Sekunden	60	f
@@ -7415,6 +7426,7 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Sauerstoff	\N	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_O2Konzentration	Einstellwert: O2 Konzentration des Gasgemisches	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_IEVerhaeltnis	Einstellwert: I:E Verhältnis	44	t
+Dauer Hämodialysesitzung	\N	Nierenverfahren_VO_Dialysatlösung	Dialysatlösung, Beutel	60	t
 Herzfrequenz	Heart rate	Hausarzt_Name	\N	61	t
 Herzfrequenz	Heart rate	Nierenverfahren_ES_Multi_CitratBlut	Citratrate	60	t
 Herzfrequenz	Heart rate	Nierenverfahren_MS_Multi_Citratfluss	Citratrate	60	t
@@ -7425,9 +7437,17 @@ Körpertemperatur Generisch	Body temperature	P_Temperatur_generic	Anlage für Ph
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_Einstellung_Pkontrol	Pkontrol (mbar/frequenz/AZ/min)	62	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_Messung_Pplateau	Plateau Druck	62	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_G5_AutoPeep	Unerwarteter positiver endexspiratorischer Druck, ein Monitoring-Parameter	61	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	t
+Körpertemperatur Kern	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOAirFlow	\N	61	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	61	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ILAAnalogIn	\N	61	t
+Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	t
+Körpertemperatur Kern	Body temperature	Ort_Temperatur1a_Messung	Liste	60	t
+Körpertemperatur Kern	Body temperature	Ort_Temperatur1b_Messung	Liste	60	t
+Körpertemperatur Kern	Body temperature	Ort_Temperatur2a_Messung	Liste	60	t
+Körpertemperatur Kern	Body temperature	Ort_Temperatur2b_Messung	\N	60	t
+Körpertemperatur Kern	Body temperature	Ort_Temperatur3a_Messung	\N	60	t
+Körpertemperatur Kern	Body temperature	Ort_Temperatur3b_Messung	\N	60	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_SBT_Zeitraum_bevor	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_HFFrequenz	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_TriggerVol	\N	44	t
@@ -7459,6 +7479,9 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Nava_Pegel	"Nava Pegel "	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Frequenz	Einstellwert: eingestellte Atemfrequenz	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_FlowTrigger	\N	44	t
+Körpertemperatur Kern	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	t
+Körpertemperatur Kern	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	t
+Körpertemperatur Kern	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur1a_Messung	Liste	60	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur2a_Messung	Liste	60	f
@@ -7466,13 +7489,6 @@ Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur2b_Messung	\N	
 Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur3a_Messung	\N	60	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur3b_Messung	\N	60	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	f
-Körpertemperatur Kern	Body temperature	Ort_Temperatur1a_Messung	Liste	60	f
-Körpertemperatur Kern	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
-Körpertemperatur Kern	Body temperature	Ort_Temperatur2a_Messung	Liste	60	f
-Körpertemperatur Kern	Body temperature	Ort_Temperatur2b_Messung	\N	60	f
-Körpertemperatur Kern	Body temperature	Ort_Temperatur3a_Messung	\N	60	f
-Körpertemperatur Kern	Body temperature	Ort_Temperatur3b_Messung	\N	60	f
-Körpertemperatur Kern	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	f
 Körpertemperatur Leiste	Body temperature	Ort_Temperatur1a_Messung	Liste	60	f
 Körpertemperatur Leiste	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
 Körpertemperatur Leiste	Body temperature	Ort_Temperatur2a_Messung	Liste	60	f
@@ -7485,12 +7501,6 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur1a_Messung	L
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur2a_Messung	Liste	60	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur2b_Messung	\N	60	f
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_Flushen	Liste - Doku Durchführung	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILACuppling	\N	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_DeltaP	Delta P2/P3	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILA_BlutflussMin	\N	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_Abschlussbegruendung	\N	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Fluss	\N	60	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_MS_G5_Pplateau	Plateau-Atemwegsdruck, ein Monitoring-Parameter	59	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur3a_Messung	\N	60	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur3b_Messung	\N	60	f
@@ -7526,7 +7536,6 @@ Körpertemperatur vaginal	Body temperature	Ort_Temperatur3b_Messung	\N	60	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_IPPVFrequenz	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_ZeitNiedrig	\N	44	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_Calciumfluss	Calciumrate	59	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_3100B_O2Konzentration	Messwert: gemessene O2 Konzentration des Gasgemisches	44	t
 Körpertemperatur Achsel	Axil temp	Nierenverfahren_ES_4008HS_Temperatur	\N	59	f
 Körpertemperatur Brust	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	f
@@ -7536,13 +7545,20 @@ Linksventrikulaeres Schlagvolumen	LV SV	Beatmung_ES_VisionA_Schlagvolumen	Schlag
 Substituatvolumen	\N	Beatmung_MS_Avea_Vte	gemessenes Tidalvolumen	60	t
 Substituatvolumen	\N	Beatmung_MS_Pallas_Vt	Gemessenes Tidalvolumen.	60	t
 Substituatvolumen	\N	Beatmung_MS_VisionA_Tidalvolumen	gemessenes Tidalvolumen	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_artDruck	arterieller Druck	59	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_Calciumfluss	Calciumrate	59	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	PICCO_ABP	Arterieller Druck	43	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOAntikogulation	\N	59	t
+Körpertemperatur Kern	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_C2_Pmax	Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.	59	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Flow	Einstellung Sauerstoff Flow	59	t
 Atemzugvolumen-Einstellung	VT setting Vent	Therapiebetten_Doku_Giraffe_ES_O2	Einstellung der O2-Konzentration im Inkubator	59	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck	44	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_artDruck	arterieller Druck	59	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOAntikogulation	\N	59	t
+Körpertemperatur Kern	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	t
+Körpertemperatur Kern	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	t
+Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	t
+Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	t
 Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	f
@@ -7571,12 +7587,6 @@ Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Tem
 Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	f
-Körpertemperatur Kern	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	f
-Körpertemperatur Kern	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	f
-Körpertemperatur Kern	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	f
 Körpertemperatur Leiste	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	f
 Körpertemperatur Leiste	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
@@ -7607,7 +7617,6 @@ Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	SM_Frequenz	Schrittm
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Citratloesung	Citratbeutel	59	f
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Dialysekonzentrat	Dialyskonzentratbehälter	59	f
 Venöser Druck	\N	Beatmung_ES_VisionA_Trigger	Einstellgrösse: Druck bzw. Flowtrigger	59	t
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_RTX_Time	\N	59	f
 Venöser Druck	\N	Beatmung_MS_Evita4_P01	gemessener P0.1 Druck nach Meßmanöver	59	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_VT	Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)	58	f
 Blutfluss extrakorporaler Gasaustausch	\N	Patient_Verlusst_ExtrakorporaleAbnahme	Patient_Verlusst_ExtrakorporaleAbnahme	58	f
@@ -7636,15 +7645,16 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_ES_4
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_VO_4008HS_Soll_Na	\N	44	t
 Körpertemperatur Halswirbelsaeule	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	58	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
-Körpertemperatur Kern	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
-Körpertemperatur Kern	Body temperature	TempPBT	Temperatur bei der PICCO Messung	58	f
 Körpertemperatur Leiste	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	58	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
 Körpertemperatur Leiste	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	58	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
 Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_RTX_Time	\N	59	t
 Herzfrequenz	Heart rate	Hausarzt_Titel	\N	58	t
 Körpertemperatur Generisch	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	58	t
+Körpertemperatur Kern	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	t
+Körpertemperatur Kern	Body temperature	TempPBT	Temperatur bei der PICCO Messung	58	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_ADM_artDruck	\N	58	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_Drehzahl	\N	58	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_P1	\N	58	t
@@ -7668,9 +7678,7 @@ Parameter von Beatmung	\N	Beatmung_MS_T1_Pmin	Minimaler Atemwegsdruck, ein Monit
 Parameter von Beatmung	\N	Betreuer_Vorname	\N	58	f
 Parameter von Beatmung	\N	BIS	Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.	58	f
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss	58	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_Inspirationszeit	Inspirationszeit in %	58	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Servoi_I_E	I:E Verhältnis (Messung)	58	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_AutoCat_ES_Unterstützungsverhältnis	Liste	58	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Servoi_Flow	Parameter im Modus Highflow	57	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_MS_T1_Rinsp	Inspiratorische Flow-Resistance	57	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	P_Beatmung_MS_C3_Rinsp	Inspiratorische Flow-Resistance	57	f
@@ -7681,7 +7689,6 @@ Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	P_Beatmung_MS_C3_pe
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Pallas_O2_exsp	Gemessene exspiratorische O2 Konzentration.	57	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Pallas_Sevofluran_exsp	Exspiratorisch gemessene Sevofluran Konzentration.	57	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	PerspiratioSensibilis	Perspiratio Sensibilis in ml (ausfuhrrelevant in der Bilanz)	57	f
-Hämodialyse Blutfluss	\N	NEV_HD_MS_4008HS_effBlutfluss	\N	57	f
 Körpertemperatur vaginal	Body temperature	Temp2b	Temperatur 2b	83	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_MS_HorowitzINPULS	Messung des Horowitz-Indexes	57	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Pallas_Enfluran_exsp	Exspiratorisch gemessene Enfluran Kozentration.	57	f
@@ -7698,11 +7705,11 @@ Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_G5_Peep_Gr
 Zentralvenöser Druck	CVP	CPP	Zerebraler Perfusionsdruck	58	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Schrittmacher_Osypka203H_ES_VRP	ventrikuläre Stimulationsfrequenz	58	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_Nullfluss	bei luftblasen, Liste ein aus	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_FüllenMit	Füllen des Systems	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_IsoUFRate	Isolierte Ultrafiltration	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_IsoUFZeit_	Isolierte Ultrafiltration	57	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Hemolung_VO_Gasfluss	\N	57	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Hypothermie_ArticSun_Doku_Behandlungsmodi	Liste	57	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_Inspirationszeit	Inspirationszeit in %	58	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_AutoCat_ES_Unterstützungsverhältnis	Liste	58	t
+Hämodialyse Blutfluss	\N	NEV_HD_MS_4008HS_effBlutfluss	\N	57	t
 Körpertemperatur vaginal	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	t
 Körpertemperatur vaginal	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Freq_Spontan	\N	57	t
@@ -7729,10 +7736,9 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_VO_5008onl_Tempera
 Körpertemperatur Gelenk	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
 Körpertemperatur Gelenk	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Ppeak	Messwert: Beatmungsspitzendruck	43	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_IEVerhaeltnis	Einstellwert: I:E Verhältnis	57	t
 Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
-Körpertemperatur Kern	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
-Körpertemperatur Kern	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
 Körpertemperatur Leiste	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
 Körpertemperatur Leiste	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
@@ -7741,6 +7747,7 @@ Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_NEV_HD_ES_5008onl_Tempera
 Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
 Körpertemperatur Stirn	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
 Körpertemperatur Stirn	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Eins_ES_Ausgang	Medtronic 5348	57	t
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_drei_ES_Basisfrequenz	Medtronic 5388	57	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Pallas_Pmean	Gemesener Atemwegsmitteldruck	57	f
 Monitoring und Vitaldaten	\N	ART	2. artereille Messung, ab 201712 im Rahmen Umstellung Philips Monitoring	57	f
@@ -7749,15 +7756,15 @@ Monitoring und Vitaldaten	\N	P_Temperatur_generic	Anlage für Philips Monitoring
 Monitoring und Vitaldaten	\N	P_Temperatur_Kern	Anlage für Philips Monitoring	57	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Anordnung_PEEP	Anordnung Positiver endexspiratorischer Druck (PEEP)	57	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Messung_AMVSpontan	Spont Minute Volume	57	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_IEVerhaeltnis	Einstellwert: I:E Verhältnis	57	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_MS_C3_IEVerhaeltnis	Verhältnis Inspirationszeit:Exspirationszeit	57	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Eins_ES_Ausgang	Medtronic 5348	57	f
 Linksventrikulaeres Schlagvolumen	LV SV	Beatmung_ES_VisionA_Schlagvolumen	Schlagvolumen (SV) in engl. (cycle volume)	57	t
 Linksventrikulaeres Schlagvolumen	LV SV	Vigileo_SV	ml/b	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_IsoUFZiel	\N	57	t
+Körpertemperatur Kern	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	Beatmung_MS_Servoi_Ri	"Inspiratorische Resistenz "	57	t
 Zentralvenöser Druck	CVP	p-CI	Herzindex	57	t
 Zentralvenöser Druck	CVP	p-CO	"Herzzeitvolumen (PICCO Modul Dräger Monitoring) "	57	t
+Körpertemperatur Kern	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_IsoUFZiel	\N	57	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_ISOUFRate	\N	57	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_C2_Vt	\N	56	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita4_Vt	Einstellgröße für das Tidalvolumen	56	f
@@ -7769,7 +7776,7 @@ Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_C2_PEEP_C
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Beatmung_ES_G5_Frequenz_Backup	Frequenzeinstellung inder Backupeinstellung.	56	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_T1_Ttief	Einstellwert: Zeiteinstellung für das untere Druckniveau	56	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Patient_Familienst	Familienstand des Patienten	56	f
-Hämodialyse Blutfluss	\N	NEV_HD_MS_4008onl_effBlutfluss	\N	56	f
+Körpergroesse	Body height	Besonderheiten	\N	56	t
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_BiPAPV_O2Konzentration	Einstellparameter: O2 Konzentration des Gasgemisches	56	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_ES_3100A_Frequenz	Eingestellte Oszillationsfrequenz	56	f
 Ideales Körpergewicht	Ideal bdy weight	PICCO_ABP	Arterieller Druck	34	t
@@ -7783,7 +7790,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Tubuskompensation	\N	43	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_3100A_O2Konzentration	Gemessene O2 Konzentration	43	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_P01	Atemwegs-Okklusionsdruck	43	t
-Körpergroesse	Body height	Besonderheiten	\N	56	f
 Körpertemperatur Atemwege	Airway temp	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	56	f
 Körpertemperatur Brust	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	f
 Körpertemperatur Brust	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
@@ -7801,14 +7807,12 @@ Körpertemperatur Gelenk	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	5
 Körpertemperatur Gelenk	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	f
 Körpertemperatur Gelenk	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_PeepCPAP	\N	43	t
+Hämodialyse Blutfluss	\N	NEV_HD_MS_4008onl_effBlutfluss	\N	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_artDruck	\N	56	t
 Arterieller Druck	\N	Hypothermie_ArticSun_ES_Wasserziel	manueller Modus	56	t
 Körpertemperatur Generisch	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	56	t
 Körpertemperatur Generisch	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_artDruck	\N	56	t
 Zentralvenöser Druck	CVP	PCWP	\N	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_Zugang	Gefäßzugang	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_Temp1	\N	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_Temp2	\N	56	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita2_Vt	eingestelltes Tidalvolumen	56	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Ti	Einstelungswert für die Inspirationszeit	56	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Messung_VTeL	\N	56	t
@@ -7826,10 +7830,6 @@ Körpertemperatur Halswirbelsaeule	Body temperature	NEV_HD_VO_4008HS_Temperatur	
 Körpertemperatur Halswirbelsaeule	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	f
 Körpertemperatur Halswirbelsaeule	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
-Körpertemperatur Kern	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	f
-Körpertemperatur Kern	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
-Körpertemperatur Kern	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	f
-Körpertemperatur Kern	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	f
 Körpertemperatur Kern	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
 Körpertemperatur Leiste	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	f
 Körpertemperatur Leiste	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
@@ -7852,13 +7852,13 @@ Körpertemperatur Stirn	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56
 Körpertemperatur Stirn	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	f
 Körpertemperatur Stirn	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
 Körpertemperatur unter der Zunge	Oral temp	Beatmung_MS_EzPAP_PAP	Messung des PAP unter der Atemtherapie EzPAP	56	f
+Körpertemperatur Kern	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	t
+Körpertemperatur Kern	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Mitteldruck	gemessener Atemwegsmitteldruck	56	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_Pmean	gemessener Atemwegsmitteldruck	56	f
 Parameter von Beatmung	\N	Betreuer2_Vorname	\N	56	f
 Parameter von extrakorporalen Verfahren	\N	Hypothermie_VO_Kuehlverfahren	Liste	56	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_PEEP	Positiver endexspiratorischer Druck (PEEP)	56	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_Flow	Inspiratorische Flowrate	56	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_C3_Timax	Inspirationszeit max	56	f
 Körpertemperatur vaginal	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	t
 Körpertemperatur vaginal	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontVe	gemessenes spontanes Atemminutenvolumen	56	t
@@ -7872,17 +7872,20 @@ Atemfrequenz	Resp rate	SM_Frequenz	Schrittmacher Frequenz	70	t
 Atemfrequenz	Resp rate	Beatmung_Messung_Frequenz	Frequenz tot.	67	t
 Atemfrequenz	Resp rate	Beatmung_Einstellung_FrequenzHFOV	HFOV Frequenz	64	t
 Substituatvolumen	\N	Beatmung_Einstellung_AMV	Atemminutenvolumen (AMV)	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_artDruck	\N	55	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_MS_Pallas_Ppeak	Dokumentation des gemessenen Beatmungsspitzendruck.	55	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Patient_Groesse	Größe des Patienten	55	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Osypka203H_ES_AV_DLY	AV Überleitungszeit	55	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Pplateau	Plateau- oder endinspiratorischer Druck	43	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Heimbeatmung_Flowtrigger	\N	42	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_Flow	Inspiratorische Flowrate	56	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_C3_Timax	Inspirationszeit max	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_artDruck	\N	55	t
+Hämodialyse Blutfluss	\N	Patient_Blutverlusst	Patient_Blutverlusst	55	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_CF800_DruckluftFlow	Einstellgröße: Gasfluss Druckluft	55	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	SpO2	Sauerstoffsättigung Pulsoxymetrie	55	f
-Hämodialyse Blutfluss	\N	Patient_Blutverlusst	Patient_Blutverlusst	55	f
 Körpertemperatur vaginal	Body temperature	Temp3b	Temperatur 3b	83	t
 Körpertemperatur vaginal	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Multi_Calcium	Ca-rate	55	t
 Ideales Körpergewicht	Ideal bdy weight	Schrittmacher_Osypka203H_ES_ARP	atriale Refraktärzeit	55	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Einstellung_Inspirationszeit	Inspirationszeit in %	55	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Optiflow_O2Flow	\N	42	t
@@ -7896,7 +7899,8 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_SBI	"Shallow Breathing Index (Index für flache Atmung) "	42	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Ppeak	\N	42	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_R	\N	42	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Multi_Calcium	Ca-rate	55	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_Membranvent	Dokumentation Oxygenator - Liste	55	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_Nullabgleich	Liste durchgeführt	55	t
 Körpertemperatur Achsel	Axil temp	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	55	f
 Körpertemperatur Atemwege	Airway temp	Hypothermie_Coolgard_VO_Zieltemperatur	\N	55	f
 Körpertemperatur Atemwege	Airway temp	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate	55	f
@@ -7906,8 +7910,6 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatu
 Körpertemperatur Gelenk	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
 Körpertemperatur Harnblase	Bdy temp Bladder	P_NEV_HD_VO_5008onl_Temperatur	\N	55	f
-Körpertemperatur Kern	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
-Körpertemperatur Kern	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	55	f
 Körpertemperatur Leiste	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
 Körpertemperatur Leiste	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	55	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
@@ -7929,8 +7931,8 @@ Körpertemperatur Generisch	Body temperature	Nierenverfahren_VO_4008onl_Temperat
 Linksventrikulaeres Schlagvolumen	LV SV	Beatmung_ES_G5_Vt	Einstellwert: Tidalvolumen	55	t
 Linksventrikulaeres Schlagvolumen	LV SV	Beatmung_ES_T1_Vt	Einstellwert: Tidalvolumen	55	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Schrittmacher_Osypka203H_ES_V_STIM	Stimulation Ventrikel	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_Membranvent	Dokumentation Oxygenator - Liste	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_Nullabgleich	Liste durchgeführt	55	t
+Körpertemperatur Kern	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
+Körpertemperatur Kern	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	55	t
 Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	ITBV	Intrathorakales Blutvolumen	55	f
 Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	PICCO_ITBV	Intrathorakales Blutvolumen	55	f
 Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	VigilanceC_ITBV	Intrathorakales Blutvolumen	55	f
@@ -7952,29 +7954,14 @@ Systemischer vaskulärer Widerstandsindex	SV RI	Beatmung_MS_G5_VT_IBW	VT/IBW	55	
 Systemischer vaskulärer Widerstandsindex	SV RI	SM_Art	Schrittmacher Art	55	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontVte	gemessenes spontanes Tidalvolumen	55	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_PTP	Druck Zeit Produkt (Pressure Time Product)	55	t
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_InspiratorischePause	Inspiratorische Pause (I:E)	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_ARDS	Liste ein aus	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_Chron_Hyperkapnie	Liste ein aus	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_HLI	Liste ein aus	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_Kein_Recruitment	Liste ein aus	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_passiver_Patient	Liste ein aus	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_Quick_Wean	Liste ein aus	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_SHT	Liste ein aus	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_T1_HLI	Liste ein aus	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_T1_Kein_Recruitment	Liste ein aus	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_T1_passiver_Patient	Liste ein aus	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_T1_Quick_Wean	Liste ein aus	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Messung_InspirationszeitI:E	\N	55	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_G5_IEVerhaeltnis	gemessenes I:E Verhältnis	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_T1_IEVerhaeltnis	gemessenes I:E Verhältnis	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_ACAT_ES_Unterstuetzungsverhaeltnis	Liste	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_Doku_ILAactivve_Flussreg	Liste ein aus	55	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_Doku_ILAactivve_Nullfluss	bei luftblasen, Liste ein aus	55	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_VO_4008HS_Na_Profil	\N	42	t
 Atemfrequenz	Resp rate	Hypothermie_Coolgard_Doku-Rate	\N	62	t
 Atemfrequenz	Resp rate	Hypothermie_Coolgard_VO_Rate	\N	62	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_VO_4008HS_UF_Profil	\N	42	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_Mess_Blutfluss	\N	42	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_InspiratorischePause	Inspiratorische Pause (I:E)	55	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_ARDS	Liste ein aus	55	t
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_VisionA_AFSpontan	Messwert: Anzahl der gemessenen spontanen Atemzüge	55	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Schrittmacher_Doku_Drähte	\N	55	t
 Zentralvenöser Druck	CVP	Beatmung_ES_Evita2_Pinsp	eingestelltes oberes Druckniveau	55	t
@@ -7985,6 +7972,8 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita2_ASB	eingestellte D
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita4_ASB	eingestellte Druckunterstützung	54	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_VisionA_Vt	Einstellwert: eingestelltes Tidalvolumen	54	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_PD_Doku_Auslaufzeit	\N	54	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_Chron_Hyperkapnie	Liste ein aus	55	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_HLI	Liste ein aus	55	t
 Blutflussindex extrakorporaler Gasaustausch	\N	ITBVI	Index des intrathorakalen Blutvolumens	54	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_C2_Pkontrol_Phoch	Eingestellter Pkontrol oder Phoch am C2.	54	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_F120_Flow	Einstellwert: Größe des Gasflusses beim F 120	54	f
@@ -8000,14 +7989,19 @@ Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Patient_AufnGroesse	Grö�
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	Beatmung_ES_Zephyros_Texp	\N	54	f
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	Beatmung_MS_G5_petCO2	\N	54	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	Beatmung_MS_VisionA_Plateau	Messwert: gemessener Plateaudruck	54	f
-Hämodialyse Blutfluss	\N	P_NEV_HD_MS_5008onl_effBlutfluss	\N	54	f
 Körpertemperatur vaginal	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_3100B_O2Konzentration	Einstellwert: O2 Konzentration des Gasgemisches	54	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_ECMO_Oxygenator	Bezeichnung	54	t
 Ideales Körpergewicht	Ideal bdy weight	Patient_Gewicht	Gewicht des Patienten	54	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_MS_4008HS_Restzeit	\N	40	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Schrittmacher_Osypka101H_ES_Betriebsart	Listenauswahl	40	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Schrittmacher_Osypka203H_ES_Betriebsart	Liste	40	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Untersuchung_Status_Wasserhaushalt	\N	40	t
+Hämodialyse Blutfluss	\N	P_NEV_HD_MS_5008onl_effBlutfluss	\N	54	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_Bilanz	\N	54	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_BlutvolumenKum	\N	54	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_IsoUFVolumenKumulativ	\N	54	t
+Körpertemperatur Kern	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Beatmung_ES_C3_Body_Wt	eingestelltes Körpergewicht	54	f
 Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	54	f
 Körpertemperatur Blut	Blood temp	NEV_HD_VO_4008onl_Temperatur	\N	54	f
@@ -8015,7 +8009,6 @@ Körpertemperatur Brust	Body temperature	TempPBT	Temperatur bei der PICCO Messun
 Körpertemperatur Brustwirbelsaeule	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
 Körpertemperatur Gelenk	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
 Körpertemperatur Halswirbelsaeule	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
-Körpertemperatur Kern	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
 Körpertemperatur Leiste	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	54	f
 Körpertemperatur Leiste	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	54	f
 Körpertemperatur Leiste	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
@@ -8030,10 +8023,6 @@ Körpertemperatur Stirn	Body temperature	TempPBT	Temperatur bei der PICCO Messun
 Körpertemperatur unter der Zunge	Oral temp	Untersuchung_Status_Atemform	\N	54	f
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_G5_SpO2	Wert gemessen am Ventilator	54	t
 Körpertemperatur Generisch	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_ECMO_Oxygenator	Bezeichnung	54	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_Bilanz	\N	54	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_BlutvolumenKum	\N	54	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_IsoUFVolumenKumulativ	\N	54	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Score_DGAI_AufnBeatmungsstundenbiszurAufnahme	\N	54	t
 Atemfrequenz	Resp rate	Schrittmacher_Osypka101H_ES_Rate	Grundfrequenz	62	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_FlowInsp	\N	54	t
@@ -8049,20 +8038,12 @@ Pulmonalarterieller wedge Blutdruck	PAW pressure	PWP	Pulmunaler Wedgedruck	54	f
 Spontanes-Atemzugvolumen	Spont VT on vent	IABP_DatascopeCS300_ES_Doku_Ballonvolumen	Dokumentation des Ballonvolumens.	54	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Patient_KO	Körperoberfläche des Patienten ohne Fallbezug	54	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_T1_Psupport	Beatmung_ES_T1_Psupport	54	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Messung_Inspirationszeit	\N	54	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	EinweisenderArzt_Titel	\N	54	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_PD_VO_Auslaufmenge	Pertionealdialyse Auslaufmenge in ml	54	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_C3_Pinsp	Inspiratorischer Druck	54	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_MS_C3_Pinsp	Inspiratorischer Druck	54	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Defi_ES_Ausgang	\N	54	f
 Atemfrequenz	Resp rate	Schrittmacher_Osypka203H_ES_Rate	Grundfrequenz	62	t
 Atemfrequenz	Resp rate	Beatmung_Messung_AF	Breathing Frequency	58	t
 Atemfrequenz	Resp rate	PICCO_ABP	Arterieller Druck	38	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_T1_Flow	Einstellung Sauerstoff Flow	53	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_G5_Frequenz	Anzahl der Atemzyklen pro Minute, Parametereinstellung	53	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Servoi_Edi_min	"Edi-Mindestwert "	53	f
-Blutfluss durch cardiovasculäres Gerät	\N	Beatmung_MS_VisionA_SISetting	Dauer des manuell durchgeführten Atemhubs	53	f
-Dauer Hämodialysesitzung	\N	P_ADVOS_VO_Dialysatloesung	\N	53	f
 Ideales Körpergewicht	Ideal bdy weight	Patient_Sorgerecht	\N	53	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Pallas_Frischgas_Air	An der Flowröhre eingestellter Frischgas Flow für Air.	53	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Patient_Name	Name des Patiente	53	f
@@ -8075,13 +8056,14 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_Mvspont	\N	54	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_SpontanAMV	gemessenes spontanes Atemminutenvolumen	54	t
 Arterieller Druck	\N	PC	Pulmonalkapillardruck	53	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_Kein_Recruitment	Liste ein aus	55	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_passiver_Patient	Liste ein aus	55	t
 Arterieller Druck	\N	IABP_Abiomed_Impella_LVDruck	\N	53	t
 Atemfrequenz	Resp rate	Patient_SpO2r	\N	55	t
 Linksventrikulaeres Schlagvolumen	LV SV	Nierenverfahren_ES_Multi_Plasmavolumen	\N	54	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	CardioHelpMaquet_MS_DruckArteriell	\N	54	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_G5_SBT_Support_min	\N	54	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Untersuchung_Abdomen_Haut	\N	54	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenerstazverfahren_Doku_ECMO_Oxygenator	Gerätetyp	53	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_ARDS	\N	53	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Messung_MV	Mindest Volumen tot.	53	t
 Atemzugvolumen-Einstellung	VT setting Vent	P_Beatmung_ES_C3_Vt	\N	53	t
@@ -8092,10 +8074,18 @@ Substituatfluss	\N	NEV_HD_VO_4008onl_Substituatbolus	\N	54	t
 Substituatfluss	\N	P_ADVOS_ES_ADVOS_CitratFluss	\N	54	t
 Substituatfluss	\N	P_ADVOS_VO_ADVOS_CitratFluss	\N	54	t
 Blutdruck Generisch	Blood pressure panel with all children optional	PPV	Pulsdruckabweichung	53	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_Quick_Wean	Liste ein aus	55	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_SHT	Liste ein aus	55	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_T1_HLI	Liste ein aus	55	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_T1_Kein_Recruitment	Liste ein aus	55	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_T1_passiver_Patient	Liste ein aus	55	t
+Blutfluss durch cardiovasculäres Gerät	\N	Beatmung_MS_VisionA_SISetting	Dauer des manuell durchgeführten Atemhubs	53	t
+Dauer Hämodialysesitzung	\N	P_ADVOS_VO_Dialysatloesung	\N	53	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenerstazverfahren_Doku_ECMO_Oxygenator	Gerätetyp	53	t
+Körpertemperatur Kern	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	t
+Körpertemperatur Kern	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	t
 Körpertemperatur vaginal	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	COPRA_Patient_Geburtsgewicht	Geburtsgewicht des Patienten in Kilogramm	53	f
-Körpergroesse	Body height	Beatmung_ES_C2_Body_Wt	Eingestelltes Körpergewicht beim respirator C2.	53	f
-Körpergroesse	Body height	Beatmung_ES_G5_Body_Wt	Eingestelltes Körpergewicht.	53	f
 Körpergrösse Percentil	Body height Prctl	Wertsachen_Papiere	\N	53	f
 Körpertemperatur Atemwege	Airway temp	SonstVerfahren_VO_Hypothermiegerät_Zieltemperatur	Hypothermiebehandlung	53	f
 Körpertemperatur Blut	Blood temp	Patient_Blutgruppe	Blutgruppe des Patienten	53	f
@@ -8111,12 +8101,11 @@ Körpertemperatur Gelenk	Body temperature	P_Temperatur_DeltaT	Delta Temperatur z
 Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	f
 Körpertemperatur vaginal	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	t
 Körpertemperatur vaginal	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	t
+Körpergroesse	Body height	Beatmung_ES_C2_Body_Wt	Eingestelltes Körpergewicht beim respirator C2.	53	t
+Körpergroesse	Body height	Beatmung_ES_G5_Body_Wt	Eingestelltes Körpergewicht.	53	t
 Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	f
-Körpertemperatur Kern	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	f
-Körpertemperatur Kern	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	f
-Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	f
 Körpertemperatur Leiste	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	53	f
@@ -8144,9 +8133,12 @@ Körpertemperatur unter der Zunge	Oral temp	TempBT	Bluttemperatur bei der HZV Me
 Körpertemperatur unter der Zunge	Oral temp	Untersuchung_Abdomen_Leber	\N	53	f
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Avea_fVt	errechneter Quotient zwischen Frequenz und Tidalvolumen	53	f
 Körpertemperatur Generisch	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	53	t
+Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_Fluss	\N	53	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_NaProfil	\N	53	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_BM25_AbnahmeMax	Ultrafiltrationsrate	53	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_T1_Quick_Wean	Liste ein aus	55	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Messung_InspirationszeitI:E	\N	55	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_T1_IEVerhaeltnis	gemessenes I:E Verhältnis	55	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_ACAT_ES_Unterstuetzungsverhaeltnis	Liste	55	t
 Spontane-Atemfrequenz-Beatmet	\N	Schrittmacher_Osypka203H_ES_MTR	obere Frequenzbegrenzung	53	t
 Parameter von Beatmung	\N	Betreuer_Ort	\N	53	f
 Parameter von Beatmung	\N	Betreuer_Telefon	Telefonummer des Patientenbetreuers	53	f
@@ -8156,11 +8148,6 @@ Körpertemperatur Leiste	Body temperature	TempBT	Bluttemperatur bei der HZV Mess
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Zugang	VO Gefäßzugang extracorporale Verfahren	53	f
 Systemischer vaskulärer Widerstandsindex	SV RI	Beatmung_MS_Evita2_Resistance	gemessener Atemwegswiderstand	53	f
 Systemischer vaskulärer Widerstandsindex	SV RI	Beatmung_MS_Evita4_Resistance	gemessener Atemwegswiderstand	53	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_Te	gemessene Exspirationszeit	53	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_Ti	gemessene Inspirationszeit	53	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_VisionA_IEVerhaeltnis	Messwert: gemessenes I:E Verhältnis	53	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_drei_ES_AusgangA	Medtronic 5388	53	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_drei_ES_AusgangV	Medtronic 5388	53	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_fSpontan	\N	53	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_fspontan	Spontane Atemfrequenz	53	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Pmean	\N	53	t
@@ -8170,8 +8157,9 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	53	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_SpO2	Wert gemessen am Ventilator	53	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	COPRA_Patient_Bezugsgewicht	Bezugsgewicht des Patienten in kg	53	t
-Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_VO_Multi_BlutflussMax	\N	52	f
-Dauer Hämodialysesitzung	\N	NEV_CRRT_VO_Dialysatloesung	\N	52	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_Doku_ILAactivve_Flussreg	Liste ein aus	55	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_Doku_ILAactivve_Nullfluss	bei luftblasen, Liste ein aus	55	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Messung_Inspirationszeit	\N	54	t
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Patient_Geschlecht	Geschlecht des Patienten	52	f
 Arterieller Druck	\N	NEV_Apherese_MS_Multi_pFDruck	\N	52	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Avea_InspPause	Zeiteinstellung für die Plateauphase im Modus CMV und SIMV	52	f
@@ -8196,10 +8184,33 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Airvo_FlowSetting	Einstel
 Atemzugvolumen-Waehrend-Beatmung	Vt on vent Vent	Beatmung_Anordnung_VT	Anordnung Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)	52	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Osypka203H_ES_result_Betriebsart	abhängig in ES der Sense-Liste	52	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Wertsachen_Kleidungsstuecke	\N	52	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	EinweisenderArzt_Titel	\N	54	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_PD_VO_Auslaufmenge	Pertionealdialyse Auslaufmenge in ml	54	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_C3_Pinsp	Inspiratorischer Druck	54	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_MS_C3_Pinsp	Inspiratorischer Druck	54	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Defi_ES_Ausgang	\N	54	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_Te	gemessene Exspirationszeit	53	t
+Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_VO_Multi_BlutflussMax	\N	52	t
+Dauer Hämodialysesitzung	\N	NEV_CRRT_VO_Dialysatloesung	\N	52	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_G5_ETS	Exspiratorische Triggersensitivität, eine Parametereinstellung	52	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_T1_ETS	Exspiratorische Triggersensitivität, eine Parametereinstellung	52	f
-Hämodialyse Blutfluss	\N	NEV_HD_VO_4008onl_BlutflussMax	\N	52	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_Ti	gemessene Inspirationszeit	53	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_VisionA_IEVerhaeltnis	Messwert: gemessenes I:E Verhältnis	53	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_drei_ES_AusgangA	Medtronic 5388	53	t
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_VO_ISOUFZeit	Isolierte Ultrafiltration/Bergström	52	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_drei_ES_AusgangV	Medtronic 5388	53	t
+Hämodialyse Blutfluss	\N	Lungenersatzverfahren_Doku_ILA_Blutfluss	\N	62	t
+Hämodialyse Blutfluss	\N	NEV_Apherese_ES_Multi_Blutfluss	\N	62	t
+Hämodialyse Blutfluss	\N	NEV_CRRT_ES_Multi_Blutfluss	\N	62	t
+Hämodialyse Blutfluss	\N	NEV_HD_ES_4008HS_Blutfluss	\N	62	t
+Hämodialyse Blutfluss	\N	NEV_HD_ES_4008onll_Blutfluss	\N	62	t
+Hämodialyse Blutfluss	\N	NEV_HD_VO_4008HS_Blutfluss_Max	\N	62	t
+Körpertemperatur Kern	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	t
+Körpertemperatur Kern	Body temperature	IABP_Leersaugen	\N	52	t
+Körpertemperatur Kern	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	t
+Hämodialyse Blutfluss	\N	NEV_HD_VO_4008HS_Blutfluss_SN_Pumpe	\N	62	t
+Hämodialyse Blutfluss	\N	Nierenverfahren_ES_4008HS_Blutfluss	\N	62	t
+Hämodialyse Blutfluss	\N	Nierenverfahren_ES_4008onl_Blutfluss	\N	62	t
 Körpergewicht	Weight	Patient_Gewicht	Gewicht des Patienten	52	f
 Körpertemperatur Atemwege	Airway temp	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	52	f
 Körpertemperatur Brust	Body temperature	Betreuer_Status	\N	52	f
@@ -8222,9 +8233,6 @@ Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_Coolgard_VO_Ziel
 Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Leersaugen	\N	52	f
 Körpertemperatur Halswirbelsaeule	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	f
-Körpertemperatur Kern	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	f
-Körpertemperatur Kern	Body temperature	IABP_Leersaugen	\N	52	f
-Körpertemperatur Kern	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	f
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Anordnung_ASB	Anordnung Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)	52	t
 Körpertemperatur Generisch	Body temperature	Betreuer_Status	\N	52	t
 Körpertemperatur Generisch	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	t
@@ -8232,15 +8240,15 @@ Körpertemperatur Generisch	Body temperature	IABP_Leersaugen	\N	52	t
 Körpertemperatur Generisch	Body temperature	P_NEV_HD_MS_Genius_Systempressure	\N	52	t
 Körpertemperatur Generisch	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	t
 Körpertemperatur Generisch	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILAactivve_Membranvent	\N	52	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_SollNa	\N	52	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_UFRate	Ultrafiltrationsrate	52	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_UFZiel	Ultrafiltrationsziel	52	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h	52	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_BlutvolumenKumulativ	\N	52	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_CitratvolumenKumulativ	kumulativ Citrat	52	t
+Hämodialyse Blutfluss	\N	Nierenverfahren_ES_ADM_Blutfluss	Blutpumpengeschwindigkeit	62	t
+Hämodialyse Blutfluss	\N	Nierenverfahren_ES_BM25_Blutfluss	Blutpumpengeschwindigkeit	62	t
+Hämodialyse Blutfluss	\N	Nierenverfahren_ES_Multi_Blutfluss	Blutpumpengeschwindigkeit ml/min	62	t
+Hämodialyse Blutfluss	\N	Nierenverfahren_VO_4008onl_Blutfluss	\N	62	t
+Hämodialyse Blutfluss	\N	P_NEV_HD_ES_5008onl_Blutfluss	\N	62	t
+Hämodialyse Blutfluss	\N	P_NEV_HD_ES_Genius_Blutfluss	\N	62	t
+Hämodialyse Blutfluss	\N	rCBF	Über eine Sonde gemessener regionaler cerebraler Blutfluss.	62	t
+Hämodialyse Blutfluss	\N	NEV_HD_VO_4008onl_BlutflussMax	\N	52	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Nierenverfahren_VO_Multi_Dialysat	Dialysatrate	52	t
-Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	f
 Körpertemperatur Leiste	Body temperature	Betreuer_Status	\N	52	f
 Körpertemperatur Leiste	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	f
 Körpertemperatur Leiste	Body temperature	IABP_Leersaugen	\N	52	f
@@ -8267,6 +8275,7 @@ Körpertemperatur Stirn	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemp
 Körpertemperatur unter der Zunge	Oral temp	F_spezGew_Refraktometer	spezifische Gewicht Refraktometer	52	f
 Körpertemperatur unter der Zunge	Oral temp	Untersuchung_Abdomen_Nieren	\N	52	f
 Körpertemperatur unter der Zunge	Oral temp	Untersuchung_Thorax_Cor	\N	52	f
+Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	t
 Körpertemperatur vaginal	Body temperature	Betreuer_Status	\N	52	t
 Körpertemperatur vaginal	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	t
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	CardioHelpMaquet_VO_Oxygenator	\N	52	f
@@ -8292,22 +8301,21 @@ Spontanes-Atemzugvolumen	Spont VT on vent	Fontanelle_Beurteilung	\N	52	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_Einstellung_Psupport	\N	52	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Heimbeatmung_Psupport	\N	52	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_VTi	\N	52	t
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_Vt_Backup	Vt in der Backupeinstellung	52	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_Vt_Backup	Vt in der Backupeinstellung	52	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Patient_ID	Identifikation des Patiente	52	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_RTX_TimeCough	\N	52	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_IE	gemessenes I zu E Verhältnis	52	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Patient_ID	Identifikation des Patiente	52	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_RTX_TimeCough	\N	52	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_MS_C3_IEVerhaeltnis	Verhältnis Inspirationszeit:Exspirationszeit	52	f
 Atemfrequenz	Resp rate	Patient_SpO2pr	\N	52	t
+Hämodialyse Blutfluss	\N	P_ADVOS_VO_ADVOS_BlutflussMax	\N	51	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Zephyros_Flow	\N	51	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_MS_Pallas_Frischgas_Flow_gesamt	Gemessener Frischgas Flow.	51	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_MS_5008onl_Rest_Zeit_min	\N	51	f
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Inpuls_Erfassung_Kriterien_1	\N	51	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Inpuls_Erfassung_Kriterien_2	\N	51	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Hypothermie_ArticSun_VO_Behandlungsmodi	Liste	51	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Multi_Plasma_Volumen	\N	51	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_Filter	\N	51	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Inpuls_Erfassung_Kriterien_1	\N	51	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Inpuls_Erfassung_Kriterien_2	\N	51	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Inpuls_Erfassung_Kriterien_3	\N	51	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Inpuls_Erfassung_Kriterien_4	\N	51	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_Einstellung_Flow	Inspiratorische Flowrate	51	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita4_Flowtrigger	Einstellgröße des Flowtriggers	51	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_Messung_Flow	Respiratory Rate (Volume/Flow)	51	f
@@ -8325,7 +8333,6 @@ Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	P_Beatmung_MS_C3_pe
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_Pallas_FrischgasFlow	Gesamt Frischgasfluss (Summe aus O2 + AIR)	51	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_G5_Rexsp	Exspiratorische Flow-Resistance, ein Monitoring-Parameter	51	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Pallas_Desfluran_exsp	Exspiratorisch gemessene Desfluran Konzentration.	51	f
-Hämodialyse Blutfluss	\N	P_ADVOS_VO_ADVOS_BlutflussMax	\N	51	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_VisionA_SISetting	Druckeinstellung für manuell ausgelösten Atemhub	52	t
 Zentralvenöser Druck	CVP	Nierenverfahren_VO_Dialysekonzentrat	Dialyskonzentratbehälter	52	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_MS_Leoni_BaseFlow	\N	51	t
@@ -8338,12 +8345,16 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Ttief	Einstellwert: Ze
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_CRRT_MS_Multi_Behandlungszeit_Aktuell__min	Anpassung für die automatische Datenübermnahme IBUS	51	t
 Substituatfluss	\N	P_NEV_HD_ES_5008onl_Substituatbolus	\N	52	t
 Substituatfluss	\N	P_NEV_HD_VO_5008onl_Substituatbolus	\N	52	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Inpuls_Erfassung_Kriterien_3	\N	51	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Inpuls_Erfassung_Kriterien_4	\N	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_KontrSchlsys	Liste	64	t
 Körpertemperatur Stirn	Body temperature	NEV_Apherese_MS_Multi_artDruck	\N	51	f
 Körpertemperatur vaginal	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Inpuls_Erfassung_Kategorie	\N	51	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_MS_3100A_O2Konzentration	Gemessene O2 Konzentration	51	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Therapiebetten_VO_Atom_ES_O2_Konzentration	\N	51	f
 Körpertemperatur Stirn	Body temperature	Lungenersatzverfahren_Kathetertyp	Katheterart	50	f
+Körpertemperatur Kern	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_Arbeitgeber	Arbeitgeber des Patienten	51	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_AufnGewicht	Aufnahmegewicht (fallbezogen)	51	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Patient_Gewicht_Differenz	Differenz zwischen dem aktuellen Gewicht und dem Gewicht des letzten Eintrags	51	f
@@ -8356,7 +8367,6 @@ Körpertemperatur Brust	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatur
 Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
 Körpertemperatur Gelenk	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
-Körpertemperatur Kern	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
 Körpertemperatur Leiste	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_ILAactivve_Nullabgleich	Liste durchgeführt	51	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
@@ -8378,8 +8388,9 @@ Körpertemperatur Generisch	Body temperature	Beatmung_Messung_IntrinsicPEEP	Intr
 Linksventrikulaeres Schlagvolumen	LV SV	Nierenverfahren_ES_BM25_Plasmavolumen	\N	51	t
 Linksventrikulaeres Schlagvolumen	LV SV	Nierenverfahren_VO_BM25_Plasmavolumen	\N	51	t
 Linksventrikulärer Herzindex	LV Cardiac index	Betreuer_Anschrift	Anschrift des Patientenbetreuers	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_Schlauchsystem	Schlauchsystembeschichtung relevant	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_BlutflussSNPumpe	\N	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILA_BlutflussMin	\N	60	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_Abschlussbegruendung	\N	60	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Fluss	\N	60	t
 Parameter von Beatmung	\N	Betreuer_Name	Betreuer des Patienten	51	f
 Parameter von Beatmung	\N	NEV_CRRT_VO_CitratLoesung	\N	51	f
 Parameter von Beatmung	\N	Patient_Beruf	Beruf des Patienten	51	f
@@ -8389,17 +8400,12 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Vt	Dokumentation ders eingestellten Vt.	51	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Pkontrol_Phoch	\N	51	t
 Substituatfluss	\N	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h	51	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_Vti	gemessenes inspiratorisches Tidalvolumen	51	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Evita4_Vt	gemessenes inspiratorisches Tidalvolumen	51	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_G5_TE	Exspirationzeit, ein Monitoring-Parameter	51	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_T1_TI	Inspirationszeit in Sekunden	51	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_VO_ILAactivve_Systole	Verhältnis Systole zur Diastolendauer	51	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_PD_VO_Einlaufmenge	Peritonealdialyse Einlaufmenge in ml	51	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Siemens_ES_Ausgang	\N	51	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Tpause_Prozent	"TPause (%) "	51	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Vt	"Tidalvolumen "	51	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_fspontan	Spontane Atemfrequenz	51	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Vt	Gemessenes Tidalvolumen.	51	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_Vti	gemessenes inspiratorisches Tidalvolumen	51	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Evita4_Vt	gemessenes inspiratorisches Tidalvolumen	51	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_T1_RSB	Index für schnelle Flachatmung (Rapid Shallow Breathing Index)	50	f
 Arterieller Druck	\N	CardioHelpMaquet_MS_DruckVenoes	\N	50	t
 Atemfrequenz	Resp rate	Betreuer_PLZ	\N	50	t
@@ -8423,8 +8429,11 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_F_SIMV	Eingestellt SIM
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Timaxi	eingestellte maximale Inspirationszeit im Modus NIV	50	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_Evita4_MV	gemessenes Atemminutenvolumen	50	t
 Substituatfluss	\N	Patient_Blutverlusst	Patient_Blutverlusst	51	t
-Dauer Hämodialysesitzung	\N	NEV_PD_Doku_Aussehen_Dialysat	\N	50	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_ACAT_ES_Deflation	\N	50	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_G5_TE	Exspirationzeit, ein Monitoring-Parameter	51	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_T1_TI	Inspirationszeit in Sekunden	51	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_VO_ILAactivve_Systole	Verhältnis Systole zur Diastolendauer	51	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_PD_VO_Einlaufmenge	Peritonealdialyse Einlaufmenge in ml	51	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Siemens_ES_Ausgang	\N	51	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Patient_AufnKO	Körperoberfläche des Patienten (fallbezogen)	50	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Untersuchung_Status_Stuhl	\N	50	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Avea_Volumen	eingestelltes Tidalvolumen	50	f
@@ -8441,13 +8450,19 @@ Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Patient_ID	Identifikation
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_Einstellung_I:EExsp	I:E Exspiration	50	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Pallas_Enfluran_exsp	Exspiratorisch gemessene Enfluran Kozentration.	50	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	etCO2	End-tidales CO2	50	f
+Körpergroesse	Body height	Beatmung_Messung_Pmax	Peak Airway Pressure	50	t
+Körpergroesse	Body height	Betreuer_Strasse	\N	50	t
+Körpergroesse	Body height	Patient_Ort	Patientenadresse: Ort	50	t
+Dauer Hämodialysesitzung	\N	NEV_PD_Doku_Aussehen_Dialysat	\N	50	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Multi_Blutfluss	\N	50	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_DCMFETTotal	\N	50	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Einstellung_I:EInsp	I:E Inspiration	50	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Patient_Sprache	Muttersprache des Patienten	50	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Evita2_O2Konzentration	eingestellte O2 Konzentration des Gases	50	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_Bilanz_ml	neue Variable für automatische Datenübernahme IBUS	50	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_UFProfil	\N	50	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_ACAT_ES_Deflation	\N	50	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_AufnKO	Körperoberfläche des Patienten (fallbezogen)	50	f
-Körpergroesse	Body height	Beatmung_Messung_Pmax	Peak Airway Pressure	50	f
-Körpergroesse	Body height	Betreuer_Strasse	\N	50	f
-Körpergroesse	Body height	Patient_Ort	Patientenadresse: Ort	50	f
 Körpergrösse Percentil	Body height Prctl	IstSoziale_Besonderheit	Soziale_Besonderheiten, z.B. Familiensituation	50	f
 Körpertemperatur Blut	Blood temp	Patient_Blutgruppe	Blutgruppe des Patienten	50	f
 Körpertemperatur Brust	Body temperature	Betreuer2_Status	\N	50	f
@@ -8462,15 +8477,15 @@ Inspiratorische Sauerstofffraktion gemessen	FIO2	PICCO_HF	HerzfrequenzHerzfreque
 Inspiratorische Sauerstofffraktion gemessen	FIO2	SvO2	venöse Sauerstoffsättigung	50	t
 Kopfumfang	Head Circumf OFC	OP-Tag	OP-Tag	50	t
 Kopfumfang	Head Circumf OFC	Patient_KO	Körperoberfläche des Patienten ohne Fallbezug	50	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Multi_Blutfluss	\N	50	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_DCMFETTotal	\N	50	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_Bilanz_ml	neue Variable für automatische Datenübernahme IBUS	50	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_UFProfil	\N	50	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	IABP_AutoCat_MS_Mitteldruck	\N	50	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Nierenverfahren_ES_ADM_Blutfluss	Blutpumpengeschwindigkeit	50	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Nierenverfahren_ES_BM25_Blutfluss	Blutpumpengeschwindigkeit	50	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Nierenverfahren_VO_ADM_BlutflussMax	Blutpumpengeschwindigkeit	50	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Nierenverfahren_VO_BM25_BlutflussMax	Blutpumpengeschwindigkeit	50	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Umsatz	\N	81	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Zugang	\N	81	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_SubBolus	\N	78	t
+Körpertemperatur Kern	Body temperature	Betreuer2_Status	\N	50	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer2_Status	\N	50	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Strasse	\N	50	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	f
@@ -8487,6 +8502,13 @@ Körpertemperatur Gelenk	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	f
 Körpertemperatur Gelenk	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	f
 Körpertemperatur Gelenk	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	f
 Körpertemperatur Gelenk	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	f
+Körpertemperatur Kern	Body temperature	Betreuer_Strasse	\N	50	t
+Körpertemperatur Kern	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	t
+Körpertemperatur Kern	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	t
+Körpertemperatur Kern	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	t
+Körpertemperatur Kern	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	t
+Körpertemperatur Kern	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	t
+Körpertemperatur Kern	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer2_Status	\N	50	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Strasse	\N	50	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	f
@@ -8495,14 +8517,6 @@ Körpertemperatur Halswirbelsaeule	Body temperature	NEV_CRRT_ES_Multi_Temperatur
 Körpertemperatur Halswirbelsaeule	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	f
-Körpertemperatur Kern	Body temperature	Betreuer2_Status	\N	50	f
-Körpertemperatur Kern	Body temperature	Betreuer_Strasse	\N	50	f
-Körpertemperatur Kern	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	f
-Körpertemperatur Kern	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	f
-Körpertemperatur Kern	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	f
-Körpertemperatur Kern	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	f
-Körpertemperatur Kern	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	f
-Körpertemperatur Kern	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	f
 Körpertemperatur Leiste	Body temperature	Betreuer2_Status	\N	50	f
 Körpertemperatur Leiste	Body temperature	Betreuer_Strasse	\N	50	f
 Körpertemperatur Leiste	Body temperature	F_Reakarte_VerantwortlicherMitarbeiter	\N	50	f
@@ -8588,10 +8602,6 @@ Substituatfluss	\N	Nierenverfahren_ES_BM25_Umsatz	Austausch, Substituat, ml/h	50
 Systemischer vaskulärer Widerstandsindex	SV RI	BIS	Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.	50	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_G5_Psupport	Einstellwert: Druckunterstützung beim G 5  bei Spontanatemzügen	50	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Servoi_Psupport	\N	50	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	EinweisenderArzt_Name	\N	50	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_Apherese_MS_Multi_UFRBFRVerhältnis	\N	50	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Patient_Nationalitaet	Nationalität des Patienten	50	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_zwei_ES_Ausgang	Medtronic 5375	50	f
 Blutdruck	Blood pressure panel with all children optional	Fall_Wertsachen_Papiere_Ort	\N	49	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_VTE	"Messwert, exspiratorisches Tidalvolumen Einheit: ml"	50	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	COPRA_Patient_Kopfumfang	Kopfumfang des Patienten in Zentimetern	49	f
@@ -8600,11 +8610,9 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Leck	\N	50	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Texp	\N	50	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Filter	\N	49	f
-Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008HS_BlutflussSNPumpe	\N	49	f
-Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008onl_BlutflussSNPumpe	\N	49	f
-Dauer Hämodialysesitzung	\N	NEV_CRRT_ES_Multi_Dialysat	\N	49	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_NO	Messwert der  NO Konzentration bei NO Beatmung	50	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Vee	"Endexspiratorischer Flow "	50	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	EinweisenderArzt_Name	\N	50	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_Doku_Zephyros_Option	Liste Highflow Highflow CPAP	49	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita4_FlowAssist	Einstellgröße für den Flowassist im Modus PPS	49	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_G5_Flow	Parameter im Modus Highflow - ab 08.06.2017	49	f
@@ -8626,6 +8634,18 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_VolAssist	\N	49	
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_PD_Doku_Auslaufmenge	\N	49	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Hypothemie_Coolgard_Doku_Behandlungsmodi	Listenauswahl	49	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Fall_Wertsachen_Papiere_Ort	\N	49	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_Apherese_MS_Multi_UFRBFRVerhältnis	\N	50	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Patient_Nationalitaet	Nationalität des Patienten	50	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_zwei_ES_Ausgang	Medtronic 5375	50	t
+Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008HS_BlutflussSNPumpe	\N	49	t
+Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008onl_BlutflussSNPumpe	\N	49	t
+Dauer Hämodialysesitzung	\N	NEV_CRRT_ES_Multi_Dialysat	\N	49	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_ISOUFZeit	\N	74	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_ISOUFZiel	\N	74	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_StartNatrium	\N	74	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_CitratDosis	angeordnete Citratdosis	74	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_DialyseZeit	\N	74	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_SollNatrium	\N	74	t
 Monitoring und Vitaldaten	\N	Untersuchung_ZNS_Motorik	\N	49	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Evita2_Anstiegszeit	eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau	49	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Evita4_VtApnoe	Einstellgröße für das Tidalvolumen in der Apnoeeinstellung	49	f
@@ -8642,6 +8662,11 @@ Inspiratorischer Gasfluss	Insp gas flow on vent Airway	IABP_Abiomed_Impella_Flow
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Leoni_O2	\N	49	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	BSR	entspricht der SR Anzeige am Gerät. Burst Supression Ratio	49	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Therapiebetten_VO_Giraffe_ES_O2_Konzentration	\N	49	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Schlauchsystem	Bezeichnung	49	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Multi_CitratBlut	\N	49	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_DCMFBTgesamt	\N	49	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Substituat	\N	49	t
+Körpertemperatur Kern	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Schrittmacher_Osypka203H_ES_result_Betriebsart	abhängig in ES der Sense-Liste	49	f
 Körpertemperatur Brust	Body temperature	Bezugsperson_Pflegekraft	\N	49	f
 Körpertemperatur Brust	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
@@ -8653,12 +8678,11 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temp
 Körpertemperatur Gelenk	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
+Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	t
 Körpertemperatur Halswirbelsaeule	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
-Körpertemperatur Kern	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
 Körpertemperatur Leiste	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
@@ -8675,10 +8699,6 @@ Atemfrequenz	Resp rate	IABP_Doku_Ballonkatheter	Kathetertyp	50	t
 Körpertemperatur Generisch	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
 Körpertemperatur Generisch	Body temperature	EinweisenderArzt_Ort	\N	49	t
 Körpertemperatur Generisch	Body temperature	GewichtGroeße_Platzhalter	\N	49	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Schlauchsystem	Bezeichnung	49	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Multi_CitratBlut	\N	49	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_DCMFBTgesamt	\N	49	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Substituat	\N	49	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Avea_PEEP	eingestelltes PEEP Niveau	49	t
 Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
 Körpertemperatur Nasen-Rachen-Raum	Body temperature	Wertsachen_Pflegeuntensilien	\N	49	f
@@ -8729,6 +8749,8 @@ Arterieller Druck	\N	Verlauf_Arzt	\N	48	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Messung_PEEP	\N	49	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Fall_Wertsachen_Papiere_Ort	\N	49	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Papiere_Ort	\N	49	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_BasisNatrium	\N	73	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Doku_AbschlussBeurteilung	\N	72	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Anordnung_BV	beatmungs-Verordung	49	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Papiere_Ort	\N	49	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Pallas_Frischgas_O2	An der Flowröhre eingestellter O2 Frischgasflow.	49	f
@@ -8736,8 +8758,6 @@ Spontanes-Atemzugvolumen	Spont VT on vent	P_Spontanatemtest	Dokumentation ob der
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_Konzentrat	\N	49	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_Option	\N	49	f
 Systemischer vaskulärer Widerstandsindex	SV RI	Hypothermie_ArticSun_MS_Wasserstand	Texteintrag	49	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_VisionA_PIP	positiv inspiratorischer Druck	49	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kategorie	\N	49	f
 Atemfrequenz	Resp rate	Lungenersatzverfahren_Doku_Kathetertyp	Kathetertyp	50	t
 Atemfrequenz	Resp rate	Patient_PLZ	Patientenadresse: PLZ	50	t
 Atemfrequenz	Resp rate	Patient_Sprache	Muttersprache des Patienten	50	t
@@ -8745,6 +8765,8 @@ Atemfrequenz	Resp rate	AF	Atemfrequenz	48	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Pkontrol	\N	49	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Psupport	\N	49	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_passiver_Patient	Liste ein aus	49	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_VisionA_PIP	positiv inspiratorischer Druck	49	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kategorie	\N	49	t
 Arterieller Druck	\N	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	48	t
 Atemfrequenz	Resp rate	Patient_Vorname	Vorname des Patiente	50	t
 Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	SaO2 % Bld Preductal PulseOx	PLS	Pulsrate errechnet aus der SpO2 Messung	49	t
@@ -8756,14 +8778,19 @@ Unterstützungsdruck Beatmung	Pressure support setting Vent	Untersuchung_Kopf_Ha
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Untersuchung_Kopf_Nas_Mund	\N	49	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Untersuchung_ZNS_Sensibilitaet	\N	49	t
 Atemzugvolumen-Einstellung	VT setting Vent	Patient_Versicherung	\N	48	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Plasmavolumen	\N	72	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Bicarbonat	\N	72	t
+Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_Doku_BolusAntikoag	\N	48	t
+Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_MS_Multi_Calciumfluss	\N	48	t
+Dauer Hämodialysesitzung	\N	NEV_PD_Doku_Schlauchheizung	\N	48	t
+Hämodialyse Blutfluss	\N	NEV_Apherese_VO_Multi_BlutflussMax	\N	48	t
+Hämodialyse Blutfluss	\N	NEV_HD_MS_4008HS_BlutvolKum_ml	Anpassung aufgrund IBUS Anbindung	48	t
+Hämodialyse Blutfluss	\N	NEV_HD_VO_4008onl_BlutflussSNPumpe	\N	48	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_Vtrap	gemessenes getrapptes Luftvolumen nach Meßmanöver	48	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_T1_ExpMinVol	Exspiratorisches Minutenvolumen	48	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Fuellen_Mit	\N	48	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_VO_Fuellen_Mit	\N	48	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_Beatmung_MS_C3_ExspMinVol	Exspiratorisches Minutenvolumen	48	f
-Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_Doku_BolusAntikoag	\N	48	f
-Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_MS_Multi_Calciumfluss	\N	48	f
-Dauer Hämodialysesitzung	\N	NEV_PD_Doku_Schlauchheizung	\N	48	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita4_Tubuskompensation	Einstellgröße für die Tubuskompensation	48	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	EinweisenderArzt_Strasse	\N	48	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Beatmung_ES_VisionA_RiseTime	Anstiegszeit (Rampenzeit) Alpha Vision	48	f
@@ -8785,9 +8812,6 @@ Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Untersuchung_Status_Reizb
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	Beatmung_MS_Pallas_O2_exsp	Gemessene exspiratorische O2 Konzentration.	48	f
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	PICCO_EVLW/EV	\N	48	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_VisionA_ETS	Exspirationserkennung 10 - 45% des Peak Flow	48	f
-Hämodialyse Blutfluss	\N	NEV_Apherese_VO_Multi_BlutflussMax	\N	48	f
-Hämodialyse Blutfluss	\N	NEV_HD_MS_4008HS_BlutvolKum_ml	Anpassung aufgrund IBUS Anbindung	48	f
-Hämodialyse Blutfluss	\N	NEV_HD_VO_4008onl_BlutflussSNPumpe	\N	48	f
 Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_G5_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	48	t
 Dynamische Kompliance	Compliance.dynamic Lung	Patient_Name	Name des Patiente	48	t
 Dynamische Kompliance	Compliance.dynamic Lung	P_Beatmung_ES_3100A_O2Konzentration	O2 Konzentration des Gasgemisches	48	t
@@ -8813,6 +8837,7 @@ Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nie
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_ES_4008HS_IsoUFZeit_	Isolierte Ultrafiltration	48	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_TP1	EEG - Total Power - Channel 1	48	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_TP2	EEG - Total Power - Channel 2	48	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_Restzeit	\N	48	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	COPRA_Patient_Bezugsgewicht	Bezugsgewicht des Patienten in kg	48	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_AufnGewicht	Aufnahmegewicht (fallbezogen)	48	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_KO	Körperoberfläche des Patienten ohne Fallbezug	48	f
@@ -8851,15 +8876,19 @@ Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Tem
 Körpertemperatur Gelenk	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	f
 Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	f
 Körpertemperatur Gelenk	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_venDruck	\N	48	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_UFProfil	\N	48	t
 Ideales Körpergewicht	Ideal bdy weight	NIRSrechts_MS	\N	48	t
 Ideales Körpergewicht	Ideal bdy weight	P_Impella_Impella_MS_PurgeFlow	\N	48	t
 Ideales Körpergewicht	Ideal bdy weight	Untersuchung_Kopf_Hals	\N	48	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Multi_Substituat	Substituat in ml/h	48	t
 Körpergewicht	Weight	Beatmung_ES_Leoni_Apnoezeit	Apnoezeit	48	t
 Körpertemperatur Generisch	Body temperature	Betreuer2_Strasse	\N	48	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_Restzeit	\N	48	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_venDruck	\N	48	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_UFProfil	\N	48	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Multi_Substituat	Substituat in ml/h	48	t
+Körpertemperatur Kern	Body temperature	Betreuer2_Strasse	\N	48	t
+Körpertemperatur Kern	Body temperature	Betreuer_Name	Betreuer des Patienten	48	t
+Körpertemperatur Kern	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	t
+Körpertemperatur Kern	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	t
+Körpertemperatur Kern	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer2_Strasse	\N	48	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Name	Betreuer des Patienten	48	f
 Körpertemperatur Halswirbelsaeule	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	f
@@ -8872,17 +8901,6 @@ Körpertemperatur Halswirbelsaeule	Body temperature	TempDelta	Anlage im Rahmen P
 Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	f
 Körpertemperatur Harnblase	Bdy temp Bladder	Nierenverfahren_Doku_FüllenMit	Füllen des Systems	48	f
-Körpertemperatur Kern	Body temperature	Betreuer2_Strasse	\N	48	f
-Körpertemperatur Kern	Body temperature	Betreuer_Name	Betreuer des Patienten	48	f
-Körpertemperatur Kern	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	f
-Körpertemperatur Kern	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	f
-Körpertemperatur Kern	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	f
-Körpertemperatur Kern	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	f
-Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	f
-Körpertemperatur Kern	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	f
 Körpertemperatur Leiste	Body temperature	Betreuer2_Strasse	\N	48	f
 Körpertemperatur Leiste	Body temperature	Betreuer_Name	Betreuer des Patienten	48	f
 Körpertemperatur Leiste	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	f
@@ -9028,20 +9046,17 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_SBT_Zeitraum_nach	Uhrzeit	48	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_Sauerstoff	\N	48	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Phoch	"Phoch (cmH2O) "	48	t
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_InspirationszeitIE	Inspirationszeit I:E	48	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_BiPAPV_CPAP	Einstellparameter CPAP im Modus CPAP	48	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Messung_ExpirationszeitI:E	\N	48	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_VO_CitratDosis	angeordnete Citratdosis	48	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Pasvlimit	\N	48	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Expirationszeit	\N	48	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontAF	gemessene spontane Atemfrequenz	48	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_InspirationszeitIE	Inspirationszeit I:E	48	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_BiPAPV_CPAP	Einstellparameter CPAP im Modus CPAP	48	t
 Atemfrequenz	Resp rate	Allergie	\N	47	t
 Atemfrequenz	Resp rate	Beatmung_MS_C2_RCexsp	\N	47	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Evita4_frequenz	eingestellte Atemfrequenz	48	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Pallas_Alter	Dokumentation des Alters des Patienten.	48	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_MS_VisionA_SISetting	Dauer des manuell durchgeführten Atemhubs	48	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Hypothermie_ArticSun_MS_Hoechstwassertemp	Anlage für IBUS Datenübermittlung	48	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_artDruck	\N	47	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_MS_G5_VLeckage	Leckagevolumen, ein Monitoring-Parameter	47	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Patient_Kopfumfang_bit	Kopfumfang bit cm	47	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	P_LEV_ES_BFQ1	Zusatzgerät bei einer ECMO Therapie	47	t
@@ -9049,17 +9064,17 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_Plateau	\N	47	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita2_Pmax	eingestellte Druckbegrenzung	47	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita4_VolAssist	Einstellgröße für den VolAssist im PPS Modus	47	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_TM_Pallas_TEST	Test	47	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Messung_ExpirationszeitI:E	\N	48	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_VO_CitratDosis	angeordnete Citratdosis	48	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_artDruck	\N	47	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_BlutflussEinst	\N	67	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Option	\N	67	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_BlutflussSNPumpe	\N	67	t
 Körpertemperatur Brust	Body temperature	Betreuer2_Name	\N	47	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_G5_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi.	47	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_T1_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi	47	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.	47	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_Bolus	\N	47	f
-Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_DOKU_Oxygenator	\N	47	f
-Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_DOKU_OxygenatorTest	\N	47	f
-Blutfluss durch cardiovasculäres Gerät	\N	P_NEV_HD_ES_5008onl_BlutflussSNPumpe	\N	47	f
-Dauer Hämodialysesitzung	\N	Untersuchung_Thorax_Haut	\N	47	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_VisionA_DeltaP	Einstellwert: eingestellte Druckdifferenz	47	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_AutoCat_ES_Deflation	\N	47	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Angehoerige1_Ort	\N	47	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Angehoerige2_Ort	\N	47	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Schrittmacher_Osypka203H_ES_V_Sense	Empfindlichkeit Ventrikel	47	f
@@ -9078,11 +9093,17 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_G5_Rins
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Pallas_O2_exsp	Gemessene exspiratorische O2 Konzentration.	47	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_T1_ExspFlow	Exspiratorischer Peakflow	47	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	P_Beatmung_MS_C3_ExspFlow	Exspiratorischer Peakflow	47	f
-Hämodialyse Blutfluss	\N	NEV_HD_ES_4008onl_Fluss	\N	47	f
-Hämodialyse Blutfluss	\N	NEV_HD_MS_4008HS_BlutvolKum	\N	47	f
-Hämodialyse Blutfluss	\N	NEV_HD_MS_4008onl_BlutvolKum_ml	Anpassung für IBUS	47	f
-Hämodialyse Blutfluss	\N	NEV_HD_VO_4008onl_Fluss	\N	47	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Angehoerige3_Ort	\N	47	t
+Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_DOKU_Oxygenator	\N	47	t
+Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_DOKU_OxygenatorTest	\N	47	t
+Blutfluss durch cardiovasculäres Gerät	\N	P_NEV_HD_ES_5008onl_BlutflussSNPumpe	\N	47	t
+Dauer Hämodialysesitzung	\N	Untersuchung_Thorax_Haut	\N	47	t
+Hämodialyse Blutfluss	\N	NEV_HD_ES_4008onl_Fluss	\N	47	t
+Hämodialyse Blutfluss	\N	NEV_HD_MS_4008HS_BlutvolKum	\N	47	t
+Hämodialyse Blutfluss	\N	NEV_HD_MS_4008onl_BlutvolKum_ml	Anpassung für IBUS	47	t
+Hämodialyse Blutfluss	\N	NEV_HD_VO_4008onl_Fluss	\N	47	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_VisionA_DeltaP	Einstellwert: eingestellte Druckdifferenz	47	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_AutoCat_ES_Deflation	\N	47	t
 Atemfrequenz	Resp rate	Beatmung_MS_G5_Rexsp	Exspiratorische Flow-Resistance, ein Monitoring-Parameter	48	t
 Herzfrequenz	Heart rate	Angehoerige1_Strasse	\N	47	t
 Herzfrequenz	Heart rate	Angehoerige1_Vorname	\N	47	t
@@ -9095,7 +9116,7 @@ Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_T1_CO2El
 Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008HS_Rest_Zeit	\N	47	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	SM_Output_Atrium	Schrittmacher Ausgangsleistung (Output) Atrium	47	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Fall_Wertsachen_Kleidungsstuecke	\N	47	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	47	t
+Körpertemperatur Kern	Body temperature	Betreuer2_Name	\N	47	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Messung_FlowAssist	\N	47	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Patient_Familienst	Familienstand des Patienten	47	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	SM_AV_Intervall	Schrittmacher AV-Intervall	47	f
@@ -9104,6 +9125,10 @@ Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Sch
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_V-Sense	\N	47	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_V_Sense	Empfindlichkeit Ventrikel	47	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_Apherese_Doku_Bolus_Antikoag	\N	47	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	47	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_DatascopeCS300_ES_Doku_Ballonkatheter	Dokumentation des verwendeten Ballonkatheters.	47	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	47	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_TMP	\N	47	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	tcpCO2	transcutan gemessener pCO2 Wert.	47	f
 Körpergrösse Percentil	Body height Prctl	Verlauf_Pflege	\N	47	f
 Körpertemperatur Achsel	Axil temp	NEV_Apherese_Doku_AbschlussUrteil	Listenauswahl	47	f
@@ -9121,14 +9146,13 @@ Körpertemperatur Gelenk	Body temperature	Betreuer2_Name	\N	47	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	f
 Körpertemperatur Gelenk	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	f
+Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	t
+Körpertemperatur Kern	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer2_Name	\N	47	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	f
-Körpertemperatur Kern	Body temperature	Betreuer2_Name	\N	47	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	f
-Körpertemperatur Kern	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	f
 Körpertemperatur Leiste	Body temperature	Betreuer2_Name	\N	47	f
 Körpertemperatur Leiste	Body temperature	NEV_Apherese_Doku_Fuellen_Mit	\N	47	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	f
@@ -9142,9 +9166,7 @@ Atemfrequenz	Resp rate	Betreuer2_PLZ	\N	48	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	f
 Körpertemperatur Generisch	Body temperature	Betreuer2_Name	\N	47	t
 Linksventrikulärer Herzindex	LV Cardiac index	NEV_CRRT_VO_Filter	\N	47	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_DatascopeCS300_ES_Doku_Ballonkatheter	Dokumentation des verwendeten Ballonkatheters.	47	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	47	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_TMP	\N	47	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UFVolumenKumulativ	\N	64	t
 Körpertemperatur nasal	Nasal temp	P_Beatmung_ES_CoughAssist_CoughTrak	Ein/Aus	47	f
 Körpertemperatur nasal	Nasal temp	TempDelta	Anlage im Rahmen PhilipsMonitoring	47	f
 Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer2_Name	\N	47	f
@@ -9254,12 +9276,6 @@ Monitoring und Vitaldaten	\N	PICCO_ZVD	Zentraler Venendruck	29	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Psupport	\N	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Zeit_zw2_SBT	\N	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_O2Konzentration	\N	47	t
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Hausarzt_Telefon	\N	47	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_1	\N	47	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_2	\N	47	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_3	\N	47	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_4	\N	47	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_PD_VO_Auslaufzeit	Auslaufzeit	47	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_InspFlow	Inspiratorischer Peakflow	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Pmin	\N	47	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_HD_MS_4008onl_Rest_Zeit_min	Anpassung für IBUS Anbindung	46	f
@@ -9267,6 +9283,12 @@ Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Pat
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_VLeckage	\N	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_NO2	\N	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_NEV_HD_ES_5008onl_NaProfil	Auswahl von nummerisch einzugebenden Profilen	47	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Hausarzt_Telefon	\N	47	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_1	\N	47	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_2	\N	47	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_3	\N	47	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_4	\N	47	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_PD_VO_Auslaufzeit	Auslaufzeit	47	t
 Substituatvolumen	\N	P_NEV_HD_VO_5008onl_Substituatrate	\N	47	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_VisionA_ApneaRate	Einstellwert: eingestellte Apnoefrequenz	47	t
 Zentralvenöser Druck	CVP	Aufnahme_Herkunftsland_Mutter	Herkunftsland der Mutter	47	t
@@ -9283,6 +9305,8 @@ Substituatfluss	\N	NEV_HD_ES_4008onl_Substituat	\N	47	t
 Substituatfluss	\N	Nierenverfahren_VO_Multi_SubstituatBolus	Substituatbolus in ml	47	t
 Körpertemperatur Harnblase	Bdy temp Bladder	P_ADVOS_MS_ADVOS_artDruck	\N	46	f
 Körpertemperatur Achsel	Axil temp	P_ADVOS_VO_Filter	\N	46	f
+Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_MS_Multi_Citratfluss	\N	46	t
+Dauer Hämodialysesitzung	\N	NEV_Apherese_VO_Plasmaloesung	\N	46	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_Einstellung_Pkontrol	Pkontrol (mbar/frequenz/AZ/min)	46	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_G5_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator G5 in den Beatmungsmodi APVsimv, Psimv.	46	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_T1_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator T1 in den Beatmungsmodi APVsimv, Psimv.	46	f
@@ -9290,8 +9314,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	IABP_CARDIOSAVE_ES_EKG_Ableitung	Dokumentation der gewählten EKG Ableitung für den IABP Einsatz	46	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_FuellenMit	\N	46	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h	46	f
-Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_MS_Multi_Citratfluss	\N	46	f
-Dauer Hämodialysesitzung	\N	NEV_Apherese_VO_Plasmaloesung	\N	46	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_Einstellung_Power	HFOV Powereinstellung	46	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_F120_Flow	Einstellwert: Größe des Gasflusses beim F 120	46	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_G5_PEEP_CPAP_Ptief	Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.	46	f
@@ -9321,7 +9343,8 @@ Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_Doku_Abschlus
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Score_DGAI_AufnArzt	\N	46	t
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	t
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	46	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Beatmung_MS_Evita2_IntrinsicPEEP	Ergebnis eines Messmanövers im Modus IPPV, IPPV assist	46	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_DialyseZeit	\N	59	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat	59	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Servoi_End_Insp_Zyklusende	"End. Insp. Zyklusende (% des Spitzenflows) "	46	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_VisionA_Vt	Einstellwert: eingestelltes Tidalvolumen	46	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_MS_Pallas_Sevofluran_insp	Inspiratorisch gemessene Sevofluran Konzentration.	46	f
@@ -9338,10 +9361,10 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Pallas_
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	IABP_ACAT_ES_Triggerauswahl	Listenauswahl	46	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Patient_Versicherungsnummer	\N	46	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	tcpCO2	transcutan gemessener pCO2 Wert.	46	f
-Hämodialyse Blutfluss	\N	NEV_HD_MS_4008onl_BlutvolKum	\N	46	f
-Hämodialyse Blutfluss	\N	NEV_HD_VO_Bolus	\N	46	f
-Hämodialyse Blutfluss	\N	P_NEV_HD_VO_5008onl_BlutflussSNPumpe	\N	46	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_CRRT_VO_Multi_BlutflussMax	\N	46	t
+Hämodialyse Blutfluss	\N	NEV_HD_MS_4008onl_BlutvolKum	\N	46	t
+Hämodialyse Blutfluss	\N	NEV_HD_VO_Bolus	\N	46	t
+Hämodialyse Blutfluss	\N	P_NEV_HD_VO_5008onl_BlutflussSNPumpe	\N	46	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_ES_Evita4_FlowAssist	Einstellgröße für den Flowassist im Modus PPS	46	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Schrittmacher_Osypka101H_ES_Rate	Grundfrequenz	46	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Schrittmacher_Osypka203H_ES_Rate	Grundfrequenz	46	f
@@ -9353,6 +9376,8 @@ Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Bea
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ILAactivve_Nullfluss	bei luftblasen, Liste ein aus	46	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_VO_ILAactivve_Systole	Verhältnis Systole zur Diastolendauer	46	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_Doku_AbschlussBeurteilung	\N	46	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Beatmung_MS_Evita2_IntrinsicPEEP	Ergebnis eines Messmanövers im Modus IPPV, IPPV assist	46	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Diagnostik	Dokumentation durchgeführter diagnostischer Maßnahmen.	46	t
 Körpergrösse Percentil	Body height Prctl	Besonderheiten_Station	\N	46	f
 Körpertemperatur Achsel	Axil temp	Beatmung_Einstellung_Pmax	Pmax, Maximaldruck	46	f
 Körpertemperatur Achsel	Axil temp	CardioHelpMaquet_ES_Pumpendrehzahl	\N	46	f
@@ -9365,7 +9390,8 @@ Herzzeitvolumen	LV Output	Blutgruppe_Mutter	\N	46	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_PEEP	gemessenes PEEP Niveau	46	t
 Körpergewicht	Weight	Beatmung_ES_G5_SBT_Zeitraum_nach	Uhrzeit	46	t
 Linksventrikulaeres Schlagvolumen	LV SV	Score_DGAI_EntlArzt	\N	46	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Diagnostik	Dokumentation durchgeführter diagnostischer Maßnahmen.	46	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_ADM_AustauschKumulativ	\N	58	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_ADM_Behandlungszeit	\N	58	t
 Körpertemperatur Achsel	Axil temp	NEV_Apherese_VO_Multi_Temp	Anlage 18.05.2012 String	46	f
 Körpertemperatur Atemwege	Airway temp	Beatmung_Einstellung_intermPEEP	Interm PEEP	46	f
 Körpertemperatur Atemwege	Airway temp	SM_AV_Intervall	Schrittmacher AV-Intervall	46	f
@@ -9391,18 +9417,18 @@ Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ECMOTempera
 Körpertemperatur Gelenk	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	f
 Körpertemperatur Gelenk	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	f
 Körpertemperatur Gelenk	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	f
+Körpertemperatur Kern	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	t
+Körpertemperatur Kern	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	t
+Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	t
+Körpertemperatur Kern	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	t
+Körpertemperatur Kern	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	t
+Körpertemperatur Kern	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	f
 Körpertemperatur Halswirbelsaeule	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	f
-Körpertemperatur Kern	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	f
-Körpertemperatur Kern	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	f
-Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	f
-Körpertemperatur Kern	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	f
-Körpertemperatur Kern	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	f
-Körpertemperatur Kern	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	f
 Körpertemperatur Leiste	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	f
 Körpertemperatur Leiste	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	f
@@ -9526,14 +9552,11 @@ Puls	\N	ABP	arterielle Blutdruck	29	t
 Substituatvolumen	\N	Schrittmacher_Osypka203H_ES_A_STIM	Stimulation Vorhof	46	t
 Substituatfluss	\N	Nierenverfahren_VO_4008onl_Substituatbolus	\N	46	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_T1_Psupport	Beatmung_ES_T1_Psupport	46	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Messung_InspiratorischePause	\N	46	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Pallas_Isofluran_insp	Inspiratorisch gemessene Isofluran.	46	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_AutoCat_ES_Inflation	\N	46	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_AutoCat_ES_Triggerauswahl	Liste	46	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_zusätzliche	\N	46	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_MS_C3_Pplateau	Plateau- oder endinspiratorischer Druck	46	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Messung_InspiratorischePause	\N	46	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_G5_Flow	Parameter im Modus Highflow - ab 08.06.2017	45	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_VO_5008onl_Dialyse_Zeit	\N	45	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Pallas_Isofluran_insp	Inspiratorisch gemessene Isofluran.	46	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_AutoCat_ES_Inflation	\N	46	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_Einstellung_ProzentMinVol	\N	45	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Hypothermie_ArticSun_ES_Mindestwassertemp	\N	45	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Multi_PlasmaVolKum	\N	45	f
@@ -9541,11 +9564,11 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_PD_VO_Einlaufzeit	\N	45	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_Filter	Filter  für extrakorporale Verfahren	45	f
 Dauer extrakorporaler Gasaustausch	\N	IABP_Datascope_ES_Triggerauswahl	Liste	45	f
-Dauer Hämodialysesitzung	\N	IABP_Datascope_ES_EKGAbleitung	Liste	45	f
-Dauer Hämodialysesitzung	\N	Lungenersatzverfahren_Doku_Schlauchsystem	Schlauchsystembeschichtung relevant	45	f
-Dauer Hämodialysesitzung	\N	NEV_CRRT_VO_Multi_Dialysat	\N	45	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Servoi_Backup_Vt	"Backup Vt [ml] "	45	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Hemolung_ES_Pumpendrehzahl	\N	45	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_AutoCat_ES_Triggerauswahl	Liste	46	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_zusätzliche	\N	46	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_MS_C3_Pplateau	Plateau- oder endinspiratorischer Druck	46	t
+Dauer Hämodialysesitzung	\N	IABP_Datascope_ES_EKGAbleitung	Liste	45	t
+Dauer Hämodialysesitzung	\N	Lungenersatzverfahren_Doku_Schlauchsystem	Schlauchsystembeschichtung relevant	45	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Airvo_O2Flow	Dokumentation des eingestellten O2 Flusses, welcher am Gerät Airvo angeschlossen ist.	45	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita4_VolAssist	Einstellgröße für den VolAssist im PPS Modus	45	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	NEV_HD_ES_4008onl_IsoUFZeit	\N	45	f
@@ -9574,6 +9597,9 @@ Atemzugvolumen-Waehrend-Beatmung	Vt on vent Vent	Beatmung_Anordnung_BV	beatmungs
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onl_Dialyse_Zeit	\N	45	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	akt._Schwangerschaftwoche	aktuelle Schwangerschaftswoche des Babys	45	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_MS_4008HS_TMP	\N	45	t
+Dauer Hämodialysesitzung	\N	NEV_CRRT_VO_Multi_Dialysat	\N	45	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Servoi_Backup_Vt	"Backup Vt [ml] "	45	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Hemolung_ES_Pumpendrehzahl	\N	45	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_Airvo_FlowSetting	Einstellunggröße  des Flows am Gerät	45	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_Pallas_Frischgas_Air	An der Flowröhre eingestellter Frischgas Flow für Air.	45	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Evita4_PEEP	gemessener positiver endexspiratorischer Druck	45	f
@@ -9592,11 +9618,13 @@ Inspiratorischer Gasfluss	Insp gas flow on vent Airway	NEV_CRRT_VO_HFLoesung	\N	
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_C2_F_SIMV	Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.	45	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Doku_AbschlussBeurteilung	\N	45	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_ES_3100A_O2Konzentration	O2 Konzentration des Gasgemisches	45	f
+Körpergroesse	Body height	Beatmung_Messung_Resistance	Resistance	45	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Beatmung_MS_Evita2_CPAP	gemessenes CPAP Niveau	45	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Multi_praeF	\N	45	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	ABP_2	zweiter arterieller Blutdruck	45	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_Pallas_PatGewicht	Eingestelter Patientengewicht am Pallas	45	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_Arbeitgeber	Arbeitgeber des Patienten	45	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_NEV_HD_ES_Genius_UFRate	\N	45	f
-Körpergroesse	Body height	Beatmung_Messung_Resistance	Resistance	45	f
 Körpergrösse Percentil	Body height Prctl	Patient_PLZ	Patientenadresse: PLZ	45	f
 Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_Doku_KuehlWaermerate_neu	\N	45	f
 Körpertemperatur Achsel	Axil temp	P_ADVOS_ES_ADVOS_UltrafiltratRate	\N	45	f
@@ -9623,10 +9651,15 @@ Körpertemperatur Gelenk	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	f
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Schrittmacher_Osypka203H_ES_Highrate_StimRate	Überstimulationsfrequenz Vorhof	45	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Beatmung_MS_Evita2_CPAP	gemessenes CPAP Niveau	45	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Multi_praeF	\N	45	t
+Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	t
 Körpertemperatur Gelenk	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	f
 Körpertemperatur Gelenk	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	f
+Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	t
+Körpertemperatur Kern	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	t
+Körpertemperatur Kern	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	t
+Körpertemperatur Kern	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	f
 Körpertemperatur Halswirbelsaeule	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	f
@@ -9634,13 +9667,6 @@ Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_4008onl_T
 Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	f
-Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	f
-Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	f
-Körpertemperatur Kern	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	f
-Körpertemperatur Kern	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	f
-Körpertemperatur Kern	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_ILAactivve_Flushen	Liste - Doku Durchführung	45	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	f
@@ -9779,30 +9805,34 @@ Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVR	Systemic vascular resi
 Systemischer vaskulärer Widerstandsindex	SV RI	Vigileo_SVR	Systemic vascular resistance	45	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Trigger	Einstellgrösse: Druck bzw. Flowtrigger	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_intermPEEP	\N	45	t
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Evita2_InspFlow	eingestellter Inspirationfluss	45	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Servoi_EDI_Trigger	"EDI Trigger "	45	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_ACAT_ES_Inflation	\N	45	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_CRRT_ES_Multi_FilterO2Flow	Filter - O2Flow zur Ausspülung CO2	45	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_PD_VO_Auslaufmenge	Pertionealdialyse Auslaufmenge in ml	45	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Evita2_InspFlow	eingestellter Inspirationfluss	45	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Servoi_EDI_Trigger	"EDI Trigger "	45	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Evita2_ASB	eingestellte Druckunterstüzung	45	t
 Zentralvenöser Druck	CVP	Patient_Land	Patientenadresse: Land	45	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	NEV_Apherese_MS_Multi_pFDruck	\N	45	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_ACAT_ES_Inflation	\N	45	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_CRRT_ES_Multi_FilterO2Flow	Filter - O2Flow zur Ausspülung CO2	45	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_PD_VO_Auslaufmenge	Pertionealdialyse Auslaufmenge in ml	45	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_SollNa	\N	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_TMPDruck	Transmembrandruck	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_venDruck	venöser Druck	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_BlutflussSNPumpe	\N	51	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_Phoch	\N	44	t
 Atemfrequenz	Resp rate	IABP_CARDIOSAVE_ES_IABP_Frequenz	Dokumentation der IABP Frequenz	47	t
+Blutfluss durch cardiovasculäres Gerät	\N	P_ADVOS_Doku_AbschlussUrteil	\N	44	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_Fluß	\N	44	f
+Dauer Hämodialysesitzung	\N	NEV_PD_Doku_Zykluszeit	\N	44	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_T1_Frequenz_Backup	\N	44	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Evita2_Resistance	gemessener Atemwegswiderstand	44	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Evita4_Resistance	gemessener Atemwegswiderstand	44	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Pallas_PEEP	Dokumentation des gemessenen PEEPs.	44	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_PD_VO_Auslaufzeit	Auslaufzeit	44	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	EinweisenderArzt_Email	\N	44	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Cobe_PlasmaVolKum_ml	"Anpassung analog zu Geräten mit automatischer Datenübernahme Änderung in ml "	44	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Zugang	\N	44	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008HS_IsoUFZiel	\N	44	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Plasma	\N	44	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Umsatz	\N	44	f
-Blutfluss durch cardiovasculäres Gerät	\N	P_ADVOS_Doku_AbschlussUrteil	\N	44	f
-Dauer Hämodialysesitzung	\N	NEV_PD_Doku_Zykluszeit	\N	44	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_T1_Frequenz_Backup	\N	44	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Evita2_Resistance	gemessener Atemwegswiderstand	44	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Evita4_Resistance	gemessener Atemwegswiderstand	44	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Pallas_PEEP	Dokumentation des gemessenen PEEPs.	44	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_PD_VO_Auslaufzeit	Auslaufzeit	44	f
 Arterieller Druck	\N	CardioHelpMaquet_DOKU_HB	\N	44	t
 Atemfrequenz	Resp rate	IABP_DatascopeCS100_ES_IABPFrequenz	\N	47	t
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Anordnung_AMV	Anordnung Atemminutenvolumen (AMV)	44	t
@@ -9828,6 +9858,13 @@ Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_Apherese_VO_Bolu
 Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_Doku_Abschlussbegründung	\N	44	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_HD_VO_4008HS_Start_Na	\N	44	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_PD_VO_Einlaufzeit	\N	44	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Fluß	\N	86	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_UFR	\N	86	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_PF	\N	84	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UFR	\N	82	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_CalciumFluss	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_StartNatrium	\N	45	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	CardioHelpMaquet_DOKU_HFAnsaetzeAspirierenSpuelen	\N	43	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_VisionA_Ti	Einstellwert: Inspirationszeit in Sekunden	44	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Fall_Wertsachen_Kleidungsstuecke	\N	44	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Fall_Wertsachen_Kleidungsstuecke_Ort	\N	44	f
@@ -9867,18 +9904,18 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_T1_Auto
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	NEV_CRRT_ES_Multi_FilterO2Flow	Filter - O2Flow zur Ausspülung CO2	44	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Oxidationswasser	Oxidationswasser in ml (einfuhrrelevant)	44	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	P_EctSta	Ectopic Status Label	44	f
-Hämodialyse Blutfluss	\N	P_NEV_HD_ES_5008onl_Fluss	\N	44	f
-Hämodialyse Blutfluss	\N	P_NEV_HD_MS_5008onl_BlutvolKum	\N	44	f
-Hämodialyse Blutfluss	\N	P_NEV_HD_VO_5008onl_Fluss	\N	44	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_HD_VO_4008HS_Bicarbonat	\N	44	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	PICCO_HI	HerzindexHerzindex	44	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Wertsachen_Name_Angehoeriger	\N	44	t
+Hämodialyse Blutfluss	\N	P_NEV_HD_ES_5008onl_Fluss	\N	44	t
+Hämodialyse Blutfluss	\N	P_NEV_HD_MS_5008onl_BlutvolKum	\N	44	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Nierenverfahren_ES_4008HS_UFRate	Ultrafiltrationsrate	44	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Nierenverfahren_ES_BM25_Abnahme	Ultrafiltrationsrate	44	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Nierenverfahren_MS_Multi_Citratfluss	Citratrate	44	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Nierenverfahren_VO_BM25_AbnahmeMax	Ultrafiltrationsrate	44	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Nierenverfahren_VO_Multi_UltrafiltrationMax	Ultrafiltrationsrate	44	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Schrittmacher_Osypka203H_ES_AV_DLY	AV Überleitungszeit	44	f
+Hämodialyse Blutfluss	\N	P_NEV_HD_VO_5008onl_Fluss	\N	44	t
 Herzfrequenz	Heart rate	Angehoerige1_Name	Nachname des Angehörigen	44	t
 Herzzeitvolumen	LV Output	Nierenverfahren_ES_Multi_SubstituatBolus	Substituatbolus ml	44	t
 Herzzeitvolumen	LV Output	Nierenverfahren_VO_Multi_Substituat	Substituat in ml/h	44	t
@@ -9889,6 +9926,7 @@ Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Sch
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_A_Sense	Empfindlichkeit	44	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_V_STIM	Stimulation Ventrikel	44	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Therapiebetten_Doku_Atom_ES_O2_Konzentration	\N	44	f
+Körpergroesse	Body height	Angehoerige1_Strasse	\N	44	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige1_TelefonArbeit	Berufliche Telefonnummer der Angehörigen des Patienten	44	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige2_TelefonArbeit	\N	44	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige3_TelefonArbeit	\N	44	f
@@ -9898,10 +9936,6 @@ Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	COPRA_Patient_
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	IABP_Abiomed_Impella_Leistungsstufe	Liste	44	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_SEF1	EEG - Spectral Edge Frequency Channel 1	44	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_SEF2	EEG - Spectral Edge Frequency Channel 2	44	f
-Körpergroesse	Body height	Angehoerige1_Strasse	\N	44	f
-Körpergroesse	Body height	Angehoerige2_Strasse	\N	44	f
-Körpergroesse	Body height	Angehoerige3_Strasse	\N	44	f
-Körpergroesse	Body height	Beatmung_Messung_Pmean	Mean Airway Pressure	44	f
 Körpergrösse Percentil	Body height Prctl	Angehoerige1_TelefonMobil	Handy Nummer der Angehörigen des Patienten	44	f
 Körpergrösse Percentil	Body height Prctl	Angehoerige2_TelefonMobil	\N	44	f
 Körpergrösse Percentil	Body height Prctl	Angehoerige3_TelefonMobil	\N	44	f
@@ -9923,24 +9957,22 @@ Körpertemperatur Gelenk	Body temperature	Betreuer_Telefon	Telefonummer des Pati
 Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
 Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	f
 Körpertemperatur Gelenk	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	f
+Körpergroesse	Body height	Angehoerige2_Strasse	\N	44	t
+Körpergroesse	Body height	Angehoerige3_Strasse	\N	44	t
+Körpergroesse	Body height	Beatmung_Messung_Pmean	Mean Airway Pressure	44	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_ISOUFZiel	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Beatmung_ES_T1_Zeit_zw2_SBT	Zeit zwischen 2 SBT	44	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_Datascope_ES_IABPLeersaugen	\N	44	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	PPV	Pulsdruckabweichung	44	t
 Kopfumfang	Head Circumf OFC	NEV_PD_VO_Einlaufhoehe	Einlaufhöhe in cm	44	t
 Körpertemperatur Generisch	Body temperature	Angehoerige1_TelefonArbeit	Berufliche Telefonnummer der Angehörigen des Patienten	44	t
 Körpertemperatur Generisch	Body temperature	EinweisenderArzt_Fax	\N	44	t
 Intrakranieller Druck ICP	ICP	Nierenverfahren_ES_4008HS_UFZiel	Ultrafiltrationsziel	44	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Beatmung_ES_T1_Zeit_zw2_SBT	Zeit zwischen 2 SBT	44	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_Datascope_ES_IABPLeersaugen	\N	44	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	PPV	Pulsdruckabweichung	44	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Score_DGAI_AufnArzt	\N	44	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	f
-Körpertemperatur Kern	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	f
-Körpertemperatur Kern	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	f
-Körpertemperatur Kern	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
-Körpertemperatur Kern	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	f
-Körpertemperatur Kern	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	f
 Körpertemperatur Leiste	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	f
 Körpertemperatur Leiste	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	f
 Körpertemperatur Leiste	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
@@ -9966,10 +9998,13 @@ Körpertemperatur Stirn	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	
 Körpertemperatur Stirn	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	f
 Körpertemperatur Stirn	Body temperature	Patient_Ort	Patientenadresse: Ort	44	f
 Körpertemperatur Stirn	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	f
+Körpertemperatur Kern	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	t
+Körpertemperatur Kern	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	t
 Körpertemperatur vaginal	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	t
 Körpertemperatur vaginal	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	t
 Linksventrikulaeres Schlagvolumenindex	LV SVI	NEV_Apherese_VO_Bolus_Antikoag	\N	44	f
 Körpertemperatur vaginal	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	t
+Körpertemperatur Kern	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	t
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	IABP_ACAT_MS_SystoleDiastole	\N	44	f
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_ES_Multi_SubstituatBolus	\N	44	f
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_VO_Calciumloesung	Calciumbeutel	44	f
@@ -9983,6 +10018,8 @@ Linksventrikulärer Herzindex	LV Cardiac index	CardioHelpMaquet_DOKU_Flushen	\N	
 Linksventrikulärer Herzindex	LV Cardiac index	CardioHelpMaquet_DOKU_HCT	\N	44	t
 Puls	\N	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	44	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Nierenverfahren_MS_Multi_Bilanz	Kumulativwert	44	t
+Körpertemperatur Kern	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILACuppling	\N	60	t
 Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenersatzverfahren_VO_Dialysatloesung	\N	44	f
 Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_VO_Multi_SubstituatBolus	Substituatbolus in ml	44	f
 Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	P_INVOS_Doku_rSO2_links	cerebrale Sauerstoffsättigung links	44	f
@@ -10054,6 +10091,7 @@ Venöser Druck	\N	VigilanceC_RCWI	\N	44	t
 Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_ES_G5_Phoch	Einstellwert oberes Druckniveau im beim G 5 im Modus DuoPAP	44	f
 Pulmonalarterieller wedge Blutdruck	PAW pressure	P_SEF1	EEG - Spectral Edge Frequency Channel 1	44	f
 Pulmonalarterieller wedge Blutdruck	PAW pressure	P_SEF2	EEG - Spectral Edge Frequency Channel 2	44	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_Zugang	Gefäßzugang	56	t
 Atemfrequenz	Resp rate	P_Beatmung_ES_C3_Freq	\N	47	t
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_Einstellung_FlowAssist	\N	44	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Pallas_Frischgas_O2	An der Flowröhre eingestellter O2 Frischgasflow.	44	f
@@ -10093,13 +10131,13 @@ Blutdruck Generisch	Blood pressure panel with all children optional	P_NEV_HD_MS_
 Systemischer vaskulärer Widerstandsindex	SV RI	ITBV	Intrathorakales Blutvolumen	44	f
 Systemischer vaskulärer Widerstandsindex	SV RI	NIRS	Über eine Messsonde transcutan gemessener Prozentwert	44	f
 Systemischer vaskulärer Widerstandsindex	SV RI	P_Waermesysteme_FisherPaykel_VO_Prozent	\N	44	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Optiflow_O2Konzentration	\N	44	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Evita4_Pplat	gemessener Plataeudruck wähend der Inspiration	44	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Ereignisse Vitlaparameter Graphisch	Ereignisse Vitlaparameter Graphisch als Listenauswahl	44	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_ACAT_ES_Inflation	\N	44	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_ES_ILAactivve_Systole	%Systole Verhältnis Systolendauer zur Diastolendauer	44	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_RTX_TriggerSource	\N	44	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	PerspiratioSensibilis	Perspiratio Sensibilis in ml (ausfuhrrelevant in der Bilanz)	44	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Optiflow_O2Konzentration	\N	44	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Evita4_Pplat	gemessener Plataeudruck wähend der Inspiration	44	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Ereignisse Vitlaparameter Graphisch	Ereignisse Vitlaparameter Graphisch als Listenauswahl	44	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_ACAT_ES_Inflation	\N	44	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_ES_ILAactivve_Systole	%Systole Verhältnis Systolendauer zur Diastolendauer	44	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_RTX_TriggerSource	\N	44	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	PerspiratioSensibilis	Perspiratio Sensibilis in ml (ausfuhrrelevant in der Bilanz)	44	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_MS_G5_RCinsp	Inspiratorische Zeitkonstante, ein Monitoring Parameter	43	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_HFLoesung	\N	43	f
 Substituatvolumen	\N	Patient_Telefon	Telefonnummer des Patienten	44	t
@@ -10127,6 +10165,13 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_Evita2_AMV	gemessenes Ate
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_Evita2_frequenz	gemessene Atemfrequenz	43	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_Evita4_frequenz	gemessene Gesamtatemfrequenz	43	t
 Atemzugvolumen-Einstellung	VT setting Vent	Fontanelle_Beurteilung	\N	43	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_BasisNatrium	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_CitratFluss	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Dialysatfluß	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_DialyseZeit	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_FilterDruck	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_FlussratePBP	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_iCaPostFilter	\N	71	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_G5_ZeitStartSBT	Zeit bis zum Start STB	43	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_Evita2_Frequenzimv	einstellte IMV Frequenz im SIMV Modus	43	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_G5_InspFlow	Inspiratorischer Peakflow, ein Monitoring-Parameter	43	f
@@ -10144,8 +10189,8 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersat
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_ES_Multi_Blutfluss	Blutpumpengeschwindigkeit ml/min	43	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss	43	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Schrittmacher_Osypka203H_ES_A_STIM	Stimulation Vorhof	43	f
-Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_DOKU_Flushen	\N	43	f
-Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_Doku_AbschlussUrteil	\N	43	f
+Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_DOKU_Flushen	\N	43	t
+Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_Doku_AbschlussUrteil	\N	43	t
 Dauer extrakorporaler Gasaustausch	\N	IABP_CARDIOSAVE_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP	43	f
 Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008HS_Dialysezeit	\N	43	f
 Atemfrequenz	Resp rate	RAP1	rechtsartrialer Druck	46	t
@@ -10167,11 +10212,9 @@ Blutdruck Generisch	Blood pressure panel with all children optional	Fall_Wertsac
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	43	t
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_IABPAufblasen	Dokumentation des prozentualen Anteil des Aufblasens des Ballons.	43	t
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP.	43	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_BasisNatrium	\N	70	t
 Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_SVI	SchlagvolumenindexSchlagvolumenindex	67	f
 Dauer Hämodialysesitzung	\N	NEV_HD_VO_4008HS_Dialysezeit	\N	43	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_AbnahmeKumulat	\N	43	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Patient_BlutKreuzprobe_Arzt	\N	43	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	P_NEV_HD_ES_5008onl_NaProfil	Auswahl von nummerisch einzugebenden Profilen	43	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	HZV_VigilanceCGeraet	\N	43	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	IABP_AutoCat_ES_Arrhythmietiming	Liste	43	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Avea_Frequenz	eingestellte mandatorische AF	43	f
@@ -10208,10 +10251,11 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypk
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypka203H_ES_A_Sense	Empfindlichkeit	43	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypka203H_ES_V-Sense	\N	43	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypka203H_ES_V_Sense	Empfindlichkeit Ventrikel	43	f
-Hämodialyse Blutfluss	\N	NEV_HD_ES_4008HS_Fluss	\N	43	f
-Hämodialyse Blutfluss	\N	NEV_HD_VO_4008HS_Fluss	\N	43	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_HD_VO_4008onl_Dialysezeit	\N	43	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	VigilanceC_LCWI	\N	43	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_AbnahmeKumulat	\N	43	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Patient_BlutKreuzprobe_Arzt	\N	43	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	P_NEV_HD_ES_5008onl_NaProfil	Auswahl von nummerisch einzugebenden Profilen	43	t
 Atemfrequenz	Resp rate	LAP	Linksatrial  Mitteldruck	33	t
 Herzfrequenz	Heart rate	Betreuer2_Ort	\N	43	t
 Herzfrequenz	Heart rate	Betreuer_Anschrift	Anschrift des Patientenbetreuers	43	t
@@ -10219,7 +10263,9 @@ Herzfrequenz	Heart rate	Nierenverfahren_ES_4008HS_UFRate	Ultrafiltrationsrate	43
 Herzzeitvolumen	LV Output	Beatmung_Doku_Heimbeatmung_Name	Freitext	43	t
 Herzzeitvolumen	LV Output	Lungenersatzverfahren_VO_Zugang	Gefäßdefinition	43	t
 Herzzeitvolumen	LV Output	Vormedikation	\N	43	t
+Hämodialyse Blutfluss	\N	NEV_HD_ES_4008HS_Fluss	\N	43	t
 Ideales Körpergewicht	Ideal bdy weight	Allergie	\N	43	t
+Hämodialyse Blutfluss	\N	NEV_HD_VO_4008HS_Fluss	\N	43	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_Beatmung_ES_3100A_Inspirationszeit	Prozentualer Anteil der Insp.Zeit bezogen auf den gesamten Atemzyklus	43	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Schrittmacher_Osypka203H_ES_ARP	atriale Refraktärzeit	43	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Pallas_Frequenz	Dokumentation der eingestellten Frequenz.	43	f
@@ -10264,7 +10310,7 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenersatzverfahren_VO_Te
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	f
 Kopfumfang	Head Circumf OFC	Lagerung_ImOP	\N	43	t
 Körpergewicht	Weight	Beatmung_Doku_Heimbeatmung_Name	Freitext	43	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_Doku_Fuellen_Mit	\N	43	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Dialysekonzentrat	\N	69	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	f
@@ -10285,6 +10331,14 @@ Körpertemperatur Gelenk	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperat
 Körpertemperatur Gelenk	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	f
 Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	f
 Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	f
+Körpertemperatur Kern	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	t
+Körpertemperatur Kern	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	t
+Körpertemperatur Kern	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	t
+Körpertemperatur Kern	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	t
+Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	t
+Körpertemperatur Kern	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	t
+Körpertemperatur Kern	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	f
@@ -10300,21 +10354,7 @@ Körpertemperatur Halswirbelsaeule	Body temperature	P_Waermesysteme_BarkeyWaerme
 Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	f
 Körpertemperatur Harnblase	Bdy temp Bladder	Untersuchung_Abdomen_Leber	\N	43	f
-Körpertemperatur Kern	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	f
-Körpertemperatur Kern	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	f
-Körpertemperatur Kern	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	f
-Körpertemperatur Kern	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	f
-Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	f
-Körpertemperatur Kern	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	f
-Körpertemperatur Kern	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	f
 Körpertemperatur Leiste	Body temperature	T_K	Körpertemperatur	65	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	f
-Körpertemperatur Kern	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	f
-Körpertemperatur Kern	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	f
-Körpertemperatur Kern	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	f
-Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	f
-Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	f
 Körpertemperatur Leiste	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	f
 Körpertemperatur Leiste	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	f
 Körpertemperatur Leiste	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	f
@@ -10602,12 +10642,14 @@ Systemischer vaskulärer Widerstandsindex	SV RI	NEV_HD_MS_4008_HS_onl_Ultrafiltr
 Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_ZVD	Zentraler Venendruck	43	f
 Systemischer vaskulärer Widerstandsindex	SV RI	P_Waermesysteme_FisherPaykel_Doku_Prozent	\N	43	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_RSB	"Index für schnelle Flachatmung („Rapid Shallow Breathing Index“) "	43	t
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Evita2_VerhaeltnisTiTe	eingestelltes Verhältnis zwischen Inspiration und Exspiration	43	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Servoi_Backup_Ti	"Backup Ti [s] "	43	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	LAP	Linksatrial  Mitteldruck	43	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_Apherese_MS_Multi_Behandlungs_Zeit	\N	43	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Patient_Telefon	Telefonnummer des Patienten	43	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Therapiebetten_Doku_Giraffe_MS_O2	Messung der O2-Konzentration im Inkubator	43	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Evita2_VerhaeltnisTiTe	eingestelltes Verhältnis zwischen Inspiration und Exspiration	43	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Servoi_Backup_Ti	"Backup Ti [s] "	43	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	LAP	Linksatrial  Mitteldruck	43	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_Apherese_MS_Multi_Behandlungs_Zeit	\N	43	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Patient_Telefon	Telefonnummer des Patienten	43	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Therapiebetten_Doku_Giraffe_MS_O2	Messung der O2-Konzentration im Inkubator	43	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOPumpendrehzahl	\N	59	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_Flussreg	Liste ein aus	59	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_Doku_ILA_Blutfluss	\N	42	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_BlutflussMin	\N	42	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Dokumentation_BlutflussEinst	\N	42	f
@@ -10627,6 +10669,11 @@ Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss	42	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	P_Impella_Impella_Doku_Ort	Liste Gefäßauswahl	42	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_FrequenzHFOV	HFOV Frequenz	42	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_KontrSchlsys	"Liste "	59	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_ES_ILAactivve_Systole	%Systole Verhältnis Systolendauer zur Diastolendauer	59	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_Bicarbonat	\N	59	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_ADM_Bilanz	\N	59	t
+Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_MS_DeltaP	\N	42	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_3100B_Inspirationszeit	Einstellwert: prozentualer Anteil der Inspirationszeit bezogen auf den gesamtem Atemzyklus	42	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	LVP	Linksventrikulärer Mitteldruck	42	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_Doku_Fuellen_Mit	\N	42	f
@@ -10640,7 +10687,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersat
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_ZielKalium	\N	42	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SubVolKum	\N	42	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_IsoUFZiel	\N	42	f
-Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_MS_DeltaP	\N	42	f
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_BiPAPV_IPAP	" eingestellter IPAP Wert"	42	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_G5_HLI	Liste ein aus	42	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Messung_IMVFrequenz	\N	42	t
@@ -10665,18 +10711,11 @@ Blutdruck Generisch	Blood pressure panel with all children optional	IABP_CARDIOS
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.	42	t
 Blutdruck Generisch	Blood pressure panel with all children optional	IstSoziale_Besonderheit	Soziale_Besonderheiten, z.B. Familiensituation	42	t
 Blutdruck Generisch	Blood pressure panel with all children optional	P_Spontanatemtest	Dokumentation ob der Spontanatemtest bestanden wurde.	42	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_P3	\N	58	t
 Dauer extrakorporaler Gasaustausch	\N	IABP_DatascopeCS100_ES_Triggerauswahl	\N	42	f
 Dauer extrakorporaler Gasaustausch	\N	IABP_Datascope_MS_SystoleDiastole	\N	42	f
-Dauer Hämodialysesitzung	\N	Beatmung_ES_VisionA_Oszillationsfrequenz	Oszillationsfrequenz Gerät: Alpha Vision Modus: HFO	42	f
 Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008onl_Dialyse_Zeit	\N	42	f
 Dauer Hämodialysesitzung	\N	NEV_HD_VO_4008onl_Dialysezeit	\N	42	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Avea_FlowTrigger	eingestellter Flowtrigger: Schwellenwertt für die inspiratorische Bemühung des Patienten um die Druckunterstützung auszulösen	42	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_G5_ProzentMinVol	Messung nur unter ASV Intellivent	42	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Pallas_Desfluran_exsp	Exspiratorisch gemessene Desfluran Konzentration.	42	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Pallas_Pplat	Dokumentation des gemessenen Plateaudruckes.	42	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_VisionA_AMVtotal	Messwert: gemessenes Atemminutenvolumen	42	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_Dialysatvolumen	\N	42	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	P_Beatmung_ES_3100A_Frequenz	Eingestellte Oszillationsfrequenz	42	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	CardioHelpMaquet_ES_FiO2	\N	42	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	CardioHelpMaquet_VO_FiO2	\N	42	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_HD_Doku_Bolusgabe	\N	42	t
@@ -10711,13 +10750,17 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypk
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	SM_Empfindlichkeit	Schrittmacher Empfindlichkeit	42	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	SM_Modus	Schrittmachermodus	42	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	Verlegung_wo	"Der Patient wurde 'wohin?' verlegt? "	42	f
-Hämodialyse Blutfluss	\N	P_ADVOS_ES_ADVOS_CalciumFluss	\N	42	f
-Hämodialyse Blutfluss	\N	P_ADVOS_VO_ADVOS_CalciumFluss	\N	42	f
 Herzfrequenz	Heart rate	Beatmung_MS_T1_fTotal	Gesamtfrequenz	42	t
 Herzfrequenz	Heart rate	Lungenersatzverfahren_Kathetertyp	Katheterart	42	t
 Herzfrequenz	Heart rate	NEV_HD_ES_4008HS_UFRate	\N	42	t
 Herzfrequenz	Heart rate	Wertsachen_POE	\N	42	t
+Dauer Hämodialysesitzung	\N	Beatmung_ES_VisionA_Oszillationsfrequenz	Oszillationsfrequenz Gerät: Alpha Vision Modus: HFO	42	t
 Ideales Körpergewicht	Ideal bdy weight	P_Impella_Impella_ES_Leistungsstufe	\N	42	t
+Hämodialyse Blutfluss	\N	P_ADVOS_ES_ADVOS_CalciumFluss	\N	42	t
+Hämodialyse Blutfluss	\N	P_ADVOS_VO_ADVOS_CalciumFluss	\N	42	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Avea_FlowTrigger	eingestellter Flowtrigger: Schwellenwertt für die inspiratorische Bemühung des Patienten um die Druckunterstützung auszulösen	42	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_G5_ProzentMinVol	Messung nur unter ASV Intellivent	42	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Pallas_Desfluran_exsp	Exspiratorisch gemessene Desfluran Konzentration.	42	t
 Parameter von Beatmung	\N	Angehoerige1_Ort	\N	42	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Hemolung_VO_Gasfluss	\N	42	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Klinik	Auswahl der Kliniken	42	f
@@ -10731,6 +10774,9 @@ Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Bea
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_BiPAPV_O2Konzentration	Messwert: gemessene O2 Konzentration des Gasgemisches	42	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Dokumentation_Filtratdruck	\N	42	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Therapiebetten_VO_Atom_ES_Luftfeuchtigkeit	\N	42	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_CARDIOSAVE_ES_IABPAufblasen	Dokumentation des prozentualen Anteils des Aufblasens des Ballons	42	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_CalciumVolKum	\N	42	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_UFR_BFRVerhaeltnis	\N	42	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_Avea_PSV	eingestellte Druckunterstützung bei dem Gerät Avea	42	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_MS_NO	Messwert der  NO Konzentration bei NO Beatmung	42	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Bezugsperson_Pflegekraft	\N	42	f
@@ -10770,13 +10816,19 @@ Körpertemperatur Gelenk	Body temperature	Nierenersatzverfahren_Mess_Temperatur	
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	f
 Inspiratorische Sauerstofffraktion gemessen	FIO2	NEV_CRRT_MS_Multi_SubBolusVolKum_ml	Anpassung für die automatische Datenübernahme IBUS	42	t
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	f
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_CARDIOSAVE_ES_IABPAufblasen	Dokumentation des prozentualen Anteils des Aufblasens des Ballons	42	t
 Kopfumfang	Head Circumf OFC	Nierenverfahren_MS_ADM_verabreichtesPlasma	kumulativ	42	t
 Kopfumfang	Head Circumf OFC	Nierenverfahren_MS_BM25_verabreichtesPlasma	Kumulativ	42	t
 Intrakranieller Druck ICP	ICP	IABP_Abiomed_Impella_PurgeFR	\N	42	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_CalciumVolKum	\N	42	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_UFR_BFRVerhaeltnis	\N	42	t
+Körpertemperatur Kern	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	t
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	f
+Körpertemperatur Kern	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	t
+Körpertemperatur Kern	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	t
+Körpertemperatur Kern	Body temperature	IABP_Unterstützung	\N	42	t
+Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	t
+Körpertemperatur Kern	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	t
+Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	f
 Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	f
@@ -10787,15 +10839,6 @@ Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_4008HS_Te
 Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	f
 Körpertemperatur Harnblase	Bdy temp Bladder	Untersuchung_Abdomen_Gallenblase	\N	42	f
-Körpertemperatur Kern	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	f
-Körpertemperatur Kern	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	f
-Körpertemperatur Kern	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	f
-Körpertemperatur Kern	Body temperature	IABP_Unterstützung	\N	42	f
-Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	f
-Körpertemperatur Kern	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	f
-Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	f
 Körpertemperatur Leiste	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	f
 Körpertemperatur Leiste	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	f
 Körpertemperatur Leiste	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	f
@@ -10879,7 +10922,6 @@ Linksventrikulärer Druck	Blood pressure panel with all children optional	IABP_D
 Linksventrikulärer Druck	Blood pressure panel with all children optional	IstSoziale_Besonderheit	Soziale_Besonderheiten, z.B. Familiensituation	42	t
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	t
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	t
-Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008HS_IsoUFZeit	\N	41	f
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_MS_C3_Cstat	Statische Compliance	42	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Erstversorgung_Text	\N	42	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_DruckNiedrig	eingestelltes unteres Druckniveau im Modus APRV / BiPhasisch	42	f
@@ -10916,8 +10958,9 @@ Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008HS_SollNatrium
 Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008HS_StartNatrium	\N	42	f
 Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Atom_ES_O2_Konzentration	\N	42	f
 Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_BariAir_liDrehwinkel	\N	42	f
+Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008HS_IsoUFZeit	\N	41	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_G5_PeepCPAP	Messwert: Beatmungsdruck Peep / CPAP	42	t
-Hämodialyse Blutfluss	\N	IABP_Aufblasen	\N	41	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_BM25_Abnahme	Ultrafiltrationsrate	55	t
 Parameter von Beatmung	\N	NEV_PD_VO_Einlaufhoehe	Einlaufhöhe in cm	41	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_Frequenz	"Einstellwert: eingestellte Oszillationsfrequenz "	42	t
 Pulmonalarterieller wedge Blutdruck	PAW pressure	Nierenverfahren_MS_Bilanz	Variable wird verwendet für Multifiltrate und ADM 08	42	f
@@ -10948,14 +10991,16 @@ Pulmonalvaskulärer Widerstandsindex	PV RI	VigilanceC_PVR	Pulmonaler vasculärer
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.	42	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IstSoziale_Besonderheit	Soziale_Besonderheiten, z.B. Familiensituation	42	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_ZeitStartSBT	Zeit bis zum Start STB	42	t
+Hämodialyse Blutfluss	\N	IABP_Aufblasen	\N	41	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_TMP	\N	53	t
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Beatmung_MS_G5_Pplateau	Plateau-Atemwegsdruck, ein Monitoring-Parameter	42	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_CRRT_Doku_SpülloesungAntikoag	\N	42	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_AutoCat_ES_Deflation	\N	42	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_INVOS_Doku_rSO2_links	cerebrale Sauerstoffsättigung links	42	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Eins_ES_Ausgang	Medtronic 5348	42	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Eins_ES_RAPFrequenz	Medtronic 5348	42	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Osypka203H_ES_A_STIM	Stimulation Vorhof	42	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	SM_Empfindlichkeit	Schrittmacher Empfindlichkeit	42	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_AutoCat_ES_Deflation	\N	42	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_INVOS_Doku_rSO2_links	cerebrale Sauerstoffsättigung links	42	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Eins_ES_Ausgang	Medtronic 5348	42	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Eins_ES_RAPFrequenz	Medtronic 5348	42	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Osypka203H_ES_A_STIM	Stimulation Vorhof	42	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	SM_Empfindlichkeit	Schrittmacher Empfindlichkeit	42	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Ereignisse Vitlaparameter Graphisch	Ereignisse Vitlaparameter Graphisch als Listenauswahl	41	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_Doku_ILAAnalogIn	\N	41	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_Flushmanoever	\N	41	f
@@ -10995,15 +11040,15 @@ Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_drei_E
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Osypka101H_ES_HighRateSTIM	Listenauswahl	41	t
 Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVR	Systemic vascular resistance	57	f
 Parameter von Beatmung	\N	P_ADVOS_VO_Filter	\N	41	f
-Blutfluss durch cardiovasculäres Gerät	\N	IABP_DatascopeCS300_ES_Doku_Ballonkatheter	Dokumentation des verwendeten Ballonkatheters.	41	f
-Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008HS_Bicarbonat	\N	41	f
-Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008onl_Bicarbonat	\N	41	f
-Blutfluss durch cardiovasculäres Gerät	\N	P_ADVOS_Doku_AbschlussBegruendung	\N	41	f
-Dauer Hämodialysesitzung	\N	IABP_DatascopeCS100_ES_EKGAbleitung	\N	41	f
-Dauer Hämodialysesitzung	\N	NEV_HD_VO_Zugang	\N	41	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_C2_PEEP_CPAP_Ptief	Eingestellter PEEP, CPAP oder Ptief am C2.	41	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_G5_Frequenz_Backup	Frequenzeinstellung inder Backupeinstellung.	41	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Heimbeatmung_Ti_Backup	\N	41	f
+Blutfluss durch cardiovasculäres Gerät	\N	IABP_DatascopeCS300_ES_Doku_Ballonkatheter	Dokumentation des verwendeten Ballonkatheters.	41	t
+Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008HS_Bicarbonat	\N	41	t
+Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008onl_Bicarbonat	\N	41	t
+Blutfluss durch cardiovasculäres Gerät	\N	P_ADVOS_Doku_AbschlussBegruendung	\N	41	t
+Dauer Hämodialysesitzung	\N	IABP_DatascopeCS100_ES_EKGAbleitung	\N	41	t
+Dauer Hämodialysesitzung	\N	NEV_HD_VO_Zugang	\N	41	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_C2_PEEP_CPAP_Ptief	Eingestellter PEEP, CPAP oder Ptief am C2.	41	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_G5_Frequenz_Backup	Frequenzeinstellung inder Backupeinstellung.	41	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Heimbeatmung_Ti_Backup	\N	41	t
 Blutdruck	Blood pressure panel with all children optional	Beatmung_Messung_AutoTubuskompentationAus	\N	41	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008onl_Leitfähigkeit	\N	41	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_Blutfluss	\N	41	t
@@ -11029,23 +11074,18 @@ Blutdruck Generisch	Blood pressure panel with all children optional	NEV_HD_MS_40
 Blutdruck Generisch	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_SubVolKum_ml	Anpassung für IBUS Anbindung	41	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Nierenverfahren_MS_Bilanz	Variable wird verwendet für Multifiltrate und ADM 08	41	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Schwangerschaftswoche	Schwangerschaftswoche, in welcher das Baby geboren wurde	41	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_venDruck	\N	47	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Patient_Strasse	Adresse des Patienten: Strasse + Hausnummer	47	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Fall_Wertsachen_Pflegeuntensilien_Ort	\N	46	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	t
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_MS_Multi_artDruck	arterieller Druck	41	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Servoi_Backup_DK_ueber_PEEP	"Backup DK über PEEP [cmH2O] "	41	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Avea_PIP	gemessener Atemwegsspitzendruck	41	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Fall_Schwangerschaftstest_durchgefuehrt	Listenanhang mit positiv und negativ Auswahl	41	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Hypothermie_ArticSun_ES_Wasserziel	manueller Modus	41	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_ACAT_ES_EKGAbleitung	Listenanhang	41	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS100_ES_IABPFrequenz	\N	41	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Dokumentation_HFLoesung	\N	41	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Dokumentation_Verfahren	\N	41	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_Dialysekonzentrat	\N	41	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	P_Beatmung_ES_C3_Tubusgroesse	\N	41	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	HZV_VigileoGeraet	\N	41	t
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita2_Compliance	gemessene Lungencompliance	41	f
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita4_Compliance	gemessene Lungencompliance	41	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_CRRT_ES_Multi_FilterO2Flow	Filter - O2Flow zur Ausspülung CO2	41	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	P_NBP_reBein	Nichtinvasiver Blutdruck rechtes Bein	41	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	p-SVI	Schlagvolumenindex  (PICCO Modul Dräger Monitoring)	41	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Servoi_Backup_DK_ueber_PEEP	"Backup DK über PEEP [cmH2O] "	41	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_Messung_AFKontrol	\N	41	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Angehoerige1_Land	\N	41	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Angehoerige2_Land	\N	41	f
@@ -11081,6 +11121,10 @@ Dynamische Kompliance	Compliance.dynamic Lung	NEV_PD_VO_Zugang	\N	41	t
 Herzfrequenz	Heart rate	Aufnahme_Herkunftsland_Mutter	Herkunftsland der Mutter	41	t
 Herzfrequenz	Heart rate	GewichtGroeße_Platzhalter	\N	41	t
 Herzfrequenz	Heart rate	HeartWare_Blutfluss_Doku	\N	41	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Avea_PIP	gemessener Atemwegsspitzendruck	41	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Fall_Schwangerschaftstest_durchgefuehrt	Listenanhang mit positiv und negativ Auswahl	41	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Hypothermie_ArticSun_ES_Wasserziel	manueller Modus	41	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_ACAT_ES_EKGAbleitung	Listenanhang	41	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Lungenersatzverfahren_Anordnung_ILAQ1Flow	\N	41	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Lungenersatzverfahren_Anordnung_ILAQ2Flow	\N	41	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Lungenersatzverfahren_Doku_ILAQ1Flow	\N	41	f
@@ -11094,6 +11138,7 @@ Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Dokumentation_Blutfluss	\N	41	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_AV_DLY	AV Überleitungszeit	41	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Vigileo_COCI	Cardiac output / -index	41	t
+Körpertemperatur Kern	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	akt._Schwangerschaftwoche	aktuelle Schwangerschaftswoche des Babys	41	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige1_TelefonMobil	Handy Nummer der Angehörigen des Patienten	41	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige2_TelefonMobil	\N	41	f
@@ -11117,15 +11162,13 @@ Körpertemperatur Gelenk	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plat
 Körpertemperatur Gelenk	Body temperature	Betreuer_Land	\N	41	f
 Körpertemperatur Gelenk	Body temperature	IABP_Unterstützungsdruck	\N	41	f
 Körpertemperatur Gelenk	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_DatascopeCS100_ES_IABPLeersaugen	\N	41	t
 Ideales Körpergewicht	Ideal bdy weight	Beatmung_Messung_Amplitude	Amplitude bei HFOV	41	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_DialysatMultifiltrate	appliziertes Dialysat für Multifiltrate	43	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Land	\N	41	f
 Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Unterstützungsdruck	\N	41	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	f
-Körpertemperatur Kern	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	f
-Körpertemperatur Kern	Body temperature	Betreuer_Land	\N	41	f
-Körpertemperatur Kern	Body temperature	IABP_Unterstützungsdruck	\N	41	f
-Körpertemperatur Kern	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	f
 Körpertemperatur Leiste	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	f
 Körpertemperatur Leiste	Body temperature	Betreuer_Land	\N	41	f
 Körpertemperatur Leiste	Body temperature	IABP_Unterstützungsdruck	\N	41	f
@@ -11135,8 +11178,9 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_MS_Avea_Pplat	gem
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer_Land	\N	41	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	IABP_Unterstützungsdruck	\N	41	f
 Körpertemperatur Generisch	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_DatascopeCS100_ES_IABPLeersaugen	\N	41	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	41	t
+Körpertemperatur Kern	Body temperature	Betreuer_Land	\N	41	t
+Körpertemperatur Kern	Body temperature	IABP_Unterstützungsdruck	\N	41	t
+Körpertemperatur Kern	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	f
 Körpertemperatur nasal	Nasal temp	Hypothemie_Coolgard_Doku_Behandlungsmodi	Listenauswahl	41	f
 Körpertemperatur nasal	Nasal temp	Hypothermie_Doku_Kuehlverfahren	Listenauswahl	41	f
@@ -11161,6 +11205,8 @@ Körpertemperatur unter der Zunge	Oral temp	NEV_CRRT_VO_Filter	\N	41	f
 Körpertemperatur vaginal	Body temperature	Betreuer_Land	\N	41	t
 Körpertemperatur vaginal	Body temperature	IABP_Unterstützungsdruck	\N	41	t
 Körpertemperatur vaginal	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_SpuellösungAntikoagulanz	Spülung zur Vorbereitung	43	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	41	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_Messung_AutoTubuskompentationAus	\N	41	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_MS_Pallas_MAC_exsp	Gemessener MAC Wert. (endexspiratorische mittlere alveoläre Konzentration)	41	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Messung_AutoTubuskompentationAus	\N	41	t
@@ -11219,6 +11265,7 @@ Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Doku_Dia
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Austauschrate	\N	41	f
 Linksventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_SubVolKum_ml	Anpassung für IBUS Anbindung	41	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Nierenverfahren_MS_Bilanz	Variable wird verwendet für Multifiltrate und ADM 08	41	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Score_DGAI_AufnArzt	\N	44	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_CalciumFluss	\N	41	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FlussratePBP	\N	41	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_GBV	\N	41	f
@@ -11293,12 +11340,9 @@ Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	P_NEV_HD_ES_500
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	SonstVerfahren_VO_Hypothermiegerä_Kuehlrate	Hypothermiebehandlung	41	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	SonstVerfahren_VO_Hypothermiegerät_Kuehlverfahren	Liste	41	f
 Systemischer vaskulärer Widerstandsindex	SV RI	NEV_Apherese_MS_Multi_Behandlungs_Zeit_min	Anpassung für automatische Gerätedataenübernahme mit IBUS	41	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Angehoerige1_Verwandschaftsgrad	\N	41	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	EinweisenderArzt_Fax	\N	41	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_ACAT_ES_Deflation	\N	41	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_HD_MS_4008onl_BlutvolKum_ml	Anpassung für IBUS	41	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenverfahren_ES_4008HS_UFZiel	Ultrafiltrationsziel	41	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NIRSlinks_MS	Über eine Messsonde transcutan gemessener Prozentwert	41	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Angehoerige1_Verwandschaftsgrad	\N	41	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	EinweisenderArzt_Fax	\N	41	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_ACAT_ES_Deflation	\N	41	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_Pallas_Frequenz_Min	Eingestellte Mindestfrequenz (Apnoeventilation) in dme Modus Pressure Support.	40	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_ES_4008onl_UFProfil	\N	40	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008HS_BlutvolKum_ml	Anpassung aufgrund IBUS Anbindung	40	f
@@ -11306,6 +11350,9 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersat
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_ES_5008onl_SollNa	\N	40	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SollNa	\N	40	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_BlutflussSNPumpe	\N	40	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_HD_MS_4008onl_BlutvolKum_ml	Anpassung für IBUS	41	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenverfahren_ES_4008HS_UFZiel	Ultrafiltrationsziel	41	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NIRSlinks_MS	Über eine Messsonde transcutan gemessener Prozentwert	41	t
 Atemfrequenz	Resp rate	SM_Frequenz	Schrittmacher Frequenz	40	t
 Blutdruck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienFiO2	\N	40	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_MS_Pallas_Sevofluran_insp	Inspiratorisch gemessene Sevofluran Konzentration.	41	t
@@ -11328,21 +11375,24 @@ Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	IABP_DatascopeCS3
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_Doku_FuellenMit	\N	40	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_CRRT_MS_Multi_UltrafiltrationlKum_ml	Neuanlage im Zuge der IBUS Anbindung	40	t
 Substituatfluss	\N	Beatmung_ES_VisionA_HFOBaseFlow	Basis Continousflow	41	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_RestZeit	\N	75	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_SubBolus	\N	75	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_VenDruck	\N	75	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_AbnahmeMax	\N	75	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Bicarbonat	\N	75	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Bilanzziel	\N	75	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_artDruck	\N	40	f
-Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008onl_IsoUFZeit	\N	40	f
-Dauer Hämodialysesitzung	\N	P_LEV_Doku_LokalisationBFQ1	\N	40	f
-Dauer Hämodialysesitzung	\N	P_LEV_Doku_LokalisationBFQ2	\N	40	f
-Dauer Hämodialysesitzung	\N	P_LEV_Doku_LokalisationBFQ3	\N	40	f
+Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008onl_IsoUFZeit	\N	40	t
+Dauer Hämodialysesitzung	\N	P_LEV_Doku_LokalisationBFQ1	\N	40	t
+Dauer Hämodialysesitzung	\N	P_LEV_Doku_LokalisationBFQ2	\N	40	t
+Dauer Hämodialysesitzung	\N	P_LEV_Doku_LokalisationBFQ3	\N	40	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Avea_FiO2	eingestellte Sauerstoffkonzentration des inspiratorischen Atemgases	40	t
 Dauer Hämodialysesitzung	\N	P_NEV_HD_ES_5008onl_Dialyse_Zeit	\N	40	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Avea_FiO2	eingestellte Sauerstoffkonzentration des inspiratorischen Atemgases	40	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_VisionA_BreathRate	Messwert: gemessene Atemfrequenz	40	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS100_ES_IABPAufblasen	\N	40	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS300_ES_IABPAufblasen	Dokumentation des prozentualen Anteil des Aufblasens des Ballons.	40	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS300_ES_IABP_Frequenz	Dokumentation der IABP Frequenz.	40	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_Datascope_ES_IABPAufblasen	\N	40	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenverfahren_VO_SpülloesungAntikoagulanz	Spüllösung zum Vorbereiten des extrakorporalen Verfahrens	40	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	SVR	Systemischer Gefäßwiderstand	40	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	VigilanceC_SVR	Systemischer Gefäßwiderstand	40	f
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_VisionA_BreathRate	Messwert: gemessene Atemfrequenz	40	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS100_ES_IABPAufblasen	\N	40	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS300_ES_IABPAufblasen	Dokumentation des prozentualen Anteil des Aufblasens des Ballons.	40	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS300_ES_IABP_Frequenz	Dokumentation der IABP Frequenz.	40	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_Datascope_ES_IABPAufblasen	\N	40	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	NEV_PD_Doku_Zykluszeit	\N	40	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Beatmung_MS_3100B_Amplitude	Messwert: gemessene Druckamplitude	40	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	NEV_HD_ES_4008HS_UFZiel	\N	40	f
@@ -11370,6 +11420,11 @@ Blutdruck Generisch	Blood pressure panel with all children optional	Fall_Wertsac
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP	40	t
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_Unterstuetzungsdruck	Dokumentation des Unterstützungdruckes	40	t
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP.	40	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenverfahren_VO_SpülloesungAntikoagulanz	Spüllösung zum Vorbereiten des extrakorporalen Verfahrens	40	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	SVR	Systemischer Gefäßwiderstand	40	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	VigilanceC_SVR	Systemischer Gefäßwiderstand	40	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Spueldauer	\N	75	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Temperatur	\N	75	t
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	Beatmung_MS_Pallas_Sevofluran_exsp	Exspiratorisch gemessene Sevofluran Konzentration.	40	f
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	NEV_PD_Doku_Einlaufmenge	\N	40	f
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	P_Beatmung_MS_C3_Leckage	\N	40	f
@@ -11397,11 +11452,10 @@ Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lun
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_CRRT_ES_Multi_FilterO2Flow	Filter - O2Flow zur Ausspülung CO2	40	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_Doku_Abschlussbegruendung	\N	40	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_MTR	obere Frequenzbegrenzung	40	f
+Körpergroesse	Body height	Beatmung_ES_Leoni_Apnoezeit	Apnoezeit	40	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Aufnahme_Beruf_Mutter	\N	40	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_MS_NO2	Messwert der NO2 Konzentration bei NO Beatmung	40	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_INVOS_Doku_rSO2_rechts	cerbebrale Sauerstoffsättigung rechts	40	f
-Körpergroesse	Body height	Beatmung_ES_Leoni_Apnoezeit	Apnoezeit	40	f
-Körpergroesse	Body height	Beatmung_Messung_Pmin	Minimum Airway Pressure	40	f
 Körpergrösse Percentil	Body height Prctl	Betreuer2_PLZ	\N	40	f
 Körpertemperatur Blut	Blood temp	Verlauf_PT	\N	40	f
 Körpertemperatur Brust	Body temperature	Betreuer2_Land	\N	40	f
@@ -11420,16 +11474,14 @@ Körpergewicht	Weight	PICCO_EVLW/EV	\N	40	t
 Körpertemperatur Generisch	Body temperature	Betreuer2_Land	\N	40	t
 Körpertemperatur Generisch	Body temperature	F_Therapieeinschraenkung	\N	40	t
 Körpertemperatur Generisch	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	CardioHelpMaquet_DOKU_KalibrierenVenoesenMesskopf	\N	40	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_HD_MS_4008HS_Rest_Zeit_min	Anpassung für IBUS Anbindung	40	t
 Ideales Körpergewicht	Ideal bdy weight	P_PtiO2_Decimal	\N	40	t
+Körpergroesse	Body height	Beatmung_Messung_Pmin	Minimum Airway Pressure	40	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Abnahme	\N	72	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Austauschrate	\N	72	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienFiO2	\N	40	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer2_Land	\N	40	f
 Körpertemperatur Halswirbelsaeule	Body temperature	F_Therapieeinschraenkung	\N	40	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	f
-Körpertemperatur Kern	Body temperature	Betreuer2_Land	\N	40	f
-Körpertemperatur Kern	Body temperature	F_Therapieeinschraenkung	\N	40	f
-Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	f
 Körpertemperatur Leiste	Body temperature	Betreuer2_Land	\N	40	f
 Körpertemperatur Leiste	Body temperature	F_Therapieeinschraenkung	\N	40	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	f
@@ -11450,6 +11502,9 @@ Körpertemperatur unter der Zunge	Oral temp	Fall_Nummer	Identifikationsnummer de
 Körpertemperatur vaginal	Body temperature	Betreuer2_Land	\N	40	t
 Körpertemperatur vaginal	Body temperature	F_Therapieeinschraenkung	\N	40	t
 Körpertemperatur vaginal	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
+Körpertemperatur Kern	Body temperature	Betreuer2_Land	\N	40	t
+Körpertemperatur Kern	Body temperature	F_Therapieeinschraenkung	\N	40	t
+Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
 Linksventrikulaeres Schlagvolumenindex	LV SVI	LCWI	"Left Cardiac Work Index "	40	f
 Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_HZV	Herzzeitvolumen	40	f
 Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_SVR	Systemischer Gefäßwiderstand	40	f
@@ -11467,6 +11522,9 @@ Linksventrikulärer Druck	Blood pressure panel with all children optional	IABP_D
 Linksventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_Unterstützungsdruck	Dokumentation des Unterstützungsdruckes.	40	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	NEV_Apherese_Doku_AbschlussBegruendung	Listenauswahl	40	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	PerspiratioInsensibilis	Perspiratio Insensibilis in ml (Ausfuhrrelevant in der Bilanz)	40	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_SollNatrium	\N	72	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Temperatur	\N	72	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Austauschrate	\N	72	t
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Nierenverfahren_MS_4008onl_artDruck	\N	39	f
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Evita4_Phoch	Druckeinstellung für das obere Druckniveau im APRV Modus	40	f
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Evita4_Ptief	Druckeinstellung für das untere Druckniveau im APRV Modus	40	f
@@ -11575,14 +11633,10 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita2_MVspon	gemessenes spontanes Atemminutenvolumen	40	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita4_MVspn	gemessenes spontanes Atemminutenvolumen	40	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_SpontanAMV	gemessenes spontanes Atemminutenvolumen	40	t
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Hypothermie_ArticSun_MS_Wasserstand	Texteintrag	40	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_Temperatur	\N	40	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenverfahren_MS_Multi_CitratvolumenKumulativ	kumulativ Citrat	40	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Oxidationswasser	Oxidationswasser in ml (einfuhrrelevant)	40	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	SM_AV_Intervall	Schrittmacher AV-Intervall	40	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Hypothermie_Coolgard_VO_Behandlungsmodi	\N	40	t
 Atemfrequenz	Resp rate	Beatmung_MS_Pallas_Frequenz	Gemessene Atemfrequenz.	39	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_Mess_Leitfähigkeit	\N	40	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Hypothermie_ArticSun_MS_Wasserstand	Texteintrag	40	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILAactivve_Fluss	\N	39	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_GasflussMax	\N	39	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_BlutflussSNPumpe	\N	39	f
@@ -11592,6 +11646,8 @@ Atemfrequenz	Resp rate	Beatmung_ES_Evita2_Pinsp	eingestelltes oberes Druckniveau
 Linksventrikulärer Herzindex	LV Cardiac index	NEV_HD_MS_4008HS_artDruck	\N	39	t
 Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	SaO2 % Bld Preductal PulseOx	Nierenverfahren_VO_BM25_Spueldauer	\N	40	t
 Substituatvolumen	\N	NEV_HD_MS_4008HS_IsoUFVolKum	\N	40	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_Temperatur	\N	40	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenverfahren_MS_Multi_CitratvolumenKumulativ	kumulativ Citrat	40	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_Einstellung_SauerstoffVolG5	Sauerstoffeinstellung in der Maßeinheit Vol %	40	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_F120_O2Konzentration	Einstellparameter: Sauerstoffgehalt des Gasgemisches	40	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	NEV_PD_Doku_Bemerkung	\N	39	t
@@ -11603,6 +11659,12 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_MitteldruckHFOV	
 Atemzugvolumen-Einstellung	VT setting Vent	Nierenersatzverfahren_VO_EffektiverEntzug	\N	39	t
 Atemzugvolumen-Einstellung	VT setting Vent	Nierenverfahren_VO_ADM_Austauschrate	"Umsatz, Austausch, Substituat ml/h"	39	t
 Atemzugvolumen-Einstellung	VT setting Vent	P_ADVOS_VO_SpuelloesungAntikoag	\N	39	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Oxidationswasser	Oxidationswasser in ml (einfuhrrelevant)	40	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	SM_AV_Intervall	Schrittmacher AV-Intervall	40	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_VenoeserDruck	\N	69	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Dialysatloesung	\N	69	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Dialysekonzentrat	Dialysekonzentrat Verordnung String	69	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_DialysekonzentratALT	\N	69	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_BM25_artDruck	\N	39	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita2_IntrinsicPEEP	Ergebnis eines Messmanövers im Modus IPPV, IPPV assist	39	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_SubBolusVolKum	\N	39	f
@@ -11610,10 +11672,10 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_HarnstoffZiel	\N	39	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_Multi_UltrafiltrationMax	Ultrafiltrationsrate	39	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Oxidationswasser	Oxidationswasser in ml (einfuhrrelevant)	39	f
-Blutfluss durch cardiovasculäres Gerät	\N	P_NEV_HD_ES_5008onl_Bicarbonat	\N	39	f
-Blutfluss durch cardiovasculäres Gerät	\N	Vigileo_COCI	Cardiac output / -index	39	f
-Dauer Hämodialysesitzung	\N	NEV_HD_Doku_SpüllösungAntikoag	\N	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_CF800_O2Konzentration	Sauerstoffgehalt des eingestellten Gasgemisches CF 800	39	f
+Blutfluss durch cardiovasculäres Gerät	\N	P_NEV_HD_ES_5008onl_Bicarbonat	\N	39	t
+Blutfluss durch cardiovasculäres Gerät	\N	Vigileo_COCI	Cardiac output / -index	39	t
+Dauer Hämodialysesitzung	\N	NEV_HD_Doku_SpüllösungAntikoag	\N	39	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_CF800_O2Konzentration	Sauerstoffgehalt des eingestellten Gasgemisches CF 800	39	t
 Blutdruck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienPzvCO2	\N	39	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onl_BlutflussSNPumpe	\N	39	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onll_Blutfluss	\N	39	t
@@ -11637,21 +11699,13 @@ Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_Ano
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_Evita2_Anstiegszeit	eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau	39	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_Pallas_Inspirationspause_Tip_Tinsp	Dokumentation der Inspirationszeit. Verhältnis zwischen Tip und Tinsp. 0 bis 60 %.	39	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_T1_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator T1 in den Beatmungsmodi APVsimv, Psimv.	39	t
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Evita4_Thoch	Zeiteinstellung für das obere Druckniveau im APRV Modus	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_G5_Frequenz	Anzahl der Atemzyklen pro Minute, Parametereinstellung	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_NarkosegasSevofluran	\N	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	CardioHelpMaquet_DOKU_HFAnsaetzeAspirierenSpuelen	\N	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_AutoCat_ES_Unterstützungsverhältnis	Liste	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS100_ES_IABPLeersaugen	\N	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABPneu_Datascope_ES_IABPFrequenz	\N	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_HD_ES_4008onl_Fluss	\N	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_PD_Doku_Auslaufzeit	\N	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_AktuellesNatrium	\N	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_AustauschrateKumulativ	\N	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_KumuliertesBlutvolumen	\N	39	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenverfahren_MS_Multi_venDruck	venöser Druck	39	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_DruckVorFilter	\N	68	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_Doku_Fuellen_Mit	\N	43	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_KumuliertesBlutvolumen	\N	68	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Lungenersatzverfahren_VO_ILA_KontrolleExtremitaete	\N	39	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Evita4_Thoch	Zeiteinstellung für das obere Druckniveau im APRV Modus	39	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_G5_Frequenz	Anzahl der Atemzyklen pro Minute, Parametereinstellung	39	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_NarkosegasSevofluran	\N	39	t
 Ideales Körpergewicht	Ideal bdy weight	Beatmung_ES_VisionA_Trigger	Einstellgrösse: Druck bzw. Flowtrigger	39	t
 Ideales Körpergewicht	Ideal bdy weight	Schrittmacher_Osypka101H_ES_Sense	Empfindlichkeit	39	t
 Ideales Körpergewicht	Ideal bdy weight	Schrittmacher_Osypka203H_ES_A_Sense	Empfindlichkeit	39	t
@@ -11685,11 +11739,16 @@ Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Bea
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_CRRT_MS_Multi_SubBolusVolKum_ml	Anpassung für die automatische Datenübernahme IBUS	39	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Einstell_EffektiverEntzug	\N	39	f
 Herzfrequenz	Heart rate	Schwangerschaftswoche	Schwangerschaftswoche, in welcher das Baby geboren wurde	39	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	CardioHelpMaquet_DOKU_HFAnsaetzeAspirierenSpuelen	\N	39	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_AutoCat_ES_Unterstützungsverhältnis	Liste	39	t
 Körpertemperatur Generisch	Body temperature	ICP	Intrakranialer Druck	39	t
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_MS_4008HS_Leitfähigkeit	\N	39	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_ES_3100A_Mitteldruck	Eingestellter mittlerer Atemwegsdruck	39	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_PVARP	postventrikuläre atriale Refraktärzeit	39	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Untersuchung_Status_Oxygenierung	\N	39	f
+Körpertemperatur Kern	Body temperature	ICP	Intrakranialer Druck	39	t
+Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	t
+Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	t
 Körpertemperatur vaginal	Body temperature	ICP	Intrakranialer Druck	39	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_Einstellung_idealesKoerpergewicht	\N	39	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_G5_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	39	f
@@ -11715,9 +11774,6 @@ Körpertemperatur Halswirbelsaeule	Body temperature	ICP	Intrakranialer Druck	39	
 Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	f
 Körpertemperatur Harnblase	Bdy temp Bladder	P_Impella_Impella_MS_LVDruck	\N	39	f
-Körpertemperatur Kern	Body temperature	ICP	Intrakranialer Druck	39	f
-Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	f
-Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	f
 Körpertemperatur Leiste	Body temperature	Beatmung_Doku_Zephyros_Option	Liste Highflow Highflow CPAP	39	f
 Körpertemperatur Leiste	Body temperature	ICP	Intrakranialer Druck	39	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	f
@@ -11738,10 +11794,10 @@ Körpertemperatur Trommelfell	Tymp memb temp	Beatmung_MS_BiPAPV_AMV	Messwert: ge
 Atemfrequenz	Resp rate	Nierenverfahren_MS_Multi_artDruck	arterieller Druck	38	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienPzvCO2	\N	39	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_Evita2_Anstiegszeit	eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau	39	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Fall_Schwangerschaftstest_durchgefuehrt	Listenanhang mit positiv und negativ Auswahl	39	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_Doku_AbschlussBegruendung	\N	39	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_Doku_AbschlussUrteil	\N	39	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_HD_ES_4008HS_IsoUF_Rate	\N	39	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_KontrAlarmg	"Liste "	65	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Antikoagulatio	\N	65	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Filtratdruck	\N	65	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Doku_SpuelbeutelInitialdosis	\N	65	t
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Avea_DruckHoch	eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch	39	f
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_T1_Phoch	Einstellwert oberes Druckniveau im Modus DuoPAP	39	f
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_MS_Avea_MandAF	gemessene mandatorische Atemfrequenz	39	f
@@ -11860,16 +11916,20 @@ Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	F_
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_SubBolusVolKum_ml	Anpassung IBUS Anbindung	39	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Nierenersatzverfahren_Einstell_PatFluessigkeitRate	\N	39	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Schrittmacher_drei_ES_ÜberstimulationsFreq	\N	39	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ECMO_ACT	\N	62	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILA_Flushmanoever	\N	62	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_Bolus	Medikament	62	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_GeräteDesinfektion	"Desinfektionsprogramme Gerät "	62	t
 Spontanes-Atemzugvolumen	Spont VT on vent	NEV_CRRT_Doku_SpülloesungAntikoag	\N	39	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_NatriumProfil	\N	39	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_Mess_UFR	\N	39	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_3100A_Mitteldruck	Eingestellter mittlerer Atemwegsdruck	39	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Schrittmacher_Osypka203H_ES_result_Betriebsart	abhängig in ES der Sense-Liste	39	t
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_SollNatrium	\N	39	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_StartNatrium	\N	39	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_SubstituatVolumen	\N	39	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_UFZiel	\N	39	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Untersuchung_ExtremitaetenLeiste_Haut	\N	39	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_SollNatrium	\N	39	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_StartNatrium	\N	39	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_SubstituatVolumen	\N	39	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_UFZiel	\N	39	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Untersuchung_ExtremitaetenLeiste_Haut	\N	39	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_BlutflussSNPumpe	\N	38	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_Einstell_Plasmavolumen	\N	38	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_Einstell_SubBolus	\N	38	f
@@ -11895,21 +11955,22 @@ Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Lungenersatzverfa
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum_ml	Anpassung im Zuge der automatischen Datenübernahme IBUS	38	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008onl_effBlutfluss	\N	38	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_drei_ES_Basisfrequenz	Medtronic 5388	38	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILA_KontrolleExtremitaete	\N	61	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_Fluss	\N	61	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_Behandlungszeit	\N	61	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOBlutfluss	\N	60	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ILAQ1Flow	\N	60	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ILAQ2Flow	\N	60	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_P4	\N	58	t
 Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_T1_Ttief	Einstellwert: Zeiteinstellung für das untere Druckniveau	38	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Nierenverfahren_VO_Multi_BlutflussMax	max Blutpumpengeschwindigkeit VO	38	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	P_Patient_Gewicht_WaageBezeichnung	Die Nummer der Waage, mit der das Gewicht ermittelt wurde.	38	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	VigilanceC_PVRI	Pulmonaler vasculärer Widerstandsindex	38	t
-Blutfluss durch cardiovasculäres Gerät	\N	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	38	f
-Blutfluss durch cardiovasculäres Gerät	\N	NEV_PD_VO_Mischung_Lsg1_Lsg2	\N	38	f
-Dauer Hämodialysesitzung	\N	NEV_PD_Doku_Mischung_Lsg1_Lsg2	\N	38	f
-Dauer Hämodialysesitzung	\N	P_NEV_HD_ES_5008onl_IsoUFZeit	\N	38	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Avea_InspDruck	eingestelltes oberes Druckniveau im Modus P-CMV und P-SIMV	38	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Heimbeatmung_Frequenz_Backup	\N	38	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Servoi_Backup_Frequenz	"Backup Frequenz [n/min] "	38	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Hypothermie_ArticSun_MS_Wasserstand	Texteintrag	38	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_Datascope_ES_EKGAbleitung	Liste	38	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenverfahren_MS_BM25_AbnahmeKumulativ	\N	38	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenverfahren_MS_Cobespectra_BilanzwertKumulativ	\N	38	f
+Blutfluss durch cardiovasculäres Gerät	\N	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	38	t
+Blutfluss durch cardiovasculäres Gerät	\N	NEV_PD_VO_Mischung_Lsg1_Lsg2	\N	38	t
+Dauer Hämodialysesitzung	\N	NEV_PD_Doku_Mischung_Lsg1_Lsg2	\N	38	t
+Dauer Hämodialysesitzung	\N	P_NEV_HD_ES_5008onl_IsoUFZeit	\N	38	t
+Hämodialyse Blutfluss	\N	NEV_HD_MS_4008onl_IsoUFVolKum_ml	Anpassung für IBUS Anbindung	38	t
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Lungenersatzverfahren_ES_ILAactivve_Fluss	\N	38	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	P_NEV_HD_ES_5008onl_UFZiel	\N	38	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	RVP	Rechtsventrikulärer Mitteldruck	38	f
@@ -11921,7 +11982,6 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_G5_Flow
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenersatzverfahren_Mess_UFVolumenKumulativ	\N	38	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenersatzverfahren_Mess_UltrafiltrationsVolumen	\N	38	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenersatzverfahren_Mess_VenoeserDruck	\N	38	f
-Hämodialyse Blutfluss	\N	NEV_HD_MS_4008onl_IsoUFVolKum_ml	Anpassung für IBUS Anbindung	38	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_ES_3100B_Inspirationszeit	Einstellwert: prozentualer Anteil der Inspirationszeit bezogen auf den gesamtem Atemzyklus	38	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_CSF_MS_LiqouGuard_ICP	\N	38	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Schrittmacher_Osypka203H_ES_PVARP	postventrikuläre atriale Refraktärzeit	38	f
@@ -11940,17 +12000,27 @@ Herzzeitvolumen	LV Output	NEV_HD_VO_4008HS_Iso_UFZeit	\N	38	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_C2_F_SIMV	Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.	38	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_Evita4_fApnoe	eingestellte Atemfrequenz in der Apnoeventilation	38	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_Pmax	Hochdruckalarmgrenze im 'ASV Modus	38	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Avea_InspDruck	eingestelltes oberes Druckniveau im Modus P-CMV und P-SIMV	38	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Heimbeatmung_Frequenz_Backup	\N	38	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Servoi_Backup_Frequenz	"Backup Frequenz [n/min] "	38	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Hypothermie_ArticSun_MS_Wasserstand	Texteintrag	38	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_Datascope_ES_EKGAbleitung	Liste	38	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenverfahren_MS_BM25_AbnahmeKumulativ	\N	38	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenverfahren_MS_Cobespectra_BilanzwertKumulativ	\N	38	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILAactivve_Frequenz	\N	58	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_NaProfil	\N	58	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_C2_F_SIMV	Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.	38	t
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ILAactivve_Flushen	Liste - Doku Durchführung	38	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ILAactivve_KontrSchlsys	"Liste "	38	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ILA_Gasfluss	\N	38	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_CRRT_MS_Multi_Behandlungszeit_Aktuell__min	Anpassung für die automatische Datenübermnahme IBUS	38	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_ADVOS_MS_ADVOS_Calcium_postFilter	\N	38	f
+Körpertemperatur Kern	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
+Körpertemperatur Kern	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
 Körpertemperatur vaginal	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_G5_Groeße	Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet	38	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_MS_VisionA_SISetting	Dauer des manuell durchgeführten Atemhubs	38	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_NEV_HD_ES_5008onl_UFProfil	\N	38	f
-Körpergroesse	Body height	Diagnostik	Dokumentation durchgeführter diagnostischer Maßnahmen.	38	f
 Körpertemperatur Achsel	Axil temp	HZV_PICCOGeraet	\N	38	f
 Körpertemperatur Blut	Blood temp	Temp1a	Temperatur 1a	38	f
 Körpertemperatur Blut	Blood temp	Temp2a	Temperatur 2a	38	f
@@ -11967,8 +12037,6 @@ Körpertemperatur vaginal	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
 Körpertemperatur Halswirbelsaeule	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
 Körpertemperatur Harnblase	Bdy temp Bladder	P_NEV_HD_MS_5008onl_TMP	\N	38	f
-Körpertemperatur Kern	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
-Körpertemperatur Kern	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
 Körpertemperatur Leiste	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
 Körpertemperatur Leiste	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
@@ -11978,6 +12046,7 @@ Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_Einstellung_Mittel
 Körpertemperatur Nasen-Rachen-Raum	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
 Körpertemperatur Stirn	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
 Körpertemperatur Stirn	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
+Körpergroesse	Body height	Diagnostik	Dokumentation durchgeführter diagnostischer Maßnahmen.	38	t
 Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_EVLW	Extravasales Lungenwasser	38	f
 Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_ITBV	Intrathorakales Blutvolumen	38	f
 Atemfrequenz	Resp rate	Patient_PLZ	Patientenadresse: PLZ	43	t
@@ -11986,8 +12055,8 @@ Körpergewicht	Weight	RCWI	\N	38	t
 Körpertemperatur Generisch	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
 Puls	\N	P_SEF	Spectral Edge Frequency	44	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_C2_F_SIMV	Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.	38	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_ACAT_ES_Unterstützungsdruck	\N	38	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_HD_ES_4008HS_StartNa	\N	38	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_ISOUFZiel	\N	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_NaProfil	\N	57	t
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Avea_ZeitHoch	Zeiteinstellung des oberen Druckniveaus im Modus APRV / BiPhasisch	38	f
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Avea_ZeitNiedrig	Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch	38	f
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_G5_Frequenz_Backup	Frequenzeinstellung inder Backupeinstellung.	38	f
@@ -12069,27 +12138,21 @@ Unterstützungsdruck Beatmung	Pressure support setting Vent	NEV_HD_MS_4008onl_ve
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Nierenersatzverfahren_Mess_SubBolus	\N	38	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Nierenersatzverfahren_Mess_UFRBFRVerhaeltnis	\N	38	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Nierenersatzverfahren_VO_ISOUFZeit	Isolierte Ultrafiltration/Bergström	38	t
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_VO_Zugang	Gefäßdefinition	38	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_HD_MS_4008HS_Rest_Zeit	\N	38	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_SollTemperatur	\N	38	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_SubstituatRate	\N	38	f
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Mess_UFZiel	\N	38	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_artDruck	\N	55	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILAactivve_Systole	Verhältnis Systole zur Diastolendauer	55	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_Plasma	Plasmarate	55	t
+Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008HS_BasisNa	\N	37	t
 Venöser Druck	\N	PICCO_SVR	Systemic vascular resistance	38	t
 Venöser Druck	\N	RVSA	"Rechtsvetrikulärer Schlagarbeit "	38	t
 Venöser Druck	\N	VigilanceC_PVR	Pulmonaler vasculärer Widerstand	38	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_HD_Doku_SpüllösungAntikoag	\N	37	f
-Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008HS_BasisNa	\N	37	f
-Blutfluss durch cardiovasculäres Gerät	\N	P_CSF_ES_LiquoGuard_Vset	\N	37	f
-Dauer Hämodialysesitzung	\N	NEV_PD_VO_Zykluszeit	\N	37	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Avea_PIP	gemessener Atemwegsspitzendruck	37	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Evita4_Ppeak	gemessener Atemwegsspitzendruck	37	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_G5_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	37	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_T1_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	37	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS100_ES_Triggerauswahl	\N	37	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS100_ES_Unterstützungsdruck	\N	37	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS300_ES_Unterstützungsdruck	Dokumentation des Unterstützungsdruckes.	37	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_HD_ES_4008HS_Blutfluss	\N	37	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenverfahren_MS_Multi_UFRBFRVerhaeltnis	\N	37	f
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Lungenersatzverfahren_VO_Zugang	Gefäßdefinition	38	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_HD_MS_4008HS_Rest_Zeit	\N	38	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_SollTemperatur	\N	38	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_SubstituatRate	\N	38	t
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Mess_UFZiel	\N	38	t
+Blutfluss durch cardiovasculäres Gerät	\N	P_CSF_ES_LiquoGuard_Vset	\N	37	t
+Dauer Hämodialysesitzung	\N	NEV_PD_VO_Zykluszeit	\N	37	t
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	NEV_HD_MS_4008HS_BlutvolKum	\N	37	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Nierenverfahren_MS_BM25_DruckvorFilter	\N	37	f
 Atemfrequenz	Resp rate	Nierenverfahren_VO_Citratloesung	Citratbeutel	42	t
@@ -12097,6 +12160,7 @@ Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_G5_F_SIMV	
 Dynamische Kompliance	Compliance.dynamic Lung	Hypothermie_ArticSun_ES_Wasserziel	manueller Modus	37	t
 Dynamische Kompliance	Compliance.dynamic Lung	NEV_CRRT_MS_Multi_Bilanz_ml	neue Variable für automatische Datenübernahme IBUS	37	t
 Herzzeitvolumen	LV Output	Hausarzt_Land	\N	43	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Avea_PIP	gemessener Atemwegsspitzendruck	37	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_ES_Avea_InspPause	Zeiteinstellung für die Plateauphase im Modus CMV und SIMV	37	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_BlutflussSNPumpe	\N	37	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_4008onl_BlutvolumenKumulativ	\N	37	t
@@ -12113,12 +12177,22 @@ Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_MS_Avea_fVt	errechneter Quotient zwischen Frequenz und Tidalvolumen	37	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Nierenersatzverfahren_Mess_PatFluessigkeitRate	\N	37	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss	37	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Evita4_Ppeak	gemessener Atemwegsspitzendruck	37	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_G5_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	37	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_T1_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	37	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS100_ES_Triggerauswahl	\N	37	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS100_ES_Unterstützungsdruck	\N	37	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS300_ES_Unterstützungsdruck	Dokumentation des Unterstützungsdruckes.	37	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_HD_ES_4008HS_Blutfluss	\N	37	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_Fluss	\N	55	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_ADM_BlutflussMax	Blutpumpengeschwindigkeit	55	t
 Körpertemperatur Generisch	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_BiPAPV_AF	Einstellwert: eingestellte Mindestatemfrequenz im ST Moodus	37	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	NEV_HD_MS_4008onl_Leitfähigkeit	\N	37	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Nierenersatzverfahren_Einstell_Plasmarate	\N	37	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_G5_Psupport	Einstellwert: Druckunterstützung beim G 5  bei Spontanatemzügen	37	f
 Körpertemperatur vaginal	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
+Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_HD_Doku_Abschlussbegründung	\N	37	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_MS_ADM_AustauschKumulativ	\N	37	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	IABP_AutoCat_ES_Triggerauswahl	Liste	37	f
@@ -12127,13 +12201,13 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Triadyn
 Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Impella_Impella_MS_Flow	\N	37	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
-Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
 Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
 Körpertemperatur Stirn	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
 Körpertemperatur unter der Zunge	Oral temp	PICCODraegerModul_Platzhalter	\N	37	f
 Ideales Körpergewicht	Ideal bdy weight	IABP_RR	\N	37	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_HD_MS_4008onl_Rest_Zeit_min	Anpassung für IBUS Anbindung	37	t
 Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_MS_4008onl_SubtbolusvolKumulativ	\N	37	f
 Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_MS_Multi_pFDruck	Druck vor Filter Hämoperfusion	37	f
 Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Lungenersatzverfahren_Doku_ILAactivve_Nullfluss	bei luftblasen, Liste ein aus	37	f
@@ -12159,7 +12233,7 @@ Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmu
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Nierenersatzverfahren_Mess_PatFluessigkeitRate	\N	37	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss	37	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	rCBF	Über eine Sonde gemessener regionaler cerebraler Blutfluss.	37	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_HD_MS_4008onl_Rest_Zeit_min	Anpassung für IBUS Anbindung	37	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_Bilanz	\N	53	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Beatmung_MS_Avea_fVt	errechneter Quotient zwischen Frequenz und Tidalvolumen	37	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben.	37	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	37	t
@@ -12208,27 +12282,24 @@ Substituatfluss	\N	Hausarzt_PLZ	\N	37	t
 Atemfrequenz	Resp rate	Beatmung_MS_Avea_Frequenz	gemessene Atemfrequenz	100	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	PICCO_HF	HerzfrequenzHerzfrequenz	30	t
 Körpertemperatur vaginal	Body temperature	ABP_1	arterieller Blutdruck 1	36	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_G5_Pkontrol	Einstellwert oberes Druckniveau beim G 5 im Modus P SIMV	36	t
 Ideales Körpergewicht	Ideal bdy weight	PICCO_HI	HerzindexHerzindex	36	t
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_G5_Pkontrol	Einstellwert oberes Druckniveau beim G 5 im Modus P SIMV	36	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	CardioHelpMaquet_DOKU_KalibrierenVenoesenMesskopf	\N	36	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_HD_ES_4008HS_BlutflussSNPumpe	\N	36	f
+Hämodialyse Blutfluss	\N	NEV_HD_ES_4008HS_NaProfil	\N	36	t
+Hämodialyse Blutfluss	\N	P_LEV_ES_BFQ1	Zusatzgerät bei einer ECMO Therapie	36	t
+Hämodialyse Blutfluss	\N	P_LEV_ES_BFQ2	\N	36	t
+Hämodialyse Blutfluss	\N	P_LEV_ES_BFQ3	\N	36	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Nierenverfahren_ES_4008HS_SollNa	\N	36	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Nierenverfahren_ES_4008HS_UFZiel	Ultrafiltrationsziel	36	f
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	Beatmung_MS_Pallas_MV_Leck	Gemessene Leckage.	36	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Patient_Verlusst_ExtrakorporaleAbnahme	Patient_Verlusst_ExtrakorporaleAbnahme	36	f
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypka203H_ES_V_RapidPacing	Rapid Pacing Stimulationsfrequenz	36	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	PCCO	"Pulskontur-Herzzeitvolumen "	36	f
-Hämodialyse Blutfluss	\N	NEV_HD_ES_4008HS_NaProfil	\N	36	f
-Hämodialyse Blutfluss	\N	P_LEV_ES_BFQ1	Zusatzgerät bei einer ECMO Therapie	36	f
-Hämodialyse Blutfluss	\N	P_LEV_ES_BFQ2	\N	36	f
-Hämodialyse Blutfluss	\N	P_LEV_ES_BFQ3	\N	36	f
 Körpergrösse Percentil	Body height Prctl	NEV_HD_ES_4008HS_UFProfil	\N	36	f
 Körpertemperatur Achsel	Axil temp	Nierenverfahren_VO_BM25_Umsatz	Umsatz ml/h	36	f
 Körpertemperatur Brust	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
 Körpertemperatur Gelenk	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
 Körpertemperatur Halswirbelsaeule	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
-Körpertemperatur Kern	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
 Körpertemperatur Leiste	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
 Körpertemperatur Lendenwirbelsaeule	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
 Körpertemperatur Nasen-Rachen-Raum	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
@@ -12252,6 +12323,14 @@ Blutdruck Generisch	Blood pressure panel with all children optional	ART	2. arter
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_PEEP_CPAP_Ptief	Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.	36	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_Thoch	Einstellwert: Zeiteinstellung des oberes Druckniveau beim G 5 im Modus DuoPAP	36	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_T1_PEEP_CPAP_Ptief	Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.	36	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	CardioHelpMaquet_DOKU_KalibrierenVenoesenMesskopf	\N	36	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_HD_ES_4008HS_BlutflussSNPumpe	\N	36	t
+Körpertemperatur Kern	Body temperature	ABP_1	arterieller Blutdruck 1	36	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_StartNa	\N	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_UFRate	\N	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_UFZiel	\N	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_BM25_Plasma	Plasmarate	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_BM25_Umsatz	Austausch, Substituat, ml/h	51	t
 Linksatrialer Druck	Blood pressure panel with all children optional	NEV_Apherese_MS_Multi_Behandlungs_Zeit_min	Anpassung für automatische Gerätedataenübernahme mit IBUS	36	t
 Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_P1	\N	36	f
 Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_P2	\N	36	f
@@ -12526,6 +12605,24 @@ Inspiratorische Sauerstofffraktion gemessen	FIO2	tcpO2	transcutan gemessener pO2
 Inspiratorische Sauerstofffraktion gemessen	FIO2	NEV_CRRT_MS_Multi_DialysatvolKum_ml	Anpassung für automatische Datenübernahme IBUS	44	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	PtiO2Druck	Gemessener Sauerstoffpartialdruck im Parenchym	43	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	NEV_CRRT_MS_Multi_Behandlungszeit_Aktuell__min	Anpassung für die automatische Datenübermnahme IBUS	41	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_Citratfluss	Citratrate	59	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Dialysat	\N	78	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_CalciumLoesung	Bezeichnug der Calcium Lösung	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_ISOUFRate	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_ISOUFZeit	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_SubBolus	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOInspiratorischSaO2	\N	64	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ILAAnalogIn	\N	61	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_Flushen	Liste - Doku Durchführung	60	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_DeltaP	Delta P2/P3	60	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_FüllenMit	Füllen des Systems	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_IsoUFRate	Isolierte Ultrafiltration	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_IsoUFZeit_	Isolierte Ultrafiltration	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_Temp1	\N	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_Temp2	\N	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_NaProfil	\N	53	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_BM25_AbnahmeMax	Ultrafiltrationsrate	53	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILAactivve_Membranvent	\N	52	t
 Kopfumfang	Head Circumf OFC	Lungenersatzverfahren_Doku_Zugang	Gefäßzugang	53	t
 Kopfumfang	Head Circumf OFC	Nierenverfahren_MS_Multi_CalciumvolumenKumulativ	kumulativ	42	t
 Kopfumfang	Head Circumf OFC	Nierenverfahren_MS_Multi_PlasmavolumenKumulativ	Kumulativ	42	t
@@ -12762,6 +12859,7 @@ Rechtsatrialer Druck	Blood pressure panel with all children optional	Schrittmach
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Pflegeuntensilien_Ort	\N	43	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Wertgegenstaende_Ort	\N	43	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_IABPAufblasen	Dokumentation des prozentualen Anteil des Aufblasens des Ballons.	43	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_TMP	TransmembranDruck	82	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP.	43	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	NEV_Apherese_Doku_AbschlussUrteil	Listenauswahl	43	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Nierenersatzverfahren_Dokumentation_Abschluss	\N	43	t
@@ -13088,302 +13186,17 @@ Unterstützungsdruck Beatmung	Pressure support setting Vent	Untersuchung_Status_
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Wertsachen_Wertgegenstaende	\N	39	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Therapiebetten_VO_Giraffe_ES_Luftfeuchtigkeit	\N	38	t
 Intrakranieller Druck ICP	ICP	P_Impella_Impella_Doku_Ort	Liste Gefäßauswahl	42	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_TMP	TransmembranDruck	82	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Bolus	\N	82	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_ISOUF	\N	82	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Filter	\N	81	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Option	\N	81	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Plasma	\N	81	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_UFZiel	\N	81	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Umsatz	\N	81	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Zugang	\N	81	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_SubBolus	\N	78	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_UFProfil	\N	78	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_UFR	\N	76	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Abnahme	\N	76	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Austausch	\N	76	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_HFLoesung	\N	76	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_ISOUFZeit	Isolierte Ultrafiltration/Bergström	76	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Verfahren	\N	76	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_RestZeit	\N	75	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_SubBolus	\N	75	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_VenDruck	\N	75	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_AbnahmeMax	\N	75	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Bicarbonat	\N	75	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Bilanzziel	\N	75	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_FuellenMit	\N	75	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_KaliumZiel	\N	75	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Spueldauer	\N	75	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Temperatur	\N	75	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Fluss	\N	74	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_SollNatrium	\N	74	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Blutfluss	\N	74	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_ISOUFRate	\N	74	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_ISOUFZeit	\N	74	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_ISOUFZiel	\N	74	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_StartNatrium	\N	74	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_CitratDosis	angeordnete Citratdosis	74	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_DialyseZeit	\N	74	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_SollNatrium	\N	74	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_StartNatrium	\N	73	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_UFZiel	\N	73	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Umsatz	\N	73	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Austauschrate	\N	73	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_BasisNatrium	\N	73	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Doku_AbschlussBeurteilung	\N	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Doku_Dialysekonzentrat	Dialysekonzentrat mit Listenauswahl	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Abnahme	\N	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Austauschrate	\N	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Filter	\N	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_NatriumProfil	\N	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Plasmavolumen	\N	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Bicarbonat	\N	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_iCaGesammt	\N	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_SollNatrium	\N	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Temperatur	\N	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Austauschrate	\N	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_BlutflussMax	\N	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_StartNatrium	\N	72	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_CalciumLoesung	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Dialysatfluß	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_DialyseZeit	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_BasisNatrium	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_CitratFluss	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Dialysatfluß	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_DialyseZeit	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_FilterDruck	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_FlussratePBP	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_iCaPostFilter	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Antikoagulanz	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_CitratLoesung	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_HarnstoffZiel	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_NatriumProfil	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_PlasmaVolumen	\N	71	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_BasisNatrium	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Bicarbonat	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_CitratLoesung	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Plasmarate	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Spueldauer	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Substituat	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Temperatur	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_UFProfil	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_AktuellesNatrium	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_AustauschrateKumulativ	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Dialysekonzentrat	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_FiltratDruck	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_iCasystemBGA	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Leitfähigkeit	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Schlauchsystem	Verordnung Schlauchsystem	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_SubstituatRate	\N	70	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Abschluss	\N	69	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Dialysekonzentrat	\N	69	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Plasmavolumen	\N	69	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_VenoeserDruck	\N	69	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Dialysatloesung	\N	69	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Dialysekonzentrat	Dialysekonzentrat Verordnung String	69	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_DialysekonzentratALT	\N	69	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_FlussratePBP	\N	68	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_AbnahmeKumulat	\N	68	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_ArteriellDruck	\N	68	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_DruckVorFilter	\N	68	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_KumuliertesBlutvolumen	\N	68	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_PatFluessigkeitRate	\N	68	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_SollTemperatur	\N	68	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_SubstituatRate	\N	68	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UmsatzKumulati	\N	68	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_BlutflussSNPumpe	\N	68	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_EffektiverEntzug	\N	68	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_BlutflussEinst	\N	67	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Option	\N	67	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_BlutflussSNPumpe	\N	67	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Dialysierfluessigke	\N	67	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_SollTemperatur	\N	67	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_SubstituatRate	\N	67	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstellung_FuellenMit	System vorfüllen mit Flüssigkeiten aus einer Auswahlliste	67	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_ZufuhrSubstituat	\N	67	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Dialysatvolumen	\N	67	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_SubBolusVolumen	\N	67	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_BlutflussSNPumpe	\N	66	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_EffektiverEntzug	\N	66	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_ZufuhrSubstituat	\N	66	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOInspiratioSaO2	\N	65	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAPressure	\N	65	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_KontrAlarmg	"Liste "	65	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Antikoagulatio	\N	65	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Filtratdruck	\N	65	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Doku_SpuelbeutelInitialdosis	\N	65	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_EffektiverEntzug	\N	65	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_PatFluessigkeitRate	\N	65	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UFRBFRVerhaeltnis	\N	65	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UltrafiltrationsVolumen	\N	65	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Kathetertyp	Katheterart	64	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILA_GasflussMin	\N	64	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_HFLoesung	\N	64	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Verfahren	\N	64	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_BilanzGleichUFVolumen	\N	64	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UFVolumenKumulativ	\N	64	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_SpueloesungAntikoagulanz	\N	64	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOAirFlow	\N	63	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOATZ	\N	63	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOFlushen	"Dokumentation der Tätigkeit ""Flushen"" bei Einsatz eines ECMO Verfahrens"	63	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	63	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAAnalogIn	\N	63	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAFlushen	"Dokumentation der Tätigkeit ""Flushen"" bei Einsatz eines ILA Verfahrens"	63	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_Kathetertyp	Kathetertyp	63	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_ES_ILAactivve_Fluss	\N	63	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILAactivve_Fluss	\N	63	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_AbschlussBeurteilung	\N	63	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOAntikoagulation	\N	62	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOFiO2	\N	62	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILA_Gasfluss	\N	62	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAQ1Flow	\N	62	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAQ2Flow	\N	62	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_ES_ILAactivve_Blutfluss	\N	62	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ECMO_ACT	\N	62	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILA_Flushmanoever	\N	62	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_Bolus	Medikament	62	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_GeräteDesinfektion	"Desinfektionsprogramme Gerät "	62	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_Dialysat	\N	62	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOBlutfluss	\N	61	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_ES_ILAactivve_Frequenz	\N	61	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILA_GasflussMax	\N	61	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILA_KontrolleExtremitaete	\N	61	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_Fluss	\N	61	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_Behandlungszeit	\N	61	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOBlutfluss	\N	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ILAQ1Flow	\N	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ILAQ2Flow	\N	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOPumpendrehzahl	\N	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_Calciumloesung	Beutel	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_CitratBlut	Citratrate	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Antikoagulanz	Antikoagulation Medikament	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	P_Beatmung_ES_CoughAssist_CoughTrak	Ein/Aus	60	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOPumpendrehzahl	\N	59	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_Flussreg	Liste ein aus	59	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_KontrSchlsys	"Liste "	59	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_ES_ILAactivve_Systole	%Systole Verhältnis Systolendauer zur Diastolendauer	59	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_Bicarbonat	\N	59	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_DialyseZeit	\N	59	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat	59	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_ADM_Bilanz	\N	59	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_Citratfluss	Citratrate	59	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_P3	\N	58	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILAactivve_P4	\N	58	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILAactivve_Frequenz	\N	58	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_NaProfil	\N	58	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Dialysezeit	\N	58	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_Citratloesung	Beutel	58	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_Leitfähigkeit	\N	58	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_ADM_AustauschKumulativ	\N	58	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_ADM_Behandlungszeit	\N	58	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_Bilanz	Kumulativwert	58	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Multi_Citrat	Dosierung	58	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_ISOUFZeit	\N	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_ISOUFZiel	\N	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_NaProfil	\N	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_ADM_effEntzug	Entzugsrate, Ultrafiltrationsrate	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_BM25_Dialysat	\N	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_Leitfähigkeit	\N	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Bilanz	Variable wird verwendet für Multifiltrate und ADM 08	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_Behandlungszeit	\N	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_ISOUFZiel	\N	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_ISOUFZiel	\N	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_ADM_Austauschrate	"Umsatz, Austausch, Substituat ml/h"	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenvwerfahren_ES_4008onl_Dialysezeit	\N	57	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILA_SpO2	\N	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_BasisNa	\N	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_BasisNa	\N	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Bicarbonat	\N	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_ISOUFVolumenKum	\N	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_DruckvorFilterDruck	\N	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_Dialysezeit	\N	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Calciumloesung	Calciumbeutel	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Multi_Dialysat	Dialysatrate	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_MultiPlasmavolumen	\N	56	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_artDruck	\N	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILAactivve_Systole	Verhältnis Systole zur Diastolendauer	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_BM25_Abnahme	Ultrafiltrationsrate	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_Plasma	Plasmarate	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_effBlutfluss	\N	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_effBlutfluss	\N	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_DruckvorFilter	\N	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_ISOUFZeit	\N	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_Dialysezeit	\N	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_Fluss	\N	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_ADM_BlutflussMax	Blutpumpengeschwindigkeit	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Bolus	Medikament	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Dialysatlösung	Dialysatlösung, Beutel	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_HFLoesung	Hämofiltrationslösung extrakorporale Verfahren	55	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_AbnahmeKumulativ	\N	54	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_DialysatvolumenKumulativ	\N	54	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_CalciumvolumenKumulativ	kumulativ	54	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_Bicarbonat	\N	54	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_ISOUFZeit	\N	54	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_NatriumProfil	\N	54	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Filter	Filter  für extrakorporale Verfahren	54	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Multi_BlutflussMax	max Blutpumpengeschwindigkeit VO	54	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_TMP	\N	53	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_Bilanz	\N	53	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Cobespectra_BilanzwertKumulativ	\N	53	t
 Herzfrequenz	Heart rate	Verlauf_Arzt	\N	55	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_DialysatvolumenKumulativ	kumulatives Dialysatvol	53	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_BlutflussMax	\N	53	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_pFDruck	Druck vor Filter Hämoperfusion	52	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_BM25_BlutflussMax	Blutpumpengeschwindigkeit	52	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	52	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_StartNa	\N	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_UFProfil	\N	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_SollNa	\N	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_StartNa	\N	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_UFRate	\N	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_UFZiel	\N	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_BM25_Plasma	Plasmarate	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_BM25_Umsatz	Austausch, Substituat, ml/h	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_TMP	\N	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_SollNa	\N	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_TMPDruck	Transmembrandruck	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_venDruck	venöser Druck	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_BlutflussSNPumpe	\N	51	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_Spueldauer	Spüldauer	50	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_BlutflussSNPumpe	\N	50	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_Restzeit	\N	50	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_venDruck	\N	50	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_ADM_TMPDruck	\N	50	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_ADM_venDruck	\N	50	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_BlutflussSNPumpe	\N	50	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_SubstituatBolus	Substituatbolus ml	49	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_Ultrafiltration	Ultrafiltrationsrate ml/h	49	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_UFZiel	\N	49	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_venDruck	\N	47	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Substituatrate	\N	47	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_TMPDruck	\N	47	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_venDruck	\N	47	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Patient_Strasse	Adresse des Patienten: Strasse + Hausnummer	47	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Fall_Wertsachen_Pflegeuntensilien_Ort	\N	46	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_VO_Zugang	\N	46	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Substituatbolus	\N	46	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_SollNatrium	\N	46	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_UFRBFRVerhaeltnis	\N	46	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_SollNatrium	\N	46	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_Substituat	\N	46	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_ADM_Spueldauer	\N	46	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_praeF	\N	45	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_UltrafiltratmengeKum	Kumulativer Entzug, bilanzrelevant	45	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_StartNatrium	\N	45	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Beatmung_MS_G5_Cstat	Statische Compliance, ein Monitoringwert	43	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	CardioHelpMaquet_DOKU_HFAnsaetzeAspirierenSpuelen	\N	43	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	CardioHelpMaquet_DOKU_InitialisierenVenoeseProbe	\N	43	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_Calciumfluss	\N	43	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_Citratfluss	\N	43	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_CitratvolKum	\N	43	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_DialysatMultifiltrate	appliziertes Dialysat für Multifiltrate	43	t
-Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_SpuellösungAntikoagulanz	Spülung zur Vorbereitung	43	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_CalciumLoesung	\N	71	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_SubtbolusvolKumulativ	\N	43	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Multi_UltrafiltrationMax	Ultrafiltrationsrate	43	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Untersuchung_Thorax_Cor	\N	40	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_BehandlungszeitAktuell	\N	39	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UltrafiltrationsVolumen	\N	65	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Kathetertyp	Katheterart	64	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILA_GasflussMin	\N	64	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_HFLoesung	\N	64	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_ES_Zephyros_FIO2	\N	100	f
 Inspiratorische Sauerstofffraktion gemessen	FIO2	CardioHelpMaquet_ES_FiO2	\N	100	f
 Inspiratorische Sauerstofffraktion gemessen	FIO2	CardioHelpMaquet_VO_FiO2	\N	100	f
@@ -13506,10 +13319,209 @@ Blutdruck Generisch	Blood pressure panel with all children optional	P_Waermesyst
 Blutdruck Generisch	Blood pressure panel with all children optional	rCBF	Über eine Sonde gemessener regionaler cerebraler Blutfluss.	37	t
 Blutdruck Generisch	Blood pressure panel with all children optional	NEV_Apherese_MS_Multi_Behandlungs_Zeit_min	Anpassung für automatische Gerätedataenübernahme mit IBUS	36	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Nierenverfahren_MS_Multi_CalciumvolumenKumulativ	kumulativ	36	t
-Körpertemperatur Kern	Body temperature	Betreuer_Status	\N	52	f
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_SollNa	\N	52	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_Schlauchsystem	Schlauchsystembeschichtung relevant	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_UFRate	Ultrafiltrationsrate	52	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_UFZiel	Ultrafiltrationsziel	52	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h	52	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_BlutvolumenKumulativ	\N	52	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_CitratvolumenKumulativ	kumulativ Citrat	52	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_BlutflussSNPumpe	\N	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Bolus	\N	82	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_ISOUF	\N	82	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Filter	\N	81	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Option	\N	81	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Plasma	\N	81	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_UFZiel	\N	81	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_UFProfil	\N	78	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_UFR	\N	76	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Abnahme	\N	76	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Austausch	\N	76	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_HFLoesung	\N	76	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_ISOUFZeit	Isolierte Ultrafiltration/Bergström	76	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Verfahren	\N	76	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_FuellenMit	\N	75	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_KaliumZiel	\N	75	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Fluss	\N	74	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_SollNatrium	\N	74	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Blutfluss	\N	74	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_ISOUFRate	\N	74	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_StartNatrium	\N	73	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_UFZiel	\N	73	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Umsatz	\N	73	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Austauschrate	\N	73	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Doku_Dialysekonzentrat	Dialysekonzentrat mit Listenauswahl	72	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Filter	\N	72	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_NatriumProfil	\N	72	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_iCaGesammt	\N	72	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_BlutflussMax	\N	72	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_StartNatrium	\N	72	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Dialysatfluß	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_DialyseZeit	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Antikoagulanz	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_CitratLoesung	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_HarnstoffZiel	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_NatriumProfil	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_PlasmaVolumen	\N	71	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Bicarbonat	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_CitratLoesung	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Plasmarate	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Spueldauer	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Substituat	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Temperatur	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_UFProfil	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_AktuellesNatrium	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_AustauschrateKumulativ	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Dialysekonzentrat	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_FiltratDruck	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_iCasystemBGA	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Leitfähigkeit	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Schlauchsystem	Verordnung Schlauchsystem	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_SubstituatRate	\N	70	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Abschluss	\N	69	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Plasmavolumen	\N	69	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_FlussratePBP	\N	68	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_AbnahmeKumulat	\N	68	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_ArteriellDruck	\N	68	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_PatFluessigkeitRate	\N	68	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_SollTemperatur	\N	68	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_SubstituatRate	\N	68	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UmsatzKumulati	\N	68	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_BlutflussSNPumpe	\N	68	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_EffektiverEntzug	\N	68	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Dialysierfluessigke	\N	67	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_SollTemperatur	\N	67	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_SubstituatRate	\N	67	t
+Körpertemperatur Kern	Body temperature	Betreuer_Status	\N	52	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstellung_FuellenMit	System vorfüllen mit Flüssigkeiten aus einer Auswahlliste	67	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_ZufuhrSubstituat	\N	67	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Dialysatvolumen	\N	67	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_SubBolusVolumen	\N	67	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_BlutflussSNPumpe	\N	66	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_EffektiverEntzug	\N	66	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_ZufuhrSubstituat	\N	66	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOInspiratioSaO2	\N	65	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAPressure	\N	65	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_EffektiverEntzug	\N	65	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_PatFluessigkeitRate	\N	65	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UFRBFRVerhaeltnis	\N	65	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Verfahren	\N	64	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_BilanzGleichUFVolumen	\N	64	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_SpueloesungAntikoagulanz	\N	64	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOAirFlow	\N	63	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOATZ	\N	63	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOFlushen	"Dokumentation der Tätigkeit ""Flushen"" bei Einsatz eines ECMO Verfahrens"	63	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	63	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAAnalogIn	\N	63	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAFlushen	"Dokumentation der Tätigkeit ""Flushen"" bei Einsatz eines ILA Verfahrens"	63	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_Kathetertyp	Kathetertyp	63	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_ES_ILAactivve_Fluss	\N	63	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILAactivve_Fluss	\N	63	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_AbschlussBeurteilung	\N	63	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOAntikoagulation	\N	62	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOFiO2	\N	62	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILA_Gasfluss	\N	62	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAQ1Flow	\N	62	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAQ2Flow	\N	62	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_ES_ILAactivve_Blutfluss	\N	62	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_Dialysat	\N	62	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOBlutfluss	\N	61	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_ES_ILAactivve_Frequenz	\N	61	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILA_GasflussMax	\N	61	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ECMOPumpendrehzahl	\N	60	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_Calciumloesung	Beutel	60	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_CitratBlut	Citratrate	60	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Antikoagulanz	Antikoagulation Medikament	60	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	P_Beatmung_ES_CoughAssist_CoughTrak	Ein/Aus	60	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Dialysezeit	\N	58	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_Citratloesung	Beutel	58	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_Leitfähigkeit	\N	58	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_Bilanz	Kumulativwert	58	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Multi_Citrat	Dosierung	58	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_ISOUFZeit	\N	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_ADM_effEntzug	Entzugsrate, Ultrafiltrationsrate	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_BM25_Dialysat	\N	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_Leitfähigkeit	\N	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Bilanz	Variable wird verwendet für Multifiltrate und ADM 08	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_Behandlungszeit	\N	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_ISOUFZiel	\N	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_ISOUFZiel	\N	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_ADM_Austauschrate	"Umsatz, Austausch, Substituat ml/h"	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenvwerfahren_ES_4008onl_Dialysezeit	\N	57	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ILA_SpO2	\N	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_BasisNa	\N	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_BasisNa	\N	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Bicarbonat	\N	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_ISOUFVolumenKum	\N	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_DruckvorFilterDruck	\N	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_Dialysezeit	\N	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Calciumloesung	Calciumbeutel	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Multi_Dialysat	Dialysatrate	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_MultiPlasmavolumen	\N	56	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_effBlutfluss	\N	55	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_effBlutfluss	\N	55	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_DruckvorFilter	\N	55	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_ISOUFZeit	\N	55	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_Dialysezeit	\N	55	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Bolus	Medikament	55	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Dialysatlösung	Dialysatlösung, Beutel	55	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_HFLoesung	Hämofiltrationslösung extrakorporale Verfahren	55	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_AbnahmeKumulativ	\N	54	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_DialysatvolumenKumulativ	\N	54	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_CalciumvolumenKumulativ	kumulativ	54	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_Bicarbonat	\N	54	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_ISOUFZeit	\N	54	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_NatriumProfil	\N	54	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Filter	Filter  für extrakorporale Verfahren	54	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_Multi_BlutflussMax	max Blutpumpengeschwindigkeit VO	54	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Cobespectra_BilanzwertKumulativ	\N	53	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_BlutflussMax	\N	53	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_pFDruck	Druck vor Filter Hämoperfusion	52	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_BM25_BlutflussMax	Blutpumpengeschwindigkeit	52	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	52	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_StartNa	\N	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_UFProfil	\N	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_SollNa	\N	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_TMP	\N	51	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_Spueldauer	Spüldauer	50	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_BlutflussSNPumpe	\N	50	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_Restzeit	\N	50	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_venDruck	\N	50	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_ADM_TMPDruck	\N	50	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_ADM_venDruck	\N	50	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_BlutflussSNPumpe	\N	50	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_SubstituatBolus	Substituatbolus ml	49	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_Ultrafiltration	Ultrafiltrationsrate ml/h	49	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_UFZiel	\N	49	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_venDruck	\N	47	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Substituatrate	\N	47	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_TMPDruck	\N	47	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_VO_Zugang	\N	46	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Substituatbolus	\N	46	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_SollNatrium	\N	46	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_UFRBFRVerhaeltnis	\N	46	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_SollNatrium	\N	46	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_Substituat	\N	46	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_ADM_Spueldauer	\N	46	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_praeF	\N	45	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_UltrafiltratmengeKum	Kumulativer Entzug, bilanzrelevant	45	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Beatmung_MS_G5_Cstat	Statische Compliance, ein Monitoringwert	43	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	CardioHelpMaquet_DOKU_InitialisierenVenoeseProbe	\N	43	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_Calciumfluss	\N	43	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_Citratfluss	\N	43	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_CitratvolKum	\N	43	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	CardioHelpMaquet_DOKU_KalibrierenVenoesenMesskopf	\N	40	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_HD_MS_4008HS_Rest_Zeit_min	Anpassung für IBUS Anbindung	40	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Fall_Schwangerschaftstest_durchgefuehrt	Listenanhang mit positiv und negativ Auswahl	39	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_Doku_AbschlussBegruendung	\N	39	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_Doku_AbschlussUrteil	\N	39	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_HD_ES_4008HS_IsoUF_Rate	\N	39	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_ACAT_ES_Unterstützungsdruck	\N	38	t
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_HD_ES_4008HS_StartNa	\N	38	t
 Parameter von Beatmung	\N	Betreuer2_Ort	\N	51	f
-Hämodialyse Blutfluss	\N	P_NEV_HD_VO_5008onl_BlutflussMax	\N	50	f
-Körpergroesse	Body height	Betreuer2_Strasse	\N	48	f
+Hämodialyse Blutfluss	\N	P_NEV_HD_VO_5008onl_BlutflussMax	\N	50	t
+Körpergroesse	Body height	Betreuer2_Strasse	\N	48	t
 Parameter von Beatmung	\N	Patient_BMI	\N	48	f
 Atemfrequenz	Resp rate	PAP	Pulmunalarterieller Druck	35	t
 Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_G5_Groeße	Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet	35	t
@@ -13517,6 +13529,7 @@ Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_G5_Phoch	E
 Blutdruck	Blood pressure panel with all children optional	NeurochirurgischeMessungen_Platzhalter	\N	35	t
 Körpergewicht	Weight	EVLWI	"Extravaskuläres Lungenwasserindex "	35	t
 Substituatvolumen	\N	Vigileo_SVI	SchlagvolumenindexSchlagvolumenindex	36	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_VisionA_SISetting	Druckeinstellung für manuell ausgelösten Atemhub	35	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_MS_VisionA_MAP	gemessener Mittlerer Atemwegsdruck unter HFO bei Alpha Vision	36	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Nierenersatzverfahren_Mess_ZufuhrSubstituat	\N	36	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onl_UFZiel	\N	35	t
@@ -13529,6 +13542,9 @@ Venöser Druck	\N	PICCO_SVRI	Systemic vascular resistance index	36	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_PD_Doku_Mischung_Lsg1_Lsg2	\N	35	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Pmean	Gemesener Atemwegsmitteldruck	36	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_P01	Atemwegs-Okklusionsdruck	36	t
+Dauer Hämodialysesitzung	\N	P_NEV_HD_VO_5008onl_IsoUFZeit	\N	35	t
+Hämodialyse Blutfluss	\N	NEV_HD_ES_4008HS_IsoUFZiel	\N	35	t
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS100_ES_EKGAbleitung	\N	35	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenverfahren_MS_Multi_CalciumvolumenKumulativ	kumulativ	36	f
 Spontanes-Atemzugvolumen	Spont VT on vent	IABP_AutoCat_ES_Unterstützungsdruck	\N	36	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Untersuchung_ZNS_Motorik	\N	36	f
@@ -13536,13 +13552,9 @@ Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_ES_4008onl_UFProfil	\N	35	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_4008HS_UFZiel	\N	35	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_ADVOS_Doku_AbschlussBegruendung	\N	35	f
-Dauer Hämodialysesitzung	\N	P_NEV_HD_VO_5008onl_IsoUFZeit	\N	35	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_VisionA_SISetting	Druckeinstellung für manuell ausgelösten Atemhub	35	f
-Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS100_ES_EKGAbleitung	\N	35	f
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Nierenverfahren_ES_Multi_Ultrafiltration	Ultrafiltrationsrate ml/h	35	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	NEV_CRRT_VO_Multi_Temp	Neuanlage 18.05.2012 String	35	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Nierenverfahren_ES_4008HS_UFProfil	\N	35	f
-Hämodialyse Blutfluss	\N	NEV_HD_ES_4008HS_IsoUFZiel	\N	35	f
 Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_Einstell_ZufuhrSubstituat	\N	35	f
 Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_VO_4008HS_Soll_Na	\N	35	f
 Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Lungenersatzverfahren_Doku_ILAactivve_Nullabgleich	Liste durchgeführt	35	f
@@ -13560,8 +13572,8 @@ Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatm
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NeurochirurgischeMessungen_Platzhalter	\N	35	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_MS_VisionA_Amplitude	gemessene Druckdifferenz im HFOV Modus	35	f
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_Mess_UmsatzKumulati	\N	35	f
-Dauer Hämodialysesitzung	\N	Hausarzt_Fax	\N	34	f
-Dauer Hämodialysesitzung	\N	NEV_Apherese_VO_Multi_Temp	Anlage 18.05.2012 String	34	f
+Dauer Hämodialysesitzung	\N	Hausarzt_Fax	\N	34	t
+Dauer Hämodialysesitzung	\N	NEV_Apherese_VO_Multi_Temp	Anlage 18.05.2012 String	34	t
 Ideales Körpergewicht	Ideal bdy weight	Nierenverfahren_MS_ADM_verabreichtesPlasma	kumulativ	34	t
 Ideales Körpergewicht	Ideal bdy weight	Nierenverfahren_MS_BM25_verabreichtesPlasma	Kumulativ	34	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_NEV_HD_ES_5008onl_NaProfil	Auswahl von nummerisch einzugebenden Profilen	34	f
@@ -13634,9 +13646,9 @@ Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_Druckrampe	Eine Parametereinstellung. Anstiegszeit des Drucks bei druckkontrollierten und druckunterstützten Atemzyklus.	33	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Avea_FlowTrigger	eingestellter Flowtrigger: Schwellenwertt für die inspiratorische Bemühung des Patienten um die Druckunterstützung auszulösen	33	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Druckrampe	Eine Parametereinstellung. Anstiegszeit des Drucks bei druckkontrollierten und druckunterstützten Atemzyklus.	33	f
+Hämodialyse Blutfluss	\N	P_Beatmung_ES_O2Flow	l/min	32	t
 Ideales Körpergewicht	Ideal bdy weight	Lungenersatzverfahren_MS_ILAactivve_DeltaP	Delta P2/P3	32	t
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	PWP	Pulmunaler Wedgedruck	32	f
-Hämodialyse Blutfluss	\N	P_Beatmung_ES_O2Flow	l/min	32	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_C2_Pmax	Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.	32	f
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_MS_Pallas_Cpat	Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.	32	f
 Maximaler Beatmungsdruck	Press.max on vent Airway	IABP_EKG	\N	31	f
@@ -13674,9 +13686,6 @@ Herzfrequenz	Heart rate	HF	Herzfrequenz	29	f
 Monitoring und Vitaldaten	\N	NEV_Apherese_ES_Multi_Temp	Anlage 18.05.2012	29	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	NIRS	Über eine Messsonde transcutan gemessener Prozentwert	28	f
 Spontanes-Atemzugvolumen	Spont VT on vent	SpO2_2	\N	27	f
-Körpergroesse	Body height	PCCO	"Pulskontur-Herzzeitvolumen "	25	f
-Körpergroesse	Body height	RAP1	rechtsartrialer Druck	25	f
-Körpergroesse	Body height	SpO2	Sauerstoffsättigung Pulsoxymetrie	25	f
 Körpertemperatur Blut	Blood temp	P_TP1	EEG - Total Power - Channel 1	24	f
 Körpertemperatur Blut	Blood temp	P_TP2	EEG - Total Power - Channel 2	24	f
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Messung_FiO2	FiO2	21	f
@@ -13722,6 +13731,9 @@ Venöser Druck	\N	GEDV	"Globales enddiastolisches Volumen "	25	t
 Venöser Druck	\N	p-CI	Herzindex	25	t
 Venöser Druck	\N	NBP_1	nichtinvasiver Blutdruck 1	24	t
 Venöser Druck	\N	NBP_2	"zweiter nichtinvasiver Blutdruck "	24	t
+Körpergroesse	Body height	PCCO	"Pulskontur-Herzzeitvolumen "	25	t
+Körpergroesse	Body height	RAP1	rechtsartrialer Druck	25	t
+Körpergroesse	Body height	SpO2	Sauerstoffsättigung Pulsoxymetrie	25	t
 Zentralvenöser Druck	CVP	T_K2	Körpertemperatur Messkanal 2	26	t
 Linksatrialer Druck	Blood pressure panel with all children optional	CI	Herzindex	19	t
 Linksatrialer Druck	Blood pressure panel with all children optional	CFI	Herzfunktionsindex	18	t
@@ -30375,6 +30387,90 @@ B_IstPflege_InfoErhaltenvon_Patient	Eingestellte und gemessene Parameter	45	t
 B_Aufnahme_Allgemeinzustand	Eingestellte und gemessene Parameter	44	t
 Elternanleitung_Wert_Einmalkatheter	Eingestellte und gemessene Parameter	45	t
 Arterieller Druck	Arterieller Druck	100	f
+\.
+
+
+--
+-- Data for Name: thesis_matched; Type: TABLE DATA; Schema: icu_copra; Owner: -
+--
+
+COPY icu_copra.thesis_matched (conf_var_name, profile_name, conf_var_unit, valuequantity_code) FROM stdin;
+ABP_2	Arterieller Druck	mmHg	mm[Hg]
+Nierenverfahren_MS_Multi_artDruck	Arterieller Druck	mmHg	mm[Hg]
+ABP_1	Arterieller Druck	mmHg	mm[Hg]
+AF	Atemfrequenz	1/min	/min
+Beatmung_MS_Pallas_Vt	Atemzugvolumen-Waehrend-Beatmung	ml	mL
+Beatmung_MS_Evita4_MV	Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	L/min	L/min
+Beatmung_Messung_MV	Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	L/min	L/min
+Beatmung_MS_Pallas_MV	Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	L/min	L/min
+NBP_1	Blutdruck	mmHg	mm[Hg]
+IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Blutdruck	mm[Hg]	mm[Hg]
+IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Blutdruck	mm[Hg]	mm[Hg]
+IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Blutdruck Generisch	mm[Hg]	mm[Hg]
+NBP_1	Blutdruck Generisch	mmHg	mm[Hg]
+IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Blutdruck Generisch	mm[Hg]	mm[Hg]
+CardioHelpMaquet_MS_Blutfluss	Blutfluss durch cardiovasculäres Gerät	L/Min	L/min
+Beatmung_MS_VisionA_Amplitude	Druckdifferenz Beatmung	cm H2O	cm[H2O]
+Beatmung_ES_Evita4_Tinsp	Einstellung-Einatmungszeit-Beatmung	s	s
+Beatmung_ES_G5_Ti	Einstellung-Einatmungszeit-Beatmung	s	s
+Beatmung_MS_G5_ExspFlow	Exspiratorischer Gasfluss	l/min	L/min
+PtiO2Druck	Exspiratorischer Sauerstoffpartialdruck	mmHg	mm[Hg]
+HF	Herzfrequenz	1/min	/min
+VigilanceC_HZV	Herzzeitvolumen	L/min	L/min
+HZV	Herzzeitvolumen	L/min	L/min
+Beatmung_MS_G5_InspFlow	Inspiratorischer Gasfluss	l/min	L/min
+ICP	Intrakranieller Druck (ICP)	mmHg	mm[Hg]
+Nierenverfahren_ES_Multi_CalciumFiltrat	Ionisiertes Kalzium aus Nierenersatzverfahren	mmol/l	mmol/L
+NEV_CRRT_ES_Multi_CalciumFiltrat	Ionisiertes Kalzium aus Nierenersatzverfahren	mmol/L	mmol/L
+Patient_Gewicht	Koerpergewicht	kg	kg
+Patient_AufnGewicht	Koerpergewicht	kg	kg
+Patient_Groesse	Koerpergroesse	cm	cm
+P_Temperatur_Kern	Koerpertemperatur Kern	°C	Cel
+COPRA_Patient_Kopfumfang	Kopfumfang	cm	cm
+LAP	Linksatrialer Druck	mmHg	mm[Hg]
+p-SVI	Linksventrikulaerer Schlagvolumenindex	ml/m2	mL/m2
+Beatmung_Messung_AF	Mechanische-Atemfrequenz-Beatmet	1/min	{Breaths}/min
+Beatmung_MS_Pallas_Frequenz	Mechanische-Atemfrequenz-Beatmet	1/min	{Breaths}/min
+Beatmung_Einstellung_AF	Mechanische-Atemfrequenz-Beatmet	1/min	{Breaths}/min
+Beatmung_MS_G5_ftotal	Mechanische-Atemfrequenz-Beatmet	AZ/min	{Breaths}/min
+Beatmung_MS_Evita4_frequenz	Mechanische-Atemfrequenz-Beatmet	bpm	{Breaths}/min
+Beatmung_ES_VisionA_MAP	Mittlerer Beatmungsdruck	cm H2O	cm[H2O]
+Beatmung_MS_VisionA_MAP	Mittlerer Beatmungsdruck	cm H2O	cm[H2O]
+Beatmung_MS_Servoi_Pmean	Mittlerer Beatmungsdruck	[cmH2O]	cm[H2O]
+Beatmung_ES_Servoi_PEEP	Positiv-endexpiratorischer Druck	[cmH2O]	cm[H2O]
+PAP	Pulmonalarterieller Blutdruck	mmHg	mm[Hg]
+PWP	Pulmonalarterieller wedge Blutdruck	mmHg	mm[Hg]
+Beatmung_ES_Evita4_O2Konzentration	Sauerstofffraktion eingestellt	%	%
+Beatmung_ES_3100B_O2Konzentration	Sauerstofffraktion eingestellt	%	%
+Beatmung_Einstellung_FiO2	Sauerstofffraktion eingestellt	%	%
+Beatmung_ES_Optiflow_O2Flow	Sauerstoffgasfluss	l/min	L/min
+Beatmung_ES_CF800_SauerstoffFlow	Sauerstoffgasfluss	l/min	L/min
+SpO2	Sauerstoffsaettigung im art. Blut durch Pulsoxymetrie	%	%
+Beatmung_MS_G5_fspontan	Spontane-Atemfrequenz-Beatmet	AZ/min	/min
+Beatmung_Messung_AFSpontan	Spontane-Atemfrequenz-Beatmet	1/min	/min
+Beatmung_MS_Evita4_fspn	Spontane-Atemfrequenz-Beatmet	bpm	/min
+Beatmung_MS_G5_fspontan	Spontane-Mechanische-Atemfrequenz-Beatmet	AZ/min	/min
+Beatmung_MS_Evita4_FiO2	Sauerstofffraktion	Vol%	1
+Beatmung_MS_3100B_O2Konzentration	Sauerstofffraktion	%	1
+Beatmung_MS_Evita4_fspn	Spontane-Mechanische-Atemfrequenz-Beatmet	bpm	/min
+Nierenverfahren_ES_BM25_Umsatz	Substituatfluss	mL/h	mL/h
+Nierenverfahren_ES_Multi_Substituat	Substituatfluss	mL/h	mL/h
+Nierenverfahren_MS_Multi_venDruck	Venöser Druck	mmHg	mm[Hg]
+ZVD	Zentralvenoeser Druck (ZVD)	mmHg	mm[Hg]
+SV	Linksventrikulaeres Schlagvolumen	ml	mL
+Beatmung_ES_VisionA_Schlagvolumen	Linksventrikulaeres Schlagvolumen	ml	mL
+p-SV	Linksventrikulaeres Schlagvolumen	ml	mL
+Schlagvolumen	Linksventrikulaeres Schlagvolumen	ml	mL
+Beatmung_Einstellung_PEEP	Positiv-endexpiratorischer Druck	mbar	cm[H2O]
+Beatmung_ES_Heimbeatmung_Peep	Positiv-endexpiratorischer Druck	mbar	cm[H2O]
+Beatmung_Messung_PEEP	Positiv-endexpiratorischer Druck	mbar	cm[H2O]
+Beatmung_MS_Pallas_PEEP	Positiv-endexpiratorischer Druck	mbar	cm[H2O]
+Beatmung_Messung_IntrinsicPEEP	Positiv-endexpiratorischer Druck	mbar	cm[H2O]
+P_NEV_HD_MS_5008onl_Rest_Zeit_min	Dauer Haemodialysesitzung	min	h
+Beatmung_MS_Evita4_PEEP	Positiv-endexpiratorischer Druck	mbar	cm[H2O]
+Beatmung_Messung_Pmax	Maximaler Beatmungsdruck	mmHg	cm[H2O]
+Beatmung_Messung_FiO2	Sauerstofffraktion	%	1
+Beatmung_MS_Pallas_O2_insp	Sauerstofffraktion	%	1
 \.
 
 
