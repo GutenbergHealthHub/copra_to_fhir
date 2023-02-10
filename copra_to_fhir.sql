@@ -6643,8 +6643,6 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 --
 
 COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc_short_name, unit, analyzed) FROM stdin;
-3	Parameter von extrakorporalen Verfahren	Observation	\N	\N	\N	\N	\N	f
-18	Parameter von Beatmung	Observation	\N	\N	\N	\N	\N	f
 7	Dauer Hämodialysesitzung	Observation	445940005	\N	\N	\N	h	t
 23	Druckdifferenz Beatmung	Observation	\N	76154-4	\N	Away press delta on vent PressDiff	cm[H2O]	t
 53	Körpergroesse	Observation	1153637007	8302-2	\N	Body height	cm	t
@@ -6660,67 +6658,57 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 40	Atemzugvolumen-Einstellung	Observation	416811008	20112-9	16929196	VT setting Vent	mL	t
 12	Blutfluss extrakorporaler Gasaustausch	Observation	251288004	\N	\N	\N	L/min	t
 25	Dynamische Kompliance	Observation	250823005	60827-3	151692	Compliance.dynamic Lung	mL/cm[H2O]	t
-27	Mittlerer Beatmungsdruck	Observation	698821009	76530-5	151975	Mean Pres on vent Airway	cm[H2O]	f
-29	Inspiratorische Sauerstofffraktion gemessen	Observation	250774007	71835-3	\N	FIO2	1	f
+27	Mittlerer Beatmungsdruck	Observation	698821009	76530-5	151975	Mean Pres on vent Airway	cm[H2O]	t
+55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	t
 31	Exspiratorischer Gasfluss	Observation	\N	60792-9	151944	Expiratory gas flow on vent Airway	L/min	t
 89	Körpertemperatur nasal	Observation	\N	76010-8	188504	Nasal temp	Cel	t
 72	Herzfrequenz	Observation	364075005	8867-4	147842	Heart rate	/min	t
 34	Beatmungszeit auf niedrigem Druck	Observation	\N	76229-4	16929864	Low press hold time set Vent	s	t
 35	Beatmungszeit auf hohem Druck	Observation	\N	76190-8	16929860	High press hold time set Vent	s	t
-38	Spontanes-Atemzugvolumen	Observation	250816009	20116-0	\N	Spont VT on vent	mL	f
+67	Systemischer vaskulärer Widerstandsindex	Observation	276900001	8837-7	149760	SV RI	dyn.s/cm5/m2	t
 16	Beatmung	Procedure	\N	\N	\N	\N	\N	t
 43	Einstellung-Einatmungszeit-Beatmung	Observation	250819002	76334-2	16929632	Insp time set Vent	s	t
 20	Endexpiratorischer Kohlendioxidpartialdruck	Observation	250790007	19891-1	151708	pCO2 end exp ExG	mm[Hg]	t
-45	Spontane-Atemfrequenz-Beatmet	Observation	271625008	\N	152498	\N	/min	f
-46	Mechanische-Atemfrequenz-Beatmet	Observation	250876000	33438-3	151586	Breaths.mechanical on vent	{Breaths}/min	f
-49	Pulmonalarterieller wedge Blutdruck	Observation	118433006	75994-4	150052	PAW pressure	mm[Hg]	f
+45	Spontane-Atemfrequenz-Beatmet	Observation	271625008	\N	152498	\N	/min	t
+49	Pulmonalarterieller wedge Blutdruck	Observation	118433006	75994-4	150052	PAW pressure	mm[Hg]	t
+62	Linksventrikulaeres Schlagvolumenindex	Observation	277381004	76297-1	\N	LV SVI	mL/m2	t
 69	Herzzeitvolumen	Observation	82799009	8741-1	150276	LV Output	L/min	t
 73	Zentralvenöser Druck	Observation	71420008	60985-9	150084	CVP	mm[Hg]	t
 4	Blutfluss durch cardiovasculäres Gerät	Observation	444479000	\N	\N	\N	L/min	t
-55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	f
+38	Spontanes-Atemzugvolumen	Observation	250816009	20116-0	\N	Spont VT on vent	mL	t
 2	Eingestellte und gemessene Parameter	DeviceMetric	\N	\N	\N	\N	\N	t
-59	Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	Observation	\N	59407-7	160296	SaO2 % Bld Preductal PulseOx	%	f
-61	Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	Observation	442476006	2708-6	150456	SaO2 % BldA	%	f
-62	Linksventrikulaeres Schlagvolumenindex	Observation	277381004	76297-1	\N	LV SVI	mL/m2	f
+71	Linksv. Herzzeitvolumen durch Indikatorverdünnung	Observation	\N	8737-9	\N	LV Output Indicator dilution	L/min	t
+65	Linksv. Schlagvolumen durch Indikatorverdünnung	Observation	\N	8771-8	\N	LV SV Indicator dilution	mL	t
+101	Körpertemperatur Trommelfell	Observation	415974002	8333-7	\N	Tymp memb temp	Cel	t
 63	Linksventrikulaeres Schlagvolumen	Observation	\N	20562-5	150428	LV SV	/mL	t
-65	Linksv. Schlagvolumen durch Indikatorverdünnung	Observation	\N	8771-8	\N	LV SV Indicator dilution	mL	f
-66	Pulmonalvaskulärer Widerstandsindex	Observation	276902009	8834-4	152852	PV RI	dyn.s/cm5/m2	f
-67	Systemischer vaskulärer Widerstandsindex	Observation	276900001	8837-7	149760	SV RI	dyn.s/cm5/m2	f
+18	Parameter von Beatmung	Observation	\N	\N	\N	\N	\N	t
+66	Pulmonalvaskulärer Widerstandsindex	Observation	276902009	8834-4	152852	PV RI	dyn.s/cm5/m2	t
+98	Körpertemperatur Nasen-Rachen-Raum	Observation	698831002	8310-5	\N	Body temperature	Cel	t
 9	Substituatfluss	Observation	708513005	\N	\N	\N	mL/h	t
-71	Linksv. Herzzeitvolumen durch Indikatorverdünnung	Observation	\N	8737-9	\N	LV Output Indicator dilution	L/min	f
+61	Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	Observation	442476006	2708-6	150456	SaO2 % BldA	%	t
 1	Extrakorporale Verfahren	Procedure	\N	\N	\N	\N	\N	t
 37	Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Observation	250875001	76009-0	152004	Inspired min Vol MV	L/min	t
 95	Körpertemperatur unter der Zunge	Observation	415945006	8331-1	188424	Oral temp	Cel	t
-78	Linksventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
+3	Parameter von extrakorporalen Verfahren	Observation	\N	\N	\N	\N	\N	t
 57	Ideales Körpergewicht	Observation	170804003	50064-5	\N	Ideal bdy weight	kg	t
 81	Puls	Observation	8499008	\N	149514	\N	/min	t
 82	Körpertemperatur Generisch	Observation	\N	8310-5	\N	Body temperature	Cel	f
-84	Körpertemperatur Lendenwirbelsaeule	Observation	364429006	8310-5	\N	Body temperature	Cel	f
 85	Körpertemperatur Gelenk	Observation	250124002	8310-5	\N	Body temperature	Cel	f
 87	Körpertemperatur Halswirbelsaeule	Observation	364419004	8310-5	\N	Body temperature	Cel	f
+29	Inspiratorische Sauerstofffraktion gemessen	Observation	250774007	71835-3	\N	FIO2	1	t
 90	Körpertemperatur Myokard	Observation	\N	61009-7	188500	Myocard temp	Cel	f
 42	Einstellung-Ausatmungszeit-Beatmung	Observation	250820008	76187-4	\N	Exp hold time set Vent	s	t
 93	Körpertemperatur Leiste	Observation	415929009	8310-5	\N	Body temperature	Cel	f
 32	Inspiratorischer Gasfluss	Observation	\N	60794-5	151948	Insp gas flow on vent Airway	L/min	t
 17	Eingestellte und gemessene Parameter	DeviceMetric	\N	\N	\N	\N	\N	t
-98	Körpertemperatur Nasen-Rachen-Raum	Observation	698831002	8310-5	\N	Body temperature	Cel	f
-99	Körpertemperatur Speiseroehre	Observation	431598003	60836-4	\N	Esoph temp	Cel	f
-101	Körpertemperatur Trommelfell	Observation	415974002	8333-7	\N	Tymp memb temp	Cel	f
+59	Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	Observation	\N	59407-7	160296	SaO2 % Bld Preductal PulseOx	%	t
+84	Körpertemperatur Lendenwirbelsaeule	Observation	364429006	8310-5	\N	Body temperature	Cel	t
+99	Körpertemperatur Speiseroehre	Observation	431598003	60836-4	\N	Esoph temp	Cel	t
 15	Arterieller Druck	Observation	386534000	\N	\N	\N	mm[Hg]	t
 52	Kopfumfang	Observation	363811000	9843-4	\N	Head Circumf OFC	cm	t
 6	Sauerstoffgasfluss	Observation	79063001	19941-4	\N	Gas flow.O2 O2 delivery sys	L/min	t
-19	Unterstützungsdruck Beatmung	Observation	\N	20079-0	\N	Pressure support setting Vent	cm[H2O]	f
-24	Positiv-endexpiratorischer Druck	Observation	250854009	76248-4	151976	PEEP on vent Respiratory	cm[H2O]	f
-26	Maximaler Beatmungsdruck	Observation	27913002	76531-3	151973	Press.max on vent Airway	cm[H2O]	f
-30	Inspiratorische Sauerstofffraktion eingestellt	Observation	250774007	19994-3	\N	O2/Total gas setting VFr Vent	%	f
-36	Spontanes-Plus-Mechanisches-Atemzugvolumen	Observation	\N	20118-6	\N	Spont+mech VT on vent	mL	f
-60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	f
-64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	f
-68	Linksventrikulärer Herzindex	Observation	54993008	75919-1	149772	LV Cardiac index	L/(min.m2)	f
-70	Linksv. Herzindex durch Indikatorverdünnung	Observation	\N	8751-0	\N	LV Cardiac index Indicator dilution	L/min/m2	f
-77	Rechtsventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
-79	Pulmonalarterieller Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
-83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	f
+46	Mechanische-Atemfrequenz-Beatmet	Observation	250876000	33438-3	151586	Breaths.mechanical on vent	{Breaths}/min	t
+26	Maximaler Beatmungsdruck	Observation	27913002	76531-3	151973	Press.max on vent Airway	cm[H2O]	t
 88	Körpertemperatur Brust	Observation	248835004	8310-5	\N	Body temperature	Cel	f
 91	Körpertemperatur Atemwege	Observation	\N	60955-2	\N	Airway temp	Cel	f
 94	Körpertemperatur Achsel	Observation	415882003	8328-7	188496	Axil temp	Cel	f
@@ -6736,14 +6724,26 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 100	Körpertemperatur rektal	Observation	307047009	8332-9	188420	Rectal temp	Cel	t
 44	Spontane-Mechanische-Atemfrequenz-Beatmet	Observation	250810003	19840-8	152490	Breaths.spont+mech on vent	/min	t
 75	Linksatrialer Druck	Observation	276762004	85354-9	\N	Blood pressure panel with all children optional	\N	t
+36	Spontanes-Plus-Mechanisches-Atemzugvolumen	Observation	\N	20118-6	\N	Spont+mech VT on vent	mL	t
 76	Rechtsatrialer Druck	Observation	276755008	85354-9	\N	Blood pressure panel with all children optional	\N	t
 41	Zeitverhältnis-Ein-Ausatmung	Observation	250822000	75931-6	151832	Insp/Exp time Ratio	{ratio}	t
 58	Körpertemperatur Kern	Observation	276885007	8310-5	150368	Body temperature	Cel	t
 11	Dauer extrakorporaler Gasaustausch	Observation	251286000	\N	\N	\N	h	t
 33	Eingestellter inspiratorischer Gasfluss	Observation	\N	76275-7	\N	Insp flow set Vent	L/min	t
 56	Körpergrösse Percentil	Observation	1153605006	8303-0	\N	Body height Prctl	%	t
+77	Rechtsventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	t
 86	Körpertemperatur Stirn	Observation	415922000	8310-5	\N	Body temperature	Cel	t
 28	Exspiratorischer Sauerstoffpartialdruck	Observation	442720002	3147-6	153132	pO2 ExG	cm[Hg]	t
+30	Inspiratorische Sauerstofffraktion eingestellt	Observation	250774007	19994-3	\N	O2/Total gas setting VFr Vent	%	t
+19	Unterstützungsdruck Beatmung	Observation	\N	20079-0	\N	Pressure support setting Vent	cm[H2O]	t
+79	Pulmonalarterieller Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	t
+78	Linksventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	t
+24	Positiv-endexpiratorischer Druck	Observation	250854009	76248-4	151976	PEEP on vent Respiratory	cm[H2O]	t
+68	Linksventrikulärer Herzindex	Observation	54993008	75919-1	149772	LV Cardiac index	L/(min.m2)	t
+70	Linksv. Herzindex durch Indikatorverdünnung	Observation	\N	8751-0	\N	LV Cardiac index Indicator dilution	L/min/m2	t
+60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	t
+64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	t
+83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	t
 \.
 
 
@@ -6764,9 +6764,6 @@ Herzzeitvolumen	LV Output	VigilanceC_HZV	Herzzeitvolumen	100	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Therapiebetten_VO_BariAir_liDrehwinkel	\N	43	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Therapiebetten_VO_Triadyne_liPause	\N	43	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	VigilanceC_RCWI	\N	43	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Messung_FiO2	FiO2	100	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_FiO2	gemessene Sauerstoffkonzentration im Atemgas	100	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita4_FiO2	gemessene O2 Konzentration des inspiratorischen Atemgasgemisches	100	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Therapiebetten_VO_BariAir_liPause	\N	40	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Therapiebetten_VO_BariAir_reDrehwinkel	\N	40	t
 Intrakranieller Druck ICP	ICP	ICP	Intrakranialer Druck	100	f
@@ -6775,8 +6772,6 @@ Kopfumfang	Head Circumf OFC	Patient_Kopfumfang	Kopfumfang des Patienten (Kinder)
 Kopfumfang	Head Circumf OFC	Patient_Kopfumfang_Aufnahme	\N	100	f
 Kopfumfang	Head Circumf OFC	Patient_Kopfumfang_bit	Kopfumfang bit cm	100	f
 Körpertemperatur Generisch	Body temperature	T_K	Körpertemperatur	100	f
-Linksventrikulaeres Schlagvolumenindex	LV SVI	Schlagvolumenindex	Wert des gemessenen Schlagvolumenindex.	100	f
-Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_SVI	Schlagvolumenindex	100	f
 Puls	\N	Puls	Puls	100	f
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_G5_fspontan	Spontane Atemfrequenz	100	f
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_T1_fSpontan	Spontane Atemfrequenz	100	f
@@ -6788,10 +6783,9 @@ Pulmonalvaskulärer Widerstandsindex	PV RI	VigilanceC_PVRI	Pulmonaler vasculäre
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_PEEP	Positiver endexspiratorischer Druck (PEEP)	89	f
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	PAP	Pulmunalarterieller Druck	89	f
 Pulmonalvaskulärer Widerstandsindex	PV RI	PVRI	"Pulmunaler Gefäßwiderstandsindex "	89	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	RVP	Rechtsventrikulärer Mitteldruck	89	f
 Körpertemperatur rektal	Rectal temp	P_Temperatur_Rektal	Anlage im Rahmen Philips Monitoring	88	f
 Linksventrikulärer Druck	Blood pressure panel with all children optional	LVP	Linksventrikulärer Mitteldruck	88	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Anordnung_FiO2	Anordnung O² Konzentration im Inspirationsgemisch (FiO2)	100	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	RVP	Rechtsventrikulärer Mitteldruck	89	t
 Blutdruck	Blood pressure panel with all children optional	P_NBP_liBein	Nichtinvaiver Blutdruck linkes Bein	100	t
 Körpergewicht	Weight	Beatmung_ES_C2_Body_Wt	Eingestelltes Körpergewicht beim respirator C2.	100	t
 Körpergewicht	Weight	Beatmung_ES_G5_Body_Weight	\N	100	t
@@ -6817,22 +6811,20 @@ Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_VisionA_PI
 Intrakranieller Druck ICP	ICP	P_CSF_MS_LiqouGuard_ICP	\N	100	f
 Blutdruck	Blood pressure panel with all children optional	P_NBP_reBein	Nichtinvasiver Blutdruck rechtes Bein	100	t
 Körpertemperatur vaginal	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	Schlagvolumenindex	Wert des gemessenen Schlagvolumenindex.	100	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_SVI	Schlagvolumenindex	100	t
 Substituatvolumen	\N	Nierenersatzverfahren_Mess_SubstituatVolumen	\N	100	f
 Intrakranieller Druck ICP	ICP	ICP1	intracranieller Druck	87	f
 Intrakranieller Druck ICP	ICP	ICP1	intracranieller Druck	86	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Pallas_Pplat	Dokumentation des gemessenen Plateaudruckes.	42	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_VisionA_AMVtotal	Messwert: gemessenes Atemminutenvolumen	42	t
 Körpertemperatur Kern	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	86	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_Beatmung_MS_C3_MVspn	spontanes Atemminutenvolumen	85	f
 Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVRI	Systemischer Gefäßwiderstandsindex	85	f
 Intrakranieller Druck ICP	ICP	ICP	Intrakranialer Druck	84	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_Dialysatvolumen	\N	42	t
 Körpertemperatur Brust	Body temperature	Temp1b	Temperatur 1b	83	f
 Körpertemperatur Brust	Body temperature	Temp2b	Temperatur 2b	83	f
 Körpertemperatur Brust	Body temperature	Temp3b	Temperatur 3b	83	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Temp1b	Temperatur 1b	83	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Temp2b	Temperatur 2b	83	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Temp3b	Temperatur 3b	83	f
 Körpertemperatur Gelenk	Body temperature	Temp1b	Temperatur 1b	83	f
 Körpertemperatur Gelenk	Body temperature	Temp2b	Temperatur 2b	83	f
 Körpertemperatur Gelenk	Body temperature	Temp3b	Temperatur 3b	83	f
@@ -6844,12 +6836,6 @@ Körpertemperatur Halswirbelsaeule	Body temperature	Temp3b	Temperatur 3b	83	f
 Körpertemperatur Leiste	Body temperature	Temp1b	Temperatur 1b	83	f
 Körpertemperatur Leiste	Body temperature	Temp2b	Temperatur 2b	83	f
 Körpertemperatur Leiste	Body temperature	Temp3b	Temperatur 3b	83	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp1b	Temperatur 1b	83	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp2b	Temperatur 2b	83	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp3b	Temperatur 3b	83	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Temp1b	Temperatur 1b	83	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Temp2b	Temperatur 2b	83	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Temp3b	Temperatur 3b	83	f
 Körpertemperatur vaginal	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	t
 Körpertemperatur Kern	Body temperature	Temp1b	Temperatur 1b	83	t
 Körpertemperatur vaginal	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	t
@@ -6881,22 +6867,22 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_T1_Exsp
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_Beatmung_ES_C3_Pinsp	Inspiratorischer Druck	84	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_Beatmung_MS_C3_Pinsp	Inspiratorischer Druck	84	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_T1_InspFlow	Inspiratorischer Peakflow	80	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_Beatmung_MS_C3_MVspn	spontanes Atemminutenvolumen	85	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Temp1b	Temperatur 1b	83	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Temp2b	Temperatur 2b	83	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Temp3b	Temperatur 3b	83	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp1b	Temperatur 1b	83	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp2b	Temperatur 2b	83	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp3b	Temperatur 3b	83	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Temp1b	Temperatur 1b	83	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Temp2b	Temperatur 2b	83	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Temp3b	Temperatur 3b	83	t
 Körpertemperatur vaginal	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	t
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_Anordnung_ASB	Anordnung Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)	80	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_Einstellung_ASB	Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)	80	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_ES_Pallas_Frequenz_Min	Eingestellte Mindestfrequenz (Apnoeventilation) in dme Modus Pressure Support.	80	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_ES_Pallas_PS	Dokumentation des eingestellten Pressure Support.	80	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_Messung_Pmax	Peak Airway Pressure	80	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_Messung_Pmean	Mean Airway Pressure	80	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_Messung_Pmin	Minimum Airway Pressure	80	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_MS_G5_PTP	Druck Zeit Produkt (Pressure Time Product), ein Monitoring Parameter	80	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_MS_T1_PTP	Druck Zeit Produkt (Pressure Time Product)	80	f
 Körpertemperatur vaginal	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	t
 Körpertemperatur vaginal	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	t
 Körpertemperatur vaginal	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita2_Ppeep	gemessener positer endexspiratorischer Druck	79	f
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Avea_FiO2	eingestellte Sauerstoffkonzentration des inspiratorischen Atemgases	78	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_O2_insp	Gemessene inspiratorische O2 Konzentration.	78	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_VisionA_DeltaP	Einstellwert: eingestellte Druckdifferenz	76	t
 Körpertemperatur vaginal	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	t
 Körpertemperatur vaginal	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	t
@@ -6914,10 +6900,8 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverf
 Körpertemperatur Brust	Body temperature	Temp1a	Temperatur 1a	76	f
 Körpertemperatur Brust	Body temperature	Temp2a	Temperatur 2a	76	f
 Körpertemperatur Brust	Body temperature	Temp3a	Temperatur 3a	76	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Temp1a	Temperatur 1a	76	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Temp2a	Temperatur 2a	76	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	P_Beatmung_ES_3100A_Frequenz	Eingestellte Oszillationsfrequenz	42	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Isofluran_insp	Inspiratorisch gemessene Isofluran.	78	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_Anordnung_ASB	Anordnung Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)	80	t
 Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	SaO2 % Bld Preductal PulseOx	SaO2	arterielle Sauerstoffsättigung	77	t
 Zentralvenöser Druck	CVP	PICCO_ZVD	Zentraler Venendruck	77	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_T1_AutoPeep	Unerwarteter positiver endexspiratorischer Druck	80	t
@@ -6933,8 +6917,12 @@ Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent
 Substituatfluss	\N	Nierenverfahren_ES_Multi_SubstituatBolus	Substituatbolus ml	79	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_G5_ExspFlow	Exspiratorischer Peakflow, ein Monitoring-Parameter	78	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_Beatmung_MS_C3_InspFlow	Inspiratorischer Peakflow	80	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_O2_insp	Gemessene inspiratorische O2 Konzentration.	78	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Isofluran_insp	Inspiratorisch gemessene Isofluran.	78	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_Einstellung_ASB	Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)	80	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Temp1a	Temperatur 1a	76	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Temp2a	Temperatur 2a	76	t
 Körpertemperatur Generisch	Body temperature	Temp1a	Temperatur 1a	76	t
-Körpertemperatur Brustwirbelsaeule	Body temperature	Temp3a	Temperatur 3a	76	f
 Körpertemperatur Gelenk	Body temperature	Temp1a	Temperatur 1a	76	f
 Körpertemperatur Gelenk	Body temperature	Temp2a	Temperatur 2a	76	f
 Körpertemperatur Gelenk	Body temperature	Temp3a	Temperatur 3a	76	f
@@ -6945,12 +6933,6 @@ Körpertemperatur Halswirbelsaeule	Body temperature	Temp3a	Temperatur 3a	76	f
 Körpertemperatur Leiste	Body temperature	Temp1a	Temperatur 1a	76	f
 Körpertemperatur Leiste	Body temperature	Temp2a	Temperatur 2a	76	f
 Körpertemperatur Leiste	Body temperature	Temp3a	Temperatur 3a	76	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp1a	Temperatur 1a	76	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp2a	Temperatur 2a	76	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp3a	Temperatur 3a	76	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Temp1a	Temperatur 1a	76	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Temp2a	Temperatur 2a	76	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Temp3a	Temperatur 3a	76	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_Beatmung_ES_O2Flow	l/min	75	f
 Körpertemperatur vaginal	Body temperature	Temp2a	Temperatur 2a	76	t
 Körpertemperatur vaginal	Body temperature	Temp3a	Temperatur 3a	76	t
@@ -6963,7 +6945,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_fSpontan	Spontane Atemfrequenz	51	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_petCO2	\N	51	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_TI	Inspirationszeit in Sekunden	51	t
-Linksventrikulaeres Schlagvolumenindex	LV SVI	p-SVI	Schlagvolumenindex  (PICCO Modul Dräger Monitoring)	75	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_VT_IBW	\N	51	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_RepeatCount	\N	51	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_Sensitivity	\N	51	t
@@ -6974,13 +6955,7 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Me
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Power	\N	50	t
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_Doku_Bolusgabe	\N	42	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Austausch	\N	75	t
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_PeepCPAP	Messwert: Beatmungsdruck Peep / CPAP	74	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_PeepCPAP	Messwert: Beatmungsdruck Peep/CPAP	74	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_VisionA_PEEP	Messwert: gemessener positiver endexspiratorischer Druck	74	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Anordnung_VT	Anordnung Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)	74	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Einstellung_VT	Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)	74	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Messung_VTeMl	VTe / ex. Atemzugvolumen (Tidal Volumen expir.)	74	f
-Systemischer vaskulärer Widerstandsindex	SV RI	SVR	Systemischer Gefäßwiderstand	74	f
 Arterieller Druck	\N	PAM	Mittlerer pulmonale arterieller Druck	100	t
 Körpertemperatur Generisch	Body temperature	Temp2a	Temperatur 2a	76	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	P_Beatmung_ES_C3_Tubusgroesse	\N	41	t
@@ -6992,20 +6967,27 @@ Körpertemperatur Kern	Body temperature	Temp1a	Temperatur 1a	76	t
 Körpertemperatur Stirn	Body temperature	Temp1a	Temperatur 1a	76	t
 Körpertemperatur Stirn	Body temperature	Temp2a	Temperatur 2a	76	t
 Körpertemperatur Stirn	Body temperature	Temp3a	Temperatur 3a	76	t
-Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVR	Systemischer Gefäßwiderstand	74	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_PeepCPAP	Messwert: Beatmungsdruck Peep / CPAP	74	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_PeepCPAP	Messwert: Beatmungsdruck Peep/CPAP	74	f
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Anordnung_VT	Anordnung Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)	74	t
+Systemischer vaskulärer Widerstandsindex	SV RI	SVR	Systemischer Gefäßwiderstand	74	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Temp1a	Temperatur 1a	76	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Temp2a	Temperatur 2a	76	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Temp3a	Temperatur 3a	76	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	p-SVI	Schlagvolumenindex  (PICCO Modul Dräger Monitoring)	75	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp1a	Temperatur 1a	76	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp2a	Temperatur 2a	76	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp3a	Temperatur 3a	76	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Temp3a	Temperatur 3a	76	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	73	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Mvspont	\N	50	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Vte	"Exsp. Tidalvolumen "	50	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Vti	"Insp. Tidalvolumen "	50	t
 Körpertemperatur Brust	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
-Linksventrikulaeres Schlagvolumenindex	LV SVI	LVSAI	"Linksventrikulärer Schlagarbeitsindex "	73	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	PtiO2Druck	Gemessener Sauerstoffpartialdruck im Parenchym	72	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_P01	Atemweg-Okklusionsdruck, ein Monitoring-Parameter	50	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck	50	t
@@ -7024,7 +7006,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Me
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	49	t
 Körpertemperatur Achsel	Axil temp	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	72	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Ppeak	\N	49	t
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_Frequenz	eingestellt mandatorische Atemfrquenz	72	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck	72	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck	72	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_ExspFlow	Exspiratorischer Peakflow	49	t
@@ -7032,7 +7013,7 @@ Hämodialyse Blutfluss	\N	Hemolung_MS_Blutfluss	\N	73	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Blutfluss	\N	73	t
 Atemfrequenz	Resp rate	Nierenverfahren_VO_Multi_Calcium	Ca-rate	73	t
 Herzfrequenz	Heart rate	Schrittmacher_Osypka101H_ES_Rate	Grundfrequenz	72	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Enfluran_insp	Inspiratorisch gemessene Enfluran Konzentration.	71	t
+Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVR	Systemischer Gefäßwiderstand	74	t
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
 Linksventrikulaeres Schlagvolumen	LV SV	PICCO_SVV	Schlagvolumen-Variation	72	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	39	t
@@ -7046,6 +7027,12 @@ Körpertemperatur Stirn	Body temperature	P_Temperatur_Naso	Anlage im Rahmen Phil
 Körpertemperatur Blut	Blood temp	Temp1b	Temperatur 1b	73	t
 Körpertemperatur Blut	Blood temp	Temp2b	Temperatur 2b	73	t
 Körpertemperatur Blut	Blood temp	Temp3b	Temperatur 3b	73	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Enfluran_insp	Inspiratorisch gemessene Enfluran Konzentration.	71	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	LVSAI	"Linksventrikulärer Schlagarbeitsindex "	73	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_Frequenz	eingestellt mandatorische Atemfrquenz	72	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_HD_ES_4008onl_Fluss	\N	39	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_PD_Doku_Auslaufzeit	\N	39	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_AktuellesNatrium	\N	39	t
@@ -7088,11 +7075,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	COPRA_Patie
 Körpertemperatur Achsel	Axil temp	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	70	f
 Körpertemperatur Achsel	Axil temp	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	70	f
 Körpertemperatur Atemwege	Airway temp	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	70	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Ppeak	Messwert: Beatmungsspitzendruck	70	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Avea_SpontVe	gemessenes spontanes Atemminutenvolumen	70	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Evita2_MVspon	gemessenes spontanes Atemminutenvolumen	70	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Evita4_MVspn	gemessenes spontanes Atemminutenvolumen	70	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_VisionA_SpontanAMV	gemessenes spontanes Atemminutenvolumen	70	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenverfahren_MS_Multi_UFRBFRVerhaeltnis	\N	37	t
 Körpertemperatur unter der Zunge	Oral temp	Untersuchung_Status_Koerpertemperatur	\N	71	t
 Linksventrikulaeres Schlagvolumen	LV SV	Schlagvolumen	gemessenes Schlagvolumen	70	t
@@ -7100,6 +7082,8 @@ Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	P_Beatmung_MS_C3_Pplat
 Unterstützungsdruck Beatmung	Pressure support setting Vent	IABP_DatascopeCS300_ES_Unterstützungsdruck	Dokumentation des Unterstützungsdruckes.	71	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_Pallas_inCO2	Inspiratorisch gemessenes CO2.	70	t
 Körpertemperatur nasal	Nasal temp	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	70	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Ppeak	Messwert: Beatmungsspitzendruck	70	f
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Avea_SpontVe	gemessenes spontanes Atemminutenvolumen	70	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_Apherese_VO_SpülloesungAntikoag	\N	47	t
@@ -7110,8 +7094,6 @@ Körpertemperatur Achsel	Axil temp	Temp2a	Temperatur 2a	69	f
 Körpertemperatur Achsel	Axil temp	Temp3a	Temperatur 3a	69	f
 Körpertemperatur Brust	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
 Körpertemperatur Brust	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Kein_Recruitment	Liste ein aus	46	t
@@ -7119,13 +7101,8 @@ Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Te
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmittel	gemessener Beatmungsmitteldruck	69	f
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Messung_Compliance	Compliance	68	f
-Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVV	Schlagvolumen-Variation	57	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_passiver_Patient	Liste ein aus	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Quick_Wean	Liste ein aus	46	t
@@ -7137,7 +7114,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_HLI	Liste ein aus	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Kein_Recruitment	Liste ein aus	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_passiver_Patient	Liste ein aus	46	t
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmax	gemessener Beatmungsspitzendruck	68	f
 Blutfluss durch cardiovasculäres Gerät	\N	VAD_Blutfluss_Doku	\N	67	t
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_T1_Cstat	Statische Compliance	67	t
 Körpertemperatur Generisch	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
@@ -7155,9 +7131,15 @@ Körpertemperatur Stirn	Body temperature	P_Temperatur_DeltaT	Delta Temperatur ze
 Körpertemperatur Stirn	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_T1_Rinsp	Inspiratorische Flow-Resistance	68	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_Beatmung_MS_C3_Rinsp	Inspiratorische Flow-Resistance	68	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmax	gemessener Beatmungsspitzendruck	68	f
+Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVV	Schlagvolumen-Variation	57	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	t
 Herzfrequenz	Heart rate	PICCO_HF	HerzfrequenzHerzfrequenz	67	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_VisionA_O2Konzentration	Eingestellte Sauerstoffzufuhr	67	f
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Quick_Wean	Liste ein aus	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Zephyros_Pinsp	\N	46	t
@@ -7170,8 +7152,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck	46	t
 Körpertemperatur Brust	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
 Körpertemperatur Brust	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_I_E	I:E Verhältnis (Messung)	46	t
@@ -7181,15 +7161,9 @@ Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Kern	Anlage fü
 Körpertemperatur Kern	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
 Körpertemperatur rektal	Rectal temp	P_Temperatur_Rektal	Anlage im Rahmen Philips Monitoring	67	f
-Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_SVI	Schlagvolumenindex	67	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_G5_Sauerstoff	Sauerstoffeinstellung	67	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_T1_Sauerstoff	Sauerstoffeinstellung	67	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Avea_SpontVte	gemessenes spontanes Tidalvolumen	67	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_I:E	Atemzeitverhältnis (I:E)	67	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Ti_Tges	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_VisionA_HFOBaseFlow	gemessener Basis Continousflow	46	t
@@ -7212,8 +7186,15 @@ Körpertemperatur Kern	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zen
 Körpertemperatur Stirn	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	t
 Körpertemperatur Stirn	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Avea_Ve	gemessenes exspiratorisches Volumen	67	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_VisionA_O2Konzentration	Eingestellte Sauerstoffzufuhr	67	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Avea_SpontVte	gemessenes spontanes Tidalvolumen	67	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_SVI	Schlagvolumenindex	67	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_3100A_Mitteldruck	Eingestellter mittlerer Atemwegsdruck	66	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_SpülloesungAntikoagulanz	Spüllösung zum Vorbereiten des extrakorporalen Verfahrens	66	f
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Messung_Compliance	Compliance	65	f
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
@@ -7230,9 +7211,6 @@ Körpertemperatur Achsel	Axil temp	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	65	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
 Körpertemperatur Brust	Body temperature	T_K	Körpertemperatur	65	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	T_K	Körpertemperatur	65	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	65	f
@@ -7245,13 +7223,6 @@ Körpertemperatur Halswirbelsaeule	Body temperature	T_K	Körpertemperatur	65	f
 Körpertemperatur Kern	Body temperature	T_K	Körpertemperatur	65	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	T_K	Körpertemperatur	65	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	T_K	Körpertemperatur	65	f
-Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_SVI	SchlagvolumenindexSchlagvolumenindex	65	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pinsp	Inspiratorischer Druck	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pkontrol_Phoch	\N	46	t
 Atemfrequenz	Resp rate	Beatmung_Einstellung_AF	Beatmungsfrequenz (f/AF)	65	t
@@ -7269,7 +7240,16 @@ Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Avea_Peak
 Körpertemperatur Stirn	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
 Körpertemperatur Stirn	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Inpuls_Erfassung_Beatmungszeit	\N	65	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_F120_O2Konzentration	Einstellparameter: Sauerstoffgehalt des Gasgemisches	64	f
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_SpülloesungAntikoagulanz	Spüllösung zum Vorbereiten des extrakorporalen Verfahrens	66	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_SVI	SchlagvolumenindexSchlagvolumenindex	65	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	T_K	Körpertemperatur	65	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	T_K	Körpertemperatur	65	t
 Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
 Körpertemperatur Kern	Body temperature	Ort_Temperatur1a_Messung	Liste	64	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_ProzentMinVol	\N	46	t
@@ -7279,11 +7259,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Thoch	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Timax	Inspirationszeit max	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Ttief	\N	46	t
-Linksventrikulaeres Schlagvolumenindex	LV SVI	p-SVI	Schlagvolumenindex  (PICCO Modul Dräger Monitoring)	64	f
-Linksventrikulaeres Schlagvolumenindex	LV SVI	Schlagvolumenindex	Wert des gemessenen Schlagvolumenindex.	64	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Evita2_AMV	gemessenes Atemminutenvolumen	64	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Evita4_MV	gemessenes Atemminutenvolumen	64	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Pallas_MV	Gemessenes Atemminutenvolumen.	64	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_Frequenz	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Pinsp	Inspiratorischer Druck	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Ppeak	\N	46	t
@@ -7298,13 +7273,12 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_VLeckage	Leckagevolumen, ein Monitoring-Parameter	45	t
 Körpertemperatur Achsel	Axil temp	NEV_Apherese_ES_Multi_Temperatur	\N	63	f
 Körpertemperatur Achsel	Axil temp	NEV_Apherese_VO_Multi_Temperatur	\N	63	f
-Parameter von Beatmung	\N	Beatmung_Anordnung_BV	beatmungs-Verordung	63	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Heimbeatmung_Pmittel	\N	45	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ILAPressure	\N	64	t
 Blutdruck	Blood pressure panel with all children optional	PtiO2Druck	Gemessener Sauerstoffpartialdruck im Parenchym	63	t
 Herzfrequenz	Heart rate	Hausarzt_Ort	\N	64	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita2_O2Konzentration	gemessene O2 Konzentration im Inspirationsgas	64	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_G5_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	63	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Evita2_AMV	gemessenes Atemminutenvolumen	64	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Evita4_MV	gemessenes Atemminutenvolumen	64	t
 Körpertemperatur Generisch	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	63	t
 Körpertemperatur rektal	Rectal temp	P_EctSta	Ectopic Status Label	63	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	IABP_CARDIOSAVE_ES_Unterstuetzungsdruck	Dokumentation des Unterstützungdruckes	64	t
@@ -7319,6 +7293,13 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_Einstellun
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_T1_ExpMinVol	Exspiratorisches Minutenvolumen	64	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	P_Beatmung_MS_C3_ExspMinVol	Exspiratorisches Minutenvolumen	64	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Anordnung_Flow	Anordnung Inspiratorische Flowrate	64	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_F120_O2Konzentration	Einstellparameter: Sauerstoffgehalt des Gasgemisches	64	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita2_O2Konzentration	gemessene O2 Konzentration im Inspirationsgas	64	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_G5_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	63	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Pallas_MV	Gemessenes Atemminutenvolumen.	64	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	p-SVI	Schlagvolumenindex  (PICCO Modul Dräger Monitoring)	64	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	Schlagvolumenindex	Wert des gemessenen Schlagvolumenindex.	64	t
+Parameter von Beatmung	\N	Beatmung_Anordnung_BV	beatmungs-Verordung	63	t
 Arterieller Druck	\N	PICCO_ABP	Arterieller Druck	100	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_PEEP	Dokumentation des gemessenen PEEPs.	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Cdyn	"Dynamische Charakteristika "	45	t
@@ -7344,9 +7325,6 @@ Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Tempe
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita4_Tinsp	eingestellte absolute Inspirationszeit	62	t
 Körpertemperatur unter der Zunge	Oral temp	NEV_Apherese_ES_Multi_Temp	Anlage 18.05.2012	62	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_MS_HorowitzINPULS	Messung des Horowitz-Indexes	62	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_CF800_O2Konzentration	Sauerstoffgehalt des eingestellten Gasgemisches CF 800	62	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_FiO2	gemessene Sauerstoffkonzentration im Atemgas	62	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita4_FiO2	gemessene O2 Konzentration des inspiratorischen Atemgasgemisches	62	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_P0_1	"P0.1 "	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_PEEP	"Positiver Endexsp. Druck "	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_RSB	Index für schnelle Flachatmung (Rapid Shallow Breathing Index)	45	t
@@ -7365,13 +7343,15 @@ Herzfrequenz	Heart rate	Hausarzt_Vorname	\N	62	t
 Herzzeitvolumen	LV Output	Beatmung_MS_T1_VLeckage	Leckagevolumen	62	t
 Körpertemperatur Generisch	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	62	t
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	SpO2_2	\N	62	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_CF800_O2Konzentration	Sauerstoffgehalt des eingestellten Gasgemisches CF 800	62	t
 Atemzugvolumen-Einstellung	VT setting Vent	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	62	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate	62	f
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_FiO2	gemessene Sauerstoffkonzentration im Atemgas	62	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita4_FiO2	gemessene O2 Konzentration des inspiratorischen Atemgasgemisches	62	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOATZ	\N	62	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	62	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_InspirationszeitIE	Inspirationszeit I:E	62	t
 Linksatrialer Druck	Blood pressure panel with all children optional	LAP	Linksatrial  Mitteldruck	62	f
-Parameter von extrakorporalen Verfahren	\N	Patient_Verlusst_ExtrakorporaleAbnahme	Patient_Verlusst_ExtrakorporaleAbnahme	62	f
 Körpertemperatur vaginal	Body temperature	Temp1b	Temperatur 1b	83	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
 Körpertemperatur Kern	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
@@ -7386,16 +7366,12 @@ Körpertemperatur Achsel	Axil temp	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	61	f
 Körpertemperatur Brust	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	61	f
 Körpertemperatur Brust	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	61	f
 Körpertemperatur Brust	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_FrequencyCough	\N	45	t
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Substituatfluss	\N	Nierenverfahren_VO_Multi_Substituat	Substituat in ml/h	61	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_Mvleck	gemessenes Leckagevolumen pro Minute	60	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_VisionA_Ti	Einstellwert: Inspirationszeit in Sekunden	60	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_RCexsp	Exspiratorische Zeitkonstante	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Sauerstoff	\N	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_O2Konzentration	Einstellwert: O2 Konzentration des Gasgemisches	44	t
@@ -7404,7 +7380,7 @@ Dauer Hämodialysesitzung	\N	Nierenverfahren_VO_Dialysatlösung	Dialysatlösung,
 Herzfrequenz	Heart rate	Hausarzt_Name	\N	61	t
 Herzfrequenz	Heart rate	Nierenverfahren_ES_Multi_CitratBlut	Citratrate	60	t
 Herzfrequenz	Heart rate	Nierenverfahren_MS_Multi_Citratfluss	Citratrate	60	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_Ti	gemessene Inspirationszeit	61	t
+Parameter von extrakorporalen Verfahren	\N	Patient_Verlusst_ExtrakorporaleAbnahme	Patient_Verlusst_ExtrakorporaleAbnahme	62	t
 Körpergewicht	Weight	GEDVI	"Index des enddiastolisches Volumen "	35	t
 Körpertemperatur Generisch	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	61	t
 Körpertemperatur Generisch	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
@@ -7423,6 +7399,11 @@ Körpertemperatur unter der Zunge	Oral temp	TempBT	Bluttemperatur bei der HZV Me
 Körpertemperatur unter der Zunge	Oral temp	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	61	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Therapiebetten_Doku_Giraffe_ES_Luftfeuchtigkeit	Einstellung der Luftfeuchtigkeit im Inkubator	60	t
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	tcpO2	transcutan gemessener pO2 Wert.	60	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_VisionA_Ti	Einstellwert: Inspirationszeit in Sekunden	60	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_Ti	gemessene Inspirationszeit	61	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
 Körpertemperatur Kern	Body temperature	Ort_Temperatur1a_Messung	Liste	60	t
 Körpertemperatur Kern	Body temperature	Ort_Temperatur1b_Messung	Liste	60	t
 Körpertemperatur Kern	Body temperature	Ort_Temperatur2a_Messung	Liste	60	t
@@ -7441,13 +7422,6 @@ Körpertemperatur Brust	Body temperature	Ort_Temperatur2b_Messung	\N	60	f
 Körpertemperatur Brust	Body temperature	Ort_Temperatur3a_Messung	\N	60	f
 Körpertemperatur Brust	Body temperature	Ort_Temperatur3b_Messung	\N	60	f
 Körpertemperatur Brust	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur1a_Messung	Liste	60	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur2a_Messung	Liste	60	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur2b_Messung	\N	60	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur3a_Messung	\N	60	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur3b_Messung	\N	60	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	f
 Körpertemperatur Gelenk	Body temperature	Ort_Temperatur1a_Messung	Liste	60	f
 Körpertemperatur Gelenk	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
 Körpertemperatur Gelenk	Body temperature	Ort_Temperatur2a_Messung	Liste	60	f
@@ -7478,23 +7452,18 @@ Körpertemperatur Leiste	Body temperature	Ort_Temperatur3a_Messung	\N	60	f
 Körpertemperatur Leiste	Body temperature	Ort_Temperatur3b_Messung	\N	60	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	f
 Körpertemperatur Leiste	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	60	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur1a_Messung	Liste	60	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur2a_Messung	Liste	60	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur2b_Messung	\N	60	f
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur1a_Messung	Liste	60	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur1b_Messung	Liste	60	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur2a_Messung	Liste	60	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur2b_Messung	\N	60	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur1a_Messung	Liste	60	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur1b_Messung	Liste	60	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur2a_Messung	Liste	60	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur2b_Messung	\N	60	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur3a_Messung	\N	60	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur3b_Messung	\N	60	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_MS_G5_Pplateau	Plateau-Atemwegsdruck, ein Monitoring-Parameter	59	t
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur3a_Messung	\N	60	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur3b_Messung	\N	60	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Ort_Temperatur1a_Messung	Liste	60	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Ort_Temperatur2a_Messung	Liste	60	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Ort_Temperatur2b_Messung	\N	60	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Ort_Temperatur3a_Messung	\N	60	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Ort_Temperatur3b_Messung	\N	60	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	f
 Venöser Druck	\N	Beatmung_Einstellung_Pinsp	Oberer Druckniveau	60	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Evita4_O2Konzentration	eingestellte O2 Konzentration des Frischgases	59	f
 Körpertemperatur vaginal	Body temperature	Ort_Temperatur1a_Messung	Liste	60	t
 Körpertemperatur vaginal	Body temperature	Ort_Temperatur1b_Messung	Liste	60	t
 Körpertemperatur vaginal	Body temperature	Ort_Temperatur2a_Messung	Liste	60	t
@@ -7535,16 +7504,20 @@ Körpertemperatur Stirn	Body temperature	Ort_Temperatur3a_Messung	\N	60	t
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	Beatmung_MS_G5_Rexsp	Exspiratorische Flow-Resistance, ein Monitoring-Parameter	59	t
 Monitoring und Vitaldaten	\N	P_Temperatur_Rektal	Anlage im Rahmen Philips Monitoring	60	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Avea_Te	gemessene Exspirationszeit	59	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Evita4_O2Konzentration	eingestellte O2 Konzentration des Frischgases	59	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Ort_Temperatur1a_Messung	Liste	60	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Ort_Temperatur1b_Messung	Liste	60	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Ort_Temperatur2a_Messung	Liste	60	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Ort_Temperatur2b_Messung	\N	60	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Ort_Temperatur3a_Messung	\N	60	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Ort_Temperatur3b_Messung	\N	60	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur3a_Messung	\N	60	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur3b_Messung	\N	60	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	t
 Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	f
 Körpertemperatur Brust	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	f
 Körpertemperatur Gelenk	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	f
 Körpertemperatur Gelenk	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
@@ -7569,33 +7542,34 @@ Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Te
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	f
 Körpertemperatur Stirn	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	t
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	f
 Körpertemperatur Generisch	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	t
 Körpertemperatur Stirn	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	t
 Körpertemperatur Stirn	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	t
 Körpertemperatur Stirn	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	t
 Körpertemperatur Stirn	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	t
 Körpertemperatur Stirn	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_MS_VisionA_MAP	gemessener Mittlerer Atemwegsdruck unter HFO bei Alpha Vision	58	t
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	SM_Frequenz	Schrittmacher Frequenz	59	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Citratloesung	Citratbeutel	59	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Dialysekonzentrat	Dialyskonzentratbehälter	59	f
 Venöser Druck	\N	Beatmung_ES_VisionA_Trigger	Einstellgrösse: Druck bzw. Flowtrigger	59	t
 Venöser Druck	\N	Beatmung_MS_Evita4_P01	gemessener P0.1 Druck nach Meßmanöver	59	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_VT	Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)	58	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_T1_Timaxi	eingestellte maximale Inspirationszeit im Modus NIV	58	f
 Venöser Druck	\N	Beatmung_MS_G5_PTP	Druck Zeit Produkt (Pressure Time Product), ein Monitoring Parameter	59	t
 Venöser Druck	\N	Beatmung_MS_T1_PTP	Druck Zeit Produkt (Pressure Time Product)	59	t
 Körpertemperatur vaginal	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	t
@@ -7609,7 +7583,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Tvi	\N	44	t
 Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	58	f
 Körpertemperatur Brust	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_Apherese_Doku_Spuel_Dauer	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_ES_4008HS_StartNa	\N	44	t
@@ -7619,8 +7592,6 @@ Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Arteriell	Anlag
 Körpertemperatur Leiste	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	58	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
 Körpertemperatur Leiste	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	58	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_RTX_Time	\N	59	t
 Herzfrequenz	Heart rate	Hausarzt_Titel	\N	58	t
 Körpertemperatur Generisch	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	58	t
@@ -7642,28 +7613,19 @@ Körpertemperatur Blut	Blood temp	Nierenverfahren_ES_Multi_Temperatur	Tempertatu
 Körpertemperatur Blut	Blood temp	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	58	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Hemolung_ES_Gasfluss	\N	58	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	PerspiratioInsensibilis	Perspiratio Insensibilis in ml (Ausfuhrrelevant in der Bilanz)	58	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_T1_Timaxi	eingestellte maximale Inspirationszeit im Modus NIV	58	t
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Citratloesung	Citratbeutel	59	t
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Dialysekonzentrat	Dialyskonzentratbehälter	59	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	SM_Frequenz	Schrittmacher Frequenz	59	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_MVSpontan	Mindest Volumen sp	58	t
-Parameter von Beatmung	\N	Beatmung_ES_G5_Flow	Parameter im Modus Highflow - ab 08.06.2017	58	f
-Parameter von Beatmung	\N	Beatmung_ES_Servoi_Flow	Parameter im Modus Highflow	58	f
-Parameter von Beatmung	\N	Beatmung_MS_G5_P01	Atemweg-Okklusionsdruck, ein Monitoring-Parameter	58	f
-Parameter von Beatmung	\N	Beatmung_MS_G5_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	58	f
-Parameter von Beatmung	\N	Beatmung_MS_G5_RCexsp	Exspiratorische Zeitkonstante, ein Monitoring-Parameter	58	f
-Parameter von Beatmung	\N	Beatmung_MS_G5_RCinsp	Inspiratorische Zeitkonstante, ein Monitoring Parameter	58	f
-Parameter von Beatmung	\N	Beatmung_MS_G5_Rinsp	Inspiratorische Flow-Resistance, ein Monitoring-Parameter	58	f
-Parameter von Beatmung	\N	Beatmung_MS_G5_RSB	Index für schnelle Flachatmung (Rapid Shallow Breathing Index), Monitoring Parameter	58	f
-Parameter von Beatmung	\N	Beatmung_MS_G5_TI	Inspirationszeit in Sekunden, Monitoring-Parameter	58	f
-Parameter von Beatmung	\N	Beatmung_MS_G5_WOBimp	Zusätzlich auferlegte Atemarbeit, ein Monitoring Parameter	58	f
-Parameter von Beatmung	\N	Beatmung_MS_T1_P01	Atemweg-Okklusionsdruck, ein Monitoring-Parameter	58	f
-Parameter von Beatmung	\N	Beatmung_MS_T1_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	58	f
-Parameter von Beatmung	\N	Betreuer_Vorname	\N	58	f
-Parameter von Beatmung	\N	BIS	Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.	58	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss	58	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Servoi_I_E	I:E Verhältnis (Messung)	58	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Servoi_Flow	Parameter im Modus Highflow	57	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_BiPAPV_Inspirationszeit	Einstellwert: Zeiteinstellung für die Inspirationszeit	57	f
 Körpertemperatur vaginal	Body temperature	Temp2b	Temperatur 2b	83	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_MS_HorowitzINPULS	Messung des Horowitz-Indexes	57	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Pallas_Enfluran_exsp	Exspiratorisch gemessene Enfluran Kozentration.	57	f
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Mvspont	\N	58	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NIRS	Über eine Messsonde transcutan gemessener Prozentwert	44	t
@@ -7673,7 +7635,7 @@ Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_T1_Ti	Ein
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_MS_T1_Rinsp	Inspiratorische Flow-Resistance	57	t
 Körpertemperatur Harnblase	Bdy temp Bladder	NEV_HD_MS_4008onl_TMP	\N	35	f
 Herzfrequenz	Heart rate	Lungenersatzverfahren_Kathetertyp	Katheterart	57	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Desfluran_exsp	Exspiratorisch gemessene Desfluran Konzentration.	57	t
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss	58	t
 Linksventrikulärer Herzindex	LV Cardiac index	PICCO_HI	HerzindexHerzindex	58	t
 Linksventrikulärer Herzindex	LV Cardiac index	Schrittmacher_Osypka203H_ES_V_Sense	Empfindlichkeit Ventrikel	58	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_G5_Peep_Grenzwert	Negativ Wert/positiv Wert	58	t
@@ -7693,6 +7655,13 @@ Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Beatmung_ES_G5_Apnoez
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	P_Beatmung_MS_C3_petCO2	Endtidaler CO2-Partialdruck	57	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Pallas_O2_exsp	Gemessene exspiratorische O2 Konzentration.	57	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Pallas_Sevofluran_exsp	Exspiratorisch gemessene Sevofluran Konzentration.	57	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Pallas_Enfluran_exsp	Exspiratorisch gemessene Enfluran Kozentration.	57	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Desfluran_exsp	Exspiratorisch gemessene Desfluran Konzentration.	57	t
+Parameter von Beatmung	\N	Beatmung_ES_G5_Flow	Parameter im Modus Highflow - ab 08.06.2017	58	t
+Parameter von Beatmung	\N	Beatmung_ES_Servoi_Flow	Parameter im Modus Highflow	58	t
+Parameter von Beatmung	\N	Beatmung_MS_G5_P01	Atemweg-Okklusionsdruck, ein Monitoring-Parameter	58	t
+Parameter von Beatmung	\N	Beatmung_MS_G5_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	58	t
+Parameter von Beatmung	\N	Betreuer_Vorname	\N	58	t
 Körpertemperatur vaginal	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	t
 Körpertemperatur vaginal	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Freq_Spontan	\N	57	t
@@ -7706,15 +7675,12 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_CoughAssist_Oszillation	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Pmittel	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pinsp	"Inspiratorischer Druck, mit Pinsp wird der Zieldruck (zusätzlich zu PEEP/CPAP) bezeichnet, der im Modus ASV während der Inspirationsphase abgegeben wird"	43	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_T1_Body_Wt	Eingestelltes Körpergewicht	57	f
 Körpertemperatur Achsel	Axil temp	CardioHelpMaquet_VO_TemperaturSoll	\N	57	f
 Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	57	f
 Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	57	f
 Körpertemperatur Achsel	Axil temp	NEV_HD_VO_4008HS_Temperatur	\N	57	f
 Körpertemperatur Brust	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
 Körpertemperatur Brust	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
 Körpertemperatur Gelenk	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
 Körpertemperatur Gelenk	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Ppeak	Messwert: Beatmungsspitzendruck	43	t
@@ -7723,15 +7689,9 @@ Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_ES_5008onl_Temperat
 Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
 Körpertemperatur Leiste	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
 Körpertemperatur Leiste	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Eins_ES_Ausgang	Medtronic 5348	57	t
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_drei_ES_Basisfrequenz	Medtronic 5388	57	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Pallas_Pmean	Gemesener Atemwegsmitteldruck	57	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Anordnung_PEEP	Anordnung Positiver endexspiratorischer Druck (PEEP)	57	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Messung_AMVSpontan	Spont Minute Volume	57	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_MS_C3_IEVerhaeltnis	Verhältnis Inspirationszeit:Exspirationszeit	57	f
 Linksventrikulaeres Schlagvolumen	LV SV	Beatmung_ES_VisionA_Schlagvolumen	Schlagvolumen (SV) in engl. (cycle volume)	57	t
 Linksventrikulaeres Schlagvolumen	LV SV	Vigileo_SV	ml/b	57	t
@@ -7748,13 +7708,20 @@ Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Schrittmacher_Osypka1
 Körpergrösse Percentil	Body height Prctl	Patient_Groesse	Größe des Patienten	57	t
 Körpertemperatur Stirn	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	t
 Monitoring und Vitaldaten	\N	ART	2. artereille Messung, ab 201712 im Rahmen Umstellung Philips Monitoring	57	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_T1_Body_Wt	Eingestelltes Körpergewicht	57	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Messung_AMVSpontan	Spont Minute Volume	57	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_drei_ES_Basisfrequenz	Medtronic 5388	57	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_C2_Vt	\N	56	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita4_Vt	Einstellgröße für das Tidalvolumen	56	f
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_G5_Vt	Einstellwert: Tidalvolumen	56	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_C2_Timax	Inspirationszeit maximal	56	f
 Körpergroesse	Body height	Besonderheiten	\N	56	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_BiPAPV_O2Konzentration	Einstellparameter: O2 Konzentration des Gasgemisches	56	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_ES_3100A_Frequenz	Eingestellte Oszillationsfrequenz	56	f
 Ideales Körpergewicht	Ideal bdy weight	PICCO_ABP	Arterieller Druck	34	t
 Blutflussindex extrakorporaler Gasaustausch	\N	PICCO_ITBVI	Intrathorakaler Blutvolumenindex	56	t
 Dauer extrakorporaler Gasaustausch	\N	Nierenverfahren_ES_ADM_PlasmaAustausch	Plasmarate	56	t
@@ -7775,11 +7742,6 @@ Körpertemperatur Brust	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
 Körpertemperatur Brust	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	f
 Körpertemperatur Brust	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	f
 Körpertemperatur Brust	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
 Körpertemperatur Gelenk	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	f
 Körpertemperatur Gelenk	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
 Körpertemperatur Gelenk	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	f
@@ -7806,6 +7768,11 @@ Atemzugvolumen-Einstellung	VT setting Vent	Schrittmacher_Osypka203H_ES_V_STIM	St
 Atemzugvolumen-Einstellung	VT setting Vent	SvO2	venöse Sauerstoffsättigung	56	t
 Körpertemperatur Stirn	Body temperature	Ort_Temperatur3b_Messung	\N	60	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_T1_Ttief	Einstellwert: Zeiteinstellung für das untere Druckniveau	56	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_BiPAPV_O2Konzentration	Einstellparameter: O2 Konzentration des Gasgemisches	56	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_ETS	Exspiratorische Triggersensitivität, eine Parametereinstellung	55	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_T1_VTE	"Messwert, exspiratorisches Tidalvolumen"	55	t
 Körpertemperatur vaginal	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	t
@@ -7821,22 +7788,10 @@ Körpertemperatur Leiste	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
 Körpertemperatur Leiste	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	f
 Körpertemperatur Leiste	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	f
 Körpertemperatur Leiste	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
 Körpertemperatur Kern	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	t
 Körpertemperatur Kern	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Mitteldruck	gemessener Atemwegsmitteldruck	56	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_Pmean	gemessener Atemwegsmitteldruck	56	f
-Parameter von Beatmung	\N	Betreuer2_Vorname	\N	56	f
-Parameter von extrakorporalen Verfahren	\N	Hypothermie_VO_Kuehlverfahren	Liste	56	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_PEEP	Positiver endexspiratorischer Druck (PEEP)	56	f
 Körpertemperatur vaginal	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	t
 Körpertemperatur vaginal	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	t
@@ -7864,6 +7819,17 @@ Körpertemperatur Stirn	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	t
 Körpertemperatur unter der Zunge	Oral temp	Beatmung_MS_EzPAP_PAP	Messung des PAP unter der Atemtherapie EzPAP	56	t
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Patient_Geschlecht	Geschlecht des Patienten	55	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_Einstellung_SauerstoffVolG5	Sauerstoffeinstellung in der Maßeinheit Vol %	55	t
+Parameter von extrakorporalen Verfahren	\N	Hypothermie_VO_Kuehlverfahren	Liste	56	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	t
+Parameter von Beatmung	\N	Betreuer2_Vorname	\N	56	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	t
 Hämodialyse Blutfluss	\N	Patient_Blutverlusst	Patient_Blutverlusst	55	t
 Körpertemperatur vaginal	Body temperature	Temp3b	Temperatur 3b	83	t
 Körpertemperatur vaginal	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
@@ -7887,24 +7853,16 @@ Körpertemperatur Atemwege	Airway temp	Hypothermie_Coolgard_VO_Zieltemperatur	\N
 Körpertemperatur Atemwege	Airway temp	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate	55	f
 Körpertemperatur Atemwege	Airway temp	Nierenverfahren_MS_Multi_Calciumfluss	Calciumrate	55	f
 Körpertemperatur Brust	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
 Körpertemperatur Gelenk	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
 Körpertemperatur Harnblase	Bdy temp Bladder	P_NEV_HD_VO_5008onl_Temperatur	\N	55	f
 Körpertemperatur Leiste	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
 Körpertemperatur Leiste	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	55	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	55	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperaturregulation_Variotherm_Doku_Temp	\N	55	f
-Körpertemperatur Speiseroehre	Esoph temp	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	55	f
-Körpertemperatur Trommelfell	Tymp memb temp	Lungenerstazverfahren_Doku_ECMO_Oxygenator	Gerätetyp	55	f
-Linksventrikulaeres Schlagvolumenindex	LV SVI	RVSAI	"Rechtsvetrikulärer Schlagarbeitsindex "	55	f
 Atemfrequenz	Resp rate	IABP_Frequenz	\N	64	t
 Atemfrequenz	Resp rate	SM-Draehte	Schrittmacherdrähte	63	t
 Herzzeitvolumen	LV Output	Beatmung_ES_G5_SBT_Zeitraum_nach	Uhrzeit	55	t
 Herzzeitvolumen	LV Output	Beatmung_Messung_AMV	Respiratory Minute Volume	55	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita4_Pplat	gemessener Plataeudruck wähend der Inspiration	55	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
 Körpertemperatur Generisch	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
 Körpertemperatur Generisch	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	55	t
 Körpertemperatur Generisch	Body temperature	Nierenverfahren_VO_4008onl_Temperatur	\N	55	t
@@ -7920,25 +7878,14 @@ Körpertemperatur Stirn	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatur
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_CF800_DruckluftFlow	Einstellgröße: Gasfluss Druckluft	55	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Einstellung_Inspirationszeit	Inspirationszeit in %	55	t
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	SpO2	Sauerstoffsättigung Pulsoxymetrie	55	t
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	ITBV	Intrathorakales Blutvolumen	55	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	PICCO_ITBV	Intrathorakales Blutvolumen	55	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	VigilanceC_ITBV	Intrathorakales Blutvolumen	55	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_Defi_ES_Frequenz	\N	55	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_Eins_ES_Frequenz	Medtronic 5348	55	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_Siemens_ES_Frequenz	\N	55	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_zwei_ES_Frequenz	Medtronic 5375	55	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_PIP	gemessener Atemwegsspitzendruck	55	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_Ppeak	gemessener Atemwegsspitzendruck	55	f
-Parameter von Beatmung	\N	Atmung_Stimulation	\N	55	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008onl_Bicarbonat	\N	55	f
-Parameter von extrakorporalen Verfahren	\N	SonstVerfahren_VO_Hypothermiegerät_Kathetertyp	Liste	55	f
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita4_Pplat	gemessener Plataeudruck wähend der Inspiration	55	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	RVSAI	"Rechtsvetrikulärer Schlagarbeitsindex "	55	t
+Körpertemperatur Trommelfell	Tymp memb temp	Lungenerstazverfahren_Doku_ECMO_Oxygenator	Gerätetyp	55	t
+Körpertemperatur Speiseroehre	Esoph temp	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	55	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	55	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi	55	t
-Spontanes-Atemzugvolumen	Spont VT on vent	ITBV	Intrathorakales Blutvolumen	55	f
-Spontanes-Atemzugvolumen	Spont VT on vent	PICCO_ITBV	Intrathorakales Blutvolumen	55	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_Spontanatemtest	Dokumentation ob der Spontanatemtest bestanden wurde.	55	f
-Spontanes-Atemzugvolumen	Spont VT on vent	VigilanceC_ITBV	Intrathorakales Blutvolumen	55	f
-Systemischer vaskulärer Widerstandsindex	SV RI	Beatmung_MS_G5_VT_IBW	VT/IBW	55	f
-Systemischer vaskulärer Widerstandsindex	SV RI	SM_Art	Schrittmacher Art	55	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontVte	gemessenes spontanes Tidalvolumen	55	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_PTP	Druck Zeit Produkt (Pressure Time Product)	55	t
 Körpertemperatur Stirn	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	t
@@ -7978,8 +7925,20 @@ Körpertemperatur unter der Zunge	Oral temp	NEV_Apherese_VO_Multi_Temp	Anlage 18
 Körpertemperatur unter der Zunge	Oral temp	NEV_CRRT_ES_Multi_Temp	neu angelegt am 18.05.2012	62	t
 Körpertemperatur unter der Zunge	Oral temp	NEV_CRRT_VO_Multi_Temp	Neuanlage 18.05.2012 String	62	t
 Körpertemperatur unter der Zunge	Oral temp	P_Temperaturregulation_Blankettrol_Doku_Temp	\N	62	t
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008onl_Bicarbonat	\N	55	t
+Parameter von extrakorporalen Verfahren	\N	SonstVerfahren_VO_Hypothermiegerät_Kathetertyp	Liste	55	t
+Spontanes-Atemzugvolumen	Spont VT on vent	ITBV	Intrathorakales Blutvolumen	55	t
+Spontanes-Atemzugvolumen	Spont VT on vent	PICCO_ITBV	Intrathorakales Blutvolumen	55	t
+Systemischer vaskulärer Widerstandsindex	SV RI	Beatmung_MS_G5_VT_IBW	VT/IBW	55	t
+Systemischer vaskulärer Widerstandsindex	SV RI	SM_Art	Schrittmacher Art	55	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	ITBV	Intrathorakales Blutvolumen	55	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	PICCO_ITBV	Intrathorakales Blutvolumen	55	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	VigilanceC_ITBV	Intrathorakales Blutvolumen	55	t
+Parameter von Beatmung	\N	Atmung_Stimulation	\N	55	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_Defi_ES_Frequenz	\N	55	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_Eins_ES_Frequenz	Medtronic 5348	55	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_Siemens_ES_Frequenz	\N	55	t
 Körpertemperatur vaginal	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_3100B_O2Konzentration	Einstellwert: O2 Konzentration des Gasgemisches	54	f
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_ECMO_Oxygenator	Bezeichnung	54	t
 Ideales Körpergewicht	Ideal bdy weight	Patient_Gewicht	Gewicht des Patienten	54	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_MS_4008HS_Restzeit	\N	40	t
@@ -7991,21 +7950,15 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Mult
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_BlutvolumenKum	\N	54	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_IsoUFVolumenKumulativ	\N	54	t
 Körpertemperatur Kern	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Beatmung_ES_C3_Body_Wt	eingestelltes Körpergewicht	54	f
 Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	54	f
 Körpertemperatur Brust	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
 Körpertemperatur Gelenk	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
 Körpertemperatur Halswirbelsaeule	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
 Körpertemperatur Leiste	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	54	f
 Körpertemperatur Leiste	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	54	f
 Körpertemperatur Leiste	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	54	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperaturregulation_Variotherm_VO_Temp	\N	54	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
-Körpertemperatur Speiseroehre	Esoph temp	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	54	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_G5_SpO2	Wert gemessen am Ventilator	54	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Beatmung_ES_C3_Body_Wt	eingestelltes Körpergewicht	54	t
 Körpertemperatur Generisch	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
 Blutflussindex extrakorporaler Gasaustausch	\N	ITBVI	Index des intrathorakalen Blutvolumens	54	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_C2_Pkontrol_Phoch	Eingestellter Pkontrol oder Phoch am C2.	54	t
@@ -8035,19 +7988,16 @@ Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	Beatmung_ES_Zephyro
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	Beatmung_MS_G5_petCO2	\N	54	t
 Körpertemperatur nasal	Nasal temp	P_Impella_Impella_Doku_Ort	Liste Gefäßauswahl	54	t
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	Beatmung_MS_VisionA_Plateau	Messwert: gemessener Plateaudruck	54	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_3100B_O2Konzentration	Einstellwert: O2 Konzentration des Gasgemisches	54	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_G5_SpO2	Wert gemessen am Ventilator	54	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperaturregulation_Variotherm_VO_Temp	\N	54	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
+Körpertemperatur Speiseroehre	Esoph temp	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	54	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
 Atemfrequenz	Resp rate	Schrittmacher_Osypka101H_ES_Rate	Grundfrequenz	62	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_FlowInsp	\N	54	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	PICCO_ITBVI	Intrathorakaler Blutvolumenindex	54	f
 Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_Einstellung_Pmax	Pmax, Maximaldruck	54	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_Volumen	eingestelltes Tidalvolumen	54	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Blutgruppe_Mutter	\N	54	f
-Parameter von Beatmung	\N	Hemolung_VO_Pumpendrehzahl	\N	54	f
-Parameter von Beatmung	\N	P_Therapiebetten_VO_Lifetherm_Neigung	Verordnung des Neigungswinkels	54	f
-Parameter von extrakorporalen Verfahren	\N	Lungenersatzverfahren_VO_Zugang	Gefäßdefinition	54	f
-Parameter von extrakorporalen Verfahren	\N	SonstVerfahren_VO_Hypothermiegerä_Kuehlrate	Hypothermiebehandlung	54	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	PWP	Pulmunaler Wedgedruck	54	f
-Spontanes-Atemzugvolumen	Spont VT on vent	IABP_DatascopeCS300_ES_Doku_Ballonvolumen	Dokumentation des Ballonvolumens.	54	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Patient_KO	Körperoberfläche des Patienten ohne Fallbezug	54	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_T1_Psupport	Beatmung_ES_T1_Psupport	54	f
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Pallas_Frischgas_Air	An der Flowröhre eingestellter Frischgas Flow für Air.	53	t
 Körpertemperatur unter der Zunge	Oral temp	IABP_Datascope_ES_IABPFrequenz	LIste	43	t
@@ -8097,17 +8047,22 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenerstazverf
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	CardioHelpMaquet_ES_Gasfluss	\N	53	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Einstellung_InspirationszeitIE	Inspirationszeit I:E	53	t
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	IABP_EKG	\N	53	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_Volumen	eingestelltes Tidalvolumen	54	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Blutgruppe_Mutter	\N	54	f
+Parameter von extrakorporalen Verfahren	\N	Lungenersatzverfahren_VO_Zugang	Gefäßdefinition	54	t
+Spontanes-Atemzugvolumen	Spont VT on vent	IABP_DatascopeCS300_ES_Doku_Ballonvolumen	Dokumentation des Ballonvolumens.	54	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Patient_KO	Körperoberfläche des Patienten ohne Fallbezug	54	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	PICCO_ITBVI	Intrathorakaler Blutvolumenindex	54	t
+Parameter von Beatmung	\N	Hemolung_VO_Pumpendrehzahl	\N	54	t
+Parameter von Beatmung	\N	P_Therapiebetten_VO_Lifetherm_Neigung	Verordnung des Neigungswinkels	54	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	PWP	Pulmunaler Wedgedruck	54	t
 Körpertemperatur Kern	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	t
 Körpertemperatur Kern	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	t
 Körpertemperatur vaginal	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	COPRA_Patient_Geburtsgewicht	Geburtsgewicht des Patienten in Kilogramm	53	f
 Körpertemperatur Atemwege	Airway temp	SonstVerfahren_VO_Hypothermiegerät_Zieltemperatur	Hypothermiebehandlung	53	f
 Körpertemperatur Brust	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	f
 Körpertemperatur Brust	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	f
 Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	f
 Körpertemperatur Gelenk	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	f
 Körpertemperatur Gelenk	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	f
 Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	f
@@ -8122,17 +8077,6 @@ Körpertemperatur Leiste	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	5
 Körpertemperatur Leiste	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	53	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Wertsachen_Wertgegenstaende	\N	53	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Wertsachen_Wertgegenstaende_Ort	\N	53	f
-Körpertemperatur Speiseroehre	Esoph temp	P_TP1	EEG - Total Power - Channel 1	53	f
-Körpertemperatur Speiseroehre	Esoph temp	P_TP2	EEG - Total Power - Channel 2	53	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Avea_fVt	errechneter Quotient zwischen Frequenz und Tidalvolumen	53	f
 Körpertemperatur Generisch	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	53	t
 Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008HS_Fluss	\N	53	t
@@ -8149,15 +8093,23 @@ Körpertemperatur Blut	Blood temp	P_Temperaturregulation_Blankettrol_Doku_Temp	\
 Körpertemperatur unter der Zunge	Oral temp	Temp1a	Temperatur 1a	53	t
 Körpertemperatur unter der Zunge	Oral temp	Temp1b	Temperatur 1b	53	t
 Körpertemperatur unter der Zunge	Oral temp	Temp2a	Temperatur 2a	53	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	COPRA_Patient_Geburtsgewicht	Geburtsgewicht des Patienten in Kilogramm	53	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Wertsachen_Wertgegenstaende	\N	53	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Wertsachen_Wertgegenstaende_Ort	\N	53	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Avea_fVt	errechneter Quotient zwischen Frequenz und Tidalvolumen	53	t
+Körpertemperatur Speiseroehre	Esoph temp	P_TP1	EEG - Total Power - Channel 1	53	t
+Körpertemperatur Speiseroehre	Esoph temp	P_TP2	EEG - Total Power - Channel 2	53	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	t
 Spontane-Atemfrequenz-Beatmet	\N	Schrittmacher_Osypka203H_ES_MTR	obere Frequenzbegrenzung	53	t
-Parameter von Beatmung	\N	Betreuer_Ort	\N	53	f
-Parameter von Beatmung	\N	Betreuer_Telefon	Telefonummer des Patientenbetreuers	53	f
-Parameter von Beatmung	\N	NEV_CRRT_VO_Multi_praeF	\N	53	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008onl_Dialysekonzentrat	Dialysekonzentrat 6 liter gesamt	53	f
 Körpertemperatur Leiste	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Zugang	VO Gefäßzugang extracorporale Verfahren	53	f
-Systemischer vaskulärer Widerstandsindex	SV RI	Beatmung_MS_Evita2_Resistance	gemessener Atemwegswiderstand	53	f
-Systemischer vaskulärer Widerstandsindex	SV RI	Beatmung_MS_Evita4_Resistance	gemessener Atemwegswiderstand	53	f
 Körpertemperatur unter der Zunge	Oral temp	Ort_Temperatur1b_Messung	Liste	43	t
 Körpertemperatur unter der Zunge	Oral temp	Ort_Temperatur2a_Messung	Liste	43	t
 Körpertemperatur unter der Zunge	Oral temp	P_ADVOS_Doku_Zugang11	Liste	43	t
@@ -8203,10 +8155,16 @@ Dauer Hämodialysesitzung	\N	NEV_CRRT_VO_Dialysatloesung	\N	52	t
 Körpertemperatur unter der Zunge	Oral temp	SonstVerfahren_VO_Hypothermiegerät_Kathetertyp	Liste	43	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Avea_InspPause	Zeiteinstellung für die Plateauphase im Modus CMV und SIMV	52	t
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	P_PtiO2_Decimal	\N	52	t
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008onl_Dialysekonzentrat	Dialysekonzentrat 6 liter gesamt	53	t
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Zugang	VO Gefäßzugang extracorporale Verfahren	53	t
+Systemischer vaskulärer Widerstandsindex	SV RI	Beatmung_MS_Evita2_Resistance	gemessener Atemwegswiderstand	53	t
+Systemischer vaskulärer Widerstandsindex	SV RI	Beatmung_MS_Evita4_Resistance	gemessener Atemwegswiderstand	53	t
+Parameter von Beatmung	\N	Betreuer_Ort	\N	53	t
+Parameter von Beatmung	\N	Betreuer_Telefon	Telefonummer des Patientenbetreuers	53	t
+Parameter von Beatmung	\N	NEV_CRRT_VO_Multi_praeF	\N	53	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_Ti	gemessene Inspirationszeit	53	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_VisionA_IEVerhaeltnis	Messwert: gemessenes I:E Verhältnis	53	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_drei_ES_AusgangA	Medtronic 5388	53	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_VO_ISOUFZeit	Isolierte Ultrafiltration/Bergström	52	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_drei_ES_AusgangV	Medtronic 5388	53	t
 Hämodialyse Blutfluss	\N	Lungenersatzverfahren_Doku_ILA_Blutfluss	\N	62	t
 Hämodialyse Blutfluss	\N	NEV_Apherese_ES_Multi_Blutfluss	\N	62	t
@@ -8231,11 +8189,6 @@ Körpertemperatur Brust	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	
 Körpertemperatur Brust	Body temperature	IABP_Leersaugen	\N	52	f
 Körpertemperatur Brust	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	f
 Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Status	\N	52	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	IABP_Leersaugen	\N	52	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	f
 Körpertemperatur Gelenk	Body temperature	Betreuer_Status	\N	52	f
 Körpertemperatur Gelenk	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	f
 Körpertemperatur Gelenk	Body temperature	IABP_Leersaugen	\N	52	f
@@ -8246,7 +8199,7 @@ Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_Coolgard_VO_Ziel
 Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Leersaugen	\N	52	f
 Körpertemperatur Halswirbelsaeule	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Anordnung_ASB	Anordnung Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)	52	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Status	\N	52	t
 Körpertemperatur Generisch	Body temperature	Betreuer_Status	\N	52	t
 Körpertemperatur Generisch	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	t
 Körpertemperatur Generisch	Body temperature	IABP_Leersaugen	\N	52	t
@@ -8257,6 +8210,9 @@ Körpertemperatur unter der Zunge	Oral temp	Waermesysteme_Warmtouch_Doku_Geblaes
 Körpertemperatur unter der Zunge	Oral temp	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	43	t
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Beatmung_ES_G5_Frequenz_Backup	Frequenzeinstellung inder Backupeinstellung.	56	t
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	P_NEV_HD_MS_Genius_UF_Time	\N	54	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_VO_ISOUFZeit	Isolierte Ultrafiltration/Bergström	52	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Anordnung_ASB	Anordnung Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)	52	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	t
 Hämodialyse Blutfluss	\N	Nierenverfahren_ES_ADM_Blutfluss	Blutpumpengeschwindigkeit	62	t
 Hämodialyse Blutfluss	\N	Nierenverfahren_ES_BM25_Blutfluss	Blutpumpengeschwindigkeit	62	t
 Hämodialyse Blutfluss	\N	Nierenverfahren_ES_Multi_Blutfluss	Blutpumpengeschwindigkeit ml/min	62	t
@@ -8265,6 +8221,7 @@ Hämodialyse Blutfluss	\N	P_NEV_HD_ES_5008onl_Blutfluss	\N	62	t
 Hämodialyse Blutfluss	\N	P_NEV_HD_ES_Genius_Blutfluss	\N	62	t
 Hämodialyse Blutfluss	\N	rCBF	Über eine Sonde gemessener regionaler cerebraler Blutfluss.	62	t
 Hämodialyse Blutfluss	\N	NEV_HD_VO_4008onl_BlutflussMax	\N	52	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	IABP_Leersaugen	\N	52	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Nierenverfahren_VO_Multi_Dialysat	Dialysatrate	52	t
 Körpertemperatur Leiste	Body temperature	Betreuer_Status	\N	52	f
 Körpertemperatur Leiste	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	f
@@ -8273,31 +8230,12 @@ Körpertemperatur Leiste	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_T
 Körpertemperatur Leiste	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	52	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	52	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer_Status	\N	52	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	IABP_Leersaugen	\N	52	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer_Status	\N	52	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	IABP_Leersaugen	\N	52	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	f
-Körpertemperatur Speiseroehre	Esoph temp	F_spezGew_Refraktometer	spezifische Gewicht Refraktometer	52	f
 Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	t
 Körpertemperatur Stirn	Body temperature	Betreuer_Status	\N	52	t
 Körpertemperatur Stirn	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	t
 Körpertemperatur vaginal	Body temperature	Betreuer_Status	\N	52	t
 Körpertemperatur vaginal	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	CardioHelpMaquet_VO_Oxygenator	\N	52	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	ITBVI	Index des intrathorakalen Blutvolumens	52	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_drei_ES_FrequenzMax	Medtronic 5388	52	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_Eins_ES_RAPFrequenz	Medtronic 5348	52	f
-Parameter von Beatmung	\N	Patient_Vorname	Vorname des Patiente	52	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Leoni_PEEP	\N	52	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Patient_Strasse	Adresse des Patienten: Strasse + Hausnummer	52	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	P_NBP_reArm	Nichtinvasiver Blutdruck rechter Arm	52	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Schrittmacher_drei_ES_VentrikelintervallAV	Medtronic 5388	52	f
 Körpertemperatur Stirn	Body temperature	IABP_Leersaugen	\N	52	t
 Körpertemperatur Stirn	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	t
 Körpertemperatur Stirn	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	t
@@ -8325,7 +8263,21 @@ Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	P_Patient_Gewicht_Waa
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Therapiebetten_Doku_Atom_ES_O2_Konzentration	\N	43	t
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Therapiebetten_VO_Triadyne_rePause	\N	43	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Patient_Familienst	Familienstand des Patienten	56	t
-Spontanes-Atemzugvolumen	Spont VT on vent	Fontanelle_Beurteilung	\N	52	f
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer_Status	\N	52	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	CardioHelpMaquet_VO_Oxygenator	\N	52	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	ITBVI	Index des intrathorakalen Blutvolumens	52	t
+Parameter von Beatmung	\N	Patient_Vorname	Vorname des Patiente	52	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_drei_ES_FrequenzMax	Medtronic 5388	52	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_Eins_ES_RAPFrequenz	Medtronic 5348	52	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Patient_Strasse	Adresse des Patienten: Strasse + Hausnummer	52	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	P_NBP_reArm	Nichtinvasiver Blutdruck rechter Arm	52	t
+Körpertemperatur Speiseroehre	Esoph temp	F_spezGew_Refraktometer	spezifische Gewicht Refraktometer	52	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer_Status	\N	52	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	IABP_Leersaugen	\N	52	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_Einstellung_Psupport	\N	52	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Heimbeatmung_Psupport	\N	52	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_VTi	\N	52	t
@@ -8373,10 +8325,9 @@ Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	P_Beatmung_MS_C3_pe
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_Pallas_FrischgasFlow	Gesamt Frischgasfluss (Summe aus O2 + AIR)	51	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_G5_Rexsp	Exspiratorische Flow-Resistance, ein Monitoring-Parameter	51	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Pallas_Desfluran_exsp	Exspiratorisch gemessene Desfluran Konzentration.	51	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Fontanelle_Beurteilung	\N	52	t
 Monitoring und Vitaldaten	\N	ARR	Arrhythmie Drägermonitoring, VES/min	51	t
 Körpertemperatur vaginal	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_MS_3100A_O2Konzentration	Gemessene O2 Konzentration	51	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Therapiebetten_VO_Atom_ES_O2_Konzentration	\N	51	f
 Körpertemperatur Kern	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	t
 Körpergrösse Percentil	Body height Prctl	Patient_Antikoerper	\N	51	t
 Körpergrösse Percentil	Body height Prctl	Patient_AufnGroesse	Größe Patient (fallbezogen)	51	t
@@ -8390,26 +8341,13 @@ Körpertemperatur unter der Zunge	Oral temp	Untersuchung_Status_Oxygenierung	\N	
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Evita4_Ttief	Zeiteinstellung für das untere Druckniveau im APRV Modus	51	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_G5_Vt	Einstellwert: Tidalvolumen	51	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Optiflow_PEEP	Liste hinterlegt, definierte Peepeinstellungen über Ventil	51	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_Arbeitgeber	Arbeitgeber des Patienten	51	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_AufnGewicht	Aufnahmegewicht (fallbezogen)	51	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Patient_Gewicht_Differenz	Differenz zwischen dem aktuellen Gewicht und dem Gewicht des letzten Eintrags	51	f
 Körpertemperatur Atemwege	Airway temp	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	51	f
 Körpertemperatur Brust	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
 Körpertemperatur Gelenk	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_T1_Vt	Einstellwert: Tidalvolumen	51	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
 Körpertemperatur Leiste	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_ILAactivve_Nullabgleich	Liste durchgeführt	51	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_VO_Antikoagulation	\N	51	f
-Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Beatmung_ES_Pallas_Tinsp	Dokumentation der Inspirationszeit.	51	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_Biasflow	\N	51	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_Biasflow	\N	51	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_Vt	Messwert: gemessenes Tidalvolumen	51	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Ve	gemessenes exspiratorisches Volumen	51	f
-Parameter von Beatmung	\N	Betreuer_Land	\N	51	f
 Atemfrequenz	Resp rate	IABP_CARDIOSAVE_ES_IABP_Frequenz	Dokumentation der IABP Frequenz	51	t
 Körpertemperatur Generisch	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	t
 Körpertemperatur Generisch	Body temperature	Beatmung_Messung_IntrinsicPEEP	Intrinsic PEEP	51	t
@@ -8419,13 +8357,24 @@ Linksventrikulärer Herzindex	LV Cardiac index	Betreuer_Anschrift	Anschrift des 
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Patient_Gewicht	Gewicht des Patienten	51	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Patient_Groesse	Größe des Patienten	51	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Inpuls_Erfassung_Kategorie	\N	51	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_MS_3100A_O2Konzentration	Gemessene O2 Konzentration	51	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Therapiebetten_VO_Atom_ES_O2_Konzentration	\N	51	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_Arbeitgeber	Arbeitgeber des Patienten	51	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_AufnGewicht	Aufnahmegewicht (fallbezogen)	51	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILA_BlutflussMin	\N	60	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_Abschlussbegruendung	\N	60	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Fluss	\N	60	t
-Parameter von Beatmung	\N	Betreuer_Name	Betreuer des Patienten	51	f
-Parameter von Beatmung	\N	NEV_CRRT_VO_CitratLoesung	\N	51	f
-Parameter von Beatmung	\N	Patient_Beruf	Beruf des Patienten	51	f
-Parameter von extrakorporalen Verfahren	\N	SonstVerfahren_VO_Hypothermiegerät_Kuehlverfahren	Liste	51	f
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Patient_Gewicht_Differenz	Differenz zwischen dem aktuellen Gewicht und dem Gewicht des letzten Eintrags	51	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Ve	gemessenes exspiratorisches Volumen	51	f
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_VO_Antikoagulation	\N	51	t
+Parameter von Beatmung	\N	Betreuer_Land	\N	51	t
+Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Beatmung_ES_Pallas_Tinsp	Dokumentation der Inspirationszeit.	51	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_Biasflow	\N	51	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_Biasflow	\N	51	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_Vt	Messwert: gemessenes Tidalvolumen	51	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Anordnung_PEEP	Anordnung Positiver endexspiratorischer Druck (PEEP)	51	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_ProzentVol	\N	51	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Vt	Dokumentation ders eingestellten Vt.	51	t
@@ -8479,18 +8428,18 @@ Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Nierenersatzverfahren_Ein
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Nierenverfahren_MS_Multi_Bilanz	Kumulativwert	45	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	NEV_HD_MS_4008onl_SubBolusVolKum_ml	Anpassung IBUS Anbindung	44	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	NEV_PD_Doku_Einlaufmenge	\N	44	t
+Parameter von Beatmung	\N	Betreuer_Name	Betreuer des Patienten	51	t
+Parameter von Beatmung	\N	NEV_CRRT_VO_CitratLoesung	\N	51	t
 Körpergroesse	Body height	Beatmung_Messung_Pmax	Peak Airway Pressure	50	t
 Körpergroesse	Body height	Betreuer_Strasse	\N	50	t
 Körpergroesse	Body height	Patient_Ort	Patientenadresse: Ort	50	t
 Dauer Hämodialysesitzung	\N	NEV_PD_Doku_Aussehen_Dialysat	\N	50	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Multi_Blutfluss	\N	50	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_DCMFETTotal	\N	50	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Evita2_O2Konzentration	eingestellte O2 Konzentration des Gases	50	f
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_Bilanz_ml	neue Variable für automatische Datenübernahme IBUS	50	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_UFProfil	\N	50	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_ACAT_ES_Deflation	\N	50	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Patient_AufnKO	Körperoberfläche des Patienten (fallbezogen)	50	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_AufnKO	Körperoberfläche des Patienten (fallbezogen)	50	f
 Körpertemperatur Brust	Body temperature	Betreuer2_Status	\N	50	f
 Körpertemperatur Brust	Body temperature	Betreuer_Strasse	\N	50	f
 Körpertemperatur Brust	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	f
@@ -8499,8 +8448,7 @@ Körpertemperatur Brust	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	f
 Körpertemperatur Brust	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	f
 Körpertemperatur Brust	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	f
 Körpertemperatur Brust	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	PICCO_HF	HerzfrequenzHerzfrequenz	50	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	SvO2	venöse Sauerstoffsättigung	50	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_AufnKO	Körperoberfläche des Patienten (fallbezogen)	50	t
 Kopfumfang	Head Circumf OFC	OP-Tag	OP-Tag	50	t
 Kopfumfang	Head Circumf OFC	Patient_KO	Körperoberfläche des Patienten ohne Fallbezug	50	t
 Körpergrösse Percentil	Body height Prctl	IstSoziale_Besonderheit	Soziale_Besonderheiten, z.B. Familiensituation	50	t
@@ -8525,15 +8473,10 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Pallas_
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Einstellung_I:EInsp	I:E Inspiration	50	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Patient_Sprache	Muttersprache des Patienten	50	t
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	etCO2	End-tidales CO2	50	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Evita2_O2Konzentration	eingestellte O2 Konzentration des Gases	50	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	PICCO_HF	HerzfrequenzHerzfrequenz	50	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	SvO2	venöse Sauerstoffsättigung	50	t
 Körpertemperatur Kern	Body temperature	Betreuer2_Status	\N	50	t
-Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer2_Status	\N	50	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Strasse	\N	50	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	f
 Körpertemperatur Gelenk	Body temperature	Betreuer2_Status	\N	50	f
 Körpertemperatur Gelenk	Body temperature	Betreuer_Strasse	\N	50	f
 Körpertemperatur Gelenk	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	f
@@ -8569,28 +8512,30 @@ Körpertemperatur Leiste	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	f
 Körpertemperatur Leiste	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	f
 Körpertemperatur Leiste	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	f
 Körpertemperatur Leiste	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer2_Status	\N	50	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer_Strasse	\N	50	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	f
 Körpertemperatur Myokard	Myocard temp	SM_Modus	Schrittmachermodus	50	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer2_Status	\N	50	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer_Strasse	\N	50	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	f
 Atemfrequenz	Resp rate	IABP_DatascopeCS300_ES_IABP_Frequenz	Dokumentation der IABP Frequenz.	51	t
 Körpertemperatur nasal	Nasal temp	NEV_Apherese_VO_Spuel_Dauer	\N	50	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	VigilanceC_PVR	Pulmonaler vasculärer Widerstand	83	t
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	f
-Körpertemperatur Speiseroehre	Esoph temp	OP-Tag	OP-Tag	50	f
-Körpertemperatur Speiseroehre	Esoph temp	P_Beatmung_MS_C3_AutoPeep	AutoPEEP oder intrinsischer PEEP	50	f
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer2_Status	\N	50	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer_Strasse	\N	50	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer2_Status	\N	50	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer_Strasse	\N	50	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer2_Status	\N	50	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Strasse	\N	50	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	t
 Körpertemperatur Stirn	Body temperature	Betreuer2_Status	\N	50	t
 Körpertemperatur Stirn	Body temperature	Betreuer_Strasse	\N	50	t
 Körpertemperatur Stirn	Body temperature	F_Reakarte_VerantwortlicherArzt	Die/Der verantwortliche Arzt/Ärztin der/die die Reakarte freigibt.	50	t
@@ -8599,21 +8544,6 @@ Körpertemperatur vaginal	Body temperature	Betreuer2_Status	\N	50	t
 Körpertemperatur vaginal	Body temperature	Betreuer_Strasse	\N	50	t
 Körpertemperatur vaginal	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	t
 Körpertemperatur vaginal	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	t
-Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_ES_C2_Timax	Inspirationszeit maximal	50	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_ETS	\N	50	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_O2Konzentration	eingestellte O2 Konzentration des Gases	50	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita4_O2Konzentration	eingestellte O2 Konzentration des Frischgases	50	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Leoni_CPAP	\N	50	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_VTE	\N	50	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PSV	eingestellte Druckunterstützung bei dem Gerät Avea	50	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Vte	gemessenes Tidalvolumen	50	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Vti	gemessenes inspiratorisches Tidalvolumen	50	f
-Parameter von Beatmung	\N	Betreuer2_Land	\N	50	f
-Parameter von Beatmung	\N	Betreuer2_Name	\N	50	f
-Parameter von Beatmung	\N	NEV_CRRT_VO_CalciumLoesung	\N	50	f
-Parameter von Beatmung	\N	Patient_AufnKO	Körperoberfläche des Patienten (fallbezogen)	50	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Option	Predilution Postdilution extrakorporale Verfahren	50	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	P_NBP_reBein	Nichtinvasiver Blutdruck rechtes Bein	50	f
 Körpertemperatur Stirn	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	t
 Körpertemperatur Stirn	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	t
 Körpertemperatur Stirn	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	t
@@ -8650,6 +8580,20 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	P_Beatmung_MS_C3_RC
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	PerspiratioSensibilis	Perspiratio Sensibilis in ml (ausfuhrrelevant in der Bilanz)	57	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	CardioHelpMaquet_VO_Gasfluss	\N	53	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_G5_ETS	Exspiratorische Triggersensitivität, eine Parametereinstellung	52	t
+Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_ES_C2_Timax	Inspirationszeit maximal	50	f
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Option	Predilution Postdilution extrakorporale Verfahren	50	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	t
+Parameter von Beatmung	\N	Betreuer2_Land	\N	50	t
+Parameter von Beatmung	\N	Betreuer2_Name	\N	50	t
+Parameter von Beatmung	\N	NEV_CRRT_VO_CalciumLoesung	\N	50	t
+Parameter von Beatmung	\N	Patient_AufnKO	Körperoberfläche des Patienten (fallbezogen)	50	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_ETS	\N	50	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_O2Konzentration	eingestellte O2 Konzentration des Gases	50	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita4_O2Konzentration	eingestellte O2 Konzentration des Frischgases	50	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	P_NBP_reBein	Nichtinvasiver Blutdruck rechtes Bein	50	t
+Körpertemperatur Speiseroehre	Esoph temp	OP-Tag	OP-Tag	50	t
+Körpertemperatur Speiseroehre	Esoph temp	P_Beatmung_MS_C3_AutoPeep	AutoPEEP oder intrinsischer PEEP	50	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_Doku_Zephyros_Option	Liste Highflow Highflow CPAP	49	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita4_FlowAssist	Einstellgröße für den Flowassist im Modus PPS	49	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_G5_Flow	Parameter im Modus Highflow - ab 08.06.2017	49	t
@@ -8657,11 +8601,7 @@ Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Hausarzt_Titel	\N	49	
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Patient_Beruf	Beruf des Patienten	49	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_T1_ETS	Exspiratorische Triggersensitivität, eine Parametereinstellung	52	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Pallas_Halothan_exsp	Exspiratorisch gemessene Halothankonzentration.	45	t
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_VO_4008onl_Iso_UFZeit	\N	50	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Land	Patientenadresse: Land	50	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Patient_Gewicht	Gewicht des Patienten	50	f
 Substituatfluss	\N	Nierenverfahren_ES_BM25_Umsatz	Austausch, Substituat, ml/h	50	f
-Systemischer vaskulärer Widerstandsindex	SV RI	BIS	Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.	50	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_G5_Psupport	Einstellwert: Druckunterstützung beim G 5  bei Spontanatemzügen	50	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Servoi_Psupport	\N	50	f
 Blutdruck	Blood pressure panel with all children optional	Fall_Wertsachen_Papiere_Ort	\N	49	t
@@ -8701,6 +8641,9 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypk
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	SM_Empfindlichkeit	Schrittmacher Empfindlichkeit	42	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	SM_Modus	Schrittmachermodus	42	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_VisionA_PEEP	Messwert: gemessener positiver endexspiratorischer Druck	40	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_VO_4008onl_Iso_UFZeit	\N	50	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Land	Patientenadresse: Land	50	t
+Systemischer vaskulärer Widerstandsindex	SV RI	BIS	Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.	50	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_ISOUFZeit	\N	74	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_ISOUFZiel	\N	74	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_StartNatrium	\N	74	t
@@ -8709,22 +8652,15 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverf
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_SollNatrium	\N	74	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Fall_Nummer	Identifikationsnummer des Falles	49	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_Messung_Horrowitz	\N	49	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Leoni_O2	\N	49	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	BSR	entspricht der SR Anzeige am Gerät. Burst Supression Ratio	49	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Therapiebetten_VO_Giraffe_ES_O2_Konzentration	\N	49	f
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Schlauchsystem	Bezeichnung	49	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Multi_CitratBlut	\N	49	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_DCMFBTgesamt	\N	49	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Substituat	\N	49	t
 Körpertemperatur Kern	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Schrittmacher_Osypka203H_ES_result_Betriebsart	abhängig in ES der Sense-Liste	49	f
 Körpertemperatur Brust	Body temperature	Bezugsperson_Pflegekraft	\N	49	f
 Körpertemperatur Brust	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
 Körpertemperatur Gelenk	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
@@ -8738,13 +8674,6 @@ Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	4
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
 Körpertemperatur Leiste	Body temperature	Patient_Organspenderausweis	hat der Patient einen Organspenderausweis?	49	f
 Körpertemperatur Leiste	Body temperature	P_Impella_Impella_ES_Leistungsstufe	\N	49	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Fall_Wertsachen_Wertgegenstaende	\N	49	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Fall_Wertsachen_Wertgegenstaende_Ort	\N	49	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	f
 Atemfrequenz	Resp rate	IABP_Doku_Ballonkatheter	Kathetertyp	50	t
 Körpertemperatur Generisch	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
 Körpertemperatur Generisch	Body temperature	EinweisenderArzt_Ort	\N	49	t
@@ -8764,41 +8693,20 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Lungenersatzverfahr
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenersatzverfahren_VO_CitratDosis	angeordnete Citratdosis	40	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenersatzverfahren_VO_Zugang	\N	40	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	IABP_Abiomed_Impella_Flow	Liste	49	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Leoni_O2	\N	49	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	BSR	entspricht der SR Anzeige am Gerät. Burst Supression Ratio	49	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Schrittmacher_Osypka203H_ES_result_Betriebsart	abhängig in ES der Sense-Liste	49	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Fall_Wertsachen_Wertgegenstaende	\N	49	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Fall_Wertsachen_Wertgegenstaende_Ort	\N	49	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Avea_PEEP	eingestelltes PEEP Niveau	49	t
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Wertsachen_Pflegeuntensilien	\N	49	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Wertsachen_Pflegeuntensilien_Ort	\N	49	f
-Körpertemperatur Speiseroehre	Esoph temp	Nierenverfahren_VO_Spueldauer	\N	49	f
-Parameter von Beatmung	\N	Hausarzt_Ort	\N	41	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	PICCO_SVRI	Systemic vascular resistance index	49	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Vigileo_SVRI	Systemic vascular resistance index	49	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Therapiebetten_Doku_Giraffe_ES_Luftfeuchtigkeit	Einstellung der Luftfeuchtigkeit im Inkubator	49	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_VO_BolusAntikoag	\N	49	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_VO_Antikoagulation	\N	49	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Aufnahme_Medikamente_Schwangerschaft_Text	\N	49	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Aufnahme_Probleme_Schwangerschaft_Text	\N	49	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_CPAP	eingestelltes CPAP Niveau	49	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_G5_CO2Elim_Target_Shift	Bereich Decimal - bis +	49	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_G5_Oxygen_Target_Shift	Bereich Decimal - bis +	49	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Vt	Einstellung Tidalvolumen	49	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Leoni_IEVerhaeltnis	\N	49	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Leoni_P_man	\N	49	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_AF	Breathing Frequency	49	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Leoni_Peep_CPAP	\N	49	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Beruf_Mutter	\N	49	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_FlowSetting	Einstellunggröße  des Flows am Gerät	49	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_O2Konzentration	Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.	49	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_Frequenz	eingestellte mandatorische AF	49	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspZeit	eingestellte Inspirationszeit eines Atemzuges	49	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PEEP	eingestelltes PEEP Niveau	49	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_ZeitHoch	Zeiteinstellung des oberen Druckniveaus im Modus APRV / BiPhasisch	49	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_VisionA_ApneaRate	Einstellwert: eingestellte Apnoefrequenz	49	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_PEEP	gemessenes PEEP Niveau	49	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_ARDS	\N	49	f
-Parameter von Beatmung	\N	Hypothermie_ArticSun_VO_KuehlWaermeRate	Hypothermiebehandlung	49	f
-Parameter von Beatmung	\N	Hypothermie_Coolgard_VO_Behandlungsmodi	\N	49	f
-Parameter von Beatmung	\N	Patient_Beruf	Beruf des Patienten	49	f
-Parameter von Beatmung	\N	Therapiebetten_VO_Triadyne_Lagerung	\N	49	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_PEEP	Positiver endexspiratorischer Druck (PEEP)	49	f
 Körpertemperatur vaginal	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	t
@@ -8806,7 +8714,6 @@ Körpertemperatur vaginal	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Tem
 Körpertemperatur Stirn	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
 Körpertemperatur Stirn	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	t
 Körpertemperatur Stirn	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	t
-Pulmonalarterieller wedge Blutdruck	PAW pressure	P_Beatmung_ES_RTX_ExpPressure	\N	49	f
 Körpertemperatur Stirn	Body temperature	Patient_GekreuzteEKs	\N	49	t
 Arterieller Druck	\N	Verlauf_Arzt	\N	48	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Messung_PEEP	\N	49	t
@@ -8822,13 +8729,60 @@ Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_G5_InspFlow	I
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Nierenverfahren_VO_HFLoesung	Hämofiltrationslösung extrakorporale Verfahren	42	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_Beatmung_MS_AnaConDa_inspGaskonz	\N	42	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Lungenersatzverfahren_Doku_ILAQ2Flow	\N	41	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Beruf_Mutter	\N	49	f
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Wertsachen_Pflegeuntensilien	\N	49	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Wertsachen_Pflegeuntensilien_Ort	\N	49	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	PICCO_SVRI	Systemic vascular resistance index	49	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Vigileo_SVRI	Systemic vascular resistance index	49	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Therapiebetten_Doku_Giraffe_ES_Luftfeuchtigkeit	Einstellung der Luftfeuchtigkeit im Inkubator	49	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_VO_BolusAntikoag	\N	49	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_VO_Antikoagulation	\N	49	t
+Parameter von Beatmung	\N	Hausarzt_Ort	\N	41	t
+Parameter von Beatmung	\N	Hypothermie_ArticSun_VO_KuehlWaermeRate	Hypothermiebehandlung	49	t
+Parameter von Beatmung	\N	Hypothermie_Coolgard_VO_Behandlungsmodi	\N	49	t
+Parameter von Beatmung	\N	Patient_Beruf	Beruf des Patienten	49	t
+Parameter von Beatmung	\N	Therapiebetten_VO_Triadyne_Lagerung	\N	49	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Aufnahme_Medikamente_Schwangerschaft_Text	\N	49	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Aufnahme_Probleme_Schwangerschaft_Text	\N	49	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_CPAP	eingestelltes CPAP Niveau	49	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_G5_CO2Elim_Target_Shift	Bereich Decimal - bis +	49	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_G5_Oxygen_Target_Shift	Bereich Decimal - bis +	49	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Vt	Einstellung Tidalvolumen	49	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Leoni_IEVerhaeltnis	\N	49	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Leoni_P_man	\N	49	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_AF	Breathing Frequency	49	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Leoni_Peep_CPAP	\N	49	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	P_Beatmung_ES_RTX_ExpPressure	\N	49	t
+Körpertemperatur Speiseroehre	Esoph temp	Nierenverfahren_VO_Spueldauer	\N	49	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Anordnung_BV	beatmungs-Verordung	49	t
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Papiere_Ort	\N	49	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Pallas_Frischgas_O2	An der Flowröhre eingestellter O2 Frischgasflow.	49	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_Spontanatemtest	Dokumentation ob der Spontanatemtest bestanden wurde.	49	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_Konzentrat	\N	49	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_Option	\N	49	f
-Systemischer vaskulärer Widerstandsindex	SV RI	Hypothermie_ArticSun_MS_Wasserstand	Texteintrag	49	f
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_ES_3100A_Frequenz	Eingestellte Oszillationsfrequenz	56	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Therapiebetten_VO_Giraffe_ES_O2_Konzentration	\N	49	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_TP1	EEG - Total Power - Channel 1	48	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_TP2	EEG - Total Power - Channel 2	48	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_VisionA_Tidalvolumen	gemessenes Tidalvolumen	46	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ILAactivve_Nullfluss	bei luftblasen, Liste ein aus	46	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_VO_ILAactivve_Systole	Verhältnis Systole zur Diastolendauer	46	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_Doku_AbschlussBeurteilung	\N	46	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Therapiebetten_Doku_Atom_ES_O2_Konzentration	\N	44	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_V_RapidPacing	Rapid Pacing Stimulationsfrequenz	43	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_ES_ILAactivve_Systole	%Systole Verhältnis Systolendauer zur Diastolendauer	41	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_CRRT_MS_Multi_DialysatvolKum_ml	Anpassung für automatische Datenübernahme IBUS	41	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_AV_DLY	AV Überleitungszeit	41	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_MTR	obere Frequenzbegrenzung	40	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Untersuchung_Status_Oxygenierung	\N	39	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Messung_FiO2	FiO2	100	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_FiO2	gemessene Sauerstoffkonzentration im Atemgas	100	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita4_FiO2	gemessene O2 Konzentration des inspiratorischen Atemgasgemisches	100	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Anordnung_FiO2	Anordnung O² Konzentration im Inspirationsgemisch (FiO2)	100	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Einstellung_InspiratorischePause	Inspiratorische Pause (I:E)	75	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_Vti	gemessenes inspiratorisches Tidalvolumen	70	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita4_Vt	gemessenes inspiratorisches Tidalvolumen	70	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Desfluran_insp	Inspiratorisch gemessene Desfluran Konzentration.	70	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Sevofluran_insp	Inspiratorisch gemessene Sevofluran Konzentration.	70	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Papiere_Ort	\N	49	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_Spontanatemtest	Dokumentation ob der Spontanatemtest bestanden wurde.	49	t
 Atemfrequenz	Resp rate	Lungenersatzverfahren_Doku_Kathetertyp	Kathetertyp	50	t
 Atemfrequenz	Resp rate	Patient_PLZ	Patientenadresse: PLZ	50	t
 Atemfrequenz	Resp rate	Patient_Sprache	Muttersprache des Patienten	50	t
@@ -8849,6 +8803,7 @@ Unterstützungsdruck Beatmung	Pressure support setting Vent	Untersuchung_Kopf_Ha
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Untersuchung_Kopf_Nas_Mund	\N	49	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Untersuchung_ZNS_Sensibilitaet	\N	49	t
 Atemzugvolumen-Einstellung	VT setting Vent	Patient_Versicherung	\N	48	t
+Systemischer vaskulärer Widerstandsindex	SV RI	Hypothermie_ArticSun_MS_Wasserstand	Texteintrag	49	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Plasmavolumen	\N	72	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Bicarbonat	\N	72	t
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_Doku_BolusAntikoag	\N	48	t
@@ -8897,18 +8852,15 @@ Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Patient_BMI	\N	48	t
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	Beatmung_MS_Pallas_O2_exsp	Gemessene exspiratorische O2 Konzentration.	48	t
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	PICCO_EVLW/EV	\N	48	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_VisionA_ETS	Exspirationserkennung 10 - 45% des Peak Flow	48	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_G5_ftotal	Gesamtatemfrequenz, ein Monitoring Parameter	48	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_T1_fTotal	Gesamtfrequenz	48	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_ES_4008HS_IsoUFRate	Isolierte Ultrafiltration	48	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_ES_4008HS_IsoUFZeit_	Isolierte Ultrafiltration	48	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_TP1	EEG - Total Power - Channel 1	48	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_TP2	EEG - Total Power - Channel 2	48	f
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_T1_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	63	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_MandVte	gemessenes mandatorisches Tidalvolumen	59	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Isofluran_exsp	Exspiratorisch gemessene Isofluran Konzentration.	57	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	CFI	Herzfunktionsindex	57	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	CO2	\N	57	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	SO2	Sauerstoffsättigung	57	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Einstellung_FiO2	O²- Konzentration im Inspirationsgemisch (FiO2)	56	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Messung_O2VolG5	Messwert des Sauerstoffgehalt in der Maßeinheit Vol %	54	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_Restzeit	\N	48	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	COPRA_Patient_Bezugsgewicht	Bezugsgewicht des Patienten in kg	48	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_AufnGewicht	Aufnahmegewicht (fallbezogen)	48	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_KO	Körperoberfläche des Patienten ohne Fallbezug	48	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Schrittmacher_Osypka203H_ES_AV_DLY	AV Überleitungszeit	48	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	SM-Output_Ventrikel	Schrittmacher Ausgangsleistung (Output) Ventrikel	48	f
 Körpertemperatur Brust	Body temperature	Betreuer2_Strasse	\N	48	f
 Körpertemperatur Brust	Body temperature	Betreuer_Name	Betreuer des Patienten	48	f
 Körpertemperatur Brust	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	f
@@ -8920,17 +8872,6 @@ Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temp
 Körpertemperatur Brust	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	f
 Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	f
 Körpertemperatur Brust	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer2_Strasse	\N	48	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Name	Betreuer des Patienten	48	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	f
 Körpertemperatur Gelenk	Body temperature	Betreuer2_Strasse	\N	48	f
 Körpertemperatur Gelenk	Body temperature	Betreuer_Name	Betreuer des Patienten	48	f
 Körpertemperatur Gelenk	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	f
@@ -8952,6 +8893,22 @@ Körpergewicht	Weight	Beatmung_ES_Leoni_Apnoezeit	Apnoezeit	48	t
 Körpertemperatur Generisch	Body temperature	Betreuer2_Strasse	\N	48	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Anordnung_Flow	Anordnung Inspiratorische Flowrate	48	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Hypothermie_ArticSun_MS_Flussrate	\N	48	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_G5_ftotal	Gesamtatemfrequenz, ein Monitoring Parameter	48	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_T1_fTotal	Gesamtfrequenz	48	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_ES_4008HS_IsoUFRate	Isolierte Ultrafiltration	48	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_ES_4008HS_IsoUFZeit_	Isolierte Ultrafiltration	48	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Halothan_exsp	Exspiratorisch gemessene Halothankonzentration.	54	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_T1_SpO2	Wert gemessen am Ventilator	54	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Anordnung_FiO2	Anordnung O² Konzentration im Inspirationsgemisch (FiO2)	52	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Einstellung_ASB	Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)	52	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_ES_Avea_FlowTrigger	eingestellter Flowtrigger: Schwellenwertt für die inspiratorische Bemühung des Patienten um die Druckunterstützung auszulösen	52	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer2_Strasse	\N	48	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Name	Betreuer des Patienten	48	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	t
 Körpertemperatur Kern	Body temperature	Betreuer2_Strasse	\N	48	t
 Körpertemperatur Kern	Body temperature	Betreuer_Name	Betreuer des Patienten	48	t
 Körpertemperatur Kern	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	t
@@ -8980,32 +8937,29 @@ Körpertemperatur Leiste	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Tem
 Körpertemperatur Leiste	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	f
 Körpertemperatur Leiste	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer2_Strasse	\N	48	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer_Name	Betreuer des Patienten	48	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer2_Strasse	\N	48	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer_Name	Betreuer des Patienten	48	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	f
 Körpertemperatur rektal	Rectal temp	Beatmung_Messung_Resistance	Resistance	48	t
 Körpertemperatur Stirn	Body temperature	Betreuer2_Strasse	\N	48	t
 Körpertemperatur Stirn	Body temperature	Betreuer_Name	Betreuer des Patienten	48	t
-Parameter von Beatmung	\N	Angehoerige1_Vorname	\N	48	f
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_ES_C2_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben.	52	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_ES_G5_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	52	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_ES_Zephyros_FIO2	\N	100	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	CardioHelpMaquet_ES_FiO2	\N	100	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	CardioHelpMaquet_VO_FiO2	\N	100	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	COPRA_Patient_Bezugsgewicht	Bezugsgewicht des Patienten in kg	48	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_AufnGewicht	Aufnahmegewicht (fallbezogen)	48	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_KO	Körperoberfläche des Patienten ohne Fallbezug	48	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer2_Strasse	\N	48	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer_Name	Betreuer des Patienten	48	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_T1_IEVerhaeltnis	\N	48	t
 Körpertemperatur Stirn	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	t
 Körpertemperatur vaginal	Body temperature	Betreuer2_Strasse	\N	48	t
 Körpertemperatur vaginal	Body temperature	Betreuer_Name	Betreuer des Patienten	48	t
@@ -9016,19 +8970,7 @@ Körpertemperatur vaginal	Body temperature	Nierenverfahren_Doku_Bolus	Medikament
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	t
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	t
 Körpertemperatur vaginal	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	CardioHelpMaquet_DOKU_Oxygenator	\N	48	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_VO_Multi_Substituat	\N	48	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_VO_Option	Predilution Postdilution extrakorporale Verfahren	48	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	P_VO_Indikation_cerebraleOxySyst	\N	48	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	CardioHelpMaquet_MS_DruckArteriell	\N	48	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Lungenersatzverfahren_Doku_ILAactivve_Membranvent	Dokumentation Oxygenator - Liste	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_T1_IEVerhaeltnis	\N	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_VisionA_Peakflow	Einstellwert: eingestellter Spitzenfluss	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_CO2	CO2-Production	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_I:EVerhaeltnisE	\N	48	f
 Atemfrequenz	Resp rate	RAP	Rechtsatrial Mitteldruck	50	t
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_I:EVerhaeltnisI	\N	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_O2Konzentration	\N	48	f
 Linksventrikulärer Herzindex	LV Cardiac index	CardioHelpMaquet_MS_DeltaP	\N	48	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	48	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	48	t
@@ -9054,43 +8996,28 @@ Körpertemperatur unter der Zunge	Oral temp	P_Spezifitaet_Mutter	Blutgruppenspez
 Körpertemperatur unter der Zunge	Oral temp	Untersuchung_ExtremitaetenLeiste_ObereExtremitaet	\N	48	t
 Körpertemperatur unter der Zunge	Oral temp	Untersuchung_Kopf_Ohren	\N	48	t
 Körpertemperatur unter der Zunge	Oral temp	Untersuchung_Status_Mikrozirkulation	\N	48	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Schrittmacher_Osypka203H_ES_AV_DLY	AV Überleitungszeit	48	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	SM-Output_Ventrikel	Schrittmacher Ausgangsleistung (Output) Ventrikel	48	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_SEF1	EEG - Spectral Edge Frequency Channel 1	44	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_SEF2	EEG - Spectral Edge Frequency Channel 2	44	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_PIP	gemessener Atemwegsspitzendruck	55	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_Ppeak	gemessener Atemwegsspitzendruck	55	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PSV	eingestellte Druckunterstützung bei dem Gerät Avea	50	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Vte	gemessenes Tidalvolumen	50	f
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	CardioHelpMaquet_MS_DruckArteriell	\N	48	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Lungenersatzverfahren_Doku_ILAactivve_Membranvent	Dokumentation Oxygenator - Liste	48	t
+Parameter von Beatmung	\N	Angehoerige1_Vorname	\N	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_VisionA_Peakflow	Einstellwert: eingestellter Spitzenfluss	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_CO2	CO2-Production	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_I:EVerhaeltnisE	\N	48	t
 Atemfrequenz	Resp rate	Schrittmacher_Osypka203H_ES_V_RapidPacing	Rapid Pacing Stimulationsfrequenz	49	t
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_MVspn	gemessenes spontanes Atemminutenvolumen	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_Pmean	gemessener Atemwegsmitteldruck	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Heimbeatmung_VTe	\N	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Heimbeatmung_VTi	\N	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Servoi_Pmean	"Mittlerer Atemwegsdruck "	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_T1_Cstat	Statische Compliance	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_T1_IEVerhaeltnis	gemessenes I:E Verhältnis	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_VisionA_Tidalvolumen	gemessenes Tidalvolumen	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	F_Reakarte_VerantwortlicherArzt	Die/Der verantwortliche Arzt/Ärztin der/die die Reakarte freigibt.	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	IABP_DatascopeCS300_ES_Doku_Ballonkatheter	Dokumentation des verwendeten Ballonkatheters.	48	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_C3_ETS	\N	48	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer_Anschrift	Anschrift des Patientenbetreuers	48	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Auslaufmenge	Pertionealdialyse Auslaufmenge in ml	48	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Einlaufmenge	Peritonealdialyse Einlaufmenge in ml	48	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Sorgerecht	\N	48	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Backup_Vt	\N	48	f
-Parameter von Beatmung	\N	Angehoerige2_Vorname	\N	48	f
-Parameter von Beatmung	\N	Angehoerige3_Vorname	\N	48	f
-Parameter von Beatmung	\N	Aufnahme_Beruf_Vater	\N	48	f
-Parameter von Beatmung	\N	IABP_CARDIOSAVE_ES_EKG_Ableitung	Dokumentation der gewählten EKG Ableitung für den IABP Einsatz	48	f
-Parameter von Beatmung	\N	P_ADVOS_VO_ADVOS_UFRateMax	\N	48	f
-Parameter von Beatmung	\N	Patient_Besucherregelung	Besucherverinbarung für den Patienten	48	f
-Parameter von Beatmung	\N	P_Beatmung_ES_3100A_Leistung	Prozentuale Kolbenauslenkung	48	f
-Parameter von extrakorporalen Verfahren	\N	P_Therapiebetten_VO_DraegerBabytherm_Strahler	\N	48	f
-Parameter von extrakorporalen Verfahren	\N	Untersuchung_Kontrolle_Laufraten	Arztdoku S. 10	48	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_BIPAPT1	\N	48	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_BIPAPT2	\N	48	t
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Patient_Land	Patientenadresse: Land	48	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	P_Beatmung_ES_RTX_InspPressure	\N	48	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_I:E	Atemzeitverhältnis (I:E)	48	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_I:EExsp	I:E Exspiration	48	t
 Monitoring und Vitaldaten	\N	Patient_Nationalitaet	Nationalität des Patienten	48	t
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	48	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	48	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Therapiebetten_Doku_Triadyne_DruckBeine	\N	48	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_FlowAssist	Einstellgröße für den Flowassist im Modus PPS	48	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Vti	gemessenes inspiratorisches Tidalvolumen	50	f
 Arterieller Druck	\N	NEV_CRRT_MS_Multi_venDruck	\N	47	t
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_ES_Pallas_Alter	Dokumentation des Alters des Patienten.	48	t
 Zentralvenöser Druck	CVP	ZVD	Zentralvenöser Druck	33	f
@@ -9103,10 +9030,40 @@ Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Be
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_T1_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	48	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	48	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP.	48	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_FlowSetting	Einstellunggröße  des Flows am Gerät	49	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_O2Konzentration	Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.	49	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_Frequenz	eingestellte mandatorische AF	49	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspZeit	eingestellte Inspirationszeit eines Atemzuges	49	f
+Parameter von extrakorporalen Verfahren	\N	P_Therapiebetten_VO_DraegerBabytherm_Strahler	\N	48	t
+Parameter von extrakorporalen Verfahren	\N	Untersuchung_Kontrolle_Laufraten	Arztdoku S. 10	48	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	48	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	48	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Therapiebetten_Doku_Triadyne_DruckBeine	\N	48	t
+Parameter von Beatmung	\N	Angehoerige2_Vorname	\N	48	t
+Parameter von Beatmung	\N	Angehoerige3_Vorname	\N	48	t
+Parameter von Beatmung	\N	Aufnahme_Beruf_Vater	\N	48	t
+Parameter von Beatmung	\N	IABP_CARDIOSAVE_ES_EKG_Ableitung	Dokumentation der gewählten EKG Ableitung für den IABP Einsatz	48	t
+Parameter von Beatmung	\N	P_ADVOS_VO_ADVOS_UFRateMax	\N	48	t
+Parameter von Beatmung	\N	Patient_Besucherregelung	Besucherverinbarung für den Patienten	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_MVspn	gemessenes spontanes Atemminutenvolumen	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_Pmean	gemessener Atemwegsmitteldruck	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Heimbeatmung_VTe	\N	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Heimbeatmung_VTi	\N	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Servoi_Pmean	"Mittlerer Atemwegsdruck "	48	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Patient_Land	Patientenadresse: Land	48	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	P_Beatmung_ES_RTX_InspPressure	\N	48	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_I:EInsp	I:E Inspiration	48	t
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Servoi_Afspont	"Spontane Atemzüge pro Minute "	48	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Beatmung_MS_Avea_SpontVte	gemessenes spontanes Tidalvolumen	48	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Inpuls_Erfassung_Transporte_Dauer	\N	48	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PEEP	eingestelltes PEEP Niveau	49	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_ZeitHoch	Zeiteinstellung des oberen Druckniveaus im Modus APRV / BiPhasisch	49	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_VisionA_ApneaRate	Einstellwert: eingestellte Apnoefrequenz	49	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_PEEP	gemessenes PEEP Niveau	49	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_ARDS	\N	49	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer_Anschrift	Anschrift des Patientenbetreuers	48	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Auslaufmenge	Pertionealdialyse Auslaufmenge in ml	48	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Einlaufmenge	Peritonealdialyse Einlaufmenge in ml	48	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Sorgerecht	\N	48	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Backup_Vt	\N	48	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Ti	gemessene Inspirationszeit	47	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Ptief	\N	48	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Chron_Hyperkapnie	Liste ein aus	48	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_ProzentMinVol	Przentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus	48	t
@@ -9125,6 +9082,7 @@ Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Evita4_f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Pallas_Alter	Dokumentation des Alters des Patienten.	48	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_MS_VisionA_SISetting	Dauer des manuell durchgeführten Atemhubs	48	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Hypothermie_ArticSun_MS_Hoechstwassertemp	Anlage für IBUS Datenübermittlung	48	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_Apherese_VO_Antikoagulation	\N	47	f
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_MS_G5_VLeckage	Leckagevolumen, ein Monitoring-Parameter	47	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Patient_Kopfumfang_bit	Kopfumfang bit cm	47	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	P_LEV_ES_BFQ1	Zusatzgerät bei einer ECMO Therapie	47	t
@@ -9134,6 +9092,15 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita4_VolAssist	Einstell
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_TM_Pallas_TEST	Test	47	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Messung_ExpirationszeitI:E	\N	48	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_VO_CitratDosis	angeordnete Citratdosis	48	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_CRRT_VO_Multi_praeF	\N	47	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ISOUFRate	\N	47	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspDruck	eingestelltes oberes Druckniveau im Modus P-CMV und P-SIMV	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspPause	Zeiteinstellung für die Plateauphase im Modus CMV und SIMV	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Frequenz_Backup	\N	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_IEVerhaeltnis_Backup	\N	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Pkontrol_Backup	\N	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_T1_Apnoezeit_Backup	\N	44	f
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Servoi_Afspont	"Spontane Atemzüge pro Minute "	48	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_artDruck	\N	47	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_BlutflussEinst	\N	67	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Option	\N	67	t
@@ -9184,27 +9151,31 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_G5_Rins
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_Pallas_O2_exsp	Gemessene exspiratorische O2 Konzentration.	47	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_MS_T1_ExspFlow	Exspiratorischer Peakflow	47	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	P_Beatmung_MS_C3_ExspFlow	Exspiratorischer Peakflow	47	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_IABP_Frequenz	Dokumentation der IABP Frequenz	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_DatascopeCS300_ES_IABP_Frequenz	Dokumentation der IABP Frequenz.	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Austauschrate	\N	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_BasisNatrium	\N	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FiltratDruck	\N	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCaPostFilter	\N	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCasystemBGA	\N	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_AbnahmeMax	\N	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_BM25_Abnahme	Ultrafiltrationsrate	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_ADVOS_VO_Dialysatloesung	\N	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Pseudonym	\N	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_Doku_AnaConDa_System	\N	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Backup_Ti	\N	44	f
 Körpertemperatur Kern	Body temperature	Betreuer2_Name	\N	47	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Evita4_Vt	Einstellgröße für das Tidalvolumen	47	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_VRP	ventrikuläre Stimulationsfrequenz	47	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_V-Sense	\N	47	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_V_Sense	Empfindlichkeit Ventrikel	47	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_Apherese_Doku_Bolus_Antikoag	\N	47	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	47	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_DatascopeCS300_ES_Doku_Ballonkatheter	Dokumentation des verwendeten Ballonkatheters.	47	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	47	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_TMP	\N	47	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	tcpCO2	transcutan gemessener pCO2 Wert.	47	f
 Körpertemperatur Achsel	Axil temp	NEV_Apherese_Doku_AbschlussUrteil	Listenauswahl	47	f
 Körpertemperatur Achsel	Axil temp	P_TP1	EEG - Total Power - Channel 1	47	f
 Körpertemperatur Achsel	Axil temp	P_TP2	EEG - Total Power - Channel 2	47	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	f
 Körpertemperatur Brust	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer2_Name	\N	47	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	f
 Körpertemperatur Gelenk	Body temperature	Betreuer2_Name	\N	47	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	f
@@ -9224,57 +9195,35 @@ Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_BM25_Temperaturstuf
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	f
 Körpertemperatur Leiste	Body temperature	P_Impella_Impella_Doku_Ort	Liste Gefäßauswahl	47	f
 Körpertemperatur Leiste	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer2_Name	\N	47	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	f
 Atemfrequenz	Resp rate	Betreuer2_PLZ	\N	48	t
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	f
 Körpertemperatur Generisch	Body temperature	Betreuer2_Name	\N	47	t
 Linksventrikulärer Herzindex	LV Cardiac index	NEV_CRRT_VO_Filter	\N	47	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Messung_FlowAssist	\N	47	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Patient_Familienst	Familienstand des Patienten	47	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UFVolumenKumulativ	\N	64	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	SM_AV_Intervall	Schrittmacher AV-Intervall	47	t
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer2_Name	\N	47	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Wertsachen_Name_Pflegekraft	\N	47	f
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Evita4_Vt	Einstellgröße für das Tidalvolumen	47	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_VRP	ventrikuläre Stimulationsfrequenz	47	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_V-Sense	\N	47	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_V_Sense	Empfindlichkeit Ventrikel	47	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	tcpCO2	transcutan gemessener pCO2 Wert.	47	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Temperatur_Rektal	Anlage im Rahmen Philips Monitoring	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Waermesysteme_FisherPaykel_VO_Prozent	\N	44	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Pallas_Frischgas_Air	An der Flowröhre eingestellter Frischgas Flow für Air.	43	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Zephyros_AF	\N	43	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_MandAF	gemessene mandatorische Atemfrequenz	43	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_BiPAPV_AMV	Messwert: gemessenes AMV	43	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_CPAP	gemessenes CPAP Niveau	43	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer2_Aufgabenkreis	\N	43	f
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer2_Name	\N	47	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer2_Name	\N	47	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	t
 Körpertemperatur Stirn	Body temperature	Betreuer2_Name	\N	47	t
 Körpertemperatur vaginal	Body temperature	Betreuer2_Name	\N	47	t
-Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_SVR	Systemic vascular resistance	47	f
-Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_SVV	\N	47	f
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	t
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	47	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_VO_Multi_SubstituatBolus	\N	47	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_VO_Multi_Ultrafiltration	\N	47	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	P_VO_Indikation_cerebraleOxySyst	\N	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	akt._Schwangerschaftwoche	aktuelle Schwangerschaftswoche des Babys	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_CPAP	\N	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_BiPAPV_O2Konzentration	Einstellparameter: O2 Konzentration des Gasgemisches	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_VerhaeltnisTiTe	eingestelltes Verhältnis zwischen Inspiration und Exspiration	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita4_fApnoe	eingestellte Atemfrequenz in der Apnoeventilation	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Pcontrol	\N	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_T1_Quick_Wean	Liste ein aus	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_VisionA_Schlagvolumen	Schlagvolumen (SV) in engl. (cycle volume)	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_CPAP	\N	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_O2KonzentrationG5	\N	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_O2Konzentration	Messwert: gemessene O2 Konzentration des Gasgemisches	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_TE	\N	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_TI	\N	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita2_MVspon	gemessenes spontanes Atemminutenvolumen	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita2_O2Konzentration	gemessene O2 Konzentration im Inspirationsgas	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_Mvleck	gemessenes Leckagevolumen pro Minute	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_G5_VT_IBW	VT/IBW	47	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_VisionA_IEVerhaeltnis	Messwert: gemessenes I:E Verhältnis	47	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_ARDS	Liste ein aus	47	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Leoni_Apnoezeit	Apnoezeit	47	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Te	gemessene Exspirationszeit	47	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Ti	gemessene Inspirationszeit	47	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_Apherese_VO_Antikoagulation	\N	47	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_CRRT_VO_Multi_praeF	\N	47	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ISOUFRate	\N	47	f
 Linksventrikulärer Herzindex	LV Cardiac index	F_Therapieeinschraenkung	\N	47	t
 Linksatrialer Druck	Blood pressure panel with all children optional	HZV_Platzhalter	\N	47	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	NEV_PD_Doku_Verweildauer	\N	47	t
@@ -9291,19 +9240,28 @@ Monitoring und Vitaldaten	\N	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitorin
 Monitoring und Vitaldaten	\N	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	47	t
 Körpertemperatur nasal	Nasal temp	P_Beatmung_ES_CoughAssist_CoughTrak	Ein/Aus	47	t
 Körpertemperatur nasal	Nasal temp	TempDelta	Anlage im Rahmen PhilipsMonitoring	47	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_ARDS	Liste ein aus	47	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Leoni_Apnoezeit	Apnoezeit	47	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Te	gemessene Exspirationszeit	47	f
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer2_Name	\N	47	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Wertsachen_Name_Pflegekraft	\N	47	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	47	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_VO_Multi_SubstituatBolus	\N	47	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_VO_Multi_Ultrafiltration	\N	47	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	P_VO_Indikation_cerebraleOxySyst	\N	47	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_SVR	Systemic vascular resistance	47	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_SVV	\N	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	akt._Schwangerschaftwoche	aktuelle Schwangerschaftswoche des Babys	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_CPAP	\N	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_BiPAPV_O2Konzentration	Einstellparameter: O2 Konzentration des Gasgemisches	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_VerhaeltnisTiTe	eingestelltes Verhältnis zwischen Inspiration und Exspiration	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita4_fApnoe	eingestellte Atemfrequenz in der Apnoeventilation	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Doku_Zephyros_Option	Liste Highflow Highflow CPAP	47	t
 Spontane-Atemfrequenz-Beatmet	\N	NEV_Apherese_ES_Multi_Temp	Anlage 18.05.2012	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_Inspirationszeit	Einstellwert: prozentualer Anteil der Inspirationszeit bezogen auf den gesamtem Atemzyklus	47	t
-Parameter von Beatmung	\N	Betreuer_TelefonMobil	\N	47	f
-Parameter von Beatmung	\N	NEV_CRRT_VO_BolusAntikoag	\N	47	f
-Parameter von Beatmung	\N	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h	47	f
-Parameter von Beatmung	\N	Patient_Land	Patientenadresse: Land	47	f
-Parameter von Beatmung	\N	Patient_Nationalitaet	Nationalität des Patienten	47	f
-Parameter von Beatmung	\N	Therapiebetten_VO_BariAir_liPause	\N	47	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_ZielKalium	\N	47	f
-Parameter von extrakorporalen Verfahren	\N	P_Therapiebetten_VO_Lifetherm_Strahler	\N	47	f
-Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_BariAir_rePause	\N	47	f
-Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Triadyne_rePause	\N	47	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Servoi_PEEP	"PEEP "	47	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Pkontrol_Phoch	Eingestellter Pkontrol oder Phoch am C2.	47	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita4_PEEP	gemessener positiver endexspiratorischer Druck	47	f
@@ -9313,30 +9271,50 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Pausendauer_Prozent	"Pausendauer "	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Pkontrol_Backup	\N	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_Leistung	\N	47	t
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Patient_PeaklowMessung	Peaklfowmeter Messung in % mit Definition <> Messung exspirat. Spitzenfluss	47	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	P_SEF	Spectral Edge Frequency	47	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Therapiebetten_Doku_Triadyne_DruckSchulter	\N	47	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Wertsachen_Papiere	\N	47	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Hausarzt_Strasse	\N	47	f
 Monitoring und Vitaldaten	\N	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	47	t
 Monitoring und Vitaldaten	\N	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	47	t
 Monitoring und Vitaldaten	\N	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	47	t
 Monitoring und Vitaldaten	\N	TempDelta	Anlage im Rahmen PhilipsMonitoring	47	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer_Aufgabenkreis	\N	43	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_AutoCat_ES_Arrhythmietiming	Liste	43	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Auslaufmenge	Pertionealdialyse Auslaufmenge in ml	43	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Einlaufmenge	Peritonealdialyse Einlaufmenge in ml	43	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Dokumentation_Antikoagulatio	\N	43	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Bicarbonat	\N	43	f
 Atemfrequenz	Resp rate	Nierenverfahren_VO_Citratloesung	Citratbeutel	48	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ArteriellDruck	\N	43	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCaGesammt	\N	43	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_BM25_Dialysat	\N	43	f
 Atemfrequenz	Resp rate	Patient_Ort	Patientenadresse: Ort	48	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	HeartWare_RPM_Doku	\N	47	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_Antikoagulanz	Antikoagulation Medikament	43	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Pallas_PEEP	Dokumentation des eingestellten PEEP.	47	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Messung_IntrinsicPEEP	Intrinsic PEEP	47	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	IABP_Trigger	\N	47	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	P_ADVOS_MS_ADVOS_artDruck	\N	46	t
-Spontanes-Atemzugvolumen	Spont VT on vent	Angehoerige1_Name	Nachname des Angehörigen	47	f
-Spontanes-Atemzugvolumen	Spont VT on vent	F_Sozialanamnese_Betreuung_Sonstiges	\N	47	f
-Spontanes-Atemzugvolumen	Spont VT on vent	IABP_Doku_Ballonvolumen	\N	47	f
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_MS_4008onl_Rest_Zeit	\N	47	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Spezifitaet	\N	47	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Inpuls_Erfassung_Transporte_Anzahl	\N	47	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_CRRT_VO_SpülloesungAntikoag	\N	47	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_SpüllösungAntikoag	\N	47	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FilterDruck	\N	42	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_Antikoagulanz	\N	42	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_CitratLoesung	\N	42	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_3100A_Leistung	Prozentuale Kolbenauslenkung	42	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Apnoezeit_Backup	\N	42	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_WOBp	\N	40	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Diagnostik	Dokumentation durchgeführter diagnostischer Maßnahmen.	40	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_DruckVorFilter	\N	40	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ISOUFZiel	\N	40	f
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_ZielKalium	\N	47	t
+Parameter von extrakorporalen Verfahren	\N	P_Therapiebetten_VO_Lifetherm_Strahler	\N	47	t
+Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_BariAir_rePause	\N	47	t
+Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Triadyne_rePause	\N	47	t
+Parameter von Beatmung	\N	Betreuer_TelefonMobil	\N	47	t
+Parameter von Beatmung	\N	NEV_CRRT_VO_BolusAntikoag	\N	47	t
+Parameter von Beatmung	\N	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h	47	t
+Parameter von Beatmung	\N	Patient_Land	Patientenadresse: Land	47	t
+Parameter von Beatmung	\N	Patient_Nationalitaet	Nationalität des Patienten	47	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Patient_PeaklowMessung	Peaklfowmeter Messung in % mit Definition <> Messung exspirat. Spitzenfluss	47	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	P_SEF	Spectral Edge Frequency	47	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Therapiebetten_Doku_Triadyne_DruckSchulter	\N	47	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Wertsachen_Papiere	\N	47	t
 Systemischer vaskulärer Widerstandsindex	SV RI	Vigileo_SVRI	Systemic vascular resistance index	47	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Kein_Recruitment	\N	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pkontrol	\N	47	t
@@ -9357,6 +9335,7 @@ Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_3	\
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Inpuls_Erfassung_Kriterien_4	\N	47	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_PD_VO_Auslaufzeit	Auslaufzeit	47	t
 Monitoring und Vitaldaten	\N	PICCO_ZVD	Zentraler Venendruck	29	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_4008HS_Bicarbonat	\N	40	f
 Substituatvolumen	\N	P_NEV_HD_VO_5008onl_Substituatrate	\N	47	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_VisionA_ApneaRate	Einstellwert: eingestellte Apnoefrequenz	47	t
 Zentralvenöser Druck	CVP	Aufnahme_Herkunftsland_Mutter	Herkunftsland der Mutter	47	t
@@ -9371,6 +9350,25 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_C2_Timax	Inspirationszeit
 Substituatfluss	\N	NEV_CRRT_ES_Multi_Substituat	\N	47	t
 Substituatfluss	\N	NEV_HD_ES_4008onl_Substituat	\N	47	t
 Substituatfluss	\N	Nierenverfahren_VO_Multi_SubstituatBolus	Substituatbolus in ml	47	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat	40	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_ADM_Plasmavolumen	\N	40	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_TMPDruck	\N	40	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_venDruck	\N	40	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_MS_AnaConDa_MAC	Umstellung PhilipsMonitoring	40	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm	40	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Therapiebetten_VO_BariAir_mittePause	\N	40	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h	39	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Ausatemdruck	\N	39	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Ausatemzeit	\N	39	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Untersuchung_ZNS_Hirnnerven	\N	39	f
+Spontanes-Atemzugvolumen	Spont VT on vent	Angehoerige1_Name	Nachname des Angehörigen	47	t
+Spontanes-Atemzugvolumen	Spont VT on vent	F_Sozialanamnese_Betreuung_Sonstiges	\N	47	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Patient_Gewicht	Gewicht des Patienten	50	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_Konzentrat	\N	49	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_Option	\N	49	t
+Spontanes-Atemzugvolumen	Spont VT on vent	IABP_Doku_Ballonvolumen	\N	47	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_MS_4008onl_Rest_Zeit	\N	47	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Spezifitaet	\N	47	t
 Körpertemperatur Harnblase	Bdy temp Bladder	P_ADVOS_MS_ADVOS_artDruck	\N	46	f
 Körpertemperatur Achsel	Axil temp	P_ADVOS_VO_Filter	\N	46	f
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_MS_Multi_Citratfluss	\N	46	t
@@ -9411,21 +9409,20 @@ Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Nierenverfahren_VO_Fi
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Patient_PeaklowMessung	Peaklfowmeter Messung in % mit Definition <> Messung exspirat. Spitzenfluss	46	t
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	P_Impella_Impella_Doku_Verschlusssystem	Liste Ja Nein	46	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Aufnahme_IndikationSectio_Text	\N	46	t
+Parameter von extrakorporalen Verfahren	\N	SonstVerfahren_VO_Hypothermiegerä_Kuehlrate	Hypothermiebehandlung	54	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_DialyseZeit	\N	59	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat	59	t
+Parameter von extrakorporalen Verfahren	\N	SonstVerfahren_VO_Hypothermiegerät_Kuehlverfahren	Liste	51	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Beatmung_MS_Avea_SpontVte	gemessenes spontanes Tidalvolumen	48	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Inpuls_Erfassung_Transporte_Dauer	\N	48	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Inpuls_Erfassung_Transporte_Anzahl	\N	47	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_CRRT_VO_SpülloesungAntikoag	\N	47	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_SpüllösungAntikoag	\N	47	t
 Körpergrösse Percentil	Body height Prctl	Besonderheiten_Station	\N	46	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_CRRT_VO_Multi_BlutflussMax	\N	46	t
 Hämodialyse Blutfluss	\N	NEV_HD_MS_4008onl_BlutvolKum	\N	46	t
 Hämodialyse Blutfluss	\N	NEV_HD_VO_Bolus	\N	46	t
 Hämodialyse Blutfluss	\N	P_NEV_HD_VO_5008onl_BlutflussSNPumpe	\N	46	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Evita4_O2Konzentration	eingestellte O2 Konzentration des Frischgases	46	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Avea_Vte	gemessenes Tidalvolumen	46	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Evita2_O2Konzentration	gemessene O2 Konzentration im Inspirationsgas	46	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Pallas_Vt	Gemessenes Tidalvolumen.	46	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_VisionA_Tidalvolumen	gemessenes Tidalvolumen	46	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ILAactivve_Nullfluss	bei luftblasen, Liste ein aus	46	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_VO_ILAactivve_Systole	Verhältnis Systole zur Diastolendauer	46	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_Doku_AbschlussBeurteilung	\N	46	f
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Beatmung_MS_Evita2_IntrinsicPEEP	Ergebnis eines Messmanövers im Modus IPPV, IPPV assist	46	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Diagnostik	Dokumentation durchgeführter diagnostischer Maßnahmen.	46	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Servoi_End_Insp_Zyklusende	"End. Insp. Zyklusende (% des Spitzenflows) "	46	t
@@ -9441,7 +9438,6 @@ Herzzeitvolumen	LV Output	Angehoerige1_Telefon	Angehoerigen-Telefon	46	t
 Herzzeitvolumen	LV Output	Angehoerige2_Telefon	\N	46	t
 Herzzeitvolumen	LV Output	Angehoerige3_Telefon	\N	46	t
 Herzzeitvolumen	LV Output	Blutgruppe_Mutter	\N	46	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_PEEP	gemessenes PEEP Niveau	46	t
 Körpergewicht	Weight	Beatmung_ES_G5_SBT_Zeitraum_nach	Uhrzeit	46	t
 Linksventrikulaeres Schlagvolumen	LV SV	Score_DGAI_EntlArzt	\N	46	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	NEV_PD_VO_Einlaufh	Peritonealdialyse - Einlaufhöhe in cm	46	t
@@ -9460,6 +9456,21 @@ Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_ES_Evita4_FlowAs
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Schrittmacher_Osypka101H_ES_Rate	Grundfrequenz	46	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Schrittmacher_Osypka203H_ES_Rate	Grundfrequenz	46	t
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	tcpCO2	transcutan gemessener pCO2 Wert.	46	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Evita4_O2Konzentration	eingestellte O2 Konzentration des Frischgases	46	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Avea_Vte	gemessenes Tidalvolumen	46	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Evita2_O2Konzentration	gemessene O2 Konzentration im Inspirationsgas	46	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Pallas_Vt	Gemessenes Tidalvolumen.	46	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_PEEP	gemessenes PEEP Niveau	46	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Schrittmacher_drei_ES_VentrikelintervallAV	Medtronic 5388	52	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	P_Patient_Gewicht_Differenz	Differenz zwischen dem aktuellen Gewicht und dem Gewicht des letzten Eintrags	41	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	F_Sozialanamnese_Betreuung_Sonstiges	\N	39	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_SubBolusVolKum_ml	Anpassung IBUS Anbindung	39	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenersatzverfahren_Einstell_PatFluessigkeitRate	\N	39	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Schrittmacher_drei_ES_ÜberstimulationsFreq	\N	39	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Untersuchung_Abdomen_Haut	\N	39	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_Ttief	Einstellwert: Zeiteinstellung für das untere Druckniveau	38	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	P_Waermesysteme_InfantWarmer_Doku_SkinTemp	\N	38	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_C2_Pmax	Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.	32	t
 Körpertemperatur Achsel	Axil temp	NEV_Apherese_VO_Multi_Temp	Anlage 18.05.2012 String	46	f
 Körpertemperatur Atemwege	Airway temp	Beatmung_Einstellung_intermPEEP	Interm PEEP	46	f
 Körpertemperatur Atemwege	Airway temp	SM_AV_Intervall	Schrittmacher AV-Intervall	46	f
@@ -9469,15 +9480,6 @@ Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperat
 Körpertemperatur Brust	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	f
 Körpertemperatur Brust	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	f
 Körpertemperatur Brust	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	IstBesucherregelung	\N	46	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_Doku_Temp	\N	46	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_BairHugger_VO_Geblaese	\N	46	f
 Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	f
 Körpertemperatur Gelenk	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	f
 Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	f
@@ -9502,51 +9504,31 @@ Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_ECMOTempera
 Körpertemperatur Leiste	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	f
 Körpertemperatur Leiste	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_CRRT_ES_Multi_praeF	\N	46	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Patient_Nierenverfahren_VO_4008HS_StartNatrium	\N	46	f
 Körpertemperatur Blut	Blood temp	NEV_CRRT_ES_Multi_CitratBlut	\N	46	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_MS_Pallas_Cpat	Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.	32	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Einstellung_VT	Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)	74	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Messung_VTeMl	VTe / ex. Atemzugvolumen (Tidal Volumen expir.)	74	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Evita2_MVspon	gemessenes spontanes Atemminutenvolumen	70	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	IstBesucherregelung	\N	46	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	t
 Linksatrialer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	t
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_RhySta	Arrhytmia Rhytm Status label	46	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	f
-Körpertemperatur Trommelfell	Tymp memb temp	Beatmung_MS_EzPAP_PAP	Messung des PAP unter der Atemtherapie EzPAP	46	f
 Körpertemperatur Stirn	Body temperature	Beatmung_Messung_TApnoe	Apnea Duration	46	t
 Körpertemperatur Stirn	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	t
 Körpertemperatur vaginal	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	t
 Körpertemperatur vaginal	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	t
 Körpertemperatur vaginal	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	t
-Linksventrikulaeres Schlagvolumenindex	LV SVI	Nierenverfahren_MS_Multi_SubbolusvolumenKumulativ	\N	46	f
 Körpertemperatur vaginal	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_VO_Antikoagulanz	Antikoagulation Medikament	46	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm	46	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_Dokumentation_Option	\N	46	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	P_Beatmung_MS_AnaConDa_MAC	Umstellung PhilipsMonitoring	46	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Beatmung_MS_Pallas_etCO2	Dokumention des gemessenen endtidalen	46	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NBP	nichtinvasiver Blutdruck	46	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_VO_Multi_CitratBlut	\N	46	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_VO_Multi_Dialysat	Dialysatrate	46	f
-Maximaler Beatmungsdruck	Press.max on vent Airway	AnordnungSedierungPCAPDA	\N	46	f
-Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_ES_G5_SBT_Psupp_max	\N	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_CPAPcmH2O	"CPAP Einstellung in der Maßeinheit cm H2O, Verwendung bei F120 und CF 800"	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_DruckFlow	\N	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_3100B_BiasFlow	Einstellwert: eingestellter Basisfluss im Beatmungssystem	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_G5_Kein_Recruitment	Liste ein aus	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Leoni_Frequenz_Rec	\N	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Leoni_IRec	\N	46	f
 Atemfrequenz	Resp rate	ABP	arterielle Blutdruck	33	t
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_T1_Kein_Recruitment	Liste ein aus	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_VisionA_HFOBaseFlow	Basis Continousflow	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_VisionA_O2Konzentration	Eingestellte Sauerstoffzufuhr	46	f
 Linksventrikulaeres Schlagvolumen	LV SV	EinweisenderArzt_Vorname	\N	46	t
 Linksventrikulärer Herzindex	LV Cardiac index	NEV_CRRT_VO_Multi_CalciumFiltrat	\N	46	t
 Linksventrikulärer Herzindex	LV Cardiac index	PICCO_SVRI	Systemic vascular resistance index	46	t
@@ -9565,43 +9547,42 @@ Körpertemperatur unter der Zunge	Oral temp	P_Impella_Impella_Doku_Zugang	\N	46	
 Körpertemperatur unter der Zunge	Oral temp	P_SpontanatemtestVoraussetzung	\N	46	t
 Körpertemperatur unter der Zunge	Oral temp	Schrittmacher_Doku_Wahrnehmung	\N	46	t
 Körpertemperatur unter der Zunge	Oral temp	Untersuchung_Thorax_Pulmo	\N	46	t
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_CPAPcmH2O	gemessener CPAP in der Maßeinheit cm H2O	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Leoni_C20C	\N	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Leoni_Cdyn	\N	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Leoni_DCO2	\N	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Servoi_Cstatic	"Statische Compliance "	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_VisionA_O2Konzentration	gemessene Sauerstoffgehalt des Gasgemisches	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Zephyros_Pmean	\N	46	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_ADVOS_VO_Antikoagulation	\N	46	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_O2Flow	Dokumentation des eingestellten O2 Flusses, welcher am Gerät Airvo angeschlossen ist.	46	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_ZeitNiedrig	Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch	46	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_Vt_Backup	Vt in der Backupeinstellung	46	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Leoni_Backup	\N	46	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Citrat	\N	46	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Bicarbonat	\N	46	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Bilanz	\N	46	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Organspenderausweis	hat der Patient einen Organspenderausweis?	46	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_drei_ES_ÜberstimulationsFreq	\N	46	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_Osypka203H_ES_V_RapidPacing	Rapid Pacing Stimulationsfrequenz	46	f
-Parameter von Beatmung	\N	CardioHelpMaquet_VO_Antikoagulation	\N	46	f
-Parameter von Beatmung	\N	Hypothermie_ArticSun_VO_KuehlWaermeRate_neu	\N	46	f
-Parameter von Beatmung	\N	PLS	Pulsrate errechnet aus der SpO2 Messung	46	f
-Parameter von extrakorporalen Verfahren	\N	NEV_Apherese_VO_Antikoagulation	\N	46	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_BM25_Umsatz	Umsatz ml/h	46	f
+Maximaler Beatmungsdruck	Press.max on vent Airway	AnordnungSedierungPCAPDA	\N	46	f
+Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_ES_G5_SBT_Psupp_max	\N	46	f
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Evita4_MVspn	gemessenes spontanes Atemminutenvolumen	70	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_VisionA_SpontanAMV	gemessenes spontanes Atemminutenvolumen	70	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_Spontanatemtest	Dokumentation ob der Spontanatemtest bestanden wurde.	55	t
+Spontanes-Atemzugvolumen	Spont VT on vent	VigilanceC_ITBV	Intrathorakales Blutvolumen	55	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	T_K	Körpertemperatur	65	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_VO_Antikoagulanz	Antikoagulation Medikament	46	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm	46	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_Dokumentation_Option	\N	46	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	P_Beatmung_MS_AnaConDa_MAC	Umstellung PhilipsMonitoring	46	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	Nierenverfahren_MS_Multi_SubbolusvolumenKumulativ	\N	46	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Beatmung_MS_Pallas_etCO2	Dokumention des gemessenen endtidalen	46	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NBP	nichtinvasiver Blutdruck	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_CPAPcmH2O	"CPAP Einstellung in der Maßeinheit cm H2O, Verwendung bei F120 und CF 800"	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_DruckFlow	\N	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_3100B_BiasFlow	Einstellwert: eingestellter Basisfluss im Beatmungssystem	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_G5_Kein_Recruitment	Liste ein aus	46	t
+Körpertemperatur Trommelfell	Tymp memb temp	Beatmung_MS_EzPAP_PAP	Messung des PAP unter der Atemtherapie EzPAP	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_DruckHoch	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_Druckrampe	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Plateau	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_ARDS	Liste ein aus	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Chron_Hyperkapnie	Liste ein aus	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_CO2Elim_Target_Shift	Bereich Decimal - bis +	46	t
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_ES_T1_Phoch	Einstellwert oberes Druckniveau im Modus DuoPAP	46	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Hypothermie_ArticSun_Doku_KuehlWaermerate	\N	46	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	46	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_O2Flow	Dokumentation des eingestellten O2 Flusses, welcher am Gerät Airvo angeschlossen ist.	46	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_ZeitNiedrig	Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch	46	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_Vt_Backup	Vt in der Backupeinstellung	46	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_Flowtrigger	Einstellgröße des Flowtriggers	46	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Leoni_Backup	\N	46	f
 Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	SaO2 % Bld Preductal PulseOx	Beatmung_Messung_Pplateau	Plateau Druck	46	t
 Spontane-Atemfrequenz-Beatmet	\N	NEV_Apherese_VO_Fuellen_Mit	\N	46	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Citrat	\N	46	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Bicarbonat	\N	46	f
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_Inspirationszeit	Inspirationszeit in %	46	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_PAW/Pinspiration	\N	46	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Servoi_DK_ueber_PEEP	"DK über PEEP "	46	t
@@ -9609,12 +9590,75 @@ Pulmonalvaskulärer Widerstandsindex	PV RI	PICCO_PC	Pulmonalkapillardruck	46	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	P_RhySta	Arrhytmia Rhytm Status label	46	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	46	t
-Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_ISOUFZeit	\N	46	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_ADVOS_MS_ADVOS_venDruck	\N	46	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Strasse	Adresse des Patienten: Strasse + Hausnummer	46	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Vorname	Vorname des Patiente	46	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	IABP_DatascopeCS300_ES_Doku_Ballonvolumen	Dokumentation des Ballonvolumens.	46	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_4008HS_Iso_UFZeit	\N	46	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Bilanz	\N	46	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Organspenderausweis	hat der Patient einen Organspenderausweis?	46	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_drei_ES_ÜberstimulationsFreq	\N	46	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_Osypka203H_ES_V_RapidPacing	Rapid Pacing Stimulationsfrequenz	46	f
+Parameter von extrakorporalen Verfahren	\N	NEV_Apherese_VO_Antikoagulation	\N	46	t
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_BM25_Umsatz	Umsatz ml/h	46	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Hypothermie_ArticSun_Doku_KuehlWaermerate	\N	46	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	46	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperaturregulation_Variotherm_Doku_Temp	\N	55	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	IABP_Leersaugen	\N	52	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer2_Strasse	\N	48	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer_Name	Betreuer des Patienten	48	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_CPAPcmH2O	gemessener CPAP in der Maßeinheit cm H2O	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Leoni_C20C	\N	46	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_ES_T1_Phoch	Einstellwert oberes Druckniveau im Modus DuoPAP	46	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	IABP_DatascopeCS300_ES_Doku_Ballonvolumen	Dokumentation des Ballonvolumens.	46	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_4008HS_Iso_UFZeit	\N	46	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_ISOUFZeit	\N	46	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_ADVOS_MS_ADVOS_venDruck	\N	46	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Strasse	Adresse des Patienten: Strasse + Hausnummer	46	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Vorname	Vorname des Patiente	46	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_CRRT_ES_Multi_praeF	\N	46	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Patient_Nierenverfahren_VO_4008HS_StartNatrium	\N	46	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_RhySta	Arrhytmia Rhytm Status label	46	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Schrittmacher_drei_ES_EmpfindlichkeitA	Medtronic 5388	45	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Schrittmacher_drei_ES_EmpfindlichkeitV	Medtronic 5388	45	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_CRRT_MS_Multi_praeF	\N	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	CardioHelpMaquet_DOKU_Oxygenator	\N	48	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_VO_Multi_Substituat	\N	48	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_VO_Option	Predilution Postdilution extrakorporale Verfahren	48	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	P_VO_Indikation_cerebraleOxySyst	\N	48	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	PerspiratioSensibilis	Perspiratio Sensibilis in ml (ausfuhrrelevant in der Bilanz)	42	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	P_NBP_reArm	Nichtinvasiver Blutdruck rechter Arm	42	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Therapiebetten_Doku_Giraffe_MS_Luftfeuchtigkeit	Messung der Luftfeuchtigkeit im Inkubator	43	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h	41	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_VO_Multi_Substituat	Substituat in ml/h	41	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	P_Spezifitaet_Mutter	Blutgruppenspezifität der Mutter	41	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Untersuchung_Status_Makrozirkulation	\N	41	t
 Puls	\N	ABP	arterielle Blutdruck	29	t
 Substituatvolumen	\N	Schrittmacher_Osypka203H_ES_A_STIM	Stimulation Vorhof	46	t
 Substituatfluss	\N	Nierenverfahren_VO_4008onl_Substituatbolus	\N	46	t
@@ -9665,21 +9709,21 @@ Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_MS_Pallas_O2_ins
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	NEV_CRRT_MS_Multi_UltrafiltrationlKum_ml	Neuanlage im Zuge der IBUS Anbindung	45	t
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	Beatmung_ES_VisionA_ETS	Exspirationserkennung 10 - 45% des Peak Flow	45	t
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	P_Beatmung_MS_AnaConDa_etCo2	\N	45	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Untersuchung_Status_Mikrozirkulation	\N	41	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_VO_Multi_CitratBlut	\N	46	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_VO_Multi_Dialysat	Dialysatrate	46	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_MS_4008onl_IsoUFVolKum_ml	Anpassung für IBUS Anbindung	39	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_VO_4008onl_UFZiel	\N	39	t
+Parameter von Beatmung	\N	Beatmung_MS_G5_RCexsp	Exspiratorische Zeitkonstante, ein Monitoring-Parameter	58	t
+Parameter von Beatmung	\N	Beatmung_MS_G5_RCinsp	Inspiratorische Zeitkonstante, ein Monitoring Parameter	58	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_Apherese_MS_Multi_TMP	\N	45	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Patient_Religion	Religion des Patienten	45	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	SM_Output_Atrium	Schrittmacher Ausgangsleistung (Output) Atrium	45	t
 Herzfrequenz	Heart rate	HF	Herzfrequenz	45	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Therapiebetten_VO_Triadyne_reDrehWinkel	\N	45	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_C2_F_SIMV	Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.	45	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Doku_AbschlussBeurteilung	\N	45	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_ES_3100A_O2Konzentration	O2 Konzentration des Gasgemisches	45	f
 Körpergroesse	Body height	Beatmung_Messung_Resistance	Resistance	45	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Beatmung_MS_Evita2_CPAP	gemessenes CPAP Niveau	45	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Multi_praeF	\N	45	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	ABP_2	zweiter arterieller Blutdruck	45	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_Pallas_PatGewicht	Eingestelter Patientengewicht am Pallas	45	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_Arbeitgeber	Arbeitgeber des Patienten	45	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_NEV_HD_ES_Genius_UFRate	\N	45	f
 Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_Doku_KuehlWaermerate_neu	\N	45	f
 Körpertemperatur Achsel	Axil temp	P_ADVOS_ES_ADVOS_UltrafiltratRate	\N	45	f
 Körpertemperatur Atemwege	Airway temp	P_Antikoerper_Mutter	\N	45	f
@@ -9690,20 +9734,12 @@ Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\
 Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	f
 Körpertemperatur Brust	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	f
 Körpertemperatur Brust	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_BairHugger_Doku_Geblaese	Liste	45	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	f
 Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	f
 Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	f
 Körpertemperatur Gelenk	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Schrittmacher_Osypka203H_ES_Highrate_StimRate	Überstimulationsfrequenz Vorhof	45	t
+Parameter von Beatmung	\N	Beatmung_MS_G5_Rinsp	Inspiratorische Flow-Resistance, ein Monitoring-Parameter	58	t
 Körpergrösse Percentil	Body height Prctl	Patient_PLZ	Patientenadresse: PLZ	45	t
 Körpertemperatur Blut	Blood temp	P_NBP_reArm	Nichtinvasiver Blutdruck rechter Arm	45	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_Airvo_FlowSetting	Einstellunggröße  des Flows am Gerät	45	t
@@ -9714,6 +9750,20 @@ Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_ES_Pallas_Frisch
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_VisionA_HFOBaseFlow	gemessener Basis Continousflow	45	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Fall_Wertsachen_Pflegeuntensilien	\N	45	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	NEV_CRRT_VO_HFLoesung	\N	45	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_C2_F_SIMV	Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.	45	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Doku_AbschlussBeurteilung	\N	45	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_ES_3100A_O2Konzentration	O2 Konzentration des Gasgemisches	45	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Schrittmacher_Osypka203H_ES_Highrate_StimRate	Überstimulationsfrequenz Vorhof	45	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	ABP_2	zweiter arterieller Blutdruck	45	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_Pallas_PatGewicht	Eingestelter Patientengewicht am Pallas	45	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_Arbeitgeber	Arbeitgeber des Patienten	45	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_NEV_HD_ES_Genius_UFRate	\N	45	t
+Parameter von Beatmung	\N	Beatmung_MS_G5_RSB	Index für schnelle Flachatmung (Rapid Shallow Breathing Index), Monitoring Parameter	58	t
+Parameter von Beatmung	\N	Beatmung_MS_G5_TI	Inspirationszeit in Sekunden, Monitoring-Parameter	58	t
+Parameter von Beatmung	\N	Beatmung_MS_G5_WOBimp	Zusätzlich auferlegte Atemarbeit, ein Monitoring Parameter	58	t
+Parameter von Beatmung	\N	Beatmung_MS_T1_P01	Atemweg-Okklusionsdruck, ein Monitoring-Parameter	58	t
+Parameter von Beatmung	\N	Beatmung_MS_T1_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	58	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	t
 Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	t
 Körpertemperatur Gelenk	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	f
 Körpertemperatur Gelenk	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	f
@@ -9741,72 +9791,40 @@ Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	f
 Körpertemperatur Leiste	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	f
 Körpertemperatur Leiste	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	F_Reakarte_VerantwortlichePflegekraft	Der/Die verantwortliche Pflegekraft der/die die Reakarte freigibt	45	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_MS_ADM_verabreichtesPlasma	kumulativ	45	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_MS_BM25_verabreichtesPlasma	Kumulativ	45	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Schrittmacher_drei_ES_EmpfindlichkeitA	Medtronic 5388	45	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Schrittmacher_drei_ES_EmpfindlichkeitV	Medtronic 5388	45	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	f
-Körpertemperatur Speiseroehre	Esoph temp	Nierenverfahren_VO_BM25_Spueldauer	\N	45	f
 Atemfrequenz	Resp rate	Schrittmacher_Osypka203H_ES_Highrate_StimRate	Überstimulationsfrequenz Vorhof	48	t
 Körpertemperatur rektal	Rectal temp	P_EctSta	Ectopic Status Label	45	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_GBV	\N	82	t
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_ES_4008onl_Bicarbonat	\N	45	f
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_MS_ADM_verabreichtesPlasma	kumulativ	45	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_MS_BM25_verabreichtesPlasma	Kumulativ	45	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	t
+Parameter von Beatmung	\N	BIS	Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.	58	t
+Parameter von Beatmung	\N	Patient_Beruf	Beruf des Patienten	51	t
+Parameter von Beatmung	\N	P_Beatmung_ES_3100A_Leistung	Prozentuale Kolbenauslenkung	48	t
+Parameter von Beatmung	\N	Therapiebetten_VO_BariAir_liPause	\N	47	t
+Parameter von Beatmung	\N	CardioHelpMaquet_VO_Antikoagulation	\N	46	t
+Parameter von Beatmung	\N	Hypothermie_ArticSun_VO_KuehlWaermeRate_neu	\N	46	t
+Parameter von Beatmung	\N	PLS	Pulsrate errechnet aus der SpO2 Messung	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schrittmacher_zwei_ES_Frequenz	Medtronic 5375	55	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Leoni_CPAP	\N	50	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_VTE	\N	50	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_I:EVerhaeltnisI	\N	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_O2Konzentration	\N	48	t
+Körpertemperatur Speiseroehre	Esoph temp	Nierenverfahren_VO_BM25_Spueldauer	\N	45	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Aufnahme_IndikationSectio_Text	\N	45	t
 Körpertemperatur Stirn	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	t
 Körpertemperatur Stirn	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	t
 Körpertemperatur Stirn	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	t
 Körpertemperatur Stirn	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	t
-Linksventrikulaeres Schlagvolumenindex	LV SVI	Nierenverfahren_MS_4008onl_SubtvolumenKumulativ	\N	45	f
 Körpertemperatur vaginal	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	t
 Körpertemperatur vaginal	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	t
 Körpertemperatur vaginal	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	t
 Körpertemperatur Stirn	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	CardioHelpMaquet_DOKU_OxygenatorTest	\N	45	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_VO_Multi_Calcium	Ca-rate	45	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_VO_Multi_Citrat	Dosierung	45	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Aufnahme_IndikationSectio_Text	\N	45	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_VO_CitratLoesung	\N	45	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_PD_VO_Einlaufh	Peritonealdialyse - Einlaufhöhe in cm	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_IMVFrequenz	\N	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_O2Konzentration	\N	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_BiPAPV_CPAP	Einstellparameter CPAP im Modus CPAP	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_BiPAPV_EPAP	" eingestellter EPAP Wert"	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_Frequenz	\N	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_Frequenz	eingestellt mandatorische Atemfrquenz	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita4_frequenz	eingestellte Atemfrequenz	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita4_Tubuskompensation	Einstellgröße für die Tubuskompensation	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Ti	\N	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_T1_PeepCPAP	\N	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_Resistance	Resistance	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_VLeckage	\N	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita2_Pmin	"kleinster gemessener Beatmungsdruck während des Atemzyklus "	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_fspn	gemessene spontane Atemfrequenz	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_Pmin	gemessener minimaler Atemwegsdruck während des Atemzyklus	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Heimbeatmung_MV	\N	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Leoni_HFAmp	\N	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Servoi_CPAP	"Continuous Positive Airway Pressure "	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Servoi_WOBv	"Atemarbeit, Ventilator "	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_T1_PeepCPAP	Messwert: Beatmungsdruck Peep/CPAP	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_VisionA_MAP	gemessener Mittlerer Atemwegsdruck unter HFO bei Alpha Vision	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Aufnahme_Schwangerschaft_sonstigeString	\N	45	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_RTX_MinBackup	\N	45	f
 Atemfrequenz	Resp rate	RPP	"Rate-/Druck-Produkt "	33	t
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Patient_Gewicht_Differenz	Differenz zwischen dem aktuellen Gewicht und dem Gewicht des letzten Eintrags	45	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Herkunftsland_Mutter	Herkunftsland der Mutter	45	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PeakFlow	eingestellter Spitzengasfluss	45	f
 Linksventrikulärer Herzindex	LV Cardiac index	CardioHelpMaquet_DOKU_HB	\N	45	t
 Puls	\N	CPP	Zerebraler Perfusionsdruck	29	t
 Linksatrialer Druck	Blood pressure panel with all children optional	IABP_Trigger	\N	45	t
@@ -9814,30 +9832,22 @@ Linksatrialer Druck	Blood pressure panel with all children optional	Nierenverfah
 Körpertemperatur Stirn	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	t
 Körpertemperatur unter der Zunge	Oral temp	NEV_CRRT_VO_Zugang	\N	45	t
 Körpertemperatur unter der Zunge	Oral temp	NEV_PD_Doku_Zugang	\N	45	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Herkunftsland_Mutter	Herkunftsland der Mutter	45	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PeakFlow	eingestellter Spitzengasfluss	45	f
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_ES_4008onl_Bicarbonat	\N	45	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	CardioHelpMaquet_DOKU_OxygenatorTest	\N	45	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_VO_Multi_Calcium	Ca-rate	45	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_VO_Multi_Citrat	Dosierung	45	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	Nierenverfahren_MS_4008onl_SubtvolumenKumulativ	\N	45	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_VO_CitratLoesung	\N	45	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_PD_VO_Einlaufh	Peritonealdialyse - Einlaufhöhe in cm	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_T1_Cstat	Statische Compliance	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_T1_IEVerhaeltnis	gemessenes I:E Verhältnis	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_VisionA_Tidalvolumen	gemessenes Tidalvolumen	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	F_Reakarte_VerantwortlicherArzt	Die/Der verantwortliche Arzt/Ärztin der/die die Reakarte freigibt.	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	IABP_DatascopeCS300_ES_Doku_Ballonkatheter	Dokumentation des verwendeten Ballonkatheters.	48	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_C3_ETS	\N	48	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_AF	Beatmungsfrequenz (f/AF)	45	t
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Frequenz	gemessene Atemfrequenz	45	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Inpuls_Erfassung_Transporte_Anzahl	\N	45	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Abnahme	\N	45	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_CitratFluss	\N	45	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Dialysatfluß	\N	45	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_DialyseZeit	\N	45	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_Bilanz	\N	45	f
-Parameter von Beatmung	\N	Besonderheiten_Station	\N	45	f
-Parameter von Beatmung	\N	Betreuer2_TelefonMobil	\N	45	f
-Parameter von Beatmung	\N	NEV_Apherese_VO_Filter	\N	45	f
-Parameter von Beatmung	\N	NEV_CRRT_VO_Antikoagulation	\N	45	f
-Parameter von Beatmung	\N	NEV_CRRT_VO_Multi_Temp	Neuanlage 18.05.2012 String	45	f
-Parameter von Beatmung	\N	NEV_PD_VO_Einlaufh	Peritonealdialyse - Einlaufhöhe in cm	45	f
-Parameter von Beatmung	\N	NEV_PD_VO_Einlaufmenge	Peritonealdialyse Einlaufmenge in ml	45	f
-Parameter von Beatmung	\N	NEV_PD_VO_Verweildauer	\N	45	f
-Parameter von Beatmung	\N	Patient_Familienst	Familienstand des Patienten	45	f
-Parameter von Beatmung	\N	Patient_Religion	Religion des Patienten	45	f
-Parameter von Beatmung	\N	Therapiebetten_VO_BariAir_mittePause	\N	45	f
-Parameter von extrakorporalen Verfahren	\N	Hypothermie_Coolgard_VO_Rate	\N	45	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008HS_UFZiel	\N	45	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Plasmaloesung	\N	45	f
-Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Giraffe_ES_O2_Konzentration	\N	45	f
-Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Triadyne_mittePause	\N	45	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Evita2_InspFlow	eingestellter Inspirationfluss	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_F120_O2Konzentration	Einstellparameter: Sauerstoffgehalt des Gasgemisches	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Frequenz	Anzahl der Atemzyklen pro Minute, Parametereinstellung	45	t
@@ -9847,25 +9857,75 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Pniedrig	"Phoch (cmH2O) "	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_SIMV_Frequenz	"SIMV Frequenz "	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Tpause_s	"TPause (s) "	45	t
-Spontanes-Atemzugvolumen	Spont VT on vent	P_ADVOS_MS_ADVOS_Calcium_postFilter	\N	45	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Frequenz	gemessene Atemfrequenz	45	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Inpuls_Erfassung_Transporte_Anzahl	\N	45	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Abnahme	\N	45	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_CitratFluss	\N	45	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Dialysatfluß	\N	45	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_DialyseZeit	\N	45	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Airvo_O2Konzentration	Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.	45	f
-Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_VO_ADVOS_CitratFluss	\N	45	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_Bilanz	\N	45	f
+Parameter von extrakorporalen Verfahren	\N	Hypothermie_Coolgard_VO_Rate	\N	45	t
 Atemfrequenz	Resp rate	Beatmung_MS_G5_RCexsp	Exspiratorische Zeitkonstante, ein Monitoring-Parameter	47	t
 Spontane-Atemfrequenz-Beatmet	\N	IABP_DatascopeCS300_ES_IABPAufblasen	Dokumentation des prozentualen Anteil des Aufblasens des Ballons.	45	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	P_INVOS_Doku_rSO2_rechts	cerbebrale Sauerstoffsättigung rechts	45	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_G5_Pkontrol	Einstellwert oberes Druckniveau beim G 5 im Modus P SIMV	45	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Pallas_Tinsp	Dokumentation der Inspirationszeit.	45	t
 Blutdruck Generisch	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_artDruck	\N	44	t
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_VO_4008onl_Bicarbonat	\N	45	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_Bicarbonat	\N	45	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_ADVOS_VO_CalciumLoesung	\N	45	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_Spontanatemtest	Dokumentation ob der Spontanatemtest bestanden wurde.	45	f
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008HS_UFZiel	\N	45	t
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_Plasmaloesung	\N	45	t
+Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Giraffe_ES_O2_Konzentration	\N	45	t
+Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Triadyne_mittePause	\N	45	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_ADVOS_MS_ADVOS_Calcium_postFilter	\N	45	t
+Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_VO_ADVOS_CitratFluss	\N	45	t
+Parameter von Beatmung	\N	Besonderheiten_Station	\N	45	t
+Parameter von Beatmung	\N	Betreuer2_TelefonMobil	\N	45	t
+Parameter von Beatmung	\N	NEV_Apherese_VO_Filter	\N	45	t
+Parameter von Beatmung	\N	NEV_CRRT_VO_Antikoagulation	\N	45	t
+Parameter von Beatmung	\N	NEV_CRRT_VO_Multi_Temp	Neuanlage 18.05.2012 String	45	t
+Parameter von Beatmung	\N	NEV_PD_VO_Einlaufh	Peritonealdialyse - Einlaufhöhe in cm	45	t
+Parameter von Beatmung	\N	NEV_PD_VO_Einlaufmenge	Peritonealdialyse Einlaufmenge in ml	45	t
+Parameter von Beatmung	\N	NEV_PD_VO_Verweildauer	\N	45	t
+Parameter von Beatmung	\N	Patient_Familienst	Familienstand des Patienten	45	t
+Parameter von Beatmung	\N	Patient_Religion	Religion des Patienten	45	t
+Parameter von Beatmung	\N	Therapiebetten_VO_BariAir_mittePause	\N	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Pcontrol	\N	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_T1_Quick_Wean	Liste ein aus	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_VisionA_Schlagvolumen	Schlagvolumen (SV) in engl. (cycle volume)	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_CPAP	\N	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_O2KonzentrationG5	\N	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_O2Konzentration	Messwert: gemessene O2 Konzentration des Gasgemisches	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_TE	\N	47	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_VO_4008onl_Bicarbonat	\N	45	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_Bicarbonat	\N	45	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_ADVOS_VO_CalciumLoesung	\N	45	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_Spontanatemtest	Dokumentation ob der Spontanatemtest bestanden wurde.	45	t
+Systemischer vaskulärer Widerstandsindex	SV RI	NEV_Apherese_MS_OctoNova_PlasmaVolKum_ml	Anpassung im Zuge der automatischen Geräteanbindung über IBUS. Änderung in ml	45	t
+Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVR	Systemic vascular resistance	45	t
+Systemischer vaskulärer Widerstandsindex	SV RI	Vigileo_SVR	Systemic vascular resistance	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_TI	\N	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita2_MVspon	gemessenes spontanes Atemminutenvolumen	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita2_O2Konzentration	gemessene O2 Konzentration im Inspirationsgas	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_Mvleck	gemessenes Leckagevolumen pro Minute	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_G5_VT_IBW	VT/IBW	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_VisionA_IEVerhaeltnis	Messwert: gemessenes I:E Verhältnis	47	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Leoni_Frequenz_Rec	\N	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Leoni_IRec	\N	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_T1_Kein_Recruitment	Liste ein aus	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_VisionA_HFOBaseFlow	Basis Continousflow	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_VisionA_O2Konzentration	Eingestellte Sauerstoffzufuhr	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Leoni_Cdyn	\N	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Leoni_DCO2	\N	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Servoi_Cstatic	"Statische Compliance "	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_VisionA_O2Konzentration	gemessene Sauerstoffgehalt des Gasgemisches	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Zephyros_Pmean	\N	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_ADVOS_VO_Antikoagulation	\N	46	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_IMVFrequenz	\N	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_O2Konzentration	\N	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_BiPAPV_CPAP	Einstellparameter CPAP im Modus CPAP	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Plateau	prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_ZeitStartSBT	Zeit bis zum Start SBT	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Zeit_zw2_SBT	Zeit zwischen 2 SBT	45	t
-Systemischer vaskulärer Widerstandsindex	SV RI	NEV_Apherese_MS_OctoNova_PlasmaVolKum_ml	Anpassung im Zuge der automatischen Geräteanbindung über IBUS. Änderung in ml	45	f
-Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVR	Systemic vascular resistance	45	f
-Systemischer vaskulärer Widerstandsindex	SV RI	Vigileo_SVR	Systemic vascular resistance	45	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Trigger	Einstellgrösse: Druck bzw. Flowtrigger	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_intermPEEP	\N	45	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Evita2_InspFlow	eingestellter Inspirationfluss	45	t
@@ -9876,6 +9936,10 @@ Unterstützungsdruck Beatmung	Pressure support setting Vent	NEV_Apherese_MS_Mult
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_ACAT_ES_Inflation	\N	45	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_CRRT_ES_Multi_FilterO2Flow	Filter - O2Flow zur Ausspülung CO2	45	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_PD_VO_Auslaufmenge	Pertionealdialyse Auslaufmenge in ml	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_BiPAPV_EPAP	" eingestellter EPAP Wert"	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_Frequenz	\N	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_Frequenz	eingestellt mandatorische Atemfrquenz	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita4_frequenz	eingestellte Atemfrequenz	45	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_SollNa	\N	51	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_TMPDruck	Transmembrandruck	51	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_Multi_venDruck	venöser Druck	51	t
@@ -9890,12 +9954,16 @@ Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Evita2_Re
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Evita4_Resistance	gemessener Atemwegswiderstand	44	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_Pallas_PEEP	Dokumentation des gemessenen PEEPs.	44	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_PD_VO_Auslaufzeit	Auslaufzeit	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita4_Tubuskompensation	Einstellgröße für die Tubuskompensation	45	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	EinweisenderArzt_Email	\N	44	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Cobe_PlasmaVolKum_ml	"Anpassung analog zu Geräten mit automatischer Datenübernahme Änderung in ml "	44	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Zugang	\N	44	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008HS_IsoUFZiel	\N	44	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Plasma	\N	44	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Umsatz	\N	44	f
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Ti	\N	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_T1_PeepCPAP	\N	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_Resistance	Resistance	45	t
 Arterieller Druck	\N	CardioHelpMaquet_DOKU_HB	\N	44	t
 Atemfrequenz	Resp rate	IABP_DatascopeCS100_ES_IABPFrequenz	\N	47	t
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Anordnung_AMV	Anordnung Atemminutenvolumen (AMV)	44	t
@@ -9928,6 +9996,11 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverf
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_CalciumFluss	\N	70	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_StartNatrium	\N	45	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	CardioHelpMaquet_DOKU_HFAnsaetzeAspirierenSpuelen	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_VLeckage	\N	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita2_Pmin	"kleinster gemessener Beatmungsdruck während des Atemzyklus "	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_fspn	gemessene spontane Atemfrequenz	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_Pmin	gemessener minimaler Atemwegsdruck während des Atemzyklus	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Heimbeatmung_MV	\N	45	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_HD_VO_4008HS_Bicarbonat	\N	44	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	PICCO_HI	HerzindexHerzindex	44	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Wertsachen_Name_Angehoeriger	\N	44	t
@@ -9974,24 +10047,18 @@ Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Nierenverfahren_MS_Multi_
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Nierenverfahren_VO_BM25_AbnahmeMax	Ultrafiltrationsrate	44	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Nierenverfahren_VO_Multi_UltrafiltrationMax	Ultrafiltrationsrate	44	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Schrittmacher_Osypka203H_ES_AV_DLY	AV Überleitungszeit	44	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_C2_Pkontrol_Phoch	Eingestellter Pkontrol oder Phoch am C2.	44	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_C2_fTotal	\N	44	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Einstell_Dialysekonzentrat	\N	44	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_A-Sense	\N	44	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_A_Sense	Empfindlichkeit	44	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_V_STIM	Stimulation Ventrikel	44	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Therapiebetten_Doku_Atom_ES_O2_Konzentration	\N	44	f
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Leoni_HFAmp	\N	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Servoi_CPAP	"Continuous Positive Airway Pressure "	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Servoi_WOBv	"Atemarbeit, Ventilator "	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_T1_PeepCPAP	Messwert: Beatmungsdruck Peep/CPAP	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_VisionA_MAP	gemessener Mittlerer Atemwegsdruck unter HFO bei Alpha Vision	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Aufnahme_Schwangerschaft_sonstigeString	\N	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_RTX_MinBackup	\N	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Patient_Gewicht_Differenz	Differenz zwischen dem aktuellen Gewicht und dem Gewicht des letzten Eintrags	45	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita2_Resistance	gemessener Atemwegswiderstand	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_fmand	gemessene mandatorische Atemfrequenz	44	t
 Körpergroesse	Body height	Angehoerige1_Strasse	\N	44	t
 Körpergrösse Percentil	Body height Prctl	Angehoerige1_TelefonMobil	Handy Nummer der Angehörigen des Patienten	44	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige1_TelefonArbeit	Berufliche Telefonnummer der Angehörigen des Patienten	44	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige2_TelefonArbeit	\N	44	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige3_TelefonArbeit	\N	44	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_G5_CO2Elim_Target_Shift	Bereich Decimal - bis +	44	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_G5_Oxygen_Target_Shift	Bereich Decimal - bis +	44	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	COPRA_Patient_Geburtsgewicht	Geburtsgewicht des Patienten in Kilogramm	44	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	IABP_Abiomed_Impella_Leistungsstufe	Liste	44	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_SEF1	EEG - Spectral Edge Frequency Channel 1	44	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_SEF2	EEG - Spectral Edge Frequency Channel 2	44	f
 Körpertemperatur Atemwege	Airway temp	Angehoerige1_TelefonArbeit	Berufliche Telefonnummer der Angehörigen des Patienten	44	f
 Körpertemperatur Atemwege	Airway temp	Angehoerige2_TelefonArbeit	\N	44	f
 Körpertemperatur Atemwege	Airway temp	Angehoerige3_TelefonArbeit	\N	44	f
@@ -10000,11 +10067,6 @@ Körpertemperatur Brust	Body temperature	Betreuer_Telefon	Telefonummer des Patie
 Körpertemperatur Brust	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
 Körpertemperatur Brust	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	f
 Körpertemperatur Brust	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	f
 Körpertemperatur Gelenk	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	f
 Körpertemperatur Gelenk	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	f
 Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
@@ -10024,6 +10086,28 @@ Körpertemperatur Generisch	Body temperature	EinweisenderArzt_Fax	\N	44	t
 Intrakranieller Druck ICP	ICP	Nierenverfahren_ES_4008HS_UFZiel	Ultrafiltrationsziel	44	t
 Körpergrösse Percentil	Body height Prctl	Angehoerige2_TelefonMobil	\N	44	t
 Körpergrösse Percentil	Body height Prctl	Angehoerige3_TelefonMobil	\N	44	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_C2_Pkontrol_Phoch	Eingestellter Pkontrol oder Phoch am C2.	44	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_C2_fTotal	\N	44	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Einstell_Dialysekonzentrat	\N	44	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_A-Sense	\N	44	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_A_Sense	Empfindlichkeit	44	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_V_STIM	Stimulation Ventrikel	44	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige1_TelefonArbeit	Berufliche Telefonnummer der Angehörigen des Patienten	44	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige2_TelefonArbeit	\N	44	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige3_TelefonArbeit	\N	44	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_G5_CO2Elim_Target_Shift	Bereich Decimal - bis +	44	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_G5_Oxygen_Target_Shift	Bereich Decimal - bis +	44	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	COPRA_Patient_Geburtsgewicht	Geburtsgewicht des Patienten in Kilogramm	44	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	IABP_Abiomed_Impella_Leistungsstufe	Liste	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_PEEPi	gemessener Intrinsic Peep nach Meßmanöver	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_Ppeak	gemessener Atemwegsspitzendruck	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_Resistance	gemessener Atemwegswiderstand	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	NEV_Apherese_MS_Multi_PlasmaVolKum_ml	automatische Datenübernahme IBUS	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	NEV_Apherese_VO_Plasmaloesung	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	NEV_PD_Doku_Aussehen_Dialysat	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenersatzverfahren_VO_CalciumLoesung	Bezeichnug der Calcium Lösung	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_ADVOS_VO_CitratLoesung	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_3100A_BiasFlow	Eingestellter Basisfluss im Beatmungssystem	44	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	f
@@ -10035,33 +10119,12 @@ Körpertemperatur Leiste	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur
 Körpertemperatur Leiste	Body temperature	P_Therapiebetten_Doku_DraegerBabytherm_ES_Strahler	\N	44	f
 Körpertemperatur Leiste	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	f
 Körpertemperatur Leiste	Body temperature	P_Waermesysteme_InfantWarmer_Doku_SkinTemp	\N	44	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	f
-Körpertemperatur Speiseroehre	Esoph temp	Patient_SpO2r	\N	44	f
 Körpertemperatur Kern	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	t
 Körpertemperatur Kern	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	t
 Körpertemperatur vaginal	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	t
 Körpertemperatur vaginal	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	t
-Linksventrikulaeres Schlagvolumenindex	LV SVI	NEV_Apherese_VO_Bolus_Antikoag	\N	44	f
 Körpertemperatur vaginal	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	t
 Körpertemperatur Kern	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	IABP_ACAT_MS_SystoleDiastole	\N	44	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_ES_Multi_SubstituatBolus	\N	44	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_VO_Calciumloesung	Calciumbeutel	44	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Patient_ID	Identifikation des Patiente	44	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Therapiebetten_Doku_Giraffe_ES_O2	Einstellung der O2-Konzentration im Inkubator	44	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Beatmung_ES_CF800_DruckluftFlow	Einstellgröße: Gasfluss Druckluft	44	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	CardioHelpMaquet_VO_Antikoagulation	\N	44	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NBP_1	nichtinvasiver Blutdruck 1	44	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_VO_CalciumLoesung	\N	44	f
 Linksventrikulärer Herzindex	LV Cardiac index	CardioHelpMaquet_DOKU_Flushen	\N	44	t
 Linksventrikulärer Herzindex	LV Cardiac index	CardioHelpMaquet_DOKU_HCT	\N	44	t
 Puls	\N	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	44	t
@@ -10074,84 +10137,80 @@ Körpertemperatur Stirn	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	
 Körpertemperatur Stirn	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	t
 Körpertemperatur Stirn	Body temperature	Patient_Ort	Patientenadresse: Ort	44	t
 Körpertemperatur nasal	Nasal temp	NEV_Apherese_MS_Multi_PlasmaVolKum	\N	44	t
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenersatzverfahren_VO_Dialysatloesung	\N	44	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_VO_Multi_SubstituatBolus	Substituatbolus in ml	44	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	P_INVOS_Doku_rSO2_links	cerebrale Sauerstoffsättigung links	44	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	P_NBP_liBein	Nichtinvaiver Blutdruck linkes Bein	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	akt._Schwangerschaftwoche	aktuelle Schwangerschaftswoche des Babys	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Aufnahme_Probleme_Schwangerschaft_Text	\N	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_BIPAPP1	\N	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_BIPAPP2	\N	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_Druckanstieg	\N	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_IPPVFrequenz	\N	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_IEVerhaeltnis	\N	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_CF800_O2Konzentration	Sauerstoffgehalt des eingestellten Gasgemisches CF 800	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_VisionA_PEEPCPAP	Einstellwert: eingestelltes Peep bzw. CPAP Niveau	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Zephyros_Tubuskompensation	\N	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_Druckanstieg	\N	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_IE	\N	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita2_Ppeep	gemessener positer endexspiratorischer Druck	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita2_Resistance	gemessener Atemwegswiderstand	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_fmand	gemessene mandatorische Atemfrequenz	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_PEEPi	gemessener Intrinsic Peep nach Meßmanöver	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_Ppeak	gemessener Atemwegsspitzendruck	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_Resistance	gemessener Atemwegswiderstand	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	NEV_Apherese_MS_Multi_PlasmaVolKum_ml	automatische Datenübernahme IBUS	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	NEV_Apherese_VO_Plasmaloesung	\N	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	NEV_PD_Doku_Aussehen_Dialysat	\N	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenersatzverfahren_VO_CalciumLoesung	Bezeichnug der Calcium Lösung	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_ADVOS_VO_CitratLoesung	\N	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_3100A_BiasFlow	Eingestellter Basisfluss im Beatmungssystem	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_C3_SBT_Frequenz	\N	44	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schlagvolumenindex	Wert des gemessenen Schlagvolumenindex.	44	f
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	IABP_ACAT_MS_SystoleDiastole	\N	44	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_ES_Multi_SubstituatBolus	\N	44	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_VO_Calciumloesung	Calciumbeutel	44	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Patient_ID	Identifikation des Patiente	44	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Therapiebetten_Doku_Giraffe_ES_O2	Einstellung der O2-Konzentration im Inkubator	44	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	NEV_Apherese_VO_Bolus_Antikoag	\N	44	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Beatmung_ES_CF800_DruckluftFlow	Einstellgröße: Gasfluss Druckluft	44	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	CardioHelpMaquet_VO_Antikoagulation	\N	44	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NBP_1	nichtinvasiver Blutdruck 1	44	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_VO_CalciumLoesung	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_C3_SBT_Frequenz	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schlagvolumenindex	Wert des gemessenen Schlagvolumenindex.	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_T1_Druckrampe	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_DruckluftFlow	\N	43	t
+Körpertemperatur Speiseroehre	Esoph temp	Patient_SpO2r	\N	44	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_DruckHoch	eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspDruck	eingestelltes oberes Druckniveau im Modus P-CMV und P-SIMV	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspPause	Zeiteinstellung für die Plateauphase im Modus CMV und SIMV	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Frequenz_Backup	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_IEVerhaeltnis_Backup	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Pkontrol_Backup	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_T1_Apnoezeit_Backup	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_IABP_Frequenz	Dokumentation der IABP Frequenz	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_DatascopeCS300_ES_IABP_Frequenz	Dokumentation der IABP Frequenz.	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Austauschrate	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_BasisNatrium	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FiltratDruck	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCaPostFilter	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCasystemBGA	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_AbnahmeMax	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_BM25_Abnahme	Ultrafiltrationsrate	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_ADVOS_VO_Dialysatloesung	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Pseudonym	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_Doku_AnaConDa_System	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Backup_Ti	\N	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Temperatur_Rektal	Anlage im Rahmen Philips Monitoring	44	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Waermesysteme_FisherPaykel_VO_Prozent	\N	44	f
-Parameter von Beatmung	\N	Aufnahme_Erstversorgung_Text	\N	44	f
-Parameter von Beatmung	\N	NEV_CRRT_VO_Fuellen_Mit	\N	44	f
-Parameter von Beatmung	\N	NEV_CRRT_VO_Multi_CitratBlut	\N	44	f
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenersatzverfahren_VO_Dialysatloesung	\N	44	t
 Atemfrequenz	Resp rate	IABP_DatascopeCS300_ES_IABP_Frequenz	Dokumentation der IABP Frequenz.	47	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_VO_Multi_SubstituatBolus	Substituatbolus in ml	44	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	P_INVOS_Doku_rSO2_links	cerebrale Sauerstoffsättigung links	44	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	P_NBP_liBein	Nichtinvaiver Blutdruck linkes Bein	44	t
+Parameter von Beatmung	\N	Aufnahme_Erstversorgung_Text	\N	44	t
+Parameter von Beatmung	\N	NEV_CRRT_VO_Fuellen_Mit	\N	44	t
+Parameter von Beatmung	\N	NEV_CRRT_VO_Multi_CitratBlut	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	akt._Schwangerschaftwoche	aktuelle Schwangerschaftswoche des Babys	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Aufnahme_Probleme_Schwangerschaft_Text	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_BIPAPP1	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_BIPAPP2	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_Druckanstieg	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_IPPVFrequenz	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_IEVerhaeltnis	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_CF800_O2Konzentration	Sauerstoffgehalt des eingestellten Gasgemisches CF 800	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_VisionA_PEEPCPAP	Einstellwert: eingestelltes Peep bzw. CPAP Niveau	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Zephyros_Tubuskompensation	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_Druckanstieg	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_IE	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita2_Ppeep	gemessener positer endexspiratorischer Druck	44	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	ETVI	"Index des extravaskulären Thermovolumens "	44	t
-Parameter von Beatmung	\N	NEV_CRRT_VO_Multi_Ultrafiltration	\N	44	f
-Parameter von Beatmung	\N	Nierenverfahren_ES_ADM_PlasmaAustausch	Plasmarate	44	f
-Parameter von Beatmung	\N	Nierenverfahren_ES_BM25_Plasma	Plasmarate	44	f
-Parameter von Beatmung	\N	Nierenverfahren_ES_Multi_Plasma	Plasmarate	44	f
-Parameter von Beatmung	\N	P_Therapiebetten_Doku_Lifetherm_ES_Neigung	Einstellung des Neigungswinkels	44	f
-Parameter von Beatmung	\N	Therapiebetten_VO_Atom_ES_Luftfeuchtigkeit	\N	44	f
-Parameter von extrakorporalen Verfahren	\N	CardioHelpMaquet_VO_Pumpendrehzahl	\N	44	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008HS_UFProfil	\N	44	f
-Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_BariAir_reDrehwinkel	\N	44	f
-Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Triadyne_liPause	\N	44	f
 Venöser Druck	\N	VigilanceC_RCWI	\N	44	t
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_ES_G5_Phoch	Einstellwert oberes Druckniveau im beim G 5 im Modus DuoPAP	44	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	P_SEF1	EEG - Spectral Edge Frequency Channel 1	44	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	P_SEF2	EEG - Spectral Edge Frequency Channel 2	44	f
+Parameter von extrakorporalen Verfahren	\N	CardioHelpMaquet_VO_Pumpendrehzahl	\N	44	t
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008HS_UFProfil	\N	44	t
+Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_BariAir_reDrehwinkel	\N	44	t
+Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Triadyne_liPause	\N	44	t
+Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_ES_ADVOS_CalciumFluss	\N	44	t
+Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_VO_ADVOS_BlutflussMax	\N	44	t
+Parameter von Beatmung	\N	NEV_CRRT_VO_Multi_Ultrafiltration	\N	44	t
+Parameter von Beatmung	\N	Nierenverfahren_ES_ADM_PlasmaAustausch	Plasmarate	44	t
+Parameter von Beatmung	\N	Nierenverfahren_ES_BM25_Plasma	Plasmarate	44	t
+Parameter von Beatmung	\N	Nierenverfahren_ES_Multi_Plasma	Plasmarate	44	t
+Parameter von Beatmung	\N	P_Therapiebetten_Doku_Lifetherm_ES_Neigung	Einstellung des Neigungswinkels	44	t
+Parameter von Beatmung	\N	Therapiebetten_VO_Atom_ES_Luftfeuchtigkeit	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_Frequenz	Frequenz tot.	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_Peakflow	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_Patientenleckage	"Patientenleck - Die Leckage die aufgrund Masken- bzw. Helmleckage unabhängig der Sollleckage gemessen wird  "	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_TiTtot	"Ti/Ttot (Inspirationszeit/Dauer des ganzen Zyklus) "	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_Pinsp	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_Ppeak	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_Rinsp	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_Sauerstoff	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Heimbeatmung_Ppeak	\N	43	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_Zugang	Gefäßzugang	56	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_VisionA_BreathRate	Messwert: gemessene Atemfrequenz	43	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_ES_G5_Phoch	Einstellwert oberes Druckniveau im beim G 5 im Modus DuoPAP	44	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	P_SEF1	EEG - Spectral Edge Frequency Channel 1	44	t
 Atemfrequenz	Resp rate	P_Beatmung_ES_C3_Freq	\N	47	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	P_SEF2	EEG - Spectral Edge Frequency Channel 2	44	t
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_Einstellung_FlowAssist	\N	44	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Pallas_Frischgas_O2	An der Flowröhre eingestellter O2 Frischgasflow.	44	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_MS_Pallas_Frischgas_Flow_gesamt	Gemessener Frischgas Flow.	44	f
-Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_ES_ADVOS_CalciumFluss	\N	44	f
-Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_VO_ADVOS_BlutflussMax	\N	44	f
 Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	SaO2 % BldA	NEV_CRRT_MS_Multi_UltrafiltrationlKum_ml	Neuanlage im Zuge der IBUS Anbindung	44	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Nierenverfahren_VO_Multi_Calcium	Ca-rate	44	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_C2_PEEP_CPAP_Ptief	Eingestellter PEEP, CPAP oder Ptief am C2.	44	t
@@ -10168,23 +10227,41 @@ Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Nierenverfahren_MS_400
 Pulmonalvaskulärer Widerstandsindex	PV RI	PCCI	"Herzindex (kontinuirlich) "	44	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	RCWI	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Aufnahme_Geburtslage_andere_text	\N	44	t
-Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_VO_ADVOS_CalciumFluss	\N	44	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Einstellung_AMV	Atemminutenvolumen (AMV)	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_SBT_Frrequenz	\N	44	t
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_VisionA_AFSpontan	Messwert: Anzahl der gemessenen spontanen Atemzüge	44	f
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_CRRT_MS_Multi_CalciumVolKum	\N	44	f
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_CRRT_MS_Multi_CitratvolKum	\N	44	f
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_ES_4008onl_BasisNa	\N	44	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_Doku_FüllenMit	Füllen des Systems	44	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_VO_5008onl_IsoUFZeit	\N	44	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	P_Spezifitaet_Mutter	Blutgruppenspezifität der Mutter	44	f
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	P_Spezifitaet_Mutter	Blutgruppenspezifität der Mutter	44	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_VisionA_AFSpontan	Messwert: Anzahl der gemessenen spontanen Atemzüge	44	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_CRRT_MS_Multi_CalciumVolKum	\N	44	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_CRRT_MS_Multi_CitratvolKum	\N	44	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_ES_4008onl_BasisNa	\N	44	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_Doku_FüllenMit	Füllen des Systems	44	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_VO_5008onl_IsoUFZeit	\N	44	t
+Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_VO_ADVOS_CalciumFluss	\N	44	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Lungenersatzverfahren_Doku_Schlauchsystem	Schlauchsystembeschichtung relevant	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	NEV_HD_ES_4008HS_NaProfil	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_ADVOS_VO_CalciumLoesung	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_C3_IEVerhaeltnis	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_CoughTrak	Ein/Aus	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_Frequenz	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_Verschreibung	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_RTX_FrequencyVibratin	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_MS_C3_IEVerhaeltnis	Verhältnis Inspirationszeit:Exspirationszeit	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_G5_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Pallas_Cpat	Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Servoi_WOBp	"Atemarbeit, Patient "	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_T1_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	F_Reakarte_VerantwortlichePflegekraft	Der/Die verantwortliche Pflegekraft der/die die Reakarte freigibt	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	F_Reakarte_VerantwortlicherMitarbeiter	\N	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_ES_BM25_Blutfluss	Blutpumpengeschwindigkeit	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_VO_SpülloesungAntikoagulanz	Spüllösung zum Vorbereiten des extrakorporalen Verfahrens	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_Pausendauer	\N	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Untersuchung_Abdomen_Bauchwand	\N	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Untersuchung_Status_Stuhl	\N	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Untersuchung_ExtremitaetenLeiste_ObereExtremitaet	\N	35	t
 Atemfrequenz	Resp rate	Beatmung_TM_Pallas_TEST	Test	46	t
 Spontane-Atemfrequenz-Beatmet	\N	NEV_Apherese_VO_SpülloesungAntikoag	\N	44	t
 Substituatfluss	\N	P_NEV_HD_ES_5008onl_Substituat	\N	44	t
 Blutdruck Generisch	Blood pressure panel with all children optional	P_NEV_HD_MS_5008onl_artDruck	\N	43	t
-Systemischer vaskulärer Widerstandsindex	SV RI	ITBV	Intrathorakales Blutvolumen	44	f
-Systemischer vaskulärer Widerstandsindex	SV RI	NIRS	Über eine Messsonde transcutan gemessener Prozentwert	44	f
-Systemischer vaskulärer Widerstandsindex	SV RI	P_Waermesysteme_FisherPaykel_VO_Prozent	\N	44	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Optiflow_O2Konzentration	\N	44	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Evita4_Pplat	gemessener Plataeudruck wähend der Inspiration	44	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Ereignisse Vitlaparameter Graphisch	Ereignisse Vitlaparameter Graphisch als Listenauswahl	44	t
@@ -10194,6 +10271,10 @@ Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_ES_RTX_TriggerSourc
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	PerspiratioSensibilis	Perspiratio Sensibilis in ml (ausfuhrrelevant in der Bilanz)	44	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_MS_G5_RCinsp	Inspiratorische Zeitkonstante, ein Monitoring Parameter	43	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_HFLoesung	\N	43	f
+Systemischer vaskulärer Widerstandsindex	SV RI	ITBV	Intrathorakales Blutvolumen	44	t
+Systemischer vaskulärer Widerstandsindex	SV RI	NIRS	Über eine Messsonde transcutan gemessener Prozentwert	44	t
+Systemischer vaskulärer Widerstandsindex	SV RI	P_Waermesysteme_FisherPaykel_VO_Prozent	\N	44	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_ES_Pallas_Frequenz_Min	Eingestellte Mindestfrequenz (Apnoeventilation) in dme Modus Pressure Support.	80	t
 Substituatvolumen	\N	Patient_Telefon	Telefonnummer des Patienten	44	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_Einstellung_ApnoeZeit	\N	44	t
 Zentralvenöser Druck	CVP	Nierenersatzverfahren_Doku_Dialysekonzentrat	Dialysekonzentrat mit Listenauswahl	44	t
@@ -10219,6 +10300,7 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_Evita2_AMV	gemessenes Ate
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_Evita2_frequenz	gemessene Atemfrequenz	43	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_Evita4_frequenz	gemessene Gesamtatemfrequenz	43	t
 Atemzugvolumen-Einstellung	VT setting Vent	Fontanelle_Beurteilung	\N	43	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_ES_Pallas_PS	Dokumentation des eingestellten Pressure Support.	80	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_BasisNatrium	\N	71	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_CitratFluss	\N	71	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Dialysatfluß	\N	71	t
@@ -10226,6 +10308,15 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverf
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_FilterDruck	\N	71	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_FlussratePBP	\N	71	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_iCaPostFilter	\N	71	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_Messung_Pmax	Peak Airway Pressure	80	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_Messung_Pmean	Mean Airway Pressure	80	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_Messung_Pmin	Minimum Airway Pressure	80	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_MS_G5_PTP	Druck Zeit Produkt (Pressure Time Product), ein Monitoring Parameter	80	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_MS_T1_PTP	Druck Zeit Produkt (Pressure Time Product)	80	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_G5_ZeitStartSBT	Zeit bis zum Start STB	43	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_Evita2_Frequenzimv	einstellte IMV Frequenz im SIMV Modus	43	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_G5_InspFlow	Inspiratorischer Peakflow, ein Monitoring-Parameter	43	f
@@ -10246,6 +10337,14 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Schrittmach
 Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_DOKU_Flushen	\N	43	t
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_Doku_AbschlussUrteil	\N	43	t
 Dauer extrakorporaler Gasaustausch	\N	IABP_CARDIOSAVE_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	F_Reakarte_VerantwortlichePflegekraft	Der/Die verantwortliche Pflegekraft der/die die Reakarte freigibt	45	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	t
 Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008HS_Dialysezeit	\N	43	f
 Atemfrequenz	Resp rate	RAP1	rechtsartrialer Druck	46	t
 Puls	\N	Ort_Temperatur1a_Messung	Liste	44	t
@@ -10266,8 +10365,11 @@ Blutdruck Generisch	Blood pressure panel with all children optional	Fall_Wertsac
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	43	t
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_IABPAufblasen	Dokumentation des prozentualen Anteil des Aufblasens des Ballons.	43	t
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP.	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_BasisNatrium	\N	70	t
-Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_SVI	SchlagvolumenindexSchlagvolumenindex	67	f
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	t
 Dauer Hämodialysesitzung	\N	NEV_HD_VO_4008HS_Dialysezeit	\N	43	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	HZV_VigilanceCGeraet	\N	43	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	IABP_AutoCat_ES_Arrhythmietiming	Liste	43	t
@@ -10311,23 +10413,29 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypk
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypka203H_ES_A_Sense	Empfindlichkeit	43	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypka203H_ES_V-Sense	\N	43	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypka203H_ES_V_Sense	Empfindlichkeit Ventrikel	43	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Pallas_Frequenz	Dokumentation der eingestellten Frequenz.	43	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Avea_Cstat	gemessene statische Compliance	43	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_VO_ILA_GasflussMin	\N	43	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_HD_Doku_Abschlussbeurteilung	\N	43	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Einstell_Austausch	\N	43	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_VO_DialysekonzentratALT	\N	43	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_ARP	atriale Refraktärzeit	43	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_V_RapidPacing	Rapid Pacing Stimulationsfrequenz	43	f
+Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_SVI	SchlagvolumenindexSchlagvolumenindex	67	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	t
 Körpertemperatur Blut	Blood temp	Vigileo_SV	ml/b	43	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_Beatmung_ES_3100A_Inspirationszeit	Prozentualer Anteil der Insp.Zeit bezogen auf den gesamten Atemzyklus	43	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Schrittmacher_Osypka203H_ES_ARP	atriale Refraktärzeit	43	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_NO	Einstellwert des NO bei NO Beatmung	43	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	IABP_CARDIOSAVE_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP	43	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_SEF	Spectral Edge Frequency	43	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Therapiebetten_VO_DraegerBabytherm_Strahler	\N	43	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Weaning_Abbruchgrund	\N	43	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Wertsachen_Name_Pflegekraft	\N	43	f
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Pallas_Frequenz	Dokumentation der eingestellten Frequenz.	43	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Avea_Cstat	gemessene statische Compliance	43	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_VO_ILA_GasflussMin	\N	43	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_HD_Doku_Abschlussbeurteilung	\N	43	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Einstell_Austausch	\N	43	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_VO_DialysekonzentratALT	\N	43	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_ARP	atriale Refraktärzeit	43	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_NO	Einstellwert des NO bei NO Beatmung	43	t
 Körpertemperatur Achsel	Axil temp	Hausarzt_Email	\N	43	f
 Körpertemperatur Atemwege	Airway temp	Angehoerige2_Verwandtschaftsgrad	\N	43	f
 Körpertemperatur Atemwege	Airway temp	Angehoerige3_Verwandtschaftsgrad	\N	43	f
@@ -10345,23 +10453,25 @@ Körpertemperatur Brust	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatu
 Körpertemperatur Brust	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	f
 Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	f
 Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	f
 Kopfumfang	Head Circumf OFC	Lagerung_ImOP	\N	43	t
 Körpergewicht	Weight	Beatmung_Doku_Heimbeatmung_Name	Freitext	43	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	IABP_CARDIOSAVE_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP	43	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_Dialysekonzentrat	\N	69	t
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	f
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_SEF	Spectral Edge Frequency	43	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Therapiebetten_VO_DraegerBabytherm_Strahler	\N	43	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Weaning_Abbruchgrund	\N	43	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Wertsachen_Name_Pflegekraft	\N	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_Doku_Temp	\N	46	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_BairHugger_VO_Geblaese	\N	46	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	t
 Körpertemperatur Gelenk	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	f
 Körpertemperatur Gelenk	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	f
 Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	f
@@ -10384,6 +10494,12 @@ Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatu
 Körpertemperatur Kern	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	t
 Körpertemperatur Kern	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	t
 Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_BairHugger_Doku_Geblaese	Liste	45	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	f
@@ -10399,6 +10515,13 @@ Körpertemperatur Halswirbelsaeule	Body temperature	P_Waermesysteme_BarkeyWaerme
 Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	f
 Körpertemperatur Harnblase	Bdy temp Bladder	Untersuchung_Abdomen_Leber	\N	43	f
+Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	t
 Körpertemperatur Leiste	Body temperature	T_K	Körpertemperatur	65	f
 Körpertemperatur Leiste	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	f
 Körpertemperatur Leiste	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	f
@@ -10417,32 +10540,6 @@ Körpertemperatur Leiste	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO
 Körpertemperatur Leiste	Body temperature	P_Waermesysteme_InfantWarmer_Doku_Power	\N	43	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	NEV_CRRT_MS_Multi_praeF	\N	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	f
 Atemfrequenz	Resp rate	P_ADVOS_ES_ADVOS_CitratFluss	\N	45	t
 Körpertemperatur nasal	Nasal temp	Hypothemie_Coolgard_Doku_Behandlungsmodi	Listenauswahl	43	t
 Körpertemperatur nasal	Nasal temp	Hypothermie_Doku_Kuehlverfahren	Listenauswahl	43	t
@@ -10451,19 +10548,24 @@ Körpertemperatur nasal	Nasal temp	NEV_Apherese_Doku_AbschlussBegruendung	Listen
 Körpertemperatur nasal	Nasal temp	NEV_Apherese_Doku_AbschlussUrteil	Listenauswahl	43	t
 Körpertemperatur nasal	Nasal temp	Schrittmacher_Osypka101H_ES_Betriebsart	Listenauswahl	43	t
 Körpertemperatur nasal	Nasal temp	Schrittmacher_Osypka101H_ES_HighRateSTIM	Listenauswahl	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	t
 Körpertemperatur Stirn	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	t
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	f
-Körpertemperatur Speiseroehre	Esoph temp	Patient_SpO2pr	\N	43	f
-Körpertemperatur Speiseroehre	Esoph temp	P_LEV_ES_BFQ1	Zusatzgerät bei einer ECMO Therapie	43	f
-Körpertemperatur Speiseroehre	Esoph temp	P_LEV_ES_BFQ2	\N	43	f
-Körpertemperatur Speiseroehre	Esoph temp	P_LEV_ES_BFQ3	\N	43	f
-Körpertemperatur Speiseroehre	Esoph temp	P_Therapiebetten_Doku_DraegerBabytherm_ES_Temp	\N	43	f
-Körpertemperatur Speiseroehre	Esoph temp	Schrittmacher_Osypka101H_ES_STIM	Stimulation	43	f
-Körpertemperatur Trommelfell	Tymp memb temp	Beatmung_MS_BiPAPV_EPAP	" gemessener EPAP (=Expiratorisch Positiver Atemwegsdruck)  "	43	f
-Körpertemperatur Trommelfell	Tymp memb temp	P_Beatmung_MS_C3_WOBimp	\N	43	f
-Körpertemperatur Trommelfell	Tymp memb temp	P_NEV_HD_MS_5008onl_TMP	\N	43	f
 Körpertemperatur Stirn	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	t
 Körpertemperatur Stirn	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	t
 Körpertemperatur Stirn	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	t
@@ -10482,6 +10584,26 @@ Körpertemperatur unter der Zunge	Oral temp	IABP_AutoCat_ES_EKGAbleitung	Liste	4
 Körpertemperatur unter der Zunge	Oral temp	IABP_AutoCat_ES_Modus	Liste	43	t
 Körpertemperatur unter der Zunge	Oral temp	IABP_AutoCat_ES_Triggerauswahl	Liste	43	t
 Körpertemperatur unter der Zunge	Oral temp	IABP_AutoCat_ES_Unterstützungsverhältnis	Liste	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	t
+Körpertemperatur Trommelfell	Tymp memb temp	Beatmung_MS_BiPAPV_EPAP	" gemessener EPAP (=Expiratorisch Positiver Atemwegsdruck)  "	43	t
+Körpertemperatur Trommelfell	Tymp memb temp	P_Beatmung_MS_C3_WOBimp	\N	43	t
+Körpertemperatur Trommelfell	Tymp memb temp	P_NEV_HD_MS_5008onl_TMP	\N	43	t
+Körpertemperatur Speiseroehre	Esoph temp	Patient_SpO2pr	\N	43	t
+Körpertemperatur Speiseroehre	Esoph temp	P_LEV_ES_BFQ1	Zusatzgerät bei einer ECMO Therapie	43	t
+Körpertemperatur Speiseroehre	Esoph temp	P_LEV_ES_BFQ2	\N	43	t
+Körpertemperatur Speiseroehre	Esoph temp	P_LEV_ES_BFQ3	\N	43	t
+Körpertemperatur Speiseroehre	Esoph temp	P_Therapiebetten_Doku_DraegerBabytherm_ES_Temp	\N	43	t
+Körpertemperatur Speiseroehre	Esoph temp	Schrittmacher_Osypka101H_ES_STIM	Stimulation	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	t
 Körpertemperatur vaginal	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	t
 Körpertemperatur vaginal	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	t
 Körpertemperatur vaginal	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	t
@@ -10493,22 +10615,6 @@ Körpertemperatur vaginal	Body temperature	P_Therapiebetten_VO_Lifetherm_Tempera
 Körpertemperatur vaginal	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	t
 Körpertemperatur vaginal	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	t
 Körpertemperatur vaginal	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Hypothermie_ArticSun_VO_Behandlungsmodi	Liste	43	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_MS_Multi_UltrafiltrationlKum_ml	Neuanlage im Zuge der IBUS Anbindung	43	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenersatzverfahren_Einstell_CalciumLoesung	\N	43	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenersatzverfahren_VO_CalciumLoesung	Bezeichnug der Calcium Lösung	43	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	CardioHelpMaquet_DOKU_Antikoagulation	\N	43	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	IABP_CARDIOSAVE_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP	43	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	IABP_DatascopeCS300_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP.	43	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_VO_Dialysat	\N	43	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Therapiebetten_Doku_Giraffe_MS_Luftfeuchtigkeit	Messung der Luftfeuchtigkeit im Inkubator	43	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Beatmung_ES_T1_Timaxi	eingestellte maximale Inspirationszeit im Modus NIV	43	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_Doku_BolusAntikoag	\N	43	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_PD_Doku_Bilanz	\N	43	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_PD_Doku_Einlaufzeit	\N	43	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_MS_Multi_DialysatvolumenKumulativ	kumulatives Dialysatvol	43	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_VO_Multi_BlutflussMax	max Blutpumpengeschwindigkeit VO	43	f
-Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Beatmung_ES_Servoi_Drucktrigger	"Drucktrigger "	43	f
 Atemfrequenz	Resp rate	F_spezGew_Refraktometer	spezifische Gewicht Refraktometer	44	t
 Linksventrikulärer Herzindex	LV Cardiac index	CardioHelpMaquet_MS_DruckVenoes	\N	43	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_Pallas_T_Rampe	Dokumentation der eingestellten Rampenzeit.	43	t
@@ -10522,63 +10628,48 @@ Linksventrikulärer Druck	Blood pressure panel with all children optional	IABP_D
 Linksventrikulärer Druck	Blood pressure panel with all children optional	NEV_Apherese_Doku_AbschlussUrteil	Listenauswahl	43	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Nierenersatzverfahren_Dokumentation_Abschluss	\N	43	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_Power	HFOV Powereinstellung	60	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Hypothermie_ArticSun_VO_Behandlungsmodi	Liste	43	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_MS_Multi_UltrafiltrationlKum_ml	Neuanlage im Zuge der IBUS Anbindung	43	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenersatzverfahren_Einstell_CalciumLoesung	\N	43	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenersatzverfahren_VO_CalciumLoesung	Bezeichnug der Calcium Lösung	43	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	CardioHelpMaquet_DOKU_Antikoagulation	\N	43	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	IABP_CARDIOSAVE_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP	43	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	IABP_DatascopeCS300_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP.	43	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_VO_Dialysat	\N	43	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Beatmung_ES_T1_Timaxi	eingestellte maximale Inspirationszeit im Modus NIV	43	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_Doku_BolusAntikoag	\N	43	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_PD_Doku_Bilanz	\N	43	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_PD_Doku_Einlaufzeit	\N	43	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_MS_Multi_DialysatvolumenKumulativ	kumulatives Dialysatvol	43	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_VO_Multi_BlutflussMax	max Blutpumpengeschwindigkeit VO	43	t
+Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Beatmung_ES_Servoi_Drucktrigger	"Drucktrigger "	43	t
 Venöser Druck	\N	NEV_HD_MS_4008HS_artDruck	\N	43	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Medikamente_Schwangerschaft_Text	\N	43	f
 Maximaler Beatmungsdruck	Press.max on vent Airway	NEV_Apherese_Doku_Bolus_Antikoag	\N	43	f
+Atemfrequenz	Resp rate	Temp1b	Temperatur 1b	33	t
+Atemfrequenz	Resp rate	Temp2b	Temperatur 2b	33	t
 Maximaler Beatmungsdruck	Press.max on vent Airway	NEV_CRRT_MS_Multi_UFR_BFRVerhaeltnis	\N	43	f
 Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_Multi_BlutflussMax	max Blutpumpengeschwindigkeit VO	43	f
 Maximaler Beatmungsdruck	Press.max on vent Airway	P_Waermesysteme_FisherPaykel_Doku_Prozent	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_Beatmungsmodus	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_Groeße	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_Pinsp	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_Sauerstoff	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_Flowtrigger	eingestellte Triggerschwelle (Flowtrigger)	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_Frequenzimv	einstellte IMV Frequenz im SIMV Modus	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita4_Flowtrigger	Einstellgröße des Flowtriggers	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_F120_CPAP	Eingestelltes CPAP Niveau	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_G5_Quick_Wean	Liste ein aus	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Sauerstoff	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Timax	"eingestellte maximale Inspirationszeit "	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_T1_Druckrampe	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Zephyros_CPAP	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_DruckluftFlow	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_Frequenz	Frequenz tot.	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_Peakflow	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_Patientenleckage	"Patientenleck - Die Leckage die aufgrund Masken- bzw. Helmleckage unabhängig der Sollleckage gemessen wird  "	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_TiTtot	"Ti/Ttot (Inspirationszeit/Dauer des ganzen Zyklus) "	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_Pinsp	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_Ppeak	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_Rinsp	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_Sauerstoff	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Heimbeatmung_Ppeak	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_VisionA_BreathRate	Messwert: gemessene Atemfrequenz	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Lungenersatzverfahren_Doku_Schlauchsystem	Schlauchsystembeschichtung relevant	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	NEV_HD_ES_4008HS_NaProfil	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_ADVOS_VO_CalciumLoesung	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_C3_IEVerhaeltnis	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_CoughTrak	Ein/Aus	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_Frequenz	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_Verschreibung	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_RTX_FrequencyVibratin	\N	43	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_MS_C3_IEVerhaeltnis	Verhältnis Inspirationszeit:Exspirationszeit	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Medikamente_Schwangerschaft_Text	\N	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Pallas_Frischgas_Air	An der Flowröhre eingestellter Frischgas Flow für Air.	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Zephyros_AF	\N	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_MandAF	gemessene mandatorische Atemfrequenz	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_BiPAPV_AMV	Messwert: gemessenes AMV	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_CPAP	gemessenes CPAP Niveau	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer2_Aufgabenkreis	\N	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer_Aufgabenkreis	\N	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_AutoCat_ES_Arrhythmietiming	Liste	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Auslaufmenge	Pertionealdialyse Auslaufmenge in ml	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Einlaufmenge	Peritonealdialyse Einlaufmenge in ml	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Dokumentation_Antikoagulatio	\N	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Bicarbonat	\N	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ArteriellDruck	\N	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCaGesammt	\N	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_BM25_Dialysat	\N	43	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_Antikoagulanz	Antikoagulation Medikament	43	f
-Atemfrequenz	Resp rate	Temp1b	Temperatur 1b	33	t
-Atemfrequenz	Resp rate	Temp2b	Temperatur 2b	33	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_Beatmungsmodus	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_Groeße	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_Pinsp	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_Sauerstoff	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_Flowtrigger	eingestellte Triggerschwelle (Flowtrigger)	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_Frequenzimv	einstellte IMV Frequenz im SIMV Modus	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita4_Flowtrigger	Einstellgröße des Flowtriggers	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_F120_CPAP	Eingestelltes CPAP Niveau	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_G5_Quick_Wean	Liste ein aus	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Sauerstoff	\N	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Timax	"eingestellte maximale Inspirationszeit "	43	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Zephyros_CPAP	\N	43	t
+Monitoring und Vitaldaten	\N	Angehoerige1_Land	\N	43	t
+Monitoring und Vitaldaten	\N	Angehoerige1_Name	Nachname des Angehörigen	43	t
+Monitoring und Vitaldaten	\N	Angehoerige2_Land	\N	43	t
+Monitoring und Vitaldaten	\N	Angehoerige2_Name	\N	43	t
+Monitoring und Vitaldaten	\N	Angehoerige3_Land	\N	43	t
+Monitoring und Vitaldaten	\N	Angehoerige3_Name	\N	43	t
+Monitoring und Vitaldaten	\N	Nierenverfahren_VO_Antikoagulanz	Antikoagulation Medikament	43	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_Citratloesung	Citratbeutel	43	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_Dialysatlösung	Dialysatlösung, Beutel	43	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Frequenz_Backup	\N	43	f
@@ -10590,20 +10681,13 @@ Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Waermesysteme_InfantWarmer_V
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_Osypka203H_ES_VRP	ventrikuläre Stimulationsfrequenz	43	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_zwei_ES_Empfindlichkeit	Medtronic 5375	43	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Untersuchung_Abdomen_Nieren	\N	43	f
-Parameter von Beatmung	\N	IABP_Doku_Ballonkatheter	Kathetertyp	43	f
-Parameter von Beatmung	\N	NEV_Apherese_Doku_AbschlussBegruendung	Listenauswahl	43	f
-Parameter von Beatmung	\N	P_ADVOS_VO_CitratLoesung	\N	43	f
-Parameter von extrakorporalen Verfahren	\N	CardioHelpMaquet_VO_Oxygenator	\N	43	f
-Monitoring und Vitaldaten	\N	Angehoerige1_Land	\N	43	t
-Monitoring und Vitaldaten	\N	Angehoerige1_Name	Nachname des Angehörigen	43	t
-Monitoring und Vitaldaten	\N	Angehoerige2_Land	\N	43	t
-Monitoring und Vitaldaten	\N	Angehoerige2_Name	\N	43	t
-Monitoring und Vitaldaten	\N	Angehoerige3_Land	\N	43	t
-Monitoring und Vitaldaten	\N	Angehoerige3_Name	\N	43	t
-Monitoring und Vitaldaten	\N	Nierenverfahren_VO_Antikoagulanz	Antikoagulation Medikament	43	t
-Pulmonalarterieller wedge Blutdruck	PAW pressure	P_Beatmung_ES_RTX_NegativePressure	\N	43	f
+Parameter von extrakorporalen Verfahren	\N	CardioHelpMaquet_VO_Oxygenator	\N	43	t
+Parameter von Beatmung	\N	IABP_Doku_Ballonkatheter	Kathetertyp	43	t
+Parameter von Beatmung	\N	NEV_Apherese_Doku_AbschlussBegruendung	Listenauswahl	43	t
+Parameter von Beatmung	\N	P_ADVOS_VO_CitratLoesung	\N	43	t
 Atemfrequenz	Resp rate	Temp3b	Temperatur 3b	33	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_Pallas_T_Rampe	Dokumentation der eingestellten Rampenzeit.	43	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	P_Beatmung_ES_RTX_NegativePressure	\N	43	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_Inspirationsflow	\N	43	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_InspiratorischePause	Inspiratorische Pause (I:E)	43	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_C2_AutoPeep	\N	43	t
@@ -10622,42 +10706,27 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Sauerstoff	Sauerstoffeinstellung	43	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Flowtrigger	"Flowtrigger "	43	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_IntrinsicPEEP	Intrinsic PEEP	43	t
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Pallas_T_Rampe	Dokumentation der eingestellten Rampenzeit.	43	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Pflegeuntensilien_Ort	\N	43	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Wertgegenstaende_Ort	\N	43	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	43	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_IABPAufblasen	Dokumentation des prozentualen Anteil des Aufblasens des Ballons.	43	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP.	43	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_Apherese_Doku_AbschlussUrteil	Listenauswahl	43	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenersatzverfahren_Dokumentation_Abschluss	\N	43	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_3100B_O2Konzentration	Einstellwert: O2 Konzentration des Gasgemisches	43	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_VolAssist	Einstellgröße für den VolAssist im PPS Modus	43	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ2	\N	43	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Waermesysteme_BairHugger_VO_Geblaese	\N	43	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_Cstat	\N	43	t
-Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	CardioHelpMaquet_MS_Blutfluss	\N	43	f
-Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	CardioHelpMaquet_VO_Blutfluss	\N	43	f
-Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_Doku_SpuelloesungAntikoag1	\N	43	f
-Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_ES_ADVOS_Blutfluss	\N	43	f
-Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_VO_ADVOS_UFRateMax	\N	43	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_spAF	\N	43	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Pallas_T_Rampe	Dokumentation der eingestellten Rampenzeit.	43	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Pflegeuntensilien_Ort	\N	43	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Wertgegenstaende_Ort	\N	43	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	43	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_IABPAufblasen	Dokumentation des prozentualen Anteil des Aufblasens des Ballons.	43	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP.	43	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_Apherese_Doku_AbschlussUrteil	Listenauswahl	43	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenersatzverfahren_Dokumentation_Abschluss	\N	43	t
+Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	CardioHelpMaquet_MS_Blutfluss	\N	43	t
+Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	CardioHelpMaquet_VO_Blutfluss	\N	43	t
+Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_Doku_SpuelloesungAntikoag1	\N	43	t
+Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_ES_ADVOS_Blutfluss	\N	43	t
+Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	P_ADVOS_VO_ADVOS_UFRateMax	\N	43	t
 Spontane-Atemfrequenz-Beatmet	\N	NEV_Apherese_Doku_SpülloesungAntikoag	\N	43	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	43	t
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Messung_AFSpontan	Respiratory Rate (spontan)	43	f
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_CRRT_MS_Multi_DialysatvolKum	\N	43	f
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_ES_4008onl_NaProfil	\N	43	f
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_MS_4008onl_TMP	\N	43	f
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_VO_4008onl_NaProfil	\N	43	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_Dialysekonzentrat	Dialysekonzentrat 6 liter gesamt	43	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_ADVOS_VO_SpuelloesungAntikoag	\N	43	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_ES_5008onl_Bicarbonat	\N	43	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_VO_5008onl_Bicarbonat	\N	43	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_SpontanatemtestVoraussetzung	\N	43	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Hypothermie_ArticSun_MS_Hoechstwassertemp	Anlage für IBUS Datenübermittlung	43	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_Mess_TMP	TransmembranDruck	43	f
-Systemischer vaskulärer Widerstandsindex	SV RI	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum_ml	Anpassung im Zuge der automatischen Datenübernahme IBUS	43	f
-Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_ZVD	Zentraler Venendruck	43	f
-Systemischer vaskulärer Widerstandsindex	SV RI	P_Waermesysteme_FisherPaykel_Doku_Prozent	\N	43	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_RSB	"Index für schnelle Flachatmung („Rapid Shallow Breathing Index“) "	43	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Evita2_VerhaeltnisTiTe	eingestelltes Verhältnis zwischen Inspiration und Exspiration	43	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_Servoi_Backup_Ti	"Backup Ti [s] "	43	t
@@ -10665,6 +10734,7 @@ Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	LAP	Linksatrial  Mitteldruck	4
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	NEV_Apherese_MS_Multi_Behandlungs_Zeit	\N	43	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Patient_Telefon	Telefonnummer des Patienten	43	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Therapiebetten_Doku_Giraffe_MS_O2	Messung der O2-Konzentration im Inkubator	43	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Messung_AFSpontan	Respiratory Rate (spontan)	43	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ECMOPumpendrehzahl	\N	59	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_Flussreg	Liste ein aus	59	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_Doku_ILA_Blutfluss	\N	42	f
@@ -10690,6 +10760,20 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverf
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_ES_ILAactivve_Systole	%Systole Verhältnis Systolendauer zur Diastolendauer	59	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008HS_Bicarbonat	\N	59	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_ADM_Bilanz	\N	59	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_CRRT_MS_Multi_DialysatvolKum	\N	43	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Hypothermie_ArticSun_MS_Hoechstwassertemp	Anlage für IBUS Datenübermittlung	43	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_Mess_TMP	TransmembranDruck	43	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_ES_4008onl_NaProfil	\N	43	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_MS_4008onl_TMP	\N	43	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_VO_4008onl_NaProfil	\N	43	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_Dialysekonzentrat	Dialysekonzentrat 6 liter gesamt	43	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_ADVOS_VO_SpuelloesungAntikoag	\N	43	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_ES_5008onl_Bicarbonat	\N	43	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_VO_5008onl_Bicarbonat	\N	43	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_SpontanatemtestVoraussetzung	\N	43	t
+Systemischer vaskulärer Widerstandsindex	SV RI	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum_ml	Anpassung im Zuge der automatischen Datenübernahme IBUS	43	t
+Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_ZVD	Zentraler Venendruck	43	t
+Systemischer vaskulärer Widerstandsindex	SV RI	P_Waermesysteme_FisherPaykel_Doku_Prozent	\N	43	t
 Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_MS_DeltaP	\N	42	t
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_3100B_Inspirationszeit	Einstellwert: prozentualer Anteil der Inspirationszeit bezogen auf den gesamtem Atemzyklus	42	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	LVP	Linksventrikulärer Mitteldruck	42	f
@@ -10776,18 +10860,9 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenverfahren_VO_
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenverfahren_VO_Zugang	VO Gefäßzugang extracorporale Verfahren	42	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypka101H_ES_STIM	Stimulation	42	t
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	Verlegung_wo	"Der Patient wurde 'wohin?' verlegt? "	42	t
-Parameter von Beatmung	\N	Angehoerige1_Ort	\N	42	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_3100B_O2Konzentration	Messwert: gemessene O2 Konzentration des Gasgemisches	42	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Avea_MandVte	gemessenes mandatorisches Tidalvolumen	42	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_BiPAPV_O2Konzentration	Messwert: gemessene O2 Konzentration des Gasgemisches	42	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Dokumentation_Filtratdruck	\N	42	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Therapiebetten_VO_Atom_ES_Luftfeuchtigkeit	\N	42	f
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_CARDIOSAVE_ES_IABPAufblasen	Dokumentation des prozentualen Anteils des Aufblasens des Ballons	42	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_CalciumVolKum	\N	42	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_UFR_BFRVerhaeltnis	\N	42	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_Avea_PSV	eingestellte Druckunterstützung bei dem Gerät Avea	42	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_MS_NO	Messwert der  NO Konzentration bei NO Beatmung	42	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Bezugsperson_Pflegekraft	\N	42	f
 Körpertemperatur Achsel	Axil temp	IABP_Doku_Ballonkatheter	Kathetertyp	42	f
 Körpertemperatur Achsel	Axil temp	Lungenersatzverfahren_Doku_Kathetertyp	Kathetertyp	42	f
 Körpertemperatur Brust	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	f
@@ -10799,15 +10874,6 @@ Körpertemperatur Brust	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\
 Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	f
 Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	IABP_Unterstützung	\N	42	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	f
 Körpertemperatur Gelenk	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	f
 Körpertemperatur Gelenk	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	f
 Körpertemperatur Gelenk	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	f
@@ -10815,7 +10881,7 @@ Körpertemperatur Gelenk	Body temperature	IABP_Unterstützung	\N	42	f
 Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	f
 Körpertemperatur Gelenk	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	f
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	NEV_CRRT_MS_Multi_SubBolusVolKum_ml	Anpassung für die automatische Datenübernahme IBUS	42	t
+Parameter von Beatmung	\N	Angehoerige1_Ort	\N	42	t
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	f
 Körpergrösse Percentil	Body height Prctl	Angehoerige1_PLZ	\N	42	t
 Kopfumfang	Head Circumf OFC	Nierenverfahren_MS_ADM_verabreichtesPlasma	kumulativ	42	t
@@ -10830,6 +10896,22 @@ Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Klinik	Auswahl der Klinik
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Lungenersatzverfahren_Doku_ECMOAirFlow	\N	42	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Nierenersatzverfahren_Einstell_CitratLoesung	\N	42	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Nierenverfahren_ES_Multi_Citratloesung	Beutel	42	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_3100B_O2Konzentration	Messwert: gemessene O2 Konzentration des Gasgemisches	42	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Avea_MandVte	gemessenes mandatorisches Tidalvolumen	42	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_BiPAPV_O2Konzentration	Messwert: gemessene O2 Konzentration des Gasgemisches	42	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Dokumentation_Filtratdruck	\N	42	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Therapiebetten_VO_Atom_ES_Luftfeuchtigkeit	\N	42	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	NEV_CRRT_MS_Multi_SubBolusVolKum_ml	Anpassung für die automatische Datenübernahme IBUS	42	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_Avea_PSV	eingestellte Druckunterstützung bei dem Gerät Avea	42	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_MS_NO	Messwert der  NO Konzentration bei NO Beatmung	42	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Bezugsperson_Pflegekraft	\N	42	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	IABP_Unterstützung	\N	42	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	t
 Körpertemperatur Kern	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	t
 Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	f
 Körpertemperatur Kern	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	t
@@ -10863,62 +10945,34 @@ Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	f
 Körpertemperatur Leiste	Body temperature	P_Waermesysteme_InfantWarmer_VO_SkinTemp	\N	42	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	IABP_Unterstützung	\N	42	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	IABP_Unterstützung	\N	42	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	f
-Körpertemperatur Speiseroehre	Esoph temp	Beatmung_Messung_CPAPcmH2O	gemessener CPAP in der Maßeinheit cm H2O	42	f
 Puls	\N	Ort_Temperatur1b_Messung	Liste	44	t
 Körpertemperatur rektal	Rectal temp	Nierenverfahren_VO_Calciumloesung	Calciumbeutel	42	t
 Körpertemperatur nasal	Nasal temp	Verlauf_Konsil	\N	42	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	IABP_Unterstützung	\N	42	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	t
+Körpertemperatur Speiseroehre	Esoph temp	Beatmung_Messung_CPAPcmH2O	gemessener CPAP in der Maßeinheit cm H2O	42	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	IABP_Unterstützung	\N	42	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	t
 Linksatrialer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPAufblasen	Dokumentation des prozentualen Anteils des Aufblasens des Ballons	42	t
 Körpertemperatur Stirn	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	t
 Körpertemperatur vaginal	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	t
 Körpertemperatur vaginal	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	t
-Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_ScvO2	\N	42	f
 Körpertemperatur vaginal	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	t
 Körpertemperatur vaginal	Body temperature	IABP_Unterstützung	\N	42	t
 Körpertemperatur vaginal	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	t
 Körpertemperatur vaginal	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Evita2_Frequenz	eingestellt mandatorische Atemfrquenz	42	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	CFI	Herzfunktionsindex	42	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Hypothermie_ArticSun_MS_Mindestwassertemp	Anlage für IBUS Datenübermittlung	42	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	IABP_AutoCat_MS_SystoleDiastole	\N	42	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenersatzverfahren_VO_Calcium	\N	42	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenersatzverfahren_VO_DialysatMultifiltrate	appliziertes Dialysat für Multifiltrate	42	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	PerspiratioSensibilis	Perspiratio Sensibilis in ml (ausfuhrrelevant in der Bilanz)	42	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	P_NBP_reArm	Nichtinvasiver Blutdruck rechter Arm	42	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Beatmung_MS_Pallas_inCO2	Inspiratorisch gemessenes CO2.	42	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_MS_Multi_SubBolusVolKum	\N	42	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_PD_Doku_Einlaufhoehe	\N	42	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	ZVD	Zentralvenöser Druck	42	f
-Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Beatmung_ES_Servoi_Pausendauer_s	"Pausendauer [s] "	42	f
-Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	IABP_AutoCat_ES_EKGAbleitung	Liste	42	f
-Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Schrittmacher_Defi_ES_Empfindlichkeit	\N	42	f
-Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Schrittmacher_Eins_ES_Empfindlichkeit	Medtronic 5348	42	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_CF800_CPAP	eingestelltes CPAP Niveau	42	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Pkontrol_Backup	\N	42	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_DruckHoch	\N	42	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Leoni_Frequenz	\N	42	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Servoi_Leckage	"Leckage in % "	42	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Zephyros_C	\N	42	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	NEV_HD_ES_4008HS_Bicarbonat	\N	42	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Patient_AufnGewicht	Aufnahmegewicht (fallbezogen)	42	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_Einatmungsflow	\N	42	f
 Puls	\N	Ort_Temperatur2a_Messung	Liste	44	t
 Linksatrialer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.	42	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Diagnostik	Dokumentation durchgeführter diagnostischer Maßnahmen.	42	t
@@ -10933,8 +10987,32 @@ Körpertemperatur Stirn	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\
 Körpertemperatur Stirn	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	t
 Körpertemperatur Stirn	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	t
 Körpertemperatur Stirn	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	t
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_MS_C3_Cstat	Statische Compliance	42	f
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Evita2_Frequenz	eingestellt mandatorische Atemfrquenz	42	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	CFI	Herzfunktionsindex	42	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Hypothermie_ArticSun_MS_Mindestwassertemp	Anlage für IBUS Datenübermittlung	42	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	IABP_AutoCat_MS_SystoleDiastole	\N	42	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenersatzverfahren_VO_Calcium	\N	42	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenersatzverfahren_VO_DialysatMultifiltrate	appliziertes Dialysat für Multifiltrate	42	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	Vigileo_ScvO2	\N	42	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Beatmung_MS_Pallas_inCO2	Inspiratorisch gemessenes CO2.	42	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_MS_Multi_SubBolusVolKum	\N	42	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_PD_Doku_Einlaufhoehe	\N	42	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	ZVD	Zentralvenöser Druck	42	t
+Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Beatmung_ES_Servoi_Pausendauer_s	"Pausendauer [s] "	42	t
+Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	IABP_AutoCat_ES_EKGAbleitung	Liste	42	t
+Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Schrittmacher_Defi_ES_Empfindlichkeit	\N	42	t
+Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Schrittmacher_Eins_ES_Empfindlichkeit	Medtronic 5348	42	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_CF800_CPAP	eingestelltes CPAP Niveau	42	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Pkontrol_Backup	\N	42	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_DruckHoch	\N	42	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Leoni_Frequenz	\N	42	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Servoi_Leckage	"Leckage in % "	42	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Zephyros_C	\N	42	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	NEV_HD_ES_4008HS_Bicarbonat	\N	42	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Patient_AufnGewicht	Aufnahmegewicht (fallbezogen)	42	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_Einatmungsflow	\N	42	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Erstversorgung_Text	\N	42	f
+Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008HS_IsoUFZeit	\N	41	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_DruckNiedrig	eingestelltes unteres Druckniveau im Modus APRV / BiPhasisch	42	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_IEVerhältnis_Backup	\N	42	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Pallas_Alter	Dokumentation des Alters des Patienten.	42	f
@@ -10947,6 +11025,7 @@ Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_AMV	gemesse
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_MV	gemessenes Atemminutenvolumen	42	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Pallas_MV	Gemessenes Atemminutenvolumen.	42	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_VisionA_AMVtotal	Messwert: gemessenes Atemminutenvolumen	42	f
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_G5_PeepCPAP	Messwert: Beatmungsdruck Peep / CPAP	42	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_Abiomed_Impella_Spuelloesung	Liste	42	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	42	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_Doku_Auslaufmenge	\N	42	f
@@ -10955,41 +11034,35 @@ Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Calcium	\N	42	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Dialysatfluß	\N	42	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_DialyseZeit	\N	42	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FilterDruck	\N	42	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_Antikoagulanz	\N	42	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_CitratLoesung	\N	42	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_4008HS_BasisNa	\N	42	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_3100A_Leistung	Prozentuale Kolbenauslenkung	42	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Apnoezeit_Backup	\N	42	f
-Parameter von Beatmung	\N	Angehoerige2_Ort	\N	42	f
-Parameter von Beatmung	\N	Angehoerige3_Ort	\N	42	f
-Parameter von Beatmung	\N	NEV_CRRT_VO_HFLoesung	\N	42	f
-Parameter von Beatmung	\N	Therapiebetten_VO_Giraffe_ES_Luftfeuchtigkeit	\N	42	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008HS_SollNatrium	\N	42	f
-Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008HS_StartNatrium	\N	42	f
-Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Atom_ES_O2_Konzentration	\N	42	f
-Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_BariAir_liDrehwinkel	\N	42	f
-Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008HS_IsoUFZeit	\N	41	t
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_G5_PeepCPAP	Messwert: Beatmungsdruck Peep / CPAP	42	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_BM25_Abnahme	Ultrafiltrationsrate	55	t
-Parameter von Beatmung	\N	NEV_PD_VO_Einlaufhoehe	Einlaufhöhe in cm	41	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_4008HS_BasisNa	\N	42	f
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008HS_SollNatrium	\N	42	t
+Parameter von extrakorporalen Verfahren	\N	Nierenverfahren_VO_4008HS_StartNatrium	\N	42	t
+Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_Atom_ES_O2_Konzentration	\N	42	t
+Parameter von extrakorporalen Verfahren	\N	Therapiebetten_VO_BariAir_liDrehwinkel	\N	42	t
+Parameter von Beatmung	\N	Angehoerige2_Ort	\N	42	t
+Parameter von Beatmung	\N	Angehoerige3_Ort	\N	42	t
+Parameter von Beatmung	\N	NEV_CRRT_VO_HFLoesung	\N	42	t
+Parameter von Beatmung	\N	Therapiebetten_VO_Giraffe_ES_Luftfeuchtigkeit	\N	42	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_MS_C3_Cstat	Statische Compliance	42	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPAufblasen	Dokumentation des prozentualen Anteils des Aufblasens des Ballons	42	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_Frequenz	"Einstellwert: eingestellte Oszillationsfrequenz "	42	t
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Nierenverfahren_MS_Bilanz	Variable wird verwendet für Multifiltrate und ADM 08	42	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_3100B_Leistung	Einstellwert: prozentuale Kolbenauslenkung	42	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Flowtrigger	\N	42	t
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPAufblasen	Dokumentation des prozentualen Anteils des Aufblasens des Ballons	42	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.	42	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IstSoziale_Besonderheit	Soziale_Besonderheiten, z.B. Familiensituation	42	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	P_Spontanatemtest	Dokumentation ob der Spontanatemtest bestanden wurde.	42	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Zephyros_Endflow	\N	42	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Waermesysteme_BairHugger_Doku_Geblaese	Liste	42	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Flowtrigger	Die inspiratorische Bemühung des Patienten ( Flow),  die das Beatmungsgerät veranlässt, einen Atemhub abzugeben	42	t
-Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_Dialysekonzentrat	Dialysekonzentrat 6 liter gesamt	42	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_Fluss	\N	42	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_ISOUFZiel	\N	42	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Patient_SpO2_l	\N	42	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Patient_SpO2po	\N	42	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_ES_5008onl_BasisNa	\N	42	f
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.	42	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IstSoziale_Besonderheit	Soziale_Besonderheiten, z.B. Familiensituation	42	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	P_Spontanatemtest	Dokumentation ob der Spontanatemtest bestanden wurde.	42	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_Dialysekonzentrat	Dialysekonzentrat 6 liter gesamt	42	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_Fluss	\N	42	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_ISOUFZiel	\N	42	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Patient_SpO2_l	\N	42	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Patient_SpO2po	\N	42	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_ES_5008onl_BasisNa	\N	42	t
+Parameter von Beatmung	\N	NEV_PD_VO_Einlaufhoehe	Einlaufhöhe in cm	41	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Nierenverfahren_MS_Bilanz	Variable wird verwendet für Multifiltrate und ADM 08	42	t
 Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	SaO2 % BldA	Hypothermie_ArticSun_MS_Mindestwassertemp	Anlage für IBUS Datenübermittlung	42	t
 Spontane-Atemfrequenz-Beatmet	\N	CardioHelpMaquet_MS_SvO2	\N	42	t
 Spontane-Atemfrequenz-Beatmet	\N	NEV_CRRT_MS_DCMFETTotal	\N	42	t
@@ -11004,14 +11077,13 @@ Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Is
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_ZeitStartSBT	Zeit bis zum Start STB	42	t
 Hämodialyse Blutfluss	\N	IABP_Aufblasen	\N	41	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_TMP	\N	53	t
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Beatmung_MS_G5_Pplateau	Plateau-Atemwegsdruck, ein Monitoring-Parameter	42	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_CRRT_Doku_SpülloesungAntikoag	\N	42	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_AutoCat_ES_Deflation	\N	42	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_INVOS_Doku_rSO2_links	cerebrale Sauerstoffsättigung links	42	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Eins_ES_Ausgang	Medtronic 5348	42	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Eins_ES_RAPFrequenz	Medtronic 5348	42	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Osypka203H_ES_A_STIM	Stimulation Vorhof	42	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	SM_Empfindlichkeit	Schrittmacher Empfindlichkeit	42	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Beatmung_MS_G5_Pplateau	Plateau-Atemwegsdruck, ein Monitoring-Parameter	42	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Ereignisse Vitlaparameter Graphisch	Ereignisse Vitlaparameter Graphisch als Listenauswahl	41	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_Doku_ILAAnalogIn	\N	41	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_Flushmanoever	\N	41	f
@@ -11049,8 +11121,7 @@ Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Defi_E
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_drei_ES_AusgangA	Medtronic 5388	41	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_drei_ES_AusgangV	Medtronic 5388	41	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Schrittmacher_Osypka101H_ES_HighRateSTIM	Listenauswahl	41	t
-Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVR	Systemic vascular resistance	57	f
-Parameter von Beatmung	\N	P_ADVOS_VO_Filter	\N	41	f
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_CRRT_Doku_SpülloesungAntikoag	\N	42	t
 Blutfluss durch cardiovasculäres Gerät	\N	IABP_DatascopeCS300_ES_Doku_Ballonkatheter	Dokumentation des verwendeten Ballonkatheters.	41	t
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008HS_Bicarbonat	\N	41	t
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008onl_Bicarbonat	\N	41	t
@@ -11060,6 +11131,8 @@ Dauer Hämodialysesitzung	\N	NEV_HD_VO_Zugang	\N	41	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_C2_PEEP_CPAP_Ptief	Eingestellter PEEP, CPAP oder Ptief am C2.	41	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_G5_Frequenz_Backup	Frequenzeinstellung inder Backupeinstellung.	41	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Heimbeatmung_Ti_Backup	\N	41	t
+Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVR	Systemic vascular resistance	57	t
+Parameter von Beatmung	\N	P_ADVOS_VO_Filter	\N	41	t
 Blutdruck	Blood pressure panel with all children optional	Beatmung_Messung_AutoTubuskompentationAus	\N	41	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_MS_4008onl_Leitfähigkeit	\N	41	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_ES_4008HS_Blutfluss	\N	41	t
@@ -11089,7 +11162,6 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Patient_Strasse	Adresse des Patienten: Strasse + Hausnummer	47	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Fall_Wertsachen_Pflegeuntensilien_Ort	\N	46	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_MS_Multi_artDruck	arterieller Druck	41	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	HZV_VigileoGeraet	\N	41	t
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita2_Compliance	gemessene Lungencompliance	41	f
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita4_Compliance	gemessene Lungencompliance	41	f
@@ -11136,32 +11208,14 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	IABP_AutoCat_ES_Inf
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenersatzverfahren_Mess_VenDruck	\N	41	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenersatzverfahren_VO_Bicarbonat	\N	41	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenverfahren_VO_Zugang	VO Gefäßzugang extracorporale Verfahren	41	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Anordnung_ECMOAntikogulation	\N	41	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Anordnung_ECMOATZ	\N	41	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Anordnung_ECMOBlutfluss	\N	41	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_ES_ILAactivve_Systole	%Systole Verhältnis Systolendauer zur Diastolendauer	41	f
-Parameter von Beatmung	\N	P_NBP_reBein	Nichtinvasiver Blutdruck rechtes Bein	41	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_CRRT_MS_Multi_DialysatvolKum_ml	Anpassung für automatische Datenübernahme IBUS	41	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Dokumentation_Blutfluss	\N	41	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_AV_DLY	AV Überleitungszeit	41	f
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_MS_Multi_artDruck	arterieller Druck	41	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Vigileo_COCI	Cardiac output / -index	41	t
 Körpertemperatur Kern	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	akt._Schwangerschaftwoche	aktuelle Schwangerschaftswoche des Babys	41	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige1_TelefonMobil	Handy Nummer der Angehörigen des Patienten	41	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige2_TelefonMobil	\N	41	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige3_TelefonMobil	\N	41	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	IABP_DatascopeCS300_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP.	41	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Patient_Gewicht_WaageBezeichnung	Die Nummer der Waage, mit der das Gewicht ermittelt wurde.	41	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Therapiebetten_Doku_DraegerBabytherm_ES_Strahler	\N	41	f
 Körpertemperatur Atemwege	Airway temp	IABP_DatascopeCS300_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP.	41	f
 Körpertemperatur Brust	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	f
 Körpertemperatur Brust	Body temperature	Betreuer_Land	\N	41	f
 Körpertemperatur Brust	Body temperature	IABP_Unterstützungsdruck	\N	41	f
 Körpertemperatur Brust	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Land	\N	41	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	IABP_Unterstützungsdruck	\N	41	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	f
 Körpertemperatur Gelenk	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	f
 Körpertemperatur Gelenk	Body temperature	Betreuer_Land	\N	41	f
 Körpertemperatur Gelenk	Body temperature	IABP_Unterstützungsdruck	\N	41	f
@@ -11178,9 +11232,6 @@ Körpertemperatur Leiste	Body temperature	Betreuer_Land	\N	41	f
 Körpertemperatur Leiste	Body temperature	IABP_Unterstützungsdruck	\N	41	f
 Körpertemperatur Leiste	Body temperature	P_Waermesysteme_InfantWarmer_VO_Power	\N	41	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer_Land	\N	41	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	IABP_Unterstützungsdruck	\N	41	f
 Körpertemperatur Generisch	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	t
 Körpertemperatur Kern	Body temperature	Betreuer_Land	\N	41	t
 Körpertemperatur Kern	Body temperature	IABP_Unterstützungsdruck	\N	41	t
@@ -11191,14 +11242,26 @@ Körpergrösse Percentil	Body height Prctl	P_Beatmung_MS_C3_petCO2	Endtidaler CO
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Lungenersatzverfahren_Anordnung_ILAQ1Flow	\N	41	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Lungenersatzverfahren_Anordnung_ILAQ2Flow	\N	41	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Lungenersatzverfahren_Doku_ILAQ1Flow	\N	41	t
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer_Land	\N	41	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	IABP_Unterstützungsdruck	\N	41	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Schrittmacher_Osypka101H_ES_HighRateSTIM	Listenauswahl	41	f
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Anordnung_ECMOAntikogulation	\N	41	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Anordnung_ECMOATZ	\N	41	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Anordnung_ECMOBlutfluss	\N	41	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Dokumentation_Blutfluss	\N	41	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	akt._Schwangerschaftwoche	aktuelle Schwangerschaftswoche des Babys	41	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige1_TelefonMobil	Handy Nummer der Angehörigen des Patienten	41	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige2_TelefonMobil	\N	41	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Angehoerige3_TelefonMobil	\N	41	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	IABP_DatascopeCS300_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP.	41	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Patient_Gewicht_WaageBezeichnung	Die Nummer der Waage, mit der das Gewicht ermittelt wurde.	41	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_Therapiebetten_Doku_DraegerBabytherm_ES_Strahler	\N	41	t
+Parameter von Beatmung	\N	P_NBP_reBein	Nichtinvasiver Blutdruck rechtes Bein	41	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer_Land	\N	41	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	IABP_Unterstützungsdruck	\N	41	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Land	\N	41	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	IABP_Unterstützungsdruck	\N	41	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	t
 Körpertemperatur vaginal	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	t
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Schrittmacher_Osypka203H_ES_MTR	obere Frequenzbegrenzung	41	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	f
 Körpertemperatur vaginal	Body temperature	Betreuer_Land	\N	41	t
 Körpertemperatur vaginal	Body temperature	IABP_Unterstützungsdruck	\N	41	t
 Körpertemperatur vaginal	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	t
@@ -11230,52 +11293,46 @@ Körpertemperatur nasal	Nasal temp	NEV_Apherese_Doku_AbschlussBegruendung	Listen
 Körpertemperatur nasal	Nasal temp	NEV_Apherese_Doku_AbschlussUrteil	Listenauswahl	41	t
 Körpertemperatur nasal	Nasal temp	Schrittmacher_Osypka101H_ES_Betriebsart	Listenauswahl	41	t
 Körpertemperatur nasal	Nasal temp	Schrittmacher_Osypka101H_ES_HighRateSTIM	Listenauswahl	41	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	CardioHelpMaquet_DOKU_InitialisierenVenoeseProbe	\N	41	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	IABP_Datascope_MS_SystoleDiastole	\N	41	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_ES_Multi_Ultrafiltration	\N	41	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenersatzverfahren_VO_CreaZiel	\N	41	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Hypothemie_Coolgard_Doku_Behandlungsmodi	Listenauswahl	41	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	IABP_AutoCat_ES_Modus	Liste	41	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_Doku_Dialysekonzentrat	Dialysekonzentrat mit Listenauswahl	41	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_VO_DialyseZeit	\N	41	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h	41	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_VO_Multi_Substituat	Substituat in ml/h	41	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	P_Spezifitaet_Mutter	Blutgruppenspezifität der Mutter	41	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Untersuchung_Status_Makrozirkulation	\N	41	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Untersuchung_Status_Mikrozirkulation	\N	41	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	EinweisenderArzt_PLZ	\N	41	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	LAP1	linksartrialer Druck	41	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_MS_Multi_DialysatvolKum_ml	Anpassung für automatische Datenübernahme IBUS	41	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_MS_4008HS_BlutvolKum_ml	Anpassung aufgrund IBUS Anbindung	41	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_VO_Multi_SubstituatBolus	Substituatbolus in ml	41	f
-Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Schrittmacher_drei_ES_EmpfindlichkeitA	Medtronic 5388	41	f
-Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Schrittmacher_drei_ES_EmpfindlichkeitV	Medtronic 5388	41	f
-Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_ADM_BlutflussMax	Blutpumpengeschwindigkeit	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_DruckNiedrig	\N	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Pallas_FrischgasFlow	Gesamt Frischgasfluss (Summe aus O2 + AIR)	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Zephyros_IE_Verhältnis	\N	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_MitteldruckHFOV	\N	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_CPAP	Messwert: gemessenes CPAP Niveau	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_IPAP	"gemeesener IPAP (Inspiratorisch Positiver Atemwegsdruck) "	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_PeepCPAP	\N	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_G5_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Pallas_Cpat	Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Servoi_WOBp	"Atemarbeit, Patient "	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_T1_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	F_Reakarte_VerantwortlichePflegekraft	Der/Die verantwortliche Pflegekraft der/die die Reakarte freigibt	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	F_Reakarte_VerantwortlicherMitarbeiter	\N	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_ES_BM25_Blutfluss	Blutpumpengeschwindigkeit	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_VO_SpülloesungAntikoagulanz	Spüllösung zum Vorbereiten des extrakorporalen Verfahrens	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_Pausendauer	\N	41	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Therapiebetten_VO_BariAir_rePause	\N	41	f
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer_Land	\N	41	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	IABP_Unterstützungsdruck	\N	41	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Schrittmacher_Osypka101H_ES_HighRateSTIM	Listenauswahl	41	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Schrittmacher_Osypka203H_ES_MTR	obere Frequenzbegrenzung	41	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_O2Konzentration	\N	41	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Messung_AMV	Respiratory Minute Volume	41	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_ACAT_ES_Unterstuetzungsverhaeltnis	Liste	41	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Doku_Dialysekonzentrat	Dialysekonzentrat mit Listenauswahl	41	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Austauschrate	\N	41	f
 Linksventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_SubVolKum_ml	Anpassung für IBUS Anbindung	41	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Nierenverfahren_MS_Bilanz	Variable wird verwendet für Multifiltrate und ADM 08	41	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Austauschrate	\N	41	f
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Score_DGAI_AufnArzt	\N	44	t
+Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_ADM_BlutflussMax	Blutpumpengeschwindigkeit	41	f
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	CardioHelpMaquet_DOKU_InitialisierenVenoeseProbe	\N	41	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	IABP_Datascope_MS_SystoleDiastole	\N	41	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_ES_Multi_Ultrafiltration	\N	41	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenersatzverfahren_VO_CreaZiel	\N	41	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Hypothemie_Coolgard_Doku_Behandlungsmodi	Listenauswahl	41	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	IABP_AutoCat_ES_Modus	Liste	41	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_Doku_Dialysekonzentrat	Dialysekonzentrat mit Listenauswahl	41	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_VO_DialyseZeit	\N	41	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	EinweisenderArzt_PLZ	\N	41	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	LAP1	linksartrialer Druck	41	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_MS_Multi_DialysatvolKum_ml	Anpassung für automatische Datenübernahme IBUS	41	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_MS_4008HS_BlutvolKum_ml	Anpassung aufgrund IBUS Anbindung	41	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_VO_Multi_SubstituatBolus	Substituatbolus in ml	41	t
+Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Schrittmacher_drei_ES_EmpfindlichkeitA	Medtronic 5388	41	t
+Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Schrittmacher_drei_ES_EmpfindlichkeitV	Medtronic 5388	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_DruckNiedrig	\N	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Pallas_FrischgasFlow	Gesamt Frischgasfluss (Summe aus O2 + AIR)	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Zephyros_IE_Verhältnis	\N	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_MitteldruckHFOV	\N	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_CPAP	Messwert: gemessenes CPAP Niveau	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_IPAP	"gemeesener IPAP (Inspiratorisch Positiver Atemwegsdruck) "	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_C2_PeepCPAP	\N	41	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Therapiebetten_VO_BariAir_rePause	\N	41	t
+Monitoring und Vitaldaten	\N	IstSoziale_Besonderheit	Soziale_Besonderheiten, z.B. Familiensituation	41	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_CalciumFluss	\N	41	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FlussratePBP	\N	41	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_GBV	\N	41	f
@@ -11287,12 +11344,11 @@ Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_BM25_Abnahm
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Amplitude	\N	41	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_MS_AnaConDa_AF	\N	41	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Waermesysteme_InfantWarmer_VO_SkinTemp	\N	41	f
-Parameter von Beatmung	\N	CardioHelpMaquet_DOKU_Antikoagulation	\N	41	f
-Parameter von extrakorporalen Verfahren	\N	NEV_HD_VO_Antikoagulation	\N	41	f
-Monitoring und Vitaldaten	\N	IstSoziale_Besonderheit	Soziale_Besonderheiten, z.B. Familiensituation	41	t
-Pulmonalarterieller wedge Blutdruck	PAW pressure	NEV_HD_MS_4008onl_BlutvolKum_ml	Anpassung für IBUS	41	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Patient_Versicherungsnummer	\N	41	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	P_Impella_Impella_MS_PurgeFlow	\N	41	f
+Parameter von extrakorporalen Verfahren	\N	NEV_HD_VO_Antikoagulation	\N	41	t
+Parameter von Beatmung	\N	CardioHelpMaquet_DOKU_Antikoagulation	\N	41	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	NEV_HD_MS_4008onl_BlutvolKum_ml	Anpassung für IBUS	41	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Patient_Versicherungsnummer	\N	41	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	P_Impella_Impella_MS_PurgeFlow	\N	41	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_InspirationsflowMax	\N	41	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	HZV	Herzzeitvolumen	41	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Beatmung_Messung_AutoTubuskompentationAus	\N	41	t
@@ -11320,36 +11376,28 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersat
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_UFProfil	\N	41	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_MS_UltrafiltratmengeKum	Kumulativer Entzug, bilanzrelevant	41	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_4008HS_SollNatrium	\N	41	t
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Messung_AutoTubuskompentationAus	\N	41	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_MS_Pallas_MAC_exsp	Gemessener MAC Wert. (endexspiratorische mittlere alveoläre Konzentration)	41	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Wertgegenstaende	\N	41	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_EKG_Ableitung	Dokumentation der gewählten EKG Ableitung für den IABP Einsatz	41	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_Doku_Ballonvolumen	Dokumentation des Ballonvolumens.	41	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Medikamente_gestellt_pro_Tag	Information über gestellte Medikamente pro Tag	41	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008HS_IsoUFVolKum_ml	Anpassung für IBUS Anbindung	41	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008HS_Rest_Zeit_min	Anpassung für IBUS Anbindung	41	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_IsoUFVolKum_ml	Anpassung für IBUS Anbindung	41	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_Rest_Zeit_min	Anpassung für IBUS Anbindung	41	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_SubVolKum_ml	Anpassung für IBUS Anbindung	41	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenverfahren_MS_Bilanz	Variable wird verwendet für Multifiltrate und ADM 08	41	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	P_Patient_Gewicht_Differenz	Differenz zwischen dem aktuellen Gewicht und dem Gewicht des letzten Eintrags	41	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Schwangerschaftswoche	Schwangerschaftswoche, in welcher das Baby geboren wurde	41	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	IABP_AutoCat_ES_Modus	Liste	41	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_CSF_MS_LiquoGuard_Liquorfluss	"automatisch berechnet aus Pset ml/h "	41	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Schwangerschaftswoche	Schwangerschaftswoche, in welcher das Baby geboren wurde	41	f
-Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat	41	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_BM25_Plasmavolumen	\N	41	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Flowtrigger	\N	41	t
-Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_ES_5008onl_NaProfil	Auswahl von nummerisch einzugebenden Profilen	41	f
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Beatmung_MS_Pallas_MAC_exsp	Gemessener MAC Wert. (endexspiratorische mittlere alveoläre Konzentration)	41	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Wertgegenstaende	\N	41	t
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_MS_4008onl_artDruck	\N	40	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_VO_5008onl_NaProfil	\N	41	f
-Spontanes-Atemzugvolumen	Spont VT on vent	P_Spezifitaet_Mutter	Blutgruppenspezifität der Mutter	41	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	P_NEV_HD_ES_5008onl_SollNa	\N	41	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	SonstVerfahren_VO_Hypothermiegerä_Kuehlrate	Hypothermiebehandlung	41	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	SonstVerfahren_VO_Hypothermiegerät_Kuehlverfahren	Liste	41	f
-Systemischer vaskulärer Widerstandsindex	SV RI	NEV_Apherese_MS_Multi_Behandlungs_Zeit_min	Anpassung für automatische Gerätedataenübernahme mit IBUS	41	f
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Messung_AutoTubuskompentationAus	\N	41	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_MS_Pallas_MAC_exsp	Gemessener MAC Wert. (endexspiratorische mittlere alveoläre Konzentration)	41	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Wertgegenstaende	\N	41	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_EKG_Ableitung	Dokumentation der gewählten EKG Ableitung für den IABP Einsatz	41	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_Doku_Ballonvolumen	Dokumentation des Ballonvolumens.	41	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Medikamente_gestellt_pro_Tag	Information über gestellte Medikamente pro Tag	41	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008HS_IsoUFVolKum_ml	Anpassung für IBUS Anbindung	41	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008HS_Rest_Zeit_min	Anpassung für IBUS Anbindung	41	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_IsoUFVolKum_ml	Anpassung für IBUS Anbindung	41	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_Rest_Zeit_min	Anpassung für IBUS Anbindung	41	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_SubVolKum_ml	Anpassung für IBUS Anbindung	41	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenverfahren_MS_Bilanz	Variable wird verwendet für Multifiltrate und ADM 08	41	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Schwangerschaftswoche	Schwangerschaftswoche, in welcher das Baby geboren wurde	41	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_ES_5008onl_NaProfil	Auswahl von nummerisch einzugebenden Profilen	41	t
+Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat	41	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Angehoerige1_Verwandschaftsgrad	\N	41	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	EinweisenderArzt_Fax	\N	41	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	IABP_ACAT_ES_Deflation	\N	41	t
@@ -11385,13 +11433,19 @@ Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	IABP_DatascopeCS3
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_Doku_FuellenMit	\N	40	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	NEV_CRRT_MS_Multi_UltrafiltrationlKum_ml	Neuanlage im Zuge der IBUS Anbindung	40	t
 Substituatfluss	\N	Beatmung_ES_VisionA_HFOBaseFlow	Basis Continousflow	41	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_NEV_HD_VO_5008onl_NaProfil	\N	41	t
+Spontanes-Atemzugvolumen	Spont VT on vent	P_Spezifitaet_Mutter	Blutgruppenspezifität der Mutter	41	t
+Systemischer vaskulärer Widerstandsindex	SV RI	NEV_Apherese_MS_Multi_Behandlungs_Zeit_min	Anpassung für automatische Gerätedataenübernahme mit IBUS	41	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	P_NEV_HD_ES_5008onl_SollNa	\N	41	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	SonstVerfahren_VO_Hypothermiegerä_Kuehlrate	Hypothermiebehandlung	41	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	SonstVerfahren_VO_Hypothermiegerät_Kuehlverfahren	Liste	41	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_MS_4008onl_artDruck	\N	40	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_RestZeit	\N	75	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_SubBolus	\N	75	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_VenDruck	\N	75	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_AbnahmeMax	\N	75	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Bicarbonat	\N	75	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Bilanzziel	\N	75	t
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_artDruck	\N	40	f
 Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008onl_IsoUFZeit	\N	40	t
 Dauer Hämodialysesitzung	\N	P_LEV_Doku_LokalisationBFQ1	\N	40	t
 Dauer Hämodialysesitzung	\N	P_LEV_Doku_LokalisationBFQ2	\N	40	t
@@ -11435,35 +11489,22 @@ Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Nierenersatzverfahren_Ein
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Nierenverfahren_ES_4008HS_DialyseZeit	\N	40	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Nierenverfahren_VO_4008HS_Dialysezeit	\N	40	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Wertsachen_Kleidungsstuecke	\N	40	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_artDruck	\N	40	f
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_CRRT_MS_Multi_Bilanz_ml	neue Variable für automatische Datenübernahme IBUS	40	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	P_Temperatur_generic	Anlage für Philips Monitoring	40	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	P_Temperatur_Kern	Anlage für Philips Monitoring	40	t
 Körpergrösse Percentil	Body height Prctl	Betreuer2_PLZ	\N	40	t
 Körpertemperatur Blut	Blood temp	Verlauf_PT	\N	40	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_BiPAPV_AF	Messparameter: gemessene Atemfrequenz	40	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Evita4_Mvleck	gemessenes Leckagevolumen pro Minute	40	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ECMOAntikoagulation	\N	40	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	40	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_CRRT_ES_Multi_FilterO2Flow	Filter - O2Flow zur Ausspülung CO2	40	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_Doku_Abschlussbegruendung	\N	40	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_MTR	obere Frequenzbegrenzung	40	f
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	Beatmung_MS_Pallas_Sevofluran_exsp	Exspiratorisch gemessene Sevofluran Konzentration.	40	t
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	NEV_PD_Doku_Einlaufmenge	\N	40	t
 Körpergroesse	Body height	Beatmung_ES_Leoni_Apnoezeit	Apnoezeit	40	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Aufnahme_Beruf_Mutter	\N	40	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_MS_NO2	Messwert der NO2 Konzentration bei NO Beatmung	40	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_INVOS_Doku_rSO2_rechts	cerbebrale Sauerstoffsättigung rechts	40	f
 Körpertemperatur Brust	Body temperature	Betreuer2_Land	\N	40	f
 Körpertemperatur Brust	Body temperature	F_Therapieeinschraenkung	\N	40	f
 Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer2_Land	\N	40	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	F_Therapieeinschraenkung	\N	40	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	f
 Körpertemperatur Gelenk	Body temperature	Betreuer2_Land	\N	40	f
 Körpertemperatur Gelenk	Body temperature	F_Therapieeinschraenkung	\N	40	f
 Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	f
 Körpertemperatur Gelenk	Body temperature	Lungenerstazverfahren_Doku_ECMO_Oxygenator	Gerätetyp	40	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	PerspiratioInsensibilis	Perspiratio Insensibilis in ml (Ausfuhrrelevant in der Bilanz)	40	t
 Kopfumfang	Head Circumf OFC	dPmax	"Index der linken Ventrikelkontraktilität  "	40	t
 Körpergewicht	Weight	PICCO_EVLW/EV	\N	40	t
 Körpertemperatur Generisch	Body temperature	Betreuer2_Land	\N	40	t
@@ -11482,6 +11523,19 @@ Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Anordnung_Abbruc
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Nierenverfahren_MS_Multi_Calciumfluss	Calciumrate	40	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_ADVOS_VO_Zugang	\N	40	t
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	PICCO_HI	HerzindexHerzindex	40	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_BiPAPV_AF	Messparameter: gemessene Atemfrequenz	40	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Evita4_Mvleck	gemessenes Leckagevolumen pro Minute	40	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ECMOAntikoagulation	\N	40	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	40	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_CRRT_ES_Multi_FilterO2Flow	Filter - O2Flow zur Ausspülung CO2	40	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_Doku_Abschlussbegruendung	\N	40	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	PerspiratioInsensibilis	Perspiratio Insensibilis in ml (Ausfuhrrelevant in der Bilanz)	40	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Aufnahme_Beruf_Mutter	\N	40	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_MS_NO2	Messwert der NO2 Konzentration bei NO Beatmung	40	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_INVOS_Doku_rSO2_rechts	cerbebrale Sauerstoffsättigung rechts	40	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer2_Land	\N	40	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	F_Therapieeinschraenkung	\N	40	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienFiO2	\N	40	t
 Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer2_Land	\N	40	f
 Körpertemperatur Halswirbelsaeule	Body temperature	F_Therapieeinschraenkung	\N	40	f
@@ -11489,14 +11543,7 @@ Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_E
 Körpertemperatur Leiste	Body temperature	Betreuer2_Land	\N	40	f
 Körpertemperatur Leiste	Body temperature	F_Therapieeinschraenkung	\N	40	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer2_Land	\N	40	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	F_Therapieeinschraenkung	\N	40	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	f
 Körpertemperatur Myokard	Myocard temp	Beatmung_Anordnung_pmax	\N	40	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer2_Land	\N	40	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	F_Therapieeinschraenkung	\N	40	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	f
-Körpertemperatur Trommelfell	Tymp memb temp	Beatmung_MS_G5_WOBimp	Zusätzlich auferlegte Atemarbeit, ein Monitoring Parameter	40	f
 Körpertemperatur vaginal	Body temperature	Betreuer2_Land	\N	40	t
 Körpertemperatur vaginal	Body temperature	F_Therapieeinschraenkung	\N	40	t
 Körpertemperatur vaginal	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
@@ -11506,10 +11553,6 @@ Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40
 Körpertemperatur Stirn	Body temperature	Betreuer2_Land	\N	40	t
 Körpertemperatur Stirn	Body temperature	F_Therapieeinschraenkung	\N	40	t
 Körpertemperatur Stirn	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
-Linksventrikulaeres Schlagvolumenindex	LV SVI	LCWI	"Left Cardiac Work Index "	40	f
-Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_HZV	Herzzeitvolumen	40	f
-Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_SVR	Systemischer Gefäßwiderstand	40	f
-Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_SVV	Schlagvolumen Variation	40	f
 Atemfrequenz	Resp rate	Beatmung_ES_Evita4_fApnoe	eingestellte Atemfrequenz in der Apnoeventilation	100	t
 Körpertemperatur rektal	Rectal temp	Beatmung_MS_T1_VLeckage	Leckagevolumen	40	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	GEDVI	"Index des enddiastolisches Volumen "	40	t
@@ -11526,80 +11569,79 @@ Linksventrikulärer Druck	Blood pressure panel with all children optional	Perspi
 Körpertemperatur unter der Zunge	Oral temp	Fall_Nummer	Identifikationsnummer des Falles	40	t
 Körpertemperatur nasal	Nasal temp	Hausarzt_Email	\N	40	t
 Körpertemperatur nasal	Nasal temp	Hemolung_ES_Gasfluss	\N	40	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Betreuer2_Land	\N	40	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	F_Therapieeinschraenkung	\N	40	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	LCWI	"Left Cardiac Work Index "	40	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_SollNatrium	\N	72	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Temperatur	\N	72	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Austauschrate	\N	72	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_HZV	Herzzeitvolumen	40	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_SVR	Systemischer Gefäßwiderstand	40	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_SVV	Schlagvolumen Variation	40	t
+Körpertemperatur Trommelfell	Tymp memb temp	Beatmung_MS_G5_WOBimp	Zusätzlich auferlegte Atemarbeit, ein Monitoring Parameter	40	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer2_Land	\N	40	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	F_Therapieeinschraenkung	\N	40	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
 Monitoring und Vitaldaten	\N	NEV_HD_ES_4008onl_StartNa	\N	40	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Evita4_Phoch	Druckeinstellung für das obere Druckniveau im APRV Modus	40	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Evita4_Ptief	Druckeinstellung für das untere Druckniveau im APRV Modus	40	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Evita4_Ttief	Zeiteinstellung für das untere Druckniveau im APRV Modus	40	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_G5_Tubuskompensation	Dokumentation der eingestellten Tubuskompensation	40	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_T1_Ptief	Einstellwert: unteres Druckniveau im Modus APRV	40	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_MS_Multi_SubBolusVolKum_ml	Anpassung für die automatische Datenübernahme IBUS	40	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenersatzverfahren_Einstell_Dialysierfluessigke	\N	40	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Patient_PeaklowMessung	Peaklfowmeter Messung in % mit Definition <> Messung exspirat. Spitzenfluss	40	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_VO_Dialysekonzentrat	Dialysekonzentrat Verordnung String	40	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_MS_Multi_PlasmavolumenKumulativ	Kumulativ	40	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_VO_MultiPlasmavolumen	\N	40	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Hemolung_VO_Pumpendrehzahl	\N	40	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_MS_4008onl_BlutvolKum_ml	Anpassung für IBUS	40	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_ES_Multi_Plasma	Plasmarate	40	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	PICCO_ITBVI	Intrathorakaler Blutvolumenindex	40	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	P_Therapiebetten_Doku_Lifetherm_ES_Neigung	Einstellung des Neigungswinkels	40	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Schwangerschaftswoche	Schwangerschaftswoche, in welcher das Baby geboren wurde	40	f
-Maximaler Beatmungsdruck	Press.max on vent Airway	Fall_Nummer	Identifikationsnummer des Falles	40	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Anordnung_AbbruchkriterienAFVt	\N	40	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Anordnung_VT	Anordnung Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)	40	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_VisionA_HFOBaseFlow	Basis Continousflow	40	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_DruckNiedrig	\N	40	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_FrequenzHFOV	\N	40	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Avea_FiO2	gemessene Sauerstoffkonzentration im Atemgas	40	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_Pimax	"Pimax (Maximaler inspiratorischer Atemwegsdruck)  "	40	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenersatzverfahren_VO_SpueloesungAntikoagulanz	\N	40	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_ES_4008HS_NaProfil	\N	40	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_MS_4008HS_venDruck	\N	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_3100B_Leistung	Einstellwert: prozentuale Kolbenauslenkung	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Apnoezeit_Backup	\N	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_Apnoezeit_Backup	Apnoezeiteinstellung in der Backupeinstellung.	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_WOBi	\N	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_WOBp	\N	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Diagnostik	Dokumentation durchgeführter diagnostischer Maßnahmen.	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_DruckVorFilter	\N	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ISOUFZiel	\N	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_4008HS_Bicarbonat	\N	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_ADM_Plasmavolumen	\N	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_TMPDruck	\N	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_venDruck	\N	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_MS_AnaConDa_MAC	Umstellung PhilipsMonitoring	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm	40	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Therapiebetten_VO_BariAir_mittePause	\N	40	f
-Parameter von Beatmung	\N	NEV_HD_VO_4008onl_Bicarbonat	\N	40	f
 Linksventrikulärer Herzindex	LV Cardiac index	IABP_ACAT_MS_Mitteldruck	\N	40	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Extrakorporaleverfahren_DOKU_Heizung	\N	40	t
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Nierenverfahren_MS_4008onl_artDruck	\N	39	t
 Ideales Körpergewicht	Ideal bdy weight	EVLW	"Extravaskuläres Lungenwasser "	30	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_3100B_Leistung	Einstellwert: prozentuale Kolbenauslenkung	40	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Apnoezeit_Backup	\N	40	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_Apnoezeit_Backup	Apnoezeiteinstellung in der Backupeinstellung.	40	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_WOBi	\N	40	f
+Maximaler Beatmungsdruck	Press.max on vent Airway	Fall_Nummer	Identifikationsnummer des Falles	40	f
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Evita4_Phoch	Druckeinstellung für das obere Druckniveau im APRV Modus	40	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Evita4_Ptief	Druckeinstellung für das untere Druckniveau im APRV Modus	40	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Evita4_Ttief	Zeiteinstellung für das untere Druckniveau im APRV Modus	40	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_G5_Tubuskompensation	Dokumentation der eingestellten Tubuskompensation	40	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_T1_Ptief	Einstellwert: unteres Druckniveau im Modus APRV	40	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	NEV_CRRT_MS_Multi_SubBolusVolKum_ml	Anpassung für die automatische Datenübernahme IBUS	40	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenersatzverfahren_Einstell_Dialysierfluessigke	\N	40	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Patient_PeaklowMessung	Peaklfowmeter Messung in % mit Definition <> Messung exspirat. Spitzenfluss	40	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_VO_Dialysekonzentrat	Dialysekonzentrat Verordnung String	40	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_MS_Multi_PlasmavolumenKumulativ	Kumulativ	40	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_VO_MultiPlasmavolumen	\N	40	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Hemolung_VO_Pumpendrehzahl	\N	40	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_MS_4008onl_BlutvolKum_ml	Anpassung für IBUS	40	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_ES_Multi_Plasma	Plasmarate	40	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	PICCO_ITBVI	Intrathorakaler Blutvolumenindex	40	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	P_Therapiebetten_Doku_Lifetherm_ES_Neigung	Einstellung des Neigungswinkels	40	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Schwangerschaftswoche	Schwangerschaftswoche, in welcher das Baby geboren wurde	40	t
+Parameter von Beatmung	\N	NEV_HD_VO_4008onl_Bicarbonat	\N	40	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Anordnung_AbbruchkriterienAFVt	\N	40	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Anordnung_VT	Anordnung Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)	40	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_VisionA_HFOBaseFlow	Basis Continousflow	40	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_DruckNiedrig	\N	40	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_FrequenzHFOV	\N	40	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Avea_FiO2	gemessene Sauerstoffkonzentration im Atemgas	40	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_Pimax	"Pimax (Maximaler inspiratorischer Atemwegsdruck)  "	40	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenersatzverfahren_VO_SpueloesungAntikoagulanz	\N	40	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_ES_4008HS_NaProfil	\N	40	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_MS_4008HS_venDruck	\N	40	t
 Puls	\N	P_SEF1	EEG - Spectral Edge Frequency Channel 1	40	t
-Pulmonalarterieller wedge Blutdruck	PAW pressure	Nierenverfahren_Doku_Spueldauer	Spüldauer	40	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	NIRSrechts_MS	\N	40	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	PAP	Pulmunalarterieller Druck	40	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	PWP	Pulmunaler Wedgedruck	40	f
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienFiO2	\N	40	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienSpO2	\N	40	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Airvo_O2Flow	Dokumentation des eingestellten O2 Flusses, welcher am Gerät Airvo angeschlossen ist.	40	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Pflegeuntensilien	\N	40	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	VigilanceC_PVRI	Pulmonaler vasculärer Widerstandsindex	40	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienFiO2	\N	40	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienSpO2	\N	40	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Airvo_O2Flow	Dokumentation des eingestellten O2 Flusses, welcher am Gerät Airvo angeschlossen ist.	40	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Fall_Wertsachen_Pflegeuntensilien	\N	40	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP	40	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_Unterstuetzungsdruck	Dokumentation des Unterstützungdruckes	40	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP.	40	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_Unterstützungsdruck	Dokumentation des Unterstützungsdruckes.	40	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_Apherese_Doku_AbschlussBegruendung	Listenauswahl	40	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	PerspiratioInsensibilis	Perspiratio Insensibilis in ml (Ausfuhrrelevant in der Bilanz)	40	f
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP	40	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_Unterstuetzungsdruck	Dokumentation des Unterstützungdruckes	40	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP.	40	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	IABP_DatascopeCS300_ES_Unterstützungsdruck	Dokumentation des Unterstützungsdruckes.	40	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_Apherese_Doku_AbschlussBegruendung	Listenauswahl	40	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	PerspiratioInsensibilis	Perspiratio Insensibilis in ml (Ausfuhrrelevant in der Bilanz)	40	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	Nierenverfahren_Doku_Spueldauer	Spüldauer	40	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	NIRSrechts_MS	\N	40	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	PAP	Pulmunalarterieller Druck	40	t
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_Einstellung_I:E	Atemzeitverhältnis (I:E)	40	f
 Kopfumfang	Head Circumf OFC	P_ADVOS_Doku_Zugang11	Liste	39	t
 Puls	\N	P_SEF2	EEG - Spectral Edge Frequency Channel 2	40	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienFiO2	\N	40	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienSpO2	\N	40	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	PWP	Pulmunaler Wedgedruck	40	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Lungenersatzverfahren_VO_Zugang	Gefäßdefinition	40	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	NEV_HD_VO_4008onl_UFProfil	\N	40	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Nierenverfahren_ES_4008onl_Substituatrate	\N	40	t
@@ -11620,13 +11662,11 @@ Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	SaO2 % BldA	Nierenverfahre
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_CF800_SauerstoffFlow	Einstellgröße Gasfluss Sauerstoff	40	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	NEV_HD_VO_Zugang	\N	40	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_Impella_Impella_Doku_Verschlusssystem	Liste Ja Nein	40	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Messung_CO2	CO2-Production	40	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Hypothermie_VO_Kuehlverfahren	Liste	40	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_Mess_PF	\N	40	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_VO_Austausch	\N	40	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenverfahren_VO_4008HS_NaProfil	\N	40	f
+Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_Messung_CO2	CO2-Production	40	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Hypothermie_VO_Kuehlverfahren	Liste	40	t
+Systemischer vaskulärer Widerstandsindex	SV RI	Vigileo_CI	\N	40	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_Mess_PF	\N	40	t
 Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVRI	Systemischer Gefäßwiderstandsindex	40	f
-Systemischer vaskulärer Widerstandsindex	SV RI	Vigileo_CI	\N	40	f
 Venöser Druck	\N	Nierenverfahren_Doku_Spueldauer	Spüldauer	40	t
 Venöser Druck	\N	SM_Modus	Schrittmachermodus	40	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontVe	gemessenes spontanes Atemminutenvolumen	40	t
@@ -11661,11 +11701,12 @@ Atemzugvolumen-Einstellung	VT setting Vent	Nierenverfahren_VO_ADM_Austauschrate	
 Atemzugvolumen-Einstellung	VT setting Vent	P_ADVOS_VO_SpuelloesungAntikoag	\N	39	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Oxidationswasser	Oxidationswasser in ml (einfuhrrelevant)	40	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	SM_AV_Intervall	Schrittmacher AV-Intervall	40	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_VO_Austausch	\N	40	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenverfahren_VO_4008HS_NaProfil	\N	40	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_VenoeserDruck	\N	69	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Dialysatloesung	\N	69	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_Dialysekonzentrat	Dialysekonzentrat Verordnung String	69	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_DialysekonzentratALT	\N	69	t
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_BM25_artDruck	\N	39	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita2_IntrinsicPEEP	Ergebnis eines Messmanövers im Modus IPPV, IPPV assist	39	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_SubBolusVolKum	\N	39	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubBolusVolKum	\N	39	f
@@ -11676,6 +11717,7 @@ Blutfluss durch cardiovasculäres Gerät	\N	P_NEV_HD_ES_5008onl_Bicarbonat	\N	39
 Blutfluss durch cardiovasculäres Gerät	\N	Vigileo_COCI	Cardiac output / -index	39	t
 Dauer Hämodialysesitzung	\N	NEV_HD_Doku_SpüllösungAntikoag	\N	39	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_CF800_O2Konzentration	Sauerstoffgehalt des eingestellten Gasgemisches CF 800	39	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_BM25_artDruck	\N	39	f
 Blutdruck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienPzvCO2	\N	39	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onl_BlutflussSNPumpe	\N	39	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008onll_Blutfluss	\N	39	t
@@ -11709,10 +11751,6 @@ Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_ES_Narkosega
 Ideales Körpergewicht	Ideal bdy weight	Beatmung_ES_VisionA_Trigger	Einstellgrösse: Druck bzw. Flowtrigger	39	t
 Ideales Körpergewicht	Ideal bdy weight	Schrittmacher_Osypka101H_ES_Sense	Empfindlichkeit	39	t
 Ideales Körpergewicht	Ideal bdy weight	Schrittmacher_Osypka203H_ES_A_Sense	Empfindlichkeit	39	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Avea_Mitteldruck	gemessener Atemwegsmitteldruck	39	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Evita4_FiO2	gemessene O2 Konzentration des inspiratorischen Atemgasgemisches	39	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_CRRT_MS_Multi_SubBolusVolKum_ml	Anpassung für die automatische Datenübernahme IBUS	39	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Einstell_EffektiverEntzug	\N	39	f
 Herzfrequenz	Heart rate	Schwangerschaftswoche	Schwangerschaftswoche, in welcher das Baby geboren wurde	39	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	CardioHelpMaquet_DOKU_HFAnsaetzeAspirierenSpuelen	\N	39	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_AutoCat_ES_Unterstützungsverhältnis	Liste	39	t
@@ -11741,28 +11779,21 @@ Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Anordnung_Abbruc
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_ES_Evita4_VtApnoe	Einstellgröße für das Tidalvolumen in der Apnoeeinstellung	39	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_ES_G5_PeepCPAP	Einstellwert: Peep bzw. CPAP Niveau in verschiedenen Modi beim G 5	39	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_ES_G5_Ptief	Einstellwert: unteres Druckniveau beim G 5 im Modus APRV	39	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Avea_Mitteldruck	gemessener Atemwegsmitteldruck	39	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_MS_Evita4_FiO2	gemessene O2 Konzentration des inspiratorischen Atemgasgemisches	39	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_CRRT_MS_Multi_SubBolusVolKum_ml	Anpassung für die automatische Datenübernahme IBUS	39	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_Einstell_EffektiverEntzug	\N	39	t
 Körpertemperatur Generisch	Body temperature	ICP	Intrakranialer Druck	39	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_MS_4008HS_Leitfähigkeit	\N	39	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_ES_3100A_Mitteldruck	Eingestellter mittlerer Atemwegsdruck	39	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_PVARP	postventrikuläre atriale Refraktärzeit	39	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Untersuchung_Status_Oxygenierung	\N	39	f
 Körpertemperatur Kern	Body temperature	ICP	Intrakranialer Druck	39	t
 Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	t
 Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	t
 Körpertemperatur vaginal	Body temperature	ICP	Intrakranialer Druck	39	t
 Körpergrösse Percentil	Body height Prctl	Angehoerige1_PLZ	\N	39	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_Einstellung_idealesKoerpergewicht	\N	39	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_G5_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	39	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_SEF1	EEG - Spectral Edge Frequency Channel 1	39	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_SEF2	EEG - Spectral Edge Frequency Channel 2	39	f
 Körpertemperatur Achsel	Axil temp	P_CSF_ES_LiquoGuard_Pset	\N	39	f
 Körpertemperatur Atemwege	Airway temp	TempPBT	Temperatur bei der PICCO Messung	39	f
 Körpertemperatur Brust	Body temperature	ICP	Intrakranialer Druck	39	f
 Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	f
 Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	ICP	Intrakranialer Druck	39	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	f
 Körpertemperatur Gelenk	Body temperature	ICP	Intrakranialer Druck	39	f
 Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	f
 Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	f
@@ -11776,15 +11807,7 @@ Körpertemperatur Leiste	Body temperature	Beatmung_Doku_Zephyros_Option	Liste Hi
 Körpertemperatur Leiste	Body temperature	ICP	Intrakranialer Druck	39	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	ICP	Intrakranialer Druck	39	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	f
 Körpertemperatur Myokard	Myocard temp	P_CSF_MS_LiqouGuard_Pcsf	\N	39	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	ICP	Intrakranialer Druck	39	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	f
-Körpertemperatur Trommelfell	Tymp memb temp	Beatmung_Einstellung_AMV	Atemminutenvolumen (AMV)	39	f
-Körpertemperatur Trommelfell	Tymp memb temp	Beatmung_MS_BiPAPV_AMV	Messwert: gemessenes AMV	39	f
 Atemfrequenz	Resp rate	Nierenverfahren_MS_Multi_artDruck	arterieller Druck	38	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienPzvCO2	\N	39	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_Evita2_Anstiegszeit	eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau	39	t
@@ -11798,35 +11821,36 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverf
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Doku_SpuelbeutelInitialdosis	\N	65	t
 Körpertemperatur Stirn	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	t
 Körpertemperatur nasal	Nasal temp	NEV_CRRT_VO_SpülloesungAntikoag	\N	39	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Avea_DruckHoch	eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch	39	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_T1_Phoch	Einstellwert oberes Druckniveau im Modus DuoPAP	39	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_MS_Avea_MandAF	gemessene mandatorische Atemfrequenz	39	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_MS_Evita4_fmand	gemessene mandatorische Atemfrequenz	39	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Hypothermie_ArticSun_ES_Mindestwassertemp	\N	39	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_DeltaP	Delta P2/P3	39	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	VigilanceC_SVRI	Systemischer Gefäßwiderstandsindex	39	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Vigileo_SVI	SchlagvolumenindexSchlagvolumenindex	39	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_MS_Multi_SubbolusvolumenKumulativ	\N	39	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_MS_Multi_SubvolumenKumulativ	\N	39	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_VO_Dialysekonzentrat	Dialyskonzentratbehälter	39	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	P_ADVOS_Doku_AbschlussUrteil	\N	39	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Beatmung_Einstellung_SauerstoffVolG5	Sauerstoffeinstellung in der Maßeinheit Vol %	39	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Beatmung_ES_G5_Timax	eingestellte maximale Inspirationszeit beim G5 im Modus NIV	39	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	IABP_AutoCat_MS_Mitteldruck	\N	39	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Lungenersatzverfahren_Doku_ILAactivve_Flushen	Liste - Doku Durchführung	39	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Lungenersatzverfahren_VO_ILAactivve_Systole	Verhältnis Systole zur Diastolendauer	39	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_VO_Multi_CalciumFiltrat	\N	39	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_MS_4008onl_IsoUFVolKum_ml	Anpassung für IBUS Anbindung	39	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_VO_4008onl_UFZiel	\N	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Doku_Heimbeatmung_Beatmungsmodus	\N	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_AutoTubuskompentationAus	\N	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_CF800_DruckluftFlow	Einstellgröße: Gasfluss Druckluft	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Zephyros_Druckrampe	\N	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Pallas_Ppeak	Dokumentation des gemessenen Beatmungsspitzendruck.	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Datenuebernahme_TestvariableDec	\N	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	F_Sozialanamnese_Betreuung_Schule_Klasse	\N	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Hypothermie_ArticSun_Doku_Behandlungsmodi	Liste	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Inpuls_Erfassung_Beatmungszeit	\N	39	f
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_MS_4008HS_Leitfähigkeit	\N	39	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_Beatmung_ES_3100A_Mitteldruck	Eingestellter mittlerer Atemwegsdruck	39	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_PVARP	postventrikuläre atriale Refraktärzeit	39	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_Einstellung_idealesKoerpergewicht	\N	39	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_G5_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	39	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_SEF1	EEG - Spectral Edge Frequency Channel 1	39	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_SEF2	EEG - Spectral Edge Frequency Channel 2	39	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	ICP	Intrakranialer Druck	39	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	t
+Körpertemperatur Trommelfell	Tymp memb temp	Beatmung_Einstellung_AMV	Atemminutenvolumen (AMV)	39	t
+Körpertemperatur Trommelfell	Tymp memb temp	Beatmung_MS_BiPAPV_AMV	Messwert: gemessenes AMV	39	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	ICP	Intrakranialer Druck	39	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	ICP	Intrakranialer Druck	39	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Avea_DruckHoch	eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch	39	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_T1_Phoch	Einstellwert oberes Druckniveau im Modus DuoPAP	39	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_MS_Avea_MandAF	gemessene mandatorische Atemfrequenz	39	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_MS_Evita4_fmand	gemessene mandatorische Atemfrequenz	39	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Hypothermie_ArticSun_ES_Mindestwassertemp	\N	39	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_DeltaP	Delta P2/P3	39	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	VigilanceC_SVRI	Systemischer Gefäßwiderstandsindex	39	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Vigileo_SVI	SchlagvolumenindexSchlagvolumenindex	39	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_MS_Multi_SubbolusvolumenKumulativ	\N	39	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_MS_Multi_SubvolumenKumulativ	\N	39	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_VO_Dialysekonzentrat	Dialyskonzentratbehälter	39	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	P_ADVOS_Doku_AbschlussUrteil	\N	39	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienPzvCO2	\N	39	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Evita2_Anstiegszeit	eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau	39	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Pallas_Inspirationspause_Tip_Tinsp	Dokumentation der Inspirationszeit. Verhältnis zwischen Tip und Tinsp. 0 bis 60 %.	39	t
@@ -11835,16 +11859,24 @@ Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmu
 Linksventrikulärer Druck	Blood pressure panel with all children optional	F_Sozialanamnese_Betreuung_Sonstiges	\N	39	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_SubBolusVolKum_ml	Anpassung IBUS Anbindung	39	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Untersuchung_Abdomen_Haut	\N	39	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Beatmung_Einstellung_SauerstoffVolG5	Sauerstoffeinstellung in der Maßeinheit Vol %	39	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Beatmung_ES_G5_Timax	eingestellte maximale Inspirationszeit beim G5 im Modus NIV	39	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	IABP_AutoCat_MS_Mitteldruck	\N	39	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Lungenersatzverfahren_Doku_ILAactivve_Flushen	Liste - Doku Durchführung	39	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Lungenersatzverfahren_VO_ILAactivve_Systole	Verhältnis Systole zur Diastolendauer	39	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_CRRT_VO_Multi_CalciumFiltrat	\N	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Doku_Heimbeatmung_Beatmungsmodus	\N	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Einstellung_AutoTubuskompentationAus	\N	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_CF800_DruckluftFlow	Einstellgröße: Gasfluss Druckluft	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Zephyros_Druckrampe	\N	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Pallas_Ppeak	Dokumentation des gemessenen Beatmungsspitzendruck.	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Datenuebernahme_TestvariableDec	\N	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	F_Sozialanamnese_Betreuung_Schule_Klasse	\N	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Hypothermie_ArticSun_Doku_Behandlungsmodi	Liste	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Inpuls_Erfassung_Beatmungszeit	\N	39	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	F_spezGew_Refraktometer	spezifische Gewicht Refraktometer	39	t
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_ES_ADM_Blutfluss	Blutpumpengeschwindigkeit	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_ES_BM25_Blutfluss	Blutpumpengeschwindigkeit	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_VO_4008HS_Bicarbonat	\N	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_VO_ADM_BlutflussMax	Blutpumpengeschwindigkeit	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_VO_BM25_BlutflussMax	Blutpumpengeschwindigkeit	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_Einatmungsdruck	\N	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_Einatmungszeit	\N	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Untersuchung_Abdomen_Bauchwand	\N	39	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Untersuchung_Status_Stuhl	\N	39	f
+Monitoring und Vitaldaten	\N	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum	\N	39	t
+Monitoring und Vitaldaten	\N	P_ADVOS_VO_Antikoagulation	\N	39	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Geburtslage_andere_text	\N	39	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_AbbruchkriterienAMV	\N	39	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_AbbruchkriterienSAP	\N	39	f
@@ -11857,52 +11889,46 @@ Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_ftotal	Gesamtat
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Pallas_Frequenz	Gemessene Atemfrequenz.	39	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Hypothermie_ArticSun_VO_KuehlWaermeRate_neu	\N	39	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Lungenersatzverfahren_Anordnung_ILAAnalogIn	\N	39	f
+Atemfrequenz	Resp rate	Beatmung_ES_Evita4_frequenz	eingestellte Atemfrequenz	100	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_EffektiverEntzug	\N	39	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_Austauschrate	\N	39	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_BasisNatrium	\N	39	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h	39	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Ausatemdruck	\N	39	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Ausatemzeit	\N	39	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Untersuchung_ZNS_Hirnnerven	\N	39	f
-Parameter von Beatmung	\N	Schrittmacher_drei_ES_AusgangA	Medtronic 5388	39	f
-Parameter von Beatmung	\N	Schrittmacher_drei_ES_AusgangV	Medtronic 5388	39	f
-Parameter von Beatmung	\N	Schrittmacher_drei_ES_Basisfrequenz	Medtronic 5388	39	f
-Parameter von Beatmung	\N	Schrittmacher_drei_ES_EmpfindlichkeitA	Medtronic 5388	39	f
-Parameter von Beatmung	\N	Schrittmacher_drei_ES_EmpfindlichkeitV	Medtronic 5388	39	f
-Parameter von Beatmung	\N	Schrittmacher_drei_ES_FrequenzMax	Medtronic 5388	39	f
-Parameter von Beatmung	\N	Schrittmacher_drei_ES_VentrikelintervallAV	Medtronic 5388	39	f
-Parameter von Beatmung	\N	Schrittmacher_Eins_ES_Ausgang	Medtronic 5348	39	f
-Parameter von Beatmung	\N	Schrittmacher_Eins_ES_Empfindlichkeit	Medtronic 5348	39	f
-Parameter von Beatmung	\N	Schrittmacher_Eins_ES_Frequenz	Medtronic 5348	39	f
-Parameter von Beatmung	\N	Schrittmacher_Eins_ES_RAPFrequenz	Medtronic 5348	39	f
-Parameter von Beatmung	\N	Schrittmacher_zwei_ES_Ausgang	Medtronic 5375	39	f
-Parameter von Beatmung	\N	Schrittmacher_zwei_ES_Empfindlichkeit	Medtronic 5375	39	f
-Parameter von Beatmung	\N	Schrittmacher_zwei_ES_Frequenz	Medtronic 5375	39	f
-Monitoring und Vitaldaten	\N	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum	\N	39	t
-Monitoring und Vitaldaten	\N	P_ADVOS_VO_Antikoagulation	\N	39	t
-Atemfrequenz	Resp rate	Beatmung_ES_Evita4_frequenz	eingestellte Atemfrequenz	100	t
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	P_NEV_HD_MS_5008onl_artDruck	\N	38	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_4008HS_artDruck	\N	38	f
+Parameter von Beatmung	\N	Schrittmacher_drei_ES_AusgangA	Medtronic 5388	39	t
+Parameter von Beatmung	\N	Schrittmacher_drei_ES_AusgangV	Medtronic 5388	39	t
+Parameter von Beatmung	\N	Schrittmacher_drei_ES_Basisfrequenz	Medtronic 5388	39	t
+Parameter von Beatmung	\N	Schrittmacher_drei_ES_EmpfindlichkeitA	Medtronic 5388	39	t
+Parameter von Beatmung	\N	Schrittmacher_drei_ES_EmpfindlichkeitV	Medtronic 5388	39	t
+Parameter von Beatmung	\N	Schrittmacher_drei_ES_FrequenzMax	Medtronic 5388	39	t
+Parameter von Beatmung	\N	Schrittmacher_drei_ES_VentrikelintervallAV	Medtronic 5388	39	t
+Parameter von Beatmung	\N	Schrittmacher_Eins_ES_Ausgang	Medtronic 5348	39	t
+Parameter von Beatmung	\N	Schrittmacher_Eins_ES_Empfindlichkeit	Medtronic 5348	39	t
+Parameter von Beatmung	\N	Schrittmacher_Eins_ES_Frequenz	Medtronic 5348	39	t
+Parameter von Beatmung	\N	Schrittmacher_Eins_ES_RAPFrequenz	Medtronic 5348	39	t
+Parameter von Beatmung	\N	Schrittmacher_zwei_ES_Ausgang	Medtronic 5375	39	t
+Parameter von Beatmung	\N	Schrittmacher_zwei_ES_Empfindlichkeit	Medtronic 5375	39	t
+Parameter von Beatmung	\N	Schrittmacher_zwei_ES_Frequenz	Medtronic 5375	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_ES_ADM_Blutfluss	Blutpumpengeschwindigkeit	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_ES_BM25_Blutfluss	Blutpumpengeschwindigkeit	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_VO_4008HS_Bicarbonat	\N	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_VO_ADM_BlutflussMax	Blutpumpengeschwindigkeit	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_VO_BM25_BlutflussMax	Blutpumpengeschwindigkeit	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_Einatmungsdruck	\N	39	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_CoughAssist_Einatmungszeit	\N	39	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	P_NEV_HD_MS_5008onl_artDruck	\N	38	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	IABP_Datascope_ES_Unterstützungsdruck	\N	39	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_Spueldauer	\N	39	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_ES_BM25_Umsatz	Austausch, Substituat, ml/h	39	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_MS_BM25_UmsatzvolumenKumulativ	\N	39	t
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienPzvCO2	\N	39	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Evita2_Anstiegszeit	eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau	39	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Pallas_Inspirationspause_Tip_Tinsp	Dokumentation der Inspirationszeit. Verhältnis zwischen Tip und Tinsp. 0 bis 60 %.	39	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator T1 in den Beatmungsmodi APVsimv, Psimv.	39	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Messung_O2VolG5	Messwert des Sauerstoffgehalt in der Maßeinheit Vol %	39	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	F_Sozialanamnese_Betreuung_Sonstiges	\N	39	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_SubBolusVolKum_ml	Anpassung IBUS Anbindung	39	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenersatzverfahren_Einstell_PatFluessigkeitRate	\N	39	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Schrittmacher_drei_ES_ÜberstimulationsFreq	\N	39	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Untersuchung_Abdomen_Haut	\N	39	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_4008HS_artDruck	\N	38	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_F120_Flow	Einstellwert: Größe des Gasflusses beim F 120	39	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Lungenersatzverfahren_ES_ILAactivve_Systole	%Systole Verhältnis Systolendauer zur Diastolendauer	39	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Nierenverfahren_ES_ADM_PlasmaAustausch	Plasmarate	39	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ1	\N	39	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ3	\N	39	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Untersuchung_Kontrolle_Laufraten	Arztdoku S. 10	39	f
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienPzvCO2	\N	39	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Evita2_Anstiegszeit	eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau	39	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Pallas_Inspirationspause_Tip_Tinsp	Dokumentation der Inspirationszeit. Verhältnis zwischen Tip und Tinsp. 0 bis 60 %.	39	t
 Atemfrequenz	Resp rate	Beatmung_ES_C2_Pmax	Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.	43	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienPzvCO2	\N	39	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_Evita2_Anstiegszeit	eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau	39	t
@@ -11916,13 +11942,12 @@ Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	F_
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	NEV_HD_MS_4008onl_SubBolusVolKum_ml	Anpassung IBUS Anbindung	39	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Nierenersatzverfahren_Einstell_PatFluessigkeitRate	\N	39	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Schrittmacher_drei_ES_ÜberstimulationsFreq	\N	39	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator T1 in den Beatmungsmodi APVsimv, Psimv.	39	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_Messung_O2VolG5	Messwert des Sauerstoffgehalt in der Maßeinheit Vol %	39	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_MS_ECMO_ACT	\N	62	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILA_Flushmanoever	\N	62	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_Doku_Bolus	Medikament	62	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_GeräteDesinfektion	"Desinfektionsprogramme Gerät "	62	t
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_CRRT_Doku_SpülloesungAntikoag	\N	39	f
-Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_NatriumProfil	\N	39	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_Mess_UFR	\N	39	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_3100A_Mitteldruck	Eingestellter mittlerer Atemwegsdruck	39	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Schrittmacher_Osypka203H_ES_result_Betriebsart	abhängig in ES der Sense-Liste	39	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Nierenersatzverfahren_Einstell_SollNatrium	\N	39	t
@@ -11937,6 +11962,9 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersat
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Schlauchsystem	Verordnung Schlauchsystem	38	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_IsoUFVolKum	\N	38	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SubBolusVolKum	\N	38	f
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_Mess_UFR	\N	39	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_CRRT_Doku_SpülloesungAntikoag	\N	39	t
+Spontanes-Atemzugvolumen	Spont VT on vent	Nierenverfahren_VO_4008onl_NatriumProfil	\N	39	t
 Atemfrequenz	Resp rate	CO	Herzleistung	38	t
 Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_Evita4_fApnoe	eingestellte Atemfrequenz in der Apnoeventilation	38	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_Anordnung_SauerstoffFlow	\N	39	t
@@ -11971,9 +11999,6 @@ Blutfluss durch cardiovasculäres Gerät	\N	NEV_PD_VO_Mischung_Lsg1_Lsg2	\N	38	t
 Dauer Hämodialysesitzung	\N	NEV_PD_Doku_Mischung_Lsg1_Lsg2	\N	38	t
 Dauer Hämodialysesitzung	\N	P_NEV_HD_ES_5008onl_IsoUFZeit	\N	38	t
 Hämodialyse Blutfluss	\N	NEV_HD_MS_4008onl_IsoUFVolKum_ml	Anpassung für IBUS Anbindung	38	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_3100B_Mitteldruck	Einstellwert: eingestellter mittlerer Atemwegsdruck	38	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Betreuer_Telefon	Telefonummer des Patientenbetreuers	38	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ECMOBlutfluss	\N	38	f
 Atemfrequenz	Resp rate	Beatmung_ES_G5_Pmax	Hochdruckalarmgrenze im 'ASV Modus	43	t
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Anordnung_AbbruchkriterienNeurologie	\N	38	t
 Dynamische Kompliance	Compliance.dynamic Lung	IABP_Datascope_MS_Mitteldruck	\N	38	t
@@ -12009,23 +12034,16 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenersatzverfahr
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_ES_3100B_Inspirationszeit	Einstellwert: prozentualer Anteil der Inspirationszeit bezogen auf den gesamtem Atemzyklus	38	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_CSF_MS_LiqouGuard_ICP	\N	38	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Schrittmacher_Osypka203H_ES_PVARP	postventrikuläre atriale Refraktärzeit	38	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_3100B_Mitteldruck	Einstellwert: eingestellter mittlerer Atemwegsdruck	38	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Betreuer_Telefon	Telefonummer des Patientenbetreuers	38	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ECMOBlutfluss	\N	38	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_C2_F_SIMV	Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.	38	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ILAactivve_Flushen	Liste - Doku Durchführung	38	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ILAactivve_KontrSchlsys	"Liste "	38	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ILA_Gasfluss	\N	38	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_CRRT_MS_Multi_Behandlungszeit_Aktuell__min	Anpassung für die automatische Datenübermnahme IBUS	38	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_ADVOS_MS_ADVOS_Calcium_postFilter	\N	38	f
 Körpertemperatur Kern	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
 Körpertemperatur Kern	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
 Körpertemperatur vaginal	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_G5_Groeße	Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet	38	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_MS_VisionA_SISetting	Dauer des manuell durchgeführten Atemhubs	38	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_NEV_HD_ES_5008onl_UFProfil	\N	38	f
 Körpertemperatur Achsel	Axil temp	HZV_PICCOGeraet	\N	38	f
 Körpertemperatur Brust	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
 Körpertemperatur Brust	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
 Körpertemperatur Gelenk	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
 Körpertemperatur Gelenk	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
 Körpertemperatur Gelenk	Body temperature	HZV_VigilanceCGeraet	\N	38	f
@@ -12035,18 +12053,12 @@ Körpertemperatur Halswirbelsaeule	Body temperature	CPP	Zerebraler Perfusionsdru
 Körpertemperatur Harnblase	Bdy temp Bladder	P_NEV_HD_MS_5008onl_TMP	\N	38	f
 Körpertemperatur Leiste	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
 Körpertemperatur Leiste	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
 Körpergroesse	Body height	Diagnostik	Dokumentation durchgeführter diagnostischer Maßnahmen.	38	t
 Körpertemperatur Stirn	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
 Körpertemperatur Stirn	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
 Körpertemperatur Blut	Blood temp	Temp1a	Temperatur 1a	38	t
 Körpertemperatur Blut	Blood temp	Temp2a	Temperatur 2a	38	t
 Körpertemperatur Blut	Blood temp	Temp3a	Temperatur 3a	38	t
-Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_EVLW	Extravasales Lungenwasser	38	f
-Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_ITBV	Intrathorakales Blutvolumen	38	f
 Körpertemperatur Blut	Blood temp	TempBT	Bluttemperatur bei der HZV Messung	38	t
 Atemfrequenz	Resp rate	Patient_PLZ	Patientenadresse: PLZ	43	t
 Körpergewicht	Weight	PVRI	"Pulmunaler Gefäßwiderstandsindex "	38	t
@@ -12055,37 +12067,34 @@ Körpertemperatur Generisch	Body temperature	Beatmung_Einstellung_MitteldruckHFO
 Puls	\N	P_SEF	Spectral Edge Frequency	44	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_C2_F_SIMV	Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.	38	t
 Körpertemperatur nasal	Nasal temp	NEV_PD_VO_Auslaufzeit	Auslaufzeit	38	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ILAactivve_Flushen	Liste - Doku Durchführung	38	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ILAactivve_KontrSchlsys	"Liste "	38	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Lungenersatzverfahren_Doku_ILA_Gasfluss	\N	38	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_CRRT_MS_Multi_Behandlungszeit_Aktuell__min	Anpassung für die automatische Datenübermnahme IBUS	38	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_ISOUFZiel	\N	57	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_NaProfil	\N	57	t
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Avea_ZeitHoch	Zeiteinstellung des oberen Druckniveaus im Modus APRV / BiPhasisch	38	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Avea_ZeitNiedrig	Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch	38	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_G5_Frequenz_Backup	Frequenzeinstellung inder Backupeinstellung.	38	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	IABP_DatascopeCS100_MS_SystoleMittelDiastole	\N	38	f
-Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_Drehzahl	\N	38	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	IABP_Doku_Ballonkatheter	Kathetertyp	38	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_Temp1	\N	38	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_Temp2	\N	38	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_Einstell_Substituat	\N	38	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_MS_4008onl_IsoUFVolKum	\N	38	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_PD_Doku_Auslaufhoehe	\N	38	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_ES_Multi_SubstituatBolus	Substituatbolus ml	38	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	RAP	Rechtsatrial Mitteldruck	38	f
-Maximaler Beatmungsdruck	Press.max on vent Airway	Untersuchung_Thorax_Wand	\N	38	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Anordnung_AbbruchkriterienHR	\N	38	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben.	38	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_CF800_SauerstoffFlow	Einstellgröße Gasfluss Sauerstoff	38	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Lungenersatzverfahren_ECMO_Oxygenator	Bezeichnung	38	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Lungenersatzverfahren_Schlauchsystem	Bezeichnung	38	f
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	P_ADVOS_MS_ADVOS_Calcium_postFilter	\N	38	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_G5_Groeße	Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet	38	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_MS_VisionA_SISetting	Dauer des manuell durchgeführten Atemhubs	38	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_NEV_HD_ES_5008onl_UFProfil	\N	38	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_EVLW	Extravasales Lungenwasser	38	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	VigilanceC_ITBV	Intrathorakales Blutvolumen	38	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
+Monitoring und Vitaldaten	\N	P_NEV_HD_VO_5008onl_StartNa	\N	38	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_Unterstuetzungsdruck	Dokumentation des Unterstützungdruckes	38	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_HD_ES_4008HS_BasisNa	\N	38	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Plasmavolumen	\N	38	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_RhySta	Arrhytmia Rhytm Status label	38	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schlagvolumen	gemessenes Schlagvolumen	38	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Untersuchung_Kopf_Augen	\N	38	f
-Parameter von Beatmung	\N	NEV_HD_VO_4008HS_Start_Na	\N	38	f
-Parameter von Beatmung	\N	NEV_HD_VO_SpüllösungAntikoag	\N	38	f
-Parameter von extrakorporalen Verfahren	\N	P_NEV_HD_VO_5008onl_Bicarbonat	\N	38	f
-Monitoring und Vitaldaten	\N	P_NEV_HD_VO_5008onl_StartNa	\N	38	t
+Maximaler Beatmungsdruck	Press.max on vent Airway	Untersuchung_Thorax_Wand	\N	38	f
+Parameter von extrakorporalen Verfahren	\N	P_NEV_HD_VO_5008onl_Bicarbonat	\N	38	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Avea_ZeitHoch	Zeiteinstellung des oberen Druckniveaus im Modus APRV / BiPhasisch	38	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_C2_F_SIMV	Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.	38	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_Evita4_fApnoe	eingestellte Atemfrequenz in der Apnoeventilation	38	t
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_G5_Pmax	Hochdruckalarmgrenze im 'ASV Modus	38	t
@@ -12097,30 +12106,35 @@ Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmu
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_Ttief	Einstellwert: Zeiteinstellung für das untere Druckniveau	38	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008HS_BlutvolKum_ml	Anpassung aufgrund IBUS Anbindung	38	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	P_Waermesysteme_InfantWarmer_Doku_SkinTemp	\N	38	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Avea_ZeitNiedrig	Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch	38	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_G5_Frequenz_Backup	Frequenzeinstellung inder Backupeinstellung.	38	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	IABP_DatascopeCS100_MS_SystoleMittelDiastole	\N	38	t
+Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_Drehzahl	\N	38	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	IABP_Doku_Ballonkatheter	Kathetertyp	38	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_Temp1	\N	38	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_Temp2	\N	38	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_Einstell_Substituat	\N	38	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_MS_4008onl_IsoUFVolKum	\N	38	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_PD_Doku_Auslaufhoehe	\N	38	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_ES_Multi_SubstituatBolus	Substituatbolus ml	38	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	RAP	Rechtsatrial Mitteldruck	38	t
+Parameter von Beatmung	\N	NEV_HD_VO_4008HS_Start_Na	\N	38	t
+Parameter von Beatmung	\N	NEV_HD_VO_SpüllösungAntikoag	\N	38	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Anordnung_AbbruchkriterienHR	\N	38	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_C2_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben.	38	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_CF800_SauerstoffFlow	Einstellgröße Gasfluss Sauerstoff	38	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Lungenersatzverfahren_ECMO_Oxygenator	Bezeichnung	38	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Lungenersatzverfahren_Schlauchsystem	Bezeichnung	38	t
 Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	SaO2 % BldA	Hausarzt_Fax	\N	38	t
-Pulmonalarterieller wedge Blutdruck	PAW pressure	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum_ml	Anpassung im Zuge der automatischen Datenübernahme IBUS	38	f
-Pulmonalarterieller wedge Blutdruck	PAW pressure	WeitereBlutdruecke_Platzhalter	\N	38	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h	38	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_MS_4008HS_SollNatrium	\N	38	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Untersuchung_Kontrolle_Laufraten	Arztdoku S. 10	38	t
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_C2_F_SIMV	Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.	38	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Evita4_fApnoe	eingestellte Atemfrequenz in der Apnoeventilation	38	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Pmax	Hochdruckalarmgrenze im 'ASV Modus	38	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_ProzentMinVol	Przentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus	38	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_ProzentMinVol	Prozentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus	38	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_Ttief	Einstellwert: Zeiteinstellung für das untere Druckniveau	38	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008HS_BlutvolKum_ml	Anpassung aufgrund IBUS Anbindung	38	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	P_Waermesysteme_InfantWarmer_Doku_SkinTemp	\N	38	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Avea_PeakFlow	eingestellter Spitzengasfluss	38	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_CSF_MS_LiquoGuard_Fuellstand	\N	38	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_Waermesysteme_InfantWarmer_Doku_Power	\N	38	f
-Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	IABP_DatascopeCS300_ES_Doku_Ballonkatheter	Dokumentation des verwendeten Ballonkatheters.	38	f
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_ES_4008onl_SollNa	\N	38	f
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_MS_4008onl_IsoUFVolKum	\N	38	f
-Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_MS_4008onl_SollNa	\N	38	f
-Spontanes-Atemzugvolumen	Spont VT on vent	SonstVerfahren_VO_Hypothermiegerät_Zieltemperatur	Hypothermiebehandlung	38	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	P_NEV_HD_MS_5008onl_SollNa	\N	38	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	P_NEV_HD_VO_5008onl_SollNa	\N	38	f
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_C2_F_SIMV	Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.	38	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Evita4_fApnoe	eingestellte Atemfrequenz in der Apnoeventilation	38	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	P_NEV_HD_MS_5008onl_SollNa	\N	38	t
 Puls	\N	p-SVI	Schlagvolumenindex  (PICCO Modul Dräger Monitoring)	44	t
 Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	SaO2 % Bld Preductal PulseOx	Betreuer2_TelefonMobil	\N	38	t
 Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	SaO2 % Bld Preductal PulseOx	Betreuer_TelefonMobil	\N	38	t
@@ -12138,9 +12152,21 @@ Unterstützungsdruck Beatmung	Pressure support setting Vent	NEV_HD_MS_4008onl_ve
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Nierenersatzverfahren_Mess_SubBolus	\N	38	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Nierenersatzverfahren_Mess_UFRBFRVerhaeltnis	\N	38	t
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Nierenersatzverfahren_VO_ISOUFZeit	Isolierte Ultrafiltration/Bergström	38	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	P_NEV_HD_VO_5008onl_SollNa	\N	38	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Pmax	Hochdruckalarmgrenze im 'ASV Modus	38	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_ProzentMinVol	Przentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus	38	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_ProzentMinVol	Prozentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus	38	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_HD_MS_4008HS_BlutvolKum_ml	Anpassung aufgrund IBUS Anbindung	38	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_artDruck	\N	55	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILAactivve_Systole	Verhältnis Systole zur Diastolendauer	55	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_Plasma	Plasmarate	55	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_ES_4008onl_SollNa	\N	38	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_MS_4008onl_IsoUFVolKum	\N	38	t
+Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_MS_4008onl_SollNa	\N	38	t
+Spontanes-Atemzugvolumen	Spont VT on vent	SonstVerfahren_VO_Hypothermiegerät_Zieltemperatur	Hypothermiebehandlung	38	t
+Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	SaO2 % Bld Postductal PulseOx	IABP_DatascopeCS300_ES_Doku_Ballonkatheter	Dokumentation des verwendeten Ballonkatheters.	38	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum_ml	Anpassung im Zuge der automatischen Datenübernahme IBUS	38	t
+Pulmonalarterieller wedge Blutdruck	PAW pressure	WeitereBlutdruecke_Platzhalter	\N	38	t
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_HD_ES_4008HS_BasisNa	\N	37	t
 Venöser Druck	\N	PICCO_SVR	Systemic vascular resistance	38	t
 Venöser Druck	\N	RVSA	"Rechtsvetrikulärer Schlagarbeit "	38	t
@@ -12189,35 +12215,17 @@ Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Nierenverfahren_MS_BM
 Körpertemperatur Generisch	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
 Körpertemperatur vaginal	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
 Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_HD_Doku_Abschlussbegründung	\N	37	f
-Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_MS_ADM_AustauschKumulativ	\N	37	f
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	IABP_AutoCat_ES_Triggerauswahl	Liste	37	f
 Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
 Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
 Körpertemperatur Halswirbelsaeule	Body temperature	P_Impella_Impella_MS_Flow	\N	37	f
 Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
 Ideales Körpergewicht	Ideal bdy weight	IABP_RR	\N	37	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_HD_MS_4008onl_Rest_Zeit_min	Anpassung für IBUS Anbindung	37	t
 Körpertemperatur Stirn	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
 Körpertemperatur unter der Zunge	Oral temp	PICCODraegerModul_Platzhalter	\N	37	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_BiPAPV_AF	Einstellwert: eingestellte Mindestatemfrequenz im ST Moodus	37	t
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_MS_4008onl_SubtbolusvolKumulativ	\N	37	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_MS_Multi_pFDruck	Druck vor Filter Hämoperfusion	37	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Lungenersatzverfahren_Doku_ILAactivve_Nullfluss	bei luftblasen, Liste ein aus	37	f
-Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_MS_Avea_Mitteldruck	gemessener Atemwegsmitteldruck	37	f
-Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_MS_Evita4_Pmean	gemessener Atemwegsmitteldruck	37	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Anordnung_AbbruchkriterienPHzv	\N	37	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenersatzverfahren_Mess_TMP	TransmembranDruck	37	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_MS_Multi_TMPDruck	Transmembrandruck	37	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_NEV_HD_ES_Genius_Blutfluss	\N	37	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Hypothermie_ArticSun_Doku_KuehlWaermerate	\N	37	f
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_Multi_CitratvolumenKumulativ	kumulativ Citrat	37	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	NEV_HD_MS_4008onl_Leitfähigkeit	\N	37	t
-Parameter von Beatmung	\N	NEV_HD_VO_4008HS_Bicarbonat	\N	37	f
 Atemfrequenz	Resp rate	P_Beatmung_MS_3100A_Amplitude	gemessene Druckamplitude	42	t
 Linksventrikulaeres Schlagvolumen	LV SV	NEV_HD_MS_4008onl_SubVolKum	\N	37	t
 Puls	\N	PVR	"Pulmunaler Gefäßwiderstand "	29	t
@@ -12234,6 +12242,24 @@ Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Nierenersatzverfahren_Ein
 Monitoring und Vitaldaten	\N	VigilanceC_O2	\N	37	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_BM25_Bilanz	\N	53	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Beatmung_ES_G5_Psupport	Einstellwert: Druckunterstützung beim G 5  bei Spontanatemzügen	37	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	NEV_HD_Doku_Abschlussbegründung	\N	37	t
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenverfahren_MS_ADM_AustauschKumulativ	\N	37	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	IABP_AutoCat_ES_Triggerauswahl	Liste	37	t
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Hypothermie_ArticSun_Doku_KuehlWaermerate	\N	37	f
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_Multi_CitratvolumenKumulativ	kumulativ Citrat	37	f
+Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_MS_Avea_Mitteldruck	gemessener Atemwegsmitteldruck	37	f
+Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_MS_Evita4_Pmean	gemessener Atemwegsmitteldruck	37	f
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_MS_4008onl_SubtbolusvolKumulativ	\N	37	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenverfahren_MS_Multi_pFDruck	Druck vor Filter Hämoperfusion	37	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Lungenersatzverfahren_Doku_ILAactivve_Nullfluss	bei luftblasen, Liste ein aus	37	t
+Parameter von Beatmung	\N	NEV_HD_VO_4008HS_Bicarbonat	\N	37	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Anordnung_AbbruchkriterienPHzv	\N	37	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenersatzverfahren_Mess_TMP	TransmembranDruck	37	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_MS_Multi_TMPDruck	Transmembrandruck	37	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_NEV_HD_ES_Genius_Blutfluss	\N	37	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Beatmung_MS_Avea_fVt	errechneter Quotient zwischen Frequenz und Tidalvolumen	37	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben.	37	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	37	t
@@ -12241,14 +12267,9 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_Doku_SpuelbeutelInitialdosis	\N	37	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_4008HS_UFProfil	\N	37	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Patient_Kopfumfang_bit	Kopfumfang bit cm	37	t
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator G5 in den Beatmungsmodi APVsimv, Psimv.	37	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Ttief	Einstellwert: Zeiteinstellung für das untere Druckniveau beim G5 im Modus APRV	37	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_MS_Avea_fVt	errechneter Quotient zwischen Frequenz und Tidalvolumen	37	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenersatzverfahren_Mess_PatFluessigkeitRate	\N	37	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss	37	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	rCBF	Über eine Sonde gemessener regionaler cerebraler Blutfluss.	37	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	EVLW/EV	Extravasales Lungenwasser	37	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	VigilanceC_EVLW	Extravasales Lungenwasser	37	f
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator G5 in den Beatmungsmodi APVsimv, Psimv.	37	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_Spueldauer	\N	36	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_ES_5008onl_IsoUFZiel	\N	36	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_IsoUFZiel	\N	36	f
@@ -12279,6 +12300,11 @@ Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008HS_
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_HD_ES_4008HS_UFZiel	\N	36	t
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Heimbeatmung_Drucktrigger	\N	36	t
 Substituatfluss	\N	Hausarzt_PLZ	\N	37	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Ttief	Einstellwert: Zeiteinstellung für das untere Druckniveau beim G5 im Modus APRV	37	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_MS_Avea_fVt	errechneter Quotient zwischen Frequenz und Tidalvolumen	37	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenersatzverfahren_Mess_PatFluessigkeitRate	\N	37	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss	37	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	rCBF	Über eine Sonde gemessener regionaler cerebraler Blutfluss.	37	t
 Atemfrequenz	Resp rate	Beatmung_MS_Avea_Frequenz	gemessene Atemfrequenz	100	f
 Unterstützungsdruck Beatmung	Pressure support setting Vent	PICCO_HF	HerzfrequenzHerzfrequenz	30	t
 Körpertemperatur vaginal	Body temperature	ABP_1	arterieller Blutdruck 1	36	t
@@ -12290,12 +12316,9 @@ Hämodialyse Blutfluss	\N	P_LEV_ES_BFQ2	\N	36	t
 Hämodialyse Blutfluss	\N	P_LEV_ES_BFQ3	\N	36	t
 Körpertemperatur Achsel	Axil temp	Nierenverfahren_VO_BM25_Umsatz	Umsatz ml/h	36	f
 Körpertemperatur Brust	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
-Körpertemperatur Brustwirbelsaeule	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
 Körpertemperatur Gelenk	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
 Körpertemperatur Halswirbelsaeule	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
 Körpertemperatur Leiste	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
-Körpertemperatur Lendenwirbelsaeule	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
-Körpertemperatur Nasen-Rachen-Raum	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
 Atemfrequenz	Resp rate	P_Beatmung_MS_C3_AutoPeep	AutoPEEP oder intrinsischer PEEP	41	t
 Dynamische Kompliance	Compliance.dynamic Lung	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum_ml	Anpassung im Zuge der automatischen Datenübernahme IBUS	36	t
 Dynamische Kompliance	Compliance.dynamic Lung	NEV_HD_MS_4008HS_SollNa	\N	36	t
@@ -12331,24 +12354,16 @@ Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	Beatmung_MS_Pallas_
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Patient_Verlusst_ExtrakorporaleAbnahme	Patient_Verlusst_ExtrakorporaleAbnahme	36	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypka203H_ES_V_RapidPacing	Rapid Pacing Stimulationsfrequenz	36	t
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	PCCO	"Pulskontur-Herzzeitvolumen "	36	t
+Körpertemperatur Nasen-Rachen-Raum	Body temperature	ABP_1	arterieller Blutdruck 1	36	t
+Körpertemperatur Lendenwirbelsaeule	Body temperature	ABP_1	arterieller Blutdruck 1	36	t
+Körpertemperatur Brustwirbelsaeule	Body temperature	ABP_1	arterieller Blutdruck 1	36	t
 Linksatrialer Druck	Blood pressure panel with all children optional	NEV_Apherese_MS_Multi_Behandlungs_Zeit_min	Anpassung für automatische Gerätedataenübernahme mit IBUS	36	t
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_P1	\N	36	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_P2	\N	36	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_P3	\N	36	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_P4	\N	36	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	P_NEV_HD_MS_5008onl_IsoUFVolKum	\N	36	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Aufnahme_Herkunftsland_Mutter	Herkunftsland der Mutter	36	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Untersuchung_ZNS_Reflexe	\N	36	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Evita4_Rampe	eingestellte Anstiegszeit vom unteren zum oberen Druckniveau	36	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_BM25_DialysatvolumenKumulativ	\N	36	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_BM25_TMPDruck	\N	36	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_Multi_DialysatvolumenKumulativ	kumulatives Dialysatvol	36	f
-Parameter von extrakorporalen Verfahren	\N	NEV_HD_VO_Filter	\N	36	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	ART	2. artereille Messung, ab 201712 im Rahmen Umstellung Philips Monitoring	36	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_PEEP_CPAP_Ptief	Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.	36	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Thoch	Einstellwert: Zeiteinstellung des oberes Druckniveau beim G 5 im Modus DuoPAP	36	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_PEEP_CPAP_Ptief	Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.	36	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_Apherese_MS_Multi_Behandlungs_Zeit_min	Anpassung für automatische Gerätedataenübernahme mit IBUS	36	f
+Parameter von extrakorporalen Verfahren	\N	NEV_HD_VO_Filter	\N	36	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	ART	2. artereille Messung, ab 201712 im Rahmen Umstellung Philips Monitoring	36	t
 Atemfrequenz	Resp rate	AF	Atemfrequenz	29	f
 Dynamische Kompliance	Compliance.dynamic Lung	PICCO_HZV	Herzzeitvolumen	33	t
 Linksventrikulaeres Schlagvolumen	LV SV	P_NEV_HD_MS_5008onl_SubBolusVolKum	\N	36	t
@@ -12371,6 +12386,17 @@ Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmu
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_PEEP_CPAP_Ptief	Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.	36	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	NEV_Apherese_MS_Multi_Behandlungs_Zeit_min	Anpassung für automatische Gerätedataenübernahme mit IBUS	36	t
 Linksventrikulärer Druck	Blood pressure panel with all children optional	Nierenverfahren_MS_Multi_CalciumvolumenKumulativ	kumulativ	36	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_PEEP_CPAP_Ptief	Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.	36	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Thoch	Einstellwert: Zeiteinstellung des oberes Druckniveau beim G 5 im Modus DuoPAP	36	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_PEEP_CPAP_Ptief	Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.	36	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NEV_Apherese_MS_Multi_Behandlungs_Zeit_min	Anpassung für automatische Gerätedataenübernahme mit IBUS	36	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_P1	\N	36	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_P2	\N	36	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_P3	\N	36	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Lungenersatzverfahren_MS_ILAactivve_P4	\N	36	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	P_NEV_HD_MS_5008onl_IsoUFVolKum	\N	36	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Aufnahme_Herkunftsland_Mutter	Herkunftsland der Mutter	36	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Untersuchung_ZNS_Reflexe	\N	36	t
 Atemfrequenz	Resp rate	Beatmung_ES_Evita4_Pinsp	eingestelltes oberes Druckniveau	39	t
 Blutdruck	Blood pressure panel with all children optional	ABP	arterielle Blutdruck	100	t
 Blutdruck	Blood pressure panel with all children optional	ABP_1	arterieller Blutdruck 1	100	t
@@ -12574,29 +12600,9 @@ Herzzeitvolumen	LV Output	P_ADVOS_Doku_Zugang11	Liste	40	t
 Herzzeitvolumen	LV Output	Hausarzt_Name	\N	43	t
 Herzzeitvolumen	LV Output	NEV_HD_ES_4008HS_SollNa	\N	37	t
 Herzzeitvolumen	LV Output	NEV_HD_VO_4008onl_Iso_UFZeit	\N	37	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Einstellung_FiO2	O²- Konzentration im Inspirationsgemisch (FiO2)	100	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_ES_Avea_FiO2	eingestellte Sauerstoffkonzentration des inspiratorischen Atemgases	100	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Einstellung_FiO2	O²- Konzentration im Inspirationsgemisch (FiO2)	100	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Einstellung_Flow	Inspiratorische Flowrate	77	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Einstellung_InspiratorischePause	Inspiratorische Pause (I:E)	75	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_Vti	gemessenes inspiratorisches Tidalvolumen	70	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita4_Vt	gemessenes inspiratorisches Tidalvolumen	70	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Desfluran_insp	Inspiratorisch gemessene Desfluran Konzentration.	70	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Sevofluran_insp	Inspiratorisch gemessene Sevofluran Konzentration.	70	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_T1_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	63	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_MandVte	gemessenes mandatorisches Tidalvolumen	59	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Isofluran_exsp	Exspiratorisch gemessene Isofluran Konzentration.	57	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	CFI	Herzfunktionsindex	57	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	CO2	\N	57	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	SO2	Sauerstoffsättigung	57	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Einstellung_FiO2	O²- Konzentration im Inspirationsgemisch (FiO2)	56	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Messung_O2VolG5	Messwert des Sauerstoffgehalt in der Maßeinheit Vol %	54	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Halothan_exsp	Exspiratorisch gemessene Halothankonzentration.	54	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_T1_SpO2	Wert gemessen am Ventilator	54	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Anordnung_FiO2	Anordnung O² Konzentration im Inspirationsgemisch (FiO2)	52	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Einstellung_ASB	Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)	52	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_ES_Avea_FlowTrigger	eingestellter Flowtrigger: Schwellenwertt für die inspiratorische Bemühung des Patienten um die Druckunterstützung auszulösen	52	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_ES_C2_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben.	52	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_ES_G5_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	52	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_ES_G5_Flowtrigger	Die inspiratorische Bemühung des Patienten ( Flow),  die das Beatmungsgerät veranlässt, einen Atemhub abzugeben	52	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_ES_T1_Druckrampe	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	52	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita4_PEEPi	gemessener Intrinsic Peep nach Meßmanöver	51	t
@@ -13197,9 +13203,6 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverf
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Kathetertyp	Katheterart	64	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_VO_ILA_GasflussMin	\N	64	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_HFLoesung	\N	64	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_ES_Zephyros_FIO2	\N	100	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	CardioHelpMaquet_ES_FiO2	\N	100	f
-Inspiratorische Sauerstofffraktion gemessen	FIO2	CardioHelpMaquet_VO_FiO2	\N	100	f
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_T1_Vti	\N	55	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Messung_VTeMl	VTe / ex. Atemzugvolumen (Tidal Volumen expir.)	54	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_Evita2_Vte	gemessenes exspiratorisches Tidalvolumen	54	t
@@ -13519,10 +13522,10 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_Doku_Ab
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_HD_ES_4008HS_IsoUF_Rate	\N	39	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_ACAT_ES_Unterstützungsdruck	\N	38	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_HD_ES_4008HS_StartNa	\N	38	t
-Parameter von Beatmung	\N	Betreuer2_Ort	\N	51	f
+Parameter von Beatmung	\N	Betreuer2_Ort	\N	51	t
 Hämodialyse Blutfluss	\N	P_NEV_HD_VO_5008onl_BlutflussMax	\N	50	t
 Körpergroesse	Body height	Betreuer2_Strasse	\N	48	t
-Parameter von Beatmung	\N	Patient_BMI	\N	48	f
+Parameter von Beatmung	\N	Patient_BMI	\N	48	t
 Atemfrequenz	Resp rate	PAP	Pulmunalarterieller Druck	35	t
 Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_G5_Groeße	Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet	35	t
 Blutdruck	Blood pressure panel with all children optional	Beatmung_ES_G5_Phoch	Einstellwert oberes Druckniveau im beim G 5 im Modus DuoPAP	35	t
@@ -13548,36 +13551,20 @@ Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_DatascopeCS100_E
 Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Nierenverfahren_ES_Multi_Ultrafiltration	Ultrafiltrationsrate ml/h	35	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	NEV_CRRT_VO_Multi_Temp	Neuanlage 18.05.2012 String	35	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Nierenverfahren_ES_4008HS_UFProfil	\N	35	t
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenverfahren_MS_Multi_CalciumvolumenKumulativ	kumulativ	36	f
-Spontanes-Atemzugvolumen	Spont VT on vent	IABP_AutoCat_ES_Unterstützungsdruck	\N	36	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Untersuchung_ZNS_Motorik	\N	36	f
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Untersuchung_ZNS_Motorik	\N	36	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Nierenverfahren_MS_Multi_CalciumvolumenKumulativ	kumulativ	36	t
+Spontanes-Atemzugvolumen	Spont VT on vent	IABP_AutoCat_ES_Unterstützungsdruck	\N	36	t
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_CRRT_ES_Multi_Temp	neu angelegt am 18.05.2012	35	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_ES_4008onl_UFProfil	\N	35	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_4008HS_UFZiel	\N	35	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_ADVOS_Doku_AbschlussBegruendung	\N	35	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_Einstell_ZufuhrSubstituat	\N	35	f
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_VO_4008HS_Soll_Na	\N	35	f
-Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Lungenersatzverfahren_Doku_ILAactivve_Nullabgleich	Liste durchgeführt	35	f
-Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_4008HS_BlutflussMax	\N	35	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_Gesamtleckage	Die gemessene Gesamtleckage inclusive der bestehenden Sollleckage	35	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita2_OkklusionsdruckP01	"Messergebnis eines Messmanövers im ASB Spontan Modus "	35	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_VO_BM25_BlutflussMax	Blutpumpengeschwindigkeit	35	f
-Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Untersuchung_ExtremitaetenLeiste_ObereExtremitaet	\N	35	f
-Parameter von Beatmung	\N	P_NBP_liBein	Nichtinvaiver Blutdruck linkes Bein	35	f
 Venöser Druck	\N	RVSAI	"Rechtsvetrikulärer Schlagarbeitsindex "	35	t
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Groeße	Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet	35	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Phoch	Einstellwert oberes Druckniveau im beim G 5 im Modus DuoPAP	35	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NeurochirurgischeMessungen_Platzhalter	\N	35	f
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_MS_VisionA_Amplitude	gemessene Druckdifferenz im HFOV Modus	35	f
-Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_Mess_UmsatzKumulati	\N	35	f
 Dauer Hämodialysesitzung	\N	Hausarzt_Fax	\N	34	t
 Dauer Hämodialysesitzung	\N	NEV_Apherese_VO_Multi_Temp	Anlage 18.05.2012 String	34	t
 Ideales Körpergewicht	Ideal bdy weight	Nierenverfahren_MS_ADM_verabreichtesPlasma	kumulativ	34	t
 Ideales Körpergewicht	Ideal bdy weight	Nierenverfahren_MS_BM25_verabreichtesPlasma	Kumulativ	34	t
-Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	PICCO_ITBVI	Intrathorakaler Blutvolumenindex	34	f
 Monitoring und Vitaldaten	\N	NEV_HD_VO_4008onl_IsoUFZiel	\N	35	t
-Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_VO_4008HS_IsoUFZiel	\N	34	f
-Parameter von extrakorporalen Verfahren	\N	P_NEV_HD_VO_5008onl_UFZiel	\N	34	f
 Atemfrequenz	Resp rate	ABP	arterielle Blutdruck	34	t
 Dynamische Kompliance	Compliance.dynamic Lung	AnordnungSedierungPCAPDA	\N	34	t
 Linksventrikulaeres Schlagvolumen	LV SV	NEV_HD_MS_4008onl_SubVolKum_ml	Anpassung für IBUS Anbindung	35	t
@@ -13602,6 +13589,21 @@ Unterstützungsdruck Beatmung	Pressure support setting Vent	PtiO2Druck	Gemessene
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Score_DGAI_AufnBeatmungsstundenbiszurAufnahme	\N	35	t
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Nierenverfahren_MS_4008onl_IsoUFVolumenKumulativ	\N	34	t
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	P_NEV_HD_ES_5008onl_NaProfil	Auswahl von nummerisch einzugebenden Profilen	34	t
+Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	PICCO_ITBVI	Intrathorakaler Blutvolumenindex	34	t
+Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_4008HS_BlutflussMax	\N	35	f
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Groeße	Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet	35	t
+Parameter von extrakorporalen Verfahren	\N	P_NEV_HD_VO_5008onl_UFZiel	\N	34	t
+Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Nierenersatzverfahren_Mess_UmsatzKumulati	\N	35	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Phoch	Einstellwert oberes Druckniveau im beim G 5 im Modus DuoPAP	35	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	NeurochirurgischeMessungen_Platzhalter	\N	35	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Nierenersatzverfahren_Einstell_ZufuhrSubstituat	\N	35	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_VO_4008HS_Soll_Na	\N	35	t
+Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_HD_VO_4008HS_IsoUFZiel	\N	34	t
+Parameter von Beatmung	\N	P_NBP_liBein	Nichtinvaiver Blutdruck linkes Bein	35	t
+Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Lungenersatzverfahren_Doku_ILAactivve_Nullabgleich	Liste durchgeführt	35	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_Gesamtleckage	Die gemessene Gesamtleckage inclusive der bestehenden Sollleckage	35	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita2_OkklusionsdruckP01	"Messergebnis eines Messmanövers im ASB Spontan Modus "	35	t
+Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_VO_BM25_BlutflussMax	Blutpumpengeschwindigkeit	35	t
 Monitoring und Vitaldaten	\N	NEV_HD_VO_4008onl_SollNa	\N	33	t
 Monitoring und Vitaldaten	\N	NEV_HD_VO_4008onl_UFZiel	\N	33	t
 Ideales Körpergewicht	Ideal bdy weight	NEV_CRRT_VO_Multi_Temp	Neuanlage 18.05.2012 String	33	t
@@ -13612,17 +13614,14 @@ Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	ABP_1	arterieller Blutdruck 1	33
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	ABP_2	zweiter arterieller Blutdruck	33	t
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	NBP_1	nichtinvasiver Blutdruck 1	33	t
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	NBP_2	"zweiter nichtinvasiver Blutdruck "	33	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	AF	Atemfrequenz	33	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	HF	Herzfrequenz	33	t
 Körpertemperatur Harnblase	Bdy temp Bladder	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm	33	f
-Linksventrikulaeres Schlagvolumenindex	LV SVI	Klinik	Auswahl der Kliniken	33	f
-Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	33	f
-Parameter von extrakorporalen Verfahren	\N	P_NEV_HD_VO_5008onl_UFProfil	\N	33	f
 Herzzeitvolumen	LV Output	Nierenverfahren_MS_ADM_verabreichtesPlasma	kumulativ	33	t
 Herzzeitvolumen	LV Output	Nierenverfahren_MS_BM25_verabreichtesPlasma	Kumulativ	33	t
 Herzzeitvolumen	LV Output	Nierenverfahren_MS_Multi_CalciumvolumenKumulativ	kumulativ	33	t
 Herzzeitvolumen	LV Output	Nierenverfahren_MS_Multi_PlasmavolumenKumulativ	Kumulativ	33	t
 Herzzeitvolumen	LV Output	T_K	Körpertemperatur	33	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	AF	Atemfrequenz	33	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	HF	Herzfrequenz	33	t
 Kopfumfang	Head Circumf OFC	Schrittmacher_drei_ES_AusgangA	Medtronic 5388	33	t
 Kopfumfang	Head Circumf OFC	Schrittmacher_drei_ES_AusgangV	Medtronic 5388	33	t
 Kopfumfang	Head Circumf OFC	Schrittmacher_drei_ES_Basisfrequenz	Medtronic 5388	33	t
@@ -13644,12 +13643,11 @@ Linksventrikulärer Druck	Blood pressure panel with all children optional	Beatmu
 Linksventrikulärer Druck	Blood pressure panel with all children optional	SVRI	"Index des systemischen Gefäßwiderstandes "	30	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_Avea_FlowTrigger	eingestellter Flowtrigger: Schwellenwertt für die inspiratorische Bemühung des Patienten um die Druckunterstützung auszulösen	33	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_G5_Druckrampe	Eine Parametereinstellung. Anstiegszeit des Drucks bei druckkontrollierten und druckunterstützten Atemzyklus.	33	t
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Avea_FlowTrigger	eingestellter Flowtrigger: Schwellenwertt für die inspiratorische Bemühung des Patienten um die Druckunterstützung auszulösen	33	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Druckrampe	Eine Parametereinstellung. Anstiegszeit des Drucks bei druckkontrollierten und druckunterstützten Atemzyklus.	33	f
+Parameter von extrakorporalen Verfahren	\N	P_NEV_HD_VO_5008onl_UFProfil	\N	33	t
+Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	33	t
+Linksventrikulaeres Schlagvolumenindex	LV SVI	Klinik	Auswahl der Kliniken	33	t
 Hämodialyse Blutfluss	\N	P_Beatmung_ES_O2Flow	l/min	32	t
 Ideales Körpergewicht	Ideal bdy weight	Lungenersatzverfahren_MS_ILAactivve_DeltaP	Delta P2/P3	32	t
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_C2_Pmax	Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.	32	f
-Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_MS_Pallas_Cpat	Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.	32	f
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	PWP	Pulmunaler Wedgedruck	32	t
 Maximaler Beatmungsdruck	Press.max on vent Airway	IABP_EKG	\N	31	f
 Blutdruck	Blood pressure panel with all children optional	LCWI	"Left Cardiac Work Index "	31	t
@@ -13682,8 +13680,9 @@ Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	NEV_Apherese_VO_M
 Substituatfluss	\N	BIS	Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.	33	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_ES_C2_Pmax	Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.	32	t
 Blutdruck Generisch	Blood pressure panel with all children optional	Beatmung_MS_Pallas_Cpat	Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.	32	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_Avea_FlowTrigger	eingestellter Flowtrigger: Schwellenwertt für die inspiratorische Bemühung des Patienten um die Druckunterstützung auszulösen	33	t
+Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_G5_Druckrampe	Eine Parametereinstellung. Anstiegszeit des Drucks bei druckkontrollierten und druckunterstützten Atemzyklus.	33	t
 Herzfrequenz	Heart rate	HF	Herzfrequenz	29	f
-Spontanes-Atemzugvolumen	Spont VT on vent	SpO2_2	\N	27	f
 Arterieller Druck	\N	NEV_Apherese_MS_Multil_venDruck	\N	54	t
 Arterieller Druck	\N	P_Impella_Impella_MS_LVDruck	\N	54	t
 Arterieller Druck	\N	Nierenersatzverfahren_Mess_TMP	TransmembranDruck	53	t
@@ -13703,7 +13702,6 @@ Blutdruck	Blood pressure panel with all children optional	tcpCO2	transcutan geme
 Blutdruck	Blood pressure panel with all children optional	CO	Herzleistung	18	t
 Dynamische Kompliance	Compliance.dynamic Lung	CO2	\N	17	t
 Herzzeitvolumen	LV Output	ZVD	Zentralvenöser Druck	22	t
-Inspiratorische Sauerstofffraktion gemessen	FIO2	GEF	"Globale Auswurffraktion "	29	t
 Kopfumfang	Head Circumf OFC	p-CO	"Herzzeitvolumen (PICCO Modul Dräger Monitoring) "	29	t
 Körpergewicht	Weight	Lungenersatzverfahren_Doku_Zugang	Gefäßzugang	27	t
 Puls	\N	RAP	Rechtsatrial Mitteldruck	29	t
@@ -13737,6 +13735,8 @@ Körpergroesse	Body height	SpO2	Sauerstoffsättigung Pulsoxymetrie	25	t
 Zentralvenöser Druck	CVP	T_K2	Körpertemperatur Messkanal 2	26	t
 Linksatrialer Druck	Blood pressure panel with all children optional	CI	Herzindex	19	t
 Linksatrialer Druck	Blood pressure panel with all children optional	CFI	Herzfunktionsindex	18	t
+Inspiratorische Sauerstofffraktion gemessen	FIO2	GEF	"Globale Auswurffraktion "	29	t
+Spontanes-Atemzugvolumen	Spont VT on vent	SpO2_2	\N	27	t
 \.
 
 

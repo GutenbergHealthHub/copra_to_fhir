@@ -345,18 +345,21 @@ update icu_copra.python_match set deleted = true where profiles = 'Spontane-Mech
 
 
 
-select * from icu_copra.python_match pm where profiles = 'Inspiratorische Sauerstofffraktion eingestellt' order by score_set desc;
+select * from icu_copra.python_match pm where profiles = 'Körpertemperatur Brustwirbelsaeule' order by score_set desc;
 
-update icu_copra.python_match set deleted = true where profiles = 'Inspiratorische Sauerstofffraktion eingestellt' and name not in (
-  'PtiO2Druck'
+update icu_copra.python_match set deleted = true where profiles = 'Körpertemperatur Brustwirbelsaeule';-- and name not in (
+  'VigilanceC_SVRI', 'Vigileo_SVRI'
 );
 
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 30;
+update icu_copra.fhir_profiles_all set analyzed = true where id = 83;
 
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
 select * from icu_copra.thesis_matched;
-select * from icu_copra.copra_config_vars ccv where name = 'Nierenersatzverfahren_VO_Calcium';
+
+select * from icu_copra.copra_config_vars ccv where name = 'P_Beatmung_MS_C3_MVspn';
+
+--30, 98
 
