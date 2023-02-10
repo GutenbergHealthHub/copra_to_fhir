@@ -325,12 +325,12 @@ select * from icu_copra.python_match pm where profiles = 'Atemwegsdruck bei null
 update icu_copra.fhir_profiles_all set analyzed = true where id = 21;
 
 
-select * from icu_copra.python_match pm where profiles = 'Atemzugvolumen-Einstellung';
+select * from icu_copra.python_match pm where profiles = 'Blutfluss extrakorporaler Gasaustausch';
 
 -- Atemzugvolumen-Einstellung
 select * from icu_copra.python_match pm where profiles = 'Atemzugvolumen-Einstellung' order by score_set desc;
 
-update icu_copra.python_match set deleted = true where profiles = 'Atemzugvolumen-Einstellung' and "name" not in (
+update icu_copra.python_match set deleted = true where profiles = 'Blutfluss extrakorporaler Gasaustausch';-- and "name" not in (
   'Beatmung_ES_Heimbeatmung_Vt', 'Beatmung_ES_T1_Vt', 'Beatmung_Einstellung_VT', 'Beatmung_ES_G5_Vt', 'Beatmung_ES_Evita4_Vt', 'Beatmung_ES_Evita2_Vt'
   'Beatmung_ES_VisionA_Vt'
 );
@@ -345,33 +345,17 @@ update icu_copra.python_match set deleted = true where profiles = 'Spontane-Mech
 
 
 
-select * from icu_copra.python_match pm where profiles = 'Körpertemperatur Kern' order by score_set desc;
+select * from icu_copra.python_match pm where profiles = 'Inspiratorische Sauerstofffraktion eingestellt' order by score_set desc;
 
-update icu_copra.python_match set deleted = true where profiles = 'Körpertemperatur Kern' and name not in (
-  'P_Temperatur_Kern', 'T_K', 'T_K2'
+update icu_copra.python_match set deleted = true where profiles = 'Inspiratorische Sauerstofffraktion eingestellt' and name not in (
+  'PtiO2Druck'
 );
 
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 58;
+update icu_copra.fhir_profiles_all set analyzed = true where id = 30;
 
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
-
-
-
-
-
-
-
-create table icu_copra.thesis_matched(
-  conf_var_name varchar not null,
-  profile_name varchar not null,
-  conf_var_unit varchar,
-  valuequantity_code varchar
-);
-
-
-copy icu_copra.thesis_matched from '/media/db/cdw_database/thesis_matched.csv' delimiter E';' csv;
 
 select * from icu_copra.thesis_matched;
 select * from icu_copra.copra_config_vars ccv where name = 'Nierenersatzverfahren_VO_Calcium';
