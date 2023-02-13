@@ -345,21 +345,55 @@ update icu_copra.python_match set deleted = true where profiles = 'Spontane-Mech
 
 
 
-select * from icu_copra.python_match pm where profiles = 'Körpertemperatur Halswirbelsaeule' order by score_set desc;
+select * from icu_copra.python_match pm where profiles = 'Körpertemperatur Generisch' order by score_set desc;
 
-update icu_copra.python_match set deleted = true where profiles = 'Körpertemperatur Halswirbelsaeule';-- and name not in (
-  'VigilanceC_SVRI', 'Vigileo_SVRI'
+update icu_copra.python_match set deleted = false where profiles = 'Körpertemperatur Generisch' and name in (
+  'P_Temperatur_generic', 'T_K', 'P_Temperatur_Naso', 'P_Temperatur_Venoes', 'P_Temperatur_Haut', 'P_Temperatur_Kern', 'P_Temperatur_Oesophagial', 'P_Temperatur_Arteriell'
 );
 
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 87;
+update icu_copra.fhir_profiles_all set analyzed = false;
 
 
-select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
+
+
+select count(*) from icu_copra.python_match pm where not deleted;
+
+select profiles, loinc_short_name, name, description into icu_copra.matched_0 from icu_copra.python_match pm where not deleted order by profiles ;
 
 select * from icu_copra.thesis_matched;
 
-select * from icu_copra.copra_config_vars ccv where name = 'P_Beatmung_MS_C3_MVspn';
+
+
+-- Arterieller Druck
+select name, description from icu_copra.copra_config_vars ccv 
+where (name ~* 'arterieller druck' or description ~* 'arterieller druck');
+
+-- Atemfrequenz
+select name, description from icu_copra.copra_config_vars ccv 
+where (name ~* 'atemfrequenz | res.+ate' or description ~* 'atemfrequenz | res.+ate');
+
+
+-- Atemwegsdruck bei mittlerem expiratorischem Gasfluss
+select 'Atemwegsdruck bei mittlerem expiratorischem Gasfluss' profil, name, description from icu_copra.copra_config_vars ccv 
+where (name ~* 'druck|pres|expir|ausat|flu|flow' or description ~* 'druck|pres|expir|ausat|flu|flow');
+
+-- Atemwegsdruck bei null expiratorischem Gasfluss
+select 'Atemwegsdruck bei null expiratorischem Gasfluss' profil, name, description from icu_copra.copra_config_vars ccv 
+where (name ~* 'druck|pres|expir|ausat|flu|flow|null' or description ~* 'druck|pres|expir|ausat|flu|flow|null');
+
+-----------------------------------
+-- Atemzugvolumen-Einstellung
+select 'Atemzugvolumen-Einstellung' profil, name, description from icu_copra.copra_config_vars ccv 
+where (name ~* 'atem|volu|einst' or description ~* 'atem|volu|einst');
+
+select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 21;
+
+
 
 --30, 98
+
+
 
