@@ -6693,10 +6693,10 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 57	Ideales Körpergewicht	Observation	170804003	50064-5	\N	Ideal bdy weight	kg	t
 81	Puls	Observation	8499008	\N	149514	\N	/min	t
 82	Körpertemperatur Generisch	Observation	\N	8310-5	\N	Body temperature	Cel	f
-85	Körpertemperatur Gelenk	Observation	250124002	8310-5	\N	Body temperature	Cel	f
-87	Körpertemperatur Halswirbelsaeule	Observation	364419004	8310-5	\N	Body temperature	Cel	f
+85	Körpertemperatur Gelenk	Observation	250124002	8310-5	\N	Body temperature	Cel	t
+90	Körpertemperatur Myokard	Observation	\N	61009-7	188500	Myocard temp	Cel	t
 29	Inspiratorische Sauerstofffraktion gemessen	Observation	250774007	71835-3	\N	FIO2	1	t
-90	Körpertemperatur Myokard	Observation	\N	61009-7	188500	Myocard temp	Cel	f
+87	Körpertemperatur Halswirbelsaeule	Observation	364419004	8310-5	\N	Body temperature	Cel	t
 42	Einstellung-Ausatmungszeit-Beatmung	Observation	250820008	76187-4	\N	Exp hold time set Vent	s	t
 93	Körpertemperatur Leiste	Observation	415929009	8310-5	\N	Body temperature	Cel	f
 32	Inspiratorischer Gasfluss	Observation	\N	60794-5	151948	Insp gas flow on vent Airway	L/min	t
@@ -6709,9 +6709,6 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 6	Sauerstoffgasfluss	Observation	79063001	19941-4	\N	Gas flow.O2 O2 delivery sys	L/min	t
 46	Mechanische-Atemfrequenz-Beatmet	Observation	250876000	33438-3	151586	Breaths.mechanical on vent	{Breaths}/min	t
 26	Maximaler Beatmungsdruck	Observation	27913002	76531-3	151973	Press.max on vent Airway	cm[H2O]	t
-88	Körpertemperatur Brust	Observation	248835004	8310-5	\N	Body temperature	Cel	f
-91	Körpertemperatur Atemwege	Observation	\N	60955-2	\N	Airway temp	Cel	f
-94	Körpertemperatur Achsel	Observation	415882003	8328-7	188496	Axil temp	Cel	f
 97	Körpertemperatur Harnblase	Observation	698832009	8334-5	\N	Bdy temp Bladder	Cel	f
 51	Atemfrequenz	Observation	86290005	9279-1	\N	Resp rate	/min	t
 21	Atemwegsdruck bei null expiratorischem Gasfluss	Observation	\N	20060-0	\N	PAW @ zero insp flow on vent	cm[H2O]	t
@@ -6744,6 +6741,9 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	t
 64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	t
 83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	t
+94	Körpertemperatur Achsel	Observation	415882003	8328-7	188496	Axil temp	Cel	t
+91	Körpertemperatur Atemwege	Observation	\N	60955-2	\N	Airway temp	Cel	t
+88	Körpertemperatur Brust	Observation	248835004	8310-5	\N	Body temperature	Cel	t
 \.
 
 
@@ -6822,17 +6822,8 @@ Körpertemperatur Kern	Body temperature	P_Temperatur_Kern	Anlage für Philips Mo
 Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVRI	Systemischer Gefäßwiderstandsindex	85	f
 Intrakranieller Druck ICP	ICP	ICP	Intrakranialer Druck	84	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_Dialysatvolumen	\N	42	t
-Körpertemperatur Brust	Body temperature	Temp1b	Temperatur 1b	83	f
-Körpertemperatur Brust	Body temperature	Temp2b	Temperatur 2b	83	f
-Körpertemperatur Brust	Body temperature	Temp3b	Temperatur 3b	83	f
-Körpertemperatur Gelenk	Body temperature	Temp1b	Temperatur 1b	83	f
-Körpertemperatur Gelenk	Body temperature	Temp2b	Temperatur 2b	83	f
-Körpertemperatur Gelenk	Body temperature	Temp3b	Temperatur 3b	83	f
 Körpertemperatur vaginal	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	t
 Körpertemperatur vaginal	Body temperature	IABP_Leersaugen	\N	52	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Temp1b	Temperatur 1b	83	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Temp2b	Temperatur 2b	83	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Temp3b	Temperatur 3b	83	f
 Körpertemperatur Leiste	Body temperature	Temp1b	Temperatur 1b	83	f
 Körpertemperatur Leiste	Body temperature	Temp2b	Temperatur 2b	83	f
 Körpertemperatur Leiste	Body temperature	Temp3b	Temperatur 3b	83	f
@@ -6877,6 +6868,15 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp3b	Temperatur 3b	83	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Temp1b	Temperatur 1b	83	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Temp2b	Temperatur 2b	83	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Temp3b	Temperatur 3b	83	t
+Körpertemperatur Brust	Body temperature	Temp1b	Temperatur 1b	83	t
+Körpertemperatur Brust	Body temperature	Temp2b	Temperatur 2b	83	t
+Körpertemperatur Brust	Body temperature	Temp3b	Temperatur 3b	83	t
+Körpertemperatur Gelenk	Body temperature	Temp1b	Temperatur 1b	83	t
+Körpertemperatur Gelenk	Body temperature	Temp2b	Temperatur 2b	83	t
+Körpertemperatur Gelenk	Body temperature	Temp3b	Temperatur 3b	83	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Temp1b	Temperatur 1b	83	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Temp2b	Temperatur 2b	83	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Temp3b	Temperatur 3b	83	t
 Körpertemperatur vaginal	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	t
 Körpertemperatur vaginal	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	t
 Körpertemperatur vaginal	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	t
@@ -6897,9 +6897,6 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverf
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_Bilanz	\N	78	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Mess_UFZiel	\N	78	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_CreaZiel	\N	78	t
-Körpertemperatur Brust	Body temperature	Temp1a	Temperatur 1a	76	f
-Körpertemperatur Brust	Body temperature	Temp2a	Temperatur 2a	76	f
-Körpertemperatur Brust	Body temperature	Temp3a	Temperatur 3a	76	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	P_Beatmung_ES_3100A_Frequenz	Eingestellte Oszillationsfrequenz	42	t
 Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_Anordnung_ASB	Anordnung Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)	80	t
 Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	SaO2 % Bld Preductal PulseOx	SaO2	arterielle Sauerstoffsättigung	77	t
@@ -6922,14 +6919,11 @@ Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Pallas_Isofluran_in
 Pulmonalarterieller wedge Blutdruck	PAW pressure	Beatmung_Einstellung_ASB	Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)	80	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Temp1a	Temperatur 1a	76	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Temp2a	Temperatur 2a	76	t
+Körpertemperatur Brust	Body temperature	Temp1a	Temperatur 1a	76	t
+Körpertemperatur Brust	Body temperature	Temp2a	Temperatur 2a	76	t
+Körpertemperatur Brust	Body temperature	Temp3a	Temperatur 3a	76	t
 Körpertemperatur Generisch	Body temperature	Temp1a	Temperatur 1a	76	t
-Körpertemperatur Gelenk	Body temperature	Temp1a	Temperatur 1a	76	f
-Körpertemperatur Gelenk	Body temperature	Temp2a	Temperatur 2a	76	f
-Körpertemperatur Gelenk	Body temperature	Temp3a	Temperatur 3a	76	f
 Körpertemperatur vaginal	Body temperature	Temp1a	Temperatur 1a	76	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Temp1a	Temperatur 1a	76	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Temp2a	Temperatur 2a	76	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Temp3a	Temperatur 3a	76	f
 Körpertemperatur Leiste	Body temperature	Temp1a	Temperatur 1a	76	f
 Körpertemperatur Leiste	Body temperature	Temp2a	Temperatur 2a	76	f
 Körpertemperatur Leiste	Body temperature	Temp3a	Temperatur 3a	76	f
@@ -6979,14 +6973,17 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp1a	Temperatur 1a	76	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp2a	Temperatur 2a	76	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Temp3a	Temperatur 3a	76	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Temp3a	Temperatur 3a	76	t
+Körpertemperatur Gelenk	Body temperature	Temp1a	Temperatur 1a	76	t
+Körpertemperatur Gelenk	Body temperature	Temp2a	Temperatur 2a	76	t
+Körpertemperatur Gelenk	Body temperature	Temp3a	Temperatur 3a	76	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Temp1a	Temperatur 1a	76	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Temp2a	Temperatur 2a	76	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Temp3a	Temperatur 3a	76	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	73	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Mvspont	\N	50	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Vte	"Exsp. Tidalvolumen "	50	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Vti	"Insp. Tidalvolumen "	50	t
-Körpertemperatur Brust	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
-Körpertemperatur Gelenk	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	f
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	PtiO2Druck	Gemessener Sauerstoffpartialdruck im Parenchym	72	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_P01	Atemweg-Okklusionsdruck, ein Monitoring-Parameter	50	t
@@ -7004,7 +7001,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_VisionA_Plateau	Einstellwert: Plateauphase in Sekunden	49	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_TApnoe	Apnea Duration	49	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_O2VolProzent	Sauerstoffkonzentration des abgegebenen Gasgemisches	49	t
-Körpertemperatur Achsel	Axil temp	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	72	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Leoni_Ppeak	\N	49	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck	72	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck	72	f
@@ -7033,6 +7029,10 @@ Linksventrikulaeres Schlagvolumenindex	LV SVI	LVSAI	"Linksventrikulärer Schlaga
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Evita2_Frequenz	eingestellt mandatorische Atemfrquenz	72	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
+Körpertemperatur Achsel	Axil temp	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	72	t
+Körpertemperatur Brust	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
+Körpertemperatur Gelenk	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring	73	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_HD_ES_4008onl_Fluss	\N	39	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	NEV_PD_Doku_Auslaufzeit	\N	39	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenersatzverfahren_Mess_AktuellesNatrium	\N	39	t
@@ -7072,9 +7072,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenverfahren_MS_Multi_venDruck	venöser Druck	39	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Pmin	\N	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	COPRA_Patient_Bezugsgewicht	Bezugsgewicht des Patienten in kg	47	t
-Körpertemperatur Achsel	Axil temp	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	70	f
-Körpertemperatur Achsel	Axil temp	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	70	f
-Körpertemperatur Atemwege	Airway temp	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	70	f
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Nierenverfahren_MS_Multi_UFRBFRVerhaeltnis	\N	37	t
 Körpertemperatur unter der Zunge	Oral temp	Untersuchung_Status_Koerpertemperatur	\N	71	t
 Linksventrikulaeres Schlagvolumen	LV SV	Schlagvolumen	gemessenes Schlagvolumen	70	t
@@ -7084,21 +7081,15 @@ Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_MS_Pallas_inCO2	
 Körpertemperatur nasal	Nasal temp	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	70	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Ppeak	Messwert: Beatmungsspitzendruck	70	f
 Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Avea_SpontVe	gemessenes spontanes Atemminutenvolumen	70	t
+Körpertemperatur Achsel	Axil temp	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	70	t
+Körpertemperatur Achsel	Axil temp	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	70	t
+Körpertemperatur Atemwege	Airway temp	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	70	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_Apherese_VO_SpülloesungAntikoag	\N	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenverfahren_VO_Option	Predilution Postdilution extrakorporale Verfahren	47	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_HLI	Liste ein aus	46	t
-Körpertemperatur Achsel	Axil temp	Temp1a	Temperatur 1a	69	f
-Körpertemperatur Achsel	Axil temp	Temp2a	Temperatur 2a	69	f
-Körpertemperatur Achsel	Axil temp	Temp3a	Temperatur 3a	69	f
-Körpertemperatur Brust	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
-Körpertemperatur Brust	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
-Körpertemperatur Gelenk	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
-Körpertemperatur Gelenk	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Kein_Recruitment	Liste ein aus	46	t
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmittel	gemessener Beatmungsmitteldruck	69	f
@@ -7138,6 +7129,15 @@ Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Venoes	Anlage 
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	t
+Körpertemperatur Achsel	Axil temp	Temp1a	Temperatur 1a	69	t
+Körpertemperatur Achsel	Axil temp	Temp2a	Temperatur 2a	69	t
+Körpertemperatur Achsel	Axil temp	Temp3a	Temperatur 3a	69	t
+Körpertemperatur Brust	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
+Körpertemperatur Brust	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	t
+Körpertemperatur Gelenk	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
+Körpertemperatur Gelenk	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	69	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring	69	t
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	t
 Herzfrequenz	Heart rate	PICCO_HF	HerzfrequenzHerzfrequenz	67	f
 Körpertemperatur vaginal	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	t
@@ -7150,14 +7150,8 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_C2_Pmittel	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita2_frequenzspon	gemessene spontane Atemfrequenz	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck	46	t
-Körpertemperatur Brust	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
-Körpertemperatur Brust	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
-Körpertemperatur Gelenk	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
-Körpertemperatur Gelenk	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_I_E	I:E Verhältnis (Messung)	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_MVi	"Insp. Minutenvolumen "	46	t
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
 Körpertemperatur Kern	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	f
@@ -7194,6 +7188,12 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Haut	Anlage i
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	t
+Körpertemperatur Brust	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	t
+Körpertemperatur Brust	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	t
+Körpertemperatur Gelenk	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	t
+Körpertemperatur Gelenk	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring	67	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring	67	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_3100A_Mitteldruck	Eingestellter mittlerer Atemwegsdruck	66	f
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Messung_Compliance	Compliance	65	f
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
@@ -7206,20 +7206,7 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_PD_VO_E
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Nierenersatzverfahren_VO_Option	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Pasvlimit	\N	46	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_PEEP_CPAP	\N	46	t
-Körpertemperatur Achsel	Axil temp	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	65	f
-Körpertemperatur Achsel	Axil temp	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	65	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Brust	Body temperature	T_K	Körpertemperatur	65	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	65	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	65	f
-Körpertemperatur Gelenk	Body temperature	T_K	Körpertemperatur	65	f
 Körpertemperatur Generisch	Body temperature	T_K	Körpertemperatur	65	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
-Körpertemperatur Halswirbelsaeule	Body temperature	T_K	Körpertemperatur	65	f
 Körpertemperatur Kern	Body temperature	T_K	Körpertemperatur	65	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	f
@@ -7250,6 +7237,17 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	T_K	Körpertemperatur	65	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	T_K	Körpertemperatur	65	t
+Körpertemperatur Achsel	Axil temp	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	65	t
+Körpertemperatur Achsel	Axil temp	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	65	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
+Körpertemperatur Brust	Body temperature	T_K	Körpertemperatur	65	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	65	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	65	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
+Körpertemperatur Halswirbelsaeule	Body temperature	T_K	Körpertemperatur	65	t
 Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	65	t
 Körpertemperatur Kern	Body temperature	Ort_Temperatur1a_Messung	Liste	64	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_ProzentMinVol	\N	46	t
@@ -7271,8 +7269,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pplateau	Plateau-Atemwegsdruck, ein Monitoring-Parameter	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_PTP	Druck Zeit Produkt (Pressure Time Product), ein Monitoring Parameter	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_VLeckage	Leckagevolumen, ein Monitoring-Parameter	45	t
-Körpertemperatur Achsel	Axil temp	NEV_Apherese_ES_Multi_Temperatur	\N	63	f
-Körpertemperatur Achsel	Axil temp	NEV_Apherese_VO_Multi_Temperatur	\N	63	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Heimbeatmung_Pmittel	\N	45	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Anordnung_ILAPressure	\N	64	t
 Blutdruck	Blood pressure panel with all children optional	PtiO2Druck	Gemessener Sauerstoffpartialdruck im Parenchym	63	t
@@ -7300,6 +7296,8 @@ Spontanes-Atemzugvolumen	Spont VT on vent	Beatmung_MS_Pallas_MV	Gemessenes Atemm
 Linksventrikulaeres Schlagvolumenindex	LV SVI	p-SVI	Schlagvolumenindex  (PICCO Modul Dräger Monitoring)	64	t
 Linksventrikulaeres Schlagvolumenindex	LV SVI	Schlagvolumenindex	Wert des gemessenen Schlagvolumenindex.	64	t
 Parameter von Beatmung	\N	Beatmung_Anordnung_BV	beatmungs-Verordung	63	t
+Körpertemperatur Achsel	Axil temp	NEV_Apherese_ES_Multi_Temperatur	\N	63	t
+Körpertemperatur Achsel	Axil temp	NEV_Apherese_VO_Multi_Temperatur	\N	63	t
 Arterieller Druck	\N	PICCO_ABP	Arterieller Druck	100	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_PEEP	Dokumentation des gemessenen PEEPs.	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Cdyn	"Dynamische Charakteristika "	45	t
@@ -7361,14 +7359,7 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Quick_Wean	\N	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Sauerstoff	\N	45	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_PeepCPAPPtief	\N	45	t
-Körpertemperatur Achsel	Axil temp	NEV_HD_ES_4008HS_Temperatur	\N	61	f
-Körpertemperatur Achsel	Axil temp	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	61	f
-Körpertemperatur Brust	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	61	f
-Körpertemperatur Brust	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	61	f
-Körpertemperatur Brust	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
-Körpertemperatur Gelenk	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_RTX_FrequencyCough	\N	45	t
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	f
 Substituatfluss	\N	Nierenverfahren_VO_Multi_Substituat	Substituat in ml/h	61	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_Mvleck	gemessenes Leckagevolumen pro Minute	60	f
@@ -7404,6 +7395,13 @@ Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_Ti	gemessene I
 Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
+Körpertemperatur Achsel	Axil temp	NEV_HD_ES_4008HS_Temperatur	\N	61	t
+Körpertemperatur Achsel	Axil temp	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	61	t
+Körpertemperatur Brust	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	61	t
+Körpertemperatur Brust	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	61	t
+Körpertemperatur Brust	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
+Körpertemperatur Gelenk	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring	61	t
 Körpertemperatur Kern	Body temperature	Ort_Temperatur1a_Messung	Liste	60	t
 Körpertemperatur Kern	Body temperature	Ort_Temperatur1b_Messung	Liste	60	t
 Körpertemperatur Kern	Body temperature	Ort_Temperatur2a_Messung	Liste	60	t
@@ -7414,21 +7412,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_HFFrequenz	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_TriggerVol	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Pinsp	Eingestellter Inspiration Druck.	44	t
-Körpertemperatur Atemwege	Airway temp	Nierenverfahren_ES_ADM_Temperatur	\N	60	f
-Körpertemperatur Brust	Body temperature	Ort_Temperatur1a_Messung	Liste	60	f
-Körpertemperatur Brust	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
-Körpertemperatur Brust	Body temperature	Ort_Temperatur2a_Messung	Liste	60	f
-Körpertemperatur Brust	Body temperature	Ort_Temperatur2b_Messung	\N	60	f
-Körpertemperatur Brust	Body temperature	Ort_Temperatur3a_Messung	\N	60	f
-Körpertemperatur Brust	Body temperature	Ort_Temperatur3b_Messung	\N	60	f
-Körpertemperatur Brust	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	f
-Körpertemperatur Gelenk	Body temperature	Ort_Temperatur1a_Messung	Liste	60	f
-Körpertemperatur Gelenk	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
-Körpertemperatur Gelenk	Body temperature	Ort_Temperatur2a_Messung	Liste	60	f
-Körpertemperatur Gelenk	Body temperature	Ort_Temperatur2b_Messung	\N	60	f
-Körpertemperatur Gelenk	Body temperature	Ort_Temperatur3a_Messung	\N	60	f
-Körpertemperatur Gelenk	Body temperature	Ort_Temperatur3b_Messung	\N	60	f
-Körpertemperatur Gelenk	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Tinsp	Dokumentation der Inspirationszeit.	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_DU_ueber_Phoch	"Druckunterstüzung hoch (cmH2O) "	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Servoi_Nava_Pegel	"Nava Pegel "	44	t
@@ -7437,13 +7420,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Me
 Körpertemperatur Kern	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	t
 Körpertemperatur Kern	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	t
 Körpertemperatur Kern	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur1a_Messung	Liste	60	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur2a_Messung	Liste	60	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur2b_Messung	\N	60	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur3a_Messung	\N	60	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur3b_Messung	\N	60	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	f
 Körpertemperatur Leiste	Body temperature	Ort_Temperatur1a_Messung	Liste	60	f
 Körpertemperatur Leiste	Body temperature	Ort_Temperatur1b_Messung	Liste	60	f
 Körpertemperatur Leiste	Body temperature	Ort_Temperatur2a_Messung	Liste	60	f
@@ -7462,6 +7438,27 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur2a_Messung	Li
 Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur2b_Messung	\N	60	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur3a_Messung	\N	60	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Ort_Temperatur3b_Messung	\N	60	t
+Körpertemperatur Atemwege	Airway temp	Nierenverfahren_ES_ADM_Temperatur	\N	60	t
+Körpertemperatur Brust	Body temperature	Ort_Temperatur1a_Messung	Liste	60	t
+Körpertemperatur Brust	Body temperature	Ort_Temperatur1b_Messung	Liste	60	t
+Körpertemperatur Brust	Body temperature	Ort_Temperatur2a_Messung	Liste	60	t
+Körpertemperatur Brust	Body temperature	Ort_Temperatur2b_Messung	\N	60	t
+Körpertemperatur Brust	Body temperature	Ort_Temperatur3a_Messung	\N	60	t
+Körpertemperatur Brust	Body temperature	Ort_Temperatur3b_Messung	\N	60	t
+Körpertemperatur Brust	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	t
+Körpertemperatur Gelenk	Body temperature	Ort_Temperatur1a_Messung	Liste	60	t
+Körpertemperatur Gelenk	Body temperature	Ort_Temperatur1b_Messung	Liste	60	t
+Körpertemperatur Gelenk	Body temperature	Ort_Temperatur2a_Messung	Liste	60	t
+Körpertemperatur Gelenk	Body temperature	Ort_Temperatur2b_Messung	\N	60	t
+Körpertemperatur Gelenk	Body temperature	Ort_Temperatur3a_Messung	\N	60	t
+Körpertemperatur Gelenk	Body temperature	Ort_Temperatur3b_Messung	\N	60	t
+Körpertemperatur Gelenk	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur1a_Messung	Liste	60	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur1b_Messung	Liste	60	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur2a_Messung	Liste	60	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur2b_Messung	\N	60	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur3a_Messung	\N	60	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Ort_Temperatur3b_Messung	\N	60	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_MS_G5_Pplateau	Plateau-Atemwegsdruck, ein Monitoring-Parameter	59	t
 Venöser Druck	\N	Beatmung_Einstellung_Pinsp	Oberer Druckniveau	60	t
 Körpertemperatur vaginal	Body temperature	Ort_Temperatur1a_Messung	Liste	60	t
@@ -7474,9 +7471,6 @@ Körpertemperatur vaginal	Body temperature	P_Temperatur_Oesophagial	Anlage im Ra
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_IPPVFrequenz	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_ZeitNiedrig	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_3100B_O2Konzentration	Messwert: gemessene O2 Konzentration des Gasgemisches	44	t
-Körpertemperatur Achsel	Axil temp	Nierenverfahren_ES_4008HS_Temperatur	\N	59	f
-Körpertemperatur Brust	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	f
-Körpertemperatur Brust	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	44	t
 Linksventrikulaeres Schlagvolumen	LV SV	Beatmung_ES_VisionA_Schlagvolumen	Schlagvolumen (SV) in engl. (cycle volume)	60	t
 Substituatvolumen	\N	Beatmung_MS_Avea_Vte	gemessenes Tidalvolumen	60	t
@@ -7514,28 +7508,15 @@ Körpertemperatur Nasen-Rachen-Raum	Body temperature	Ort_Temperatur3b_Messung	\N
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur3a_Messung	\N	60	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Ort_Temperatur3b_Messung	\N	60	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	t
-Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	f
-Körpertemperatur Brust	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	f
-Körpertemperatur Gelenk	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	f
-Körpertemperatur Gelenk	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	f
-Körpertemperatur Gelenk	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	f
+Körpertemperatur Achsel	Axil temp	Nierenverfahren_ES_4008HS_Temperatur	\N	59	t
+Körpertemperatur Brust	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	t
+Körpertemperatur Brust	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	t
 Körpertemperatur vaginal	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_etCO2	Dokumention des gemessenen endtidalen	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Ppeak	Dokumentation des gemessenen Beatmungsspitzendruck.	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Pallas_Pplat	Dokumentation des gemessenen Plateaudruckes.	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Servoi_Ppeak	"Atemdruck Spitze "	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck	44	t
-Körpertemperatur Halswirbelsaeule	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	f
-Körpertemperatur Halswirbelsaeule	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	f
 Körpertemperatur Leiste	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	f
 Körpertemperatur Leiste	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	f
@@ -7566,6 +7547,21 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Te
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	t
+Körpertemperatur Brust	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	t
+Körpertemperatur Gelenk	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	t
+Körpertemperatur Gelenk	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	t
+Körpertemperatur Gelenk	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	t
+Körpertemperatur Halswirbelsaeule	Body temperature	NEV_HD_ES_4008onl_Temperatur	\N	59	t
+Körpertemperatur Halswirbelsaeule	Body temperature	NEV_HD_VO_4008onl_Temperatur	\N	59	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	59	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	59	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	59	t
 Atemwegsdruck bei mittlerem expiratorischem Gasfluss	PAW @ mean exp flow on vent	Beatmung_MS_VisionA_MAP	gemessener Mittlerer Atemwegsdruck unter HFO bei Alpha Vision	58	t
 Venöser Druck	\N	Beatmung_ES_VisionA_Trigger	Einstellgrösse: Druck bzw. Flowtrigger	59	t
 Venöser Druck	\N	Beatmung_MS_Evita4_P01	gemessener P0.1 Druck nach Meßmanöver	59	t
@@ -7581,14 +7577,9 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_MVe	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Tve	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_Tvi	\N	44	t
-Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	58	f
-Körpertemperatur Brust	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
-Körpertemperatur Gelenk	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_Apherese_Doku_Spuel_Dauer	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_ES_4008HS_StartNa	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	NEV_HD_VO_4008HS_Soll_Na	\N	44	t
-Körpertemperatur Halswirbelsaeule	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	58	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
 Körpertemperatur Leiste	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	58	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	f
 Körpertemperatur Leiste	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	58	f
@@ -7620,6 +7611,11 @@ Körpertemperatur Nasen-Rachen-Raum	Body temperature	P_Temperatur_Arteriell	Anla
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	SM_Frequenz	Schrittmacher Frequenz	59	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	t
+Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	58	t
+Körpertemperatur Brust	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	t
+Körpertemperatur Gelenk	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	t
+Körpertemperatur Halswirbelsaeule	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	58	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring	58	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_Messung_MVSpontan	Mindest Volumen sp	58	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Servoi_I_E	I:E Verhältnis (Messung)	58	f
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Servoi_Flow	Parameter im Modus Highflow	57	f
@@ -7675,18 +7671,8 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_CoughAssist_Oszillation	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_Pmittel	\N	44	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Pinsp	"Inspiratorischer Druck, mit Pinsp wird der Zieldruck (zusätzlich zu PEEP/CPAP) bezeichnet, der im Modus ASV während der Inspirationsphase abgegeben wird"	43	t
-Körpertemperatur Achsel	Axil temp	CardioHelpMaquet_VO_TemperaturSoll	\N	57	f
-Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	57	f
-Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	57	f
-Körpertemperatur Achsel	Axil temp	NEV_HD_VO_4008HS_Temperatur	\N	57	f
-Körpertemperatur Brust	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
-Körpertemperatur Brust	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
-Körpertemperatur Gelenk	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
-Körpertemperatur Gelenk	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_G5_Ppeak	Messwert: Beatmungsspitzendruck	43	t
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_ES_G5_IEVerhaeltnis	Einstellwert: I:E Verhältnis	57	t
-Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
 Körpertemperatur Leiste	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	f
 Körpertemperatur Leiste	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	f
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Schrittmacher_Eins_ES_Ausgang	Medtronic 5348	57	t
@@ -7717,6 +7703,16 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	P_NEV_HD_ES_5008onl_Temper
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	t
+Körpertemperatur Achsel	Axil temp	CardioHelpMaquet_VO_TemperaturSoll	\N	57	t
+Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	57	t
+Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	57	t
+Körpertemperatur Achsel	Axil temp	NEV_HD_VO_4008HS_Temperatur	\N	57	t
+Körpertemperatur Brust	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	t
+Körpertemperatur Brust	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	t
+Körpertemperatur Gelenk	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	t
+Körpertemperatur Gelenk	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_ES_5008onl_Temperatur	\N	57	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_VO_5008onl_Temperatur	\N	57	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_C2_Vt	\N	56	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita4_Vt	Einstellgröße für das Tidalvolumen	56	f
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_G5_Vt	Einstellwert: Tidalvolumen	56	f
@@ -7736,17 +7732,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_ES_C3_Tubuskompensation	\N	43	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_3100A_O2Konzentration	Gemessene O2 Konzentration	43	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_P01	Atemwegs-Okklusionsdruck	43	t
-Körpertemperatur Atemwege	Airway temp	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	56	f
-Körpertemperatur Brust	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	f
-Körpertemperatur Brust	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
-Körpertemperatur Brust	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	f
-Körpertemperatur Brust	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	f
-Körpertemperatur Brust	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
-Körpertemperatur Gelenk	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	f
-Körpertemperatur Gelenk	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
-Körpertemperatur Gelenk	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	f
-Körpertemperatur Gelenk	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	f
-Körpertemperatur Gelenk	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	P_Beatmung_MS_C3_PeepCPAP	\N	43	t
 Hämodialyse Blutfluss	\N	NEV_HD_MS_4008onl_effBlutfluss	\N	56	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_artDruck	\N	56	t
@@ -7773,15 +7758,21 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_HD_ES_4008HS_Temperatur
 Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	t
+Körpertemperatur Atemwege	Airway temp	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	56	t
+Körpertemperatur Brust	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	t
+Körpertemperatur Brust	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	t
+Körpertemperatur Brust	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	t
+Körpertemperatur Brust	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	t
+Körpertemperatur Brust	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	t
+Körpertemperatur Gelenk	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	t
+Körpertemperatur Gelenk	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	t
+Körpertemperatur Gelenk	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	t
+Körpertemperatur Gelenk	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	t
+Körpertemperatur Gelenk	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_ETS	Exspiratorische Triggersensitivität, eine Parametereinstellung	55	t
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_MS_T1_VTE	"Messwert, exspiratorisches Tidalvolumen"	55	t
 Körpertemperatur vaginal	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	t
 Körpertemperatur Generisch	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
-Körpertemperatur Halswirbelsaeule	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	f
-Körpertemperatur Halswirbelsaeule	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	f
-Körpertemperatur Halswirbelsaeule	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
 Körpertemperatur Kern	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	f
 Körpertemperatur Leiste	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	f
 Körpertemperatur Leiste	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	f
@@ -7830,6 +7821,11 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_HD_VO_4008HS_Temperatu
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	t
+Körpertemperatur Halswirbelsaeule	Body temperature	NEV_HD_ES_4008HS_Temperatur	\N	56	t
+Körpertemperatur Halswirbelsaeule	Body temperature	NEV_HD_VO_4008HS_Temperatur	\N	56	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_ADVOS_ES_ADVOS_Systemtemperatur	\N	56	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_ADVOS_VO_ADVOS_Systemtemperatur	\N	56	t
+Körpertemperatur Halswirbelsaeule	Body temperature	T_K2	Körpertemperatur Messkanal 2	56	t
 Hämodialyse Blutfluss	\N	Patient_Blutverlusst	Patient_Blutverlusst	55	t
 Körpertemperatur vaginal	Body temperature	Temp3b	Temperatur 3b	83	t
 Körpertemperatur vaginal	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
@@ -7848,13 +7844,6 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Zephyros_R	\N	42	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_Membranvent	Dokumentation Oxygenator - Liste	55	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Lungenersatzverfahren_Doku_ILAactivve_Nullabgleich	Liste durchgeführt	55	t
-Körpertemperatur Achsel	Axil temp	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	55	f
-Körpertemperatur Atemwege	Airway temp	Hypothermie_Coolgard_VO_Zieltemperatur	\N	55	f
-Körpertemperatur Atemwege	Airway temp	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate	55	f
-Körpertemperatur Atemwege	Airway temp	Nierenverfahren_MS_Multi_Calciumfluss	Calciumrate	55	f
-Körpertemperatur Brust	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
-Körpertemperatur Gelenk	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
 Körpertemperatur Harnblase	Bdy temp Bladder	P_NEV_HD_VO_5008onl_Temperatur	\N	55	f
 Körpertemperatur Leiste	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	f
 Körpertemperatur Leiste	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	55	f
@@ -7885,6 +7874,12 @@ Körpertemperatur Speiseroehre	Esoph temp	Therapiebetten_Doku_Giraffe_MS_Lufttem
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	55	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
+Körpertemperatur Achsel	Axil temp	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	55	t
+Körpertemperatur Atemwege	Airway temp	Hypothermie_Coolgard_VO_Zieltemperatur	\N	55	t
+Körpertemperatur Atemwege	Airway temp	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate	55	t
+Körpertemperatur Brust	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
+Körpertemperatur Gelenk	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	55	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_T1_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi	55	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Avea_SpontVte	gemessenes spontanes Tidalvolumen	55	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_T1_PTP	Druck Zeit Produkt (Pressure Time Product)	55	t
@@ -7950,10 +7945,6 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Mult
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_BlutvolumenKum	\N	54	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008onl_IsoUFVolumenKumulativ	\N	54	t
 Körpertemperatur Kern	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
-Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	54	f
-Körpertemperatur Brust	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
-Körpertemperatur Gelenk	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
-Körpertemperatur Halswirbelsaeule	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
 Körpertemperatur Leiste	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	54	f
 Körpertemperatur Leiste	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	54	f
 Körpertemperatur Leiste	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	f
@@ -7995,6 +7986,10 @@ Körpertemperatur Nasen-Rachen-Raum	Body temperature	TempPBT	Temperatur bei der 
 Körpertemperatur Speiseroehre	Esoph temp	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	54	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
+Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	54	t
+Körpertemperatur Brust	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
+Körpertemperatur Gelenk	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
+Körpertemperatur Halswirbelsaeule	Body temperature	TempPBT	Temperatur bei der PICCO Messung	54	t
 Atemfrequenz	Resp rate	Schrittmacher_Osypka101H_ES_Rate	Grundfrequenz	62	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Leoni_FlowInsp	\N	54	t
 Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_Einstellung_Pmax	Pmax, Maximaldruck	54	f
@@ -8059,20 +8054,10 @@ Pulmonalarterieller wedge Blutdruck	PAW pressure	PWP	Pulmunaler Wedgedruck	54	t
 Körpertemperatur Kern	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	t
 Körpertemperatur Kern	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	t
 Körpertemperatur vaginal	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	t
-Körpertemperatur Atemwege	Airway temp	SonstVerfahren_VO_Hypothermiegerät_Zieltemperatur	Hypothermiebehandlung	53	f
-Körpertemperatur Brust	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	f
-Körpertemperatur Brust	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	f
-Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	f
-Körpertemperatur Gelenk	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	f
-Körpertemperatur Gelenk	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	f
-Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	f
 Körpertemperatur vaginal	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	t
 Körpertemperatur vaginal	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	t
 Körpergroesse	Body height	Beatmung_ES_C2_Body_Wt	Eingestelltes Körpergewicht beim respirator C2.	53	t
 Körpergroesse	Body height	Beatmung_ES_G5_Body_Wt	Eingestelltes Körpergewicht.	53	t
-Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	f
 Körpertemperatur Leiste	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	f
 Körpertemperatur Leiste	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	53	f
@@ -8108,6 +8093,16 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraff
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	t
+Körpertemperatur Atemwege	Airway temp	SonstVerfahren_VO_Hypothermiegerät_Zieltemperatur	Hypothermiebehandlung	53	t
+Körpertemperatur Brust	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	t
+Körpertemperatur Brust	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	t
+Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	t
+Körpertemperatur Gelenk	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	t
+Körpertemperatur Gelenk	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	t
+Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_ES_Genius_TemperaturZiel	\N	53	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_DeltaT	Delta Temperatur zentral/Temperatur peripher	53	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	53	t
 Spontane-Atemfrequenz-Beatmet	\N	Schrittmacher_Osypka203H_ES_MTR	obere Frequenzbegrenzung	53	t
 Körpertemperatur Leiste	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	f
 Körpertemperatur unter der Zunge	Oral temp	Ort_Temperatur1b_Messung	Liste	43	t
@@ -8183,22 +8178,6 @@ Hämodialyse Blutfluss	\N	NEV_HD_VO_4008HS_Blutfluss_SN_Pumpe	\N	62	t
 Hämodialyse Blutfluss	\N	Nierenverfahren_ES_4008HS_Blutfluss	\N	62	t
 Hämodialyse Blutfluss	\N	Nierenverfahren_ES_4008onl_Blutfluss	\N	62	t
 Körpergewicht	Weight	Patient_Gewicht	Gewicht des Patienten	52	f
-Körpertemperatur Atemwege	Airway temp	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	52	f
-Körpertemperatur Brust	Body temperature	Betreuer_Status	\N	52	f
-Körpertemperatur Brust	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	f
-Körpertemperatur Brust	Body temperature	IABP_Leersaugen	\N	52	f
-Körpertemperatur Brust	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	f
-Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	f
-Körpertemperatur Gelenk	Body temperature	Betreuer_Status	\N	52	f
-Körpertemperatur Gelenk	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	f
-Körpertemperatur Gelenk	Body temperature	IABP_Leersaugen	\N	52	f
-Körpertemperatur Gelenk	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	f
-Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Status	\N	52	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	f
-Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Leersaugen	\N	52	f
-Körpertemperatur Halswirbelsaeule	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Status	\N	52	t
 Körpertemperatur Generisch	Body temperature	Betreuer_Status	\N	52	t
 Körpertemperatur Generisch	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	t
@@ -8222,6 +8201,22 @@ Hämodialyse Blutfluss	\N	P_NEV_HD_ES_Genius_Blutfluss	\N	62	t
 Hämodialyse Blutfluss	\N	rCBF	Über eine Sonde gemessener regionaler cerebraler Blutfluss.	62	t
 Hämodialyse Blutfluss	\N	NEV_HD_VO_4008onl_BlutflussMax	\N	52	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	IABP_Leersaugen	\N	52	t
+Körpertemperatur Atemwege	Airway temp	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	52	t
+Körpertemperatur Brust	Body temperature	Betreuer_Status	\N	52	t
+Körpertemperatur Brust	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	t
+Körpertemperatur Brust	Body temperature	IABP_Leersaugen	\N	52	t
+Körpertemperatur Brust	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	t
+Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	t
+Körpertemperatur Gelenk	Body temperature	Betreuer_Status	\N	52	t
+Körpertemperatur Gelenk	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	t
+Körpertemperatur Gelenk	Body temperature	IABP_Leersaugen	\N	52	t
+Körpertemperatur Gelenk	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	t
+Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Status	\N	52	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	t
+Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Leersaugen	\N	52	t
+Körpertemperatur Halswirbelsaeule	Body temperature	TempBT	Bluttemperatur bei der HZV Messung	52	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	52	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Nierenverfahren_VO_Multi_Dialysat	Dialysatrate	52	t
 Körpertemperatur Leiste	Body temperature	Betreuer_Status	\N	52	f
 Körpertemperatur Leiste	Body temperature	Hypothermie_Coolgard_VO_Zieltemperatur	\N	52	f
@@ -8341,11 +8336,7 @@ Körpertemperatur unter der Zunge	Oral temp	Untersuchung_Status_Oxygenierung	\N	
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Evita4_Ttief	Zeiteinstellung für das untere Druckniveau im APRV Modus	51	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_G5_Vt	Einstellwert: Tidalvolumen	51	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Optiflow_PEEP	Liste hinterlegt, definierte Peepeinstellungen über Ventil	51	t
-Körpertemperatur Atemwege	Airway temp	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	51	f
-Körpertemperatur Brust	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
-Körpertemperatur Gelenk	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_T1_Vt	Einstellwert: Tidalvolumen	51	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
 Körpertemperatur Leiste	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_ILAactivve_Nullabgleich	Liste durchgeführt	51	f
 Atemfrequenz	Resp rate	IABP_CARDIOSAVE_ES_IABP_Frequenz	Dokumentation der IABP Frequenz	51	t
@@ -8375,6 +8366,10 @@ Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_Bia
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_BiPAPV_Vt	Messwert: gemessenes Tidalvolumen	51	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	t
+Körpertemperatur Atemwege	Airway temp	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	51	t
+Körpertemperatur Brust	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	t
+Körpertemperatur Gelenk	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_ES_Airvo_Temperatur	Temperatureinstellung am Gerät Airvo	51	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Anordnung_PEEP	Anordnung Positiver endexspiratorischer Druck (PEEP)	51	f
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_ProzentVol	\N	51	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_Pallas_Vt	Dokumentation ders eingestellten Vt.	51	t
@@ -8440,15 +8435,8 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Mult
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_UFProfil	\N	50	t
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	IABP_ACAT_ES_Deflation	\N	50	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Patient_AufnKO	Körperoberfläche des Patienten (fallbezogen)	50	t
-Körpertemperatur Brust	Body temperature	Betreuer2_Status	\N	50	f
-Körpertemperatur Brust	Body temperature	Betreuer_Strasse	\N	50	f
-Körpertemperatur Brust	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	f
-Körpertemperatur Brust	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	f
-Körpertemperatur Brust	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	f
-Körpertemperatur Brust	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	f
-Körpertemperatur Brust	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	f
-Körpertemperatur Brust	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	f
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Patient_AufnKO	Körperoberfläche des Patienten (fallbezogen)	50	t
+Körpertemperatur Brust	Body temperature	Betreuer2_Status	\N	50	t
 Kopfumfang	Head Circumf OFC	OP-Tag	OP-Tag	50	t
 Kopfumfang	Head Circumf OFC	Patient_KO	Körperoberfläche des Patienten ohne Fallbezug	50	t
 Körpergrösse Percentil	Body height Prctl	IstSoziale_Besonderheit	Soziale_Besonderheiten, z.B. Familiensituation	50	t
@@ -8476,15 +8464,14 @@ Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	etCO2	End-tidales CO2	50	t
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Evita2_O2Konzentration	eingestellte O2 Konzentration des Gases	50	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	PICCO_HF	HerzfrequenzHerzfrequenz	50	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	SvO2	venöse Sauerstoffsättigung	50	t
+Körpertemperatur Brust	Body temperature	Betreuer_Strasse	\N	50	t
+Körpertemperatur Brust	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	t
+Körpertemperatur Brust	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	t
+Körpertemperatur Brust	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	t
+Körpertemperatur Brust	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	t
+Körpertemperatur Brust	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	t
+Körpertemperatur Brust	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	t
 Körpertemperatur Kern	Body temperature	Betreuer2_Status	\N	50	t
-Körpertemperatur Gelenk	Body temperature	Betreuer2_Status	\N	50	f
-Körpertemperatur Gelenk	Body temperature	Betreuer_Strasse	\N	50	f
-Körpertemperatur Gelenk	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	f
-Körpertemperatur Gelenk	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	f
-Körpertemperatur Gelenk	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	f
-Körpertemperatur Gelenk	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	f
-Körpertemperatur Gelenk	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	f
-Körpertemperatur Gelenk	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	f
 Körpertemperatur Kern	Body temperature	Betreuer_Strasse	\N	50	t
 Körpertemperatur Kern	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	t
 Körpertemperatur Kern	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	t
@@ -8495,14 +8482,6 @@ Körpertemperatur Kern	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Patient_Blutgruppe	Blutgruppe des Patienten	44	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Patient_Verfuegung	Patientenverfügung	44	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Schrittmacher_Siemens_ES_Ausgang	\N	44	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer2_Status	\N	50	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Strasse	\N	50	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	f
-Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	f
-Körpertemperatur Halswirbelsaeule	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	f
-Körpertemperatur Halswirbelsaeule	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	f
 Körpertemperatur Leiste	Body temperature	Betreuer2_Status	\N	50	f
 Körpertemperatur Leiste	Body temperature	Betreuer_Strasse	\N	50	f
 Körpertemperatur Leiste	Body temperature	F_Reakarte_VerantwortlicherMitarbeiter	\N	50	f
@@ -8512,7 +8491,6 @@ Körpertemperatur Leiste	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	f
 Körpertemperatur Leiste	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	f
 Körpertemperatur Leiste	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	f
 Körpertemperatur Leiste	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	f
-Körpertemperatur Myokard	Myocard temp	SM_Modus	Schrittmachermodus	50	f
 Atemfrequenz	Resp rate	IABP_DatascopeCS300_ES_IABP_Frequenz	Dokumentation der IABP Frequenz.	51	t
 Körpertemperatur nasal	Nasal temp	NEV_Apherese_VO_Spuel_Dauer	\N	50	t
 Pulmonalvaskulärer Widerstandsindex	PV RI	VigilanceC_PVR	Pulmonaler vasculärer Widerstand	83	t
@@ -8536,6 +8514,22 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_CRRT_ES_Multi_Temperatu
 Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	t
+Körpertemperatur Gelenk	Body temperature	Betreuer2_Status	\N	50	t
+Körpertemperatur Gelenk	Body temperature	Betreuer_Strasse	\N	50	t
+Körpertemperatur Gelenk	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	t
+Körpertemperatur Gelenk	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	t
+Körpertemperatur Gelenk	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	t
+Körpertemperatur Gelenk	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	t
+Körpertemperatur Gelenk	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	t
+Körpertemperatur Gelenk	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	t
+Körpertemperatur Myokard	Myocard temp	SM_Modus	Schrittmachermodus	50	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer2_Status	\N	50	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Strasse	\N	50	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Zieltemperatur	\N	50	t
+Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Abiomed_Impella_PurgeFR	\N	50	t
+Körpertemperatur Halswirbelsaeule	Body temperature	NEV_CRRT_ES_Multi_Temperatur	\N	50	t
+Körpertemperatur Halswirbelsaeule	Body temperature	NEV_CRRT_VO_Multi_Temperatur	\N	50	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_NEV_HD_MS_Genius_TemperaturIst	\N	50	t
 Körpertemperatur Stirn	Body temperature	Betreuer2_Status	\N	50	t
 Körpertemperatur Stirn	Body temperature	Betreuer_Strasse	\N	50	t
 Körpertemperatur Stirn	Body temperature	F_Reakarte_VerantwortlicherArzt	Die/Der verantwortliche Arzt/Ärztin der/die die Reakarte freigibt.	50	t
@@ -8657,18 +8651,8 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Mult
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_DCMFBTgesamt	\N	49	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_4008onl_Substituat	\N	49	t
 Körpertemperatur Kern	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
-Körpertemperatur Brust	Body temperature	Bezugsperson_Pflegekraft	\N	49	f
-Körpertemperatur Brust	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
-Körpertemperatur Gelenk	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
 Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	t
 Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	t
-Körpertemperatur Halswirbelsaeule	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
 Körpertemperatur Leiste	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	f
@@ -8706,6 +8690,16 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Tem
 Körpertemperatur Brustwirbelsaeule	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	t
+Körpertemperatur Brust	Body temperature	Bezugsperson_Pflegekraft	\N	49	t
+Körpertemperatur Brust	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	t
+Körpertemperatur Gelenk	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	t
+Körpertemperatur Halswirbelsaeule	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_ADM_Temperatur	\N	49	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	49	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Avea_PEEP	eingestelltes PEEP Niveau	49	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_PEEP	Positiver endexspiratorischer Druck (PEEP)	49	f
 Körpertemperatur vaginal	Body temperature	CardioHelpMaquet_MS_TemperaturIst	\N	49	t
@@ -8861,28 +8855,6 @@ Inspiratorische Sauerstofffraktion gemessen	FIO2	SO2	Sauerstoffsättigung	57	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Einstellung_FiO2	O²- Konzentration im Inspirationsgemisch (FiO2)	56	t
 Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Messung_O2VolG5	Messwert des Sauerstoffgehalt in der Maßeinheit Vol %	54	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_Restzeit	\N	48	t
-Körpertemperatur Brust	Body temperature	Betreuer2_Strasse	\N	48	f
-Körpertemperatur Brust	Body temperature	Betreuer_Name	Betreuer des Patienten	48	f
-Körpertemperatur Brust	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	f
-Körpertemperatur Brust	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	f
-Körpertemperatur Brust	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	f
-Körpertemperatur Brust	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	f
-Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	f
-Körpertemperatur Brust	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	f
-Körpertemperatur Gelenk	Body temperature	Betreuer2_Strasse	\N	48	f
-Körpertemperatur Gelenk	Body temperature	Betreuer_Name	Betreuer des Patienten	48	f
-Körpertemperatur Gelenk	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	f
-Körpertemperatur Gelenk	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	f
-Körpertemperatur Gelenk	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	f
-Körpertemperatur Gelenk	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	f
-Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	f
-Körpertemperatur Gelenk	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	f
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_MS_4008HS_venDruck	\N	48	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_VO_4008onl_UFProfil	\N	48	t
 Ideales Körpergewicht	Ideal bdy weight	NIRSrechts_MS	\N	48	t
@@ -8909,22 +8881,33 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	CardioHelpMaquet_VO_Tempera
 Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	t
+Körpertemperatur Brust	Body temperature	Betreuer2_Strasse	\N	48	t
+Körpertemperatur Brust	Body temperature	Betreuer_Name	Betreuer des Patienten	48	t
+Körpertemperatur Brust	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	t
+Körpertemperatur Brust	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	t
+Körpertemperatur Brust	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	t
+Körpertemperatur Brust	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	t
+Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	t
+Körpertemperatur Brust	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	t
+Körpertemperatur Gelenk	Body temperature	Betreuer2_Strasse	\N	48	t
+Körpertemperatur Gelenk	Body temperature	Betreuer_Name	Betreuer des Patienten	48	t
+Körpertemperatur Gelenk	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	t
+Körpertemperatur Gelenk	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	t
+Körpertemperatur Gelenk	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	t
+Körpertemperatur Gelenk	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	t
+Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	t
+Körpertemperatur Gelenk	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	t
 Körpertemperatur Kern	Body temperature	Betreuer2_Strasse	\N	48	t
 Körpertemperatur Kern	Body temperature	Betreuer_Name	Betreuer des Patienten	48	t
 Körpertemperatur Kern	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	t
 Körpertemperatur Kern	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	t
 Körpertemperatur Kern	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer2_Strasse	\N	48	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Name	Betreuer des Patienten	48	f
-Körpertemperatur Halswirbelsaeule	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	f
-Körpertemperatur Halswirbelsaeule	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	f
-Körpertemperatur Halswirbelsaeule	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	f
 Körpertemperatur Harnblase	Bdy temp Bladder	Nierenverfahren_Doku_FüllenMit	Füllen des Systems	48	f
 Körpertemperatur Leiste	Body temperature	Betreuer2_Strasse	\N	48	f
 Körpertemperatur Leiste	Body temperature	Betreuer_Name	Betreuer des Patienten	48	f
@@ -8959,6 +8942,16 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Te
 Körpertemperatur Lendenwirbelsaeule	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer2_Strasse	\N	48	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Name	Betreuer des Patienten	48	t
+Körpertemperatur Halswirbelsaeule	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	t
+Körpertemperatur Halswirbelsaeule	Body temperature	CardioHelpMaquet_VO_TemperaturSoll	\N	48	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_Kuehlmatte_Doku_Temperatur	\N	48	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_Doku_Bolus	Medikament	48	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	48	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperatur	Temperatur in Celsius	48	t
+Körpertemperatur Halswirbelsaeule	Body temperature	TempDelta	Anlage im Rahmen PhilipsMonitoring	48	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Atom_ES_Lufttemperatur	\N	48	t
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_T1_IEVerhaeltnis	\N	48	t
 Körpertemperatur Stirn	Body temperature	CardioHelpMaquet_ES_TemperaturSoll	\N	48	t
 Körpertemperatur vaginal	Body temperature	Betreuer2_Strasse	\N	48	t
@@ -9105,7 +9098,6 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Mult
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_BlutflussEinst	\N	67	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Dokumentation_Option	\N	67	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_BlutflussSNPumpe	\N	67	t
-Körpertemperatur Brust	Body temperature	Betreuer2_Name	\N	47	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_G5_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi.	47	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_T1_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi	47	f
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.	47	f
@@ -9170,25 +9162,11 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_CARDIOSAVE_
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_DatascopeCS300_ES_Doku_Ballonkatheter	Dokumentation des verwendeten Ballonkatheters.	47	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_DatascopeCS300_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons.	47	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_TMP	\N	47	t
-Körpertemperatur Achsel	Axil temp	NEV_Apherese_Doku_AbschlussUrteil	Listenauswahl	47	f
-Körpertemperatur Achsel	Axil temp	P_TP1	EEG - Total Power - Channel 1	47	f
-Körpertemperatur Achsel	Axil temp	P_TP2	EEG - Total Power - Channel 2	47	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	f
-Körpertemperatur Brust	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	f
-Körpertemperatur Gelenk	Body temperature	Betreuer2_Name	\N	47	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	f
-Körpertemperatur Gelenk	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	f
 Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	t
 Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	t
 Körpertemperatur Kern	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	t
 Körpergrösse Percentil	Body height Prctl	Verlauf_Pflege	\N	47	t
 Körpertemperatur Blut	Blood temp	Nierenverfahren_Doku_SpuellösungAntikoagulanz	Spülung zur Vorbereitung	47	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer2_Name	\N	47	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	f
 Körpertemperatur Leiste	Body temperature	Betreuer2_Name	\N	47	f
 Körpertemperatur Leiste	Body temperature	NEV_Apherese_Doku_Fuellen_Mit	\N	47	f
 Körpertemperatur Leiste	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	f
@@ -9220,6 +9198,20 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer2_Name	\N	47	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	t
+Körpertemperatur Achsel	Axil temp	NEV_Apherese_Doku_AbschlussUrteil	Listenauswahl	47	t
+Körpertemperatur Achsel	Axil temp	P_TP1	EEG - Total Power - Channel 1	47	t
+Körpertemperatur Achsel	Axil temp	P_TP2	EEG - Total Power - Channel 2	47	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	t
+Körpertemperatur Brust	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	t
+Körpertemperatur Gelenk	Body temperature	Betreuer2_Name	\N	47	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	t
+Körpertemperatur Gelenk	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer2_Name	\N	47	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Temperaturstufe	Liste	47	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Waermesysteme_Warmtouch_Doku_Temperatur	Liste	47	t
 Körpertemperatur Stirn	Body temperature	Betreuer2_Name	\N	47	t
 Körpertemperatur vaginal	Body temperature	Betreuer2_Name	\N	47	t
 Körpertemperatur vaginal	Body temperature	Nierenverfahren_ES_BM25_Temperaturstufe	Liste	47	t
@@ -9370,7 +9362,6 @@ Spontanes-Atemzugvolumen	Spont VT on vent	IABP_Doku_Ballonvolumen	\N	47	t
 Spontanes-Atemzugvolumen	Spont VT on vent	NEV_HD_MS_4008onl_Rest_Zeit	\N	47	t
 Spontanes-Atemzugvolumen	Spont VT on vent	Patient_Spezifitaet	\N	47	t
 Körpertemperatur Harnblase	Bdy temp Bladder	P_ADVOS_MS_ADVOS_artDruck	\N	46	f
-Körpertemperatur Achsel	Axil temp	P_ADVOS_VO_Filter	\N	46	f
 Blutfluss durch cardiovasculäres Gerät	\N	NEV_CRRT_MS_Multi_Citratfluss	\N	46	t
 Dauer Hämodialysesitzung	\N	NEV_Apherese_VO_Plasmaloesung	\N	46	t
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_Einstellung_Power	HFOV Powereinstellung	46	t
@@ -9418,6 +9409,7 @@ Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Inpuls_Erfassun
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	Inpuls_Erfassung_Transporte_Anzahl	\N	47	t
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_CRRT_VO_SpülloesungAntikoag	\N	47	t
 Spontanes-Plus-Mechanisches-Atemzugvolumen	Spont+mech VT on vent	NEV_HD_VO_SpüllösungAntikoag	\N	47	t
+Körpertemperatur Achsel	Axil temp	P_ADVOS_VO_Filter	\N	46	t
 Körpergrösse Percentil	Body height Prctl	Besonderheiten_Station	\N	46	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	NEV_CRRT_VO_Multi_BlutflussMax	\N	46	t
 Hämodialyse Blutfluss	\N	NEV_HD_MS_4008onl_BlutvolKum	\N	46	t
@@ -9430,14 +9422,12 @@ Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_VisionA_Vt	Ei
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_MS_Pallas_Sevofluran_insp	Inspiratorisch gemessene Sevofluran Konzentration.	46	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_MS_Servoi_I_E	I:E Verhältnis (Messung)	46	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	EinweisenderArzt_Titel	\N	46	t
-Körpertemperatur Achsel	Axil temp	Beatmung_Einstellung_Pmax	Pmax, Maximaldruck	46	f
-Körpertemperatur Achsel	Axil temp	CardioHelpMaquet_ES_Pumpendrehzahl	\N	46	f
-Körpertemperatur Achsel	Axil temp	Hypothermie_Coolgard_Doku-Rate	\N	46	f
 Atemfrequenz	Resp rate	P_Beatmung_ES_C3_Groesse	\N	48	t
 Herzzeitvolumen	LV Output	Angehoerige1_Telefon	Angehoerigen-Telefon	46	t
 Herzzeitvolumen	LV Output	Angehoerige2_Telefon	\N	46	t
 Herzzeitvolumen	LV Output	Angehoerige3_Telefon	\N	46	t
 Herzzeitvolumen	LV Output	Blutgruppe_Mutter	\N	46	t
+Körpertemperatur Achsel	Axil temp	Beatmung_Einstellung_Pmax	Pmax, Maximaldruck	46	t
 Körpergewicht	Weight	Beatmung_ES_G5_SBT_Zeitraum_nach	Uhrzeit	46	t
 Linksventrikulaeres Schlagvolumen	LV SV	Score_DGAI_EntlArzt	\N	46	t
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	NEV_PD_VO_Einlaufh	Peritonealdialyse - Einlaufhöhe in cm	46	t
@@ -9471,33 +9461,12 @@ Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Unter
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_T1_Ttief	Einstellwert: Zeiteinstellung für das untere Druckniveau	38	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	P_Waermesysteme_InfantWarmer_Doku_SkinTemp	\N	38	t
 Rechtsventrikulärer Druck	Blood pressure panel with all children optional	Beatmung_ES_C2_Pmax	Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.	32	t
-Körpertemperatur Achsel	Axil temp	NEV_Apherese_VO_Multi_Temp	Anlage 18.05.2012 String	46	f
-Körpertemperatur Atemwege	Airway temp	Beatmung_Einstellung_intermPEEP	Interm PEEP	46	f
-Körpertemperatur Atemwege	Airway temp	SM_AV_Intervall	Schrittmacher AV-Intervall	46	f
-Körpertemperatur Brust	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	f
-Körpertemperatur Brust	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	f
-Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	f
-Körpertemperatur Brust	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	f
-Körpertemperatur Brust	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	f
-Körpertemperatur Brust	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	f
-Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	f
-Körpertemperatur Gelenk	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	f
-Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	f
-Körpertemperatur Gelenk	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	f
-Körpertemperatur Gelenk	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	f
-Körpertemperatur Gelenk	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	f
 Körpertemperatur Kern	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	t
 Körpertemperatur Kern	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	t
 Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	t
 Körpertemperatur Kern	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	t
 Körpertemperatur Kern	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	t
 Körpertemperatur Kern	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	f
-Körpertemperatur Halswirbelsaeule	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	f
 Körpertemperatur Leiste	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	f
 Körpertemperatur Leiste	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	f
@@ -9521,6 +9490,27 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	IstBesucherregelung	\N	46	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	t
+Körpertemperatur Achsel	Axil temp	NEV_Apherese_VO_Multi_Temp	Anlage 18.05.2012 String	46	t
+Körpertemperatur Atemwege	Airway temp	Beatmung_Einstellung_intermPEEP	Interm PEEP	46	t
+Körpertemperatur Atemwege	Airway temp	SM_AV_Intervall	Schrittmacher AV-Intervall	46	t
+Körpertemperatur Brust	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	t
+Körpertemperatur Brust	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	t
+Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	t
+Körpertemperatur Brust	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	t
+Körpertemperatur Brust	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	t
+Körpertemperatur Brust	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	t
+Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	t
+Körpertemperatur Gelenk	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	t
+Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	t
+Körpertemperatur Gelenk	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	t
+Körpertemperatur Gelenk	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	t
+Körpertemperatur Gelenk	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_Coolgard_Doku_Patiententemperatur	\N	46	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	46	t
+Körpertemperatur Halswirbelsaeule	Body temperature	NEV_Apherese_ES_Multi_Temperatur	\N	46	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Beatmung_ES_Anfeuchtung_Temperatur	\N	46	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_VO_Atom_ES_Lufttemperatur	\N	46	t
 Linksatrialer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons	46	t
 Körpertemperatur Stirn	Body temperature	Beatmung_Messung_TApnoe	Apnea Duration	46	t
 Körpertemperatur Stirn	Body temperature	Hypothermie_ArticSun_Doku_Zieltemperatur	\N	46	t
@@ -9724,21 +9714,6 @@ Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Therapiebetten_VO_Triad
 Körpergroesse	Body height	Beatmung_Messung_Resistance	Resistance	45	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Beatmung_MS_Evita2_CPAP	gemessenes CPAP Niveau	45	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Multi_praeF	\N	45	t
-Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_Doku_KuehlWaermerate_neu	\N	45	f
-Körpertemperatur Achsel	Axil temp	P_ADVOS_ES_ADVOS_UltrafiltratRate	\N	45	f
-Körpertemperatur Atemwege	Airway temp	P_Antikoerper_Mutter	\N	45	f
-Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	f
-Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	f
-Körpertemperatur Brust	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	f
-Körpertemperatur Brust	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	f
-Körpertemperatur Brust	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	f
-Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	f
-Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	f
-Körpertemperatur Gelenk	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	f
 Parameter von Beatmung	\N	Beatmung_MS_G5_Rinsp	Inspiratorische Flow-Resistance, ein Monitoring-Parameter	58	t
 Körpergrösse Percentil	Body height Prctl	Patient_PLZ	Patientenadresse: PLZ	45	t
 Körpertemperatur Blut	Blood temp	P_NBP_reArm	Nichtinvasiver Blutdruck rechter Arm	45	t
@@ -9764,9 +9739,21 @@ Parameter von Beatmung	\N	Beatmung_MS_G5_WOBimp	Zusätzlich auferlegte Atemarbei
 Parameter von Beatmung	\N	Beatmung_MS_T1_P01	Atemweg-Okklusionsdruck, ein Monitoring-Parameter	58	t
 Parameter von Beatmung	\N	Beatmung_MS_T1_Pmin	Minimaler Atemwegsdruck, ein Monitoring Parameter	58	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	t
+Körpertemperatur Achsel	Axil temp	Hypothermie_ArticSun_Doku_KuehlWaermerate_neu	\N	45	t
+Körpertemperatur Achsel	Axil temp	P_ADVOS_ES_ADVOS_UltrafiltratRate	\N	45	t
+Körpertemperatur Atemwege	Airway temp	P_Antikoerper_Mutter	\N	45	t
+Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	t
+Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	t
+Körpertemperatur Brust	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	t
+Körpertemperatur Brust	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	t
+Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	t
+Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	t
+Körpertemperatur Gelenk	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	t
 Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	t
-Körpertemperatur Gelenk	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	f
-Körpertemperatur Gelenk	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	f
 Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	t
 Körpertemperatur Kern	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	t
 Körpertemperatur Kern	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	t
@@ -9775,13 +9762,6 @@ Körpertemperatur Kern	Body temperature	Untersuchung_Status_Koerpertemperatur	\N
 Körpertemperatur Kern	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	t
 Körpertemperatur Stirn	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	t
 Körpertemperatur nasal	Nasal temp	NEV_Apherese_ES_Multi_Plasma	\N	45	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	f
-Körpertemperatur Halswirbelsaeule	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_ILAactivve_Flushen	Liste - Doku Durchführung	45	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	f
@@ -9815,6 +9795,14 @@ Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_I:E
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_O2Konzentration	\N	48	t
 Körpertemperatur Speiseroehre	Esoph temp	Nierenverfahren_VO_BM25_Spueldauer	\N	45	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	t
+Körpertemperatur Gelenk	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	t
+Körpertemperatur Gelenk	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOTemperatur	Angeordnete Temperatureinstellung bei ECMO Verfahren	45	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	t
+Körpertemperatur Halswirbelsaeule	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_4008onl_Temperatur	\N	45	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_Bolus	Medikament	45	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Untersuchung_Status_Koerpertemperatur	\N	45	t
 Linksv. Herzzeitvolumen durch Indikatorverdünnung	LV Output Indicator dilution	Aufnahme_IndikationSectio_Text	\N	45	t
 Körpertemperatur Stirn	Body temperature	Lungenersatzverfahren_Doku_Temperatur	Dokumentation der eingestellten Temperatur am ECMO Gerät	45	t
 Körpertemperatur Stirn	Body temperature	NEV_PD_Doku_Verweildauer	\N	45	t
@@ -10059,26 +10047,12 @@ Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita2_R
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_MS_Evita4_fmand	gemessene mandatorische Atemfrequenz	44	t
 Körpergroesse	Body height	Angehoerige1_Strasse	\N	44	t
 Körpergrösse Percentil	Body height Prctl	Angehoerige1_TelefonMobil	Handy Nummer der Angehörigen des Patienten	44	t
-Körpertemperatur Atemwege	Airway temp	Angehoerige1_TelefonArbeit	Berufliche Telefonnummer der Angehörigen des Patienten	44	f
-Körpertemperatur Atemwege	Airway temp	Angehoerige2_TelefonArbeit	\N	44	f
-Körpertemperatur Atemwege	Airway temp	Angehoerige3_TelefonArbeit	\N	44	f
-Körpertemperatur Brust	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	f
-Körpertemperatur Brust	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	f
-Körpertemperatur Brust	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
-Körpertemperatur Brust	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	f
-Körpertemperatur Brust	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	f
-Körpertemperatur Gelenk	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	f
-Körpertemperatur Gelenk	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	f
-Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
-Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	f
-Körpertemperatur Gelenk	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	f
 Körpergroesse	Body height	Angehoerige2_Strasse	\N	44	t
 Körpergroesse	Body height	Angehoerige3_Strasse	\N	44	t
 Körpergroesse	Body height	Beatmung_Messung_Pmean	Mean Airway Pressure	44	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_Einstell_ISOUFZiel	\N	71	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Beatmung_ES_T1_Zeit_zw2_SBT	Zeit zwischen 2 SBT	44	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_Datascope_ES_IABPLeersaugen	\N	44	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	f
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	PPV	Pulsdruckabweichung	44	t
 Kopfumfang	Head Circumf OFC	NEV_PD_VO_Einlaufhoehe	Einlaufhöhe in cm	44	t
 Körpertemperatur Generisch	Body temperature	Angehoerige1_TelefonArbeit	Berufliche Telefonnummer der Angehörigen des Patienten	44	t
@@ -10108,10 +10082,20 @@ Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	NEV_PD_Doku_Aussehen
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenersatzverfahren_VO_CalciumLoesung	Bezeichnug der Calcium Lösung	44	t
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_ADVOS_VO_CitratLoesung	\N	44	t
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_Beatmung_ES_3100A_BiasFlow	Eingestellter Basisfluss im Beatmungssystem	44	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	f
+Körpertemperatur Atemwege	Airway temp	Angehoerige1_TelefonArbeit	Berufliche Telefonnummer der Angehörigen des Patienten	44	t
+Körpertemperatur Atemwege	Airway temp	Angehoerige2_TelefonArbeit	\N	44	t
+Körpertemperatur Atemwege	Airway temp	Angehoerige3_TelefonArbeit	\N	44	t
+Körpertemperatur Brust	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	t
+Körpertemperatur Brust	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	t
+Körpertemperatur Brust	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	t
+Körpertemperatur Brust	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	t
+Körpertemperatur Brust	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	t
+Körpertemperatur Gelenk	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	t
+Körpertemperatur Gelenk	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	t
+Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	t
+Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	t
+Körpertemperatur Gelenk	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	t
 Körpertemperatur Leiste	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	f
 Körpertemperatur Leiste	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	f
 Körpertemperatur Leiste	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	f
@@ -10157,6 +10141,10 @@ Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Schlagvolumenindex	W
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_T1_Druckrampe	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	43	t
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_Messung_DruckluftFlow	\N	43	t
 Körpertemperatur Speiseroehre	Esoph temp	Patient_SpO2r	\N	44	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Zieltemperatur	Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur	44	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_VO_Zieltemperatur	Hypothermiebehandlung	44	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Therapiebetten_VO_DraegerBabytherm_Temperatur	\N	44	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_DruckHoch	eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch	44	f
 Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenersatzverfahren_VO_Dialysatloesung	\N	44	t
 Atemfrequenz	Resp rate	IABP_DatascopeCS300_ES_IABP_Frequenz	Dokumentation der IABP Frequenz.	47	t
@@ -10436,23 +10424,6 @@ Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nie
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Nierenersatzverfahren_VO_DialysekonzentratALT	\N	43	t
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Schrittmacher_Osypka203H_ES_ARP	atriale Refraktärzeit	43	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	Beatmung_ES_NO	Einstellwert des NO bei NO Beatmung	43	t
-Körpertemperatur Achsel	Axil temp	Hausarzt_Email	\N	43	f
-Körpertemperatur Atemwege	Airway temp	Angehoerige2_Verwandtschaftsgrad	\N	43	f
-Körpertemperatur Atemwege	Airway temp	Angehoerige3_Verwandtschaftsgrad	\N	43	f
-Körpertemperatur Brust	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	f
-Körpertemperatur Brust	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	f
-Körpertemperatur Brust	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	f
-Körpertemperatur Brust	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	f
-Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	f
-Körpertemperatur Brust	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	f
-Körpertemperatur Brust	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	f
-Körpertemperatur Brust	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	f
-Körpertemperatur Brust	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	f
-Körpertemperatur Brust	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	f
-Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	f
-Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	f
 Kopfumfang	Head Circumf OFC	Lagerung_ImOP	\N	43	t
 Körpergewicht	Weight	Beatmung_Doku_Heimbeatmung_Name	Freitext	43	t
 Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	IABP_CARDIOSAVE_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP	43	t
@@ -10472,20 +10443,15 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_MS_T1_Pplateau	Pla
 Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	t
-Körpertemperatur Gelenk	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	f
-Körpertemperatur Gelenk	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	f
-Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	f
-Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	f
-Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	f
-Körpertemperatur Gelenk	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	f
-Körpertemperatur Gelenk	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	f
-Körpertemperatur Gelenk	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	f
-Körpertemperatur Gelenk	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	f
-Körpertemperatur Gelenk	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	f
-Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	f
-Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	f
+Körpertemperatur Achsel	Axil temp	Hausarzt_Email	\N	43	t
+Körpertemperatur Atemwege	Airway temp	Angehoerige2_Verwandtschaftsgrad	\N	43	t
+Körpertemperatur Atemwege	Airway temp	Angehoerige3_Verwandtschaftsgrad	\N	43	t
+Körpertemperatur Brust	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	t
+Körpertemperatur Brust	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	t
+Körpertemperatur Brust	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	t
+Körpertemperatur Brust	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	t
+Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	t
+Körpertemperatur Brust	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	t
 Körpertemperatur Kern	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	t
 Körpertemperatur Kern	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	t
 Körpertemperatur Kern	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	t
@@ -10500,20 +10466,6 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	Untersuchung_Status_Koerper
 Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_BairHugger_Doku_Geblaese	Liste	45	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsgeraet	\N	44	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	f
 Körpertemperatur Harnblase	Bdy temp Bladder	Untersuchung_Abdomen_Leber	\N	43	f
 Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Telefon	Telefonummer des Patientenbetreuers	44	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	t
@@ -10522,6 +10474,26 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	P_Therapiebetten_VO_Lifethe
 Körpertemperatur Brustwirbelsaeule	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	t
+Körpertemperatur Gelenk	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	t
+Körpertemperatur Gelenk	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	t
+Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	t
+Körpertemperatur Gelenk	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	t
+Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	t
+Körpertemperatur Gelenk	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	t
+Körpertemperatur Gelenk	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_Doku_Patiententemperatur	\N	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Hypothermie_ArticSun_MS_Wassertemperatur	kontrollierte Wassertemperatur, gemessener Wert	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOTemperatur	Eingestellter Temperaturwert an der ECMO (Gerät)	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenersatzverfahren_VO_Bolus	\N	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	t
 Körpertemperatur Leiste	Body temperature	T_K	Körpertemperatur	65	f
 Körpertemperatur Leiste	Body temperature	Beatmung_Anordnung_I:E	Anordnung Atemzeitverhältnis (I:E)	43	f
 Körpertemperatur Leiste	Body temperature	Beatmung_MS_T1_Pplateau	Plateau-Atemwegsdruck	43	f
@@ -10643,6 +10615,18 @@ Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	NEV_PD
 Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_MS_Multi_DialysatvolumenKumulativ	kumulatives Dialysatvol	43	t
 Linksv. Schlagvolumen durch Indikatorverdünnung	LV SV Indicator dilution	Nierenverfahren_VO_Multi_BlutflussMax	max Blutpumpengeschwindigkeit VO	43	t
 Linksv. Schlagvolumenindex durch Indikatorverd.	LV SVI Indicator dilution	Beatmung_ES_Servoi_Drucktrigger	"Drucktrigger "	43	t
+Körpertemperatur Achsel	Axil temp	CardioHelpMaquet_ES_Pumpendrehzahl	\N	46	t
+Körpertemperatur Achsel	Axil temp	Hypothermie_Coolgard_Doku-Rate	\N	46	t
+Körpertemperatur Atemwege	Airway temp	Nierenverfahren_MS_Multi_Calciumfluss	Calciumrate	55	t
+Körpertemperatur Brust	Body temperature	Betreuer2_Name	\N	47	t
+Körpertemperatur Brust	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	t
+Körpertemperatur Brust	Body temperature	Nierenersatzverfahren_VO_Temperatur	\N	43	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	t
+Körpertemperatur Brust	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	t
+Körpertemperatur Brust	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	t
+Körpertemperatur Brust	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	t
+Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	t
 Venöser Druck	\N	NEV_HD_MS_4008HS_artDruck	\N	43	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Medikamente_Schwangerschaft_Text	\N	43	f
 Maximaler Beatmungsdruck	Press.max on vent Airway	NEV_Apherese_Doku_Bolus_Antikoag	\N	43	f
@@ -10663,6 +10647,23 @@ Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_G5_Quick
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Sauerstoff	\N	43	t
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Heimbeatmung_Timax	"eingestellte maximale Inspirationszeit "	43	t
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Beatmung_ES_Zephyros_CPAP	\N	43	t
+Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	65	t
+Körpertemperatur Gelenk	Body temperature	T_K	Körpertemperatur	65	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	43	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_Multi_Temperatur	Temperatur in Celsius	43	t
+Körpertemperatur Gelenk	Body temperature	P_Therapiebetten_Doku_Lifetherm_ES_Temperatur	\N	43	t
+Körpertemperatur Gelenk	Body temperature	P_Therapiebetten_VO_Lifetherm_Temperatur	\N	43	t
+Körpertemperatur Gelenk	Body temperature	P_Waermesysteme_BarkeyWaermepaddels_VO_Temperatur	\N	43	t
+Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Giraffe_ES_Lufttemperatur	Einstellung der Luftemperatur	43	t
+Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring	60	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring	59	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Waermesysteme_BairHugger_Doku_Temperatur	Liste	50	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Waermesysteme_BairHugger_VO_Temperatur	Liste	48	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Waermesysteme_Waermepaddel_Doku_Temperatur	\N	45	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Giraffe_MS_Lufttemperatur	Messung der Luftemperatur im Inkubator	43	t
 Monitoring und Vitaldaten	\N	Angehoerige1_Land	\N	43	t
 Monitoring und Vitaldaten	\N	Angehoerige1_Name	Nachname des Angehörigen	43	t
 Monitoring und Vitaldaten	\N	Angehoerige2_Land	\N	43	t
@@ -10860,29 +10861,11 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenverfahren_VO_
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenverfahren_VO_Zugang	VO Gefäßzugang extracorporale Verfahren	42	t
 Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Schrittmacher_Osypka101H_ES_STIM	Stimulation	42	t
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	Verlegung_wo	"Der Patient wurde 'wohin?' verlegt? "	42	t
+Körpertemperatur Achsel	Axil temp	IABP_Doku_Ballonkatheter	Kathetertyp	42	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_CARDIOSAVE_ES_IABPAufblasen	Dokumentation des prozentualen Anteils des Aufblasens des Ballons	42	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_CalciumVolKum	\N	42	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_MS_Multi_UFR_BFRVerhaeltnis	\N	42	t
-Körpertemperatur Achsel	Axil temp	IABP_Doku_Ballonkatheter	Kathetertyp	42	f
-Körpertemperatur Achsel	Axil temp	Lungenersatzverfahren_Doku_Kathetertyp	Kathetertyp	42	f
-Körpertemperatur Brust	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	f
-Körpertemperatur Brust	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	f
-Körpertemperatur Brust	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	f
-Körpertemperatur Brust	Body temperature	IABP_Unterstützung	\N	42	f
-Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	f
-Körpertemperatur Brust	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	f
-Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	f
-Körpertemperatur Gelenk	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	f
-Körpertemperatur Gelenk	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	f
-Körpertemperatur Gelenk	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	f
-Körpertemperatur Gelenk	Body temperature	IABP_Unterstützung	\N	42	f
-Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	f
-Körpertemperatur Gelenk	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	f
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	f
 Parameter von Beatmung	\N	Angehoerige1_Ort	\N	42	t
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	f
 Körpergrösse Percentil	Body height Prctl	Angehoerige1_PLZ	\N	42	t
 Kopfumfang	Head Circumf OFC	Nierenverfahren_MS_ADM_verabreichtesPlasma	kumulativ	42	t
 Kopfumfang	Head Circumf OFC	Nierenverfahren_MS_BM25_verabreichtesPlasma	Kumulativ	42	t
@@ -10912,8 +10895,24 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	IABP_Unterstützung	\N	42	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	t
+Körpertemperatur Achsel	Axil temp	Lungenersatzverfahren_Doku_Kathetertyp	Kathetertyp	42	t
+Körpertemperatur Brust	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	t
+Körpertemperatur Brust	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	t
+Körpertemperatur Brust	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	t
+Körpertemperatur Brust	Body temperature	IABP_Unterstützung	\N	42	t
+Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	t
+Körpertemperatur Brust	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	t
+Körpertemperatur Brust	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	t
+Körpertemperatur Gelenk	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	t
+Körpertemperatur Gelenk	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	t
+Körpertemperatur Gelenk	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	t
+Körpertemperatur Gelenk	Body temperature	IABP_Unterstützung	\N	42	t
+Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	t
+Körpertemperatur Gelenk	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	t
 Körpertemperatur Kern	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	t
-Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	f
 Körpertemperatur Kern	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	t
 Körpertemperatur Kern	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	t
 Körpertemperatur Kern	Body temperature	IABP_Unterstützung	\N	42	t
@@ -10924,15 +10923,6 @@ Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	
 Körpertemperatur Kern	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	t
 Körpertemperatur Stirn	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	t
 Körpertemperatur Stirn	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	f
-Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	f
-Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Unterstützung	\N	42	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	f
 Körpertemperatur Harnblase	Bdy temp Bladder	Untersuchung_Abdomen_Gallenblase	\N	42	f
 Körpertemperatur Leiste	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	f
 Körpertemperatur Leiste	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	f
@@ -10965,6 +10955,16 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenersatzverfahren_Mess
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	t
+Körpertemperatur Gelenk	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)	42	t
+Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	t
+Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Unterstützung	\N	42	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ILASystem	\N	42	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenersatzverfahren_Mess_Temperatur	\N	42	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_ES_4008HS_Temperatur	\N	42	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_4008HS_Temperatur	\N	42	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Nierenverfahren_VO_BM25_Dialysat	Gialysatrate	42	t
 Linksatrialer Druck	Blood pressure panel with all children optional	IABP_CARDIOSAVE_ES_IABPAufblasen	Dokumentation des prozentualen Anteils des Aufblasens des Ballons	42	t
 Körpertemperatur Stirn	Body temperature	IABP_Abiomed_Impella_Zugang	Liste	42	t
 Körpertemperatur vaginal	Body temperature	Beatmung_Anordnung_Beatmungsform	\N	42	t
@@ -11211,22 +11211,9 @@ Exspiratorischer Gasfluss	Expiratory gas flow on vent Airway	Nierenverfahren_VO_
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Nierenverfahren_MS_Multi_artDruck	arterieller Druck	41	t
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Vigileo_COCI	Cardiac output / -index	41	t
 Körpertemperatur Kern	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	t
-Körpertemperatur Atemwege	Airway temp	IABP_DatascopeCS300_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP.	41	f
-Körpertemperatur Brust	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	f
-Körpertemperatur Brust	Body temperature	Betreuer_Land	\N	41	f
-Körpertemperatur Brust	Body temperature	IABP_Unterstützungsdruck	\N	41	f
-Körpertemperatur Brust	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	f
-Körpertemperatur Gelenk	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	f
-Körpertemperatur Gelenk	Body temperature	Betreuer_Land	\N	41	f
-Körpertemperatur Gelenk	Body temperature	IABP_Unterstützungsdruck	\N	41	f
-Körpertemperatur Gelenk	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	f
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	IABP_DatascopeCS100_ES_IABPLeersaugen	\N	41	t
 Ideales Körpergewicht	Ideal bdy weight	Beatmung_Messung_Amplitude	Amplitude bei HFOV	41	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenersatzverfahren_VO_DialysatMultifiltrate	appliziertes Dialysat für Multifiltrate	43	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Land	\N	41	f
-Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Unterstützungsdruck	\N	41	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	f
 Körpertemperatur Leiste	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	f
 Körpertemperatur Leiste	Body temperature	Betreuer_Land	\N	41	f
 Körpertemperatur Leiste	Body temperature	IABP_Unterstützungsdruck	\N	41	f
@@ -11261,6 +11248,19 @@ Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_MS_Avea_Pplat	geme
 Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer_Land	\N	41	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	IABP_Unterstützungsdruck	\N	41	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	t
+Körpertemperatur Atemwege	Airway temp	IABP_DatascopeCS300_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP.	41	t
+Körpertemperatur Brust	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	t
+Körpertemperatur Brust	Body temperature	Betreuer_Land	\N	41	t
+Körpertemperatur Brust	Body temperature	IABP_Unterstützungsdruck	\N	41	t
+Körpertemperatur Brust	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	t
+Körpertemperatur Gelenk	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	t
+Körpertemperatur Gelenk	Body temperature	Betreuer_Land	\N	41	t
+Körpertemperatur Gelenk	Body temperature	IABP_Unterstützungsdruck	\N	41	t
+Körpertemperatur Gelenk	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer_Land	\N	41	t
+Körpertemperatur Halswirbelsaeule	Body temperature	IABP_Unterstützungsdruck	\N	41	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_VO_Giraffe_ES_Lufttemperatur	\N	41	t
 Körpertemperatur vaginal	Body temperature	Beatmung_MS_Avea_Pplat	gemessener Plateaudruck	41	t
 Körpertemperatur vaginal	Body temperature	Betreuer_Land	\N	41	t
 Körpertemperatur vaginal	Body temperature	IABP_Unterstützungsdruck	\N	41	t
@@ -11498,13 +11498,7 @@ Körpertemperatur Blut	Blood temp	Verlauf_PT	\N	40	t
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	Beatmung_MS_Pallas_Sevofluran_exsp	Exspiratorisch gemessene Sevofluran Konzentration.	40	t
 Endexpiratorischer Kohlendioxidpartialdruck	pCO2 end exp ExG	NEV_PD_Doku_Einlaufmenge	\N	40	t
 Körpergroesse	Body height	Beatmung_ES_Leoni_Apnoezeit	Apnoezeit	40	t
-Körpertemperatur Brust	Body temperature	Betreuer2_Land	\N	40	f
-Körpertemperatur Brust	Body temperature	F_Therapieeinschraenkung	\N	40	f
-Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	f
-Körpertemperatur Gelenk	Body temperature	Betreuer2_Land	\N	40	f
-Körpertemperatur Gelenk	Body temperature	F_Therapieeinschraenkung	\N	40	f
-Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	f
-Körpertemperatur Gelenk	Body temperature	Lungenerstazverfahren_Doku_ECMO_Oxygenator	Gerätetyp	40	f
+Körpertemperatur Brust	Body temperature	Betreuer2_Land	\N	40	t
 Kopfumfang	Head Circumf OFC	dPmax	"Index der linken Ventrikelkontraktilität  "	40	t
 Körpergewicht	Weight	PICCO_EVLW/EV	\N	40	t
 Körpertemperatur Generisch	Body temperature	Betreuer2_Land	\N	40	t
@@ -11536,14 +11530,16 @@ Körpergewicht Percentil altersabhängig	Bdy weight Prctl Per Age	P_INVOS_Doku_r
 Körpertemperatur Brustwirbelsaeule	Body temperature	Betreuer2_Land	\N	40	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	F_Therapieeinschraenkung	\N	40	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
+Körpertemperatur Brust	Body temperature	F_Therapieeinschraenkung	\N	40	t
+Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
+Körpertemperatur Gelenk	Body temperature	Betreuer2_Land	\N	40	t
+Körpertemperatur Gelenk	Body temperature	F_Therapieeinschraenkung	\N	40	t
+Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
+Körpertemperatur Gelenk	Body temperature	Lungenerstazverfahren_Doku_ECMO_Oxygenator	Gerätetyp	40	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienFiO2	\N	40	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer2_Land	\N	40	f
-Körpertemperatur Halswirbelsaeule	Body temperature	F_Therapieeinschraenkung	\N	40	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	f
 Körpertemperatur Leiste	Body temperature	Betreuer2_Land	\N	40	f
 Körpertemperatur Leiste	Body temperature	F_Therapieeinschraenkung	\N	40	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	f
-Körpertemperatur Myokard	Myocard temp	Beatmung_Anordnung_pmax	\N	40	f
 Körpertemperatur vaginal	Body temperature	Betreuer2_Land	\N	40	t
 Körpertemperatur vaginal	Body temperature	F_Therapieeinschraenkung	\N	40	t
 Körpertemperatur vaginal	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
@@ -11583,6 +11579,10 @@ Körpertemperatur Trommelfell	Tymp memb temp	Beatmung_MS_G5_WOBimp	Zusätzlich a
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Betreuer2_Land	\N	40	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	F_Therapieeinschraenkung	\N	40	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
+Körpertemperatur Myokard	Myocard temp	Beatmung_Anordnung_pmax	\N	40	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Betreuer2_Land	\N	40	t
+Körpertemperatur Halswirbelsaeule	Body temperature	F_Therapieeinschraenkung	\N	40	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOATZ	\N	40	t
 Monitoring und Vitaldaten	\N	NEV_HD_ES_4008onl_StartNa	\N	40	t
 Linksventrikulärer Herzindex	LV Cardiac index	IABP_ACAT_MS_Mitteldruck	\N	40	t
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Extrakorporaleverfahren_DOKU_Heizung	\N	40	t
@@ -11789,25 +11789,13 @@ Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2
 Körpertemperatur Kern	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	t
 Körpertemperatur vaginal	Body temperature	ICP	Intrakranialer Druck	39	t
 Körpergrösse Percentil	Body height Prctl	Angehoerige1_PLZ	\N	39	t
-Körpertemperatur Achsel	Axil temp	P_CSF_ES_LiquoGuard_Pset	\N	39	f
-Körpertemperatur Atemwege	Airway temp	TempPBT	Temperatur bei der PICCO Messung	39	f
-Körpertemperatur Brust	Body temperature	ICP	Intrakranialer Druck	39	f
-Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	f
-Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	f
-Körpertemperatur Gelenk	Body temperature	ICP	Intrakranialer Druck	39	f
-Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	f
-Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	f
 Körpertemperatur vaginal	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	t
 Körpertemperatur vaginal	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	t
-Körpertemperatur Halswirbelsaeule	Body temperature	ICP	Intrakranialer Druck	39	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	f
 Körpertemperatur Harnblase	Bdy temp Bladder	P_Impella_Impella_MS_LVDruck	\N	39	f
 Körpertemperatur Leiste	Body temperature	Beatmung_Doku_Zephyros_Option	Liste Highflow Highflow CPAP	39	f
 Körpertemperatur Leiste	Body temperature	ICP	Intrakranialer Druck	39	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	f
 Körpertemperatur Leiste	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	f
-Körpertemperatur Myokard	Myocard temp	P_CSF_MS_LiqouGuard_Pcsf	\N	39	f
 Atemfrequenz	Resp rate	Nierenverfahren_MS_Multi_artDruck	arterieller Druck	38	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_Anordnung_AbbruchkriterienPzvCO2	\N	39	t
 Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_Evita2_Anstiegszeit	eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau	39	t
@@ -11839,6 +11827,18 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku
 Körpertemperatur Brustwirbelsaeule	Body temperature	ICP	Intrakranialer Druck	39	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	t
+Körpertemperatur Achsel	Axil temp	P_CSF_ES_LiquoGuard_Pset	\N	39	t
+Körpertemperatur Atemwege	Airway temp	TempPBT	Temperatur bei der PICCO Messung	39	t
+Körpertemperatur Brust	Body temperature	ICP	Intrakranialer Druck	39	t
+Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	t
+Körpertemperatur Brust	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	t
+Körpertemperatur Gelenk	Body temperature	ICP	Intrakranialer Druck	39	t
+Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	t
+Körpertemperatur Gelenk	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	t
+Körpertemperatur Myokard	Myocard temp	P_CSF_MS_LiqouGuard_Pcsf	\N	39	t
+Körpertemperatur Halswirbelsaeule	Body temperature	ICP	Intrakranialer Druck	39	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Anordnung_ECMOFiO2	\N	39	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Lungenersatzverfahren_Doku_ECMOFiO2	\N	39	t
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_Avea_DruckHoch	eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch	39	t
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_ES_T1_Phoch	Einstellwert oberes Druckniveau im Modus DuoPAP	39	t
 Linksv. Herzindex durch Indikatorverdünnung	LV Cardiac index Indicator dilution	Beatmung_MS_Avea_MandAF	gemessene mandatorische Atemfrequenz	39	t
@@ -12041,15 +12041,7 @@ Linksatrialer Druck	Blood pressure panel with all children optional	Beatmung_ES_
 Körpertemperatur Kern	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
 Körpertemperatur Kern	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
 Körpertemperatur vaginal	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
-Körpertemperatur Achsel	Axil temp	HZV_PICCOGeraet	\N	38	f
-Körpertemperatur Brust	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
-Körpertemperatur Brust	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
-Körpertemperatur Gelenk	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
-Körpertemperatur Gelenk	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
-Körpertemperatur Gelenk	Body temperature	HZV_VigilanceCGeraet	\N	38	f
 Körpertemperatur vaginal	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
-Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
-Körpertemperatur Halswirbelsaeule	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
 Körpertemperatur Harnblase	Bdy temp Bladder	P_NEV_HD_MS_5008onl_TMP	\N	38	f
 Körpertemperatur Leiste	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	f
 Körpertemperatur Leiste	Body temperature	CPP	Zerebraler Perfusionsdruck	38	f
@@ -12085,6 +12077,14 @@ Körpertemperatur Lendenwirbelsaeule	Body temperature	Beatmung_Einstellung_Mitte
 Körpertemperatur Lendenwirbelsaeule	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
+Körpertemperatur Achsel	Axil temp	HZV_PICCOGeraet	\N	38	t
+Körpertemperatur Brust	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
+Körpertemperatur Brust	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
+Körpertemperatur Gelenk	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
+Körpertemperatur Gelenk	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
+Körpertemperatur Gelenk	Body temperature	HZV_VigilanceCGeraet	\N	38	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Beatmung_Einstellung_MitteldruckHFOV	HFOV Mitteldruck	38	t
+Körpertemperatur Halswirbelsaeule	Body temperature	CPP	Zerebraler Perfusionsdruck	38	t
 Monitoring und Vitaldaten	\N	P_NEV_HD_VO_5008onl_StartNa	\N	38	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_Unterstuetzungsdruck	Dokumentation des Unterstützungdruckes	38	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_HD_ES_4008HS_BasisNa	\N	38	f
@@ -12215,10 +12215,6 @@ Einstellung-Ausatmungszeit-Beatmung	Exp hold time set Vent	Nierenverfahren_MS_BM
 Körpertemperatur Generisch	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
 Körpertemperatur vaginal	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
 Körpertemperatur Kern	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
-Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
-Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
-Körpertemperatur Halswirbelsaeule	Body temperature	P_Impella_Impella_MS_Flow	\N	37	f
-Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
 Körpertemperatur Leiste	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	f
 Ideales Körpergewicht	Ideal bdy weight	IABP_RR	\N	37	t
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_HD_MS_4008onl_Rest_Zeit_min	Anpassung für IBUS Anbindung	37	t
@@ -12260,6 +12256,10 @@ Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	Nierenverfahren_MS_M
 Mechanische-Atemfrequenz-Beatmet	Breaths.mechanical on vent	P_NEV_HD_ES_Genius_Blutfluss	\N	37	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
+Körpertemperatur Brust	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
+Körpertemperatur Gelenk	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
+Körpertemperatur Halswirbelsaeule	Body temperature	P_Impella_Impella_MS_Flow	\N	37	t
+Körpertemperatur Halswirbelsaeule	Body temperature	Therapiebetten_Doku_Triadyne_DruckKopf	\N	37	t
 Rechtsatrialer Druck	Blood pressure panel with all children optional	Beatmung_MS_Avea_fVt	errechneter Quotient zwischen Frequenz und Tidalvolumen	37	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_C2_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben.	37	t
 Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_ES_G5_Drucktrigger	Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben	37	t
@@ -12314,10 +12314,6 @@ Hämodialyse Blutfluss	\N	NEV_HD_ES_4008HS_NaProfil	\N	36	t
 Hämodialyse Blutfluss	\N	P_LEV_ES_BFQ1	Zusatzgerät bei einer ECMO Therapie	36	t
 Hämodialyse Blutfluss	\N	P_LEV_ES_BFQ2	\N	36	t
 Hämodialyse Blutfluss	\N	P_LEV_ES_BFQ3	\N	36	t
-Körpertemperatur Achsel	Axil temp	Nierenverfahren_VO_BM25_Umsatz	Umsatz ml/h	36	f
-Körpertemperatur Brust	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
-Körpertemperatur Gelenk	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
-Körpertemperatur Halswirbelsaeule	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
 Körpertemperatur Leiste	Body temperature	ABP_1	arterieller Blutdruck 1	36	f
 Atemfrequenz	Resp rate	P_Beatmung_MS_C3_AutoPeep	AutoPEEP oder intrinsischer PEEP	41	t
 Dynamische Kompliance	Compliance.dynamic Lung	NEV_HD_MS_4008_HS_onl_Ultrafiltratmengekum_ml	Anpassung im Zuge der automatischen Datenübernahme IBUS	36	t
@@ -12357,6 +12353,10 @@ Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	PCCO	"Pulskontur-Herzzeitvolumen
 Körpertemperatur Nasen-Rachen-Raum	Body temperature	ABP_1	arterieller Blutdruck 1	36	t
 Körpertemperatur Lendenwirbelsaeule	Body temperature	ABP_1	arterieller Blutdruck 1	36	t
 Körpertemperatur Brustwirbelsaeule	Body temperature	ABP_1	arterieller Blutdruck 1	36	t
+Körpertemperatur Achsel	Axil temp	Nierenverfahren_VO_BM25_Umsatz	Umsatz ml/h	36	t
+Körpertemperatur Brust	Body temperature	ABP_1	arterieller Blutdruck 1	36	t
+Körpertemperatur Gelenk	Body temperature	ABP_1	arterieller Blutdruck 1	36	t
+Körpertemperatur Halswirbelsaeule	Body temperature	ABP_1	arterieller Blutdruck 1	36	t
 Linksatrialer Druck	Blood pressure panel with all children optional	NEV_Apherese_MS_Multi_Behandlungs_Zeit_min	Anpassung für automatische Gerätedataenübernahme mit IBUS	36	t
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Evita4_Rampe	eingestellte Anstiegszeit vom unteren zum oberen Druckniveau	36	f
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_BM25_DialysatvolumenKumulativ	\N	36	f

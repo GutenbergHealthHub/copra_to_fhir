@@ -345,14 +345,14 @@ update icu_copra.python_match set deleted = true where profiles = 'Spontane-Mech
 
 
 
-select * from icu_copra.python_match pm where profiles = 'Körpertemperatur Brustwirbelsaeule' order by score_set desc;
+select * from icu_copra.python_match pm where profiles = 'Körpertemperatur Halswirbelsaeule' order by score_set desc;
 
-update icu_copra.python_match set deleted = true where profiles = 'Körpertemperatur Brustwirbelsaeule';-- and name not in (
+update icu_copra.python_match set deleted = true where profiles = 'Körpertemperatur Halswirbelsaeule';-- and name not in (
   'VigilanceC_SVRI', 'Vigileo_SVRI'
 );
 
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 83;
+update icu_copra.fhir_profiles_all set analyzed = true where id = 87;
 
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
