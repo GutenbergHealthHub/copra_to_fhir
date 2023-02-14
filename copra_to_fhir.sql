@@ -148,6 +148,18 @@ CREATE VIEW icu_copra.v_python_match AS
 
 
 --
+-- Name: matched_0; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE public.matched_0 (
+    profiles character varying(100),
+    loinc_short_name character varying,
+    name character varying,
+    description character varying
+);
+
+
+--
 -- Name: fhir_profiles_all id; Type: DEFAULT; Schema: icu_copra; Owner: -
 --
 
@@ -6655,12 +6667,13 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 --
 
 COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc_short_name, unit, analyzed) FROM stdin;
+40	Atemzugvolumen-Einstellung	Observation	416811008	20112-9	16929196	VT setting Vent	mL	t
 7	Dauer Hämodialysesitzung	Observation	445940005	\N	\N	\N	h	f
 51	Atemfrequenz	Observation	86290005	9279-1	\N	Resp rate	/min	t
 22	Atemwegsdruck bei mittlerem expiratorischem Gasfluss	Observation	\N	20056-8	\N	PAW @ mean exp flow on vent	cm[H2O]	t
 21	Atemwegsdruck bei null expiratorischem Gasfluss	Observation	\N	20060-0	\N	PAW @ zero insp flow on vent	cm[H2O]	t
+39	Atemzugvolumen-Waehrend-Beatmung	Observation	250874002	76222-9	151980	Vt on vent Vent	mL	t
 26	Maximaler Beatmungsdruck	Observation	27913002	76531-3	151973	Press.max on vent Airway	cm[H2O]	f
-39	Atemzugvolumen-Waehrend-Beatmung	Observation	250874002	76222-9	151980	Vt on vent Vent	mL	f
 80	Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 74	Blutdruck Generisch	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 23	Druckdifferenz Beatmung	Observation	\N	76154-4	\N	Away press delta on vent PressDiff	cm[H2O]	f
@@ -6683,42 +6696,27 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 41	Zeitverhältnis-Ein-Ausatmung	Observation	250822000	75931-6	151832	Insp/Exp time Ratio	{ratio}	f
 58	Körpertemperatur Kern	Observation	276885007	8310-5	150368	Body temperature	Cel	f
 11	Dauer extrakorporaler Gasaustausch	Observation	251286000	\N	\N	\N	h	f
-48	Monitoring und Vitaldaten	Observation	\N	\N	\N	\N	\N	f
-40	Atemzugvolumen-Einstellung	Observation	416811008	20112-9	16929196	VT setting Vent	mL	f
-12	Blutfluss extrakorporaler Gasaustausch	Observation	251288004	\N	\N	\N	L/min	f
-25	Dynamische Kompliance	Observation	250823005	60827-3	151692	Compliance.dynamic Lung	mL/cm[H2O]	f
 27	Mittlerer Beatmungsdruck	Observation	698821009	76530-5	151975	Mean Pres on vent Airway	cm[H2O]	f
 55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	f
 31	Exspiratorischer Gasfluss	Observation	\N	60792-9	151944	Expiratory gas flow on vent Airway	L/min	f
 89	Körpertemperatur nasal	Observation	\N	76010-8	188504	Nasal temp	Cel	f
-72	Herzfrequenz	Observation	364075005	8867-4	147842	Heart rate	/min	f
-34	Beatmungszeit auf niedrigem Druck	Observation	\N	76229-4	16929864	Low press hold time set Vent	s	f
-35	Beatmungszeit auf hohem Druck	Observation	\N	76190-8	16929860	High press hold time set Vent	s	f
 67	Systemischer vaskulärer Widerstandsindex	Observation	276900001	8837-7	149760	SV RI	dyn.s/cm5/m2	f
-16	Beatmung	Procedure	\N	\N	\N	\N	\N	f
 43	Einstellung-Einatmungszeit-Beatmung	Observation	250819002	76334-2	16929632	Insp time set Vent	s	f
 20	Endexpiratorischer Kohlendioxidpartialdruck	Observation	250790007	19891-1	151708	pCO2 end exp ExG	mm[Hg]	f
 45	Spontane-Atemfrequenz-Beatmet	Observation	271625008	\N	152498	\N	/min	f
 49	Pulmonalarterieller wedge Blutdruck	Observation	118433006	75994-4	150052	PAW pressure	mm[Hg]	f
 62	Linksventrikulaeres Schlagvolumenindex	Observation	277381004	76297-1	\N	LV SVI	mL/m2	f
-69	Herzzeitvolumen	Observation	82799009	8741-1	150276	LV Output	L/min	f
 73	Zentralvenöser Druck	Observation	71420008	60985-9	150084	CVP	mm[Hg]	f
-4	Blutfluss durch cardiovasculäres Gerät	Observation	444479000	\N	\N	\N	L/min	f
 38	Spontanes-Atemzugvolumen	Observation	250816009	20116-0	\N	Spont VT on vent	mL	f
-2	Eingestellte und gemessene Parameter	DeviceMetric	\N	\N	\N	\N	\N	f
 71	Linksv. Herzzeitvolumen durch Indikatorverdünnung	Observation	\N	8737-9	\N	LV Output Indicator dilution	L/min	f
 65	Linksv. Schlagvolumen durch Indikatorverdünnung	Observation	\N	8771-8	\N	LV SV Indicator dilution	mL	f
 101	Körpertemperatur Trommelfell	Observation	415974002	8333-7	\N	Tymp memb temp	Cel	f
 63	Linksventrikulaeres Schlagvolumen	Observation	\N	20562-5	150428	LV SV	/mL	f
-18	Parameter von Beatmung	Observation	\N	\N	\N	\N	\N	f
 66	Pulmonalvaskulärer Widerstandsindex	Observation	276902009	8834-4	152852	PV RI	dyn.s/cm5/m2	f
 98	Körpertemperatur Nasen-Rachen-Raum	Observation	698831002	8310-5	\N	Body temperature	Cel	f
 9	Substituatfluss	Observation	708513005	\N	\N	\N	mL/h	f
 61	Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	Observation	442476006	2708-6	150456	SaO2 % BldA	%	f
-1	Extrakorporale Verfahren	Procedure	\N	\N	\N	\N	\N	f
-37	Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Observation	250875001	76009-0	152004	Inspired min Vol MV	L/min	f
 95	Körpertemperatur unter der Zunge	Observation	415945006	8331-1	188424	Oral temp	Cel	f
-3	Parameter von extrakorporalen Verfahren	Observation	\N	\N	\N	\N	\N	f
 57	Ideales Körpergewicht	Observation	170804003	50064-5	\N	Ideal bdy weight	kg	f
 81	Puls	Observation	8499008	\N	149514	\N	/min	f
 85	Körpertemperatur Gelenk	Observation	250124002	8310-5	\N	Body temperature	Cel	f
@@ -6729,7 +6727,6 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 42	Einstellung-Ausatmungszeit-Beatmung	Observation	250820008	76187-4	\N	Exp hold time set Vent	s	f
 93	Körpertemperatur Leiste	Observation	415929009	8310-5	\N	Body temperature	Cel	f
 32	Inspiratorischer Gasfluss	Observation	\N	60794-5	151948	Insp gas flow on vent Airway	L/min	f
-17	Eingestellte und gemessene Parameter	DeviceMetric	\N	\N	\N	\N	\N	f
 59	Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	Observation	\N	59407-7	160296	SaO2 % Bld Preductal PulseOx	%	f
 84	Körpertemperatur Lendenwirbelsaeule	Observation	364429006	8310-5	\N	Body temperature	Cel	f
 99	Körpertemperatur Speiseroehre	Observation	431598003	60836-4	\N	Esoph temp	Cel	f
@@ -6749,6 +6746,21 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 68	Linksventrikulärer Herzindex	Observation	54993008	75919-1	149772	LV Cardiac index	L/(min.m2)	f
 70	Linksv. Herzindex durch Indikatorverdünnung	Observation	\N	8751-0	\N	LV Cardiac index Indicator dilution	L/min/m2	f
 15	Arterieller Druck	Observation	386534000	\N	\N	\N	mm[Hg]	t
+16	Beatmung	Procedure	\N	\N	\N	\N	\N	t
+37	Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Observation	250875001	76009-0	152004	Inspired min Vol MV	L/min	t
+34	Beatmungszeit auf niedrigem Druck	Observation	\N	76229-4	16929864	Low press hold time set Vent	s	t
+35	Beatmungszeit auf hohem Druck	Observation	\N	76190-8	16929860	High press hold time set Vent	s	t
+4	Blutfluss durch cardiovasculäres Gerät	Observation	444479000	\N	\N	\N	L/min	t
+12	Blutfluss extrakorporaler Gasaustausch	Observation	251288004	\N	\N	\N	L/min	t
+17	Eingestellte und gemessene Parameter	DeviceMetric	\N	\N	\N	\N	\N	t
+2	Eingestellte und gemessene Parameter	DeviceMetric	\N	\N	\N	\N	\N	t
+1	Extrakorporale Verfahren	Procedure	\N	\N	\N	\N	\N	t
+48	Monitoring und Vitaldaten	Observation	\N	\N	\N	\N	\N	t
+18	Parameter von Beatmung	Observation	\N	\N	\N	\N	\N	t
+3	Parameter von extrakorporalen Verfahren	Observation	\N	\N	\N	\N	\N	t
+25	Dynamische Kompliance	Observation	250823005	60827-3	151692	Compliance.dynamic Lung	mL/cm[H2O]	t
+72	Herzfrequenz	Observation	364075005	8867-4	147842	Heart rate	/min	t
+69	Herzzeitvolumen	Observation	82799009	8741-1	150276	LV Output	L/min	t
 60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	f
 64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	f
 83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	f
@@ -6764,528 +6776,509 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 --
 
 COPY icu_copra.matched_0 (profiles, loinc_short_name, name, description) FROM stdin;
+Herzzeitvolumen	LV Output	p-CO	"Herzzeitvolumen (PICCO Modul Dräger Monitoring) "
+Herzzeitvolumen	LV Output	HZVGeraet_Auswahl	\N
+Herzzeitvolumen	LV Output	HZV_VigileoGeraet	\N
+Herzzeitvolumen	LV Output	HZV_PICCOGeraet	\N
+Herzzeitvolumen	LV Output	HZV_VigilanceCGeraet	\N
 Arterieller Druck	\N	Nierenverfahren_MS_Multi_artDruck	arterieller Druck
 Arterieller Druck	\N	PICCO_ABP	Arterieller Druck
-Atemfrequenz	Resp rate	Beatmung_MS_BiPAPV_AF	Messparameter: gemessene Atemfrequenz
 Atemfrequenz	Resp rate	AF	Atemfrequenz
-Atemfrequenz	Resp rate	Beatmung_MS_VisionA_BreathRate	Messwert: gemessene Atemfrequenz
-Atemfrequenz	Resp rate	P_Beatmung_MS_C3_fTotal	Gesamtatemfrequenz
+Atemfrequenz	Resp rate	Beatmung_MS_Avea_Frequenz	gemessene Atemfrequenz
+Atemfrequenz	Resp rate	Beatmung_MS_BiPAPV_AF	Messparameter: gemessene Atemfrequenz
 Atemfrequenz	Resp rate	Beatmung_MS_Evita2_frequenz	gemessene Atemfrequenz
 Atemfrequenz	Resp rate	Beatmung_MS_Pallas_Frequenz	Gemessene Atemfrequenz.
 Atemfrequenz	Resp rate	Beatmung_MS_T1_fTotal	Gesamtfrequenz
-Atemfrequenz	Resp rate	AF	Atemfrequenz
-Atemfrequenz	Resp rate	Beatmung_MS_Avea_Frequenz	gemessene Atemfrequenz
-Atemfrequenz	Resp rate	Beatmung_MS_Pallas_Frequenz	Gemessene Atemfrequenz.
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Zephyros_Flow	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_T1_Flow	Einstellung Sauerstoff Flow
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Patient_Kopfumfang	Kopfumfang des Patienten (Kinder)
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Zephyros_By-Flow	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_INVOS_Doku_rSO2_rechts	cerbebrale Sauerstoffsättigung rechts
+Atemfrequenz	Resp rate	Beatmung_MS_VisionA_BreathRate	Messwert: gemessene Atemfrequenz
+Atemfrequenz	Resp rate	P_Beatmung_MS_C3_fTotal	Gesamtatemfrequenz
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_G5_Flow	Parameter im Modus Highflow - ab 08.06.2017
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_VO_5008onl_Dialyse_Zeit	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_HD_MS_4008onl_Rest_Zeit_min	Anpassung für IBUS Anbindung
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_BlutflussSNPumpe	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_MS_Pallas_Frischgas_Flow_gesamt	Gemessener Frischgas Flow.
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_MS_5008onl_Rest_Zeit_min	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_Fluß	\N
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Servoi_Flow	Parameter im Modus Highflow
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_T1_Flow	Einstellung Sauerstoff Flow
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Zephyros_By-Flow	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Zephyros_Flow	\N
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_MS_G5_RCinsp	Inspiratorische Zeitkonstante, ein Monitoring Parameter
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_HFLoesung	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_HD_Doku_SpüllösungAntikoag	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Untersuchung_Thorax_Pulmo	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_FuellenMit	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_BlutflussSNPumpe	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_MS_Pallas_Frischgas_Flow_gesamt	Gemessener Frischgas Flow.
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	COPRA_Patient_Kopfumfang	Kopfumfang des Patienten in Zentimetern
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_Spueldauer	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_Doku_ILA_Blutfluss	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_BlutflussMin	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Dokumentation_BlutflussEinst	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_Blutfluss	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_Filter	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_VO_5008onl_SollNa	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Untersuchung_Kopf_Hals	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_INVOS_Doku_rSO2_links	cerebrale Sauerstoffsättigung links
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_GasflussMax	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILAactivve_Fluss	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_CRRT_ES_Multi_Temp	neu angelegt am 18.05.2012
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Ereignisse Vitlaparameter Graphisch	Ereignisse Vitlaparameter Graphisch als Listenauswahl
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_Doku_ILAAnalogIn	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_Doku_ILA_Blutfluss	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILAactivve_Fluss	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_BlutflussMin	\N
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_Flushmanoever	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_GasflussMax	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_CRRT_ES_Multi_Temp	neu angelegt am 18.05.2012
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_HD_Doku_SpüllösungAntikoag	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_HD_MS_4008onl_Rest_Zeit_min	Anpassung für IBUS Anbindung
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Dokumentation_BlutflussEinst	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_Blutfluss	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_BlutflussSNPumpe	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_Spueldauer	\N
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Mess_Fluss	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_BlutflussSNPumpe	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_Filter	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_Fluß	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_FuellenMit	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_HFLoesung	\N
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_ADVOS_MS_ADVOS_Calcium_preFilter	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Patient_Kopfumfang	Kopfumfang des Patienten (Kinder)
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_INVOS_Doku_rSO2_links	cerebrale Sauerstoffsättigung links
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_INVOS_Doku_rSO2_rechts	cerbebrale Sauerstoffsättigung rechts
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_MS_5008onl_Rest_Zeit_min	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_VO_5008onl_Dialyse_Zeit	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_VO_5008onl_SollNa	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Untersuchung_Kopf_Hals	\N
 Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Untersuchung_Kopf_Ohren	\N
-Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Vt	Einstellwert: Tidalvolumen
-Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_G5_Vt	Einstellwert: Tidalvolumen
-Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita4_Vt	Einstellgröße für das Tidalvolumen
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Untersuchung_Thorax_Pulmo	\N
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_VT	Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)
+Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita4_Vt	Einstellgröße für das Tidalvolumen
+Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_G5_Vt	Einstellwert: Tidalvolumen
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Heimbeatmung_Vt	Einstellung Tidalvolumen
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_Evita2_Frequenzimv	einstellte IMV Frequenz im SIMV Modus
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_G5_InspFlow	Inspiratorischer Peakflow, ein Monitoring-Parameter
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_ES_Multi_Plasma	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Multi_PlasmaVolKum_ml	automatische Datenübernahme IBUS
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_OctoNova_PlasmaVolKum	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_SubVolKum	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008HS_SollNa	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubVolKum	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008HS_Dialysezeit	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008onl_IsoUFZiel	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_PD_VO_Mischung_Lsg1_Lsg2	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_UFR	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_ES_Multi_Blutfluss	Blutpumpengeschwindigkeit ml/min
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Schrittmacher_Osypka203H_ES_A_STIM	Stimulation Vorhof
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SubBolusVolKum	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Multi_Plasma_Volumen	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_Mvleck	gemessenes Leckagevolumen pro Minute
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SollNa	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_Filter	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_BlutflussSNPumpe	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_SubBolusVolKum	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita2_IntrinsicPEEP	Ergebnis eines Messmanövers im Modus IPPV, IPPV assist
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_T1_RSB	Index für schnelle Flachatmung (Rapid Shallow Breathing Index)
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_FuellenMit	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_DialysatvolKum_ml	Anpassung für automatische Datenübernahme IBUS
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_IsoUFZiel	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	IABP_CARDIOSAVE_ES_EKG_Ableitung	Dokumentation der gewählten EKG Ableitung für den IABP Einsatz
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Hypothermie_ArticSun_VO_Behandlungsmodi	Liste
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_IsoUFVolKum	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_4008HS_UFZiel	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_ES_4008onl_UFProfil	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008HS_IsoUFZiel	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Plasma	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Umsatz	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_Pallas_Frequenz_Min	Eingestellte Mindestfrequenz (Apnoeventilation) in dme Modus Pressure Support.
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_Beatmung_ES_O2Flow	l/min
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_C2_Timax	Inspirationszeit maximal
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_ES_5008onl_IsoUFZiel	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_4008HS_ISOUFZiel	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_ISOUF	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Bilanzziel	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubBolusVolKum_ml	Anpassung IBUS Anbindung
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_ES_4008HS_UFProfil	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_SubVolKum_ml	Änderung für die automatische Datenübernahme IBUS
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_VisionA_Amplitude	gemessene Druckdifferenz im HFOV Modus
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_T1_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator T1 in den Beatmungsmodi APVsimv, Psimv.
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_G5_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator G5 in den Beatmungsmodi APVsimv, Psimv.
+Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Vt	Einstellwert: Tidalvolumen
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_Anordnung_O2Lmin	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_Einstellung_Pkontrol	Pkontrol (mbar/frequenz/AZ/min)
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_Einstellung_ProzentMinVol	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_3100B_Inspirationszeit	Einstellwert: prozentualer Anteil der Inspirationszeit bezogen auf den gesamtem Atemzyklus
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_C2_Timax	Inspirationszeit maximal
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_Evita2_Frequenzimv	einstellte IMV Frequenz im SIMV Modus
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_G5_Frequenz	Anzahl der Atemzyklen pro Minute, Parametereinstellung
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_G5_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator G5 in den Beatmungsmodi APVsimv, Psimv.
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_G5_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi.
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_Pallas_Frequenz_Min	Eingestellte Mindestfrequenz (Apnoeventilation) in dme Modus Pressure Support.
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_FuellenMit	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_T1_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator T1 in den Beatmungsmodi APVsimv, Psimv.
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_T1_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita2_AMV	gemessenes Atemminutenvolumen
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita2_IntrinsicPEEP	Ergebnis eines Messmanövers im Modus IPPV, IPPV assist
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_MV	gemessenes Atemminutenvolumen
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_Mvleck	gemessenes Leckagevolumen pro Minute
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_Vtrap	gemessenes getrapptes Luftvolumen nach Meßmanöver
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_G5_InspFlow	Inspiratorischer Peakflow, ein Monitoring-Parameter
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Pallas_MV	Gemessenes Atemminutenvolumen.
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Servoi_Edi_min	"Edi-Mindestwert "
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_T1_ExpMinVol	Exspiratorisches Minutenvolumen
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_T1_RSB	Index für schnelle Flachatmung (Rapid Shallow Breathing Index)
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_VisionA_Amplitude	gemessene Druckdifferenz im HFOV Modus
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	EinweisenderArzt_Email	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Hypothermie_ArticSun_ES_Mindestwassertemp	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Hypothermie_ArticSun_VO_Behandlungsmodi	Liste
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	IABP_CARDIOSAVE_ES_EKG_Ableitung	Dokumentation der gewählten EKG Ableitung für den IABP Einsatz
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	LVP	Linksventrikulärer Mitteldruck
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_Doku_Fuellen_Mit	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_ES_Multi_Plasma	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Cobe_PlasmaVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Cobe_PlasmaVolKum_ml	"Anpassung analog zu Geräten mit automatischer Datenübernahme Änderung in ml "
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Multi_PlasmaVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Multi_PlasmaVolKum_ml	automatische Datenübernahme IBUS
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_OctoNova_PlasmaVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_OctoNova_PlasmaVolKum_ml	Anpassung im Zuge der automatischen Geräteanbindung über IBUS. Änderung in ml
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Filter	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Fuellen_Mit	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Multi_BlutflussMax	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Multi_Plasma_Volumen	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Zugang	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_DialysatvolKum_ml	Anpassung für automatische Datenübernahme IBUS
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_SubBolusVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_SubVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_SubVolKum_ml	Änderung für die automatische Datenübernahme IBUS
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_VO_Fuellen_Mit	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_ES_4008HS_UFProfil	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_ES_4008onl_SollNa	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_ES_4008onl_UFProfil	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008HS_BlutvolKum_ml	Anpassung aufgrund IBUS Anbindung
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008HS_SollNa	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SollNa	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubBolusVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubBolusVolKum_ml	Anpassung IBUS Anbindung
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubVolKum_ml	Anpassung für IBUS Anbindung
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008HS_Dialysezeit	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008HS_IsoUFZiel	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008HS_UF_Ziel	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008onl_BlutflussSNPumpe	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Verfahren	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_ZielKalium	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SubVolKum	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_IsoUFZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008onl_IsoUFZiel	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_Bolus	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_Einstell_SubBolus	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Filter	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_T1_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_UFZiel	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_G5_Frequenz	Anzahl der Atemzyklen pro Minute, Parametereinstellung
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Servoi_Edi_min	"Edi-Mindestwert "
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Schlauchsystem	Verordnung Schlauchsystem
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_Anordnung_O2Lmin	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_G5_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi.
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_OctoNova_PlasmaVolKum_ml	Anpassung im Zuge der automatischen Geräteanbindung über IBUS. Änderung in ml
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008HS_BlutvolKum_ml	Anpassung aufgrund IBUS Anbindung
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_Einstell_UFProfil	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_Vtrap	gemessenes getrapptes Luftvolumen nach Meßmanöver
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_Einstellung_ProzentMinVol	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Hypothermie_ArticSun_ES_Mindestwassertemp	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Multi_PlasmaVolKum	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubVolKum_ml	Anpassung für IBUS Anbindung
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_Filter	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_PD_VO_Einlaufzeit	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_Filter	Filter  für extrakorporale Verfahren
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_T1_ExpMinVol	Exspiratorisches Minutenvolumen
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_ES_5008onl_SollNa	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Fuellen_Mit	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Oxidationswasser	Oxidationswasser in ml (einfuhrrelevant)
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_Multi_UltrafiltrationMax	Ultrafiltrationsrate
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_HarnstoffZiel	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubBolusVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_PD_VO_Mischung_Lsg1_Lsg2	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_Einstell_Plasmavolumen	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_VO_Fuellen_Mit	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_ES_4008onl_UFProfil	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_Beatmung_MS_C3_ExspMinVol	Exspiratorisches Minutenvolumen
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_Einstell_SubBolus	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_Einstell_UFProfil	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Bilanzziel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_HarnstoffZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_ISOUF	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Plasma	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Schlauchsystem	Verordnung Schlauchsystem
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_UFR	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_UFZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Umsatz	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Verfahren	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_ES_Multi_Blutfluss	Blutpumpengeschwindigkeit ml/min
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_4008HS_ISOUFZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_4008HS_UFZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_Filter	Filter  für extrakorporale Verfahren
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_Multi_UltrafiltrationMax	Ultrafiltrationsrate
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_ZielKalium	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Oxidationswasser	Oxidationswasser in ml (einfuhrrelevant)
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_ADVOS_Doku_AbschlussBegruendung	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	EinweisenderArzt_Email	\N
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Cobe_PlasmaVolKum_ml	"Anpassung analog zu Geräten mit automatischer Datenübernahme Änderung in ml "
-Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Zugang	\N
-Blutdruck	Blood pressure panel with all children optional	P_NBP_reArm	Nichtinvasiver Blutdruck rechter Arm
-Blutdruck	Blood pressure panel with all children optional	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_Beatmung_ES_O2Flow	l/min
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_Beatmung_MS_C3_ExspMinVol	Exspiratorisches Minutenvolumen
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_ES_5008onl_IsoUFZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_ES_5008onl_SollNa	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_IsoUFVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SollNa	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SubBolusVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SubVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_BlutflussSNPumpe	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_IsoUFZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Schrittmacher_Osypka203H_ES_A_STIM	Stimulation Vorhof
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Avea_ZeitHoch	Zeiteinstellung des oberen Druckniveaus im Modus APRV / BiPhasisch
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Evita4_Thoch	Zeiteinstellung für das obere Druckniveau im APRV Modus
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Servoi_Thoch	"zeit oberes Druckniveau (thoch) "
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Avea_ZeitNiedrig	Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Evita4_Ttief	Zeiteinstellung für das untere Druckniveau im APRV Modus
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Servoi_Tpeep	"zeit unteres Druckniveau (tniedrig) "
 Blutdruck	Blood pressure panel with all children optional	NBP	nichtinvasiver Blutdruck
 Blutdruck	Blood pressure panel with all children optional	NBP_1	nichtinvasiver Blutdruck 1
+Blutdruck	Blood pressure panel with all children optional	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm
+Blutdruck	Blood pressure panel with all children optional	P_NBP_reArm	Nichtinvasiver Blutdruck rechter Arm
 Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_MS_Blutfluss	\N
 Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_VO_Blutfluss	\N
+Blutfluss extrakorporaler Gasaustausch	\N	Hemolung_MS_Blutfluss	\N
+Blutfluss extrakorporaler Gasaustausch	\N	Hemolung_VO_Blutfluss	\N
+Blutfluss extrakorporaler Gasaustausch	\N	Lungenersatzverfahren_ES_ILAactivve_Blutfluss	\N
+Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008HS_Dialysezeit	\N
+Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008onl_Dialyse_Zeit	\N
 Dauer Hämodialysesitzung	\N	NEV_HD_VO_4008HS_Dialysezeit	\N
 Dauer Hämodialysesitzung	\N	NEV_HD_VO_4008onl_Dialysezeit	\N
 Dauer Hämodialysesitzung	\N	P_NEV_HD_ES_5008onl_Dialyse_Zeit	\N
-Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008onl_Dialyse_Zeit	\N
-Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008HS_Dialysezeit	\N
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_VisionA_Amplitude	gemessene Druckdifferenz im HFOV Modus
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Messung_Compliance	Compliance
-Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita4_Compliance	gemessene Lungencompliance
-Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita4_Compliance	gemessene Lungencompliance
-Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita2_Compliance	gemessene Lungencompliance
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita2_Compliance	gemessene Lungencompliance
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita4_Compliance	gemessene Lungencompliance
-Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Messung_Compliance	Compliance
-Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita2_Compliance	gemessene Lungencompliance
-Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Messung_Compliance	Compliance
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck
+Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Pallas_Cpat	Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_BiPAPV_Inspirationszeit	Einstellwert: Zeiteinstellung für die Inspirationszeit
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	PtiO2Druck	Gemessener Sauerstoffpartialdruck im Parenchym
+Herzfrequenz	Heart rate	HF	Herzfrequenz
 Herzfrequenz	Heart rate	PICCO_HF	HerzfrequenzHerzfrequenz
-Herzfrequenz	Heart rate	HF	Herzfrequenz
-Herzfrequenz	Heart rate	HF	Herzfrequenz
-Herzfrequenz	Heart rate	HF	Herzfrequenz
-Herzzeitvolumen	LV Output	VigilanceC_HZV	Herzzeitvolumen
 Herzzeitvolumen	LV Output	HZV	Herzzeitvolumen
 Herzzeitvolumen	LV Output	PICCO_HZV	Herzzeitvolumen
-Herzzeitvolumen	LV Output	HZV	Herzzeitvolumen
-Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_MS_HorowitzINPULS	Messung des Horowitz-Indexes
+Herzzeitvolumen	LV Output	VigilanceC_HZV	Herzzeitvolumen
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_Messung_Horrowitz	\N
-Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_MS_HorowitzINPULS	Messung des Horowitz-Indexes
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_MS_HorowitzINPULS	Messung des Horowitz-Indexes
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Avea_FiO2	eingestellte Sauerstoffkonzentration des inspiratorischen Atemgases
 Intrakranieller Druck ICP	ICP	ICP	Intrakranialer Druck
 Intrakranieller Druck ICP	ICP	ICP1	intracranieller Druck
 Intrakranieller Druck ICP	ICP	P_CSF_MS_LiqouGuard_ICP	\N
-Intrakranieller Druck ICP	ICP	ICP	Intrakranialer Druck
-Intrakranieller Druck ICP	ICP	ICP1	intracranieller Druck
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate
-Kopfumfang	Head Circumf OFC	Patient_Kopfumfang	Kopfumfang des Patienten (Kinder)
 Kopfumfang	Head Circumf OFC	COPRA_Patient_Kopfumfang	Kopfumfang des Patienten in Zentimetern
-Kopfumfang	Head Circumf OFC	Patient_Kopfumfang_bit	Kopfumfang bit cm
+Kopfumfang	Head Circumf OFC	Patient_Kopfumfang	Kopfumfang des Patienten (Kinder)
 Kopfumfang	Head Circumf OFC	Patient_Kopfumfang_Aufnahme	\N
+Kopfumfang	Head Circumf OFC	Patient_Kopfumfang_bit	Kopfumfang bit cm
 Körpergewicht	Weight	Patient_Gewicht	Gewicht des Patienten
-Körpertemperatur Generisch	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring
-Körpertemperatur Generisch	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring
-Körpertemperatur Generisch	Body temperature	T_K	Körpertemperatur
+Körpertemperatur Generisch	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring
+Körpertemperatur Generisch	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring
+Körpertemperatur Generisch	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring
+Körpertemperatur Generisch	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring
+Körpertemperatur Generisch	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring
-Körpertemperatur Generisch	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring
-Körpertemperatur Generisch	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring
 Körpertemperatur Generisch	Body temperature	T_K	Körpertemperatur
 Körpertemperatur Generisch	Body temperature	T_K2	Körpertemperatur Messkanal 2
-Körpertemperatur Generisch	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring
-Körpertemperatur Generisch	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring
-Körpertemperatur Generisch	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring
+Körpertemperatur Kern	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring
 Körpertemperatur Kern	Body temperature	T_K	Körpertemperatur
 Körpertemperatur Kern	Body temperature	T_K2	Körpertemperatur Messkanal 2
-Körpertemperatur Kern	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring
-Körpertemperatur Kern	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring
 Körpertemperatur rektal	Rectal temp	P_Temperatur_Rektal	Anlage im Rahmen Philips Monitoring
-Körpertemperatur rektal	Rectal temp	P_Temperatur_Rektal	Anlage im Rahmen Philips Monitoring
-Linksatrialer Druck	Blood pressure panel with all children optional	LAP1	linksartrialer Druck
 Linksatrialer Druck	Blood pressure panel with all children optional	LAP	Linksatrial  Mitteldruck
+Linksatrialer Druck	Blood pressure panel with all children optional	LAP1	linksartrialer Druck
 Linksventrikulärer Druck	Blood pressure panel with all children optional	LVP	Linksventrikulärer Mitteldruck
-Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_ADM_BlutflussMax	Blutpumpengeschwindigkeit
-Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_MS_Evita4_Pmean	gemessener Atemwegsmitteldruck
-Maximaler Beatmungsdruck	Press.max on vent Airway	IABP_EKG	\N
 Maximaler Beatmungsdruck	Press.max on vent Airway	AnordnungSedierungPCAPDA	\N
-Maximaler Beatmungsdruck	Press.max on vent Airway	NEV_Apherese_Doku_Bolus_Antikoag	\N
-Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_Multi_BlutflussMax	max Blutpumpengeschwindigkeit VO
-Maximaler Beatmungsdruck	Press.max on vent Airway	NEV_CRRT_MS_Multi_UFR_BFRVerhaeltnis	\N
-Maximaler Beatmungsdruck	Press.max on vent Airway	Fall_Nummer	Identifikationsnummer des Falles
 Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_Einstellung_Pmax	Pmax, Maximaldruck
-Maximaler Beatmungsdruck	Press.max on vent Airway	P_Waermesysteme_FisherPaykel_Doku_Prozent	\N
-Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_ES_G5_SBT_Psupp_max	\N
-Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_4008HS_BlutflussMax	\N
-Maximaler Beatmungsdruck	Press.max on vent Airway	Untersuchung_Thorax_Wand	\N
 Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_ES_C2_Timax	Inspirationszeit maximal
+Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_ES_G5_SBT_Psupp_max	\N
 Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_MS_Avea_Mitteldruck	gemessener Atemwegsmitteldruck
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Untersuchung_Abdomen_Nieren	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_PeepCPAP	Messwert: Beatmungsdruck Peep / CPAP
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_PeepCPAP	Messwert: Beatmungsdruck Peep/CPAP
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Ppeak	Messwert: Beatmungsspitzendruck
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmittel	gemessener Beatmungsmitteldruck
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmax	gemessener Beatmungsspitzendruck
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_3100A_Mitteldruck	Eingestellter mittlerer Atemwegsdruck
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Pallas_Pmean	Gemesener Atemwegsmitteldruck
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Mitteldruck	gemessener Atemwegsmitteldruck
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_Pmean	gemessener Atemwegsmitteldruck
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_Volumen	eingestelltes Tidalvolumen
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Blutgruppe_Mutter	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Ve	gemessenes exspiratorisches Volumen
+Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_MS_Evita4_Pmean	gemessener Atemwegsmitteldruck
+Maximaler Beatmungsdruck	Press.max on vent Airway	Fall_Nummer	Identifikationsnummer des Falles
+Maximaler Beatmungsdruck	Press.max on vent Airway	IABP_EKG	\N
+Maximaler Beatmungsdruck	Press.max on vent Airway	NEV_Apherese_Doku_Bolus_Antikoag	\N
+Maximaler Beatmungsdruck	Press.max on vent Airway	NEV_CRRT_MS_Multi_UFR_BFRVerhaeltnis	\N
+Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_4008HS_BlutflussMax	\N
+Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_ADM_BlutflussMax	Blutpumpengeschwindigkeit
+Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_Multi_BlutflussMax	max Blutpumpengeschwindigkeit VO
+Maximaler Beatmungsdruck	Press.max on vent Airway	P_Waermesysteme_FisherPaykel_Doku_Prozent	\N
+Maximaler Beatmungsdruck	Press.max on vent Airway	Untersuchung_Thorax_Wand	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Beruf_Mutter	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_PIP	gemessener Atemwegsspitzendruck
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_Ppeak	gemessener Atemwegsspitzendruck
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PSV	eingestellte Druckunterstützung bei dem Gerät Avea
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Vte	gemessenes Tidalvolumen
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Vti	gemessenes inspiratorisches Tidalvolumen
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_FlowSetting	Einstellunggröße  des Flows am Gerät
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_O2Konzentration	Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_Frequenz	eingestellte mandatorische AF
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspZeit	eingestellte Inspirationszeit eines Atemzuges
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PEEP	eingestelltes PEEP Niveau
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_ZeitHoch	Zeiteinstellung des oberen Druckniveaus im Modus APRV / BiPhasisch
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_VisionA_ApneaRate	Einstellwert: eingestellte Apnoefrequenz
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_PEEP	gemessenes PEEP Niveau
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_ARDS	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer_Anschrift	Anschrift des Patientenbetreuers
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Auslaufmenge	Pertionealdialyse Auslaufmenge in ml
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Einlaufmenge	Peritonealdialyse Einlaufmenge in ml
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Sorgerecht	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Backup_Vt	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Ti	gemessene Inspirationszeit
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_Apherese_VO_Antikoagulation	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_CRRT_VO_Multi_praeF	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ISOUFRate	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspDruck	eingestelltes oberes Druckniveau im Modus P-CMV und P-SIMV
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspPause	Zeiteinstellung für die Plateauphase im Modus CMV und SIMV
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Frequenz_Backup	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_IEVerhaeltnis_Backup	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Pkontrol_Backup	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_T1_Apnoezeit_Backup	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_IABP_Frequenz	Dokumentation der IABP Frequenz
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_DatascopeCS300_ES_IABP_Frequenz	Dokumentation der IABP Frequenz.
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Austauschrate	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_BasisNatrium	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FiltratDruck	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCaPostFilter	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCasystemBGA	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_AbnahmeMax	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_BM25_Abnahme	Ultrafiltrationsrate
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_ADVOS_VO_Dialysatloesung	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Pseudonym	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_Doku_AnaConDa_System	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Backup_Ti	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Temperatur_Rektal	Anlage im Rahmen Philips Monitoring
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Waermesysteme_FisherPaykel_VO_Prozent	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Pallas_Frischgas_Air	An der Flowröhre eingestellter Frischgas Flow für Air.
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Zephyros_AF	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_MandAF	gemessene mandatorische Atemfrequenz
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_BiPAPV_AMV	Messwert: gemessenes AMV
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_CPAP	gemessenes CPAP Niveau
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer2_Aufgabenkreis	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_ARDS	Liste ein aus
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Leoni_Apnoezeit	Apnoezeit
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Te	gemessene Exspirationszeit
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer_Aufgabenkreis	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_AutoCat_ES_Arrhythmietiming	Liste
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Auslaufmenge	Pertionealdialyse Auslaufmenge in ml
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Einlaufmenge	Peritonealdialyse Einlaufmenge in ml
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Dokumentation_Antikoagulatio	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Bicarbonat	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ArteriellDruck	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCaGesammt	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_BM25_Dialysat	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_Antikoagulanz	Antikoagulation Medikament
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FilterDruck	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_Antikoagulanz	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_CitratLoesung	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_3100A_Leistung	Prozentuale Kolbenauslenkung
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Apnoezeit_Backup	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_WOBp	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Diagnostik	Dokumentation durchgeführter diagnostischer Maßnahmen.
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_DruckVorFilter	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ISOUFZiel	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_4008HS_Bicarbonat	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_ADM_Plasmavolumen	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_TMPDruck	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_venDruck	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_MS_AnaConDa_MAC	Umstellung PhilipsMonitoring
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Therapiebetten_VO_BariAir_mittePause	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Ausatemdruck	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Ausatemzeit	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Untersuchung_ZNS_Hirnnerven	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_O2Flow	Dokumentation des eingestellten O2 Flusses, welcher am Gerät Airvo angeschlossen ist.
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_ZeitNiedrig	Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_Vt_Backup	Vt in der Backupeinstellung
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Leoni_Backup	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Citrat	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Bicarbonat	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Bilanz	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Organspenderausweis	hat der Patient einen Organspenderausweis?
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_drei_ES_ÜberstimulationsFreq	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_Osypka203H_ES_V_RapidPacing	Rapid Pacing Stimulationsfrequenz
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Herkunftsland_Mutter	Herkunftsland der Mutter
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PeakFlow	eingestellter Spitzengasfluss
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Frequenz	gemessene Atemfrequenz
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Inpuls_Erfassung_Transporte_Anzahl	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Abnahme	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_CitratFluss	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Dialysatfluß	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_DialyseZeit	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_Bilanz	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_DruckHoch	eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Medikamente_Schwangerschaft_Text	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_Citratloesung	Citratbeutel
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_Dialysatlösung	Dialysatlösung, Beutel
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Frequenz_Backup	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_IEVerhaeltnis_Backup	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Pkontrol_Backup	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_MS_AnaConDa_etGaskonz	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_NEV_HD_ES_5008onl_Dialyse_Zeit	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Waermesysteme_InfantWarmer_VO_Power	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_Osypka203H_ES_VRP	ventrikuläre Stimulationsfrequenz
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_zwei_ES_Empfindlichkeit	Medtronic 5375
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Erstversorgung_Text	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_DruckNiedrig	eingestelltes unteres Druckniveau im Modus APRV / BiPhasisch
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_IEVerhältnis_Backup	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Pallas_Alter	Dokumentation des Alters des Patienten.
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Servoi_Backup_I_E	"Backup I:E [Einstellung] "
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Messung_AF	Breathing Frequency
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Messung_AFTotal	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_IE	gemessenes I zu E Verhältnis
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_MandVte	gemessenes mandatorisches Tidalvolumen
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_AMV	gemessenes Atemminutenvolumen
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_MV	gemessenes Atemminutenvolumen
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Pallas_MV	Gemessenes Atemminutenvolumen.
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_VisionA_AMVtotal	Messwert: gemessenes Atemminutenvolumen
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_Abiomed_Impella_Spuelloesung	Liste
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_Doku_Auslaufmenge	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Abnahme	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_BasisNatrium	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Calcium	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Dialysatfluß	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_DialyseZeit	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_4008HS_BasisNa	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_O2Konzentration	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Messung_AMV	Respiratory Minute Volume
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_ACAT_ES_Unterstuetzungsverhaeltnis	Liste
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Doku_Dialysekonzentrat	Dialysekonzentrat mit Listenauswahl
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Austauschrate	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_CalciumFluss	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FlussratePBP	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_GBV	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_RestZeit	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_KaliumZiel	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_Multi_CitratBlut	Citratrate
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_BM25_AbnahmeMax	Ultrafiltrationsrate
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Amplitude	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_MS_AnaConDa_AF	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Waermesysteme_InfantWarmer_VO_SkinTemp	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_artDruck	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_3100B_Leistung	Einstellwert: prozentuale Kolbenauslenkung
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Apnoezeit_Backup	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_Apnoezeit_Backup	Apnoezeiteinstellung in der Backupeinstellung.
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_WOBi	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_BM25_artDruck	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Geburtslage_andere_text	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Herkunftsland_Mutter	Herkunftsland der Mutter
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Medikamente_Schwangerschaft_Text	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_AbbruchkriterienAMV	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_AbbruchkriterienSAP	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_AF	Anordnung Beatmungsfrequenz (f/AF)
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_BedingteVerordnung	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_O2Konzentration	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Einstellung_AF	Beatmungsfrequenz (f/AF)
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_3100B_Leistung	Einstellwert: prozentuale Kolbenauslenkung
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_FlowSetting	Einstellunggröße  des Flows am Gerät
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_O2Flow	Dokumentation des eingestellten O2 Flusses, welcher am Gerät Airvo angeschlossen ist.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Ppeak	Messwert: Beatmungsspitzendruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_O2Konzentration	Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_DruckHoch	eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_DruckNiedrig	eingestelltes unteres Druckniveau im Modus APRV / BiPhasisch
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_Frequenz	eingestellte mandatorische AF
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspDruck	eingestelltes oberes Druckniveau im Modus P-CMV und P-SIMV
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspPause	Zeiteinstellung für die Plateauphase im Modus CMV und SIMV
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspZeit	eingestellte Inspirationszeit eines Atemzuges
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PeakFlow	eingestellter Spitzengasfluss
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PEEP	eingestelltes PEEP Niveau
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PSV	eingestellte Druckunterstützung bei dem Gerät Avea
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_Volumen	eingestelltes Tidalvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_ZeitHoch	Zeiteinstellung des oberen Druckniveaus im Modus APRV / BiPhasisch
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_ZeitNiedrig	Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Apnoezeit_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Frequenz_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_IEVerhaeltnis_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Pkontrol_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Evita4_Rampe	eingestellte Anstiegszeit vom unteren zum oberen Druckniveau
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_Apnoezeit_Backup	Apnoezeiteinstellung in der Backupeinstellung.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_ARDS	Liste ein aus
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_IEVerhältnis_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_Vt_Backup	Vt in der Backupeinstellung
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Leoni_Apnoezeit	Apnoezeit
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Leoni_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Pallas_Alter	Dokumentation des Alters des Patienten.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Pallas_Frischgas_Air	An der Flowröhre eingestellter Frischgas Flow für Air.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Servoi_Backup_I_E	"Backup I:E [Einstellung] "
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_T1_Apnoezeit_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_VisionA_ApneaRate	Einstellwert: eingestellte Apnoefrequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Zephyros_AF	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Messung_AF	Breathing Frequency
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Messung_AFTotal	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Messung_AMV	Respiratory Minute Volume
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Frequenz	gemessene Atemfrequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_IE	gemessenes I zu E Verhältnis
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_MandAF	gemessene mandatorische Atemfrequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_MandVte	gemessenes mandatorisches Tidalvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Mitteldruck	gemessener Atemwegsmitteldruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_PEEP	gemessenes PEEP Niveau
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_PIP	gemessener Atemwegsspitzendruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Te	gemessene Exspirationszeit
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Ti	gemessene Inspirationszeit
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Ve	gemessenes exspiratorisches Volumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Vte	gemessenes Tidalvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Vti	gemessenes inspiratorisches Tidalvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_WOBi	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_WOBp	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_BiPAPV_AMV	Messwert: gemessenes AMV
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_AMV	gemessenes Atemminutenvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_CPAP	gemessenes CPAP Niveau
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_frequenz	gemessene Atemfrequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmax	gemessener Beatmungsspitzendruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmittel	gemessener Beatmungsmitteldruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_MV	gemessenes Atemminutenvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_Pmean	gemessener Atemwegsmitteldruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_Ppeak	gemessener Atemwegsspitzendruck
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_ftotal	Gesamtatemfrequenz, ein Monitoring Parameter
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_PeepCPAP	Messwert: Beatmungsdruck Peep / CPAP
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Pallas_Frequenz	Gemessene Atemfrequenz.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Pallas_MV	Gemessenes Atemminutenvolumen.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Pallas_Pmean	Gemesener Atemwegsmitteldruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_PeepCPAP	Messwert: Beatmungsdruck Peep/CPAP
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_VisionA_AMVtotal	Messwert: gemessenes Atemminutenvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer2_Aufgabenkreis	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer_Anschrift	Anschrift des Patientenbetreuers
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer_Aufgabenkreis	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Blutgruppe_Mutter	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Diagnostik	Dokumentation durchgeführter diagnostischer Maßnahmen.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Hypothermie_ArticSun_Doku_KuehlWaermerate	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Hypothermie_ArticSun_VO_KuehlWaermeRate_neu	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_Abiomed_Impella_Spuelloesung	Liste
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_ACAT_ES_Unterstuetzungsverhaeltnis	Liste
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_AutoCat_ES_Arrhythmietiming	Liste
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_IABP_Frequenz	Dokumentation der IABP Frequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_Unterstuetzungsdruck	Dokumentation des Unterstützungdruckes
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_DatascopeCS300_ES_IABP_Frequenz	Dokumentation der IABP Frequenz.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Inpuls_Erfassung_Transporte_Anzahl	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Lungenersatzverfahren_Anordnung_ILAAnalogIn	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_Apherese_VO_Antikoagulation	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_CRRT_VO_Multi_praeF	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_HD_ES_4008HS_BasisNa	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_Doku_Auslaufmenge	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Auslaufmenge	Pertionealdialyse Auslaufmenge in ml
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Einlaufmenge	Peritonealdialyse Einlaufmenge in ml
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Doku_Dialysekonzentrat	Dialysekonzentrat mit Listenauswahl
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Dokumentation_Antikoagulatio	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Abnahme	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Austauschrate	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_BasisNatrium	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Bicarbonat	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Calcium	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Citrat	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Dialysatfluß	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_DialyseZeit	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Abnahme	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ArteriellDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Austauschrate	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_BasisNatrium	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Bicarbonat	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Bilanz	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_CalciumFluss	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_CitratFluss	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Dialysatfluß	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_DialyseZeit	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_DruckVorFilter	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_EffektiverEntzug	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FilterDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FiltratDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FlussratePBP	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_GBV	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCaGesammt	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCaPostFilter	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCasystemBGA	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ISOUFRate	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ISOUFZiel	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Plasmavolumen	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_RestZeit	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_AbnahmeMax	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_Antikoagulanz	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_Austauschrate	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_BasisNatrium	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_CitratLoesung	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_KaliumZiel	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_4008HS_BasisNa	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_4008HS_Bicarbonat	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_ADM_Plasmavolumen	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_BM25_Abnahme	Ultrafiltrationsrate
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_BM25_Dialysat	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_Multi_CitratBlut	Citratrate
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_4008HS_artDruck	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_Unterstuetzungsdruck	Dokumentation des Unterstützungdruckes
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_HD_ES_4008HS_BasisNa	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Plasmavolumen	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_RhySta	Arrhytmia Rhytm Status label
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schlagvolumen	gemessenes Schlagvolumen
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Untersuchung_Kopf_Augen	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Hypothermie_ArticSun_Doku_KuehlWaermerate	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_Multi_CitratvolumenKumulativ	kumulativ Citrat
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Evita4_Rampe	eingestellte Anstiegszeit vom unteren zum oberen Druckniveau
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_artDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_Bilanz	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_TMPDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_venDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_BM25_artDruck	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_BM25_DialysatvolumenKumulativ	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_BM25_TMPDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_Multi_CitratvolumenKumulativ	kumulativ Citrat
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_Multi_DialysatvolumenKumulativ	kumulatives Dialysatvol
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita2_Ppeep	gemessener positer endexspiratorischer Druck
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_PEEP	Positiver endexspiratorischer Druck (PEEP)
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_Antikoagulanz	Antikoagulation Medikament
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_BM25_AbnahmeMax	Ultrafiltrationsrate
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_Citratloesung	Citratbeutel
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_Dialysatlösung	Dialysatlösung, Beutel
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_ADVOS_VO_Dialysatloesung	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Organspenderausweis	hat der Patient einen Organspenderausweis?
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Pseudonym	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Sorgerecht	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_Doku_AnaConDa_System	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_3100A_Leistung	Prozentuale Kolbenauslenkung
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_3100A_Mitteldruck	Eingestellter mittlerer Atemwegsdruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Apnoezeit_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_ARDS	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Backup_Ti	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Backup_Vt	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Frequenz_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_IEVerhaeltnis_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Pkontrol_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Amplitude	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Ausatemdruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Ausatemzeit	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_MS_AnaConDa_AF	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_MS_AnaConDa_etGaskonz	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_MS_AnaConDa_MAC	Umstellung PhilipsMonitoring
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_NEV_HD_ES_5008onl_Dialyse_Zeit	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_RhySta	Arrhytmia Rhytm Status label
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Temperatur_Rektal	Anlage im Rahmen Philips Monitoring
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Waermesysteme_FisherPaykel_VO_Prozent	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Waermesysteme_InfantWarmer_VO_Power	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Waermesysteme_InfantWarmer_VO_SkinTemp	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schlagvolumen	gemessenes Schlagvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_drei_ES_ÜberstimulationsFreq	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_Osypka203H_ES_V_RapidPacing	Rapid Pacing Stimulationsfrequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_Osypka203H_ES_VRP	ventrikuläre Stimulationsfrequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_zwei_ES_Empfindlichkeit	Medtronic 5375
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Therapiebetten_VO_BariAir_mittePause	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Untersuchung_Abdomen_Nieren	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Untersuchung_Kopf_Augen	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Untersuchung_ZNS_Hirnnerven	\N
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Anordnung_PEEP	Anordnung Positiver endexspiratorischer Druck (PEEP)
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_VisionA_PEEP	Messwert: gemessener positiver endexspiratorischer Druck
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_PEEP	Positiver endexspiratorischer Druck (PEEP)
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Leoni_PEEP	\N
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Servoi_PEEP	"PEEP "
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita2_Ppeep	gemessener positer endexspiratorischer Druck
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita4_PEEP	gemessener positiver endexspiratorischer Druck
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_PEEP	Positiver endexspiratorischer Druck (PEEP)
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Anordnung_PEEP	Anordnung Positiver endexspiratorischer Druck (PEEP)
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita4_PEEP	gemessener positiver endexspiratorischer Druck
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_PEEP	Positiver endexspiratorischer Druck (PEEP)
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Anordnung_PEEP	Anordnung Positiver endexspiratorischer Druck (PEEP)
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_VisionA_PEEP	Messwert: gemessener positiver endexspiratorischer Druck
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	PAP	Pulmunalarterieller Druck
 Pulmonalvaskulärer Widerstandsindex	PV RI	PVRI	"Pulmunaler Gefäßwiderstandsindex "
-Pulmonalvaskulärer Widerstandsindex	PV RI	VigilanceC_PVRI	Pulmonaler vasculärer Widerstandsindex
 Pulmonalvaskulärer Widerstandsindex	PV RI	VigilanceC_PVRI	Pulmonaler vasculärer Widerstandsindex
 Puls	\N	Puls	Puls
 Rechtsatrialer Druck	Blood pressure panel with all children optional	RAP	Rechtsatrial Mitteldruck
 Rechtsatrialer Druck	Blood pressure panel with all children optional	RAP1	rechtsartrialer Druck
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Nierenverfahren_ES_ADM_PlasmaAustausch	Plasmarate
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ1	\N
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Waermesysteme_BairHugger_Doku_Geblaese	Liste
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Zephyros_Endflow	\N
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Waermesysteme_BairHugger_VO_Geblaese	\N
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ2	\N
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_VolAssist	Einstellgröße für den VolAssist im PPS Modus
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_3100B_O2Konzentration	Einstellwert: O2 Konzentration des Gasgemisches
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_MS_Pallas_Frischgas_Flow_gesamt	Gemessener Frischgas Flow.
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ3	\N
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Untersuchung_Kontrolle_Laufraten	Arztdoku S. 10
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Pallas_Frischgas_O2	An der Flowröhre eingestellter O2 Frischgasflow.
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Hausarzt_Strasse	\N
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_Flowtrigger	Einstellgröße des Flowtriggers
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Airvo_O2Konzentration	Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	IABP_AutoCat_ES_Modus	Liste
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_Einstellung_FlowAssist	\N
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_CSF_MS_LiquoGuard_Liquorfluss	"automatisch berechnet aus Pset ml/h "
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Schwangerschaftswoche	Schwangerschaftswoche, in welcher das Baby geboren wurde
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_FlowAssist	Einstellgröße für den Flowassist im Modus PPS
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_Impella_Impella_Doku_Verschlusssystem	Liste Ja Nein
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	NEV_HD_VO_Zugang	\N
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_CF800_SauerstoffFlow	Einstellgröße Gasfluss Sauerstoff
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_Einstellung_I:E	Atemzeitverhältnis (I:E)
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_MS_VisionA_Amplitude	gemessene Druckdifferenz im HFOV Modus
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_T1_Sauerstoff	Sauerstoffeinstellung
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_G5_Sauerstoff	Sauerstoffeinstellung
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	EVLW/EV	Extravasales Lungenwasser
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	VigilanceC_EVLW	Extravasales Lungenwasser
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Pallas_Frischgas_O2	An der Flowröhre eingestellter O2 Frischgasflow.
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_Waermesysteme_InfantWarmer_Doku_Power	\N
-Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_CSF_MS_LiquoGuard_Fuellstand	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_3100B_O2Konzentration	Einstellwert: O2 Konzentration des Gasgemisches
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Airvo_O2Konzentration	Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Avea_PeakFlow	eingestellter Spitzengasfluss
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_CF800_SauerstoffFlow	Einstellgröße Gasfluss Sauerstoff
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_FlowAssist	Einstellgröße für den Flowassist im Modus PPS
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_Flowtrigger	Einstellgröße des Flowtriggers
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_VolAssist	Einstellgröße für den VolAssist im PPS Modus
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_F120_Flow	Einstellwert: Größe des Gasflusses beim F 120
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_G5_Sauerstoff	Sauerstoffeinstellung
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Pallas_Frischgas_O2	An der Flowröhre eingestellter O2 Frischgasflow.
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_T1_Sauerstoff	Sauerstoffeinstellung
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Zephyros_Endflow	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_MS_Pallas_Frischgas_Flow_gesamt	Gemessener Frischgas Flow.
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_MS_VisionA_Amplitude	gemessene Druckdifferenz im HFOV Modus
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	EVLW/EV	Extravasales Lungenwasser
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Hausarzt_Strasse	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	IABP_AutoCat_ES_Modus	Liste
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Lungenersatzverfahren_ES_ILAactivve_Systole	%Systole Verhältnis Systolendauer zur Diastolendauer
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	NEV_HD_VO_Zugang	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Nierenverfahren_ES_ADM_PlasmaAustausch	Plasmarate
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_CSF_MS_LiquoGuard_Fuellstand	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_CSF_MS_LiquoGuard_Liquorfluss	"automatisch berechnet aus Pset ml/h "
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_Impella_Impella_Doku_Verschlusssystem	Liste Ja Nein
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ1	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ2	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ3	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_Waermesysteme_InfantWarmer_Doku_Power	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Schwangerschaftswoche	Schwangerschaftswoche, in welcher das Baby geboren wurde
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Untersuchung_Kontrolle_Laufraten	Arztdoku S. 10
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	VigilanceC_EVLW	Extravasales Lungenwasser
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Waermesysteme_BairHugger_Doku_Geblaese	Liste
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Waermesysteme_BairHugger_VO_Geblaese	\N
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_G5_fspontan	Spontane Atemfrequenz
-Spontane-Atemfrequenz-Beatmet	\N	P_Beatmung_MS_C3_fSpontan	Spontane Atemfrequenz
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_T1_fSpontan	Spontane Atemfrequenz
-Substituatfluss	\N	Nierenverfahren_VO_Multi_Substituat	Substituat in ml/h
-Substituatfluss	\N	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h
+Spontane-Atemfrequenz-Beatmet	\N	P_Beatmung_MS_C3_fSpontan	Spontane Atemfrequenz
 Substituatfluss	\N	Nierenverfahren_ES_BM25_Umsatz	Austausch, Substituat, ml/h
+Substituatfluss	\N	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h
+Substituatfluss	\N	Nierenverfahren_VO_Multi_Substituat	Substituat in ml/h
 Substituatvolumen	\N	Nierenersatzverfahren_Mess_SubstituatVolumen	\N
 Substituatvolumen	\N	Nierenersatzverfahren_VO_SubstituatVolumen	\N
+Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVRI	Systemischer Gefäßwiderstandsindex
 Systemischer vaskulärer Widerstandsindex	SV RI	Vigileo_SVRI	Systemic vascular resistance index
-Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVRI	Systemischer Gefäßwiderstandsindex
-Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVRI	Systemischer Gefäßwiderstandsindex
-Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_G5_Psupport	Einstellwert: Druckunterstützung beim G 5  bei Spontanatemzügen
-Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_T1_Psupport	Beatmung_ES_T1_Psupport
-Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_T1_Psupport	Beatmung_ES_T1_Psupport
-Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Servoi_Psupport	\N
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_Einstellung_Psupport	\N
+Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_G5_Psupport	Einstellwert: Druckunterstützung beim G 5  bei Spontanatemzügen
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Heimbeatmung_Psupport	\N
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_MS_C3_IEVerhaeltnis	Verhältnis Inspirationszeit:Exspirationszeit
+Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Servoi_Psupport	\N
+Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_T1_Psupport	Beatmung_ES_T1_Psupport
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_I:E	Atemzeitverhältnis (I:E)
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Servoi_I_E	I:E Verhältnis (Messung)
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_IE	gemessenes I zu E Verhältnis
-Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_MS_C3_IEVerhaeltnis	Verhältnis Inspirationszeit:Exspirationszeit
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_G5_IEVerhaeltnis	gemessenes I:E Verhältnis
-Zentralvenöser Druck	CVP	ZVD	Zentralvenöser Druck
-Zentralvenöser Druck	CVP	ZVD	Zentralvenöser Druck
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Servoi_I_E	I:E Verhältnis (Messung)
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_MS_C3_IEVerhaeltnis	Verhältnis Inspirationszeit:Exspirationszeit
 Zentralvenöser Druck	CVP	PICCO_ZVD	Zentraler Venendruck
+Zentralvenöser Druck	CVP	ZVD	Zentralvenöser Druck
 \.
 
 
@@ -31013,6 +31006,512 @@ Beatmung_MS_Evita4_PEEP	Positiv-endexpiratorischer Druck	mbar	cm[H2O]
 Beatmung_Messung_Pmax	Maximaler Beatmungsdruck	mmHg	cm[H2O]
 Beatmung_Messung_FiO2	Sauerstofffraktion	%	1
 Beatmung_MS_Pallas_O2_insp	Sauerstofffraktion	%	1
+\.
+
+
+--
+-- Data for Name: matched_0; Type: TABLE DATA; Schema: public; Owner: -
+--
+
+COPY public.matched_0 (profiles, loinc_short_name, name, description) FROM stdin;
+Arterieller Druck	\N	Nierenverfahren_MS_Multi_artDruck	arterieller Druck
+Arterieller Druck	\N	PICCO_ABP	Arterieller Druck
+Atemfrequenz	Resp rate	AF	Atemfrequenz
+Atemfrequenz	Resp rate	Beatmung_MS_Avea_Frequenz	gemessene Atemfrequenz
+Atemfrequenz	Resp rate	Beatmung_MS_BiPAPV_AF	Messparameter: gemessene Atemfrequenz
+Atemfrequenz	Resp rate	Beatmung_MS_Evita2_frequenz	gemessene Atemfrequenz
+Atemfrequenz	Resp rate	Beatmung_MS_Pallas_Frequenz	Gemessene Atemfrequenz.
+Atemfrequenz	Resp rate	Beatmung_MS_T1_fTotal	Gesamtfrequenz
+Atemfrequenz	Resp rate	Beatmung_MS_VisionA_BreathRate	Messwert: gemessene Atemfrequenz
+Atemfrequenz	Resp rate	P_Beatmung_MS_C3_fTotal	Gesamtatemfrequenz
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_G5_Flow	Parameter im Modus Highflow - ab 08.06.2017
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Servoi_Flow	Parameter im Modus Highflow
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_T1_Flow	Einstellung Sauerstoff Flow
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Zephyros_By-Flow	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Zephyros_Flow	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_MS_G5_RCinsp	Inspiratorische Zeitkonstante, ein Monitoring Parameter
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_MS_Pallas_Frischgas_Flow_gesamt	Gemessener Frischgas Flow.
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	COPRA_Patient_Kopfumfang	Kopfumfang des Patienten in Zentimetern
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Ereignisse Vitlaparameter Graphisch	Ereignisse Vitlaparameter Graphisch als Listenauswahl
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_Doku_ILAAnalogIn	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_Doku_ILA_Blutfluss	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILAactivve_Fluss	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_BlutflussMin	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_Flushmanoever	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_GasflussMax	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_CRRT_ES_Multi_Temp	neu angelegt am 18.05.2012
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_HD_Doku_SpüllösungAntikoag	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_HD_MS_4008onl_Rest_Zeit_min	Anpassung für IBUS Anbindung
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Dokumentation_BlutflussEinst	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_Blutfluss	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_BlutflussSNPumpe	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_Spueldauer	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Mess_Fluss	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_BlutflussSNPumpe	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_Filter	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_Fluß	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_FuellenMit	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_HFLoesung	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_ADVOS_MS_ADVOS_Calcium_preFilter	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Patient_Kopfumfang	Kopfumfang des Patienten (Kinder)
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_INVOS_Doku_rSO2_links	cerebrale Sauerstoffsättigung links
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_INVOS_Doku_rSO2_rechts	cerbebrale Sauerstoffsättigung rechts
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_MS_5008onl_Rest_Zeit_min	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_VO_5008onl_Dialyse_Zeit	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_VO_5008onl_SollNa	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Untersuchung_Kopf_Hals	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Untersuchung_Kopf_Ohren	\N
+Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Untersuchung_Thorax_Pulmo	\N
+Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_VT	Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)
+Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita4_Vt	Einstellgröße für das Tidalvolumen
+Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_G5_Vt	Einstellwert: Tidalvolumen
+Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Heimbeatmung_Vt	Einstellung Tidalvolumen
+Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Vt	Einstellwert: Tidalvolumen
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_Anordnung_O2Lmin	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_Einstellung_Pkontrol	Pkontrol (mbar/frequenz/AZ/min)
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_Einstellung_ProzentMinVol	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_3100B_Inspirationszeit	Einstellwert: prozentualer Anteil der Inspirationszeit bezogen auf den gesamtem Atemzyklus
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_C2_Timax	Inspirationszeit maximal
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_Evita2_Frequenzimv	einstellte IMV Frequenz im SIMV Modus
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_G5_Frequenz	Anzahl der Atemzyklen pro Minute, Parametereinstellung
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_G5_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator G5 in den Beatmungsmodi APVsimv, Psimv.
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_G5_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi.
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_Pallas_Frequenz_Min	Eingestellte Mindestfrequenz (Apnoeventilation) in dme Modus Pressure Support.
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_T1_F_SIMV	Eingestellt SIMV Frequenz bei dem Respirator T1 in den Beatmungsmodi APVsimv, Psimv.
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_ES_T1_Pkontrol_Phoch	Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita2_AMV	gemessenes Atemminutenvolumen
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita2_IntrinsicPEEP	Ergebnis eines Messmanövers im Modus IPPV, IPPV assist
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_MV	gemessenes Atemminutenvolumen
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_Mvleck	gemessenes Leckagevolumen pro Minute
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_Vtrap	gemessenes getrapptes Luftvolumen nach Meßmanöver
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_G5_InspFlow	Inspiratorischer Peakflow, ein Monitoring-Parameter
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Pallas_MV	Gemessenes Atemminutenvolumen.
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Servoi_Edi_min	"Edi-Mindestwert "
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_T1_ExpMinVol	Exspiratorisches Minutenvolumen
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_T1_RSB	Index für schnelle Flachatmung (Rapid Shallow Breathing Index)
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_VisionA_Amplitude	gemessene Druckdifferenz im HFOV Modus
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	EinweisenderArzt_Email	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Hypothermie_ArticSun_ES_Mindestwassertemp	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Hypothermie_ArticSun_VO_Behandlungsmodi	Liste
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	IABP_CARDIOSAVE_ES_EKG_Ableitung	Dokumentation der gewählten EKG Ableitung für den IABP Einsatz
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	IABP_DatascopeCS300_ES_EKG_Ableitung	Dokumentation der gewählten EG Ableitung für den IABP Einsatz.
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	LVP	Linksventrikulärer Mitteldruck
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_Doku_Fuellen_Mit	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_ES_Multi_Plasma	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Cobe_PlasmaVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Cobe_PlasmaVolKum_ml	"Anpassung analog zu Geräten mit automatischer Datenübernahme Änderung in ml "
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Multi_PlasmaVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_Multi_PlasmaVolKum_ml	automatische Datenübernahme IBUS
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_OctoNova_PlasmaVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_MS_OctoNova_PlasmaVolKum_ml	Anpassung im Zuge der automatischen Geräteanbindung über IBUS. Änderung in ml
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Filter	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Fuellen_Mit	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Multi_BlutflussMax	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Multi_Plasma_Volumen	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Zugang	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_DialysatvolKum_ml	Anpassung für automatische Datenübernahme IBUS
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_SubBolusVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_SubVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_MS_Multi_SubVolKum_ml	Änderung für die automatische Datenübernahme IBUS
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_CRRT_VO_Fuellen_Mit	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_ES_4008HS_UFProfil	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_ES_4008onl_SollNa	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_ES_4008onl_UFProfil	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008HS_BlutvolKum_ml	Anpassung aufgrund IBUS Anbindung
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008HS_SollNa	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SollNa	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubBolusVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubBolusVolKum_ml	Anpassung IBUS Anbindung
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_MS_4008onl_SubVolKum_ml	Anpassung für IBUS Anbindung
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008HS_Dialysezeit	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008HS_IsoUFZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008HS_UF_Ziel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008onl_BlutflussSNPumpe	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_4008onl_IsoUFZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_Bolus	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_Filter	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_HD_VO_FuellenMit	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_PD_VO_Einlaufzeit	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_PD_VO_Mischung_Lsg1_Lsg2	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_Einstell_Plasmavolumen	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_Einstell_SubBolus	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_Einstell_UFProfil	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Bilanzziel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_HarnstoffZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_ISOUF	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Plasma	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Schlauchsystem	Verordnung Schlauchsystem
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_UFR	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_UFZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Umsatz	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersatzverfahren_VO_Verfahren	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_ES_Multi_Blutfluss	Blutpumpengeschwindigkeit ml/min
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_4008HS_ISOUFZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_4008HS_UFZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_Filter	Filter  für extrakorporale Verfahren
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_FüllenMit	Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_Multi_UltrafiltrationMax	Ultrafiltrationsrate
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenverfahren_VO_ZielKalium	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Oxidationswasser	Oxidationswasser in ml (einfuhrrelevant)
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_ADVOS_Doku_AbschlussBegruendung	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_Beatmung_ES_O2Flow	l/min
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_Beatmung_MS_C3_ExspMinVol	Exspiratorisches Minutenvolumen
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_ES_5008onl_IsoUFZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_ES_5008onl_SollNa	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_IsoUFVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SollNa	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SubBolusVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_MS_5008onl_SubVolKum	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_BlutflussSNPumpe	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	P_NEV_HD_VO_5008onl_IsoUFZiel	\N
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Schrittmacher_Osypka203H_ES_A_STIM	Stimulation Vorhof
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Avea_ZeitHoch	Zeiteinstellung des oberen Druckniveaus im Modus APRV / BiPhasisch
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Evita4_Thoch	Zeiteinstellung für das obere Druckniveau im APRV Modus
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Servoi_Thoch	"zeit oberes Druckniveau (thoch) "
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Avea_ZeitNiedrig	Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Evita4_Ttief	Zeiteinstellung für das untere Druckniveau im APRV Modus
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Servoi_Tpeep	"zeit unteres Druckniveau (tniedrig) "
+Blutdruck	Blood pressure panel with all children optional	NBP	nichtinvasiver Blutdruck
+Blutdruck	Blood pressure panel with all children optional	NBP_1	nichtinvasiver Blutdruck 1
+Blutdruck	Blood pressure panel with all children optional	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm
+Blutdruck	Blood pressure panel with all children optional	P_NBP_reArm	Nichtinvasiver Blutdruck rechter Arm
+Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_MS_Blutfluss	\N
+Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_VO_Blutfluss	\N
+Blutfluss extrakorporaler Gasaustausch	\N	Hemolung_MS_Blutfluss	\N
+Blutfluss extrakorporaler Gasaustausch	\N	Hemolung_VO_Blutfluss	\N
+Blutfluss extrakorporaler Gasaustausch	\N	Lungenersatzverfahren_ES_ILAactivve_Blutfluss	\N
+Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008HS_Dialysezeit	\N
+Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008onl_Dialyse_Zeit	\N
+Dauer Hämodialysesitzung	\N	NEV_HD_VO_4008HS_Dialysezeit	\N
+Dauer Hämodialysesitzung	\N	NEV_HD_VO_4008onl_Dialysezeit	\N
+Dauer Hämodialysesitzung	\N	P_NEV_HD_ES_5008onl_Dialyse_Zeit	\N
+Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_VisionA_Amplitude	gemessene Druckdifferenz im HFOV Modus
+Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Messung_Compliance	Compliance
+Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita2_Compliance	gemessene Lungencompliance
+Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita4_Compliance	gemessene Lungencompliance
+Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Pallas_Cpat	Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.
+Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_BiPAPV_Inspirationszeit	Einstellwert: Zeiteinstellung für die Inspirationszeit
+Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	PtiO2Druck	Gemessener Sauerstoffpartialdruck im Parenchym
+Herzfrequenz	Heart rate	HF	Herzfrequenz
+Herzfrequenz	Heart rate	PICCO_HF	HerzfrequenzHerzfrequenz
+Herzzeitvolumen	LV Output	HZV	Herzzeitvolumen
+Herzzeitvolumen	LV Output	PICCO_HZV	Herzzeitvolumen
+Herzzeitvolumen	LV Output	VigilanceC_HZV	Herzzeitvolumen
+Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_Messung_Horrowitz	\N
+Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_MS_HorowitzINPULS	Messung des Horowitz-Indexes
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Avea_FiO2	eingestellte Sauerstoffkonzentration des inspiratorischen Atemgases
+Intrakranieller Druck ICP	ICP	ICP	Intrakranialer Druck
+Intrakranieller Druck ICP	ICP	ICP1	intracranieller Druck
+Intrakranieller Druck ICP	ICP	P_CSF_MS_LiqouGuard_ICP	\N
+Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate
+Kopfumfang	Head Circumf OFC	COPRA_Patient_Kopfumfang	Kopfumfang des Patienten in Zentimetern
+Kopfumfang	Head Circumf OFC	Patient_Kopfumfang	Kopfumfang des Patienten (Kinder)
+Kopfumfang	Head Circumf OFC	Patient_Kopfumfang_Aufnahme	\N
+Kopfumfang	Head Circumf OFC	Patient_Kopfumfang_bit	Kopfumfang bit cm
+Körpergewicht	Weight	Patient_Gewicht	Gewicht des Patienten
+Körpertemperatur Generisch	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring
+Körpertemperatur Generisch	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring
+Körpertemperatur Generisch	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring
+Körpertemperatur Generisch	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring
+Körpertemperatur Generisch	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring
+Körpertemperatur Generisch	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring
+Körpertemperatur Generisch	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring
+Körpertemperatur Generisch	Body temperature	T_K	Körpertemperatur
+Körpertemperatur Generisch	Body temperature	T_K2	Körpertemperatur Messkanal 2
+Körpertemperatur Kern	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring
+Körpertemperatur Kern	Body temperature	T_K	Körpertemperatur
+Körpertemperatur Kern	Body temperature	T_K2	Körpertemperatur Messkanal 2
+Körpertemperatur rektal	Rectal temp	P_Temperatur_Rektal	Anlage im Rahmen Philips Monitoring
+Linksatrialer Druck	Blood pressure panel with all children optional	LAP	Linksatrial  Mitteldruck
+Linksatrialer Druck	Blood pressure panel with all children optional	LAP1	linksartrialer Druck
+Linksventrikulärer Druck	Blood pressure panel with all children optional	LVP	Linksventrikulärer Mitteldruck
+Maximaler Beatmungsdruck	Press.max on vent Airway	AnordnungSedierungPCAPDA	\N
+Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_Einstellung_Pmax	Pmax, Maximaldruck
+Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_ES_C2_Timax	Inspirationszeit maximal
+Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_ES_G5_SBT_Psupp_max	\N
+Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_MS_Avea_Mitteldruck	gemessener Atemwegsmitteldruck
+Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_MS_Evita4_Pmean	gemessener Atemwegsmitteldruck
+Maximaler Beatmungsdruck	Press.max on vent Airway	Fall_Nummer	Identifikationsnummer des Falles
+Maximaler Beatmungsdruck	Press.max on vent Airway	IABP_EKG	\N
+Maximaler Beatmungsdruck	Press.max on vent Airway	NEV_Apherese_Doku_Bolus_Antikoag	\N
+Maximaler Beatmungsdruck	Press.max on vent Airway	NEV_CRRT_MS_Multi_UFR_BFRVerhaeltnis	\N
+Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_4008HS_BlutflussMax	\N
+Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_ADM_BlutflussMax	Blutpumpengeschwindigkeit
+Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_Multi_BlutflussMax	max Blutpumpengeschwindigkeit VO
+Maximaler Beatmungsdruck	Press.max on vent Airway	P_Waermesysteme_FisherPaykel_Doku_Prozent	\N
+Maximaler Beatmungsdruck	Press.max on vent Airway	Untersuchung_Thorax_Wand	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Beruf_Mutter	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Erstversorgung_Text	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Geburtslage_andere_text	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Herkunftsland_Mutter	Herkunftsland der Mutter
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Aufnahme_Medikamente_Schwangerschaft_Text	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_AbbruchkriterienAMV	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_AbbruchkriterienSAP	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_AF	Anordnung Beatmungsfrequenz (f/AF)
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_BedingteVerordnung	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Anordnung_O2Konzentration	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Einstellung_AF	Beatmungsfrequenz (f/AF)
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_3100B_Leistung	Einstellwert: prozentuale Kolbenauslenkung
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_FlowSetting	Einstellunggröße  des Flows am Gerät
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_O2Flow	Dokumentation des eingestellten O2 Flusses, welcher am Gerät Airvo angeschlossen ist.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Airvo_O2Konzentration	Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_DruckHoch	eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_DruckNiedrig	eingestelltes unteres Druckniveau im Modus APRV / BiPhasisch
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_Frequenz	eingestellte mandatorische AF
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspDruck	eingestelltes oberes Druckniveau im Modus P-CMV und P-SIMV
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspPause	Zeiteinstellung für die Plateauphase im Modus CMV und SIMV
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_InspZeit	eingestellte Inspirationszeit eines Atemzuges
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PeakFlow	eingestellter Spitzengasfluss
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PEEP	eingestelltes PEEP Niveau
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_PSV	eingestellte Druckunterstützung bei dem Gerät Avea
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_Volumen	eingestelltes Tidalvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_ZeitHoch	Zeiteinstellung des oberen Druckniveaus im Modus APRV / BiPhasisch
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_ZeitNiedrig	Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Apnoezeit_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Frequenz_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_IEVerhaeltnis_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_C2_Pkontrol_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Evita4_Rampe	eingestellte Anstiegszeit vom unteren zum oberen Druckniveau
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_Apnoezeit_Backup	Apnoezeiteinstellung in der Backupeinstellung.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_ARDS	Liste ein aus
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_IEVerhältnis_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_Vt_Backup	Vt in der Backupeinstellung
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Leoni_Apnoezeit	Apnoezeit
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Leoni_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Pallas_Alter	Dokumentation des Alters des Patienten.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Pallas_Frischgas_Air	An der Flowröhre eingestellter Frischgas Flow für Air.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Servoi_Backup_I_E	"Backup I:E [Einstellung] "
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_T1_Apnoezeit_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_VisionA_ApneaRate	Einstellwert: eingestellte Apnoefrequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Zephyros_AF	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Messung_AF	Breathing Frequency
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Messung_AFTotal	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Messung_AMV	Respiratory Minute Volume
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Frequenz	gemessene Atemfrequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_IE	gemessenes I zu E Verhältnis
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_MandAF	gemessene mandatorische Atemfrequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_MandVte	gemessenes mandatorisches Tidalvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Mitteldruck	gemessener Atemwegsmitteldruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_PEEP	gemessenes PEEP Niveau
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_PIP	gemessener Atemwegsspitzendruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Te	gemessene Exspirationszeit
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Ti	gemessene Inspirationszeit
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Ve	gemessenes exspiratorisches Volumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Vte	gemessenes Tidalvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Vti	gemessenes inspiratorisches Tidalvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_WOBi	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_WOBp	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_BiPAPV_AMV	Messwert: gemessenes AMV
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_AMV	gemessenes Atemminutenvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_CPAP	gemessenes CPAP Niveau
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_frequenz	gemessene Atemfrequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmax	gemessener Beatmungsspitzendruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmittel	gemessener Beatmungsmitteldruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_MV	gemessenes Atemminutenvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_Pmean	gemessener Atemwegsmitteldruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_Ppeak	gemessener Atemwegsspitzendruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_ftotal	Gesamtatemfrequenz, ein Monitoring Parameter
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_PeepCPAP	Messwert: Beatmungsdruck Peep / CPAP
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Ppeak	Messwert: Beatmungsspitzendruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Pallas_Frequenz	Gemessene Atemfrequenz.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Pallas_MV	Gemessenes Atemminutenvolumen.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Pallas_Pmean	Gemesener Atemwegsmitteldruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_PeepCPAP	Messwert: Beatmungsdruck Peep/CPAP
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_VisionA_AMVtotal	Messwert: gemessenes Atemminutenvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer2_Aufgabenkreis	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer_Anschrift	Anschrift des Patientenbetreuers
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Betreuer_Aufgabenkreis	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Blutgruppe_Mutter	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Diagnostik	Dokumentation durchgeführter diagnostischer Maßnahmen.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Hypothermie_ArticSun_Doku_KuehlWaermerate	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Hypothermie_ArticSun_VO_KuehlWaermeRate_neu	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_Abiomed_Impella_Spuelloesung	Liste
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_ACAT_ES_Unterstuetzungsverhaeltnis	Liste
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_AutoCat_ES_Arrhythmietiming	Liste
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_IABP_Frequenz	Dokumentation der IABP Frequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_IABPLeersaugen	Dokumentation des prozentualen Anteils des Leersaugens des Ballons
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_CARDIOSAVE_ES_Unterstuetzungsdruck	Dokumentation des Unterstützungdruckes
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	IABP_DatascopeCS300_ES_IABP_Frequenz	Dokumentation der IABP Frequenz.
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Inpuls_Erfassung_Transporte_Anzahl	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Lungenersatzverfahren_Anordnung_ILAAnalogIn	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_Apherese_VO_Antikoagulation	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_CRRT_VO_Multi_praeF	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_HD_ES_4008HS_BasisNa	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_Doku_Auslaufmenge	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Auslaufmenge	Pertionealdialyse Auslaufmenge in ml
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	NEV_PD_VO_Einlaufmenge	Peritonealdialyse Einlaufmenge in ml
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Doku_Dialysekonzentrat	Dialysekonzentrat mit Listenauswahl
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Dokumentation_Antikoagulatio	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Abnahme	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Austauschrate	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_BasisNatrium	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Bicarbonat	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Calcium	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Citrat	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_Dialysatfluß	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_DialyseZeit	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Abnahme	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ArteriellDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Austauschrate	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_BasisNatrium	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Bicarbonat	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Bilanz	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_CalciumFluss	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_CitratFluss	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Dialysatfluß	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_DialyseZeit	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_DruckVorFilter	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_EffektiverEntzug	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FilterDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FiltratDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FlussratePBP	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_GBV	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCaGesammt	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCaPostFilter	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_iCasystemBGA	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ISOUFRate	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_ISOUFZiel	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Plasmavolumen	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_RestZeit	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_AbnahmeMax	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_Antikoagulanz	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_Austauschrate	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_BasisNatrium	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_CitratLoesung	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_VO_KaliumZiel	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_4008HS_BasisNa	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_4008HS_Bicarbonat	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_ADM_Plasmavolumen	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_BM25_Abnahme	Ultrafiltrationsrate
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_BM25_Dialysat	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_ES_Multi_CitratBlut	Citratrate
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_4008HS_artDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_artDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_Bilanz	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_TMPDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_ADM_venDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_BM25_artDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_BM25_DialysatvolumenKumulativ	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_BM25_TMPDruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_Multi_CitratvolumenKumulativ	kumulativ Citrat
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_MS_Multi_DialysatvolumenKumulativ	kumulatives Dialysatvol
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_ADM_effEntzug	Entzugsrate ml/h
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_Antikoagulanz	Antikoagulation Medikament
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_BM25_AbnahmeMax	Ultrafiltrationsrate
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_Citratloesung	Citratbeutel
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenverfahren_VO_Dialysatlösung	Dialysatlösung, Beutel
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_ADVOS_VO_Dialysatloesung	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Organspenderausweis	hat der Patient einen Organspenderausweis?
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Pseudonym	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Patient_Sorgerecht	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_Doku_AnaConDa_System	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_3100A_Leistung	Prozentuale Kolbenauslenkung
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_3100A_Mitteldruck	Eingestellter mittlerer Atemwegsdruck
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Apnoezeit_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_ARDS	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Backup_Ti	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Backup_Vt	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Frequenz_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_IEVerhaeltnis_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_C3_Pkontrol_Backup	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Amplitude	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Ausatemdruck	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_ES_CoughAssist_Ausatemzeit	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_MS_AnaConDa_AF	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_MS_AnaConDa_etGaskonz	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_MS_AnaConDa_MAC	Umstellung PhilipsMonitoring
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_NEV_HD_ES_5008onl_Dialyse_Zeit	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_RhySta	Arrhytmia Rhytm Status label
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Temperatur_Rektal	Anlage im Rahmen Philips Monitoring
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Waermesysteme_FisherPaykel_VO_Prozent	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Waermesysteme_InfantWarmer_VO_Power	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Waermesysteme_InfantWarmer_VO_SkinTemp	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schlagvolumen	gemessenes Schlagvolumen
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_drei_ES_ÜberstimulationsFreq	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_Osypka203H_ES_V_RapidPacing	Rapid Pacing Stimulationsfrequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_Osypka203H_ES_VRP	ventrikuläre Stimulationsfrequenz
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Schrittmacher_zwei_ES_Empfindlichkeit	Medtronic 5375
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Therapiebetten_VO_BariAir_mittePause	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Untersuchung_Abdomen_Nieren	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Untersuchung_Kopf_Augen	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Untersuchung_ZNS_Hirnnerven	\N
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Anordnung_PEEP	Anordnung Positiver endexspiratorischer Druck (PEEP)
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_PEEP	Positiver endexspiratorischer Druck (PEEP)
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Leoni_PEEP	\N
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Servoi_PEEP	"PEEP "
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita2_Ppeep	gemessener positer endexspiratorischer Druck
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita4_PEEP	gemessener positiver endexspiratorischer Druck
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_VisionA_PEEP	Messwert: gemessener positiver endexspiratorischer Druck
+Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	PAP	Pulmunalarterieller Druck
+Pulmonalvaskulärer Widerstandsindex	PV RI	PVRI	"Pulmunaler Gefäßwiderstandsindex "
+Pulmonalvaskulärer Widerstandsindex	PV RI	VigilanceC_PVRI	Pulmonaler vasculärer Widerstandsindex
+Puls	\N	Puls	Puls
+Rechtsatrialer Druck	Blood pressure panel with all children optional	RAP	Rechtsatrial Mitteldruck
+Rechtsatrialer Druck	Blood pressure panel with all children optional	RAP1	rechtsartrialer Druck
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_Einstellung_FlowAssist	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_Einstellung_I:E	Atemzeitverhältnis (I:E)
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_3100B_O2Konzentration	Einstellwert: O2 Konzentration des Gasgemisches
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Airvo_O2Konzentration	Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Avea_PeakFlow	eingestellter Spitzengasfluss
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_CF800_SauerstoffFlow	Einstellgröße Gasfluss Sauerstoff
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_FlowAssist	Einstellgröße für den Flowassist im Modus PPS
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_Flowtrigger	Einstellgröße des Flowtriggers
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Evita4_VolAssist	Einstellgröße für den VolAssist im PPS Modus
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_F120_Flow	Einstellwert: Größe des Gasflusses beim F 120
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_G5_Sauerstoff	Sauerstoffeinstellung
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Pallas_Frischgas_O2	An der Flowröhre eingestellter O2 Frischgasflow.
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_T1_Sauerstoff	Sauerstoffeinstellung
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Zephyros_Endflow	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_MS_Pallas_Frischgas_Flow_gesamt	Gemessener Frischgas Flow.
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_MS_VisionA_Amplitude	gemessene Druckdifferenz im HFOV Modus
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	EVLW/EV	Extravasales Lungenwasser
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Hausarzt_Strasse	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	IABP_AutoCat_ES_Modus	Liste
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Lungenersatzverfahren_ES_ILAactivve_Systole	%Systole Verhältnis Systolendauer zur Diastolendauer
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	NEV_HD_VO_Zugang	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Nierenverfahren_ES_ADM_PlasmaAustausch	Plasmarate
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_CSF_MS_LiquoGuard_Fuellstand	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_CSF_MS_LiquoGuard_Liquorfluss	"automatisch berechnet aus Pset ml/h "
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_Impella_Impella_Doku_Verschlusssystem	Liste Ja Nein
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ1	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ2	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ3	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_Waermesysteme_InfantWarmer_Doku_Power	\N
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Schwangerschaftswoche	Schwangerschaftswoche, in welcher das Baby geboren wurde
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Untersuchung_Kontrolle_Laufraten	Arztdoku S. 10
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	VigilanceC_EVLW	Extravasales Lungenwasser
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Waermesysteme_BairHugger_Doku_Geblaese	Liste
+Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Waermesysteme_BairHugger_VO_Geblaese	\N
+Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_G5_fspontan	Spontane Atemfrequenz
+Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_T1_fSpontan	Spontane Atemfrequenz
+Spontane-Atemfrequenz-Beatmet	\N	P_Beatmung_MS_C3_fSpontan	Spontane Atemfrequenz
+Substituatfluss	\N	Nierenverfahren_ES_BM25_Umsatz	Austausch, Substituat, ml/h
+Substituatfluss	\N	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h
+Substituatfluss	\N	Nierenverfahren_VO_Multi_Substituat	Substituat in ml/h
+Substituatvolumen	\N	Nierenersatzverfahren_Mess_SubstituatVolumen	\N
+Substituatvolumen	\N	Nierenersatzverfahren_VO_SubstituatVolumen	\N
+Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVRI	Systemischer Gefäßwiderstandsindex
+Systemischer vaskulärer Widerstandsindex	SV RI	Vigileo_SVRI	Systemic vascular resistance index
+Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_Einstellung_Psupport	\N
+Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_G5_Psupport	Einstellwert: Druckunterstützung beim G 5  bei Spontanatemzügen
+Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Heimbeatmung_Psupport	\N
+Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Servoi_Psupport	\N
+Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_T1_Psupport	Beatmung_ES_T1_Psupport
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_I:E	Atemzeitverhältnis (I:E)
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_IE	gemessenes I zu E Verhältnis
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_G5_IEVerhaeltnis	gemessenes I:E Verhältnis
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Servoi_I_E	I:E Verhältnis (Messung)
+Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_MS_C3_IEVerhaeltnis	Verhältnis Inspirationszeit:Exspirationszeit
+Zentralvenöser Druck	CVP	PICCO_ZVD	Zentraler Venendruck
+Zentralvenöser Druck	CVP	ZVD	Zentralvenöser Druck
 \.
 
 

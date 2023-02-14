@@ -382,18 +382,138 @@ where (name ~* 'druck|pres|expir|ausat|flu|flow' or description ~* 'druck|pres|e
 select 'Atemwegsdruck bei null expiratorischem Gasfluss' profil, name, description from icu_copra.copra_config_vars ccv 
 where (name ~* 'druck|pres|expir|ausat|flu|flow|null' or description ~* 'druck|pres|expir|ausat|flu|flow|null');
 
------------------------------------
+
 -- Atemzugvolumen-Einstellung
-select 'Atemzugvolumen-Einstellung' profil, name, description from icu_copra.copra_config_vars ccv 
-where (name ~* 'atem|volu|einst' or description ~* 'atem|volu|einst');
+select 'Atemzugvolumen-Einstellung' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'atem|volu|einst' or description ~* 'atem|volu|einst')
+order by description, name;
+
+
+-- Atemzugvolumen-Waehrend-Beatmung
+select 'Atemzugvolumen-Waehrend-Beatmung' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'atem|vol' or description ~* 'atem|vol')
+and (name !~* 'einst|einges' or description !~* 'einst|einges')
+and (unit isnull or unit ~* 'l')
+order by description, name;
+
+
+-- Beatmungsvolumen-Pro-Minute-Machineller-Beatmung
+select 'Beatmungsvolumen-Pro-Minute-Machineller-Beatmung' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'machi|minu|vol' or description ~* 'machi|minu|vol')
+and (name !~* 'einst|einges' or description !~* 'einst|einges')
+and (unit isnull or unit ~* 'l|min')
+order by description, name;
+
+-- Beatmung_MS_Evita2_AMV, Beatmung_MS_Evita4_MV, Beatmung_MS_Pallas_MV
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Beatmung_MS_Evita2_AMV', 'Beatmung_MS_Evita4_MV', 'Beatmung_MS_Pallas_MV') and fpa.id = '37'
+
+
+
+-- Beatmungszeit auf hohem Druck
+select 'Beatmungszeit auf hohem Druck' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'time|zeit|hei|hoc|press|druc' or description ~* 'time|zeit|hei|hoc|press|druc')
+and (name !~* 'niere|sicher|ernae|tabell|dekanu|praem|patient|score|nev' or description !~* 'niere')
+and (unit isnull or unit ~* 'min|s')
+order by description, name;
+
+--Beatmung_ES_Avea_ZeitHoch, Beatmung_ES_Evita4_Thoch, Beatmung_ES_Servoi_Thoch
+
+-- Beatmungszeit auf hohem Druck
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Beatmung_ES_Avea_ZeitHoch', 'Beatmung_ES_Evita4_Thoch', 'Beatmung_ES_Servoi_Thoch') and fpa.id = 35
+
+
+
+-- Beatmungszeit auf niedrigem Druck
+select 'Beatmungszeit auf niedrigem Druck' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'time|zeit|low|nied|press|druc' or description ~* 'time|zeit|low|nied|press|druc')
+and (name !~* 'niere|sicher|ernae|tabell|dekanu|praem|patient|score|nev' or description !~* 'niere')
+and (unit isnull or unit ~* 'min|s')
+order by description, name;
+
+-- Beatmungszeit auf niedrigem Druck
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Beatmung_ES_Evita4_Ttief', 'Beatmung_ES_Avea_ZeitNiedrig', 'Beatmung_ES_Servoi_Tpeep') and fpa.id = 34
+
+
+
+-- Blutfluss durch cardiovasculäres Gerät
+select 'Blutfluss durch cardiovasculäres Gerät' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'blod|blut|flus|flow|card' or description ~* 'blod|blut|flus|flow|card')
+and (name !~* 'beatmun|druck' or description !~* 'beatmu|druck')
+and (unit isnull or unit ~* 'l|min|s')
+order by description, name;
+
+-- Blutfluss durch cardiovasculäres Gerät
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('CardioHelpMaquet_MS_Blutfluss', 'CardioHelpMaquet_VO_Blutfluss') and fpa.id = 4
+
+
+
+-- Blutfluss extrakorporaler Gasaustausch
+select 'Blutfluss extrakorporaler Gasaustausch' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'blod|blut|flus|flow' or description ~* 'blod|blut|flus|flow')
+and (name !~* 'druck' or description !~* 'druck')
+and (unit isnull or unit ~* 'l|min|s')
+order by description, name;
+
+-- Blutfluss extrakorporaler Gasaustausch
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Hemolung_MS_Blutfluss', 'Hemolung_VO_Blutfluss', 'Lungenersatzverfahren_ES_ILAactivve_Blutfluss') and fpa.id = 12
+
+
+
+-- Dynamische Kompliance
+select 'Dynamische Kompliance' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'plian' or description ~* 'plian')
+--and (name !~* 'druck' or description !~* 'druck')
+--and (unit isnull or unit ~* 'l|min|s')
+order by description, name;
+
+-- Dynamische Kompliance
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Beatmung_Messung_Compliance', 'Beatmung_MS_Pallas_Cpat', 'Beatmung_MS_Evita2_Compliance', 'Beatmung_MS_Evita4_Compliance') and fpa.id = 25
+
+
+-- Herzfrequenz
+select 'Herzfrequenz' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'hear|herz|freq|rate' or description ~* 'hear|herz|freq|rate')
+and (name !~* 'beat|praem|beha|klinik')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'min' or ccv.unit isnull)
+order by description, name;
+
+
+
+
+-- Herzzeitvolumen
+select 'Herzzeitvolumen' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'hear|herz|lv|time|vol|zeit|hzv' or description ~* 'hear|herz|lv|time|zeit|vol|hzv')
+and (name !~* 'beat|praem|beha|klinik|niere|dekan|verl|bele|aufn')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'min' or ccv.unit isnull)
+order by description, name;
+
+-- Herzzeitvolumen
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('HZVGeraet_Auswahl', 'HZV_PICCOGeraet', 'HZV_VigilanceCGeraet', 'HZV_VigileoGeraet', 'p-CO') and fpa.id = 69
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 21;
+update icu_copra.fhir_profiles_all set analyzed = true where id = 69;
 
 
 
 --30, 98
+
 
 
 
