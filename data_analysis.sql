@@ -506,10 +506,134 @@ order by description, name;
 select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
 where ccv.name in ('HZVGeraet_Auswahl', 'HZV_PICCOGeraet', 'HZV_VigilanceCGeraet', 'HZV_VigileoGeraet', 'p-CO') and fpa.id = 69
 
+
+-- Horowitz-In-Arteriellem-Blut
+select 'Horowitz-In-Arteriellem-Blut' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'horo|BldA|IhG|Rto' or description ~* 'hro|BldA|IhG|Rto')
+--and (name !~* 'beat|praem|beha|klinik|niere|dekan|verl|bele|aufn')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'hg' or ccv.unit isnull)
+order by description, name;
+
+
+-- Kopfumfang
+select 'Kopfumfang' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'kopf|head|circ|ofc' or description ~* 'kopf|head|circ|ofc')
+--and (name !~* 'beat|praem|beha|klinik|niere|dekan|verl|bele|aufn')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'cm' or ccv.unit isnull)
+order by description, name;
+
+
+-- Körpergewicht
+select 'Körpergewicht' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'weight|gewicht' or description ~* 'weight|gewicht')
+--and (name !~* '')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'kg|g' or ccv.unit isnull)
+order by description, name;
+
+-- Körpergewicht
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Patient_AufnGewicht', 'COPRA_Patient_Bezugsgewicht') and fpa.id = 54
+
+
+
+-- Puls
+select 'Puls' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'puls' or description ~* 'puls')
+--and (name !~* '')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'min|s' or ccv.unit isnull)
+order by description, name;
+
+
+-- Substituatfluss
+select 'Substituatfluss' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'sub.+flow|sub.+flus' or description ~* 'sub.+flow|sub.+flus')
+--and (name !~* '')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'l|h|min' or ccv.unit isnull)
+order by description, name;
+
+
+-- Substituatvolumen
+select 'Substituatvolumen' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'sub.+vo|sub.+vo' or description ~* 'sub.+vo|sub.+vo')
+--and (name !~* '')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'l' or ccv.unit isnull)
+order by description, name;
+
+-- Substituatvolumen
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Nierenersatzverfahren_Einstell_SubstituatVolumen') and fpa.id = 10
+
+
+
+-- Linksatrialer Druck
+select 'Linksatrialer Druck' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'link|left|atri' or description ~* 'link|left|atri')
+--and (name !~* '')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'l' or ccv.unit isnull)
+order by description, name;
+
+
+-- Sauerstoffgasfluss
+select 'Sauerstoffgasfluss' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'o2|sauerst|flow|flus' or description ~* 'o2|sauerst|flow|flus')
+--and (name !~* '')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'l|min|s' or ccv.unit isnull)
+order by description, name;
+
+-- Sauerstoffgasfluss
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Beatmung_Einstellung_SauerstoffFlow', 'Beatmung_ES_Optiflow_O2Flow') and fpa.id = 6
+--and ccv.name not in (select name from icu_copra.matched_0 m)
+
+
+
+-- Intrakranieller Druck ICP
+select 'Intrakranieller Druck ICP' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'intra|cra|kran|icp' or description ~* 'inta|kra|cra|icp')
+--and (name !~* '')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'l|min|s' or ccv.unit isnull)
+order by description, name;
+
+-- Intrakranieller Druck ICP
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Score_TISS10_ICPMessung', 'Score_TISS28_ICPMessung', 'TISS28_TS_ICPMessung') and fpa.id = 50
+--and ccv.name not in (select name from icu_copra.matched_0 m)
+
+
+-- Venöser Druck
+select 'Venöser Druck' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'ven' or description ~* 'ven.+dru|ven.+pres')
+--and (name !~* '')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'hg' or ccv.unit isnull)
+order by description, name;
+
+-- Venöser Druck
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Nierenverfahren_MS_Multi_venDruck', 'CardioHelpMaquet_MS_DruckVenoes', 'NEV_Apherese_MS_Multil_venDruck', 'NEV_CRRT_MS_Multi_venDruck', 
+  'NEV_HD_MS_4008HS_venDruck', 'NEV_HD_MS_4008onl_venDruck', 'Nierenersatzverfahren_Mess_VenDruck', 'Nierenersatzverfahren_Mess_VenoeserDruck'
+  , 'Nierenverfahren_MS', 'Nierenverfahren_MS_4008onl_venDruck', 'Nierenverfahren_MS_BM25_venDruck', 'P_ADVOS_MS_ADVOS_venDruck', 'P_NEV_HD_MS_5008onl_venDruck'
+  ) and fpa.id = 14;
+ 
+ 
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = ;
+
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
-
-update icu_copra.fhir_profiles_all set analyzed = true where id = 69;
-
 
 
 --30, 98
