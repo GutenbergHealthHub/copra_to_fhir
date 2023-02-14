@@ -6680,6 +6680,8 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 50	Intrakranieller Druck ICP	Observation	250844005	60956-0	153608	ICP	mm[Hg]	t
 26	Maximaler Beatmungsdruck	Observation	27913002	76531-3	151973	Press.max on vent Airway	cm[H2O]	f
 14	Venöser Druck	Observation	252076005	\N	\N	\N	mm[Hg]	t
+92	Körpertemperatur Blut	Observation	860958002	60834-9	188436	Blood temp	Cel	t
+58	Körpertemperatur Kern	Observation	276885007	8310-5	150368	Body temperature	Cel	t
 80	Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 74	Blutdruck Generisch	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 23	Druckdifferenz Beatmung	Observation	\N	76154-4	\N	Away press delta on vent PressDiff	cm[H2O]	f
@@ -6687,14 +6689,12 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	\N	mL/min	f
 5	Ionisiertes Kalzium aus Nierenersatzverfahren	Observation	\N	83064-6	\N	Ca-I BldCRRT-sCnc	mmol/L	f
 13	Blutflussindex extrakorporaler Gasaustausch	Observation	251289007	\N	\N	\N	L/(min.m2)	f
-92	Körpertemperatur Blut	Observation	860958002	60834-9	188436	Blood temp	Cel	f
 96	Körpertemperatur vaginal	Observation	364246006	8310-5	\N	Body temperature	Cel	f
 100	Körpertemperatur rektal	Observation	307047009	8332-9	188420	Rectal temp	Cel	f
 44	Spontane-Mechanische-Atemfrequenz-Beatmet	Observation	250810003	19840-8	152490	Breaths.spont+mech on vent	/min	f
 36	Spontanes-Plus-Mechanisches-Atemzugvolumen	Observation	\N	20118-6	\N	Spont+mech VT on vent	mL	f
 76	Rechtsatrialer Druck	Observation	276755008	85354-9	\N	Blood pressure panel with all children optional	\N	f
 41	Zeitverhältnis-Ein-Ausatmung	Observation	250822000	75931-6	151832	Insp/Exp time Ratio	{ratio}	f
-58	Körpertemperatur Kern	Observation	276885007	8310-5	150368	Body temperature	Cel	f
 11	Dauer extrakorporaler Gasaustausch	Observation	251286000	\N	\N	\N	h	f
 27	Mittlerer Beatmungsdruck	Observation	698821009	76530-5	151975	Mean Pres on vent Airway	cm[H2O]	f
 55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	f
@@ -6706,7 +6706,6 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 45	Spontane-Atemfrequenz-Beatmet	Observation	271625008	\N	152498	\N	/min	f
 49	Pulmonalarterieller wedge Blutdruck	Observation	118433006	75994-4	150052	PAW pressure	mm[Hg]	f
 62	Linksventrikulaeres Schlagvolumenindex	Observation	277381004	76297-1	\N	LV SVI	mL/m2	f
-73	Zentralvenöser Druck	Observation	71420008	60985-9	150084	CVP	mm[Hg]	f
 38	Spontanes-Atemzugvolumen	Observation	250816009	20116-0	\N	Spont VT on vent	mL	f
 71	Linksv. Herzzeitvolumen durch Indikatorverdünnung	Observation	\N	8737-9	\N	LV Output Indicator dilution	L/min	f
 65	Linksv. Schlagvolumen durch Indikatorverdünnung	Observation	\N	8771-8	\N	LV SV Indicator dilution	mL	f
@@ -6761,6 +6760,7 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 81	Puls	Observation	8499008	\N	149514	\N	/min	t
 9	Substituatfluss	Observation	708513005	\N	\N	\N	mL/h	t
 6	Sauerstoffgasfluss	Observation	79063001	19941-4	\N	Gas flow.O2 O2 delivery sys	L/min	t
+73	Zentralvenöser Druck	Observation	71420008	60985-9	150084	CVP	mm[Hg]	t
 60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	f
 64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	f
 83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	f
@@ -7299,6 +7299,10 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apheres
 Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_ES_C2_Timax	Inspirationszeit maximal
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_ES_Multi_Plasma	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_Abnahme	\N
+Körpertemperatur Blut	Blood temp	TempBT	Bluttemperatur bei der HZV Messung
+Körpertemperatur Kern	Body temperature	KlinikTemperaturstatus_Kerntemperatur_Kerntemp	\N
+Körpertemperatur Kern	Body temperature	KlinikNervensys_Kerntemperatur_Temp	Kerntemperatur
+Körpertemperatur Kern	Body temperature	VerlegPfl_Atm_Koerperkerntemp	\N
 \.
 
 

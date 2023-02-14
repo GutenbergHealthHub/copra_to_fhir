@@ -629,9 +629,43 @@ where ccv.name in ('Nierenverfahren_MS_Multi_venDruck', 'CardioHelpMaquet_MS_Dru
   , 'Nierenverfahren_MS', 'Nierenverfahren_MS_4008onl_venDruck', 'Nierenverfahren_MS_BM25_venDruck', 'P_ADVOS_MS_ADVOS_venDruck', 'P_NEV_HD_MS_5008onl_venDruck'
   ) and fpa.id = 14;
  
- 
+ -- Zentralvenöser Druck
+select 'Zentralvenöser Druck' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'ven|cvp|zvp' or description ~* 'zent.*ven.+dru|ven.+pres|cvp|zvp')
+--and (name !~* '')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'hg' or ccv.unit isnull)
+order by description, name;
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = ;
+
+
+-- Körpertemperatur Blut
+select 'Körpertemperatur Blut' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'temp' or description ~* 'temp.+blut|blut.+temp')
+--and (name !~* '')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'c' or ccv.unit isnull)
+order by description, name;
+
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('TempBT') and fpa.id = 92;
+
+
+-- Körpertemperatur Kern
+select 'Körpertemperatur Kern' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'temp' or description ~* 'temp.+kern|kern.+temp')
+--and (name !~* '')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'c' or ccv.unit isnull)
+order by description, name;
+
+-- Körpertemperatur Kern
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('KlinikNervensys_Kerntemperatur_Temp', 'KlinikTemperaturstatus_Kerntemperatur_Kerntemp', 'VerlegPfl_Atm_Koerperkerntemp') and fpa.id = 58;
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 58;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
