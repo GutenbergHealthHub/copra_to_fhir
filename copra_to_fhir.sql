@@ -6668,6 +6668,7 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 
 COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc_short_name, unit, analyzed) FROM stdin;
 40	Atemzugvolumen-Einstellung	Observation	416811008	20112-9	16929196	VT setting Vent	mL	t
+33	Eingestellter inspiratorischer Gasfluss	Observation	\N	76275-7	\N	Insp flow set Vent	L/min	t
 7	Dauer Hämodialysesitzung	Observation	445940005	\N	\N	\N	h	f
 51	Atemfrequenz	Observation	86290005	9279-1	\N	Resp rate	/min	t
 22	Atemwegsdruck bei mittlerem expiratorischem Gasfluss	Observation	\N	20056-8	\N	PAW @ mean exp flow on vent	cm[H2O]	t
@@ -6683,23 +6684,22 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 92	Körpertemperatur Blut	Observation	860958002	60834-9	188436	Blood temp	Cel	t
 58	Körpertemperatur Kern	Observation	276885007	8310-5	150368	Body temperature	Cel	t
 53	Körpergroesse	Observation	1153637007	8302-2	\N	Body height	cm	t
+41	Zeitverhältnis-Ein-Ausatmung	Observation	250822000	75931-6	151832	Insp/Exp time Ratio	{ratio}	t
+23	Druckdifferenz Beatmung	Observation	\N	76154-4	\N	Away press delta on vent PressDiff	cm[H2O]	t
+100	Körpertemperatur rektal	Observation	307047009	8332-9	188420	Rectal temp	Cel	t
+96	Körpertemperatur vaginal	Observation	364246006	8310-5	\N	Body temperature	Cel	t
 80	Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 74	Blutdruck Generisch	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
-23	Druckdifferenz Beatmung	Observation	\N	76154-4	\N	Away press delta on vent PressDiff	cm[H2O]	f
 8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	\N	mL/min	f
 5	Ionisiertes Kalzium aus Nierenersatzverfahren	Observation	\N	83064-6	\N	Ca-I BldCRRT-sCnc	mmol/L	f
 13	Blutflussindex extrakorporaler Gasaustausch	Observation	251289007	\N	\N	\N	L/(min.m2)	f
-96	Körpertemperatur vaginal	Observation	364246006	8310-5	\N	Body temperature	Cel	f
-100	Körpertemperatur rektal	Observation	307047009	8332-9	188420	Rectal temp	Cel	f
 44	Spontane-Mechanische-Atemfrequenz-Beatmet	Observation	250810003	19840-8	152490	Breaths.spont+mech on vent	/min	f
 36	Spontanes-Plus-Mechanisches-Atemzugvolumen	Observation	\N	20118-6	\N	Spont+mech VT on vent	mL	f
 76	Rechtsatrialer Druck	Observation	276755008	85354-9	\N	Blood pressure panel with all children optional	\N	f
-41	Zeitverhältnis-Ein-Ausatmung	Observation	250822000	75931-6	151832	Insp/Exp time Ratio	{ratio}	f
 11	Dauer extrakorporaler Gasaustausch	Observation	251286000	\N	\N	\N	h	f
 27	Mittlerer Beatmungsdruck	Observation	698821009	76530-5	151975	Mean Pres on vent Airway	cm[H2O]	f
 55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	f
 31	Exspiratorischer Gasfluss	Observation	\N	60792-9	151944	Expiratory gas flow on vent Airway	L/min	f
-89	Körpertemperatur nasal	Observation	\N	76010-8	188504	Nasal temp	Cel	f
 67	Systemischer vaskulärer Widerstandsindex	Observation	276900001	8837-7	149760	SV RI	dyn.s/cm5/m2	f
 43	Einstellung-Einatmungszeit-Beatmung	Observation	250819002	76334-2	16929632	Insp time set Vent	s	f
 20	Endexpiratorischer Kohlendioxidpartialdruck	Observation	250790007	19891-1	151708	pCO2 end exp ExG	mm[Hg]	f
@@ -6721,13 +6721,10 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 87	Körpertemperatur Halswirbelsaeule	Observation	364419004	8310-5	\N	Body temperature	Cel	f
 42	Einstellung-Ausatmungszeit-Beatmung	Observation	250820008	76187-4	\N	Exp hold time set Vent	s	f
 93	Körpertemperatur Leiste	Observation	415929009	8310-5	\N	Body temperature	Cel	f
-32	Inspiratorischer Gasfluss	Observation	\N	60794-5	151948	Insp gas flow on vent Airway	L/min	f
 59	Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	Observation	\N	59407-7	160296	SaO2 % Bld Preductal PulseOx	%	f
 84	Körpertemperatur Lendenwirbelsaeule	Observation	364429006	8310-5	\N	Body temperature	Cel	f
 99	Körpertemperatur Speiseroehre	Observation	431598003	60836-4	\N	Esoph temp	Cel	f
 46	Mechanische-Atemfrequenz-Beatmet	Observation	250876000	33438-3	151586	Breaths.mechanical on vent	{Breaths}/min	f
-33	Eingestellter inspiratorischer Gasfluss	Observation	\N	76275-7	\N	Insp flow set Vent	L/min	f
-56	Körpergrösse Percentil	Observation	1153605006	8303-0	\N	Body height Prctl	%	f
 77	Rechtsventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 86	Körpertemperatur Stirn	Observation	415922000	8310-5	\N	Body temperature	Cel	f
 28	Exspiratorischer Sauerstoffpartialdruck	Observation	442720002	3147-6	153132	pO2 ExG	cm[Hg]	f
@@ -6761,6 +6758,9 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 68	Linksventrikulärer Herzindex	Observation	54993008	75919-1	149772	LV Cardiac index	L/(min.m2)	t
 63	Linksventrikulaeres Schlagvolumen	Observation	\N	20562-5	150428	LV SV	/mL	t
 62	Linksventrikulaeres Schlagvolumenindex	Observation	277381004	76297-1	\N	LV SVI	mL/m2	t
+32	Inspiratorischer Gasfluss	Observation	\N	60794-5	151948	Insp gas flow on vent Airway	L/min	t
+56	Körpergrösse Percentil	Observation	1153605006	8303-0	\N	Body height Prctl	%	t
+89	Körpertemperatur nasal	Observation	\N	76010-8	188504	Nasal temp	Cel	t
 60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	f
 64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	f
 83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	f
@@ -6797,7 +6797,6 @@ Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_G5_Apnoezeit_Backu
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_PD_VO_Einlaufzeit	\N
 Atemfrequenz	Resp rate	Beatmung_MS_T1_fTotal	Gesamtfrequenz
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita2_Compliance	gemessene Lungencompliance
-Intrakranieller Druck ICP	ICP	Score_TISS10_ICPMessung	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	P_Beatmung_MS_AnaConDa_etGaskonz	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_FlussratePBP	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Mess_DialyseZeit	\N
@@ -6977,7 +6976,6 @@ Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Nierenersat
 Intrakranieller Druck ICP	ICP	P_CSF_MS_LiqouGuard_ICP	\N
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	P_LEV_Doku_LokalisationBFQ3	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	NEV_Apherese_VO_Multi_BlutflussMax	\N
-Intrakranieller Druck ICP	ICP	Score_TISS28_ICPMessung	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_Avea_ZeitNiedrig	Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_MandAF	gemessene mandatorische Atemfrequenz
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Nierenersatzverfahren_Einstell_BasisNatrium	\N
@@ -7306,6 +7304,8 @@ Körpertemperatur Kern	Body temperature	VerlegPfl_Atm_Koerperkerntemp	\N
 Körpergroesse	Body height	Patient_AufnGroesse	Größe Patient (fallbezogen)
 Körpergroesse	Body height	Patient_Groesse	Größe des Patienten
 Puls	\N	Herzrhythmus	Herzrhythmus
+Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_Einstellung_Flow	Inspiratorische Flowrate
+Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita2_InspFlow	eingestellter Inspirationfluss
 \.
 
 

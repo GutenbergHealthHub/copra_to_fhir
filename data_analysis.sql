@@ -724,10 +724,82 @@ and (name not in (select distinct name from icu_copra.matched_0 m))
 order by description, name;
 
 
+-- Zeitverhältnis-Ein-Ausatmung
+select 'Zeitverhältnis-Ein-Ausatmung' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'time|zeit|ausa|eina|insp|expi' or description ~* 'time|zeit|ausa|eina|insp|expi')
+and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul|dekan|hausa')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'cm' or ccv.unit isnull)
+order by description, name;
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 62;
+
+-- Druckdifferenz Beatmung
+select 'Druckdifferenz Beatmung' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'press|druck|diffe' or description ~* 'press|druck|diffe')
+and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul|dekan|hausa')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'cm|mm' or ccv.unit isnull)
+order by description, name;
+
+
+
+-- Eingestellter inspiratorischer Gasfluss
+select 'Eingestellter inspiratorischer Gasfluss' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'einst|insp|eina|flow|gas|einges|rate' or description ~* 'einst|einges|insp|eina|flow|gas|rate')
+and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul|dekan|hausa')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'l|min|s' or ccv.unit isnull)
+order by description, name;
+
+
+-- Eingestellter inspiratorischer Gasfluss
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Beatmung_ES_Evita2_InspFlow', 'Beatmung_Einstellung_Flow') and fpa.id = 33;
+
+
+--Inspiratorischer Gasfluss 
+select 'Inspiratorischer Gasfluss' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'insp|eina|flow|gas|einges|rate' or description ~* 'insp|eina|flow|gas|rate')
+and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul|dekan|hausa|einstell')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'l|min|s' or ccv.unit isnull)
+order by description, name;
+
+
+--Körpertemperatur rektal
+select 'Körpertemperatur rektal' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'rect|rekt' or description ~* 'rect|rekt')
+--and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul|dekan|hausa|einstell')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'c' or ccv.unit isnull)
+order by description, name;
+
+
+--Körpertemperatur vaginal
+select 'Körpertemperatur vaginal' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'vag' or description ~* 'vag')
+--and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul|dekan|hausa|einstell')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'c' or ccv.unit isnull)
+order by description, name;
+
+
+--Körpertemperatur nasal
+select 'Körpertemperatur nasal' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'nas' or description ~* 'nas')
+--and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul|dekan|hausa|einstell')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'c' or ccv.unit isnull)
+order by description, name;
+
+
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 89;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
+
+delete from icu_copra.matched_0 m where "name" like '%Score%'
 
 
 --30, 98
