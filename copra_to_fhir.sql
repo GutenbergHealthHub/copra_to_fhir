@@ -6682,10 +6682,10 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 14	Venöser Druck	Observation	252076005	\N	\N	\N	mm[Hg]	t
 92	Körpertemperatur Blut	Observation	860958002	60834-9	188436	Blood temp	Cel	t
 58	Körpertemperatur Kern	Observation	276885007	8310-5	150368	Body temperature	Cel	t
+53	Körpergroesse	Observation	1153637007	8302-2	\N	Body height	cm	t
 80	Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 74	Blutdruck Generisch	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 23	Druckdifferenz Beatmung	Observation	\N	76154-4	\N	Away press delta on vent PressDiff	cm[H2O]	f
-53	Körpergroesse	Observation	1153637007	8302-2	\N	Body height	cm	f
 8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	\N	mL/min	f
 5	Ionisiertes Kalzium aus Nierenersatzverfahren	Observation	\N	83064-6	\N	Ca-I BldCRRT-sCnc	mmol/L	f
 13	Blutflussindex extrakorporaler Gasaustausch	Observation	251289007	\N	\N	\N	L/(min.m2)	f
@@ -6705,12 +6705,10 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 20	Endexpiratorischer Kohlendioxidpartialdruck	Observation	250790007	19891-1	151708	pCO2 end exp ExG	mm[Hg]	f
 45	Spontane-Atemfrequenz-Beatmet	Observation	271625008	\N	152498	\N	/min	f
 49	Pulmonalarterieller wedge Blutdruck	Observation	118433006	75994-4	150052	PAW pressure	mm[Hg]	f
-62	Linksventrikulaeres Schlagvolumenindex	Observation	277381004	76297-1	\N	LV SVI	mL/m2	f
 38	Spontanes-Atemzugvolumen	Observation	250816009	20116-0	\N	Spont VT on vent	mL	f
 71	Linksv. Herzzeitvolumen durch Indikatorverdünnung	Observation	\N	8737-9	\N	LV Output Indicator dilution	L/min	f
 65	Linksv. Schlagvolumen durch Indikatorverdünnung	Observation	\N	8771-8	\N	LV SV Indicator dilution	mL	f
 101	Körpertemperatur Trommelfell	Observation	415974002	8333-7	\N	Tymp memb temp	Cel	f
-63	Linksventrikulaeres Schlagvolumen	Observation	\N	20562-5	150428	LV SV	/mL	f
 66	Pulmonalvaskulärer Widerstandsindex	Observation	276902009	8834-4	152852	PV RI	dyn.s/cm5/m2	f
 98	Körpertemperatur Nasen-Rachen-Raum	Observation	698831002	8310-5	\N	Body temperature	Cel	f
 61	Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	Observation	442476006	2708-6	150456	SaO2 % BldA	%	f
@@ -6736,9 +6734,7 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 30	Inspiratorische Sauerstofffraktion eingestellt	Observation	250774007	19994-3	\N	O2/Total gas setting VFr Vent	%	f
 19	Unterstützungsdruck Beatmung	Observation	\N	20079-0	\N	Pressure support setting Vent	cm[H2O]	f
 79	Pulmonalarterieller Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
-78	Linksventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 24	Positiv-endexpiratorischer Druck	Observation	250854009	76248-4	151976	PEEP on vent Respiratory	cm[H2O]	f
-68	Linksventrikulärer Herzindex	Observation	54993008	75919-1	149772	LV Cardiac index	L/(min.m2)	f
 70	Linksv. Herzindex durch Indikatorverdünnung	Observation	\N	8751-0	\N	LV Cardiac index Indicator dilution	L/min/m2	f
 15	Arterieller Druck	Observation	386534000	\N	\N	\N	mm[Hg]	t
 16	Beatmung	Procedure	\N	\N	\N	\N	\N	t
@@ -6761,6 +6757,10 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 9	Substituatfluss	Observation	708513005	\N	\N	\N	mL/h	t
 6	Sauerstoffgasfluss	Observation	79063001	19941-4	\N	Gas flow.O2 O2 delivery sys	L/min	t
 73	Zentralvenöser Druck	Observation	71420008	60985-9	150084	CVP	mm[Hg]	t
+78	Linksventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	t
+68	Linksventrikulärer Herzindex	Observation	54993008	75919-1	149772	LV Cardiac index	L/(min.m2)	t
+63	Linksventrikulaeres Schlagvolumen	Observation	\N	20562-5	150428	LV SV	/mL	t
+62	Linksventrikulaeres Schlagvolumenindex	Observation	277381004	76297-1	\N	LV SVI	mL/m2	t
 60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	f
 64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	f
 83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	f
@@ -7303,6 +7303,9 @@ Körpertemperatur Blut	Blood temp	TempBT	Bluttemperatur bei der HZV Messung
 Körpertemperatur Kern	Body temperature	KlinikTemperaturstatus_Kerntemperatur_Kerntemp	\N
 Körpertemperatur Kern	Body temperature	KlinikNervensys_Kerntemperatur_Temp	Kerntemperatur
 Körpertemperatur Kern	Body temperature	VerlegPfl_Atm_Koerperkerntemp	\N
+Körpergroesse	Body height	Patient_AufnGroesse	Größe Patient (fallbezogen)
+Körpergroesse	Body height	Patient_Groesse	Größe des Patienten
+Puls	\N	Herzrhythmus	Herzrhythmus
 \.
 
 

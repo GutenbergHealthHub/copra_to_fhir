@@ -542,12 +542,17 @@ where ccv.name in ('Patient_AufnGewicht', 'COPRA_Patient_Bezugsgewicht') and fpa
 
 -- Puls
 select 'Puls' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
-where (name ~* 'puls' or description ~* 'puls')
+where (name ~* 'puls' or description ~* 'puls|Herzrhythmus')
 --and (name !~* '')
 and (name not in (select distinct name from icu_copra.matched_0 m))
 and (ccv.unit ~* 'min|s' or ccv.unit isnull)
 order by description, name;
 
+
+-- puls
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Herzrhythmus') and fpa.id = 81
 
 -- Substituatfluss
 select 'Substituatfluss' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
@@ -661,16 +666,72 @@ and (ccv.unit ~* 'c' or ccv.unit isnull)
 order by description, name;
 
 -- Körpertemperatur Kern
-insert into icu_copra.matched_0 
+--insert into icu_copra.matched_0 
 select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
 where ccv.name in ('KlinikNervensys_Kerntemperatur_Temp', 'KlinikTemperaturstatus_Kerntemperatur_Kerntemp', 'VerlegPfl_Atm_Koerperkerntemp') and fpa.id = 58;
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 58;
+
+-- Körpergroesse
+select 'Körpergroesse' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'body|height|gro|grö' or description ~* 'body|height|gro|grö')
+--and (name !~* '')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'cm' or ccv.unit isnull)
+order by description, name;
+
+-- Körpergroesse
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Patient_Groesse', 'Patient_AufnGroesse') and fpa.id = 53;
+
+
+
+-- Linksventrikulärer Druck
+select 'Linksventrikulärer Druck' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'lin|left|ven|pres|druc' or description ~* 'lin.+ven|left|ven|pres|druc')
+and (name !~* 'archiv|beat|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'cm' or ccv.unit isnull)
+order by description, name;
+
+
+-- Linksventrikulärer Herzindex
+select 'Linksventrikulärer Herzindex' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'lin|left|ventr|inde|hear|herz|lv' or description ~* 'lin.+ven|left|ventr|index|herz|hear')
+and (name !~* 'archiv|beat|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'cm' or ccv.unit isnull)
+order by description, name;
+
+
+
+-- Linksventrikulaeres Schlagvolumen
+select 'Linksventrikulärer Herzindex' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'lin|left|ventr|schla|vol|lv|sv' or description ~* 'lin.+ven|left|ventr|schlagvol|lv|sv')
+and (name !~* 'archiv|beat|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'cm' or ccv.unit isnull)
+order by description, name;
+
+
+
+-- Linksventrikulaeres Schlagvolumenindex
+select 'Linksventrikulaeres Schlagvolumenindex' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'lin|left|ventr|schla|vol|lv|svi|ndex' or description ~* 'lin.+ven|left|ventr|schlagvol|lv|svi|dex')
+and (name !~* 'archiv|beat|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'cm' or ccv.unit isnull)
+order by description, name;
+
+
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 62;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
 
 --30, 98
+
 
 
 
