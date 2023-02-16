@@ -794,8 +794,26 @@ and (ccv.unit ~* 'c' or ccv.unit isnull)
 order by description, name;
 
 
+--Maximaler Beatmungsdruck
+select 'Maximaler Beatmungsdruck' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'max|pres|druck' or description ~* 'max|druck|pres')
+and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul|dekan|hausa|einstell')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'cm|mm' or ccv.unit isnull)
+order by description, name;
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 89;
+
+--Körpertemperatur Nasen-Rachen-Raum
+select 'Körpertemperatur Nasen-Rachen-Raum' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'temp' or description ~* 'temp')
+and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul|dekan|hausa|einstell')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'cm|mm' or ccv.unit isnull)
+order by description, name;
+
+
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 98;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 

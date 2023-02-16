@@ -6679,7 +6679,6 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 10	Substituatvolumen	Observation	708514004	\N	\N	\N	L	t
 75	Linksatrialer Druck	Observation	276762004	85354-9	\N	Blood pressure panel with all children optional	\N	t
 50	Intrakranieller Druck ICP	Observation	250844005	60956-0	153608	ICP	mm[Hg]	t
-26	Maximaler Beatmungsdruck	Observation	27913002	76531-3	151973	Press.max on vent Airway	cm[H2O]	f
 14	Venöser Druck	Observation	252076005	\N	\N	\N	mm[Hg]	t
 92	Körpertemperatur Blut	Observation	860958002	60834-9	188436	Blood temp	Cel	t
 58	Körpertemperatur Kern	Observation	276885007	8310-5	150368	Body temperature	Cel	t
@@ -6688,6 +6687,7 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 23	Druckdifferenz Beatmung	Observation	\N	76154-4	\N	Away press delta on vent PressDiff	cm[H2O]	t
 100	Körpertemperatur rektal	Observation	307047009	8332-9	188420	Rectal temp	Cel	t
 96	Körpertemperatur vaginal	Observation	364246006	8310-5	\N	Body temperature	Cel	t
+26	Maximaler Beatmungsdruck	Observation	27913002	76531-3	151973	Press.max on vent Airway	cm[H2O]	t
 80	Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 74	Blutdruck Generisch	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	\N	mL/min	f
