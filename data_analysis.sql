@@ -874,7 +874,25 @@ and (ccv.unit ~* 'c' or ccv.unit isnull)
 order by description, name;
 
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 93;
+-- Ideales Körpergewicht
+select 'Ideales Körpergewicht' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'ideal' or description ~* 'ideal')
+--and (name !~* 'archiv|praem|score|therap|pupill|mikrob|pflege|befi|behan|insul|dekan|hausa|einstell|atmenk|hypot|waerm|beat|abrech|einste')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'kg' or ccv.unit isnull)
+order by description, name;
+
+
+-- Exspiratorischer Gasfluss
+select 'Exspiratorischer Gasfluss' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'exps|flow|flus|gas' or description ~* 'exsp|flow|flus|gas')
+--and (name !~* 'archiv|praem|score|therap|pupill|mikrob|pflege|befi|behan|insul|dekan|hausa|einstell|atmenk|hypot|waerm|beat|abrech|einste')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'l|min|s' or ccv.unit isnull)
+order by description, name;
+
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 31;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
