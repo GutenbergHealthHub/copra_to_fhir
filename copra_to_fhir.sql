@@ -6698,7 +6698,6 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 76	Rechtsatrialer Druck	Observation	276755008	85354-9	\N	Blood pressure panel with all children optional	\N	f
 11	Dauer extrakorporaler Gasaustausch	Observation	251286000	\N	\N	\N	h	f
 27	Mittlerer Beatmungsdruck	Observation	698821009	76530-5	151975	Mean Pres on vent Airway	cm[H2O]	f
-55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	f
 31	Exspiratorischer Gasfluss	Observation	\N	60792-9	151944	Expiratory gas flow on vent Airway	L/min	f
 67	Systemischer vaskulärer Widerstandsindex	Observation	276900001	8837-7	149760	SV RI	dyn.s/cm5/m2	f
 43	Einstellung-Einatmungszeit-Beatmung	Observation	250819002	76334-2	16929632	Insp time set Vent	s	f
@@ -6708,9 +6707,7 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 38	Spontanes-Atemzugvolumen	Observation	250816009	20116-0	\N	Spont VT on vent	mL	f
 71	Linksv. Herzzeitvolumen durch Indikatorverdünnung	Observation	\N	8737-9	\N	LV Output Indicator dilution	L/min	f
 65	Linksv. Schlagvolumen durch Indikatorverdünnung	Observation	\N	8771-8	\N	LV SV Indicator dilution	mL	f
-101	Körpertemperatur Trommelfell	Observation	415974002	8333-7	\N	Tymp memb temp	Cel	f
 66	Pulmonalvaskulärer Widerstandsindex	Observation	276902009	8834-4	152852	PV RI	dyn.s/cm5/m2	f
-98	Körpertemperatur Nasen-Rachen-Raum	Observation	698831002	8310-5	\N	Body temperature	Cel	f
 61	Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	Observation	442476006	2708-6	150456	SaO2 % BldA	%	f
 95	Körpertemperatur unter der Zunge	Observation	415945006	8331-1	188424	Oral temp	Cel	f
 57	Ideales Körpergewicht	Observation	170804003	50064-5	\N	Ideal bdy weight	kg	f
@@ -6720,10 +6717,8 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 29	Inspiratorische Sauerstofffraktion gemessen	Observation	250774007	71835-3	\N	FIO2	1	f
 87	Körpertemperatur Halswirbelsaeule	Observation	364419004	8310-5	\N	Body temperature	Cel	f
 42	Einstellung-Ausatmungszeit-Beatmung	Observation	250820008	76187-4	\N	Exp hold time set Vent	s	f
-93	Körpertemperatur Leiste	Observation	415929009	8310-5	\N	Body temperature	Cel	f
 59	Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	Observation	\N	59407-7	160296	SaO2 % Bld Preductal PulseOx	%	f
 84	Körpertemperatur Lendenwirbelsaeule	Observation	364429006	8310-5	\N	Body temperature	Cel	f
-99	Körpertemperatur Speiseroehre	Observation	431598003	60836-4	\N	Esoph temp	Cel	f
 46	Mechanische-Atemfrequenz-Beatmet	Observation	250876000	33438-3	151586	Breaths.mechanical on vent	{Breaths}/min	f
 77	Rechtsventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 86	Körpertemperatur Stirn	Observation	415922000	8310-5	\N	Body temperature	Cel	f
@@ -6761,13 +6756,18 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 32	Inspiratorischer Gasfluss	Observation	\N	60794-5	151948	Insp gas flow on vent Airway	L/min	t
 56	Körpergrösse Percentil	Observation	1153605006	8303-0	\N	Body height Prctl	%	t
 89	Körpertemperatur nasal	Observation	\N	76010-8	188504	Nasal temp	Cel	t
+99	Körpertemperatur Speiseroehre	Observation	431598003	60836-4	\N	Esoph temp	Cel	t
+98	Körpertemperatur Nasen-Rachen-Raum	Observation	698831002	8310-5	\N	Body temperature	Cel	t
+55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	f
+101	Körpertemperatur Trommelfell	Observation	415974002	8333-7	\N	Tymp memb temp	Cel	t
+93	Körpertemperatur Leiste	Observation	415929009	8310-5	\N	Body temperature	Cel	t
 60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	f
 64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	f
 83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	f
 94	Körpertemperatur Achsel	Observation	415882003	8328-7	188496	Axil temp	Cel	f
 91	Körpertemperatur Atemwege	Observation	\N	60955-2	\N	Airway temp	Cel	f
 88	Körpertemperatur Brust	Observation	248835004	8310-5	\N	Body temperature	Cel	f
-97	Körpertemperatur Harnblase	Observation	698832009	8334-5	\N	Bdy temp Bladder	Cel	f
+97	Körpertemperatur Harnblase	Observation	698832009	8334-5	\N	Bdy temp Bladder	Cel	t
 \.
 
 
@@ -7306,6 +7306,9 @@ Körpergroesse	Body height	Patient_Groesse	Größe des Patienten
 Puls	\N	Herzrhythmus	Herzrhythmus
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_Einstellung_Flow	Inspiratorische Flowrate
 Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita2_InspFlow	eingestellter Inspirationfluss
+Körpertemperatur Speiseroehre	Esoph temp	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring
+Körpertemperatur nasal	Nasal temp	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring
+Körpertemperatur Trommelfell	Tymp memb temp	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring
 \.
 
 

@@ -787,11 +787,17 @@ order by description, name;
 
 --Körpertemperatur nasal
 select 'Körpertemperatur nasal' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
-where (name ~* 'nas' or description ~* 'nas')
+where (name ~* 'naso|nasal' or description ~* 'naso|nasal')
 --and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul|dekan|hausa|einstell')
-and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (name not in (select distinct name from icu_copra.matched_0 m))
 and (ccv.unit ~* 'c' or ccv.unit isnull)
 order by description, name;
+
+-- Körpertemperatur nasal
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('P_Temperatur_Naso') and fpa.id = 89;
+
 
 
 --Maximaler Beatmungsdruck
@@ -806,23 +812,73 @@ order by description, name;
 --Körpertemperatur Nasen-Rachen-Raum
 select 'Körpertemperatur Nasen-Rachen-Raum' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
 where (name ~* 'temp' or description ~* 'temp')
-and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|^pt_|insul|dekan|hausa|einstell')
+and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|insul|dekan|hausa|einstell|atmenk|hypot|waerm')
 and (name not in (select distinct name from icu_copra.matched_0 m))
-and (ccv.unit ~* 'cm|mm' or ccv.unit isnull)
+and (ccv.unit ~* 'c' or ccv.unit isnull)
+order by description, name;
+
+
+--Körpertemperatur Speiseroehre
+select 'Körpertemperatur Speiseroehre' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'temp' or description ~* 'temp')
+and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|insul|dekan|hausa|einstell|atmenk|hypot|waerm')
+--and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'c' or ccv.unit isnull)
+order by description, name;
+
+-- Körpertemperatur Speiseroehre
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('P_Temperatur_Oesophagial') and fpa.id = 99;
+
+
+--Körpergewicht Percentil altersabhängig
+select 'Körpergewicht Percentil altersabhängig' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'perc|perz|gewi|weig' or description ~* 'perc|perz|gewi|weig')
+and (name !~* 'archiv|praem|klinik|niere|score|therap|pupill|mikrob|pflege|^nev|befi|behan|insul|dekan|hausa|einstell|atmenk|hypot|waerm|beat')
+--and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'c' or ccv.unit isnull)
+order by description, name;
+
+
+-- Körpertemperatur Harnblase
+select 'Körpergewicht Percentil altersabhängig' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'temp' or description ~* 'temp')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|pflege|befi|behan|insul|dekan|hausa|einstell|atmenk|hypot|waerm')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'c' or ccv.unit isnull)
 order by description, name;
 
 
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 98;
+-- Körpertemperatur Trommelfell
+select 'Körpertemperatur Trommelfell' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'temp' or description ~* 'temp')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|pflege|befi|behan|insul|dekan|hausa|einstell|atmenk|hypot|waerm')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'c' or ccv.unit isnull)
+order by description, name;
+
+-- Körpertemperatur Trommelfell
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('P_Temperatur_Tympanal') and fpa.id = 101;
+
+
+-- Körpertemperatur Leiste
+select 'Körpertemperatur Leiste' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'temp|leiste|ingi' or description ~* 'temp|ingi|leiste')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|pflege|befi|behan|insul|dekan|hausa|einstell|atmenk|hypot|waerm|beat|abrech|einste')
+--and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'c' or ccv.unit isnull)
+order by description, name;
+
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 93;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
 delete from icu_copra.matched_0 m where "name" like '%Score%'
 
 
---30, 98
-
-
-
-
-
+--30
