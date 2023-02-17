@@ -955,19 +955,34 @@ order by description, name;
 -- Körpertemperatur unter der Zunge
 select 'Körpertemperatur unter der Zunge' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
 where (name ~* 'temp|zung|lingu' or description ~* 'temp|zung|lingu')
-and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|o2|citr|beat|medika|kons|lung')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|o2|citr|beat|medika|kons|lung|arzt|^nev')
 and (name not in (select distinct name from icu_copra.matched_0 m))
 and (ccv.unit ~* 'c' or ccv.unit isnull)
 order by description, name;
 
 
+-- Körpertemperatur Myokard
+select 'Körpertemperatur Myokard' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'card|temp|kard|hear|herz' or description ~* 'temp|card|kard|hear|herz')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|o2|citr|beat|medika|kons|lung|arzt|^nev')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'c' or ccv.unit isnull)
+order by description, name;
 
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 8;
+-- Dauer extrakorporaler Gasaustausch
+select 'Dauer extrakorporaler Gasaustausch' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'gas|zeit|dau|extra' or description ~* 'gas|zeit|dau|extra')
+--and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|o2|citr|beat|medika|kons|lung|arzt|^nev')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'h' or ccv.unit isnull)
+order by description, name;
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 11;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
-delete from icu_copra.matched_0 m where "name" like '%Score%'
-
+select * from icu_copra.copra_config_vars ccv where description ~* 'pco2|endex|exg'
+and "name" not in (select distinct "name" from icu_copra.matched_0 m);
 
 --30
