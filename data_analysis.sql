@@ -860,7 +860,7 @@ and (ccv.unit ~* 'c' or ccv.unit isnull)
 order by description, name;
 
 -- Körpertemperatur Trommelfell
-insert into icu_copra.matched_0 
+--insert into icu_copra.matched_0 
 select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
 where ccv.name in ('P_Temperatur_Tympanal') and fpa.id = 101;
 
@@ -886,13 +886,84 @@ order by description, name;
 -- Exspiratorischer Gasfluss
 select 'Exspiratorischer Gasfluss' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
 where (name ~* 'exps|flow|flus|gas' or description ~* 'exsp|flow|flus|gas')
---and (name !~* 'archiv|praem|score|therap|pupill|mikrob|pflege|befi|behan|insul|dekan|hausa|einstell|atmenk|hypot|waerm|beat|abrech|einste')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|pflege|befi|behan|insul|dekan|hausa|nier|hypot|waerm|abrech|^nev|insp|einst')
 and (name not in (select distinct name from icu_copra.matched_0 m))
 and (ccv.unit ~* 'l|min|s' or ccv.unit isnull)
 order by description, name;
 
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 31;
+-- Inspiratorischer Gasfluss
+select 'Inspiratorischer Gasfluss' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'insp|flow|flus|gas' or description ~* 'insp|flow|flus|gas')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|pflege|befi|behan|insul|dekan|hausa|nier|hypot|waerm|abrech|^nev|exsp|einst')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'l|min|s' or ccv.unit isnull)
+order by description, name;
+
+
+-- Inspiratorischer Gasfluss
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Beatmung_Anordnung_Flow') and fpa.id = 32;
+
+
+-- Unterstützungsdruck Beatmung
+select 'Unterstützungsdruck Beatmung' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'supp|unte.+druc|pres|beat' or description ~* 'unte.+druc|pres|beat|supp')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|pflege|befi|behan|insul|dekan|hausa|nier|hypot|waerm|abrech|^nev|exsp')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'cm|mm' or ccv.unit isnull)
+order by description, name;
+
+
+-- Ionisiertes Kalzium aus Nierenersatzverfahren
+select 'Ionisiertes Kalzium aus Nierenersatzverfahren' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'ca|nier|ioni|ka' or description ~* 'ka|ca|nier|ioni')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|pflege|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|o2|citr|flus|beat|medika')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'ol|l' or ccv.unit isnull)
+order by description, name;
+
+
+
+-- Positiv-endexpiratorischer Druck
+select 'Positiv-endexpiratorischer Druck' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'ende|peep' or description ~* 'endex|peep')
+--and (name !~* 'archiv|praem|score|therap|pupill|mikrob|pflege|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|o2|citr|flus|beat|medika')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'cm|mm' or ccv.unit isnull)
+order by description, name;
+
+
+-- Positiv-endexpiratorischer Druck
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Beatmung_ES_Servoi_DK_ueber_PEEP', 'Beatmung_ES_Servoi_DU_ueber_PEEP', 'Beatmung_MS_Servoi_PEEP', 
+'Beatmung_MS_Zephyros_Ppeep', 'Beatmung_Proc_PEEP', 'Beatmung_VO_PEEP') and fpa.id = 24;
+
+
+
+-- Hämodialyse Blutfluss
+select 'Hämodialyse Blutfluss' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'dialy|flow|flu|blod|blut' or description ~* 'dialy|flow|flu|blod|blut')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|pflege|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|o2|citr|beat|medika|kons|lung')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'l|min|s' or ccv.unit isnull)
+order by description, name;
+
+
+-- Körpertemperatur unter der Zunge
+select 'Körpertemperatur unter der Zunge' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'temp|zung|lingu' or description ~* 'temp|zung|lingu')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|o2|citr|beat|medika|kons|lung')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'c' or ccv.unit isnull)
+order by description, name;
+
+
+
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 8;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 

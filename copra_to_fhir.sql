@@ -6688,10 +6688,10 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 100	Körpertemperatur rektal	Observation	307047009	8332-9	188420	Rectal temp	Cel	t
 96	Körpertemperatur vaginal	Observation	364246006	8310-5	\N	Body temperature	Cel	t
 26	Maximaler Beatmungsdruck	Observation	27913002	76531-3	151973	Press.max on vent Airway	cm[H2O]	t
+5	Ionisiertes Kalzium aus Nierenersatzverfahren	Observation	\N	83064-6	\N	Ca-I BldCRRT-sCnc	mmol/L	t
+8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	\N	mL/min	t
 80	Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 74	Blutdruck Generisch	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
-8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	\N	mL/min	f
-5	Ionisiertes Kalzium aus Nierenersatzverfahren	Observation	\N	83064-6	\N	Ca-I BldCRRT-sCnc	mmol/L	f
 13	Blutflussindex extrakorporaler Gasaustausch	Observation	251289007	\N	\N	\N	L/(min.m2)	f
 44	Spontane-Mechanische-Atemfrequenz-Beatmet	Observation	250810003	19840-8	152490	Breaths.spont+mech on vent	/min	f
 36	Spontanes-Plus-Mechanisches-Atemzugvolumen	Observation	\N	20118-6	\N	Spont+mech VT on vent	mL	f
@@ -6722,9 +6722,7 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 86	Körpertemperatur Stirn	Observation	415922000	8310-5	\N	Body temperature	Cel	f
 28	Exspiratorischer Sauerstoffpartialdruck	Observation	442720002	3147-6	153132	pO2 ExG	cm[Hg]	f
 30	Inspiratorische Sauerstofffraktion eingestellt	Observation	250774007	19994-3	\N	O2/Total gas setting VFr Vent	%	f
-19	Unterstützungsdruck Beatmung	Observation	\N	20079-0	\N	Pressure support setting Vent	cm[H2O]	f
 79	Pulmonalarterieller Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
-24	Positiv-endexpiratorischer Druck	Observation	250854009	76248-4	151976	PEEP on vent Respiratory	cm[H2O]	f
 70	Linksv. Herzindex durch Indikatorverdünnung	Observation	\N	8751-0	\N	LV Cardiac index Indicator dilution	L/min/m2	f
 15	Arterieller Druck	Observation	386534000	\N	\N	\N	mm[Hg]	t
 16	Beatmung	Procedure	\N	\N	\N	\N	\N	t
@@ -6756,11 +6754,13 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 89	Körpertemperatur nasal	Observation	\N	76010-8	188504	Nasal temp	Cel	t
 99	Körpertemperatur Speiseroehre	Observation	431598003	60836-4	\N	Esoph temp	Cel	t
 98	Körpertemperatur Nasen-Rachen-Raum	Observation	698831002	8310-5	\N	Body temperature	Cel	t
-55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	f
 101	Körpertemperatur Trommelfell	Observation	415974002	8333-7	\N	Tymp memb temp	Cel	t
 93	Körpertemperatur Leiste	Observation	415929009	8310-5	\N	Body temperature	Cel	t
 57	Ideales Körpergewicht	Observation	170804003	50064-5	\N	Ideal bdy weight	kg	t
+19	Unterstützungsdruck Beatmung	Observation	\N	20079-0	\N	Pressure support setting Vent	cm[H2O]	t
 31	Exspiratorischer Gasfluss	Observation	\N	60792-9	151944	Expiratory gas flow on vent Airway	L/min	t
+24	Positiv-endexpiratorischer Druck	Observation	250854009	76248-4	151976	PEEP on vent Respiratory	cm[H2O]	t
+55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	t
 60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	f
 64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	f
 83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	f
@@ -7309,6 +7309,13 @@ Eingestellter inspiratorischer Gasfluss	Insp flow set Vent	Beatmung_ES_Evita2_In
 Körpertemperatur Speiseroehre	Esoph temp	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring
 Körpertemperatur nasal	Nasal temp	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring
 Körpertemperatur Trommelfell	Tymp memb temp	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring
+Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Anordnung_Flow	Anordnung Inspiratorische Flowrate
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_VO_PEEP	\N
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Proc_PEEP	\N
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Zephyros_Ppeep	\N
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Servoi_PEEP	"Positiver Endexsp. Druck "
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Servoi_DU_ueber_PEEP	"DU über PEEP "
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Servoi_DK_ueber_PEEP	"DK über PEEP "
 \.
 
 
