@@ -978,7 +978,63 @@ and (name not in (select distinct name from icu_copra.matched_0 m))
 and (ccv.unit ~* 'h' or ccv.unit isnull)
 order by description, name;
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 11;
+
+-- Systemischer vaskulärer Widerstandsindex
+select 'Systemischer vaskulärer Widerstandsindex' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'sys|svri|dex|resis|widerst' or description ~* 'sys|dex|resis|widerst')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|o2|citr|beat|medika|kons|lung|arzt|^nev|sicher|^klinik|koerp')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'm|s' or ccv.unit isnull)
+order by description, name;
+
+-- Systemischer vaskulärer Widerstandsindex
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('SVRI', 'p-SVRI', 'PICCO_SVRI') and fpa.id = 67;
+
+
+-- Endexpiratorischer Kohlendioxidpartialdruck
+select 'Endexpiratorischer Kohlendioxidpartialdruck' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'co2|endex|kohl' or description ~* 'co2|kohl|endex')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|^nev|sicher|^klinik|koerp')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'mm|cm' or ccv.unit isnull)
+order by description, name;
+
+
+-- Exspiratorischer Sauerstoffpartialdruck
+select 'Exspiratorischer Sauerstoffpartialdruck' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'o2|exs|sauer' or description ~* 'o2|sauer|exsp')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|^nev|sicher|^klinik|koerp|co2')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'mm|cm' or ccv.unit isnull)
+order by description, name;
+
+
+-- Sauerstoffsättigung im art. Blut durch Pulsoxymetrie
+select 'Sauerstoffsättigung im art. Blut durch Pulsoxymetrie' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'o2|sao2|oxy' or description ~* 'o2|sao2|oxy')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|^nev|sicher|^klinik|koerp|co2|beat')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'mm|cm' or ccv.unit isnull)
+order by description, name;
+
+-- Sauerstoffsättigung im art. Blut durch Pulsoxymetrie
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('SaO2') and fpa.id = 61;
+
+
+-- Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie
+select 'Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'o2|sao2|oxy|postd' or description ~* 'o2|sauer|oxy|postdu')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|^nev|sicher|^klinik|koerp|co2|beat')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'mm|cm' or ccv.unit isnull)
+order by description, name;
+
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 60;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
