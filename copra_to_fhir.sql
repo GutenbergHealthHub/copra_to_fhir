@@ -6669,7 +6669,7 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc_short_name, unit, analyzed) FROM stdin;
 40	Atemzugvolumen-Einstellung	Observation	416811008	20112-9	16929196	VT setting Vent	mL	t
 33	Eingestellter inspiratorischer Gasfluss	Observation	\N	76275-7	\N	Insp flow set Vent	L/min	t
-7	Dauer Hämodialysesitzung	Observation	445940005	\N	\N	\N	h	f
+7	Dauer Hämodialysesitzung	Observation	445940005	\N	\N	\N	h	t
 51	Atemfrequenz	Observation	86290005	9279-1	\N	Resp rate	/min	t
 22	Atemwegsdruck bei mittlerem expiratorischem Gasfluss	Observation	\N	20056-8	\N	PAW @ mean exp flow on vent	cm[H2O]	t
 21	Atemwegsdruck bei null expiratorischem Gasfluss	Observation	\N	20060-0	\N	PAW @ zero insp flow on vent	cm[H2O]	t
@@ -6694,23 +6694,19 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 36	Spontanes-Plus-Mechanisches-Atemzugvolumen	Observation	\N	20118-6	\N	Spont+mech VT on vent	mL	t
 44	Spontane-Mechanische-Atemfrequenz-Beatmet	Observation	250810003	19840-8	152490	Breaths.spont+mech on vent	/min	t
 76	Rechtsatrialer Druck	Observation	276755008	85354-9	\N	Blood pressure panel with all children optional	\N	t
+13	Blutflussindex extrakorporaler Gasaustausch	Observation	251289007	\N	\N	\N	L/(min.m2)	t
 80	Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 74	Blutdruck Generisch	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
-13	Blutflussindex extrakorporaler Gasaustausch	Observation	251289007	\N	\N	\N	L/(min.m2)	f
 27	Mittlerer Beatmungsdruck	Observation	698821009	76530-5	151975	Mean Pres on vent Airway	cm[H2O]	f
 43	Einstellung-Einatmungszeit-Beatmung	Observation	250819002	76334-2	16929632	Insp time set Vent	s	f
 49	Pulmonalarterieller wedge Blutdruck	Observation	118433006	75994-4	150052	PAW pressure	mm[Hg]	f
 71	Linksv. Herzzeitvolumen durch Indikatorverdünnung	Observation	\N	8737-9	\N	LV Output Indicator dilution	L/min	f
-65	Linksv. Schlagvolumen durch Indikatorverdünnung	Observation	\N	8771-8	\N	LV SV Indicator dilution	mL	f
-66	Pulmonalvaskulärer Widerstandsindex	Observation	276902009	8834-4	152852	PV RI	dyn.s/cm5/m2	f
 85	Körpertemperatur Gelenk	Observation	250124002	8310-5	\N	Body temperature	Cel	f
 82	Körpertemperatur Generisch	Observation	\N	8310-5	\N	Body temperature	Cel	f
 29	Inspiratorische Sauerstofffraktion gemessen	Observation	250774007	71835-3	\N	FIO2	1	f
 87	Körpertemperatur Halswirbelsaeule	Observation	364419004	8310-5	\N	Body temperature	Cel	f
 42	Einstellung-Ausatmungszeit-Beatmung	Observation	250820008	76187-4	\N	Exp hold time set Vent	s	f
-59	Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	Observation	\N	59407-7	160296	SaO2 % Bld Preductal PulseOx	%	f
 84	Körpertemperatur Lendenwirbelsaeule	Observation	364429006	8310-5	\N	Body temperature	Cel	f
-77	Rechtsventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
 86	Körpertemperatur Stirn	Observation	415922000	8310-5	\N	Body temperature	Cel	f
 30	Inspiratorische Sauerstofffraktion eingestellt	Observation	250774007	19994-3	\N	O2/Total gas setting VFr Vent	%	f
 79	Pulmonalarterieller Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
@@ -6761,13 +6757,17 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 61	Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	Observation	442476006	2708-6	150456	SaO2 % BldA	%	t
 45	Spontane-Atemfrequenz-Beatmet	Observation	271625008	\N	152498	\N	/min	t
 46	Mechanische-Atemfrequenz-Beatmet	Observation	250876000	33438-3	151586	Breaths.mechanical on vent	{Breaths}/min	t
-64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	f
+77	Rechtsventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	t
+59	Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	Observation	\N	59407-7	160296	SaO2 % Bld Preductal PulseOx	%	t
+65	Linksv. Schlagvolumen durch Indikatorverdünnung	Observation	\N	8771-8	\N	LV SV Indicator dilution	mL	t
+66	Pulmonalvaskulärer Widerstandsindex	Observation	276902009	8834-4	152852	PV RI	dyn.s/cm5/m2	t
 83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	f
 94	Körpertemperatur Achsel	Observation	415882003	8328-7	188496	Axil temp	Cel	f
 91	Körpertemperatur Atemwege	Observation	\N	60955-2	\N	Airway temp	Cel	f
 88	Körpertemperatur Brust	Observation	248835004	8310-5	\N	Body temperature	Cel	f
 97	Körpertemperatur Harnblase	Observation	698832009	8334-5	\N	Bdy temp Bladder	Cel	t
 60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	t
+64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	t
 \.
 
 
@@ -7320,6 +7320,11 @@ Systemischer vaskulärer Widerstandsindex	SV RI	SVRI	"Index des systemischen Gef
 Systemischer vaskulärer Widerstandsindex	SV RI	p-SVRI	"Index des systemischen Gefäßwiderstandes (PICCO Modul Dräger Monitoring)  "
 Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVRI	Systemic vascular resistance index
 Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	SaO2 % BldA	SaO2	arterielle Sauerstoffsättigung
+Dauer Hämodialysesitzung	\N	Nierenverfahren_ES_4008HS_DialyseZeit	\N
+Dauer Hämodialysesitzung	\N	Nierenvwerfahren_ES_4008onl_Dialysezeit	\N
+Dauer Hämodialysesitzung	\N	Nierenverfahren_ES_4008onl_Dialysezeit	\N
+Dauer Hämodialysesitzung	\N	Nierenverfahren_VO_4008onl_Dialysezeit	\N
+Dauer Hämodialysesitzung	\N	Nierenverfahren_VO_4008HS_Dialysezeit	\N
 \.
 
 

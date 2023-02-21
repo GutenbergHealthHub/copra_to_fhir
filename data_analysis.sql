@@ -1060,7 +1060,66 @@ and (name not in (select distinct name from icu_copra.matched_0 m))
 order by description, name;
 
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 76;
+--Rechtsventrikulärer Druck
+select 'Rechtsventrikulärer Druck' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'right|recht|vent|pres|druck' or description ~* 'right|recht|vent|pres|druck')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|^nev|sicher|^klinik|koerp|co2|beat')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'm' or ccv.unit isnull)
+order by description, name;
+
+
+-- Blutflussindex extrakorporaler Gasaustausch
+select 'Blutflussindex extrakorporaler Gasaustausch' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'blod|blut|ndex|gas' or description ~* 'blod|blut|ndex|gas')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'm|l' or ccv.unit isnull)
+order by description, name;
+
+
+-- Dauer Hämodialysesitzung
+select 'Dauer Hämodialysesitzung' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'dialy' or description ~* 'dialy')
+--and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'h|m' or ccv.unit isnull)
+order by description, name;
+
+-- Dauer Hämodialysesitzung
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Nierenverfahren_ES_4008HS_DialyseZeit', 'Nierenverfahren_ES_4008onl_Dialysezeit', 'Nierenverfahren_VO_4008HS_Dialysezeit',
+'Nierenverfahren_VO_4008onl_Dialysezeit', 'Nierenvwerfahren_ES_4008onl_Dialysezeit') and fpa.id = 7;
+
+
+-- Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie
+select 'Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'predu' or description ~* 'predu')
+--and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'h|m' or ccv.unit isnull)
+order by description, name;
+
+
+-- Linksv. Schlagvolumen durch Indikatorverdünnung
+select 'Linksv. Schlagvolumen durch Indikatorverdünnung' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'schla|lv|sv' or description ~* 'schla')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2|beat')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'l' or ccv.unit isnull)
+order by description, name;
+
+l
+-- Pulmonalvaskulärer Widerstandsindex
+select 'Pulmonalvaskulärer Widerstandsindex' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'pulm|wide|pvri' or description ~* 'pulm|wide|vas')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'm' or ccv.unit isnull)
+order by description, name;
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 66;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
