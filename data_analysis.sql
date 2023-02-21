@@ -1034,11 +1034,37 @@ and (name not in (select distinct name from icu_copra.matched_0 m))
 order by description, name;
 
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 60;
+-- Spontanes-Plus-Mechanisches-Atemzugvolumen
+select 'Spontanes-Plus-Mechanisches-Atemzugvolumen' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'spon|mech|vol|vt' or description ~* 'spon|mech|volu')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|^nev|sicher|^klinik|koerp|co2')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'l' or ccv.unit isnull)
+order by description, name;
+
+-- Mechanische-Atemfrequenz-Beatmet
+select 'Mechanische-Atemfrequenz-Beatmet' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'mech' or description ~* 'mech')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|^nev|sicher|^klinik|koerp|co2')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'm' or ccv.unit isnull)
+order by description, name;
+
+
+-- Rechtsatrialer Druck
+select 'Rechtsatrialer Druck' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
+where (name ~* 'atri' or description ~* 'atri')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|nier|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|^nev|sicher|^klinik|koerp|co2|beat')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'm' or ccv.unit isnull)
+order by description, name;
+
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 76;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
-select * from icu_copra.copra_config_vars ccv where description ~* 'pco2|endex|exg'
+
 and "name" not in (select distinct "name" from icu_copra.matched_0 m);
 
 --30
