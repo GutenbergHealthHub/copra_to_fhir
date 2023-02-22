@@ -1176,7 +1176,7 @@ order by description, name;
 
 -- Einstellung-Ausatmungszeit-Beatmung
 select 'Einstellung-Ausatmungszeit-Beatmung' profil, name, description, unit from icu_copra.copra_config_vars ccv 
-where (name ~* 'einst|exps|aust' or description ~* 'einges|einst|ausat|exspi|zeit|time')
+where (name ~* 'einst|exps|ausat' or description ~* 'einges|einst|ausat|exspi|zeit|time')
 and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2|niere|^f')
 and (name not in (select distinct name from icu_copra.matched_0 m))
 and (ccv.unit ~* 'm|s' or ccv.unit isnull)
@@ -1195,10 +1195,62 @@ order by description, name;
 -- Einstellung-Einatmungszeit-Beatmung
 --insert into icu_copra.matched_0 
 select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
-where ccv.name in ('Beatmung_ES_Evita4_Tinsp') and fpa.id = 43;
+where ccv.name in ('Beatmung_ES_VisionA_Ti', 'Beatmung_ES_G5_Ti', 'Beatmung_ES_T1_Ti',
+'Beatmung_Einstellung_InspirationszeitIE') and fpa.id = 43;
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 43;
+
+-- Inspiratorische Sauerstofffraktion gemessen
+select 'Inspiratorische Sauerstofffraktion gemessen' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'fio2' or description ~* 'fio2')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2|niere|^f')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'm|s' or ccv.unit isnull)
+order by description, name;
+
+-- Inspiratorische Sauerstofffraktion gemessen
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Beatmung_ES_Zephyros_FIO2') and fpa.id = 29;
+
+
+-- Inspiratorische Sauerstofffraktion eingestellt
+select 'Inspiratorische Sauerstofffraktion gemessen' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'fio2|einst' or description ~* 'fio2|einstel|eingest')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2|niere|^f')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'm|s' or ccv.unit isnull)
+order by description, name;
+
+-- Inspiratorische Sauerstofffraktion gemessen
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Beatmung_ES_Evita4_O2Konzentration', 'Beatmung_ES_Evita2_O2Konzentration', 'Beatmung_ES_BiPAPV_O2Konzentration',
+'Beatmung_ES_F120_O2Konzentration', 'Beatmung_Einstellung_FiO2', 'Beatmung_ES_CF800_O2Konzentration', 'Beatmung_Einstellung_O2Konzentration') and fpa.id = 30;
+
+
+-- Körpertermperatur
+select 'Körpertemperatur' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'temp' or description ~* 'temp')
+and (name !~* 'praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2|niere|^f|beat|^nev|lungen|delta')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'c' or ccv.unit isnull)
+order by description, name;
+
+
+-- Blutdruck
+select 'Blutdruck' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'druck|pres' or description ~* 'blutdru')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|o2|gas|^f|beat|lungen|delta')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'm' or ccv.unit isnull)
+order by description, name;
+
+
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('ABP', 'ABP_1', 'P_NBP_reArm', 'NBP', 'NBP_1', 'P_NBP_liArm', 'P_NBP_liBein', 'P_NBP_reBein', 'ABP_2', 'NBP_2') and fpa.id = 74;
+
+update icu_copra.fhir_profiles_all set analyzed = true where id <= 80;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
---30

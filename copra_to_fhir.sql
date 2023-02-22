@@ -6667,6 +6667,17 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 --
 
 COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc_short_name, unit, analyzed) FROM stdin;
+87	Körpertemperatur Halswirbelsaeule	Observation	364419004	8310-5	\N	Body temperature	Cel	t
+84	Körpertemperatur Lendenwirbelsaeule	Observation	364429006	8310-5	\N	Body temperature	Cel	t
+86	Körpertemperatur Stirn	Observation	415922000	8310-5	\N	Body temperature	Cel	t
+81	Puls	Observation	8499008	\N	149514	\N	/min	t
+89	Körpertemperatur nasal	Observation	\N	76010-8	188504	Nasal temp	Cel	t
+99	Körpertemperatur Speiseroehre	Observation	431598003	60836-4	\N	Esoph temp	Cel	t
+98	Körpertemperatur Nasen-Rachen-Raum	Observation	698831002	8310-5	\N	Body temperature	Cel	t
+95	Körpertemperatur unter der Zunge	Observation	415945006	8331-1	188424	Oral temp	Cel	t
+101	Körpertemperatur Trommelfell	Observation	415974002	8333-7	\N	Tymp memb temp	Cel	t
+93	Körpertemperatur Leiste	Observation	415929009	8310-5	\N	Body temperature	Cel	t
+90	Körpertemperatur Myokard	Observation	\N	61009-7	188500	Myocard temp	Cel	t
 40	Atemzugvolumen-Einstellung	Observation	416811008	20112-9	16929196	VT setting Vent	mL	t
 33	Eingestellter inspiratorischer Gasfluss	Observation	\N	76275-7	\N	Insp flow set Vent	L/min	t
 7	Dauer Hämodialysesitzung	Observation	445940005	\N	\N	\N	h	t
@@ -6680,14 +6691,14 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 10	Substituatvolumen	Observation	708514004	\N	\N	\N	L	t
 75	Linksatrialer Druck	Observation	276762004	85354-9	\N	Blood pressure panel with all children optional	\N	t
 50	Intrakranieller Druck ICP	Observation	250844005	60956-0	153608	ICP	mm[Hg]	t
-14	Venöser Druck	Observation	252076005	\N	\N	\N	mm[Hg]	t
 92	Körpertemperatur Blut	Observation	860958002	60834-9	188436	Blood temp	Cel	t
+100	Körpertemperatur rektal	Observation	307047009	8332-9	188420	Rectal temp	Cel	t
+96	Körpertemperatur vaginal	Observation	364246006	8310-5	\N	Body temperature	Cel	t
+14	Venöser Druck	Observation	252076005	\N	\N	\N	mm[Hg]	t
 58	Körpertemperatur Kern	Observation	276885007	8310-5	150368	Body temperature	Cel	t
 53	Körpergroesse	Observation	1153637007	8302-2	\N	Body height	cm	t
 41	Zeitverhältnis-Ein-Ausatmung	Observation	250822000	75931-6	151832	Insp/Exp time Ratio	{ratio}	t
 23	Druckdifferenz Beatmung	Observation	\N	76154-4	\N	Away press delta on vent PressDiff	cm[H2O]	t
-100	Körpertemperatur rektal	Observation	307047009	8332-9	188420	Rectal temp	Cel	t
-96	Körpertemperatur vaginal	Observation	364246006	8310-5	\N	Body temperature	Cel	t
 26	Maximaler Beatmungsdruck	Observation	27913002	76531-3	151973	Press.max on vent Airway	cm[H2O]	t
 5	Ionisiertes Kalzium aus Nierenersatzverfahren	Observation	\N	83064-6	\N	Ca-I BldCRRT-sCnc	mmol/L	t
 8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	\N	mL/min	t
@@ -6696,34 +6707,10 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 44	Spontane-Mechanische-Atemfrequenz-Beatmet	Observation	250810003	19840-8	152490	Breaths.spont+mech on vent	/min	t
 76	Rechtsatrialer Druck	Observation	276755008	85354-9	\N	Blood pressure panel with all children optional	\N	t
 13	Blutflussindex extrakorporaler Gasaustausch	Observation	251289007	\N	\N	\N	L/(min.m2)	t
-80	Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
-74	Blutdruck Generisch	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	f
-43	Einstellung-Einatmungszeit-Beatmung	Observation	250819002	76334-2	16929632	Insp time set Vent	s	f
-85	Körpertemperatur Gelenk	Observation	250124002	8310-5	\N	Body temperature	Cel	f
-82	Körpertemperatur Generisch	Observation	\N	8310-5	\N	Body temperature	Cel	f
-29	Inspiratorische Sauerstofffraktion gemessen	Observation	250774007	71835-3	\N	FIO2	1	f
-87	Körpertemperatur Halswirbelsaeule	Observation	364419004	8310-5	\N	Body temperature	Cel	f
-84	Körpertemperatur Lendenwirbelsaeule	Observation	364429006	8310-5	\N	Body temperature	Cel	f
-86	Körpertemperatur Stirn	Observation	415922000	8310-5	\N	Body temperature	Cel	f
-30	Inspiratorische Sauerstofffraktion eingestellt	Observation	250774007	19994-3	\N	O2/Total gas setting VFr Vent	%	f
-15	Arterieller Druck	Observation	386534000	\N	\N	\N	mm[Hg]	t
-16	Beatmung	Procedure	\N	\N	\N	\N	\N	t
-37	Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Observation	250875001	76009-0	152004	Inspired min Vol MV	L/min	t
-34	Beatmungszeit auf niedrigem Druck	Observation	\N	76229-4	16929864	Low press hold time set Vent	s	t
-35	Beatmungszeit auf hohem Druck	Observation	\N	76190-8	16929860	High press hold time set Vent	s	t
-4	Blutfluss durch cardiovasculäres Gerät	Observation	444479000	\N	\N	\N	L/min	t
-12	Blutfluss extrakorporaler Gasaustausch	Observation	251288004	\N	\N	\N	L/min	t
-17	Eingestellte und gemessene Parameter	DeviceMetric	\N	\N	\N	\N	\N	t
-2	Eingestellte und gemessene Parameter	DeviceMetric	\N	\N	\N	\N	\N	t
-1	Extrakorporale Verfahren	Procedure	\N	\N	\N	\N	\N	t
-48	Monitoring und Vitaldaten	Observation	\N	\N	\N	\N	\N	t
-18	Parameter von Beatmung	Observation	\N	\N	\N	\N	\N	t
-3	Parameter von extrakorporalen Verfahren	Observation	\N	\N	\N	\N	\N	t
-25	Dynamische Kompliance	Observation	250823005	60827-3	151692	Compliance.dynamic Lung	mL/cm[H2O]	t
-72	Herzfrequenz	Observation	364075005	8867-4	147842	Heart rate	/min	t
+80	Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	t
+74	Blutdruck Generisch	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	t
 69	Herzzeitvolumen	Observation	82799009	8741-1	150276	LV Output	L/min	t
 52	Kopfumfang	Observation	363811000	9843-4	\N	Head Circumf OFC	cm	t
-81	Puls	Observation	8499008	\N	149514	\N	/min	t
 9	Substituatfluss	Observation	708513005	\N	\N	\N	mL/h	t
 6	Sauerstoffgasfluss	Observation	79063001	19941-4	\N	Gas flow.O2 O2 delivery sys	L/min	t
 73	Zentralvenöser Druck	Observation	71420008	60985-9	150084	CVP	mm[Hg]	t
@@ -6733,18 +6720,33 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 62	Linksventrikulaeres Schlagvolumenindex	Observation	277381004	76297-1	\N	LV SVI	mL/m2	t
 32	Inspiratorischer Gasfluss	Observation	\N	60794-5	151948	Insp gas flow on vent Airway	L/min	t
 56	Körpergrösse Percentil	Observation	1153605006	8303-0	\N	Body height Prctl	%	t
-89	Körpertemperatur nasal	Observation	\N	76010-8	188504	Nasal temp	Cel	t
-99	Körpertemperatur Speiseroehre	Observation	431598003	60836-4	\N	Esoph temp	Cel	t
-98	Körpertemperatur Nasen-Rachen-Raum	Observation	698831002	8310-5	\N	Body temperature	Cel	t
-95	Körpertemperatur unter der Zunge	Observation	415945006	8331-1	188424	Oral temp	Cel	t
-101	Körpertemperatur Trommelfell	Observation	415974002	8333-7	\N	Tymp memb temp	Cel	t
-93	Körpertemperatur Leiste	Observation	415929009	8310-5	\N	Body temperature	Cel	t
 57	Ideales Körpergewicht	Observation	170804003	50064-5	\N	Ideal bdy weight	kg	t
 19	Unterstützungsdruck Beatmung	Observation	\N	20079-0	\N	Pressure support setting Vent	cm[H2O]	t
 31	Exspiratorischer Gasfluss	Observation	\N	60792-9	151944	Expiratory gas flow on vent Airway	L/min	t
+15	Arterieller Druck	Observation	386534000	\N	\N	\N	mm[Hg]	t
+16	Beatmung	Procedure	\N	\N	\N	\N	\N	t
+37	Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Observation	250875001	76009-0	152004	Inspired min Vol MV	L/min	t
+34	Beatmungszeit auf niedrigem Druck	Observation	\N	76229-4	16929864	Low press hold time set Vent	s	t
+35	Beatmungszeit auf hohem Druck	Observation	\N	76190-8	16929860	High press hold time set Vent	s	t
+4	Blutfluss durch cardiovasculäres Gerät	Observation	444479000	\N	\N	\N	L/min	t
+12	Blutfluss extrakorporaler Gasaustausch	Observation	251288004	\N	\N	\N	L/min	t
+17	Eingestellte und gemessene Parameter	DeviceMetric	\N	\N	\N	\N	\N	t
+85	Körpertemperatur Gelenk	Observation	250124002	8310-5	\N	Body temperature	Cel	t
+82	Körpertemperatur Generisch	Observation	\N	8310-5	\N	Body temperature	Cel	t
+2	Eingestellte und gemessene Parameter	DeviceMetric	\N	\N	\N	\N	\N	t
+1	Extrakorporale Verfahren	Procedure	\N	\N	\N	\N	\N	t
+48	Monitoring und Vitaldaten	Observation	\N	\N	\N	\N	\N	t
+18	Parameter von Beatmung	Observation	\N	\N	\N	\N	\N	t
+3	Parameter von extrakorporalen Verfahren	Observation	\N	\N	\N	\N	\N	t
+25	Dynamische Kompliance	Observation	250823005	60827-3	151692	Compliance.dynamic Lung	mL/cm[H2O]	t
+72	Herzfrequenz	Observation	364075005	8867-4	147842	Heart rate	/min	t
+83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	t
+94	Körpertemperatur Achsel	Observation	415882003	8328-7	188496	Axil temp	Cel	t
+91	Körpertemperatur Atemwege	Observation	\N	60955-2	\N	Airway temp	Cel	t
+88	Körpertemperatur Brust	Observation	248835004	8310-5	\N	Body temperature	Cel	t
+97	Körpertemperatur Harnblase	Observation	698832009	8334-5	\N	Bdy temp Bladder	Cel	t
 24	Positiv-endexpiratorischer Druck	Observation	250854009	76248-4	151976	PEEP on vent Respiratory	cm[H2O]	t
 55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	t
-90	Körpertemperatur Myokard	Observation	\N	61009-7	188500	Myocard temp	Cel	t
 67	Systemischer vaskulärer Widerstandsindex	Observation	276900001	8837-7	149760	SV RI	dyn.s/cm5/m2	t
 20	Endexpiratorischer Kohlendioxidpartialdruck	Observation	250790007	19891-1	151708	pCO2 end exp ExG	mm[Hg]	t
 38	Spontanes-Atemzugvolumen	Observation	250816009	20116-0	\N	Spont VT on vent	mL	t
@@ -6761,11 +6763,9 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 27	Mittlerer Beatmungsdruck	Observation	698821009	76530-5	151975	Mean Pres on vent Airway	cm[H2O]	t
 71	Linksv. Herzzeitvolumen durch Indikatorverdünnung	Observation	\N	8737-9	\N	LV Output Indicator dilution	L/min	t
 42	Einstellung-Ausatmungszeit-Beatmung	Observation	250820008	76187-4	\N	Exp hold time set Vent	s	t
-83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	f
-94	Körpertemperatur Achsel	Observation	415882003	8328-7	188496	Axil temp	Cel	f
-91	Körpertemperatur Atemwege	Observation	\N	60955-2	\N	Airway temp	Cel	f
-88	Körpertemperatur Brust	Observation	248835004	8310-5	\N	Body temperature	Cel	f
-97	Körpertemperatur Harnblase	Observation	698832009	8334-5	\N	Bdy temp Bladder	Cel	t
+43	Einstellung-Einatmungszeit-Beatmung	Observation	250819002	76334-2	16929632	Insp time set Vent	s	t
+29	Inspiratorische Sauerstofffraktion gemessen	Observation	250774007	71835-3	\N	FIO2	1	t
+30	Inspiratorische Sauerstofffraktion eingestellt	Observation	250774007	19994-3	\N	O2/Total gas setting VFr Vent	%	t
 60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	t
 64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	t
 \.
@@ -7327,6 +7327,35 @@ Dauer Hämodialysesitzung	\N	Nierenverfahren_VO_4008onl_Dialysezeit	\N
 Dauer Hämodialysesitzung	\N	Nierenverfahren_VO_4008HS_Dialysezeit	\N
 Pulmonalarterieller wedge Blutdruck	PAW pressure	PWP	Pulmunaler Wedgedruck
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_Messung_Pmean	Mean Airway Pressure
+Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_Einstellung_InspirationszeitIE	Inspirationszeit I:E
+Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_G5_Ti	Einstelungswert für die Inspirationszeit
+Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_VisionA_Ti	Einstellwert: Inspirationszeit in Sekunden
+Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_T1_Ti	Einstelungswert für die Inspirationszeit
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_Messung_FiO2	FiO2
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Evita4_FiO2	gemessene O2 Konzentration des inspiratorischen Atemgasgemisches
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_MS_Avea_FiO2	gemessene Sauerstoffkonzentration im Atemgas
+Inspiratorische Sauerstofffraktion gemessen	FIO2	CardioHelpMaquet_ES_FiO2	\N
+Inspiratorische Sauerstofffraktion gemessen	FIO2	CardioHelpMaquet_VO_FiO2	\N
+Inspiratorische Sauerstofffraktion gemessen	FIO2	Beatmung_ES_Zephyros_FIO2	\N
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_Einstellung_FiO2	O²- Konzentration im Inspirationsgemisch (FiO2)
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_Einstellung_O2Konzentration	\N
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_F120_O2Konzentration	Einstellparameter: Sauerstoffgehalt des Gasgemisches
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_CF800_O2Konzentration	Sauerstoffgehalt des eingestellten Gasgemisches CF 800
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_BiPAPV_O2Konzentration	Einstellparameter: O2 Konzentration des Gasgemisches
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Evita2_O2Konzentration	eingestellte O2 Konzentration des Gases
+Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Evita4_O2Konzentration	eingestellte O2 Konzentration des Frischgases
+Blutdruck	Blood pressure panel with all children optional	ABP	arterielle Blutdruck
+Blutdruck	Blood pressure panel with all children optional	ABP_1	arterieller Blutdruck 1
+Blutdruck Generisch	Blood pressure panel with all children optional	NBP	nichtinvasiver Blutdruck
+Blutdruck Generisch	Blood pressure panel with all children optional	ABP	arterielle Blutdruck
+Blutdruck Generisch	Blood pressure panel with all children optional	ABP_2	zweiter arterieller Blutdruck
+Blutdruck Generisch	Blood pressure panel with all children optional	NBP_2	"zweiter nichtinvasiver Blutdruck "
+Blutdruck Generisch	Blood pressure panel with all children optional	ABP_1	arterieller Blutdruck 1
+Blutdruck Generisch	Blood pressure panel with all children optional	NBP_1	nichtinvasiver Blutdruck 1
+Blutdruck Generisch	Blood pressure panel with all children optional	P_NBP_liBein	Nichtinvaiver Blutdruck linkes Bein
+Blutdruck Generisch	Blood pressure panel with all children optional	P_NBP_reBein	Nichtinvasiver Blutdruck rechtes Bein
+Blutdruck Generisch	Blood pressure panel with all children optional	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm
+Blutdruck Generisch	Blood pressure panel with all children optional	P_NBP_reArm	Nichtinvasiver Blutdruck rechter Arm
 \.
 
 
