@@ -1110,7 +1110,7 @@ and (name not in (select distinct name from icu_copra.matched_0 m))
 and (ccv.unit ~* 'l' or ccv.unit isnull)
 order by description, name;
 
-l
+
 -- Pulmonalvaskulärer Widerstandsindex
 select 'Pulmonalvaskulärer Widerstandsindex' profil, name, description, unit from icu_copra.copra_config_vars ccv 
 where (name ~* 'pulm|wide|pvri' or description ~* 'pulm|wide|vas')
@@ -1119,11 +1119,55 @@ and (name not in (select distinct name from icu_copra.matched_0 m))
 and (ccv.unit ~* 'm' or ccv.unit isnull)
 order by description, name;
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 66;
+
+-- Pulmonalarterieller Blutdruck
+select 'Pulmonalarterieller Blutdruck' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'pulm|arter|druck' or description ~* 'pulm.+arte.+druck')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+--and (ccv.unit ~* 'm' or ccv.unit isnull)
+order by description, name;
+
+
+-- Pulmonalarterieller wedge Blutdruck
+select 'Pulmonalarterieller Blutdruck' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'pulm|wedg|druck|paw' or description ~* 'pulm.+wedg.+druck|paw')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'm' or ccv.unit isnull)
+order by description, name;
+
+-- Pulmonalarterieller wedge Blutdruck
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('PWP') and fpa.id = 49;
+
+
+-- Mittlerer Beatmungsdruck
+select 'Mittlerer Beatmungsdruck' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'mitt|mean|druck' or description ~* 'mitt.+druc')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'm' or ccv.unit isnull)
+order by description, name;
+
+-- Mittlerer Beatmungsdruck
+insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Beatmung_Messung_Pmean') and fpa.id = 27;
+
+
+
+-- Mittlerer Beatmungsdruck
+select 'Mittlerer Beatmungsdruck' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'mitt|mean|druck' or description ~* 'mitt.+druc')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'm' or ccv.unit isnull)
+order by description, name;
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 27;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
-
-
-and "name" not in (select distinct "name" from icu_copra.matched_0 m);
 
 --30
