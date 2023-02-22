@@ -1254,3 +1254,106 @@ update icu_copra.fhir_profiles_all set analyzed = true where id <= 80;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
+
+select count(*) from icu_copra.matched_0 m;
+select count(distinct (profiles, loinc_short_name, "name", description)) from icu_copra.matched_0 m;
+
+select * from icu_copra.matched_0 m limit 1;
+
+-- ecmo
+select * into icu_copra.parameter_ecmo from icu_copra.fhir_profiles_all fpa where id < 16 and "type" = 'Observation' order by id ;
+
+-- ventilation
+select * into icu_copra.ventilation from icu_copra.fhir_profiles_all fpa where (id between 17 and 47) and "type" = 'Observation' order by id ;
+
+-- vital parameter
+select * into icu_copra.vital_parameter_no_pulsatil from icu_copra.fhir_profiles_all fpa where (id between 49 and 73) and "type" = 'Observation' order by id ;
+insert into icu_copra.vital_parameter_no_pulsatil select * from icu_copra.fhir_profiles_all fpa where id = 81 ;
+
+-- vital parameter pulsatil
+select * into icu_copra.vital_parameter_pulsatil from icu_copra.fhir_profiles_all fpa where (id between 74 and 80) and "type" = 'Observation' order by id ;
+
+-- body temperatur
+select * into icu_copra.body_temperatur from icu_copra.fhir_profiles_all fpa where id > 81 and "type" = 'Observation' order by id ;
+
+
+select * from icu_copra.thesis_matched where conf_var_name not in (select distinct name from icu_copra.matched_0);
+
+insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name = 'SpO2'
+and id = 61
+;
+
+--insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name = 'Beatmung_Messung_MV'
+and id = 37
+;
+
+insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name in ('IABP_DatascopeCS300_MS_Systole_Mittel_Diastole', 'IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole')
+and id = 74
+;
+
+
+--insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name = 'Beatmung_ES_Evita4_Tinsp'
+and id = 43
+;
+
+
+--insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name = 'Beatmung_MS_G5_ExspFlow'
+and id = 31
+;
+
+--insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name = 'NEV_CRRT_ES_Multi_CalciumFiltrat'
+and id = 5
+;
+
+--insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name = 'p-SVI'
+and id = 62
+;
+
+--insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name = 'Beatmung_MS_Evita4_frequenz'
+and id = 46
+;
+
+--insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name in ('Beatmung_MS_VisionA_MAP', 'Beatmung_MS_Servoi_Pmean')
+and id = 27
+;
+
+select * from icu_copra.matched_0 where profiles = 'Sauerstoffgasfluss' order by description ;
+
+delete from icu_copra.matched_0 where profiles = 'Sauerstoffgasfluss' and name ~* 'konz';
+
