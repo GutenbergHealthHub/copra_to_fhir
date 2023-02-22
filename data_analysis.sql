@@ -1157,7 +1157,6 @@ select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_co
 where ccv.name in ('Beatmung_Messung_Pmean') and fpa.id = 27;
 
 
-
 -- Mittlerer Beatmungsdruck
 select 'Mittlerer Beatmungsdruck' profil, name, description, unit from icu_copra.copra_config_vars ccv 
 where (name ~* 'mitt|mean|druck' or description ~* 'mitt.+druc')
@@ -1166,7 +1165,39 @@ and (name not in (select distinct name from icu_copra.matched_0 m))
 and (ccv.unit ~* 'm' or ccv.unit isnull)
 order by description, name;
 
-update icu_copra.fhir_profiles_all set analyzed = true where id = 27;
+-- Linksv. Herzindex durch Indikatorverdünnung
+select 'Linksv. Herzindex durch Indikatorverdünnung' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'lv' or description ~* 'linksv|zeit')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'm' or ccv.unit isnull)
+order by description, name;
+
+
+-- Einstellung-Ausatmungszeit-Beatmung
+select 'Einstellung-Ausatmungszeit-Beatmung' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'einst|exps|aust' or description ~* 'einges|einst|ausat|exspi|zeit|time')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2|niere|^f')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'm|s' or ccv.unit isnull)
+order by description, name;
+
+
+-- Einstellung-Einatmungszeit-Beatmung
+select 'Einstellung-Ausatmungszeit-Beatmung' profil, name, description, unit from icu_copra.copra_config_vars ccv 
+where (name ~* 'einst|insp|eina' or description ~* 'einges|einst|eina|insp|zeit|time')
+and (name !~* 'archiv|praem|score|therap|pupill|mikrob|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|citr|medika|kons|arzt|sicher|^klinik|koerp|co2|niere|^f')
+and (name not in (select distinct name from icu_copra.matched_0 m))
+and (ccv.unit ~* 'm|s' or ccv.unit isnull)
+order by description, name;
+
+
+-- Einstellung-Einatmungszeit-Beatmung
+--insert into icu_copra.matched_0 
+select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
+where ccv.name in ('Beatmung_ES_Evita4_Tinsp') and fpa.id = 43;
+
+update icu_copra.fhir_profiles_all set analyzed = true where id = 43;
 
 select * from icu_copra.fhir_profiles_all fpa where not analyzed order by profiles;
 
