@@ -38,9 +38,21 @@ CREATE TABLE icu_copra.body_temperatur (
     snomed character varying(12),
     loinc character varying(12),
     ieee character varying(12),
-    loinc_short_name character varying,
     unit character varying,
-    analyzed boolean
+    unit_code character varying,
+    profil_canonical character varying DEFAULT 'https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/'::character varying,
+    category_coding_system character varying DEFAULT 'http://snomed.info/sct'::character varying,
+    category_coding_display character varying DEFAULT 'Artificial respiration (procedure)'::character varying,
+    category_coding_code character varying DEFAULT '40617009'::character varying,
+    loinc_system character varying DEFAULT 'http://loinc.org'::character varying,
+    loinc_display character varying,
+    snomed_system character varying DEFAULT 'http://snomed.info/sct'::character varying,
+    snomed_display character varying,
+    ieee_system character varying DEFAULT 'urn:iso:std:iso:11073:10101'::character varying,
+    ieee_display character varying,
+    body_site_coding_system character varying DEFAULT 'http://snomed.info/sct'::character varying,
+    body_site_coding_code character varying,
+    body_site_coding_display character varying
 );
 
 
@@ -120,7 +132,6 @@ CREATE TABLE icu_copra.parameter_ecmo (
     snomed character varying(12),
     loinc character varying(12),
     ieee character varying(12),
-    loinc_short_name character varying,
     unit character varying,
     unit_code character varying,
     profil_canonical character varying DEFAULT 'https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/'::character varying,
@@ -130,7 +141,7 @@ CREATE TABLE icu_copra.parameter_ecmo (
     loinc_system character varying DEFAULT 'http://loinc.org'::character varying,
     loinc_display character varying,
     snomed_system character varying DEFAULT 'http://snomed.info/sct'::character varying,
-    snomed_dysplay character varying,
+    snomed_display character varying,
     ieee_system character varying DEFAULT 'urn:iso:std:iso:11073:10101'::character varying,
     ieee_display character varying
 );
@@ -253,27 +264,27 @@ ALTER TABLE ONLY icu_copra.fhir_profiles_all ALTER COLUMN id SET DEFAULT nextval
 -- Data for Name: body_temperatur; Type: TABLE DATA; Schema: icu_copra; Owner: -
 --
 
-COPY icu_copra.body_temperatur (id, profiles, type, snomed, loinc, ieee, loinc_short_name, unit, analyzed) FROM stdin;
-82	Körpertemperatur Generisch	Observation	\N	8310-5	\N	Body temperature	Cel	t
-83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	Body temperature	Cel	t
-84	Körpertemperatur Lendenwirbelsaeule	Observation	364429006	8310-5	\N	Body temperature	Cel	t
-85	Körpertemperatur Gelenk	Observation	250124002	8310-5	\N	Body temperature	Cel	t
-86	Körpertemperatur Stirn	Observation	415922000	8310-5	\N	Body temperature	Cel	t
-87	Körpertemperatur Halswirbelsaeule	Observation	364419004	8310-5	\N	Body temperature	Cel	t
-88	Körpertemperatur Brust	Observation	248835004	8310-5	\N	Body temperature	Cel	t
-89	Körpertemperatur nasal	Observation	\N	76010-8	188504	Nasal temp	Cel	t
-90	Körpertemperatur Myokard	Observation	\N	61009-7	188500	Myocard temp	Cel	t
-91	Körpertemperatur Atemwege	Observation	\N	60955-2	\N	Airway temp	Cel	t
-92	Körpertemperatur Blut	Observation	860958002	60834-9	188436	Blood temp	Cel	t
-93	Körpertemperatur Leiste	Observation	415929009	8310-5	\N	Body temperature	Cel	t
-94	Körpertemperatur Achsel	Observation	415882003	8328-7	188496	Axil temp	Cel	t
-95	Körpertemperatur unter der Zunge	Observation	415945006	8331-1	188424	Oral temp	Cel	t
-96	Körpertemperatur vaginal	Observation	364246006	8310-5	\N	Body temperature	Cel	t
-97	Körpertemperatur Harnblase	Observation	698832009	8334-5	\N	Bdy temp Bladder	Cel	t
-98	Körpertemperatur Nasen-Rachen-Raum	Observation	698831002	8310-5	\N	Body temperature	Cel	t
-99	Körpertemperatur Speiseroehre	Observation	431598003	60836-4	\N	Esoph temp	Cel	t
-100	Körpertemperatur rektal	Observation	307047009	8332-9	188420	Rectal temp	Cel	t
-101	Körpertemperatur Trommelfell	Observation	415974002	8333-7	\N	Tymp memb temp	Cel	t
+COPY icu_copra.body_temperatur (id, profiles, type, snomed, loinc, ieee, unit, unit_code, profil_canonical, category_coding_system, category_coding_display, category_coding_code, loinc_system, loinc_display, snomed_system, snomed_display, ieee_system, ieee_display, body_site_coding_system, body_site_coding_code, body_site_coding_display) FROM stdin;
+89	Körpertemperatur nasal	Observation	\N	76010-8	188504	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	\N	\N	\N	urn:iso:std:iso:11073:10101	\N	http://snomed.info/sct	\N	\N
+90	Körpertemperatur Myokard	Observation	\N	61009-7	188500	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	\N	\N	\N	urn:iso:std:iso:11073:10101	\N	http://snomed.info/sct	\N	\N
+91	Körpertemperatur Atemwege	Observation	\N	60955-2	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	\N	\N	\N	\N	\N	http://snomed.info/sct	\N	\N
+82	Körpertemperatur Generisch	Observation	\N	8310-5	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/koerpertemperatur-generisch	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	Body temperatur	\N	\N	\N	\N	http://snomed.info/sct	\N	\N
+83	Körpertemperatur Brustwirbelsaeule	Observation	364424001	8310-5	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/koerpertemperatur-brustwirbelsaeule	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	Body temperature	http://snomed.info/sct	Temperature of thoracic spine (observable entity)	\N	\N	http://snomed.info/sct	\N	\N
+84	Körpertemperatur Lendenwirbelsaeule	Observation	364429006	8310-5	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/koerpertemperatur-lendenwirbelsaeule	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	Body temperature	http://snomed.info/sct	Temperature of lumbar spine (observable entity)	\N	\N	http://snomed.info/sct	\N	\N
+92	Körpertemperatur Blut	Observation	860958002	60834-9	188436	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N	http://snomed.info/sct	\N	\N
+94	Körpertemperatur Achsel	Observation	415882003	8328-7	188496	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N	http://snomed.info/sct	\N	\N
+95	Körpertemperatur unter der Zunge	Observation	415945006	8331-1	188424	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N	http://snomed.info/sct	\N	\N
+100	Körpertemperatur rektal	Observation	307047009	8332-9	188420	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N	http://snomed.info/sct	\N	\N
+85	Körpertemperatur Gelenk	Observation	250124002	8310-5	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	Body temperatur	http://snomed.info/sct	\N	\N	\N	http://snomed.info/sct	\N	\N
+86	Körpertemperatur Stirn	Observation	415922000	8310-5	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	Body temperatur	http://snomed.info/sct	\N	\N	\N	http://snomed.info/sct	\N	\N
+87	Körpertemperatur Halswirbelsaeule	Observation	364419004	8310-5	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	Body temperatur	http://snomed.info/sct	\N	\N	\N	http://snomed.info/sct	\N	\N
+88	Körpertemperatur Brust	Observation	248835004	8310-5	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	Body temperatur	http://snomed.info/sct	\N	\N	\N	http://snomed.info/sct	\N	\N
+97	Körpertemperatur Harnblase	Observation	698832009	8334-5	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	\N	http://snomed.info/sct	\N	\N	\N	http://snomed.info/sct	\N	\N
+99	Körpertemperatur Speiseroehre	Observation	431598003	60836-4	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	\N	http://snomed.info/sct	\N	\N	\N	http://snomed.info/sct	\N	\N
+101	Körpertemperatur Trommelfell	Observation	415974002	8333-7	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	\N	http://snomed.info/sct	\N	\N	\N	http://snomed.info/sct	\N	\N
+93	Körpertemperatur Leiste	Observation	415929009	8310-5	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	Body temperatur	http://snomed.info/sct	\N	\N	\N	http://snomed.info/sct	\N	\N
+96	Körpertemperatur vaginal	Observation	364246006	8310-5	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	Body temperatur	http://snomed.info/sct	\N	\N	\N	http://snomed.info/sct	\N	\N
+98	Körpertemperatur Nasen-Rachen-Raum	Observation	698831002	8310-5	\N	degree Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://terminology.hl7.org/CodeSystem/observation-category	\N	vital-signs	http://loinc.org	Body temperatur	http://snomed.info/sct	\N	\N	\N	http://snomed.info/sct	\N	\N
 \.
 
 
@@ -7108,20 +7119,20 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Mult
 -- Data for Name: parameter_ecmo; Type: TABLE DATA; Schema: icu_copra; Owner: -
 --
 
-COPY icu_copra.parameter_ecmo (id, profiles, type, snomed, loinc, ieee, loinc_short_name, unit, unit_code, profil_canonical, category_coding_system, cotegory_cding_display, category_coding_code, loinc_system, loinc_display, snomed_system, snomed_dysplay, ieee_system, ieee_display) FROM stdin;
-3	Parameter von extrakorporalen Verfahren	Observation	\N	\N	\N	\N	\N	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-6	Sauerstoffgasfluss	Observation	79063001	19941-4	\N	Gas flow.O2 O2 delivery sys	L/min	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-7	Dauer Hämodialysesitzung	Observation	445940005	\N	\N	\N	h	h	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	\N	mL/min	mL/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-9	Substituatfluss	Observation	708513005	\N	\N	\N	mL/h	mL/h	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-10	Substituatvolumen	Observation	708514004	\N	\N	\N	L	L	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-11	Dauer extrakorporaler Gasaustausch	Observation	251286000	\N	\N	\N	h	h	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-12	Blutfluss extrakorporaler Gasaustausch	Observation	251288004	\N	\N	\N	L/min	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-13	Blutflussindex extrakorporaler Gasaustausch	Observation	251289007	\N	\N	\N	L/(min.m2)	L/(min.m2)	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-14	Venöser Druck	Observation	252076005	\N	\N	\N	mm[Hg]	mm[Hg]	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-15	Arterieller Druck	Observation	386534000	\N	\N	\N	mm[Hg]	mm[Hg]	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-4	Blutfluss durch cardiovasculäres Gerät	Observation	444479000	\N	\N	\N	L/min	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/blutfluss-cardiovasculaeres-geraet	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-5	Ionisiertes Kalzium aus Nierenersatzverfahren	Observation	\N	83064-6	\N	Ca-I BldCRRT-sCnc	mmol/L	mmol/L	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/ionisiertes-kalzium-nierenersatzverfahren	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+COPY icu_copra.parameter_ecmo (id, profiles, type, snomed, loinc, ieee, unit, unit_code, profil_canonical, category_coding_system, cotegory_cding_display, category_coding_code, loinc_system, loinc_display, snomed_system, snomed_display, ieee_system, ieee_display) FROM stdin;
+9	Substituatfluss	Observation	708513005	\N	\N	milliliter per hour	mL/h	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/substituatfluss	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	\N	\N	http://snomed.info/sct	Substitution flow rate (observable entity)	\N	\N
+5	Ionisiertes Kalzium aus Nierenersatzverfahren	Observation	\N	83064-6	\N	millimole per liter	mmol/L	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/ionisiertes-kalzium-nierenersatzverfahren	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	Calcium.ionized [Moles/volume] in Blood drawn from CRRT circuit	\N	\N	\N	\N
+3	Parameter von extrakorporalen Verfahren	Observation	\N	\N	\N	\N	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	\N	\N	\N	\N	\N	\N
+11	Dauer extrakorporaler Gasaustausch	Observation	251286000	\N	\N	hour	h	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/dauer-extrakorporaler-gasaustausch	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	\N	\N	http://snomed.info/sct	Extracorporeal gas exchange duration (observable entity)	\N	\N
+7	Dauer Hämodialysesitzung	Observation	445940005	\N	\N	hour	h	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/dauer-haemodialysesitzung	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	\N	\N	http://snomed.info/sct	Duration of hemodialysis session (observable entity)	\N	\N
+10	Substituatvolumen	Observation	708514004	\N	\N	liter	L	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/substituatvolumen	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	\N	\N	http://snomed.info/sct	Substitution volume (observable entity)	\N	\N
+12	Blutfluss extrakorporaler Gasaustausch	Observation	251288004	\N	\N	liter per minute	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/blutfluss-extrakorporaler-gasaustausch	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	\N	\N	http://snomed.info/sct	Extracorporeal gas exchange flow rate (observable entity)	\N	\N
+6	Sauerstoffgasfluss	Observation	79063001	19941-4	\N	liter per minute	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/sauerstoffgasfluss	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	Oxygen gas flow Oxygen delivery system	http://snomed.info/sct	Gas flow rate (v) (observable entity)	\N	\N
+8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	milliliter per minute	mL/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/haemodialyse-blutfluss	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	\N	\N	http://snomed.info/sct	Hemodialysis blood flow (observable entity)	\N	\N
+4	Blutfluss durch cardiovasculäres Gerät	Observation	444479000	\N	\N	liter per minute	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/blutfluss-cardiovasculaeres-geraet	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	\N	\N	http://snomed.info/sct	Rate of blood flow through cardiovascular device (observable entity)	\N	\N
+13	Blutflussindex extrakorporaler Gasaustausch	Observation	251289007	\N	\N	liter per minute per square meter	L/(min.m2)	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/blutflussindex-extrakorporaler-gasaustausch	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	\N	\N	http://snomed.info/sct	Extracorporeal gas exchange flow index (observable entity)	\N	\N
+14	Venöser Druck	Observation	252076005	\N	\N	millimeter of mercury	mm[Hg]	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/venoeser-druck	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	\N	\N	http://snomed.info/sct	Venous pressure (observable entity)	\N	\N
+15	Arterieller Druck	Observation	386534000	\N	\N	millimeter of mercury	mm[Hg]	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/arterieller-druck	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	\N	\N	http://snomed.info/sct	Arterial blood pressure (observable entity)	\N	\N
 \.
 
 
