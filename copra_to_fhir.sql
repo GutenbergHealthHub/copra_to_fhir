@@ -124,10 +124,15 @@ CREATE TABLE icu_copra.parameter_ecmo (
     unit character varying,
     unit_code character varying,
     profil_canonical character varying DEFAULT 'https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/'::character varying,
-    code_coding_display character varying,
     category_coding_system character varying DEFAULT 'http://snomed.info/sct'::character varying,
     cotegory_cding_display character varying DEFAULT 'Extracorporeal circulation procedure (procedure)'::character varying,
-    category_coding_code character varying DEFAULT '182744004'::character varying
+    category_coding_code character varying DEFAULT '182744004'::character varying,
+    loinc_system character varying DEFAULT 'http://loinc.org'::character varying,
+    loinc_display character varying,
+    snomed_system character varying DEFAULT 'http://snomed.info/sct'::character varying,
+    snomed_dysplay character varying,
+    ieee_system character varying DEFAULT 'urn:iso:std:iso:11073:10101'::character varying,
+    ieee_display character varying
 );
 
 
@@ -7103,20 +7108,20 @@ Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Mult
 -- Data for Name: parameter_ecmo; Type: TABLE DATA; Schema: icu_copra; Owner: -
 --
 
-COPY icu_copra.parameter_ecmo (id, profiles, type, snomed, loinc, ieee, loinc_short_name, unit, unit_code, profil_canonical, code_coding_display, category_coding_system, cotegory_cding_display, category_coding_code) FROM stdin;
-3	Parameter von extrakorporalen Verfahren	Observation	\N	\N	\N	\N	\N	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	\N	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004
-4	Blutfluss durch cardiovasculäres Gerät	Observation	444479000	\N	\N	\N	L/min	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	\N	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004
-5	Ionisiertes Kalzium aus Nierenersatzverfahren	Observation	\N	83064-6	\N	Ca-I BldCRRT-sCnc	mmol/L	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	\N	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004
-6	Sauerstoffgasfluss	Observation	79063001	19941-4	\N	Gas flow.O2 O2 delivery sys	L/min	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	\N	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004
-7	Dauer Hämodialysesitzung	Observation	445940005	\N	\N	\N	h	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	\N	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004
-8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	\N	mL/min	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	\N	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004
-9	Substituatfluss	Observation	708513005	\N	\N	\N	mL/h	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	\N	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004
-10	Substituatvolumen	Observation	708514004	\N	\N	\N	L	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	\N	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004
-11	Dauer extrakorporaler Gasaustausch	Observation	251286000	\N	\N	\N	h	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	\N	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004
-12	Blutfluss extrakorporaler Gasaustausch	Observation	251288004	\N	\N	\N	L/min	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	\N	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004
-13	Blutflussindex extrakorporaler Gasaustausch	Observation	251289007	\N	\N	\N	L/(min.m2)	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	\N	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004
-14	Venöser Druck	Observation	252076005	\N	\N	\N	mm[Hg]	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	\N	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004
-15	Arterieller Druck	Observation	386534000	\N	\N	\N	mm[Hg]	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	\N	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004
+COPY icu_copra.parameter_ecmo (id, profiles, type, snomed, loinc, ieee, loinc_short_name, unit, unit_code, profil_canonical, category_coding_system, cotegory_cding_display, category_coding_code, loinc_system, loinc_display, snomed_system, snomed_dysplay, ieee_system, ieee_display) FROM stdin;
+3	Parameter von extrakorporalen Verfahren	Observation	\N	\N	\N	\N	\N	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+6	Sauerstoffgasfluss	Observation	79063001	19941-4	\N	Gas flow.O2 O2 delivery sys	L/min	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+7	Dauer Hämodialysesitzung	Observation	445940005	\N	\N	\N	h	h	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+8	Hämodialyse Blutfluss	Observation	401000124105	\N	\N	\N	mL/min	mL/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+9	Substituatfluss	Observation	708513005	\N	\N	\N	mL/h	mL/h	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+10	Substituatvolumen	Observation	708514004	\N	\N	\N	L	L	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+11	Dauer extrakorporaler Gasaustausch	Observation	251286000	\N	\N	\N	h	h	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+12	Blutfluss extrakorporaler Gasaustausch	Observation	251288004	\N	\N	\N	L/min	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+13	Blutflussindex extrakorporaler Gasaustausch	Observation	251289007	\N	\N	\N	L/(min.m2)	L/(min.m2)	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+14	Venöser Druck	Observation	252076005	\N	\N	\N	mm[Hg]	mm[Hg]	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+15	Arterieller Druck	Observation	386534000	\N	\N	\N	mm[Hg]	mm[Hg]	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+4	Blutfluss durch cardiovasculäres Gerät	Observation	444479000	\N	\N	\N	L/min	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/blutfluss-cardiovasculaeres-geraet	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+5	Ionisiertes Kalzium aus Nierenersatzverfahren	Observation	\N	83064-6	\N	Ca-I BldCRRT-sCnc	mmol/L	mmol/L	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/ionisiertes-kalzium-nierenersatzverfahren	http://snomed.info/sct	Extracorporeal circulation procedure (procedure)	182744004	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
 \.
 
 
