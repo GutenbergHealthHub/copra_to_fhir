@@ -6882,52 +6882,50 @@ COPY icu_copra.fhir_profiles_all (id, profiles, type, snomed, loinc, ieee, loinc
 --
 
 COPY icu_copra.matched_0 (profiles, loinc_short_name, name, description) FROM stdin;
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_BlutflussSNPumpe	\N
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_VO_PEEP	\N
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Proc_PEEP	\N
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Evita4_Thoch	Zeiteinstellung für das obere Druckniveau im APRV Modus
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_CRRT_ES_Multi_Temp	neu angelegt am 18.05.2012
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_VisionA_PEEP	Messwert: gemessener positiver endexspiratorischer Druck
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Avea_PEEP	eingestelltes PEEP Niveau
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Avea_ZeitNiedrig	Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Avea_PEEP	gemessenes PEEP Niveau
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Servoi_PEEP	"Positiver Endexsp. Druck "
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Servoi_PEEP	"PEEP "
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Leoni_PEEP	\N
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Servoi_Pmean	"Mittlerer Atemwegsdruck "
 Spontane-Atemfrequenz-Beatmet	\N	P_Beatmung_MS_C3_fSpontan	Spontane Atemfrequenz
+Spontane-Atemfrequenz-Beatmet	\N	Beatmung_Messung_AFSpontan	Respiratory Rate (spontan)
+Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_Evita4_fspn	gemessene spontane Atemfrequenz
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Evita4_Ttief	Zeiteinstellung für das untere Druckniveau im APRV Modus
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Messung_PEEP	\N
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Heimbeatmung_Peep	\N
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Pallas_PEEP	Dokumentation des gemessenen PEEPs.
+Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS_Evita4_fspn	gemessene spontane Atemfrequenz
 Atemfrequenz	Resp rate	Beatmung_MS_T1_fTotal	Gesamtfrequenz
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita2_Compliance	gemessene Lungencompliance
+Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_Messung_Pmax	Peak Airway Pressure
 Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_ES_G5_SBT_Psupp_max	\N
 Venöser Druck	\N	CardioHelpMaquet_MS_DruckVenoes	\N
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring
 Blutfluss extrakorporaler Gasaustausch	\N	Hemolung_VO_Blutfluss	\N
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_T1_Vt	Einstellwert: Tidalvolumen
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_MS_Pallas_Frischgas_Flow_gesamt	Gemessener Frischgas Flow.
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_MS_5008onl_Rest_Zeit_min	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_G5_Flow	Parameter im Modus Highflow - ab 08.06.2017
-Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_4008HS_BlutflussMax	\N
 Substituatvolumen	\N	Nierenersatzverfahren_VO_SubstituatVolumen	\N
-Maximaler Beatmungsdruck	Press.max on vent Airway	Untersuchung_Thorax_Wand	\N
 Atemfrequenz	Resp rate	Beatmung_MS_VisionA_BreathRate	Messwert: gemessene Atemfrequenz
 Rechtsatrialer Druck	Blood pressure panel with all children optional	RAP1	rechtsartrialer Druck
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_Fluß	\N
 Dauer Hämodialysesitzung	\N	NEV_HD_VO_4008onl_Dialysezeit	\N
 Exspiratorischer Sauerstoffpartialdruck	pO2 ExG	PtiO2Druck	Gemessener Sauerstoffpartialdruck im Parenchym
 Substituatfluss	\N	Nierenverfahren_ES_BM25_Umsatz	Austausch, Substituat, ml/h
 Herzzeitvolumen	LV Output	VigilanceC_HZV	Herzzeitvolumen
 Rechtsatrialer Druck	Blood pressure panel with all children optional	RAP	Rechtsatrial Mitteldruck
 Substituatvolumen	\N	Nierenersatzverfahren_Einstell_SubstituatVolumen	\N
-Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_MS_Avea_Mitteldruck	gemessener Atemwegsmitteldruck
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_Doku_ILA_Blutfluss	\N
 Venöser Druck	\N	P_NEV_HD_MS_5008onl_venDruck	\N
 Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_VO_Blutfluss	\N
 Blutdruck	Blood pressure panel with all children optional	NBP	nichtinvasiver Blutdruck
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_T1_Flow	Einstellung Sauerstoff Flow
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	Nierenverfahren_ES_Multi_CalciumFiltrat	Calciumrate
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_Flushmanoever	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_HD_MS_4008onl_Rest_Zeit_min	Anpassung für IBUS Anbindung
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Servoi_Flow	Parameter im Modus Highflow
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Untersuchung_Thorax_Pulmo	\N
 Herzfrequenz	Heart rate	HF	Herzfrequenz
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_G5_fspontan	Spontane Atemfrequenz
 Intrakranieller Druck ICP	ICP	ICP1	intracranieller Druck
 Venöser Druck	\N	NEV_CRRT_MS_Multi_venDruck	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_Filter	\N
-Maximaler Beatmungsdruck	Press.max on vent Airway	IABP_EKG	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Mess_Fluss	\N
 Körpertemperatur Generisch	Body temperature	T_K2	Körpertemperatur Messkanal 2
 Venöser Druck	\N	Nierenersatzverfahren_Mess_VenoeserDruck	\N
 Systemischer vaskulärer Widerstandsindex	SV RI	VigilanceC_SVRI	Systemischer Gefäßwiderstandsindex
@@ -6938,34 +6936,24 @@ Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita4_Pmean	gemes
 Systemischer vaskulärer Widerstandsindex	SV RI	Vigileo_SVRI	Systemic vascular resistance index
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_Messung_Horrowitz	\N
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_G5_Vt	Einstellwert: Tidalvolumen
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Dokumentation_BlutflussEinst	\N
 Venöser Druck	\N	NEV_HD_MS_4008HS_venDruck	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILAactivve_Fluss	\N
 Blutdruck	Blood pressure panel with all children optional	NBP_1	nichtinvasiver Blutdruck 1
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_Einstellung_Psupport	\N
 Horowitz-In-Arteriellem-Blut	Horowitz index BldA+IhG-Rto	Beatmung_MS_HorowitzINPULS	Messung des Horowitz-Indexes
 Atemfrequenz	Resp rate	Beatmung_MS_Pallas_Frequenz	Gemessene Atemfrequenz.
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_VO_5008onl_Dialyse_Zeit	\N
 Zentralvenöser Druck	CVP	ZVD	Zentralvenöser Druck
 Druckdifferenz Beatmung	Away press delta on vent PressDiff	Beatmung_MS_VisionA_Amplitude	gemessene Druckdifferenz im HFOV Modus
 Herzzeitvolumen	LV Output	PICCO_HZV	Herzzeitvolumen
 Herzzeitvolumen	LV Output	HZV_VigileoGeraet	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	COPRA_Patient_Kopfumfang	Kopfumfang des Patienten in Zentimetern
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Ereignisse Vitlaparameter Graphisch	Ereignisse Vitlaparameter Graphisch als Listenauswahl
 Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008HS_Dialysezeit	\N
 Körpertemperatur Generisch	Body temperature	T_K	Körpertemperatur
 Pulmonalvaskulärer Widerstandsindex	PV RI	PVRI	"Pulmunaler Gefäßwiderstandsindex "
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring
 Venöser Druck	\N	P_ADVOS_MS_ADVOS_venDruck	\N
-Maximaler Beatmungsdruck	Press.max on vent Airway	P_Waermesysteme_FisherPaykel_Doku_Prozent	\N
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita2_Ppeep	gemessener positer endexspiratorischer Druck
 Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008onl_Dialyse_Zeit	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Pallas_Pmean	Gemesener Atemwegsmitteldruck
 Intrakranieller Druck ICP	ICP	P_CSF_MS_LiqouGuard_ICP	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_NEV_HD_VO_5008onl_SollNa	\N
-Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_MS_Evita4_Pmean	gemessener Atemwegsmitteldruck
 Atemfrequenz	Resp rate	Beatmung_MS_Evita2_frequenz	gemessene Atemfrequenz
-Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_Multi_BlutflussMax	max Blutpumpengeschwindigkeit VO
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Oesophagial	Anlage im Rahmen PhilipsMonitoring
 Substituatfluss	\N	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h
 Blutfluss durch cardiovasculäres Gerät	\N	CardioHelpMaquet_MS_Blutfluss	\N
@@ -6973,15 +6961,12 @@ Substituatfluss	\N	Nierenverfahren_VO_Multi_Substituat	Substituat in ml/h
 Intrakranieller Druck ICP	ICP	ICP	Intrakranialer Druck
 Linksventrikulärer Druck	Blood pressure panel with all children optional	LVP	Linksventrikulärer Mitteldruck
 Atemfrequenz	Resp rate	Beatmung_MS_Avea_Frequenz	gemessene Atemfrequenz
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Evita4_PEEP	gemessener positiver endexspiratorischer Druck
 Kopfumfang	Head Circumf OFC	Patient_Kopfumfang_bit	Kopfumfang bit cm
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Servoi_Psupport	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita4_MV	gemessenes Atemminutenvolumen
 Arterieller Druck	\N	PICCO_ABP	Arterieller Druck
 Kopfumfang	Head Circumf OFC	Patient_Kopfumfang	Kopfumfang des Patienten (Kinder)
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_Spueldauer	\N
 Blutfluss extrakorporaler Gasaustausch	\N	Hemolung_MS_Blutfluss	\N
-Maximaler Beatmungsdruck	Press.max on vent Airway	NEV_CRRT_MS_Multi_UFR_BFRVerhaeltnis	\N
 Zentralvenöser Druck	CVP	PICCO_ZVD	Zentraler Venendruck
 Blutdruck	Blood pressure panel with all children optional	P_NBP_reArm	Nichtinvasiver Blutdruck rechter Arm
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_Einstellung_SauerstoffFlow	\N
@@ -6991,44 +6976,32 @@ Dauer Hämodialysesitzung	\N	NEV_HD_VO_4008HS_Dialysezeit	\N
 Herzzeitvolumen	LV Output	HZV	Herzzeitvolumen
 Pulmonalarterieller Blutdruck	Blood pressure panel with all children optional	PAP	Pulmunalarterieller Druck
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_G5_Pmittel	Messwert: Beatmungsmitteldruck
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_BlutflussMin	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Zephyros_By-Flow	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_T1_Pmittel	Messwert: Beatmungsmitteldruck
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Evita4_Vt	Einstellgröße für das Tidalvolumen
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_VisionA_PEEP	Messwert: gemessener positiver endexspiratorischer Druck
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_ES_Zephyros_Flow	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_Blutfluss	\N
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Heimbeatmung_Vt	Einstellung Tidalvolumen
 Herzzeitvolumen	LV Output	HZV_VigilanceCGeraet	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Pallas_MV	Gemessenes Atemminutenvolumen.
 Blutdruck	Blood pressure panel with all children optional	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Patient_Kopfumfang	Kopfumfang des Patienten (Kinder)
 Puls	\N	Puls	Puls
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_FuellenMit	\N
 Herzzeitvolumen	LV Output	HZV_PICCOGeraet	\N
 Körpertemperatur Kern	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Avea_Mitteldruck	gemessener Atemwegsmitteldruck
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_Avea_IE	gemessenes I zu E Verhältnis
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_ADVOS_MS_ADVOS_Calcium_preFilter	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_Doku_ILAAnalogIn	\N
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_BiPAPV_Inspirationszeit	Einstellwert: Zeiteinstellung für die Inspirationszeit
 Kopfumfang	Head Circumf OFC	Patient_Kopfumfang_Aufnahme	\N
 Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_Einstellung_Pmax	Pmax, Maximaldruck
 Dauer Hämodialysesitzung	\N	P_NEV_HD_ES_5008onl_Dialyse_Zeit	\N
 Herzfrequenz	Heart rate	PICCO_HF	HerzfrequenzHerzfrequenz
 Körpergewicht	Weight	Patient_AufnGewicht	Aufnahmegewicht (fallbezogen)
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_INVOS_Doku_rSO2_rechts	cerbebrale Sauerstoffsättigung rechts
 Venöser Druck	\N	NEV_Apherese_MS_Multil_venDruck	\N
 Herzzeitvolumen	LV Output	HZVGeraet_Auswahl	\N
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_I:E	Atemzeitverhältnis (I:E)
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_G5_IEVerhaeltnis	gemessenes I:E Verhältnis
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Untersuchung_Kopf_Hals	\N
 Körpertemperatur Generisch	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring
 Herzzeitvolumen	LV Output	p-CO	"Herzzeitvolumen (PICCO Modul Dräger Monitoring) "
 Körpertemperatur rektal	Rectal temp	P_Temperatur_Rektal	Anlage im Rahmen Philips Monitoring
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_Einstell_BlutflussSNPumpe	\N
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Messung_Compliance	Compliance
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_CF800_SauerstoffFlow	Einstellgröße Gasfluss Sauerstoff
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Servoi_Tpeep	"zeit unteres Druckniveau (tniedrig) "
@@ -7041,37 +7014,23 @@ Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_T1_Psupp
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_Optiflow_O2Flow	\N
 Blutfluss extrakorporaler Gasaustausch	\N	Lungenersatzverfahren_ES_ILAactivve_Blutfluss	\N
 Venöser Druck	\N	Nierenersatzverfahren_Mess_VenDruck	\N
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Einstellung_PEEP	Positiver endexspiratorischer Druck (PEEP)
 Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_Einstellung_VT	Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)
 Atemfrequenz	Resp rate	Beatmung_MS_BiPAPV_AF	Messparameter: gemessene Atemfrequenz
-Maximaler Beatmungsdruck	Press.max on vent Airway	NEV_Apherese_Doku_Bolus_Antikoag	\N
-Maximaler Beatmungsdruck	Press.max on vent Airway	Fall_Nummer	Identifikationsnummer des Falles
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	P_Beatmung_MS_C3_IEVerhaeltnis	Verhältnis Inspirationszeit:Exspirationszeit
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Heimbeatmung_Psupport	\N
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Anordnung_PEEP	Anordnung Positiver endexspiratorischer Druck (PEEP)
 Venöser Druck	\N	Nierenverfahren_MS_Multi_venDruck	venöser Druck
-Maximaler Beatmungsdruck	Press.max on vent Airway	Nierenverfahren_VO_ADM_BlutflussMax	Blutpumpengeschwindigkeit
 Venöser Druck	\N	NEV_HD_MS_4008onl_venDruck	\N
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Avea_FiO2	eingestellte Sauerstoffkonzentration des inspiratorischen Atemgases
 Linksatrialer Druck	Blood pressure panel with all children optional	LAP	Linksatrial  Mitteldruck
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	P_INVOS_Doku_rSO2_links	cerebrale Sauerstoffsättigung links
 Linksatrialer Druck	Blood pressure panel with all children optional	LAP1	linksartrialer Druck
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita4_Compliance	gemessene Lungencompliance
 Atemfrequenz	Resp rate	P_Beatmung_MS_C3_fTotal	Gesamtatemfrequenz
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmittel	gemessener Beatmungsmitteldruck
-Maximaler Beatmungsdruck	Press.max on vent Airway	AnordnungSedierungPCAPDA	\N
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Lungenersatzverfahren_VO_ILA_GasflussMax	\N
 Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Servoi_Thoch	"zeit oberes Druckniveau (thoch) "
 Körpergewicht	Weight	COPRA_Patient_Bezugsgewicht	Bezugsgewicht des Patienten in kg
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Servoi_PEEP	"PEEP "
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring
 Körpertemperatur Kern	Body temperature	T_K	Körpertemperatur
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Untersuchung_Kopf_Ohren	\N
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Leoni_PEEP	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Nierenersatzverfahren_VO_HFLoesung	\N
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	Beatmung_MS_G5_RCinsp	Inspiratorische Zeitkonstante, ein Monitoring Parameter
-Atemwegsdruck bei null expiratorischem Gasfluss	PAW @ zero insp flow on vent	NEV_HD_Doku_SpüllösungAntikoag	\N
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_G5_Psupport	Einstellwert: Druckunterstützung beim G 5  bei Spontanatemzügen
 Intrakranieller Druck ICP	ICP	TISS28_TS_ICPMessung	\N
 Körpertemperatur Kern	Body temperature	T_K2	Körpertemperatur Messkanal 2
@@ -7079,7 +7038,6 @@ Atemfrequenz	Resp rate	AF	Atemfrequenz
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_T1_fSpontan	Spontane Atemfrequenz
 Körpergewicht	Weight	Patient_Gewicht	Gewicht des Patienten
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Pallas_Cpat	Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.
-Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_ES_C2_Timax	Inspirationszeit maximal
 Körpertemperatur Blut	Blood temp	TempBT	Bluttemperatur bei der HZV Messung
 Körpertemperatur Kern	Body temperature	KlinikTemperaturstatus_Kerntemperatur_Kerntemp	\N
 Körpertemperatur Kern	Body temperature	KlinikNervensys_Kerntemperatur_Temp	Kerntemperatur
@@ -7093,12 +7051,6 @@ Körpertemperatur Speiseroehre	Esoph temp	P_Temperatur_Oesophagial	Anlage im Rah
 Körpertemperatur nasal	Nasal temp	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring
 Körpertemperatur Trommelfell	Tymp memb temp	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Anordnung_Flow	Anordnung Inspiratorische Flowrate
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_VO_PEEP	\N
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_Proc_PEEP	\N
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Zephyros_Ppeep	\N
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Servoi_PEEP	"Positiver Endexsp. Druck "
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Servoi_DU_ueber_PEEP	"DU über PEEP "
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Servoi_DK_ueber_PEEP	"DK über PEEP "
 Systemischer vaskulärer Widerstandsindex	SV RI	SVRI	"Index des systemischen Gefäßwiderstandes "
 Systemischer vaskulärer Widerstandsindex	SV RI	p-SVRI	"Index des systemischen Gefäßwiderstandes (PICCO Modul Dräger Monitoring)  "
 Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVRI	Systemic vascular resistance index

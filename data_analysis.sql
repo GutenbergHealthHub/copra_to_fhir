@@ -929,8 +929,9 @@ order by description, name;
 -- Positiv-endexpiratorischer Druck
 select 'Positiv-endexpiratorischer Druck' profil, name, description, unit  from icu_copra.copra_config_vars ccv 
 where (name ~* 'ende|peep' or description ~* 'endex|peep')
---and (name !~* 'archiv|praem|score|therap|pupill|mikrob|pflege|befi|behan|insul|dekan|hausa|hypot|waerm|abrech|o2|citr|flus|beat|medika')
-and (name not in (select distinct name from icu_copra.matched_0 m))
+and (name ~* '^beat')
+and ("name" !~* 'cpap|auto|back|dk|du|mac|opti|ppeepi')
+--and (name not in (select distinct name from icu_copra.matched_0 m))
 and (ccv.unit ~* 'cm|mm' or ccv.unit isnull)
 order by description, name;
 
@@ -938,8 +939,10 @@ order by description, name;
 -- Positiv-endexpiratorischer Druck
 --insert into icu_copra.matched_0 
 select fpa.profiles, fpa.loinc_short_name, ccv.name, ccv.description from icu_copra.fhir_profiles_all fpa, icu_copra.copra_config_vars ccv
-where ccv.name in ('Beatmung_ES_Servoi_DK_ueber_PEEP', 'Beatmung_ES_Servoi_DU_ueber_PEEP', 'Beatmung_MS_Servoi_PEEP', 
-'Beatmung_MS_Zephyros_Ppeep', 'Beatmung_Proc_PEEP', 'Beatmung_VO_PEEP') and fpa.id = 24;
+where ccv.name in ('Beatmung_ES_Avea_PEEP', 'Beatmung_MS_Avea_PEEP', 'Beatmung_MS_VisionA_PEEP',
+  'Beatmung_ES_Servoi_PEEP', 'Beatmung_MS_Servoi_PEEP', 'Beatmung_ES_Leoni_PEEP', 'Beatmung_ES_Leoni_PEEP', 
+  'Beatmung_Proc_PEEP', 'Beatmung_VO_PEEP') 
+and fpa.id = 24;
 
 
 
@@ -1345,15 +1348,55 @@ where name = 'Beatmung_MS_Evita4_frequenz'
 and id = 46
 ;
 
+insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name in ('Beatmung_MS_Servoi_Pmean')
+and id = 27
+;
+
+
 --insert into icu_copra.matched_0
 select profiles, loinc_short_name, name, description
 from icu_copra.fhir_profiles_all,
   icu_copra.copra_config_vars
-where name in ('Beatmung_MS_VisionA_MAP', 'Beatmung_MS_Servoi_Pmean')
-and id = 27
+where name in ('Beatmung_Messung_AFSpontan', 'Beatmung_MS_Evita4_fspn')
+and id = 45
 ;
 
-select * from icu_copra.matched_0 where profiles = 'Sauerstoffgasfluss' order by description ;
 
-delete from icu_copra.matched_0 where profiles = 'Sauerstoffgasfluss' and name ~* 'konz';
+--insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name in ('Beatmung_ES_Heimbeatmung_Peep', 'Beatmung_Messung_PEEP', 
+'Beatmung_MS_Pallas_PEEP')
+and id = 24
+;
 
+
+--insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name in ('p-SV', 'Beatmung_ES_VisionA_Schlagvolumen', 'SV')
+and id = 63
+;
+
+
+--insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name in ('Beatmung_MS_Evita4_fspn')
+and id = 44
+;
+
+insert into icu_copra.matched_0
+select profiles, loinc_short_name, name, description
+from icu_copra.fhir_profiles_all,
+  icu_copra.copra_config_vars
+where name in ('Beatmung_Messung_Pmax')
+and id = 26
+;
