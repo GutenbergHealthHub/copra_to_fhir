@@ -48,13 +48,15 @@ set category_coding_system = 'http://terminology.hl7.org/CodeSystem/observation-
  
 alter table icu_copra.body_temperatur
   rename cotegory_cding_display to category_coding_display;
- */
-
+  
 alter table icu_copra.body_temperatur
   add column body_site_coding_system varchar default 'http://snomed.info/sct',
   add column body_site_coding_code varchar,
   add column body_site_coding_display varchar
 ;
+ */
+
+
   
   
 select * from icu_copra.body_temperatur bt
@@ -136,6 +138,10 @@ set profil_canonical = profil_canonical||'koerpertemperatur-brust',
   body_site_coding_display = 'Breast structure (body structure)'
 where id = 88;
 
+update icu_copra.body_temperatur
+set profil_canonical = 'https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/koerpertemperatur-brust'
+where id = 88;
+
 
 select * from icu_copra.body_temperatur bt
 where id = 89;
@@ -187,42 +193,116 @@ where id = 92;
 
 
 select * from icu_copra.body_temperatur bt
-where id = ;
+where id = 93;
 
 update icu_copra.body_temperatur 
-set profil_canonical = profil_canonical||'',
+set profil_canonical = profil_canonical||'koerpertemperatur-leiste',
   --loinc_display = 'Body temperature',
-  snomed_display = '',
-  body_site_coding_code = '',
-  body_site_coding_display = ''
-where id = ;
+  snomed_display = 'Estimated core body temperature measured in inguinal region (observable entity)',
+  body_site_coding_code = '26893007',
+  body_site_coding_display = 'Inguinal region structure (body structure)'
+where id = 93;
 
 
 select * from icu_copra.body_temperatur bt
-where id = ;
+where id = 94;
 
 update icu_copra.body_temperatur 
-set profil_canonical = profil_canonical||'',
-  --loinc_display = 'Body temperature',
-  snomed_display = '',
-  body_site_coding_code = '',
-  body_site_coding_display = ''
-where id = ;
+set profil_canonical = profil_canonical||'koerpertemperatur-achsel',
+  loinc_display = 'Axillary temperature',
+  snomed_display = 'Estimated core body temperature measured in axillary region (observable entity)',
+  ieee_display = 'Axillary temperature',
+  body_site_coding_code = '91470000',
+  body_site_coding_display = 'Axillary region structure (body structure)'
+where id = 94;
 
 
 select * from icu_copra.body_temperatur bt
-where id = ;
+where id = 95;
 
 update icu_copra.body_temperatur 
-set profil_canonical = profil_canonical||'',
-  --loinc_display = 'Body temperature',
-  snomed_display = '',
-  body_site_coding_code = '',
-  body_site_coding_display = ''
-where id = ;
+set profil_canonical = profil_canonical||'koerpertemperatur-unter-der-zunge',
+  loinc_display = 'Oral temperature',
+  snomed_display = 'Core body temperature measured in sublingual space (observable entity)',
+  ieee_display = 'Oral temperature',
+  body_site_coding_code = '123851003',
+  body_site_coding_display = 'Mouth region structure (body structure)'
+where id = 95;
 
+
+select * from icu_copra.body_temperatur bt
+where id = 96;
 
 update icu_copra.body_temperatur 
-set loinc_display = 'Body temperatur'
-where loinc = '8310-5' ;
+set profil_canonical = profil_canonical||'koerpertemperatur-vaginal',
+  --loinc_display = '',
+  snomed_display = 'Core body temperature measured vaginally (observable entity)',
+  --ieee_display = '',
+  body_site_coding_code = '76784001',
+  body_site_coding_display = 'Vaginal structure (body structure)'
+where id = 96;
+
+select * from icu_copra.body_temperatur bt
+where id = 97;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'koerpertemperatur-harnblase',
+  loinc_display = 'Body temperature - Urinary bladder',
+  snomed_display = 'Core body temperature measured at urinary bladder (observable entity)',
+  --ieee_display = '',
+  body_site_coding_code = '89837001',
+  body_site_coding_display = 'Urinary bladder structure (body structure)'
+where id = 97;
+
+select * from icu_copra.body_temperatur bt
+where id = 98;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'koerpertemperatur-nasen-rachen-raum',
+  --loinc_display = '',
+  snomed_display = '"Core body temperature measured in nasopharynx (observable entity)',
+  --ieee_display = '',
+  body_site_coding_code = '71836000',
+  body_site_coding_display = 'Nasopharyngeal structure (body structure)'
+where id = 98;
+
+update icu_copra.body_temperatur 
+set snomed_display = 'Core body temperature measured in nasopharynx (observable entity)'
+where id = 98;
+
+select * from icu_copra.body_temperatur bt
+where id = 99;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'koerpertemperatur-speiseroehre',
+  loinc_display = 'Esophageal temperature',
+  snomed_display = 'Core body temperature measured in esophagus (observable entity)',
+  --ieee_display = '',
+  body_site_coding_code = '32849002',
+  body_site_coding_display = 'Esophageal structure (body structure)'
+where id = 99;
+
+select * from icu_copra.body_temperatur bt
+where id = 100;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'koerpertemperatur-rektal',
+  loinc_display = 'Rectal temperature',
+  snomed_display = 'Core body temperature measured in rectum (observable entity)',
+  ieee_display = 'Rectal temperature',
+  body_site_coding_code = '34402009',
+  body_site_coding_display = 'Rectum structure (body structure)'
+where id = 100;
+
+select * from icu_copra.body_temperatur bt
+where id = 101;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'koerpertemperatur-trommelfell',
+  loinc_display = 'Tympanic membrane temperature',
+  snomed_display = 'Core body temperature measured at tympanic membrane (observable entity)',
+  --ieee_display = '',
+  body_site_coding_code = '42859004',
+  body_site_coding_display = 'Tympanic membrane structure (body structure)'
+where id = 101;
 
