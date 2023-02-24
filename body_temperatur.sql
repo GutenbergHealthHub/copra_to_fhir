@@ -72,7 +72,8 @@ update icu_copra.body_temperatur
 set --profil_canonical = profil_canonical||'koerpertemperatur-brustwirbelsaeule',
   loinc_display = 'Body temperature',
   snomed_display = 'Temperature of thoracic spine (observable entity)',
-  b---
+  body_site_coding_code = '122495006',
+  body_site_coding_display = 'Structure of thoracic vertebral column (body structure)'
 where id = 83 ;
 
 
@@ -80,10 +81,146 @@ select * from icu_copra.body_temperatur bt
 where id = 84;
 
 update icu_copra.body_temperatur 
-set profil_canonical = profil_canonical||'koerpertemperatur-lendenwirbelsaeule',
+set --profil_canonical = profil_canonical||'koerpertemperatur-lendenwirbelsaeule',
   loinc_display = 'Body temperature',
-  snomed_display = 'Temperature of lumbar spine (observable entity)'
+  snomed_display = 'Temperature of lumbar spine (observable entity)',
+  body_site_coding_code = '122496007',
+  body_site_coding_display = 'Structure of lumbar vertabral column (body structure)'
 where id = 84 ;
+
+
+select * from icu_copra.body_temperatur bt
+where id = 85;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'koerpertemperatur-gelenk',
+  --loinc_display = 'Body temperature',
+  snomed_display = 'Temperature of joint (observable entity)',
+  body_site_coding_code = '39352004',
+  body_site_coding_display = 'Joint structure (body structure)'
+where id = 85 ;
+
+
+select * from icu_copra.body_temperatur bt
+where id = 86;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'koerpertemperatur-stirn',
+  --loinc_display = 'Body temperature',
+  snomed_display = 'Temperature of forehead (observable entity)',
+  body_site_coding_code = '52795006',
+  body_site_coding_display = 'Forehead structure (body structure)'
+where id = 86 ;
+
+
+select * from icu_copra.body_temperatur bt
+where id = 87;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'koerpertemperatur-halswirbelsaeule',
+  --loinc_display = 'Body temperature',
+  snomed_display = 'Temperature of cervical spine (observable entity)',
+  body_site_coding_code = '122494005',
+  body_site_coding_display = 'Structure of cervical vertebral column (body structure)'
+where id = 87;
+
+
+select * from icu_copra.body_temperatur bt
+where id = 88;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'koerpertemperatur-brust',
+  --loinc_display = 'Body temperature',
+  snomed_display = 'Temperature of breast (observable entity)',
+  body_site_coding_code = '76752008',
+  body_site_coding_display = 'Breast structure (body structure)'
+where id = 88;
+
+
+select * from icu_copra.body_temperatur bt
+where id = 89;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'koerpertemperatur-nasal',
+  loinc_display = 'Nasal temperature',
+  ieee_display = 'Nasal temperature',
+  --snomed_display = '',
+  body_site_coding_code = '45206002',
+  body_site_coding_display = 'Nasal structure (body structure)'
+where id = 89;
+
+
+select * from icu_copra.body_temperatur bt
+where id = 90;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'koerpertemperatur-myokard',
+  loinc_display = 'Myocardial temperature',
+  ieee_display = 'Myocardial temperature',
+  --snomed_display = '',
+  body_site_coding_code = '74281007',
+  body_site_coding_display = 'Myocardium structure (body structure)'
+where id = 90;
+
+
+select * from icu_copra.body_temperatur bt
+where id = 91;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'koerpertemperatur-atemwege',
+  loinc_display = 'Airway temperature',
+  body_site_coding_code = '89187006',
+  body_site_coding_display = 'Airway structure (body structure)'
+where id = 91;
+
+select * from icu_copra.body_temperatur bt
+where id = 92;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'koerpertemperatur-blut',
+  loinc_display = 'Blood temperature',
+  ieee_display = 'Blood temperature',
+  snomed_display = 'Temperature of blood (observable entity)'
+  --body_site_coding_code = '',
+  --body_site_coding_display = ''
+where id = 92;
+
+
+select * from icu_copra.body_temperatur bt
+where id = ;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'',
+  --loinc_display = 'Body temperature',
+  snomed_display = '',
+  body_site_coding_code = '',
+  body_site_coding_display = ''
+where id = ;
+
+
+select * from icu_copra.body_temperatur bt
+where id = ;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'',
+  --loinc_display = 'Body temperature',
+  snomed_display = '',
+  body_site_coding_code = '',
+  body_site_coding_display = ''
+where id = ;
+
+
+select * from icu_copra.body_temperatur bt
+where id = ;
+
+update icu_copra.body_temperatur 
+set profil_canonical = profil_canonical||'',
+  --loinc_display = 'Body temperature',
+  snomed_display = '',
+  body_site_coding_code = '',
+  body_site_coding_display = ''
+where id = ;
+
 
 update icu_copra.body_temperatur 
 set loinc_display = 'Body temperatur'
