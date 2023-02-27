@@ -239,9 +239,18 @@ CREATE TABLE icu_copra.vital_parameter_no_pulsatil (
     snomed character varying(12),
     loinc character varying(12),
     ieee character varying(12),
-    loinc_short_name character varying,
     unit character varying,
-    analyzed boolean
+    unit_code character varying,
+    profil_canonical character varying DEFAULT 'https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/'::character varying,
+    category_coding_system character varying DEFAULT 'http://terminology.hl7.org/CodeSystem/observation-category'::character varying,
+    category_coding_code character varying DEFAULT 'vital-signs'::character varying,
+    category_coding_display character varying,
+    loinc_system character varying DEFAULT 'http://loinc.org'::character varying,
+    loinc_display character varying,
+    snomed_system character varying DEFAULT 'http://snomed.info/sct'::character varying,
+    snomed_display character varying,
+    ieee_system character varying DEFAULT 'urn:iso:std:iso:11073:10101'::character varying,
+    ieee_display character varying
 );
 
 
@@ -256,9 +265,7 @@ CREATE TABLE icu_copra.vital_parameter_pulsatil (
     snomed character varying(12),
     loinc character varying(12),
     ieee character varying(12),
-    loinc_short_name character varying,
-    unit character varying,
-    analyzed boolean
+    unit character varying
 );
 
 
@@ -30890,23 +30897,23 @@ COPY icu_copra.ventilation (id, profiles, type, snomed, loinc, ieee, unit, unit_
 24	Positiv-endexpiratorischer Druck	Observation	250854009	76248-4	151976	centimeter of water	cm[H2O]	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/positiv-endexpiratorischer-druck	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	PEEP Respiratory system --on ventilator	http://snomed.info/sct	Positive end expiratory pressure (observable entity)	urn:iso:std:iso:11073:10101	Applied PEEP
 25	Dynamische Kompliance	Observation	250823005	60827-3	151692	milliliter per centimeter of water	mL/cm[H2O]	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/dynamische-kompliance	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Dynamic lung compliance	http://snomed.info/sct	Total dynamic compliance (observable entity)	urn:iso:std:iso:11073:10101	Thoracic compliance
 31	Exspiratorischer Gasfluss	Observation	\N	60792-9	151944	liter per minute	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/exspiratorischer-gasfluss	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Expiratory gas flow Respiratory system airway --on ventilator	\N	\N	urn:iso:std:iso:11073:10101	Ventilation expiratory flow
-44	Spontane-Mechanische-Atemfrequenz-Beatmet	Observation	250810003	19840-8	152490	per minute	/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-46	Mechanische-Atemfrequenz-Beatmet	Observation	250876000	33438-3	151586	breaths per minute	{Breaths}/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+45	Spontane-Atemfrequenz-Beatmet	Observation	271625008	\N	152498	per minute	/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/spontane-atemfrequenz-beatmet	http://snomed.info/sct	40617009	Artificial respiration (procedure)	\N	Breath rate spontaneous --on ventilator	http://snomed.info/sct	Rate of spontaneous respiration (observable entity)	urn:iso:std:iso:11073:10101	Unassisted spontaneous breath rate; respiration rate
+47	Horowitz-In-Arteriellem-Blut	Observation	\N	50984-4	150656	millimeter of mercury	mm[Hg]	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/horowitz-in-arteriellem-blut	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Horowitz index in Arterial blood	\N	\N	urn:iso:std:iso:11073:10101	Oxygenation Ratio
 38	Spontanes-Atemzugvolumen	Observation	250816009	20116-0	\N	milliliter	mL	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/spontanes-atemzugvolumen	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Tidal volume.spontaneous --on ventilator	http://snomed.info/sct	Spontaneous tidal volume (observable entity)	\N	\N
-41	Zeitverhältnis-Ein-Ausatmung	Observation	250822000	75931-6	151832	ratio	{ratio}	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+42	Einstellung-Ausatmungszeit-Beatmung	Observation	250820008	76187-4	\N	second	s	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/einstellung-ausatmungszeit-beatmung	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Expiratory hold time setting Ventilator	http://snomed.info/sct	Expiratory time (observable entity)	\N	\N
 32	Inspiratorischer Gasfluss	Observation	\N	60794-5	151948	liter per minute	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/inspiratorischer-gasfluss	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Inspiratory gas flow Respiratory system airway --on ventilator	\N	\N	urn:iso:std:iso:11073:10101	Ventilation inspiratory flow
-43	Einstellung-Einatmungszeit-Beatmung	Observation	250819002	76334-2	16929632	second	s	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
-45	Spontane-Atemfrequenz-Beatmet	Observation	271625008	\N	152498	per minute	/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	40617009	Artificial respiration (procedure)	\N	\N	http://snomed.info/sct	\N	urn:iso:std:iso:11073:10101	\N
+44	Spontane-Mechanische-Atemfrequenz-Beatmet	Observation	250810003	19840-8	152490	per minute	/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/spontane-mechanische-atemfrequenz-beatmet	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Breath rate spontaneous and mechanical --on ventilator	http://snomed.info/sct	Total breath rate (observable entity)	urn:iso:std:iso:11073:10101	Total respiratory rate; total breath rate
 40	Atemzugvolumen-Einstellung	Observation	416811008	20112-9	16929196	milliliter	mL	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/atemzugvolumen-einstellung	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Tidal volume setting Ventilator	http://snomed.info/sct	Tidal volume setting (observable entity)	urn:iso:std:iso:11073:10101	Tidal volume setting
 33	Eingestellter inspiratorischer Gasfluss	Observation	\N	76275-7	\N	liter per minute	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/eingestellter-inspiratorischer-gasfluss	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Inspiratory flow setting Ventilator	\N	\N	\N	\N
 34	Beatmungszeit auf niedrigem Druck	Observation	\N	76229-4	16929864	second	s	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/beatmungszeit-niedrigem-druck	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Low pressure hold time setting Ventilator	\N	\N	urn:iso:std:iso:11073:10101	Low pressure hold time setting Ventilator
-42	Einstellung-Ausatmungszeit-Beatmung	Observation	250820008	76187-4	\N	second	s	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	\N	http://snomed.info/sct	\N	\N	\N
+43	Einstellung-Einatmungszeit-Beatmung	Observation	250819002	76334-2	16929632	second	s	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/einstellung-einatmungszeit-beatmung	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Inspiratory time setting Ventilator	http://snomed.info/sct	Inspiratory time (observable entity)	urn:iso:std:iso:11073:10101	Inspiratory time setting
 39	Atemzugvolumen-Waehrend-Beatmung	Observation	250874002	76222-9	151980	milliliter	mL	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/atemzugvolumen-waehrend-beatmung	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Tidal volume Ventilator --on ventilator	http://snomed.info/sct	Ventilator delivered tidal volume (observable entity)	urn:iso:std:iso:11073:10101	Ventilation tidal volume
 37	Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Observation	250875001	76009-0	152004	liter per minute	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/beatmungsvolumen-pro-minute-maschineller-beatmung	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Inspired minute Volume during Mechanical ventilation	http://snomed.info/sct	Ventilator delivered minute volume (observable entity)	urn:iso:std:iso:11073:10101	Ventilation inspiratory minute volume
 35	Beatmungszeit auf hohem Druck	Observation	\N	76190-8	16929860	second	s	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/beatmungszeit-hohem-druck	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	High pressure hold time setting Ventilator	\N	\N	urn:iso:std:iso:11073:10101	High pressure hold time setting Ventilator
-47	Horowitz-In-Arteriellem-Blut	Observation	\N	50984-4	150656	millimeter of mercury	mm[Hg]	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	\N	\N	\N	urn:iso:std:iso:11073:10101	\N
+41	Zeitverhältnis-Ein-Ausatmung	Observation	250822000	75931-6	151832	ratio	{ratio}	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/zeitverhaeltnis-ein-ausatmung	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Inspiration/Expiration time Ratio	http://snomed.info/sct	Inspiration/expiration time ratio (observable entity)	urn:iso:std:iso:11073:10101	Ratio inspiration expiration time
 30	Inspiratorische Sauerstofffraktion eingestellt	Observation	250774007	19994-3	\N	percent	%	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/inspiratorisch-sauerstofffraktion-eingestellt	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Oxygen/Total gas setting [Volume Fraction] Ventilator	http://snomed.info/sct	Inspired oxygen concentration (observable entity)	\N	\N
 36	Spontanes-Plus-Mechanisches-Atemzugvolumen	Observation	\N	20118-6	\N	milliliter	mL	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/spontanes-mechanisches-atemzugvolumen-waehrend-beatmung	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Tidal volume.spontaneous+mechanical --on ventilator	\N	\N	\N	\N
+46	Mechanische-Atemfrequenz-Beatmet	Observation	250876000	33438-3	151586	breaths per minute	{Breaths}/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/mechanische-atemfrequenz-beatmet	http://snomed.info/sct	40617009	Artificial respiration (procedure)	http://loinc.org	Breath rate mechanical --on ventilator	http://snomed.info/sct	Ventilator rate (observable entity)	urn:iso:std:iso:11073:10101	"Ventilation rate
 \.
 
 
@@ -30914,33 +30921,33 @@ COPY icu_copra.ventilation (id, profiles, type, snomed, loinc, ieee, unit, unit_
 -- Data for Name: vital_parameter_no_pulsatil; Type: TABLE DATA; Schema: icu_copra; Owner: -
 --
 
-COPY icu_copra.vital_parameter_no_pulsatil (id, profiles, type, snomed, loinc, ieee, loinc_short_name, unit, analyzed) FROM stdin;
-49	Pulmonalarterieller wedge Blutdruck	Observation	118433006	75994-4	150052	PAW pressure	mm[Hg]	t
-50	Intrakranieller Druck ICP	Observation	250844005	60956-0	153608	ICP	mm[Hg]	t
-51	Atemfrequenz	Observation	86290005	9279-1	\N	Resp rate	/min	t
-52	Kopfumfang	Observation	363811000	9843-4	\N	Head Circumf OFC	cm	t
-53	Körpergroesse	Observation	1153637007	8302-2	\N	Body height	cm	t
-54	Körpergewicht	Observation	27113001	29463-7	\N	Weight	kg	t
-55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	Bdy weight Prctl Per Age	%	t
-56	Körpergrösse Percentil	Observation	1153605006	8303-0	\N	Body height Prctl	%	t
-57	Ideales Körpergewicht	Observation	170804003	50064-5	\N	Ideal bdy weight	kg	t
-58	Körpertemperatur Kern	Observation	276885007	8310-5	150368	Body temperature	Cel	t
-59	Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	Observation	\N	59407-7	160296	SaO2 % Bld Preductal PulseOx	%	t
-60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	SaO2 % Bld Postductal PulseOx	%	t
-61	Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	Observation	442476006	2708-6	150456	SaO2 % BldA	%	t
-62	Linksventrikulaeres Schlagvolumenindex	Observation	277381004	76297-1	\N	LV SVI	mL/m2	t
-63	Linksventrikulaeres Schlagvolumen	Observation	\N	20562-5	150428	LV SV	/mL	t
-64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	LV SVI Indicator dilution	mL	t
-65	Linksv. Schlagvolumen durch Indikatorverdünnung	Observation	\N	8771-8	\N	LV SV Indicator dilution	mL	t
-66	Pulmonalvaskulärer Widerstandsindex	Observation	276902009	8834-4	152852	PV RI	dyn.s/cm5/m2	t
-67	Systemischer vaskulärer Widerstandsindex	Observation	276900001	8837-7	149760	SV RI	dyn.s/cm5/m2	t
-68	Linksventrikulärer Herzindex	Observation	54993008	75919-1	149772	LV Cardiac index	L/(min.m2)	t
-69	Herzzeitvolumen	Observation	82799009	8741-1	150276	LV Output	L/min	t
-70	Linksv. Herzindex durch Indikatorverdünnung	Observation	\N	8751-0	\N	LV Cardiac index Indicator dilution	L/min/m2	t
-71	Linksv. Herzzeitvolumen durch Indikatorverdünnung	Observation	\N	8737-9	\N	LV Output Indicator dilution	L/min	t
-72	Herzfrequenz	Observation	364075005	8867-4	147842	Heart rate	/min	t
-73	Zentralvenöser Druck	Observation	71420008	60985-9	150084	CVP	mm[Hg]	t
-81	Puls	Observation	8499008	\N	149514	\N	/min	t
+COPY icu_copra.vital_parameter_no_pulsatil (id, profiles, type, snomed, loinc, ieee, unit, unit_code, profil_canonical, category_coding_system, category_coding_code, category_coding_display, loinc_system, loinc_display, snomed_system, snomed_display, ieee_system, ieee_display) FROM stdin;
+50	Intrakranieller Druck ICP	Observation	250844005	60956-0	153608	millimeter of mercury	mm[Hg]	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/intrakranieller-druck-icp	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Intracranial pressure (ICP)	http://snomed.info/sct	Intracranial pressure (observable entity)	urn:iso:std:iso:11073:10101	Intracranial pressure
+51	Atemfrequenz	Observation	86290005	9279-1	\N	per minute	/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/atemfrequenz	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	"Respiratory Rate	http://snomed.info/sct	Respiratory rate (observable entity)	\N	\N
+62	Linksventrikulaeres Schlagvolumenindex	Observation	277381004	76297-1	\N	milliliter per square meter	mL/m2	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/linksventrikulaeres-schlagvolumenindex	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Left ventricular Stroke volume index	http://snomed.info/sct	Stroke index (observable entity)	\N	\N
+57	Ideales Körpergewicht	Observation	170804003	50064-5	\N	kilogram	kg	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/ideales-koerpergewicht	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Ideal body weight	http://snomed.info/sct	Ideal body weight (observable entity)	\N	\N
+58	Körpertemperatur Kern	Observation	276885007	8310-5	150368	Celsius	Cel	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/koerpertemperatur-kern	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Body temperature - Core	http://snomed.info/sct	Core body temperature (observable entity)	urn:iso:std:iso:11073:10101	Body temperature - Core
+59	Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie	Observation	\N	59407-7	160296	percent	%	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/sauerstoffsaettigung-im-blut-preduktal-durch-pulsoxymetrie	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Oxygen saturation in Blood Preductal by Pulse oximetry	\N	\N	urn:iso:std:iso:11073:10101	Preductal SpO2
+52	Kopfumfang	Observation	363811000	9843-4	\N	centimeter	cm	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/kopfumfang	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Head Occipital-frontal circumference	http://snomed.info/sct	Head circumference measure (observable entity)	\N	\N
+60	Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie	Observation	\N	59418-4	160300	percent	%	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/sauerstoffsaettigung-im-blut-postduktal-durch-pulsoxymetrie	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Oxygen saturation in Blood Postductal by Pulse oximetry	\N	\N	urn:iso:std:iso:11073:10101	Postductal SpO2
+53	Körpergroesse	Observation	1153637007	8302-2	\N	centimeter	cm	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/koerpergroesse	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Body height	http://snomed.info/sct	Body height (observable entity)	\N	\N
+54	Körpergewicht	Observation	27113001	29463-7	\N	kilogram	kg	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/koerpergewicht	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Body weight	http://snomed.info/sct	Body weight (observable entity)	\N	\N
+61	Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	Observation	442476006	59408-5	150456	percent	%	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/sauerstoffsaettigung-im-arteriellen-blut-durch-pulsoxymetrie	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Oxygen saturation in Arterial blood by Pulse oximetry	http://snomed.info/sct	Arterial oxygen saturation (observable entity)	urn:iso:std:iso:11073:10101	Oxygen saturation in Arterial blood by Pulse oximetry
+49	Pulmonalarterieller wedge Blutdruck	Observation	118433006	75994-4	150052	millimeter of mercury	mm[Hg]	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/pulmonalarterieller-wedge-druck	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Pulmonary artery wedge pressure	http://snomed.info/sct	Pulmonary artery wedge pressure (observable entity)	urn:iso:std:iso:11073:10101	Pulmonary artery wedge pressure
+55	Körpergewicht Percentil altersabhängig	Observation	1153592008	8336-0	\N	percent	%	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/koerpergewicht-percentil-altersabhaengig	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Body weight [Percentile] Per age	http://snomed.info/sct	Weight for age percentile (observable entity)	\N	\N
+56	Körpergrösse Percentil	Observation	1153605006	8303-0	\N	percent	%	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/koerpergroesse-percentil	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Body height [Percentile]	http://snomed.info/sct	Body height for age percentile (observable entity)	\N	\N
+64	Linksv. Schlagvolumenindex durch Indikatorverd.	Observation	\N	8791-6	\N	milliliter	mL	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/linksventrikulaerer-schlagvolumenindex-durch-indikatorverduennung	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Left ventricular Stroke volume index by Indicator dilution	\N	\N	\N	\N
+65	Linksv. Schlagvolumen durch Indikatorverdünnung	Observation	\N	8771-8	\N	milliliter	mL	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/linksventrikulaeres-schlagvolumen-durch-indikatorverduennung	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Left ventricular Stroke volume by Indicator dilution	\N	\N	\N	\N
+71	Linksv. Herzzeitvolumen durch Indikatorverdünnung	Observation	\N	8737-9	\N	liter per minute	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/linksventrikulaeres-herzzeitvolumen-durch-indikatorverduennung	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Left ventricular Cardiac output by Indicator dilution	\N	\N	\N	\N
+72	Herzfrequenz	Observation	364075005	8867-4	147842	per minute	/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/herzfrequenz	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Heart Rate	http://snomed.info/sct	Heart rate (observable entity)	urn:iso:std:iso:11073:10101	Heart Rate
+66	Pulmonalvaskulärer Widerstandsindex	Observation	276902009	8834-4	152852	dyne second per centimeter5 and square meter	dyn.s/cm5/m2	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/pulmonalvaskulaerer-widerstandsindex	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Pulmonary vascular Resistance index	http://snomed.info/sct	Pulmonary vascular Resistance index (observable entity)	urn:iso:std:iso:11073:10101	Pulmonary Vascular Resistance Index
+67	Systemischer vaskulärer Widerstandsindex	Observation	276900001	8837-7	149760	dyne second per centimeter5 and square meter	dyn.s/cm5/m2	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/systemischer-vaskulaerer-widerstandsindex	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Systemic vascular Resistance index	http://snomed.info/sct	Systemic vascular Resistance index (observable entity)	urn:iso:std:iso:11073:10101	Systemic vascular resistance indexed
+68	Linksventrikulärer Herzindex	Observation	54993008	75919-1	149772	liter per minute per square meter	L/(min.m2)	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/linksventrikulaerer-herzindex	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Left ventricular Cardiac index	http://snomed.info/sct	Cardiac index (observable entity)	urn:iso:std:iso:11073:10101	Cardiac index
+73	Zentralvenöser Druck	Observation	71420008	60985-9	150084	millimeter of mercury	mm[Hg]	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/zentralvenoeser-blutdruck	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Central venous pressure (CVP)	http://snomed.info/sct	Central venous pressure (observable entity)	urn:iso:std:iso:11073:10101	Central venous pressure
+81	Puls	Observation	8499008	\N	149514	per minute	/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/puls	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	\N	\N	http://snomed.info/sct	Pulse, function (observable entity)	urn:iso:std:iso:11073:10101	Pulse rate
+69	Herzzeitvolumen	Observation	82799009	8741-1	150276	liter per minute	L/min	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/herzzeitvolumen	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Left ventricular Cardiac output	http://snomed.info/sct	Cardiac output (observable entity)	urn:iso:std:iso:11073:10101	Cardiac output
+63	Linksventrikulaeres Schlagvolumen	Observation	90096001	20562-5	150428	per milliliter	/mL	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/linksventrikulaeres-schlagvolumen	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Left ventricular Stroke volume	\N	Stroke volume (observable entity)	urn:iso:std:iso:11073:10101	Ventricular stroke
+70	Linksv. Herzindex durch Indikatorverdünnung	Observation	\N	8751-0	\N	liter per minute per sqaure meter	L/min/m2	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/linksventrikulaerer-herzindex-durch-indikatorverduennung	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Left ventricular Cardiac index by Indicator dilution	\N	\N	\N	\N
 \.
 
 
@@ -30948,14 +30955,14 @@ COPY icu_copra.vital_parameter_no_pulsatil (id, profiles, type, snomed, loinc, i
 -- Data for Name: vital_parameter_pulsatil; Type: TABLE DATA; Schema: icu_copra; Owner: -
 --
 
-COPY icu_copra.vital_parameter_pulsatil (id, profiles, type, snomed, loinc, ieee, loinc_short_name, unit, analyzed) FROM stdin;
-74	Blutdruck Generisch	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	t
-75	Linksatrialer Druck	Observation	276762004	85354-9	\N	Blood pressure panel with all children optional	\N	t
-76	Rechtsatrialer Druck	Observation	276755008	85354-9	\N	Blood pressure panel with all children optional	\N	t
-77	Rechtsventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	t
-78	Linksventrikulärer Druck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	t
-79	Pulmonalarterieller Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	t
-80	Blutdruck	Observation	75367002	85354-9	\N	Blood pressure panel with all children optional	\N	t
+COPY icu_copra.vital_parameter_pulsatil (id, profiles, type, snomed, loinc, ieee, unit) FROM stdin;
+74	Blutdruck Generisch	Observation	75367002	85354-9	\N	\N
+75	Linksatrialer Druck	Observation	276762004	85354-9	\N	\N
+76	Rechtsatrialer Druck	Observation	276755008	85354-9	\N	\N
+77	Rechtsventrikulärer Druck	Observation	75367002	85354-9	\N	\N
+78	Linksventrikulärer Druck	Observation	75367002	85354-9	\N	\N
+79	Pulmonalarterieller Blutdruck	Observation	75367002	85354-9	\N	\N
+80	Blutdruck	Observation	75367002	85354-9	\N	\N
 \.
 
 

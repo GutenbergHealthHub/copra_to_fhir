@@ -340,44 +340,75 @@ where id = 40 ;
 
 
 select * from icu_copra.ventilation v 
-where id = ;
+where id = 41;
 
 update icu_copra.ventilation 
-set profil_canonical = profil_canonical||'',
-  loinc_display = '',
-  snomed_display = '',
-  ieee_display = ''
-where id =  ;
+set profil_canonical = profil_canonical||'zeitverhaeltnis-ein-ausatmung',
+  loinc_display = 'Inspiration/Expiration time Ratio',
+  snomed_display = 'Inspiration/expiration time ratio (observable entity)',
+  ieee_display = 'Ratio inspiration expiration time'
+where id = 41;
 
 
 select * from icu_copra.ventilation v 
-where id = ;
+where id = 42;
 
 update icu_copra.ventilation 
-set profil_canonical = profil_canonical||'',
-  loinc_display = '',
-  snomed_display = '',
-  ieee_display = ''
-where id =  ;
+set profil_canonical = profil_canonical||'einstellung-ausatmungszeit-beatmung',
+  loinc_display = 'Expiratory hold time setting Ventilator',
+  snomed_display = 'Expiratory time (observable entity)'--,
+  --ieee_display = ''
+where id = 42 ;
 
 
 select * from icu_copra.ventilation v 
-where id = ;
+where id = 43;
 
 update icu_copra.ventilation 
-set profil_canonical = profil_canonical||'',
-  loinc_display = '',
-  snomed_display = '',
-  ieee_display = ''
-where id =  ;
+set profil_canonical = profil_canonical||'einstellung-einatmungszeit-beatmung',
+  loinc_display = 'Inspiratory time setting Ventilator',
+  snomed_display = 'Inspiratory time (observable entity)',
+  ieee_display = 'Inspiratory time setting'
+where id = 43 ;
 
 
 select * from icu_copra.ventilation v 
-where id = ;
+where id = 44;
 
 update icu_copra.ventilation 
-set profil_canonical = profil_canonical||'',
-  loinc_display = '',
-  snomed_display = '',
-  ieee_display = ''
-where id =  ;
+set profil_canonical = profil_canonical||'spontane-mechanische-atemfrequenz-beatmet',
+  loinc_display = 'Breath rate spontaneous and mechanical --on ventilator',
+  snomed_display = 'Total breath rate (observable entity)',
+  ieee_display = 'Total respiratory rate; total breath rate'
+where id = 44;
+
+
+select * from icu_copra.ventilation v 
+where id = 45;
+
+update icu_copra.ventilation 
+set profil_canonical = profil_canonical||'spontane-atemfrequenz-beatmet',
+  loinc_display = 'Breath rate spontaneous --on ventilator',
+  snomed_display = 'Rate of spontaneous respiration (observable entity)',
+  ieee_display = 'Unassisted spontaneous breath rate; respiration rate'
+where id = 45;
+
+select * from icu_copra.ventilation v 
+where id = 46;
+
+update icu_copra.ventilation 
+set profil_canonical = profil_canonical||'mechanische-atemfrequenz-beatmet',
+  loinc_display = 'Breath rate mechanical --on ventilator',
+  snomed_display = 'Ventilator rate (observable entity)',
+  ieee_display = '"Ventilation rate'
+where id = 46;
+
+select * from icu_copra.ventilation v 
+where id = 47;
+
+update icu_copra.ventilation 
+set profil_canonical = profil_canonical||'horowitz-in-arteriellem-blut',
+  loinc_display = 'Horowitz index in Arterial blood',
+  --snomed_display = '',
+  ieee_display = 'Oxygenation Ratio'
+where id = 47;
