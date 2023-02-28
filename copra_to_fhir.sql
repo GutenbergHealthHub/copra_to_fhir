@@ -362,7 +362,9 @@ COPY icu_copra.body_temperatur (id, profiles, type, snomed, loinc, ieee, unit, u
 COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_variabletypes_id, parent, deleted, displayname) FROM stdin;
 100345	KlinikKopf	\N	\N	21	1	\N	\N
 100233	Beatmung_Einstellung_Okklusiondruck	\N	mbar	6	1	\N	\N
+102184	VigilanceC_HZV	Herzzeitvolumen	L/min	6	1	\N	\N
 100234	Beatmung_Einstellung_PAW	\N	mbar	6	1	\N	\N
+106468	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	mm[Hg]	12	1	\N	\N
 1	Patient	Patient	\N	1	0	\N	\N
 100239	Beatmung_Einstellung_TApnoe	\N	sek	6	1	\N	\N
 221	Patient_Archivdruck_Pfad	Archivdruck-Pfad	\N	3	220	\N	\N
@@ -1131,7 +1133,6 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 101316	KlinikPeriNervenFunkt_Vegetativum_Vegetativum	\N	\N	3	101038	\N	\N
 101317	Patient_Alter	Alter des Patienten in Jahren	Jahre	2	1	\N	\N
 101321	EnteraleSonde_Markierung	\N	\N	3	100165	\N	\N
-101322	Patient_AufnGewicht	Aufnahmegewicht (fallbezogen)	\N	6	20	\N	\N
 101323	Patient_AufnGroesse	Größe Patient (fallbezogen)	\N	6	20	\N	\N
 101324	Patient_AufnKO	Körperoberfläche des Patienten (fallbezogen)	\N	6	20	\N	\N
 101325	Patient_PLZ	Patientenadresse: PLZ	\N	3	1	\N	\N
@@ -1187,6 +1188,7 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 101385	Nierenersatzverfahren_VO_AbnahmeMax	\N	\N	6	1	\N	\N
 101386	Nierenersatzverfahren_VO_Bilanzziel	\N	\N	6	1	\N	\N
 101387	Nierenersatzverfahren_VO_HarnstoffZiel	\N	\N	6	1	\N	\N
+101322	Patient_AufnGewicht	Aufnahmegewicht (fallbezogen)	kg	6	20	\N	\N
 101388	Nierenersatzverfahren_VO_CreaZiel	\N	\N	6	1	\N	\N
 101389	Nierenersatzverfahren_VO_KaliumZiel	\N	\N	6	1	\N	\N
 101390	Nierenersatzverfahren_VO_HFLoesung	\N	\N	3	1	\N	\N
@@ -1678,7 +1680,6 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 102039	dPmax	"Index der linken Ventrikelkontraktilität  "	mmHg/s	6	1	\N	\N
 102040	p-CO	"Herzzeitvolumen (PICCO Modul Dräger Monitoring) "	l/min	6	1	\N	\N
 102041	GEDV	"Globales enddiastolisches Volumen "	ml	6	1	\N	\N
-6	Patient_Gewicht	Gewicht des Patienten	\N	6	1	\N	\N
 102042	GEDVI	"Index des enddiastolisches Volumen "	ml/m2	6	1	\N	\N
 102043	EVLW	"Extravaskuläres Lungenwasser "	ml	6	1	\N	\N
 102044	EVLWI	"Extravaskuläres Lungenwasserindex "	ml/Kg	6	1	\N	\N
@@ -1686,7 +1687,6 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 102046	ETVI	"Index des extravaskulären Thermovolumens "	ml/Kg	6	1	\N	\N
 102047	PVPI	"Pulmonalvaskuläer Permeabilitätsindex "	\N	6	1	\N	\N
 102050	PAP	Pulmunalarterieller Druck	mmHg	12	1	\N	\N
-102051	HZV	Herzzeitvolumen	\N	6	1	\N	\N
 102053	PC	Pulmonalkapillardruck	mmHg	6	1	\N	\N
 102055	LVP	Linksventrikulärer Mitteldruck	mmHg	12	1	\N	\N
 102056	RVP	Rechtsventrikulärer Mitteldruck	mmHg	12	1	\N	\N
@@ -1697,6 +1697,8 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 102061	Beatmung_Messung_ExpirationszeitI:E	\N	sec:sec	6	1	\N	\N
 102062	Beatmung_Einstellung_PAW/Pinspiration	\N	mbar	6	1	\N	\N
 102063	Beatmung_Einstellung_BIPAPP1	\N	mbar	6	1	\N	\N
+6	Patient_Gewicht	Gewicht des Patienten	kg	6	1	\N	\N
+102051	HZV	Herzzeitvolumen	L/min	6	1	\N	\N
 102064	Beatmung_Einstellung_BIPAPP2	\N	mbar	6	1	\N	\N
 102065	Beatmung_Einstellung_BIPAPT1	\N	sec.	6	1	\N	\N
 102066	Beatmung_Einstellung_BIPAPT2	\N	sec.	6	1	\N	\N
@@ -1809,7 +1811,6 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 102181	Vigileo_SVRI	Systemic vascular resistance index	dyne-s-m²/cm5	6	1	\N	\N
 102182	Vigileo_SVV	\N	%	6	1	\N	\N
 102183	Vigileo_ScvO2	\N	%	6	1	\N	\N
-102184	VigilanceC_HZV	Herzzeitvolumen	\N	6	1	\N	\N
 102185	VigilanceC_CI	Herzindex	\N	6	1	\N	\N
 102186	VigilanceC_SV	Schlagvolumen	\N	6	1	\N	\N
 102187	VigilanceC_SVI	Schlagvolumenindex	\N	6	1	\N	\N
@@ -1858,6 +1859,7 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 102322	VOD_Massnahmen	\N	\N	25	101483	\N	\N
 102323	VODiagnosMassnahm_Massnah_Angehörigengespraech	\N	\N	29	102322	\N	\N
 102704	Nierenersatzverfahren_VO_Fluß	\N	\N	6	1	\N	\N
+7	Patient_Groesse	Größe des Patienten	cm	6	1	\N	\N
 102324	VODiagnosMassnahm_Massnah_Bronschoskopie	\N	\N	29	102322	\N	\N
 102325	VODiagnosMassnahm_Massnah_EKG	\N	\N	29	102322	\N	\N
 102326	VODiagnosMassnahm_Massnah_Inhalation	\N	\N	29	102322	\N	\N
@@ -1889,7 +1891,6 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 102353	PROCDiagnosMassnahm_Sonstiges_Echo	\N	\N	31	101517	\N	\N
 102354	PROCDiagnosMassnahm_Radio_KonventionelleVerfahren	\N	\N	31	101487	\N	\N
 102355	PROCDiagnosMassnahm_MiBi_Abstriche	\N	\N	31	101508	\N	\N
-7	Patient_Groesse	Größe des Patienten	\N	6	1	\N	\N
 102356	PROCDiagnosMassnahm_Labor_VirusLuesDiagnostik	\N	\N	31	101499	\N	\N
 102357	PROCDiagnosMassnahm_Massnah_Bronschoskopie	\N	\N	31	102322	\N	\N
 102358	PROCDiagnosMassnahm_Massnah_EKG	\N	\N	31	102322	\N	\N
@@ -2346,18 +2347,18 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 102968	Nierenverfahren_VO_ADM_Temperatur	Temperatur Celcius	\N	6	1	\N	\N
 102976	Nierenverfahren_ES_Multi_Blutfluss	Blutpumpengeschwindigkeit ml/min	\N	6	1	\N	\N
 102977	Nierenverfahren_ES_Multi_Ultrafiltration	Ultrafiltrationsrate ml/h	ml/h	6	1	\N	\N
-102978	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h	\N	6	1	\N	\N
 102979	Nierenverfahren_ES_Multi_SubstituatBolus	Substituatbolus ml	\N	6	1	\N	\N
 102980	Nierenverfahren_ES_Multi_Temperatur	Tempertatu Celsius	\N	6	1	\N	\N
 102990	Nierenverfahren_ES_BM25_Blutfluss	Blutpumpengeschwindigkeit	\N	6	1	\N	\N
 102991	Nierenverfahren_ES_BM25_Abnahme	Ultrafiltrationsrate	\N	6	1	\N	\N
-102992	Nierenverfahren_ES_BM25_Umsatz	Austausch, Substituat, ml/h	\N	6	1	\N	\N
 102993	Nierenverfahren_ES_BM25_Temperatur	Temperatur Celcius	\N	6	1	\N	\N
 103004	Nierenverfahren_ES_ADM_Blutfluss	Blutpumpengeschwindigkeit	ml/min	6	1	\N	\N
 103005	Nierenverfahren_ES_ADM_effEntzug	Entzugsrate, Ultrafiltrationsrate	ml/h	6	1	\N	\N
 103006	Nierenverfahren_ES_ADM_Austauschrate	Umsatz, Substituat	ml/h	6	1	\N	\N
 103007	Nierenverfahren_ES_ADM_Temperatur	\N	celsius	6	1	\N	\N
 103010	Nierenverfahren_MS_Multi_artDruck	arterieller Druck	mmHg	6	1	\N	\N
+102978	Nierenverfahren_ES_Multi_Substituat	Umsatz, Austausch Substituat ml/h	mL/h	6	1	\N	\N
+102992	Nierenverfahren_ES_BM25_Umsatz	Austausch, Substituat, ml/h	mL/h	6	1	\N	\N
 103011	Nierenverfahren_MS_Multi_venDruck	venöser Druck	mmHg	6	1	\N	\N
 103012	Nierenverfahren_MS_Multi_TMPDruck	Transmembrandruck	mmHg	6	1	\N	\N
 103013	Nierenverfahren_MS_Multi_DruckvorFilterDruck	\N	mmHg	6	1	\N	\N
@@ -3432,7 +3433,6 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 104354	IABP_DatascopeCS300_ES_IABP_Frequenz	Dokumentation der IABP Frequenz.	\N	3	1	\N	\N
 104355	IABP_DatascopeCS300_ES_Triggerauswahl_EKG_RR_Pacer	Dokumentation des ausgewählten Triggers der IABP.	\N	3	1	\N	\N
 104432	Praemedikation_Zahnstatus_li_ob_4	\N	\N	3	104403	\N	\N
-104356	IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP.	\N	12	1	\N	\N
 104357	AT_Name_Pflegekraft4	\N	\N	3	30	\N	\N
 104358	AT_Bemerkungen_Verlauf	\N	\N	3	30	\N	\N
 104359	AT_Name_Anaesthesist4	\N	\N	3	30	\N	\N
@@ -3451,6 +3451,7 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 104372	AT_Bronchoskopie	\N	\N	2	30	\N	\N
 104373	AT_Relaxometrie	\N	\N	2	30	\N	\N
 104374	AT_SEP	\N	\N	2	30	\N	\N
+104356	IABP_DatascopeCS300_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP.	mm[Hg]	12	1	\N	\N
 104375	AT_EEG	\N	\N	2	30	\N	\N
 104376	AT_SchwierigerAtemweg	\N	\N	2	30	\N	\N
 104377	AT_Cormack4	\N	\N	2	30	\N	\N
@@ -4042,7 +4043,6 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 104971	NEV_CRRT_MS_Multi_venDruck	\N	\N	6	1	\N	\N
 104972	NEV_CRRT_MS_Multi_artDruck	\N	\N	6	1	\N	\N
 104973	NEV_CRRT_ES_Multi_Temperatur	\N	\N	6	1	\N	\N
-104974	NEV_CRRT_ES_Multi_CalciumFiltrat	\N	\N	6	1	\N	\N
 104975	NEV_CRRT_ES_Multi_CitratBlut	\N	\N	6	1	\N	\N
 104976	NEV_CRRT_ES_Multi_SubstituatBolus	\N	\N	6	1	\N	\N
 104977	NEV_CRRT_ES_Multi_Substituat	\N	\N	6	1	\N	\N
@@ -4050,6 +4050,7 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 104979	NEV_CRRT_ES_Multi_Ultrafiltration	\N	\N	6	1	\N	\N
 104980	NEV_CRRT_ES_Multi_Blutfluss	\N	\N	6	1	\N	\N
 104981	NEV_CRRT_Doku_Fuellen_Mit	\N	\N	3	1	\N	\N
+104974	NEV_CRRT_ES_Multi_CalciumFiltrat	\N	mmol/L	6	1	\N	\N
 104982	NEV_CRRT_Doku_SpülloesungAntikoag	\N	\N	3	1	\N	\N
 104983	NEV_CRRT_Doku_BolusAntikoag	\N	\N	3	1	\N	\N
 104984	NEV_CRRT_Doku_Antikoagulation	\N	\N	19	1	\N	\N
@@ -5105,7 +5106,6 @@ COPY icu_copra.copra_config_vars (id_syst, name, description, unit, co6_config_v
 106465	CO6_Filter_ToDo_FallNr	Globaler Zwischenspeicherfür die Fallnummer für die Verwendung in Dialogen die aufgrund der Var-Struktur nicht an das Fallobjekt kommen.	\N	3	650	\N	CO6_Filter_ToDo_FallNr
 106466	B_Aufnahmegewicht_Wert	\N	\N	6	30	\N	Aufnahmegewicht der Behandlung
 106467	B_Aufnahmegroesse_Wert	\N	\N	6	30	\N	Groesse bei Behandlungbeginn
-106468	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP	\N	12	1	\N	\N
 106469	IABP_CARDIOSAVE_ES_IABPAufblasen	Dokumentation des prozentualen Anteils des Aufblasens des Ballons	\N	6	1	\N	\N
 106470	IABP_CARDIOSAVE_ES_EKG_Ableitung	Dokumentation der gewählten EKG Ableitung für den IABP Einsatz	\N	3	1	\N	\N
 106471	IABP_CARDIOSAVE_ES_Unterstuetzungsdruck	Dokumentation des Unterstützungdruckes	\N	6	1	\N	\N
@@ -6972,10 +6972,7 @@ Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_VisionA_PE
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Avea_PEEP	eingestelltes PEEP Niveau
 Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Avea_ZeitNiedrig	Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Avea_PEEP	gemessenes PEEP Niveau
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Servoi_PEEP	"Positiver Endexsp. Druck "
-Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Servoi_PEEP	"PEEP "
 Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Leoni_PEEP	\N
-Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Servoi_Pmean	"Mittlerer Atemwegsdruck "
 Spontane-Atemfrequenz-Beatmet	\N	P_Beatmung_MS_C3_fSpontan	Spontane Atemfrequenz
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_Messung_AFSpontan	Respiratory Rate (spontan)
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_Evita4_fspn	gemessene spontane Atemfrequenz
@@ -6987,6 +6984,9 @@ Spontane-Mechanische-Atemfrequenz-Beatmet	Breaths.spont+mech on vent	Beatmung_MS
 Atemfrequenz	Resp rate	Beatmung_MS_T1_fTotal	Gesamtfrequenz
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita2_Compliance	gemessene Lungencompliance
 Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_Messung_Pmax	Peak Airway Pressure
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_MS_Servoi_PEEP	Positiver Endexsp. Druck 
+Positiv-endexpiratorischer Druck	PEEP on vent Respiratory	Beatmung_ES_Servoi_PEEP	PEEP 
+Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Servoi_Pmean	Mittlerer Atemwegsdruck 
 Maximaler Beatmungsdruck	Press.max on vent Airway	Beatmung_ES_G5_SBT_Psupp_max	\N
 Venöser Druck	\N	CardioHelpMaquet_MS_DruckVenoes	\N
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring
@@ -7030,7 +7030,7 @@ Herzzeitvolumen	LV Output	PICCO_HZV	Herzzeitvolumen
 Herzzeitvolumen	LV Output	HZV_VigileoGeraet	\N
 Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008HS_Dialysezeit	\N
 Körpertemperatur Generisch	Body temperature	T_K	Körpertemperatur
-Pulmonalvaskulärer Widerstandsindex	PV RI	PVRI	"Pulmunaler Gefäßwiderstandsindex "
+Pulmonalvaskulärer Widerstandsindex	PV RI	PVRI	Pulmunaler Gefäßwiderstandsindex 
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Arteriell	Anlage im Rahmen PhilipsMonitoring
 Venöser Druck	\N	P_ADVOS_MS_ADVOS_venDruck	\N
 Dauer Hämodialysesitzung	\N	NEV_HD_ES_4008onl_Dialyse_Zeit	\N
@@ -7065,6 +7065,7 @@ Atemzugvolumen-Einstellung	VT setting Vent	Beatmung_ES_Heimbeatmung_Vt	Einstellu
 Herzzeitvolumen	LV Output	HZV_VigilanceCGeraet	\N
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Pallas_MV	Gemessenes Atemminutenvolumen.
 Blutdruck	Blood pressure panel with all children optional	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm
+Herzzeitvolumen	LV Output	p-CO	Herzzeitvolumen (PICCO Modul Dräger Monitoring) 
 Puls	\N	Puls	Puls
 Herzzeitvolumen	LV Output	HZV_PICCOGeraet	\N
 Körpertemperatur Kern	Body temperature	P_Temperatur_Kern	Anlage für Philips Monitoring
@@ -7082,12 +7083,11 @@ Körpertemperatur Generisch	Body temperature	P_Temperatur_Kern	Anlage für Phili
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_Einstellung_I:E	Atemzeitverhältnis (I:E)
 Zeitverhältnis-Ein-Ausatmung	Insp/Exp time Ratio	Beatmung_MS_G5_IEVerhaeltnis	gemessenes I:E Verhältnis
 Körpertemperatur Generisch	Body temperature	P_Temperatur_generic	Anlage für Philips Monitoring
-Herzzeitvolumen	LV Output	p-CO	"Herzzeitvolumen (PICCO Modul Dräger Monitoring) "
 Körpertemperatur rektal	Rectal temp	P_Temperatur_Rektal	Anlage im Rahmen Philips Monitoring
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Haut	Anlage im Rahmen PhilipsMonitoring
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_Messung_Compliance	Compliance
+Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Servoi_Tpeep	zeit unteres Druckniveau (tniedrig) 
 Sauerstoffgasfluss	Gas flow.O2 O2 delivery sys	Beatmung_ES_CF800_SauerstoffFlow	Einstellgröße Gasfluss Sauerstoff
-Beatmungszeit auf niedrigem Druck	Low press hold time set Vent	Beatmung_ES_Servoi_Tpeep	"zeit unteres Druckniveau (tniedrig) "
 Venöser Druck	\N	Nierenverfahren_MS_BM25_venDruck	\N
 Arterieller Druck	\N	Nierenverfahren_MS_Multi_artDruck	arterieller Druck
 Beatmungsvolumen-Pro-Minute-Machineller-Beatmung	Inspired min Vol MV	Beatmung_MS_Evita2_AMV	gemessenes Atemminutenvolumen
@@ -7104,18 +7104,20 @@ Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_Heimbeat
 Venöser Druck	\N	Nierenverfahren_MS_Multi_venDruck	venöser Druck
 Venöser Druck	\N	NEV_HD_MS_4008onl_venDruck	\N
 Inspiratorische Sauerstofffraktion eingestellt	O2/Total gas setting VFr Vent	Beatmung_ES_Avea_FiO2	eingestellte Sauerstoffkonzentration des inspiratorischen Atemgases
+Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Servoi_Thoch	zeit oberes Druckniveau (thoch) 
 Linksatrialer Druck	Blood pressure panel with all children optional	LAP	Linksatrial  Mitteldruck
 Linksatrialer Druck	Blood pressure panel with all children optional	LAP1	linksartrialer Druck
 Dynamische Kompliance	Compliance.dynamic Lung	Beatmung_MS_Evita4_Compliance	gemessene Lungencompliance
 Atemfrequenz	Resp rate	P_Beatmung_MS_C3_fTotal	Gesamtatemfrequenz
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_MS_Evita2_Pmittel	gemessener Beatmungsmitteldruck
 Mittlerer Beatmungsdruck	Mean Pres on vent Airway	Beatmung_ES_VisionA_MAP	Mittlerer Atemwegsdruck (MAP)
-Beatmungszeit auf hohem Druck	High press hold time set Vent	Beatmung_ES_Servoi_Thoch	"zeit oberes Druckniveau (thoch) "
 Körpergewicht	Weight	COPRA_Patient_Bezugsgewicht	Bezugsgewicht des Patienten in kg
 Körpertemperatur Generisch	Body temperature	P_Temperatur_Venoes	Anlage im Rahmen PhilipsMonitoring
 Körpertemperatur Kern	Body temperature	T_K	Körpertemperatur
+Systemischer vaskulärer Widerstandsindex	SV RI	SVRI	Index des systemischen Gefäßwiderstandes 
 Unterstützungsdruck Beatmung	Pressure support setting Vent	Beatmung_ES_G5_Psupport	Einstellwert: Druckunterstützung beim G 5  bei Spontanatemzügen
 Intrakranieller Druck ICP	ICP	TISS28_TS_ICPMessung	\N
+Systemischer vaskulärer Widerstandsindex	SV RI	p-SVRI	Index des systemischen Gefäßwiderstandes (PICCO Modul Dräger Monitoring)  
 Körpertemperatur Kern	Body temperature	T_K2	Körpertemperatur Messkanal 2
 Atemfrequenz	Resp rate	AF	Atemfrequenz
 Spontane-Atemfrequenz-Beatmet	\N	Beatmung_MS_T1_fSpontan	Spontane Atemfrequenz
@@ -7134,8 +7136,6 @@ Körpertemperatur Speiseroehre	Esoph temp	P_Temperatur_Oesophagial	Anlage im Rah
 Körpertemperatur nasal	Nasal temp	P_Temperatur_Naso	Anlage im Rahmen PhilipsMonitoring
 Körpertemperatur Trommelfell	Tymp memb temp	P_Temperatur_Tympanal	Anlage im Rahmen PhilipsMonitoring
 Inspiratorischer Gasfluss	Insp gas flow on vent Airway	Beatmung_Anordnung_Flow	Anordnung Inspiratorische Flowrate
-Systemischer vaskulärer Widerstandsindex	SV RI	SVRI	"Index des systemischen Gefäßwiderstandes "
-Systemischer vaskulärer Widerstandsindex	SV RI	p-SVRI	"Index des systemischen Gefäßwiderstandes (PICCO Modul Dräger Monitoring)  "
 Systemischer vaskulärer Widerstandsindex	SV RI	PICCO_SVRI	Systemic vascular resistance index
 Sauerstoffsättigung im art. Blut durch Pulsoxymetrie	SaO2 % BldA	SaO2	arterielle Sauerstoffsättigung
 Dauer Hämodialysesitzung	\N	Nierenverfahren_ES_4008HS_DialyseZeit	\N
@@ -7167,7 +7167,6 @@ Blutdruck	Blood pressure panel with all children optional	ABP_1	arterieller Blut
 Blutdruck Generisch	Blood pressure panel with all children optional	NBP	nichtinvasiver Blutdruck
 Blutdruck Generisch	Blood pressure panel with all children optional	ABP	arterielle Blutdruck
 Blutdruck Generisch	Blood pressure panel with all children optional	ABP_2	zweiter arterieller Blutdruck
-Blutdruck Generisch	Blood pressure panel with all children optional	NBP_2	"zweiter nichtinvasiver Blutdruck "
 Blutdruck Generisch	Blood pressure panel with all children optional	ABP_1	arterieller Blutdruck 1
 Blutdruck Generisch	Blood pressure panel with all children optional	NBP_1	nichtinvasiver Blutdruck 1
 Blutdruck Generisch	Blood pressure panel with all children optional	P_NBP_liBein	Nichtinvaiver Blutdruck linkes Bein
@@ -7179,6 +7178,7 @@ Blutdruck Generisch	Blood pressure panel with all children optional	IABP_Datasco
 Blutdruck Generisch	Blood pressure panel with all children optional	IABP_CARDIOSAVE_MS_Systole_Mittel_Diastole	Dokumentation des gemessenen Blutdruckes unter IABP
 Einstellung-Einatmungszeit-Beatmung	Insp time set Vent	Beatmung_ES_Evita4_Tinsp	eingestellte absolute Inspirationszeit
 Ionisiertes Kalzium aus Nierenersatzverfahren	Ca-I BldCRRT-sCnc	NEV_CRRT_ES_Multi_CalciumFiltrat	\N
+Blutdruck Generisch	Blood pressure panel with all children optional	NBP_2	zweiter nichtinvasiver Blutdruck 
 \.
 
 

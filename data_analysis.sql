@@ -1400,3 +1400,36 @@ from icu_copra.fhir_profiles_all,
 where name in ('Beatmung_Messung_Pmax')
 and id = 26
 ;
+
+
+
+select description, regexp_replace(description, '"', '', 'g')  from icu_copra.matched_0 m
+where description ~'"';
+
+update icu_copra.matched_0 
+set description = regexp_replace(description, '"', '', 'g')
+where description ~'"';
+
+
+
+
+update icu_copra.copra_config_vars ccv
+set unit = conf_var_unit 
+from icu_copra.thesis_matched tm
+where ccv."name" = tm.conf_var_name
+and unit isnull;
+  
+
+-- ventilation
+select 
+  c.name, 
+  m.description,
+  c.unit,
+  v.*  
+from icu_copra.matched_0 m
+join icu_copra.ventilation v
+  on v.profiles = m.profiles
+join icu_copra.copra_config_vars c
+  on c."name" = m."name"
+
+
