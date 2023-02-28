@@ -265,7 +265,58 @@ CREATE TABLE icu_copra.vital_parameter_pulsatil (
     snomed character varying(12),
     loinc character varying(12),
     ieee character varying(12),
-    unit character varying
+    profil_canonical character varying DEFAULT 'https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/'::character varying,
+    category_coding_system character varying DEFAULT 'http://terminology.hl7.org/CodeSystem/observation-category'::character varying,
+    category_coding_code character varying DEFAULT 'vital-signs'::character varying,
+    category_coding_display character varying,
+    loinc_system character varying DEFAULT 'http://loinc.org'::character varying,
+    loinc_display character varying DEFAULT 'Blood pressure panel with all children optional'::character varying,
+    snomed_system character varying DEFAULT 'http://snomed.info/sct'::character varying,
+    snomed_display character varying DEFAULT 'Blood pressure (observable entity)'::character varying,
+    ieee_system character varying,
+    ieee_display character varying,
+    component_sistol_unit_code character varying DEFAULT 'mm[Hg]'::character varying,
+    component_sistol_unit character varying DEFAULT 'millimeter of mercury'::character varying,
+    component_sistol_loinc character varying,
+    component_sistol_loinc_system character varying DEFAULT 'http://loinc.org'::character varying,
+    component_sistol_loinc_display character varying,
+    component_sistol_loinc_detailed character varying,
+    component_sistol_loinc_detaile_system character varying DEFAULT 'http://loinc.org'::character varying,
+    component_sistol_loinc_detaile_display character varying,
+    component_sistol_snomed character varying,
+    component_sistol_snomed_system character varying DEFAULT 'http://snomed.info/sct'::character varying,
+    component_sistol_snomed_display character varying,
+    component_sistol_ieee character varying,
+    component_sistol_ieee_system character varying DEFAULT 'urn:iso:std:iso:11073:10101'::character varying,
+    component_sistol_ieee_display character varying,
+    component_mean_unit_code character varying DEFAULT 'mm[Hg]'::character varying,
+    component_mean_unit character varying DEFAULT 'millimeter of mercury'::character varying,
+    component_mean_loinc character varying,
+    component_mean_loinc_system character varying DEFAULT 'http://loinc.org'::character varying,
+    component_mean_loinc_display character varying,
+    component_mean_loinc_detailed character varying,
+    component_mean_loinc_detaile_system character varying DEFAULT 'http://loinc.org'::character varying,
+    component_mean_loinc_detaile_display character varying,
+    component_mean_snomed character varying,
+    component_mean_snomed_system character varying DEFAULT 'http://snomed.info/sct'::character varying,
+    component_mean_snomed_display character varying,
+    component_mean_ieee character varying,
+    component_mean_ieee_system character varying DEFAULT 'urn:iso:std:iso:11073:10101'::character varying,
+    component_mean_ieee_display character varying,
+    component_diastol_unit_code character varying DEFAULT 'mm[Hg]'::character varying,
+    component_diastol_unit character varying DEFAULT 'millimeter of mercury'::character varying,
+    component_diastol_loinc character varying,
+    component_diastol_loinc_system character varying DEFAULT 'http://loinc.org'::character varying,
+    component_diastol_loinc_display character varying,
+    component_diastol_loinc_detailed character varying,
+    component_diastol_loinc_detaile_system character varying DEFAULT 'http://loinc.org'::character varying,
+    component_diastol_loinc_detaile_display character varying,
+    component_diastol_snomed character varying,
+    component_diastol_snomed_system character varying DEFAULT 'http://snomed.info/sct'::character varying,
+    component_diastol_snomed_display character varying,
+    component_diastol_ieee character varying,
+    component_diastol_ieee_system character varying DEFAULT 'urn:iso:std:iso:11073:10101'::character varying,
+    component_diastol_ieee_display character varying
 );
 
 
@@ -30955,14 +31006,14 @@ COPY icu_copra.vital_parameter_no_pulsatil (id, profiles, type, snomed, loinc, i
 -- Data for Name: vital_parameter_pulsatil; Type: TABLE DATA; Schema: icu_copra; Owner: -
 --
 
-COPY icu_copra.vital_parameter_pulsatil (id, profiles, type, snomed, loinc, ieee, unit) FROM stdin;
-74	Blutdruck Generisch	Observation	75367002	85354-9	\N	\N
-75	Linksatrialer Druck	Observation	276762004	85354-9	\N	\N
-76	Rechtsatrialer Druck	Observation	276755008	85354-9	\N	\N
-77	Rechtsventrikulärer Druck	Observation	75367002	85354-9	\N	\N
-78	Linksventrikulärer Druck	Observation	75367002	85354-9	\N	\N
-79	Pulmonalarterieller Blutdruck	Observation	75367002	85354-9	\N	\N
-80	Blutdruck	Observation	75367002	85354-9	\N	\N
+COPY icu_copra.vital_parameter_pulsatil (id, profiles, type, snomed, loinc, ieee, profil_canonical, category_coding_system, category_coding_code, category_coding_display, loinc_system, loinc_display, snomed_system, snomed_display, ieee_system, ieee_display, component_sistol_unit_code, component_sistol_unit, component_sistol_loinc, component_sistol_loinc_system, component_sistol_loinc_display, component_sistol_loinc_detailed, component_sistol_loinc_detaile_system, component_sistol_loinc_detaile_display, component_sistol_snomed, component_sistol_snomed_system, component_sistol_snomed_display, component_sistol_ieee, component_sistol_ieee_system, component_sistol_ieee_display, component_mean_unit_code, component_mean_unit, component_mean_loinc, component_mean_loinc_system, component_mean_loinc_display, component_mean_loinc_detailed, component_mean_loinc_detaile_system, component_mean_loinc_detaile_display, component_mean_snomed, component_mean_snomed_system, component_mean_snomed_display, component_mean_ieee, component_mean_ieee_system, component_mean_ieee_display, component_diastol_unit_code, component_diastol_unit, component_diastol_loinc, component_diastol_loinc_system, component_diastol_loinc_display, component_diastol_loinc_detailed, component_diastol_loinc_detaile_system, component_diastol_loinc_detaile_display, component_diastol_snomed, component_diastol_snomed_system, component_diastol_snomed_display, component_diastol_ieee, component_diastol_ieee_system, component_diastol_ieee_display) FROM stdin;
+74	Blutdruck Generisch	Observation	75367002	85354-9	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/blutdruck-generisch	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Blood pressure panel with all children optional	http://snomed.info/sct	Blood pressure (observable entity)	\N	\N	mm[Hg]	millimeter of mercury	\N	http://loinc.org	\N	\N	http://loinc.org	\N	\N	\N	\N	\N	urn:iso:std:iso:11073:10101	\N	mm[Hg]	millimeter of mercury	\N	http://loinc.org	\N	\N	http://loinc.org	\N	\N	\N	\N	\N	urn:iso:std:iso:11073:10101	\N	mm[Hg]	millimeter of mercury	\N	http://loinc.org	\N	\N	http://loinc.org	\N	\N	\N	\N	\N	urn:iso:std:iso:11073:10101	\N
+75	Linksatrialer Druck	Observation	276762004	85354-9	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/linksatrialer-druck	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Blood pressure panel with all children optional	http://snomed.info/sct	Direct left atrial pressure (observable entity)	\N	\N	mm[Hg]	millimeter of mercury	8480-6	http://loinc.org	Systolic blood pressure	60989-1	http://loinc.org	Left atrial pressure Systolic	\N	\N	\N	150065	urn:iso:std:iso:11073:10101	Systolic left atrial pressure	mm[Hg]	millimeter of mercury	8478-0	http://loinc.org	Mean blood pressure	8399-8	http://loinc.org	Left atrial Intrachamber mean pressure	\N	\N	\N	150067	urn:iso:std:iso:11073:10101	Mean left atrial pressure	mm[Hg]	millimeter of mercury	8462-4	http://loinc.org	Diastolic blood pressure	75933-2	http://loinc.org	Left atrial pressure Diastolic	\N	\N	\N	150066	urn:iso:std:iso:11073:10101	Diastolic left atrial pressure
+80	Blutdruck	Observation	75367002	85354-9	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/blutdruck	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Blood pressure panel with all children optional	http://snomed.info/sct	Blood pressure (observable entity)	\N	\N	mm[Hg]	millimeter of mercury	8480-6	http://loinc.org	Systolic blood pressure	8480-6	http://loinc.org	Systolic blood pressure	271649006	http://snomed.info/sct	Systolic blood pressure (observable entity)	150017	urn:iso:std:iso:11073:10101	Systolic blood pressure	mm[Hg]	millimeter of mercury	8478-0	http://loinc.org	Mean blood pressure	8478-0	http://loinc.org	Mean blood pressure	6797001	http://snomed.info/sct	Mean blood pressure (observable entity)	150019	urn:iso:std:iso:11073:10101	Mean blood pressure	mm[Hg]	millimeter of mercury	8462-4	http://loinc.org	Diastolic blood pressure	8462-4	http://loinc.org	Diastolic blood pressure	271650006	http://snomed.info/sct	Diastolic blood pressure (observable entity)	150018	urn:iso:std:iso:11073:10101	Diastolic blood pressure
+76	Rechtsatrialer Druck	Observation	276755008	85354-9	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/rechtsatrialer-druck	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Blood pressure panel with all children optional	http://snomed.info/sct	Right atrial pressure (observable entity)	\N	\N	mm[Hg]	millimeter of mercury	8480-6	http://loinc.org	Systolic blood pressure	60998-2	http://loinc.org	Right atrial pressure Systolic	\N	\N	\N	150069	urn:iso:std:iso:11073:10101	Systolic right atrial pressure	mm[Hg]	millimeter of mercury	8478-0	http://loinc.org	Mean blood pressure	8400-4	http://loinc.org	Right atrial Intrachamber mean pressure	\N	\N	\N	150071	urn:iso:std:iso:11073:10101	Mean right atrial pressure	mm[Hg]	millimeter of mercury	8462-4	http://loinc.org	Diastolic blood pressure	60997-4	http://loinc.org	Right atrial pressure Diastolic	\N	\N	\N	150070	urn:iso:std:iso:11073:10101	Diastolic right atrial pressure
+77	Rechtsventrikulärer Druck	Observation	75367002	85354-9	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/rechtsventrikulaerer-druck	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Blood pressure panel with all children optional	http://snomed.info/sct	Blood pressure (observable entity)	\N	\N	mm[Hg]	millimeter of mercury	8480-6	http://loinc.org	Systolic blood pressure	8432-7	http://loinc.org	Right ventricular Intrachamber systolic pressure	\N	\N	\N	150105	urn:iso:std:iso:11073:10101	Systolic right ventricular pressure	mm[Hg]	millimeter of mercury	8478-0	http://loinc.org	Mean blood pressure	8406-1	http://loinc.org	Right ventricular Intrachamber mean pressure	\N	\N	\N	150107	urn:iso:std:iso:11073:10101	Mean right ventricular pressure	mm[Hg]	millimeter of mercury	8462-4	http://loinc.org	Diastolic blood pressure	8377-4	http://loinc.org	Right ventricular Intrachamber diastolic pressure	\N	\N	\N	150106	urn:iso:std:iso:11073:10101	Diastolic right ventricular pressure
+78	Linksventrikulärer Druck	Observation	75367002	85354-9	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/linksventrikulaerer-druck	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Blood pressure panel with all children optional	http://snomed.info/sct	Blood pressure (observable entity)	\N	\N	mm[Hg]	millimeter of mercury	8480-6	http://loinc.org	Systolic blood pressure	8430-1	http://loinc.org	Left ventricular Intrachamber systolic pressure	\N	\N	\N	150101	urn:iso:std:iso:11073:10101	Systolic left ventricular pressure	mm[Hg]	millimeter of mercury	8478-0	http://loinc.org	Mean blood pressure	8404-6"	http://loinc.org	Left ventricular Intrachamber mean pressure	\N	\N	\N	150103	urn:iso:std:iso:11073:10101	Mean left ventricular pressure	mm[Hg]	millimeter of mercury	8462-4	http://loinc.org	Diastolic blood pressure	8375-8	http://loinc.org	Left ventricular Intrachamber diastolic pressure	\N	\N	\N	150102	urn:iso:std:iso:11073:10101	Diastolic left ventricular pressure
+79	Pulmonalarterieller Blutdruck	Observation	75367002	85354-9	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/pulmonalarterieller-blutdruck	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Blood pressure panel with all children optional	http://snomed.info/sct	Blood pressure (observable entity)	\N	\N	mm[Hg]	millimeter of mercury	8480-6	http://loinc.org	Systolic blood pressure	8440-0	http://loinc.org	Pulmonary artery Systolic blood pressure	\N	\N	\N	150045	urn:iso:std:iso:11073:10101	Systolic pulmonary arterial pressure	mm[Hg]	millimeter of mercury	8478-0	http://loinc.org	Mean blood pressure	8414-5	http://loinc.org	Pulmonary artery Mean blood pressure	\N	\N	\N	150047	urn:iso:std:iso:11073:10101	Mean pulmonary arterial pressure	mm[Hg]	millimeter of mercury	8462-4	http://loinc.org	Diastolic blood pressure	8385-7	http://loinc.org	Pulmonary artery Diastolic blood pressure	\N	\N	\N	150046	urn:iso:std:iso:11073:10101	Diastolic pulmonary arterial pressure
 \.
 
 
