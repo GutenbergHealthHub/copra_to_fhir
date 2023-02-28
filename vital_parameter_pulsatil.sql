@@ -239,3 +239,11 @@ set component_sistol_snomed_system = null,
 component_mean_snomed_system = null,
 component_diastol_snomed_system = null
 where component_mean_snomed isnull;
+
+
+select * from icu_copra.vital_parameter_pulsatil vpp 
+where id = 78;
+
+update icu_copra.vital_parameter_pulsatil 
+set component_mean_loinc_detailed = '8404-6' 
+where id = 78;
