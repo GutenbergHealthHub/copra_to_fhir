@@ -1422,14 +1422,173 @@ and unit isnull;
 
 -- ventilation
 select 
+  c.id_syst,
   c.name, 
   m.description,
-  c.unit,
-  v.*  
+  c.co6_config_variabletypes_id,
+  c.parent,
+  c.unit copra_unit,
+  v.*
+  into icu_copra.matched_ventilation 
 from icu_copra.matched_0 m
 join icu_copra.ventilation v
   on v.profiles = m.profiles
 join icu_copra.copra_config_vars c
   on c."name" = m."name"
+where c.unit notnull
+and c.co6_config_variabletypes_id <> 12
 
 
+-- vital parameter not pulsatil
+select 
+  c.id_syst,
+  c.name, 
+  m.description,
+  c.co6_config_variabletypes_id,
+  c.parent,
+  c.unit copra_unit,
+  v.* 
+ -- into icu_copra.matched_vital_parameter_no_pulsatil
+from icu_copra.matched_0 m
+join icu_copra.vital_parameter_no_pulsatil v
+  on v.profiles = m.profiles
+join icu_copra.copra_config_vars c
+  on c."name" = m."name"
+where c.unit notnull
+and c.co6_config_variabletypes_id <> 12;
+
+-- body temperatur
+select 
+  c.id_syst,
+  c.name, 
+  m.description,
+  c.co6_config_variabletypes_id,
+  c.parent,
+  c.unit copra_unit,
+  v.*
+  into icu_copra.matched_body_temperatur
+from icu_copra.matched_0 m
+join icu_copra.body_temperatur v
+  on v.profiles = m.profiles
+join icu_copra.copra_config_vars c
+  on c."name" = m."name"
+where c.unit notnull;
+
+
+-- vital parameter pulsatil
+select 
+  c.id_syst,
+  c.name, 
+  m.description,
+  c.co6_config_variabletypes_id,
+  c.parent,
+  c.unit copra_unit,
+  v.* 
+  into icu_copra.matched_vital_parameter_pulsatil
+from icu_copra.matched_0 m
+join icu_copra.vital_parameter_pulsatil v
+  on v.profiles = m.profiles
+join icu_copra.copra_config_vars c
+  on c."name" = m."name"
+where c.unit notnull
+and c.co6_config_variabletypes_id = 12;
+
+
+-- ecmo parameter
+select 
+  c.id_syst,
+  c.name, 
+  m.description,
+  c.co6_config_variabletypes_id,
+  c.parent,
+  c.unit copra_unit,
+  v.* 
+  into icu_copra.matched_parameter_ecmo
+from icu_copra.matched_0 m
+join icu_copra.parameter_ecmo v
+  on v.profiles = m.profiles
+join icu_copra.copra_config_vars c
+  on c."name" = m."name"
+where c.unit notnull;
+
+select distinct 
+  copra_unit, 
+  unit_code 
+from icu_copra.matched_body_temperatur mbt;
+
+alter table icu_copra.matched_body_temperatur 
+  add column unit_transform decimal default 1.0;
+ 
+ 
+select distinct 
+  copra_unit, 
+  unit_code,
+  unit_transform
+from icu_copra.matched_parameter_ecmo mpe;
+
+alter table icu_copra.matched_parameter_ecmo  
+  add column unit_transform decimal default 1.0;
+ 
+update icu_copra.matched_parameter_ecmo 
+set unit_transform = null where copra_unit = 'h:min';
+
+
+select distinct 
+  copra_unit, 
+  unit_code,
+  unit_transform
+from icu_copra.matched_ventilation mv 
+;
+
+alter table icu_copra.matched_ventilation  
+  add column unit_transform decimal;
+ 
+update icu_copra.matched_ventilation 
+set unit_transform = 1.0
+where regexp_replace(copra_unit, '\W', '', 'g') ~* regexp_replace(unit_code, '\W', '', 'g') 
+and copra_unit !~ ':';
+
+
+update icu_copra.matched_ventilation 
+set unit_transform = 1.0197
+where copra_unit ~* 'mbar'
+and unit_code ~* 'cm\[H2O\]' 
+;
+
+
+update icu_copra.matched_ventilation 
+set unit_transform = 1.3595
+where copra_unit ~* 'mmHg'
+and unit_code ~* 'cm\[H2O\]' 
+;
+
+
+update icu_copra.matched_ventilation 
+set unit_transform = 1000
+where copra_unit = 'L'
+and unit_code ~* 'mL' 
+;
+
+update icu_copra.matched_ventilation 
+set unit_transform = 0.01
+where copra_unit = '%'
+and unit_code ~* '1' 
+;
+
+update icu_copra.matched_ventilation 
+set unit_transform = 0.01
+where copra_unit = 'Vol%'
+and unit_code ~* '1' 
+;
+
+update icu_copra.matched_ventilation 
+set unit_transform = 1.0
+where copra_unit = 'bpm'
+and unit_code = '/min' 
+;
+
+--copy icu_copra.matched_body_temperatur to '/media/db/cdw_database/matched/body_temperatur.csv' with delimiter E';' header csv;
+--copy icu_copra.matched_parameter_ecmo to '/media/db/cdw_database/matched/parameter_ecmo.csv' with delimiter E';' header csv;
+copy icu_copra.matched_ventilation to '/media/db/cdw_database/matched/ventilation.csv' with delimiter E';' header csv;
+copy icu_copra.matched_vital_parameter_no_pulsatil to '/media/db/cdw_database/matched/vital_parameter_no_pulsatil.csv' with delimiter E';' header csv;
+copy icu_copra.matched_vital_parameter_pulsatil to '/media/db/cdw_database/matched/vital_parameter_pulsatil.csv' with delimiter E';' header csv;
