@@ -1587,8 +1587,108 @@ where copra_unit = 'bpm'
 and unit_code = '/min' 
 ;
 
+update icu_copra.matched_parameter_ecmo 
+set unit_transform = 1
+where copra_unit = 'h:min'
+and unit_code = 'h' 
+;
+
+delete from icu_copra.matched_ventilation where co6_config_variabletypes_id = 3;
+
+delete from icu_copra.matched_parameter_ecmo where id_syst = 103174; -- no validated values
+
+delete from icu_copra.matched_parameter_ecmo where id_syst = 103218; -- not enought values
+
+
+select distinct 
+  copra_unit, 
+  unit_code,
+  unit_transform
+from icu_copra.matched_vital_parameter_no_pulsatil mvpnp 
+;
+
+alter table icu_copra.matched_vital_parameter_no_pulsatil  
+  add column unit_transform decimal;
+
+update icu_copra.matched_vital_parameter_no_pulsatil 
+set unit_transform = 1.0;
+
+alter table icu_copra.matched_vital_parameter_pulsatil  
+  add column unit_transform decimal;
+
+update icu_copra.matched_vital_parameter_pulsatil 
+set unit_transform = 1.0;
+
+
+select  id, profiles,  loinc_system, component_sistol_loinc_system, component_sistol_loinc_detaile_system, component_sistol_loinc_detaile_display, component_sistol_ieee, component_sistol_ieee_system, component_sistol_ieee_display, component_mean_unit_code, component_mean_unit, component_mean_loinc, component_mean_loinc_system, component_mean_loinc_display, component_mean_loinc_detailed, component_mean_loinc_detaile_system, component_mean_loinc_detaile_display, component_mean_snomed, component_mean_snomed_system, component_mean_snomed_display, component_mean_ieee, component_mean_ieee_system, component_mean_ieee_display, component_diastol_unit_code, component_diastol_unit, component_diastol_loinc, component_diastol_loinc_system, component_diastol_loinc_display, component_diastol_loinc_detailed, component_diastol_loinc_detaile_system, component_diastol_loinc_detaile_display, component_diastol_snomed, component_diastol_snomed_system, component_diastol_snomed_display, component_diastol_ieee, component_diastol_ieee_system, component_diastol_ieee_display  
+from icu_copra.matched_vital_parameter_pulsatil mvpp 
+where profiles = 'Blutdruck Generisch'
+
+select component_sistol_loinc, component_sistol_loinc_system
+from icu_copra.matched_vital_parameter_pulsatil mvpp 
+where component_sistol_loinc isnull 
+and component_sistol_loinc_system notnull;
+
+update icu_copra.matched_vital_parameter_pulsatil 
+set component_sistol_loinc_system = null 
+where component_sistol_loinc isnull;
+
+
+select component_sistol_loinc_detailed, component_sistol_loinc_detaile_system 
+from icu_copra.matched_vital_parameter_pulsatil mvpp 
+where component_sistol_loinc_detailed isnull 
+and component_sistol_loinc_detaile_system notnull;
+
+
+update icu_copra.matched_vital_parameter_pulsatil 
+set component_sistol_loinc_detaile_system = null 
+where component_sistol_loinc_detailed isnull;
+
+
+select component_sistol_ieee , component_sistol_ieee_system  
+from icu_copra.matched_vital_parameter_pulsatil mvpp 
+where component_sistol_ieee  isnull 
+and component_sistol_ieee_system  notnull;
+
+
+update icu_copra.matched_vital_parameter_pulsatil 
+set component_sistol_ieee_system = null 
+where component_sistol_ieee isnull;
+
+
+
+update icu_copra.matched_vital_parameter_pulsatil 
+set component_diastol_loinc_system = null 
+where component_diastol_loinc isnull;
+
+
+update icu_copra.matched_vital_parameter_pulsatil 
+set component_diastol_loinc_detaile_system = null 
+where component_diastol_loinc_detailed isnull;
+
+
+
+update icu_copra.matched_vital_parameter_pulsatil 
+set component_mean_loinc_system = null 
+where component_mean_loinc isnull;
+
+
+update icu_copra.matched_vital_parameter_pulsatil 
+set component_mean_loinc_detaile_system = null 
+where component_mean_loinc_detailed isnull;
+
+
+update icu_copra.matched_vital_parameter_pulsatil 
+set component_mean_ieee_system = null 
+where component_mean_ieee isnull;
+
+
+update icu_copra.matched_vital_parameter_pulsatil 
+set component_diastol_ieee_system = null 
+where component_diastol_ieee isnull;
+
 --copy icu_copra.matched_body_temperatur to '/media/db/cdw_database/matched/body_temperatur.csv' with delimiter E';' header csv;
 --copy icu_copra.matched_parameter_ecmo to '/media/db/cdw_database/matched/parameter_ecmo.csv' with delimiter E';' header csv;
-copy icu_copra.matched_ventilation to '/media/db/cdw_database/matched/ventilation.csv' with delimiter E';' header csv;
-copy icu_copra.matched_vital_parameter_no_pulsatil to '/media/db/cdw_database/matched/vital_parameter_no_pulsatil.csv' with delimiter E';' header csv;
-copy icu_copra.matched_vital_parameter_pulsatil to '/media/db/cdw_database/matched/vital_parameter_pulsatil.csv' with delimiter E';' header csv;
+--copy icu_copra.matched_ventilation to '/media/db/cdw_database/matched/ventilation.csv' with delimiter E';' header csv;
+--copy icu_copra.matched_vital_parameter_no_pulsatil to '/media/db/cdw_database/matched/vital_parameter_no_pulsatil.csv' with delimiter E';' header csv;
+--copy icu_copra.matched_vital_parameter_pulsatil to '/media/db/cdw_database/matched/vital_parameter_pulsatil.csv' with delimiter E';' header csv;
