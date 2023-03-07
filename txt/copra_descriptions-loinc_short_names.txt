@@ -1,0 +1,1833 @@
+Patient;Insp time set Vent;48
+Archivdruck-Pfad;Head Circumf OFC;44
+Archivdruck-Hash;Head Circumf OFC;44
+Rate der ersten Gabe. Ist die Rate 0, dann ist das Medikament diskontinuierlich.;Resp rate;62
+Gesamtvolumen der Mischung.;Ca-I BldCRRT-sCnc;42
+DSer COPRArang der Mischung. Dieser ist gleich dem Rang des ersten Medikamentes in der Mischung.;Away press delta on vent PressDiff;35
+Name der Mischung. Dieser ergibt sich aus der Liste der Medikamente.;Blood pressure panel with all children optional;38
+"Name des Wirkstoffes, auf den sich die Gabe bezieht. Wird für den Event ""Schnelle Medikamentengabe V2"" benötigt.";Blood pressure panel with all children optional;34
+Name der Organisationseinheit;Breaths.mechanical on vent;47
+Beschreibung der Organisationseinheit;Breaths.mechanical on vent;44
+Automatendaten werden in diesem Intervall an den Patienten geschrieben;Blood pressure panel with all children optional;41
+Zuordnung Ort zu Organisationseinheit;LV Output Indicator dilution;46
+Zuordnung Beginn;Compliance.dynamic Lung;41
+Zuordnung Ende;Compliance.dynamic Lung;43
+Zuordnung Link auf Ort;PAW @ zero insp flow on vent;42
+Name des Clients (Workstation);Compliance.dynamic Lung;43
+Zuordnung Computer zu Behandlungsort;Breaths.spont+mech on vent;39
+Zuordnung Computer zu Drucker;Compliance.dynamic Lung;46
+Wert wird bei die Berechtigungsfunktion 'Unbegrenzter Zeitraum, wenn Computerberechtigung' verwendet. Wert ungleich 0, dann gesetzt.;Blood pressure panel with all children optional;32
+Information über gestellte Medikamente pro Tag;Blood pressure panel with all children optional;41
+Leistungsobjekt;Pressure support setting Vent;41
+ExtLeistungsID;Insp/Exp time Ratio;36
+Leistungstext;Insp flow set Vent;45
+ExtMaterialNr;Heart rate;43
+Einrichtung;Weight;47
+Leistungsklasse;Insp flow set Vent;36
+Extetrne Nummer;VT setting Vent;40
+Extetrne Nummer Schweiz;Exp hold time set Vent;40
+EANNR;Heart rate;40
+Leistung gueltig ab;Ideal bdy weight;46
+Leistung gueltig bis;Insp time set Vent;47
+Leistung loeschen am;Mean Pres on vent Airway;45
+Leistungstyp;Weight;44
+Abrechnung-Stationaer;Breaths.spont+mech on vent;47
+Abrechnung-Ambulant;Breaths.mechanical on vent;44
+Textabweichung erlaubt;Ideal bdy weight;42
+Leistungseinheit;VT setting Vent;45
+Flag-Hauskatalog;SaO2 % BldA;48
+Basis-Mengeneinheit;Breaths.mechanical on vent;49
+Einzelabgabe moeglich;pCO2 end exp ExG;38
+Leistungserbringer-Objekt;Pressure support setting Vent;44
+ExtLeisterbringerID;VT setting Vent;41
+Nachname;Nasal temp;44
+Vorname;Oral temp;50
+Titel;Axil temp;43
+Anrede;PAW pressure;44
+Mitarbeitertyp;Tymp memb temp;50
+Geschlecht;Bdy weight Prctl Per Age;41
+Geburtsdatum;Heart rate;45
+Sprache;Esoph temp;47
+Telefonnummer;Body temperature;34
+Strasse;Heart rate;47
+Name des Patiente;Insp time set Vent;51
+Transientes Objekt für Filterkriterien;Insp time set Vent;40
+Filtervariable für ein Beginndatum;O2/Total gas setting VFr Vent;45
+Filtervariable für die Dauer in Stunden;Away press delta on vent PressDiff;42
+Variable kann als Attribut verwendet werden;O2/Total gas setting VFr Vent;47
+Variable kann als Attribut verwendet werden;O2/Total gas setting VFr Vent;47
+Verweis von der Ziel-Behandlung auf die Quell-Behandlung einer Zusammenführung;Blood pressure panel with all children optional;37
+Name des Gerätetyps;Tymp memb temp;44
+Verweis von der Quell-Behandlung auf die Ziel-Behandlung einer Zusammenführung;Blood pressure panel with all children optional;37
+Herzfrequenz;Heart rate;45
+Atemfrequenz;Resp rate;48
+Puls;LV SV;44
+Zentralvenöser Druck;LV SV Indicator dilution;42
+Körpertemperatur;Body temperature;65
+Körpertemperatur Messkanal 2;Body temperature;56
+Sauerstoffsättigung;Pressure support setting Vent;43
+arterielle Sauerstoffsättigung;Pressure support setting Vent;45
+venöse Sauerstoffsättigung;VT setting Vent;56
+nichtinvasiver Blutdruck;LV SV Indicator dilution;46
+arterielle Blutdruck;Resp rate;34
+ASA-Klassifikation (Behandlungsrisiko);Away press delta on vent PressDiff;40
+Diagnosen des Patienten;Insp/Exp time Ratio;52
+Erhebungszeitpunkt der Diagnose;Mean Pres on vent Airway;44
+Liste der medizinisch/pflegerischen Fachkräfte;Breaths.mechanical on vent;37
+Familienname des Mitarbeiters;LV SV Indicator dilution;42
+Vorname des Mitarbeiters;Heart rate;47
+Titel des Mitarbeiters;Heart rate;44
+NYHA-Kalassifikation für Anaesthesie;Away press delta on vent PressDiff;41
+Verweis auf die für diese Behandlung gültige Prämedikation;LV Cardiac index Indicator dilution;42
+Chargen-Nummer der Blutkonserve;LV Output Indicator dilution;41
+Diagnosennummer;Mean Pres on vent Airway;36
+Person die die Diagnose erhoben hat;PAW @ zero insp flow on vent;46
+Nummer der Massnahme;Breaths.mechanical on vent;39
+Dokumentationszeit;VT setting Vent;42
+Vorname des Patiente;Heart rate;47
+Adresse des Patienten: Strasse + Hausnummer;Low press hold time set Vent;44
+Nationalität des Patienten;Insp/Exp time Ratio;50
+"Der Patient wurde 'wohin?' verlegt? ";Body temperature;43
+hat der Patient einen Organspenderausweis?;Mean Pres on vent Airway;46
+Patientenverfügung;Compliance.dynamic Lung;40
+Anschrift des Patientenbetreuers;Insp time set Vent;44
+Telefonnummer des Patienten;Insp/Exp time Ratio;43
+aktuelle Schwangerschaftswoche des Babys;Bdy weight Prctl Per Age;41
+Schwangerschaftswoche, in welcher das Baby geboren wurde;Blood pressure panel with all children optional;41
+OP-Tag;Esoph temp;50
+Auswahl der Kliniken;Insp gas flow on vent Airway;42
+Extravasales Lungenwasser;Gas flow.O2 O2 delivery sys;37
+Intrathorakales Blutvolumen;LV SV Indicator dilution;55
+"Schlagvolumenabweichung ";Compliance.dynamic Lung;48
+Herzindex;LV Cardiac index;48
+"Index des systemischen Gefäßwiderstandes ";LV Cardiac index;48
+VTe / ex. Atemzugvolumen (Tidal Volumen expir.);PEEP on vent Respiratory;46
+Mindest Volumen sp;Insp time set Vent;50
+Mindest Volumen tot.;Insp time set Vent;54
+Frequenz tot.;Pressure support setting Vent;39
+FiO2;FIO2;100
+Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT);Exp hold time set Vent;42
+Positiver endexspiratorischer Druck (PEEP);PEEP on vent Respiratory;56
+Atemzeitverhältnis (I:E);Gas flow.O2 O2 delivery sys;40
+Inspiratorische Flowrate;Insp/Exp time Ratio;56
+O²- Konzentration im Inspirationsgemisch (FiO2);FIO2;100
+Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB);PAW pressure;80
+Atemminutenvolumen (AMV);Tymp memb temp;39
+Beatmungsfrequenz (f/AF);Mean Pres on vent Airway;39
+Anordnung Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT);Breaths.mechanical on vent;40
+Anordnung Positiver endexspiratorischer Druck (PEEP);PEEP on vent Respiratory;57
+Anordnung Atemzeitverhältnis (I:E);Body temperature;43
+Anordnung Inspiratorische Flowrate;Insp gas flow on vent Airway;48
+Anordnung Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB);PAW pressure;80
+Anordnung Atemminutenvolumen (AMV);Compliance.dynamic Lung;40
+Anordnung Beatmungsfrequenz (f/AF);Mean Pres on vent Airway;39
+beatmungs-Verordung;Breaths.spont+mech on vent;49
+Anordnung O² Konzentration im Inspirationsgemisch (FiO2);FIO2;100
+Geburtsdatum des Patienten;Insp time set Vent;45
+HFOV Frequenz;Pressure support setting Vent;38
+Inspirationszeit in %;Insp/Exp time Ratio;58
+Inspiratorische Pause (I:E);Insp/Exp time Ratio;55
+Interm PEEP;PEEP on vent Respiratory;53
+HFOV Mitteldruck;Body temperature;38
+Pmax, Maximaldruck;Axil temp;46
+HFOV Powereinstellung;Insp flow set Vent;46
+Respiratory Rate (spontan);PEEP on vent Respiratory;67
+Respiratory Minute Volume;PEEP on vent Respiratory;69
+Respiratory Rate (Volume/Flow);PEEP on vent Respiratory;69
+Peak Airway Pressure;PAW pressure;80
+Apnea Duration;Heart rate;50
+beinhaltet Ruhen und Schlafen, Befinden, Krampfanfälle, Sedierung, Schmerzdiagnose;Blood pressure panel with all children optional;39
+Für Monitoringdatenübernahme;Body temperature;38
+Schrittmacherdrähte;Heart rate;43
+Atemwegszugang;Resp rate;43
+Herzrhythmus;Heart rate;45
+mit SQL select getdate();VT setting Vent;43
+Verlegungszeit im Verlegungsprotokoll mit Datum und Uhrzeit;Blood pressure panel with all children optional;40
+Nervensysteme;Nasal temp;43
+Alter des Patienten in Jahren;Mean Pres on vent Airway;49
+Aufnahmegewicht (fallbezogen);Breaths.mechanical on vent;42
+Größe Patient (fallbezogen);PAW @ mean exp flow on vent;50
+Körperoberfläche des Patienten (fallbezogen);PAW @ mean exp flow on vent;46
+Patientenadresse: PLZ;Resp rate;48
+Patientenadresse: Ort;Resp rate;48
+Patientenadresse: Land;PAW pressure;48
+Körperoberfläche des Patienten ohne Fallbezug;PAW @ mean exp flow on vent;44
+Compliance;Compliance.dynamic Lung;100
+CO2-Production;Spont VT on vent;40
+Resistance;Rectal temp;48
+Spont Minute Volume;Spont VT on vent;57
+Mean Airway Pressure;PAW pressure;80
+Breathing Frequency;Breaths.mechanical on vent;49
+Minimum Airway Pressure;PAW pressure;80
+Intrinsic PEEP;PEEP on vent Respiratory;47
+Plateau Druck;SaO2 % Bld Preductal PulseOx;46
+Patient_Verlusst_ExtrakorporaleAbnahme;Expiratory gas flow on vent Airway;36
+Patient_Blutverlusst;VT setting Vent;40
+Blutgruppe des Patienten;PEEP on vent Respiratory;46
+Verordnung Ziel-Atemfrequenz;Breaths.mechanical on vent;37
+Angeordnete Ziel-Atemfrequenz für Pflege;Mean Pres on vent Airway;38
+Verantwortlicher Arzt für den zugeordneten Bettplatz;Expiratory gas flow on vent Airway;40
+Bettplatz für Zuordnung der verantwortlichen Mitarbeiter;Breaths.mechanical on vent;37
+Verantwortliche Pflegekraft für den zugeordneten Bettplatz;PEEP on vent Respiratory;40
+Physiotherapie;Heart rate;42
+Kopfumfang des Patienten (Kinder);PAW @ zero insp flow on vent;46
+Geschlecht des Patienten;Exp hold time set Vent;52
+Herz Funktion Kammerfüllung;Compliance.dynamic Lung;41
+Linksartrialer enddiastolischer Druck;LV SVI Indicator dilution;45
+Herz Funktion Reizbildung;Compliance.dynamic Lung;38
+Diastolischer Druck;Compliance.dynamic Lung;38
+Herzfrequenz;Heart rate;45
+Pulse;LV SV;40
+Systolischer Druck;Ca-I BldCRRT-sCnc;40
+Wasserhaushalt;Nasal temp;42
+Kerntemperatur;Body temperature;67
+intrav. Flüss.-Therapie;Insp/Exp time Ratio;46
+enterale Ernährung (Sonde);Breaths.spont+mech on vent;45
+parentale Ernährung;Mean Pres on vent Airway;43
+Transpoort eines Intensivpatienten;PAW @ zero insp flow on vent;43
+zentralvenöser Zugang;O2/Total gas setting VFr Vent;37
+Verbesserung der Lufu.;Low press hold time set Vent;41
+Labor / Midi;Oral temp;42
+Standard Monitoring;LV SV Indicator dilution;42
+Temperatur 1a;Body temperature;76
+Temperatur 1b;Body temperature;83
+Temperatur 2a;Body temperature;76
+Temperatur 2b;Body temperature;83
+Temperatur 3a;Body temperature;76
+Temperatur 3b;Body temperature;83
+Sauerstoffsättigung Pulsoxymetrie;Pressure support setting Vent;43
+Pulsrate errechnet aus der SpO2 Messung;SaO2 % Bld Preductal PulseOx;49
+End-tidales CO2;Vt on vent Vent;48
+Rechtsatrial Mitteldruck;LV SV Indicator dilution;38
+Pulmunaler Wedgedruck;pCO2 end exp ExG;32
+Mittlerer pulmonale arterieller Druck;SaO2 % Bld Preductal PulseOx;41
+Herzleistung;Resp rate;38
+"Linksseitiger Herzkranzperfusionsdruck ";Pressure support setting Vent;36
+"Linksventrikulärer Schlagarbeit ";Insp time set Vent;42
+"Linksventrikulärer Schlagarbeitsindex ";Insp time set Vent;37
+"Pulmunaler Gefäßwiderstand ";PAW @ mean exp flow on vent;41
+"Pulmunaler Gefäßwiderstandsindex ";PAW @ mean exp flow on vent;40
+"Rate-/Druck-Produkt ";Resp rate;62
+"Rechtsvetrikulärer Schlagarbeit ";Pressure support setting Vent;41
+"Rechtsvetrikulärer Schlagarbeitsindex ";Pressure support setting Vent;40
+"Schlagvolumen ";VT setting Vent;36
+"Index des Schlagvolumens ";LV Cardiac index;50
+"Pulmonaler Gesamtgefäßwiderstand ";PAW @ mean exp flow on vent;40
+"Gesamtgefäßwiderstand ";Resp rate;36
+"Pulskontur-Herzzeitvolumen ";Breaths.spont+mech on vent;42
+"Herzindex (kontinuirlich) ";LV Cardiac index;41
+Schlagvolumenindex  (PICCO Modul Dräger Monitoring);Horowitz index BldA+IhG-Rto;41
+"Systemischer Gefäßwiderstand (PICCO Modul Dräger Monitoring) ";Gas flow.O2 O2 delivery sys;38
+"Index des systemischen Gefäßwiderstandes (PICCO Modul Dräger Monitoring)  ";LV Cardiac index;48
+"Index der linken Ventrikelkontraktilität  ";LV Cardiac index;48
+"Herzzeitvolumen (PICCO Modul Dräger Monitoring) ";LV SVI Indicator dilution;38
+"Globales enddiastolisches Volumen ";Breaths.spont+mech on vent;44
+Gewicht des Patienten;Insp time set Vent;51
+"Index des enddiastolisches Volumen ";LV Cardiac index;48
+"Extravaskuläres Lungenwasser ";Away press delta on vent PressDiff;36
+"Extravaskuläres Lungenwasserindex ";Away press delta on vent PressDiff;36
+"Globale Auswurffraktion ";Expiratory gas flow on vent Airway;39
+"Index des extravaskulären Thermovolumens ";LV Cardiac index;48
+"Pulmonalvaskuläer Permeabilitätsindex ";LV Cardiac index Indicator dilution;43
+Pulmunalarterieller Druck;Resp rate;35
+Herzzeitvolumen;PEEP on vent Respiratory;41
+Pulmonalkapillardruck;Compliance.dynamic Lung;32
+Linksventrikulärer Mitteldruck;Inspired min Vol MV;42
+Rechtsventrikulärer Mitteldruck;Exp hold time set Vent;38
+Arrhythmie Drägermonitoring, VES/min;Expiratory gas flow on vent Airway;44
+Inspirationszeit I:E;Insp/Exp time Ratio;62
+GCS Erwachsene;Resp rate;43
+GCS Kinder;LV Cardiac index;46
+TransmembranDruck;Breaths.mechanical on vent;37
+Arterieller Druck;Resp rate;38
+Zentraler Venendruck;Heart rate;40
+Systemic vascular resistance;Compliance.dynamic Lung;47
+Systemic vascular resistance index;LV Cardiac index Indicator dilution;49
+Pulmonalkapillardruck;Compliance.dynamic Lung;32
+HerzindexHerzindex;Horowitz index BldA+IhG-Rto;44
+HerzfrequenzHerzfrequenz;Pressure support setting Vent;30
+Schlagvolumen-Variation;VT setting Vent;42
+Intrathorakales Blutvolumen;LV SV Indicator dilution;55
+Intrathorakaler Blutvolumenindex;LV Cardiac index Indicator dilution;54
+Herzzeitvolumen;PEEP on vent Respiratory;41
+ml/b;Blood temp;43
+Cardiac output / -index;LV Cardiac index;90
+SchlagvolumenindexSchlagvolumenindex;LV Cardiac index Indicator dilution;39
+Systemic vascular resistance;Compliance.dynamic Lung;47
+Systemic vascular resistance index;LV Cardiac index Indicator dilution;49
+Herzzeitvolumen;PEEP on vent Respiratory;41
+Herzindex;LV Cardiac index;48
+Schlagvolumen;VT setting Vent;36
+Schlagvolumenindex;LV Cardiac index;41
+Schlagvolumen Variation;VT setting Vent;42
+Systemischer Gefäßwiderstand;Away press delta on vent PressDiff;40
+Systemischer Gefäßwiderstandsindex;LV Cardiac index Indicator dilution;39
+Pulmonaler vasculärer Widerstand;SaO2 % Bld Preductal PulseOx;39
+Pulmonaler vasculärer Widerstandsindex;Horowitz index BldA+IhG-Rto;38
+Intrathorakales Blutvolumen;LV SV Indicator dilution;55
+Extravasales Lungenwasser;Gas flow.O2 O2 delivery sys;37
+Größe des Patienten;Insp time set Vent;51
+Schlagvolumen;VT setting Vent;36
+Identifikation des Patiente;Insp/Exp time Ratio;52
+Oxidationswasser in ml (einfuhrrelevant);Inspired min Vol MV;39
+Perspiratio Insensibilis in ml (Ausfuhrrelevant in der Bilanz);Blood pressure panel with all children optional;40
+Perspiratio Sensibilis in ml (ausfuhrrelevant in der Bilanz);LV Cardiac index Indicator dilution;42
+Volumenrate bei kontinuierlichen Medikamentengabe.;PAW @ mean exp flow on vent;41
+I:E Inspiration;Insp/Exp time Ratio;65
+I:E Exspiration;Insp/Exp time Ratio;65
+Pulsdruckabweichung;Ca-I BldCRRT-sCnc;44
+Herzfunktionsindex;LV Cardiac index Indicator dilution;42
+Herzindex;LV Cardiac index;48
+Index des intrathorakalen Blutvolumens;LV Cardiac index Indicator dilution;52
+Pkontrol (mbar/frequenz/AZ/min);Inspired min Vol MV;46
+Exspiratorische Triggersensibilität;Exp hold time set Vent;46
+Amplitude bei HFOV;Ideal bdy weight;41
+Form der Gabe.;Heart rate;52
+angeordnete Citratdosis;PEEP on vent Respiratory;43
+Bezeichnug der Calcium Lösung;Breaths.mechanical on vent;44
+"CPAP Einstellung in der Maßeinheit cm H2O, Verwendung bei F120 und CF 800";Blood pressure panel with all children optional;34
+Isolierte Ultrafiltration/Bergström;Pressure support setting Vent;38
+gemessener CPAP in der Maßeinheit cm H2O;PAW @ mean exp flow on vent;44
+"Pimax (Maximaler inspiratorischer Atemwegsdruck)  ";Insp/Exp time Ratio;43
+"gemeesener IPAP (Inspiratorisch Positiver Atemwegsdruck) ";Expiratory gas flow on vent Airway;39
+" gemessener EPAP (=Expiratorisch Positiver Atemwegsdruck)  ";Expiratory gas flow on vent Airway;46
+"Ti/Ttot (Inspirationszeit/Dauer des ganzen Zyklus) ";Insp/Exp time Ratio;42
+"Patientenleck - Die Leckage die aufgrund Masken- bzw. Helmleckage unabhängig der Sollleckage gemessen wird  ";Blood pressure panel with all children optional;32
+Die gemessene Gesamtleckage inclusive der bestehenden Sollleckage;Breaths.mechanical on vent;35
+"Pat.Trig (Prozentsatz der vom Patienten ausgelösten Atemzüge) ";Away press delta on vent PressDiff;40
+" eingestellter IPAP Wert";Insp time set Vent;49
+" eingestellter EPAP Wert";Insp time set Vent;49
+"IPAP-Anstiegszeit in Sekunden eingestellt ";Pressure support setting Vent;43
+System vorfüllen mit Flüssigkeiten aus einer Auswahlliste;Low press hold time set Vent;39
+Oszillationsfrequenz Gerät: Alpha Vision Modus: HFO;Expiratory gas flow on vent Airway;41
+Mittlerer Atemwegsdruck (MAP);Body temperature;42
+Schlagvolumen (SV) in engl. (cycle volume);LV SV;57
+Basis Continousflow;Breaths.mechanical on vent;40
+Druckeinstellung für manuell ausgelösten Atemhub;Away press delta on vent PressDiff;35
+gemessener Mittlerer Atemwegsdruck unter HFO bei Alpha Vision;Pressure support setting Vent;36
+Dauer des manuell durchgeführten Atemhubs;Bdy weight Prctl Per Age;38
+gemessener Basis Continousflow;Insp gas flow on vent Airway;45
+Verordnung Schlauchsystem;Compliance.dynamic Lung;46
+"Pressure Support, Alpha Vision";PAW pressure;80
+Anstiegszeit (Rampenzeit) Alpha Vision;Exp hold time set Vent;41
+positiv inspiratorischer Druck;Insp/Exp time Ratio;49
+eingestellte maximale Inspirationszeit beim G5 im Modus NIV;LV SV Indicator dilution;39
+Einstelungswert für die Inspirationszeit;PEEP on vent Respiratory;44
+Einstellwert: Zeiteinstellung des oberes Druckniveau beim G 5 im Modus DuoPAP;Blood pressure panel with all children optional;36
+prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird;Blood pressure panel with all children optional;48
+Einstellwert oberes Druckniveau im beim G 5 im Modus DuoPAP;Blood pressure panel with all children optional;35
+Einstellwert oberes Druckniveau beim G 5 im Modus P SIMV;Away press delta on vent PressDiff;36
+Einstellwert: Druckunterstützung beim G 5  bei Spontanatemzügen;Expiratory gas flow on vent Airway;37
+Einstellwert: Peep bzw. CPAP Niveau in verschiedenen Modi beim G 5;Insp gas flow on vent Airway;39
+Einstellwert: Zeiteinstellung für das untere Druckniveau beim G5 im Modus APRV;Blood pressure panel with all children optional;37
+Einstellwert: unteres Druckniveau beim G 5 im Modus APRV;Insp gas flow on vent Airway;39
+appliziertes Dialysat für Multifiltrate;Compliance.dynamic Lung;36
+Einstellwert: I:E Verhältnis;Insp time set Vent;50
+Messwert: Beatmungsspitzendruck;Breaths.spont+mech on vent;43
+Messwert: Beatmungsmitteldruck;Breaths.spont+mech on vent;44
+Messwert: Beatmungsdruck Peep / CPAP;PEEP on vent Respiratory;42
+"Messwert, exspiratorisches Tidalvolumen Einheit: ml";High press hold time set Vent;44
+Inspiratorischer Peakflow, ein Monitoring-Parameter;Inspired min Vol MV;43
+Inspirationszeit in Sekunden, Monitoring-Parameter;Insp time set Vent;45
+Inspiratorische Flow-Resistance, ein Monitoring-Parameter;Expiratory gas flow on vent Airway;47
+Exspiratorische Flow-Resistance, ein Monitoring-Parameter;Expiratory gas flow on vent Airway;51
+Statische Compliance, ein Monitoringwert;Compliance.dynamic Lung;61
+Inspiratorische Zeitkonstante, ein Monitoring Parameter;PAW @ zero insp flow on vent;43
+Exspiratorische Zeitkonstante, ein Monitoring-Parameter;Expiratory gas flow on vent Airway;45
+Index für schnelle Flachatmung (Rapid Shallow Breathing Index), Monitoring Parameter;LV Cardiac index;48
+Zusätzlich auferlegte Atemarbeit, ein Monitoring Parameter;Pressure support setting Vent;40
+Unerwarteter positiver endexspiratorischer Druck, ein Monitoring-Parameter;Expiratory gas flow on vent Airway;39
+Druck Zeit Produkt (Pressure Time Product), ein Monitoring Parameter;PAW pressure;80
+Leckagevolumen, ein Monitoring-Parameter;PAW @ mean exp flow on vent;47
+Exspiratorischer Peakflow, ein Monitoring-Parameter;Expiratory gas flow on vent Airway;43
+Exspirationzeit, ein Monitoring-Parameter;Insp/Exp time Ratio;51
+Dialysekonzentrat mit Listenauswahl;LV Output Indicator dilution;41
+Dialysekonzentrat Verordnung String;VT setting Vent;44
+Sauerstoffeinstellung in der Maßeinheit Vol %;LV SV Indicator dilution;39
+Messwert des Sauerstoffgehalt in der Maßeinheit Vol %;Blood pressure panel with all children optional;39
+gemessenes I:E Verhältnis;Exp hold time set Vent;43
+VO Gefäßzugang extracorporale Verfahren;Expiratory gas flow on vent Airway;42
+Filter  für extrakorporale Verfahren;Exp hold time set Vent;46
+Hämofiltrationslösung extrakorporale Verfahren;Insp gas flow on vent Airway;42
+Predilution Postdilution extrakorporale Verfahren;LV Cardiac index Indicator dilution;48
+Exspiratorische Triggersensitivität, eine Parametereinstellung;Expiratory gas flow on vent Airway;40
+Antikoagulation Medikament;LV Cardiac index Indicator dilution;46
+Spüllösung zum Vorbereiten des extrakorporalen Verfahrens;Away press delta on vent PressDiff;40
+Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss;Blood pressure panel with all children optional;37
+Eine Parametereinstellung. Anstiegszeit des Drucks bei druckkontrollierten und druckunterstützten Atemzyklus.;Blood pressure panel with all children optional;33
+max Blutpumpengeschwindigkeit VO;LV SV Indicator dilution;43
+Anzahl der Atemzyklen pro Minute, Parametereinstellung;Away press delta on vent PressDiff;39
+Ultrafiltrationsrate;Heart rate;47
+Substituat in ml/h;LV Output;44
+Substituatbolus in ml;LV SV Indicator dilution;44
+Sauerstoffeinstellung;Pressure support setting Vent;44
+Temperatur in Celsius;Body temperature;59
+Przentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus;Blood pressure panel with all children optional;38
+Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet;Blood pressure panel with all children optional;35
+Blutpumpengeschwindigkeit;Breaths.mechanical on vent;39
+Ultrafiltrationsrate;Heart rate;47
+Umsatz ml/h;SaO2 % BldA;40
+Temperatur in Celsius;Body temperature;59
+Blutpumpengeschwindigkeit;Breaths.mechanical on vent;39
+Entzugsrate ml/h;Inspired min Vol MV;46
+"Umsatz, Austausch, Substituat ml/h";Breaths.spont+mech on vent;38
+Temperatur Celcius;Body temperature;65
+Blutpumpengeschwindigkeit ml/min;Inspired min Vol MV;43
+Ultrafiltrationsrate ml/h;Heart rate;46
+Umsatz, Austausch Substituat ml/h;Breaths.spont+mech on vent;38
+Substituatbolus ml;LV Output;44
+Tempertatu Celsius;Body temperature;59
+Blutpumpengeschwindigkeit;Breaths.mechanical on vent;39
+Ultrafiltrationsrate;Heart rate;47
+Austausch, Substituat, ml/h;Breaths.spont+mech on vent;39
+Temperatur Celcius;Body temperature;65
+Blutpumpengeschwindigkeit;Breaths.mechanical on vent;39
+Entzugsrate, Ultrafiltrationsrate;Pressure support setting Vent;43
+Umsatz, Substituat;SaO2 % Bld Postductal PulseOx;41
+arterieller Druck;Resp rate;38
+venöser Druck;Resp rate;38
+Transmembrandruck;Breaths.mechanical on vent;37
+Kumulativwert;VT setting Vent;36
+Menge bei diskontinuierlichen Medikamentengaben.;LV Cardiac index Indicator dilution;39
+Plateau-Atemwegsdruck, ein Monitoring-Parameter;Spont+mech VT on vent;42
+Minimaler Atemwegsdruck, ein Monitoring Parameter;Breaths.mechanical on vent;41
+"Exspiratorisches Minutenvolumen, Monitoring-Parameter ";Breaths.spont+mech on vent;44
+Gesamtatemfrequenz, ein Monitoring Parameter;Mean Pres on vent Airway;39
+Spontane Atemfrequenz;Breaths.spont+mech on vent;51
+Sauerstoffkonzentration des abgegebenen Gasgemisches;Away press delta on vent PressDiff;37
+"Inspiratorischer Druck, mit Pinsp wird der Zieldruck (zusätzlich zu PEEP/CPAP) bezeichnet, der im Modus ASV während der Inspirationsphase abgegeben wird";Blood pressure panel with all children optional;32
+Atemweg-Okklusionsdruck, ein Monitoring-Parameter;Expiratory gas flow on vent Airway;39
+Dialysatlösung, Beutel;Compliance.dynamic Lung;42
+Dialysatrate;Heart rate;55
+Gialysatrate;Heart rate;55
+kumulatives Dialysatvol;LV SV Indicator dilution;43
+Citratbeutel;Resp rate;48
+Calciumbeutel;Rectal temp;42
+Dosierung;Compliance.dynamic Lung;38
+Ca-rate;Resp rate;73
+Beutel;Heart rate;38
+Beutel;Heart rate;38
+Citratrate;Heart rate;60
+Calciumrate;Airway temp;55
+kumulativ Citrat;Insp/Exp time Ratio;40
+Zeitpunkt der Medikamentengabe;PAW @ mean exp flow on vent;44
+kumulativ;LV Output;33
+Citratrate;Heart rate;60
+Calciumrate;Airway temp;55
+Plasmarate;Heart rate;50
+Plasmarate;Heart rate;50
+Plasmarate;Heart rate;50
+Kumulativ;LV Output;33
+Kumulativ;LV Output;33
+kumulativ;LV Output;33
+Eingestellte Sauerstoffzufuhr;Insp time set Vent;38
+gemessene Druckdifferenz im HFOV Modus;Gas flow.O2 O2 delivery sys;35
+gemessene Sauerstoffgehalt des Gasgemisches;Pressure support setting Vent;42
+Einstellgrösse: Druck bzw. Flowtrigger;Ideal bdy weight;39
+Exspirationserkennung 10 - 45% des Peak Flow;Expiratory gas flow on vent Airway;48
+Messwert: Anzahl der gemessenen spontanen Atemzüge;Low press hold time set Vent;42
+gemessenes spontanes Atemminutenvolumen;Breaths.spont+mech on vent;40
+gemessenes Tidalvolumen;O2/Total gas setting VFr Vent;46
+Plasmaaustauschvolumen kumulativ;Compliance.dynamic Lung;36
+Eingestelltes CPAP Niveau;Insp time set Vent;42
+Einstellwert: Größe des Gasflusses beim F 120;Gas flow.O2 O2 delivery sys;39
+Einstellparameter: Sauerstoffgehalt des Gasgemisches;Pressure support setting Vent;40
+Einstellgröße Gasfluss Sauerstoff;Gas flow.O2 O2 delivery sys;40
+Einstellgröße: Gasfluss Druckluft;LV SV Indicator dilution;44
+Sauerstoffgehalt des eingestellten Gasgemisches CF 800;Away press delta on vent PressDiff;39
+eingestelltes CPAP Niveau;Insp time set Vent;42
+Dialysatlösung;Compliance.dynamic Lung;44
+Spülung zur Vorbereitung;VT setting Vent;42
+Druck vor Filter Hämoperfusion;SaO2 % Bld Preductal PulseOx;44
+Filter;Axil temp;53
+HFLösung;LV SV;33
+Option;FIO2;40
+Spüldauer;PAW pressure;40
+Füllen des Systems;Bdy temp Bladder;48
+Variable wird verwendet für Multifiltrate und ADM 08;Blood pressure panel with all children optional;41
+Calciumlösung;Compliance.dynamic Lung;46
+Citratlösung;Compliance.dynamic Lung;41
+Einstellparameter CPAP im Modus CPAP;Insp/Exp time Ratio;48
+Einstellparameter: O2 Konzentration des Gasgemisches;Expiratory gas flow on vent Airway;40
+Messparameter: gemessene Atemfrequenz;Pressure support setting Vent;43
+Messwert: gemessenes CPAP Niveau;Pressure support setting Vent;43
+Messwert: gemessenes AMV;Mean Pres on vent Airway;43
+Messwert: gemessene O2 Konzentration des Gasgemisches;O2/Total gas setting VFr Vent;42
+Messwert: gemessenes Tidalvolumen;Insp time set Vent;48
+Einstellwert: Zeiteinstellung für die Inspirationszeit;PEEP on vent Respiratory;42
+Einstellwert: eingestellte Mindestatemfrequenz im ST Moodus;Insp time set Vent;37
+Medikament;Exp hold time set Vent;44
+Medikament;Exp hold time set Vent;44
+Einstellwert: eingestelltes Peep bzw. CPAP Niveau;Low press hold time set Vent;40
+Messwert: gemessener positiver endexspiratorischer Druck;Expiratory gas flow on vent Airway;40
+Ultrafiltrationsziel;Insp/Exp time Ratio;41
+Ultrafiltrationsrate;Heart rate;47
+Isolierte Ultrafiltration;PEEP on vent Respiratory;45
+Isolierte Ultrafiltration;PEEP on vent Respiratory;45
+Auswahl für die Applikationsform von NIV Anwendungen;Expiratory gas flow on vent Airway;42
+Kumulativer Entzug, bilanzrelevant;Breaths.spont+mech on vent;41
+Einstellwert: eingestellter Basisfluss im Beatmungssystem;Pressure support setting Vent;38
+Verordnung für ein Medikament.;Insp time set Vent;48
+"Einstellwert: eingestellte Oszillationsfrequenz ";Insp time set Vent;41
+Einstellwert: prozentualer Anteil der Inspirationszeit bezogen auf den gesamtem Atemzyklus;Insp gas flow on vent Airway;38
+Einstellwert: prozentuale Kolbenauslenkung;Mean Pres on vent Airway;40
+Einstellwert: eingestellter mittlerer Atemwegsdruck;O2/Total gas setting VFr Vent;38
+Einstellwert: O2 Konzentration des Gasgemisches;Gas flow.O2 O2 delivery sys;43
+Messwert: gemessene Druckamplitude;Exp hold time set Vent;40
+Messwert: gemessene O2 Konzentration des Gasgemisches;O2/Total gas setting VFr Vent;42
+Dialysekonzentrat 6 liter gesamt;Spont VT on vent;42
+Dialyskonzentratbehälter;LV Output Indicator dilution;39
+Einstellwert: eingestelltes Tidalvolumen;Insp time set Vent;46
+Einstellwert: eingestellter Spitzenfluss;Insp time set Vent;39
+Einstellwert: eingestellte Atemfrequenz;Pressure support setting Vent;45
+Einstellwert: eingestellte Apnoefrequenz;Pressure support setting Vent;47
+Einstellwert: Plateauphase in Sekunden;Insp time set Vent;40
+Einstellwert: Inspirationszeit in Sekunden;Insp flow set Vent;44
+Einstellwert: eingestellte Druckdifferenz;Pressure support setting Vent;43
+Messwert: gemessener Plateaudruck;Pressure support setting Vent;39
+Messwert: gemessenes Atemminutenvolumen;Away press delta on vent PressDiff;42
+Messwert: gemessene Atemfrequenz;Away press delta on vent PressDiff;40
+Messwert: gemessenes I:E Verhältnis;Pressure support setting Vent;45
+eingestellte O2 Konzentration des Gases;O2/Total gas setting VFr Vent;50
+eingestellter Inspirationfluss;Insp/Exp time Ratio;45
+eingestellt mandatorische Atemfrquenz;LV Cardiac index Indicator dilution;42
+eingestelltes Verhältnis zwischen Inspiration und Exspiration;Insp/Exp time Ratio;43
+eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau;Blood pressure panel with all children optional;39
+eingestelltes Tidalvolumen;Insp time set Vent;50
+eingestellte Druckbegrenzung;Pressure support setting Vent;46
+einstellte IMV Frequenz im SIMV Modus;Inspired min Vol MV;43
+eingestelltes PEEP Niveau;PEEP on vent Respiratory;49
+eingestelltes CPAP Niveau;Insp time set Vent;42
+eingestellte Druckunterstüzung;Pressure support setting Vent;45
+eingestelltes oberes Druckniveau;Resp rate;39
+eingestellte Triggerschwelle (Flowtrigger);Insp time set Vent;38
+gemessenes Atemminutenvolumen;Mean Pres on vent Airway;42
+gemessene O2 Konzentration im Inspirationsgas;O2/Total gas setting VFr Vent;46
+gemessener Beatmungsspitzendruck;Breaths.spont+mech on vent;41
+gemessener Plateaudruck (inspiratorischer Beatmungsdruck);PEEP on vent Respiratory;38
+gemessener positer endexspiratorischer Druck;Expiratory gas flow on vent Airway;44
+gemessener Beatmungsmitteldruck;Breaths.spont+mech on vent;42
+gemessenes exspiratorisches Tidalvolumen;Expiratory gas flow on vent Airway;46
+gemessene Atemfrequenz;Mean Pres on vent Airway;39
+gemessener Atemwegswiderstand;Away press delta on vent PressDiff;44
+gemessene Lungencompliance;Compliance.dynamic Lung;41
+gemessenes spontanes Atemminutenvolumen;Breaths.spont+mech on vent;40
+gemessene spontane Atemfrequenz;Pressure support setting Vent;47
+gemessenes CPAP Niveau;Mean Pres on vent Airway;43
+"kleinster gemessener Beatmungsdruck während des Atemzyklus ";Away press delta on vent PressDiff;37
+Ergebnis eines Messmanövers im Modus IPPV, IPPV assist;Inspired min Vol MV;39
+"Messergebnis eines Messmanövers im ASB Spontan Modus ";Breaths.spont+mech on vent;42
+eingestellte O2 Konzentration des Frischgases;O2/Total gas setting VFr Vent;46
+eingestellte absolute Inspirationszeit;Pressure support setting Vent;45
+eingestellte Atemfrequenz;Pressure support setting Vent;48
+eingestellte Anstiegszeit vom unteren zum oberen Druckniveau;Mean Pres on vent Airway;36
+eingestelltes oberes Druckniveau;Resp rate;39
+eingestelltes PEEP Niveau;PEEP on vent Respiratory;49
+eingestellte Druckunterstützung;VT setting Vent;44
+Einstellgröße des Flowtriggers;Gas flow.O2 O2 delivery sys;46
+Einstellgröße für das Tidalvolumen;O2/Total gas setting VFr Vent;47
+Einstellgröße für das Tidalvolumen in der Apnoeeinstellung;Insp gas flow on vent Airway;39
+eingestellte Atemfrequenz in der Apnoeventilation;Blood pressure panel with all children optional;38
+Einstellgröße für die Tubuskompensation;Expiratory gas flow on vent Airway;40
+Einstellgröße für den Flowassist im Modus PPS;Gas flow.O2 O2 delivery sys;48
+Einstellgröße für den VolAssist im PPS Modus;Gas flow.O2 O2 delivery sys;43
+Zeiteinstellung für das obere Druckniveau im APRV Modus;Away press delta on vent PressDiff;39
+Zeiteinstellung für das untere Druckniveau im APRV Modus;LV Cardiac index Indicator dilution;40
+Druckeinstellung für das obere Druckniveau im APRV Modus;LV Cardiac index Indicator dilution;40
+Druckeinstellung für das untere Druckniveau im APRV Modus;LV Cardiac index Indicator dilution;40
+gemessene O2 Konzentration des inspiratorischen Atemgasgemisches;O2/Total gas setting VFr Vent;39
+gemessener Atemwegsspitzendruck;Away press delta on vent PressDiff;37
+gemessener Plataeudruck wähend der Inspiration;Insp/Exp time Ratio;44
+gemessener Atemwegsmitteldruck;Press.max on vent Airway;37
+gemessener positiver endexspiratorischer Druck;Expiratory gas flow on vent Airway;45
+gemessener minimaler Atemwegsdruck während des Atemzyklus;Low press hold time set Vent;38
+gemessenes Atemminutenvolumen;Mean Pres on vent Airway;42
+gemessenes spontanes Atemminutenvolumen;Breaths.spont+mech on vent;40
+gemessenes Leckagevolumen pro Minute;O2/Total gas setting VFr Vent;40
+gemessene Gesamtatemfrequenz;High press hold time set Vent;42
+gemessene spontane Atemfrequenz;Pressure support setting Vent;47
+gemessene mandatorische Atemfrequenz;LV Cardiac index Indicator dilution;39
+gemessenes exspiratorisches Tidalvolumen;Expiratory gas flow on vent Airway;46
+gemessenes inspiratorisches Tidalvolumen;Insp/Exp time Ratio;51
+gemessener Atemwegswiderstand;Away press delta on vent PressDiff;44
+gemessene Lungencompliance;Compliance.dynamic Lung;41
+gemessener Intrinsic Peep nach Meßmanöver;PEEP on vent Respiratory;44
+gemessenes getrapptes Luftvolumen nach Meßmanöver;Insp time set Vent;40
+gemessener P0.1 Druck nach Meßmanöver;High press hold time set Vent;41
+Einstellwert: Tidalvolumen;Insp time set Vent;51
+Hochdruckalarmgrenze im 'ASV Modus;Blood pressure panel with all children optional;38
+"Desinfektionsprogramme Gerät ";Pressure support setting Vent;46
+Kathetertyp;Resp rate;50
+Listenauswahl;Nasal temp;43
+Listenanhang;Compliance.dynamic Lung;40
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Medtronic 5348;Head Circumf OFC;33
+Medtronic 5348;Head Circumf OFC;33
+Medtronic 5348;Head Circumf OFC;33
+Medtronic 5348;Head Circumf OFC;33
+Medtronic 5375;Head Circumf OFC;33
+Medtronic 5375;Head Circumf OFC;33
+Medtronic 5375;Head Circumf OFC;33
+Medtronic 5388;Head Circumf OFC;33
+Medtronic 5388;Head Circumf OFC;33
+Medtronic 5388;Head Circumf OFC;33
+Medtronic 5388;Head Circumf OFC;33
+Medtronic 5388;Head Circumf OFC;33
+Medtronic 5388;Head Circumf OFC;33
+Medtronic 5388;Head Circumf OFC;33
+Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben;Breaths.spont+mech on vent;37
+Die inspiratorische Bemühung des Patienten ( Flow),  die das Beatmungsgerät veranlässt, einen Atemhub abzugeben;Expiratory gas flow on vent Airway;38
+eingestellte mandatorische AF;Insp flow set Vent;43
+eingestelltes Tidalvolumen;Insp time set Vent;50
+eingestellter Spitzengasfluss;Gas flow.O2 O2 delivery sys;38
+Zeiteinstellung für die Plateauphase im Modus CMV und SIMV;PAW @ mean exp flow on vent;37
+eingestelltes PEEP Niveau;PEEP on vent Respiratory;49
+eingestellter Flowtrigger: Schwellenwertt für die inspiratorische Bemühung des Patienten um die Druckunterstützung auszulösen;Blood pressure panel with all children optional;33
+eingestellte Sauerstoffkonzentration des inspiratorischen Atemgases;Away press delta on vent PressDiff;40
+eingestelltes oberes Druckniveau im Modus P-CMV und P-SIMV;Away press delta on vent PressDiff;38
+eingestellte Inspirationszeit eines Atemzuges;Pressure support setting Vent;43
+eingestellte Druckunterstützung bei dem Gerät Avea;Bdy weight Prctl Per Age;42
+Zeiteinstellung des oberen Druckniveaus im Modus APRV / BiPhasisch;LV Cardiac index Indicator dilution;38
+Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch;LV Cardiac index Indicator dilution;38
+eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch;LV Cardiac index Indicator dilution;39
+eingestelltes unteres Druckniveau im Modus APRV / BiPhasisch;High press hold time set Vent;39
+gemessenes Tidalvolumen;O2/Total gas setting VFr Vent;46
+gemessener Atemwegsspitzendruck;Away press delta on vent PressDiff;37
+gemessenes exspiratorisches Volumen;Expiratory gas flow on vent Airway;49
+gemessene Inspirationszeit;Insp/Exp time Ratio;53
+gemessenes PEEP Niveau;PEEP on vent Respiratory;48
+gemessenes I zu E Verhältnis;Exp hold time set Vent;41
+gemessene Exspirationszeit;Insp/Exp time Ratio;53
+errechneter Quotient zwischen Frequenz und Tidalvolumen;Blood pressure panel with all children optional;37
+gemessener Atemwegsmitteldruck;Press.max on vent Airway;37
+gemessene Atemfrequenz;Mean Pres on vent Airway;39
+gemessenes mandatorisches Tidalvolumen;O2/Total gas setting VFr Vent;42
+gemessenes spontanes Tidalvolumen;Spont+mech VT on vent;48
+gemessenes inspiratorisches Tidalvolumen;Insp/Exp time Ratio;51
+gemessenes spontanes Atemminutenvolumen;Breaths.spont+mech on vent;40
+gemessene spontane Atemfrequenz;Pressure support setting Vent;47
+gemessene mandatorische Atemfrequenz;LV Cardiac index Indicator dilution;39
+gemessener Plateaudruck;Body temperature;41
+gemessene Sauerstoffkonzentration im Atemgas;Breaths.mechanical on vent;40
+gemessene statische Compliance;Compliance.dynamic Lung;61
+gemessener AutoPEEP;PEEP on vent Respiratory;47
+Liste;Oral temp;43
+Liste;Oral temp;43
+LIste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Drainagen_SekretmlKum: Drainagen-Sekret Kumulativ zur Dokumentation, nicht bilanzrelevant;LV Cardiac index Indicator dilution;38
+Gefäßdefinition;Insp/Exp time Ratio;38
+Katheterart;Heart rate;57
+Bezeichnung;Breaths.mechanical on vent;38
+Bezeichnung;Breaths.mechanical on vent;38
+Patient Allergie - Datum;Low press hold time set Vent;48
+Patient Besonderheit Datum;Exp hold time set Vent;50
+Dokumentation der Markierung des Katheters bzgl. der Lage bzw. Tiefe;Blood pressure panel with all children optional;42
+Dokumentation der Markierung des Atemwegszugang bzgl. der Tiefe bezogen auf die Anlagedokumentation;Away press delta on vent PressDiff;33
+Dokumentation der Markierung der enteralen Sonde;Away press delta on vent PressDiff;41
+Gerät zur Sekretmobilisation;Pressure support setting Vent;43
+Wunddokumentation der Tiefe bei Aufnahme oder erstem AUftreten;Away press delta on vent PressDiff;40
+Dekubitusgröße bei Aufnahme;Mean Pres on vent Airway;37
+Decubitustiefe bei Aufnahme;Exp hold time set Vent;37
+Beobachtungsbeschreibung mit Liste hinterlegt;Breaths.spont+mech on vent;42
+Gefäßzugang;Weight;27
+Schlauchsystembeschichtung relevant;Breaths.mechanical on vent;43
+Kathetertyp;Resp rate;50
+Dokumentation des aktuellen Füllstandes vom Auffangbehälter;Blood pressure panel with all children optional;40
+Gerätetyp;Tymp memb temp;55
+Gerät auswählen;VT setting Vent;43
+Hypothermiebehandlung;Compliance.dynamic Lung;45
+Hypothermiebehandlung;Compliance.dynamic Lung;45
+Liste;Oral temp;43
+Liste;Oral temp;43
+Bilanzrelevante Dokumentation der Sekretmenge, gefördert über die V.A.C. Pumpe;Blood pressure panel with all children optional;40
+Dokumentation des Füllstandes vom Auffangbehälter der VAC Pumpe;Blood pressure panel with all children optional;41
+Dokumentation des Füllstandes des Auffangbehälters der V.A.C. Pumpe im Rahmen der Dekubitusversorgung;Blood pressure panel with all children optional;38
+Bilanzrelevante Dokumentation der Sekretfördermenge im Rahmen der Dekubitusversorgung;Blood pressure panel with all children optional;35
+Dokumentation eines internen Pacer;LV Cardiac index Indicator dilution;46
+GCS Aufnahme;Head Circumf OFC;43
+Hypothermiebehandlung;Compliance.dynamic Lung;45
+Hypothermiebehandlung;Compliance.dynamic Lung;45
+Liste;Oral temp;43
+Gerät auswählen;VT setting Vent;43
+Listenauswahl;Nasal temp;43
+Geräteauswahl;Resp rate;38
+0=Vorerkrankungen, 1=Hauptdiagnose, ab 2 sonstige Diagnosen;Insp gas flow on vent Airway;38
+Temperatur bei der PICCO Messung;Body temperature;54
+Bluttemperatur bei der HZV Messung;Body temperature;52
+Beschreibung der Magensaftes;Pressure support setting Vent;46
+Dokumentation der eingestellten Temperatur am ECMO Gerät;O2/Total gas setting VFr Vent;40
+Dokumentationsmöglichkeit des Füllstandes des Auffangbehältnisses für den Magensaft;Blood pressure panel with all children optional;38
+Eingestellter Temperaturwert an der ECMO (Gerät);Body temperature;43
+"Dokumentation der Tätigkeit ""Flushen"" bei Einsatz eines ECMO Verfahrens";LV Cardiac index Indicator dilution;39
+"Dokumentation der Tätigkeit ""Flushen"" bei Einsatz eines ILA Verfahrens";Blood pressure panel with all children optional;39
+Angeordnete Temperatureinstellung bei ECMO Verfahren;PEEP on vent Respiratory;42
+Statusdokumentation eines implantierten AICD;Away press delta on vent PressDiff;41
+Listenauswahl;Nasal temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Dokumentation der eingestellten Tubuskompensation;LV Cardiac index Indicator dilution;40
+Dokumentation der zeitlichen Dauer der CPR.;Pressure support setting Vent;45
+Dokumentierte Dauer der pflegerischen Assistenz bei therapeutischen, diagnostischen und oder operativen Interventionen.;Blood pressure panel with all children optional;33
+Dokumentation durchgeführter diagnostischer Maßnahmen.;Mean Pres on vent Airway;40
+indirekte Lichtreaktion;PEEP on vent Respiratory;43
+indirekte Lichtreaktion;PEEP on vent Respiratory;43
+Zeitpunkt für den die Pupillenreaktion erfasst wurde.;PEEP on vent Respiratory;45
+indirekte Lichtreaktion;PEEP on vent Respiratory;43
+indirekte Lichtreaktion;PEEP on vent Respiratory;43
+Zeitpunkt für den die Pupillenreaktion erfasst wurde.;PEEP on vent Respiratory;45
+Liste;Oral temp;43
+Liste;Oral temp;43
+Über eine Messsonde transcutan gemessener Prozentwert;Breaths.spont+mech on vent;44
+Über eine Sonde gemessener regionaler cerebraler Blutfluss.;Blood pressure panel with all children optional;37
+transcutan gemessener pCO2 Wert.;Bdy weight Prctl Per Age;47
+Zielwert für den ICP Wert unter Hirndrucktherapie;ICP;100
+Zielwert für den CPP unter Hirndrucktherapie;Blood pressure panel with all children optional;38
+Zielwert für den intraparenchymen Sauerstoffpartialdruck ermittelt über PtiO2 Sonde;Blood pressure panel with all children optional;36
+Gemessener Sauerstoffpartialdruck im Parenchym;Pressure support setting Vent;35
+Über eine Messsonde transcutan gemessener Prozentwert;Breaths.spont+mech on vent;44
+Dokumentationsmöglichkeit für die Zielvorgabe des Natriumwertes;LV Cardiac index Indicator dilution;40
+Dokumentationsmöglichkeit für die Zielvorgabe des Kaliumwertes;Pressure support setting Vent;38
+"Anordnungsmöglichkeit bzgl. der Drainagenhöhe ";Bdy weight Prctl Per Age;39
+Anordnungsmöglichkeit für den Sog einer Drainage;LV Cardiac index Indicator dilution;42
+Dokumentation der Applikationsform bei Atemtherapie mittels EzPAP;Blood pressure panel with all children optional;39
+Messung des PAP unter der Atemtherapie EzPAP;PAW @ mean exp flow on vent;41
+Liste;Oral temp;43
+Liste;Oral temp;43
+Rotationswinkel;Insp/Exp time Ratio;41
+Rotationswinkel;Insp/Exp time Ratio;41
+Rotationszeit/Haltezeit;Heart rate;48
+Haltedauer;Heart rate;50
+Schläge /sek;LV SV;40
+Listeneintrag;Insp time set Vent;45
+Listenauswahl;Nasal temp;43
+Einstellung der Lage;Pressure support setting Vent;41
+Liste;Oral temp;43
+Dokumentation der Versorgung von einen sterbenden Patienten.;LV Cardiac index Indicator dilution;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Beschreibung der Eigenschaft des Sekrets NRR;High press hold time set Vent;41
+Beschreibung der Menge des Trachealsekrets im Verlegungsbericht.;High press hold time set Vent;39
+Beschreibung der Menge des Sekrets NRR im Verlegungsbericht.;Mean Pres on vent Airway;41
+Rchmond Atation Sedtion Sale bei Vrlegung;Exp hold time set Vent;48
+Freitext;Weight;43
+Dokumentation des Zugangswegs bei Schrittmachertherapie im Pflegeverlegungsbericht;Blood pressure panel with all children optional;33
+Pupillendokumentation im Pflegeverlegungsbericht.;SaO2 % Bld Preductal PulseOx;41
+Pupillendokumentation im Pflegeverlegungsbericht.;SaO2 % Bld Preductal PulseOx;41
+Dokumentation der Pupillenisokorie im Pflegeverlegungsbericht.;Away press delta on vent PressDiff;38
+Dokumentation des Cornealreflexes im Pflegeverlegungsbericht.;Blood pressure panel with all children optional;41
+Dokumentation de4s Cornealreflexes im Pflegeverlegungsbericht.;Blood pressure panel with all children optional;41
+Listendoku zusätzl. Personal;SaO2 % Bld Postductal PulseOx;42
+Dokumentation des Sekretverlustes über den Dekubitus in ml.;Pressure support setting Vent;42
+Dokumentation des Sekretverlustes über die Wunden und Defekte in ml.;Blood pressure panel with all children optional;39
+Zeile für einen automatisierten Eintrag, für das Merkmal Sterbebegleitung in INPULS.;Blood pressure panel with all children optional;34
+Messung des Horowitz-Indexes;Horowitz index BldA+IhG-Rto;62
+Einstellwert des NO bei NO Beatmung;Bdy weight Prctl Per Age;43
+Messwert der  NO Konzentration bei NO Beatmung;Bdy weight Prctl Per Age;42
+Messwert der NO2 Konzentration bei NO Beatmung;Bdy weight Prctl Per Age;40
+Referenz auf die Verordnung, welche durch diese Gabe erfüllt wurde.;Blood pressure panel with all children optional;36
+Einheit des Medikamentengabe-Objektes;Exp hold time set Vent;41
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Liste;Oral temp;43
+Marker für die Sterbebegleitung in Inpuls 48 h prä Exitus;Blood pressure panel with all children optional;41
+Liste;Oral temp;43
+Liste;Oral temp;43
+Ist eine Aufnahme geplant chirurgisch, ungeplant chirurgisch oder medizinisch;Insp gas flow on vent Airway;39
+Temperatureinstellung am Gerät Airvo;Body temperature;51
+Einstellunggröße  des Flows am Gerät;Expiratory gas flow on vent Airway;45
+Dokumentation des eingestellten O2 Flusses, welcher am Gerät Airvo angeschlossen ist.;Blood pressure panel with all children optional;40
+Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.;Gas flow.O2 O2 delivery sys;45
+Beschreibung der Schnittstelle vom Gerät zum Patienten;High press hold time set Vent;39
+Dokumentation des Apllikationsweges;Insp gas flow on vent Airway;44
+Liste Highflow Highflow CPAP;Insp flow set Vent;49
+"Edi-Mindestwert ";Ideal bdy weight;52
+"Edi-Spitzenwert ";PEEP on vent Respiratory;46
+"Shallow Breathing Index (Index für flache Atmung) ";LV Cardiac index;48
+"P0.1 ";pO2 ExG;36
+"Elastanz ";SaO2 % BldA;47
+"Atemarbeit, Patient ";Heart rate;57
+"Atemarbeit, Ventilator ";Heart rate;45
+"Exstiratorische Resistenz ";Resp rate;47
+"Inspiratorische Resistenz ";Insp/Exp time Ratio;50
+"Statische Compliance ";Compliance.dynamic Lung;67
+"Dynamische Charakteristika ";Compliance.dynamic Lung;45
+"Gemessene Sauerstoffkonzentration ";Pressure support setting Vent;42
+"Endexspiratorischer Flow ";Expiratory gas flow on vent Airway;55
+"Exsp. Tidalvolumen ";Insp/Exp time Ratio;56
+"Insp. Tidalvolumen ";Insp time set Vent;57
+"Leckage in % ";pCO2 end exp ExG;38
+"MVe [l/min] ";Insp flow set Vent;52
+"Insp. Minutenvolumen ";Inspired min Vol MV;58
+"Spontanes exsp. Minutenvolumen ";Breaths.spont+mech on vent;51
+"Atemfrequenz ";Resp rate;48
+"Spontane Atemzüge pro Minute ";Breaths.spont+mech on vent;53
+"Continuous Positive Airway Pressure ";PAW pressure;80
+"Positiver Endexsp. Druck ";pCO2 end exp ExG;46
+"Mittlerer Atemwegsdruck ";Body temperature;41
+"Atemwegsdruck Pause ";Body temperature;46
+"Atemdruck Spitze ";Resp rate;48
+"Backup Ti [s] ";Insp time set Vent;41
+"Backup I:E [Einstellung] ";Breaths.spont+mech on vent;42
+"Backup DK über PEEP [cmH2O] ";PEEP on vent Respiratory;42
+"Backup Frequenz [n/min] ";Inspired min Vol MV;40
+"Backup Vt [ml] ";Breaths.mechanical on vent;42
+"Automode Triggerfenster (s) ";Exp hold time set Vent;47
+"Gewicht (kg) ";Weight;50
+"EDI Trigger ";Resp rate;40
+"Nava Pegel ";Nasal temp;50
+"Sauerstoffkonzentration ";VT setting Vent;42
+"zeit unteres Druckniveau (tniedrig) ";Mean Pres on vent Airway;42
+"zeit oberes Druckniveau (thoch) ";Mean Pres on vent Airway;42
+"PEEP ";PEEP on vent Respiratory;100
+"Druckunterstüzung hoch (cmH2O) ";Spont+mech VT on vent;38
+"Phoch (cmH2O) ";Head Circumf OFC;44
+"Phoch (cmH2O) ";Head Circumf OFC;44
+"DU über PEEP ";PEEP on vent Respiratory;53
+"DK über PEEP ";PEEP on vent Respiratory;53
+"Drucktrigger ";Resp rate;38
+"Flowtrigger ";Horowitz index BldA+IhG-Rto;42
+"TPause (%) ";Body temperature;45
+"TPause (s) ";Body temperature;50
+"I:E [Einstellung] ";Insp/Exp time Ratio;47
+"End. Insp. Zyklusende (% des Spitzenflows) ";Insp time set Vent;48
+"Insp.-Anstiegszeit (%) ";Insp time set Vent;63
+"Insp.-Anstiegszeit (s) ";Insp time set Vent;59
+"Pausendauer [s] ";SaO2 % Bld Preductal PulseOx;41
+"Pausendauer ";PAW pressure;43
+"Ti (s) ";PV RI;44
+"CMV Frequenz ";PAW pressure;42
+"SIMV Frequenz ";SV RI;44
+"Atemfrequenz ";Resp rate;48
+"Tidalvolumen ";LV Output Indicator dilution;40
+PLZ;CVP;33
+Dokumentation der durchgeführten Spitzfußprophylaxe.;Away press delta on vent PressDiff;39
+Dokumentation der Füllstandsmenge des Auffandbehälters.;Away press delta on vent PressDiff;40
+Dokumentation des Wechsels der Beatmungsbeutels.;Breaths.mechanical on vent;38
+Dokumentation des Wechsels der Beatmungsmasken.;Breaths.spont+mech on vent;42
+Dokumentation des prozentualen Anteil des Aufblasens des Ballons.;Blood pressure panel with all children optional;43
+Dokumentation des prozentualen Anteils des Leersaugens des Ballons.;Blood pressure panel with all children optional;46
+Dokumentation des Unterstützungsdruckes.;Blood pressure panel with all children optional;40
+Dokumentation des verwendeten Ballonkatheters.;Breaths.mechanical on vent;48
+Dokumentation des Ballonvolumens.;Low press hold time set Vent;40
+Dokumentation der gewählten EG Ableitung für den IABP Einsatz.;Blood pressure panel with all children optional;42
+Dokumentation der IABP Frequenz.;Mean Pres on vent Airway;44
+Dokumentation des ausgewählten Triggers der IABP.;Blood pressure panel with all children optional;40
+Dokumentation des gemessenen Blutdruckes unter IABP.;Blood pressure panel with all children optional;43
+Inhalte der Prämedikation;Insp/Exp time Ratio;47
+Präanästhetische Anordnung Option.;Blood pressure panel with all children optional;49
+Präanästhetische Anordnung nüchtern ab definiertertem Zeitpunkt.;Blood pressure panel with all children optional;39
+Präanästhetische Anordnung spezielle Untersuchung.;Low press hold time set Vent;40
+Präanästhetische Anordnung BZ Tagesprofil.;Low press hold time set Vent;39
+Präanästhetische Anordnung Gerinnung.;Mean Pres on vent Airway;41
+Präanästhetische Anordnung Wiedervorstellung.;Low press hold time set Vent;40
+Präanästhetische Anordnung aktuelles EKG;Bdy weight Prctl Per Age;42
+Präanästhetische Anordnung Schilddrüsenwerte.;Low press hold time set Vent;41
+Präanästhetische Anordnung aktuelles Labor.;Bdy weight Prctl Per Age;41
+Präanästhetische Anordnung nüchtern bleiben.;Bdy weight Prctl Per Age;44
+Name des Anästhesisten, der die Prämedikation erstellt.;High press hold time set Vent;43
+Präanästhetische Anordnung: Anzahl der anzufordernden Einheiten an Eigenblut.;Blood pressure panel with all children optional;42
+Präanästhetische Anordnung: Anzahl der anzufordernden Einheiten an TKs.;Blood pressure panel with all children optional;40
+Präanästhetische Anordnung: Anzahl der anzufordernden Einheiten an FFPs.;Blood pressure panel with all children optional;40
+Präanästhetische Anordnung: Anzahl der anzufordernden Einheiten an EKs.;Blood pressure panel with all children optional;40
+Dokumentation des geplanten OP Datums.;Breaths.mechanical on vent;44
+Dokumentation freier Arztwahl;Mean Pres on vent Airway;53
+Ort;Oral temp;50
+Dokumentation der vorläufigen Diagnose;Insp/Exp time Ratio;46
+Dokumentation der Art des geplanten Eingriffes.;Mean Pres on vent Airway;46
+Dokumentation der klinischen Fachrichtung der OP;LV Cardiac index Indicator dilution;43
+Dokumentation, wenn OSAS CPAP versorgt ist.;O2/Total gas setting VFr Vent;49
+Dokumentation, wenn OSAS vorliegt.;Pressure support setting Vent;46
+Dokumentation, wenn Opiatgewöhnung vorliegt.;LV SV Indicator dilution;43
+Dokumentation, wenn eine Infektion vorliegt.;LV Output Indicator dilution;46
+Dokumentation, wenn schwieriger Atemweg bekannt ist.;Away press delta on vent PressDiff;43
+Dokumentation, wenn PONV vorliegt.;Spont+mech VT on vent;49
+Dokumentation, wenn MH-Disposition vorliegt;Inspired min Vol MV;46
+Dokumentation, wenn Reflux besteht.;Breaths.mechanical on vent;47
+Dokumentation Anästhesierelevanter Vorerkrankungen des Patienten.;Blood pressure panel with all children optional;40
+Dokumentation früherer durchgeführter Anästhesien;Pressure support setting Vent;40
+Doku Noteingriff.;Spont VT on vent;38
+Doku Dringlicher Eingriff.;LV SVI Indicator dilution;40
+Doku Wahleingriff.;Body height;43
+Doku einer vorliegenden Patientenverfügung.;PEEP on vent Respiratory;40
+Doku ASA Hirntod.;Horowitz index BldA+IhG-Rto;42
+Doku ASA V.;LV Cardiac index;46
+Doku ASA IV.;LV Cardiac index;44
+Doku ASA III.;SaO2 % BldA;38
+Doku ASA II.;SaO2 % BldA;40
+Doku ASA I.;SaO2 % BldA;42
+Doku Einwilligung DE.;Compliance.dynamic Lung;42
+Doku Einwilligung ICU.;LV SVI Indicator dilution;39
+Doku Einwilligung BK.;Body height;39
+Doku Einwilligung DIB.;Compliance.dynamic Lung;41
+Doku Einwilligung Fem. Katheter.;PAW @ zero insp flow on vent;39
+Doku Einwilligung Art. Katheter.;O2/Total gas setting VFr Vent;44
+Doku Einwilligung BTx.;Body height;38
+Doku Einwilligung TEE.;VT setting Vent;39
+Doku Einwilligung PAK.;LV Output Indicator dilution;37
+Doku Einwilligung ZVK.;LV SV Indicator dilution;40
+Doku Einwilligung thorakale PDA.;LV SV Indicator dilution;44
+Doku Einwilligung Plexusanästhesie.;Away press delta on vent PressDiff;39
+Doku Einwilligung Chefvwertreter.;Compliance.dynamic Lung;36
+Doku Einwilligung QEA.;Compliance.dynamic Lung;36
+Doku Einwilligung PDA.;LV Output Indicator dilution;37
+Doku Einwilligung SpA.;LV SV Indicator dilution;40
+Doku Einwilligung AS.;Compliance.dynamic Lung;42
+Doku Einwilligung Deep Sedierung.;Exp hold time set Vent;41
+Doku Einwilligung Sedierung.;Compliance.dynamic Lung;40
+Doku Einwilligung fieberoptische Intubation.;LV Cardiac index Indicator dilution;38
+Doku Einwilligung Kaudale.;LV SV Indicator dilution;37
+Doku Einwilligung ITN.;VT setting Vent;39
+Doku Neurologie Option 2.;pCO2 end exp ExG;40
+Doku Neurologie ICP Erhöhung.;ICP;100
+Doku Neurologie Krampfleiden.;Compliance.dynamic Lung;39
+Doku Neurologie Parese.;Low press hold time set Vent;40
+Doku Neurologie Wert.;Ideal bdy weight;44
+Doku Neurologie Option 1.;pCO2 end exp ExG;40
+Doku Neurologie GCS.;Horowitz index BldA+IhG-Rto;39
+Doku Neurologie Ischämie.;Horowitz index BldA+IhG-Rto;40
+Doku Neurologie ohne pathologischen Befund.;Horowitz index BldA+IhG-Rto;41
+Doku Allergien Option 2.;LV Output Indicator dilution;39
+Doku Allergie Kontrastmittel.;Compliance.dynamic Lung;39
+Doku Allergie Kontakt.;LV Output;40
+Doku Allergie Allergiepass;Gas flow.O2 O2 delivery sys;40
+Doku Allergien Option 1.;LV Output Indicator dilution;39
+Doku Allergie Antibiotikum.;Insp/Exp time Ratio;44
+Doku Allergien Pollen.;Mean Pres on vent Airway;44
+Doku Allergie Keine;LV Cardiac index;40
+Doku Medikation AT Antagonist.;LV Cardiac index Indicator dilution;41
+Doku Medikation Analgetikum.;LV Cardiac index Indicator dilution;42
+Doku Medikation Antidiabetikum.;LV Cardiac index Indicator dilution;43
+Doku Medikation Keine.;PEEP on vent Respiratory;49
+Doku Medikation Option 3.;LV Output Indicator dilution;46
+Doku Medikation Antikoagulans.;Insp gas flow on vent Airway;42
+Doku Medikation Sartan.;PAW @ mean exp flow on vent;43
+Doku Medikation ACE Hemmer.;Bdy weight Prctl Per Age;44
+Doku Medikation Option 1.;LV Output Indicator dilution;46
+Doku Medikation Nitrat.;LV SV Indicator dilution;48
+Doku Medikation Antiarrhythmikum;LV Cardiac index Indicator dilution;39
+Doku Medikation NNR Hormon;Horowitz index BldA+IhG-Rto;45
+Doku Medikation Option 2.;LV Output Indicator dilution;46
+Doku Medikation Beta blocker.;SaO2 % Bld Preductal PulseOx;41
+Doku Medikation Kalziumantagonist;LV SV Indicator dilution;42
+Doku Medikation Diuretikum.;LV SV Indicator dilution;48
+Dokumentation Stoffwechsel Zusatzoption;LV Output Indicator dilution;45
+Doku Stoffwechsel Hyperthyreose.;Low press hold time set Vent;41
+Doku Stoffwechsel Immobilisation.;LV SV Indicator dilution;39
+Doku Stoffwechsel Gravidität / Gestose.;Away press delta on vent PressDiff;38
+Doku Stoffwechsel C2H5OH Tagesdosis.;Low press hold time set Vent;38
+Doku Stoffwechsel ohne pathologischen Befund.;Bdy weight Prctl Per Age;38
+Doku Stoffwechsel Niereninsuffizienz.;Head Circumf OFC;35
+Doku Stoffwechsel C2H5OH.;Spont+mech VT on vent;36
+Doku Stoffwechsel Hepathopathie.;Head Circumf OFC;38
+Doku Stoffwechsel Diabetes.;Breaths.spont+mech on vent;38
+Dokumentation der Mallampati Klassifikation.;LV Output Indicator dilution;45
+Dokumentation der Mallampati Klassifikation.;LV Output Indicator dilution;45
+Dokumentation der Mallampati Klassifikation.;LV Output Indicator dilution;45
+Dokumentation der Mallampati Klassifikation.;LV Output Indicator dilution;45
+Dokumentation der Mallampati Klassifikation.;LV Output Indicator dilution;45
+Dokumentation des Abstandes Kinnspitze Kehlkopf.;Away press delta on vent PressDiff;40
+Dokumentation des Abstandes Kinnspitze Kehlkopf.;Away press delta on vent PressDiff;40
+Dokumentation des Abstandes Kinnspitze Kehlkopf.;Away press delta on vent PressDiff;40
+Dokumentation des Abstandes Kinnspitze Kehlkopf.;Away press delta on vent PressDiff;40
+Dokumentation der Möglichkeit zur Kopfreklination;LV SV Indicator dilution;42
+Dokumentation der Möglichkeit zur Kopfreklination;LV SV Indicator dilution;42
+Dokumentation der Möglichkeit zur Kopfreklination;LV SV Indicator dilution;42
+"Dokumentation der Möglichkeit zur Kopfreklination ";LV SV Indicator dilution;42
+Dokumentation der Sauerstoffsättigung.;Pressure support setting Vent;43
+Dokumentation des Blutdruckes.;Low press hold time set Vent;42
+Dokumentation der Pulsfrequenz.;Mean Pres on vent Airway;48
+Dokumentation der Aufnahmeart.;Heart rate;46
+Dokumentation der Aufnahmeart.;Heart rate;46
+Dokumentation der Aufnahmeart.;Heart rate;46
+Land;SaO2 % BldA;31
+Dokumentation der Aufnahmeart.;Heart rate;46
+Dokumentation des Patientengewichts.;PAW @ mean exp flow on vent;47
+Dokumentation der Patienntengröße.;PAW @ mean exp flow on vent;50
+Dokumentation der Klinik und der Station des Patienten;LV Cardiac index Indicator dilution;45
+Dokumentation einer BGA;O2/Total gas setting VFr Vent;50
+Doku des Thrombozyten Wertes.;PAW @ mean exp flow on vent;42
+Doku des Hb Wertes.;Esoph temp;50
+Doku des Leukozyten Wertes.;PAW @ mean exp flow on vent;43
+Doku des Fibrinogen Wertes.;PAW @ mean exp flow on vent;43
+Doku des APPT Wertes.;Resp rate;48
+Doku des INR Wertes.;Insp flow set Vent;43
+Doku des Quick Wertes.;Bdy weight Prctl Per Age;40
+Doku des TSH Wertes.;Esoph temp;48
+Doku des Glucose Wertes.;Ideal bdy weight;41
+Doku des Gamma GT Wertes.;PAW @ mean exp flow on vent;45
+Doku des GOT Wertes.;Spont+mech VT on vent;45
+Doku des CRP Wertes.;PAW pressure;45
+Doku des CK Wertes.;Esoph temp;43
+Doku des GPT Wertes.;Esoph temp;48
+Doku des Harnstoo N Wertes.;PAW @ mean exp flow on vent;47
+Doku des Creatinin Wertes.;Resp rate;47
+Doku des Calcium Wertes.;Mean Pres on vent Airway;43
+Doku des Kalium Wertes.;Ideal bdy weight;47
+Doku des Natrium Wertes.;Exp hold time set Vent;44
+Doku Herz Kreislauf Ödeme.;Bdy weight Prctl Per Age;42
+Doku Herz Kreislauf AVK;Bdy weight Prctl Per Age;43
+Doku Herz Kreislauf Schrittmacher.;Low press hold time set Vent;39
+Doku Herz Kreislauf Arrhythmie;Mean Pres on vent Airway;41
+Doku Herz Kreislauf Vitium.;PEEP on vent Respiratory;44
+Doku Herz Kreislauf Allen Test rechts.;Bdy weight Prctl Per Age;46
+Doku Herz Kreislauf Allen Test links.;Bdy weight Prctl Per Age;43
+Doku Herz Kreislauf Allen Test.;Bdy weight Prctl Per Age;48
+Doku Herz Kreislauf Infarkt.;Heart rate;43
+Doku Herz Kreislauf Herzinsuffizinez.;Horowitz index BldA+IhG-Rto;38
+Doku Herz Kreislauf KHK.;Body height Prctl;40
+Doku Herz Kreislauf Flüssigkeits / Volumen Defizit.;Away press delta on vent PressDiff;42
+Doku Herz Kreislauf Hypotonieneigung.;Blood pressure panel with all children optional;39
+Doku Herz Kreislauf Hypertonie;Bdy weight Prctl Per Age;41
+"Doku Herz Kreislauf ";Heart rate;41
+Doku Herz Kreislauf Ruhe EKG.;PEEP on vent Respiratory;42
+Doku Lunge Röntgen Thorax.;Spont VT on vent;45
+Doku Lunge Auskultation.;Compliance.dynamic Lung;43
+Doku Lunge FEV1.;Compliance.dynamic Lung;37
+Doku Lunge FVC.;Compliance.dynamic Lung;43
+Doku Lunge Beatmungseinstellung.;Breaths.mechanical on vent;42
+Doku Lunge Anzahle der Pack Years.;Gas flow.O2 O2 delivery sys;39
+Doku Lunge Pack Years.;LV SV Indicator dilution;40
+Doku Lunge Beatmung vorhanden ja/nein.;Breaths.mechanical on vent;44
+Doku Lunge COPD.;Compliance.dynamic Lung;53
+EMail;Axil temp;43
+Doku Lunge ohne pathologischen Befund.;PAW @ mean exp flow on vent;42
+Doku Lunge Asthma Bronchiale.;Breaths.mechanical on vent;48
+Doku Lunge Inspiratorischer Stridor.;LV SVI Indicator dilution;50
+Doku Lunge Restriktion.;PEEP on vent Respiratory;48
+Doku Lunge Infekt.;Insp flow set Vent;46
+Doku Kardiologische Diagnostik P LV.;LV SV;57
+Doku Kardiologische Diagnostik R/L Shunt.;LV SV Indicator dilution;41
+Doku Kardiologische Diagnostik EF.;Bdy weight Prctl Per Age;39
+Doku Kardiologische Diagnostik L/R Shunt.;LV SV Indicator dilution;41
+Doku Kardiologische Diagnostik dP.;Bdy weight Prctl Per Age;39
+Doku Kardiologische Diagnostik P AO.;LV Output Indicator dilution;38
+Doku Kardiologische Diagnostik P LA.;LV SV Indicator dilution;41
+Doku kardiologische Diagnostik CI.;LV Cardiac index Indicator dilution;41
+Doku Kardiologische Diagnostik PCWP.;LV Output Indicator dilution;38
+Doku Kardiologische Diagnostik P PA.;SaO2 % Bld Postductal PulseOx;39
+Doku Kardiologische Diagnostik P RV.;LV SV Indicator dilution;41
+Doku Kardiologische Diagnostik P RA.;SaO2 % Bld Postductal PulseOx;39
+Doku Kardilogische Diagnostik Option 2.;LV Output Indicator dilution;39
+Doku Kardiologische Diagnostik Option 1.;LV Output Indicator dilution;42
+Doku Kardiologische Diagnostik UKG / Angio;Compliance.dynamic Lung;38
+Dokumentation von welcher Person das Medikament verabreicht wurde.;O2/Total gas setting VFr Vent;40
+Dokumentation der Applikationsform des verordneten Medikaments.;Mean Pres on vent Airway;40
+Dokumentation der Dosis des verordneten Medikaments.;Away press delta on vent PressDiff;45
+Dokumentation des Medikamentes, welche als Prämedikation appliziert werden soll.;Blood pressure panel with all children optional;40
+Dokumentation der Uhrzeit zu der  die Prämedikation appliziert werden soll.;Blood pressure panel with all children optional;42
+Dokumentation des Tages an dem die Prämedikation appliziert werden soll. In der Regel Vorabend des OP Tages oder OP Tag.;LV Cardiac index Indicator dilution;37
+Vertretung;Heart rate;50
+Dokumentation des eingestellten PEEP.;PEEP on vent Respiratory;47
+Dokumentation des Alters des Patienten.;Pressure support setting Vent;48
+Dokumentation des eingestellten Pmax.;VT setting Vent;43
+Dokumentation des eingestellten Triggers.;VT setting Vent;44
+Dokumentation der eingestellten Rampenzeit.;Blood pressure panel with all children optional;43
+Dokumentation der Inspirationszeit. Verhältnis zwischen Tip und Tinsp. 0 bis 60 %.;Blood pressure panel with all children optional;39
+Dokumentation der Inspirationszeit.;LV SVI Indicator dilution;51
+Dokumentation des eingestellten Pressure Support.;PAW pressure;80
+Dokumentation der eingestellten Frequenz.;O2/Total gas setting VFr Vent;43
+Dokumentation ders eingestellten Vt.;VT setting Vent;52
+Dokumentation des gemessenen Beatmungsspitzendruck.;Breaths.mechanical on vent;39
+Dokumentation des gemessenen Plateaudruckes.;Away press delta on vent PressDiff;42
+Dokumentation des gemessenen PEEPs.;Away press delta on vent PressDiff;44
+Dokumention des gemessenen endtidalen;LV SV Indicator dilution;46
+Inspiratorisch gemessenes CO2.;PEEP on vent Respiratory;49
+Gemessenes Atemminutenvolumen.;Mean Pres on vent Airway;42
+Gemessenes Tidalvolumen.;O2/Total gas setting VFr Vent;46
+Gemessene Atemfrequenz.;Mean Pres on vent Airway;39
+Gemessene Leckage.;pCO2 end exp ExG;36
+Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.;Blood pressure panel with all children optional;32
+Gemessene inspiratorische O2 Konzentration.;PEEP on vent Respiratory;45
+Gemessene exspiratorische O2 Konzentration.;Expiratory gas flow on vent Airway;47
+Gemessener MAC Wert. (endexspiratorische mittlere alveoläre Konzentration);Blood pressure panel with all children optional;41
+"Inspiratorisch gemessene Halothan Konzentration. ";Expiratory gas flow on vent Airway;42
+Exspiratorisch gemessene Halothankonzentration.;Expiratory gas flow on vent Airway;45
+Inspiratorisch gemessene Enfluran Konzentration.;PEEP on vent Respiratory;48
+Exspiratorisch gemessene Enfluran Kozentration.;Expiratory gas flow on vent Airway;50
+Inspiratorisch gemessene Isofluran.;PEEP on vent Respiratory;45
+Exspiratorisch gemessene Isofluran Konzentration.;Expiratory gas flow on vent Airway;46
+Inspiratorisch gemessene Desfluran Konzentration.;PEEP on vent Respiratory;47
+Exspiratorisch gemessene Desfluran Konzentration.;Expiratory gas flow on vent Airway;51
+Inspiratorisch gemessene Sevofluran Konzentration.;Pressure support setting Vent;41
+Exspiratorisch gemessene Sevofluran Konzentration.;Pressure support setting Vent;44
+Gemessener Frischgas Flow.;PAW @ zero insp flow on vent;51
+An der Flowröhre eingestellter O2 Frischgasflow.;Gas flow.O2 O2 delivery sys;49
+An der Flowröhre eingestellter Frischgas Flow für Air.;Expiratory gas flow on vent Airway;45
+Eingestellter Inspiration Druck.;PEEP on vent Respiratory;44
+Eingestellte Mindestfrequenz (Apnoeventilation) in dme Modus Pressure Support.;PAW pressure;80
+Dokumentation des eingestellten I : E.;VT setting Vent;44
+Arztdoku S. 10;Resp rate;36
+Vt in der Backupeinstellung;VT setting Vent;48
+Frequenzeinstellung inder Backupeinstellung.;LV Cardiac index Indicator dilution;38
+Apnoezeiteinstellung in der Backupeinstellung.;Pressure support setting Vent;38
+gemessenes Schlagvolumen;Mean Pres on vent Airway;38
+Wert des gemessenen Schlagvolumenindex.;Breaths.mechanical on vent;44
+Gesamt Frischgasfluss (Summe aus O2 + AIR);Insp gas flow on vent Airway;45
+Eingestelter Patientengewicht am Pallas;Insp time set Vent;42
+Gemesener Atemwegsmitteldruck;Breaths.spont+mech on vent;36
+Test;Resp rate;46
+Freitext;Weight;43
+Inspirationszeit maximal;Inspired min Vol MV;56
+Aktiv;SV RI;40
+Grundfrequenz;Pressure support setting Vent;33
+Empfindlichkeit;Ideal bdy weight;39
+Stimulation;VT setting Vent;38
+Listenauswahl;Nasal temp;43
+Listenauswahl;Nasal temp;43
+Grundfrequenz;Pressure support setting Vent;33
+Empfindlichkeit;Ideal bdy weight;39
+Empfindlichkeit Ventrikel;Insp flow set Vent;47
+Stimulation Vorhof;Inspired min Vol MV;43
+Stimulation Ventrikel;VT setting Vent;56
+AV Überleitungszeit;Bdy weight Prctl Per Age;48
+Überstimulationsfrequenz Vorhof;VT setting Vent;40
+Rapid Pacing Stimulationsfrequenz;Mean Pres on vent Airway;46
+postventrikuläre atriale Refraktärzeit;PEEP on vent Respiratory;43
+atriale Refraktärzeit;Heart rate;47
+ventrikuläre Stimulationsfrequenz;Mean Pres on vent Airway;43
+obere Frequenzbegrenzung;Pressure support setting Vent;42
+Liste;Oral temp;43
+abhängig in ES der Sense-Liste;High press hold time set Vent;52
+Art d.Narkosegas;Resp rate;48
+kontrollierte Wassertemperatur, gemessener Wert;PEEP on vent Respiratory;43
+Name des Anästhesisten, der als entlassender Anästhesist auf dem Ausdruck des Anästhesieprotokolls erscheint.;Blood pressure panel with all children optional;34
+Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.;LV Cardiac index;48
+entspricht der SR Anzeige am Gerät. Burst Supression Ratio;PEEP on vent Respiratory;43
+neu angelegt am 18.05.2012;PAW @ zero insp flow on vent;35
+Neuanlage 18.05.2012 String;Ideal bdy weight;33
+Anlage 18.05.2012 String;Low press hold time set Vent;31
+Anlage 18.05.2012;PAW @ mean exp flow on vent;29
+Listenauswahl;Nasal temp;43
+Listenauswahl;Nasal temp;43
+Der dokumentierte Füllstand des Auffangbehälters der subglotischen Absaugung.;Away press delta on vent PressDiff;35
+Dokumentierte Menge des extrahierten subglottischen Sekrets.;Pressure support setting Vent;41
+Der am Gerät gemessene Sog bei der Verwendung eines Gerätes zur subglottischen Absaugung.;Away press delta on vent PressDiff;36
+Der eingestellte Modus am Gerät beim Einsatz der subglottischen Absaugung.;Blood pressure panel with all children optional;35
+Dokumentierter Zeitpunkt, zu dem der Aufwachversuch abgebrochen wurde.;Mean Pres on vent Airway;37
+Gründe für den Abbruch des dokumentierten Aufwachversuches.;Breaths.spont+mech on vent;39
+Möglichkeit Freitext zu einem Aufwachversuch zu dokumentieren.;LV Cardiac index Indicator dilution;41
+CAM ICU Einschätzung des dokumentierten Aufwachversuches.;Mean Pres on vent Airway;38
+Beurteilung der Motorik im dokumentierten Aufwachversuches.;Pressure support setting Vent;39
+Beurteilung des Augen öffnens im dokumentierten Aufwachversuches.;Pressure support setting Vent;41
+Beurteilung der Schutzreflexe im dokumentierten Aufwachversuches.;LV Cardiac index Indicator dilution;38
+Beurteilung der Vegetativen Reaktion im dokumentierten Aufwachversuches.;LV Cardiac index Indicator dilution;38
+Dokumentation des  Aufwachversuches. Dürchführung Ja /Nein.;Pressure support setting Vent;39
+Datum des dokumentierten Aufwachversuches.;High press hold time set Vent;40
+Eingestelltes Körpergewicht beim respirator C2.;PEEP on vent Respiratory;46
+Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben.;Breaths.spont+mech on vent;37
+Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.;Blood pressure panel with all children optional;32
+Eingestellter PEEP, CPAP oder Ptief am C2.;Away press delta on vent PressDiff;41
+Eingestellter Pkontrol oder Phoch am C2.;O2/Total gas setting VFr Vent;44
+"Eingestellte CMV Frequenz bei dem Respirator C2  in den Beatmungsmodi DUOPAP, APVcmv, Pcmv, ";Blood pressure panel with all children optional;39
+Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.;Blood pressure panel with all children optional;38
+Eingestelltes Körpergewicht.;Body height Prctl;42
+"Eingestellte CMV Frequenz bei dem Respirator G5 in den Beatmungsmodi DUOPAP, APVcmv, Pcmv, ";Blood pressure panel with all children optional;39
+Eingestellt SIMV Frequenz bei dem Respirator G5 in den Beatmungsmodi APVsimv, Psimv.;Blood pressure panel with all children optional;37
+Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.;Blood pressure panel with all children optional;36
+Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi.;PEEP on vent Respiratory;37
+Person, die die Wertsachen angenommen hat;Bdy weight Prctl Per Age;43
+Ob alle Wertsachen vollständig ausgehändigt wurden (Ja/Nein);Mean Pres on vent Airway;38
+post operative Empfehlung der Pflege bei Verlegung AWR 24h;Away press delta on vent PressDiff;41
+Verknüpfung zum entsprechenden Fall zu dem ein Befund erhoben wurde (muss also ggf. bei Abfrage immer mit berücksichtigt werden!);Blood pressure panel with all children optional;33
+freigebender Arzt der übermittelnden Einrichtung;Bdy weight Prctl Per Age;42
+Flag für das logische Löschen;Insp gas flow on vent Airway;44
+Name des Subsystems, ggf. bereits geändert durch den Trigger;Breaths.spont+mech on vent;39
+Dokumentation des Füllstandes des Urinauffang.;Away press delta on vent PressDiff;43
+Dokunentiertes Datum, wenn eine Dekanülierungsplan abgeschlossen wurde.;Away press delta on vent PressDiff;37
+Datum des Anlagezeitpunkts des Dekanülierungsplans.;Breaths.mechanical on vent;37
+0/1-Repräsentation des Storno-Flags aus SAP;Pressure support setting Vent;48
+Transientes Objekt für die temporäre Aufnahme der Vorwerte für die medizinische Dokumentation Untersuchung körperlicher Status;Away press delta on vent PressDiff;34
+Erhebungszeitpunkt des BPS Scores.;Pressure support setting Vent;45
+Dokumentation ob eine Versorgungsvollmacht vorliegt.;Breaths.spont+mech on vent;42
+Dokumentation des ärztlichen Aufnahmebfundes zur Rubrik Abdomen.;Blood pressure panel with all children optional;37
+Befundsdokumentation des Aufnahme EKGs;Away press delta on vent PressDiff;42
+Dokumentierender Mitarbeiter.;O2/Total gas setting VFr Vent;39
+Link zu einem Befundobjekt;Exp hold time set Vent;38
+"Beinhaltet den Namen der Bettplätze, wie er aus SAP bekannt ist. ";Blood pressure panel with all children optional;39
+Laufende Nummer aus SAP, zur eindeutigen Identifikation eines Datensatzes;LV Cardiac index Indicator dilution;41
+Keim-Objekt für die Zuordnung von Antibiogrammen und das Speichern der Erregerinformationen;Expiratory gas flow on vent Airway;34
+Objektstruktur für die Aufnahme von strukturierten Antibiogrammen;High press hold time set Vent;39
+Winkel der Extremitätenlagerung/Bett/Kopf;Bdy weight Prctl Per Age;38
+Spüllösung die intermittierend appliziert wird, Wert wirdals Bilanzwert verrechnet;Blood pressure panel with all children optional;37
+Dokumentation Oxygenator - Liste;LV SV Indicator dilution;48
+%Systole Verhältnis Systolendauer zur Diastolendauer;O2/Total gas setting VFr Vent;41
+Verhältnis Systole zur Diastolendauer;O2/Total gas setting VFr Vent;46
+Liste - Doku Durchführung;LV SV Indicator dilution;39
+Liste ein aus;Breaths.spont+mech on vent;46
+Liste durchgeführt;Heart rate;52
+"Liste ";Oral temp;43
+"Liste ";Oral temp;43
+bei luftblasen, Liste ein aus;O2/Total gas setting VFr Vent;46
+Liste ein aus;Breaths.spont+mech on vent;46
+Liste durchgeführt;Heart rate;52
+Delta P2/P3;Away press delta on vent PressDiff;62
+Liste;Oral temp;43
+interne (durch Presenter erhoben) oder externer (durch Schnittstelle) Befund;Blood pressure panel with all children optional;41
+Welcher Befundtyp (Beispiel: Konsil, Bildgebung etc.);Blood pressure panel with all children optional;40
+Objekt für die Keime von mikrobiologischen Befunden;Expiratory gas flow on vent Airway;38
+Erregername zur eindeutigen Identifikation des Objekts;LV Output Indicator dilution;41
+Antibiogrammobjekt für die MiBi-Befunde;Bdy weight Prctl Per Age;39
+Link zum Keim eines Antibiogramm-Objekts;Mean Pres on vent Airway;41
+Wirkstoffbezeichnung;Compliance.dynamic Lung;33
+Wirkstoffsensibilität;LV Output Indicator dilution;38
+Für die Filterung auf der Seite Massnahmen, Bildgebung, Diagnostik und Konsile nach Herkunft (extern, d.h. über Schnittstelle, oder intern, d.h. über Presenter dokumentiert);Blood pressure panel with all children optional;31
+Messung nur unter ASV Intellivent;Away press delta on vent PressDiff;42
+Negativ Wert/positiv Wert;Insp time set Vent;47
+Liste ein aus;Breaths.spont+mech on vent;46
+Liste ein aus;Breaths.spont+mech on vent;46
+Liste ein aus;Breaths.spont+mech on vent;46
+Liste ein aus;Breaths.spont+mech on vent;46
+Liste ein aus;Breaths.spont+mech on vent;46
+Liste ein aus;Breaths.spont+mech on vent;46
+Liste ein aus;Breaths.spont+mech on vent;46
+Bereich Decimal - bis +;Breaths.mechanical on vent;49
+Bereich Decimal - bis +;Breaths.mechanical on vent;49
+Uhrzeit;Weight;46
+Zeit zwishen 2 SBT;Insp time set Vent;44
+Zeit bis zum Start STB;Insp time set Vent;50
+Tabellen-Object-Variable für den Befundtest aus der Virologie;O2/Total gas setting VFr Vent;40
+Auf was getestet wurde;PAW pressure;47
+Anpassung für automatische Gerätedataenübernahme mit IBUS;Blood pressure panel with all children optional;36
+Anpassung für IBUS Anbindung;Blood pressure panel with all children optional;41
+Anpassung IBUS Anbindung;Blood pressure panel with all children optional;39
+Anpassung für IBUS Anbindung;Blood pressure panel with all children optional;41
+Anpassung für IBUS Anbindung;Blood pressure panel with all children optional;41
+Anpassung für IBUS;PAW pressure;41
+Anpassung für IBUS Anbindung;Blood pressure panel with all children optional;41
+Anpassung für IBUS Anbindung;Blood pressure panel with all children optional;41
+Anpassung aufgrund IBUS Anbindung;Blood pressure panel with all children optional;38
+Anpassung für die automatische Datenübermnahme IBUS;O2/Total gas setting VFr Vent;38
+Anpassung für die automatische Datenübernahme IBUS;O2/Total gas setting VFr Vent;39
+Änderung für die automatische Datenübernahme IBUS;Compliance.dynamic Lung;43
+Anpassung für automatische Datenübernahme IBUS;O2/Total gas setting VFr Vent;41
+Neuanlage im Zuge der IBUS Anbindung;High press hold time set Vent;40
+Anpassung im Zuge der automatischen Geräteanbindung über IBUS. Änderung in ml;Pressure support setting Vent;33
+"Anpassung analog zu Geräten mit automatischer Datenübernahme Änderung in ml ";Compliance.dynamic Lung;36
+automatische Datenübernahme IBUS;Compliance.dynamic Lung;44
+Anpassung im Zuge der automatischen Datenübernahme IBUS;Compliance.dynamic Lung;36
+neue Variable für automatische Datenübernahme IBUS;Compliance.dynamic Lung;37
+Texteintrag;Insp/Exp time Ratio;40
+Anlage für IBUS Datenübermittlung;Compliance.dynamic Lung;44
+Anlage für IBUS Datenübermittlung;Compliance.dynamic Lung;44
+Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur;LV Output Indicator dilution;33
+manueller Modus;Compliance.dynamic Lung;37
+Filtermöglichkeit für Systeme (Eingeführt für den Filter auf MLAB/Viro und MiBi-Befunde);Blood pressure panel with all children optional;35
+Wert gemessen am Ventilator;PEEP on vent Respiratory;51
+VT/IBW;SV RI;55
+Flag für eine Fotodokumentation. Gibtkeine Information über Aufnahmezeitpunkt und Anzahl der Fotos;LV Cardiac index Indicator dilution;35
+Enthällt den ConnectionString für die Remote-Verbindung zum COPRA-Pumpeninterface. Dieser folgt dem Schema tcp:--COMPUTERNAME:PORT/ENDPUNKTNAME.;Blood pressure panel with all children optional;29
+Eindeutige Identifikation innerhalb des Geratetyp-Namensraums (z.B. Seriennummer);Blood pressure panel with all children optional;37
+Name des Geräts, der innerhalb des Gerätetyps eindeutig ist, damit Mitarbeiter ihn aus der Liste zuordnen können;Blood pressure panel with all children optional;34
+Verknüpfung zwischen Patient und einem Gerät;Insp time set Vent;43
+Leistungserbringer gueltig ab;Away press delta on vent PressDiff;38
+Oberer Druckniveau;Resp rate;37
+Leistungserbringer gueltig bis;Insp time set Vent;38
+Dienststellung;Insp time set Vent;44
+Archivdruck;SV RI;38
+Archivdruck-Hashalgorithmus;Blood pressure panel with all children optional;38
+Archivdruck-Beginn;LV Cardiac index;41
+Archivdruck-Ende;LV Cardiac index;50
+Archivdruck-Intervall;LV Cardiac index;49
+Archivdruck-Container;LV Cardiac index;43
+Archivdruck-ContainerVersion;Blood pressure panel with all children optional;43
+Archivdruck-Fehlernachricht;Head Circumf OFC;42
+Archivdruck-Druckdatum;Heart rate;38
+Archivdruck-Status;SaO2 % Bld Preductal PulseOx;36
+Archivdruck-Druckobjekt;Breaths.mechanical on vent;37
+Objekt für die Geratedefinition;Insp gas flow on vent Airway;45
+Filtervariable Prämedikation Nachname;Blood pressure panel with all children optional;39
+Systemischer Gefäßwiderstand;Away press delta on vent PressDiff;40
+Schrittmacher AV-Intervall;Insp/Exp time Ratio;40
+Schrittmacher Frequenz;Pressure support setting Vent;39
+Schrittmacher Empfindlichkeit;Insp/Exp time Ratio;42
+Schrittmacher Ausgangsleistung (Output) Ventrikel;LV Output;80
+Schrittmacher Ausgangsleistung (Output) Atrium;LV Output;80
+Schrittmachermodus;Resp rate;37
+Schrittmacher Art;Heart rate;52
+Zerebraler Perfusionsdruck;Body temperature;38
+Intrakranialer Druck;Body temperature;39
+zweiter arterieller Blutdruck;Bdy weight Prctl Per Age;45
+"zweiter nichtinvasiver Blutdruck ";Ideal bdy weight;42
+Linksatrial  Mitteldruck;Insp/Exp time Ratio;43
+Ereignisse Vitlaparameter Graphisch als Listenauswahl;PAW @ zero insp flow on vent;41
+arterieller Blutdruck 1;Body temperature;36
+Schwangerschaftswoche zum Zeitpunkt der Geburt in ganzen Tagen;LV Output Indicator dilution;38
+errechneter Geburtstermin;Rectal temp;44
+Kopfumfang des Patienten in Zentimetern;PAW @ zero insp flow on vent;49
+Zuletzt selektierter Perzentilendatensatz des Patienten;Low press hold time set Vent;39
+Bezugsgewicht des Patienten in kg;Breaths.spont+mech on vent;47
+Geburtsgewicht des Patienten in Kilogramm;Pressure support setting Vent;46
+Bewegungsnummer für die eindeutige Identifizierung der Behandlung;Away press delta on vent PressDiff;35
+Behandlungabschluß;Compliance.dynamic Lung;40
+Medizinischer Behandlungsabschluss;Breaths.mechanical on vent;40
+Behandlung_LEP_Ereignis;Bdy weight Prctl Per Age;38
+Fall;Oral temp;31
+Aufnahmezeitpunkt für den Fall;O2/Total gas setting VFr Vent;38
+Entlassungszeitpunkt für den Fall;O2/Total gas setting VFr Vent;39
+Identifikationsnummer des Falles;Low press hold time set Vent;40
+Behandlung;Compliance.dynamic Lung;42
+Behandlungsort;Breaths.mechanical on vent;40
+Belegung eines Behandlungsortes;Low press hold time set Vent;44
+Medikamentengabe;Heart rate;38
+Medikament;Exp hold time set Vent;44
+Grund der Nicht-Nachverordnung von einer Gabe;Pressure support setting Vent;41
+Medikament einer Verordnung;Insp time set Vent;49
+Darstellung der Medikamentengabe als Objekt;Away press delta on vent PressDiff;39
+nichtinvasiver Blutdruck 1;LV SV Indicator dilution;44
+Behandlung_LEP_Information;Insp/Exp time Ratio;40
+Behandlung_LEP_Zeitstrahl;Breaths.mechanical on vent;35
+Typ der Behandlung;Bdy temp Bladder;53
+Status des Ausdrucks;SaO2 % Bld Preductal PulseOx;39
+Name des Behandlungsortes;Low press hold time set Vent;45
+Der Behandlungsort ist kein Bettplatz;Bdy temp Bladder;45
+Anfangszeitpunkt der Belegung eines Behandlungsortes;Away press delta on vent PressDiff;35
+Endzeitpunkt der Belegung eines Behandlungsortes;Low press hold time set Vent;42
+Grund der Belegung eines Behandlungsortes;Low press hold time set Vent;41
+Medikamentenmischung;Compliance.dynamic Lung;56
+Organisationseinheit;Spont VT on vent;44
+Verordnung von Serien;VT setting Vent;56
+Wird beim Dokumentieren und Nachverordnen einer Gabe erzeugt.;Blood pressure panel with all children optional;37
+Computer;LV Output;47
+INPULS-Pflegekategorie;Insp/Exp time Ratio;44
+gemeldete Beatmungsstunden (in Minuten);Breaths.spont+mech on vent;48
+Tag für den die Pflegekategorie erhoben wurde;Bdy weight Prctl Per Age;38
+Gemeldet am;Insp time set Vent;41
+Pflegekategorie;Resp rate;42
+"IDs der INPULS-Kriterien, welche zur Kategorie geführt haben ... und der zusätzlichen Kategorien";Blood pressure panel with all children optional;35
+Transporte;Heart rate;50
+Betrachtungszeitraum in Minuten;Breaths.mechanical on vent;46
+Pfad für den Export der INPULS-Kategorien;PEEP on vent Respiratory;44
+IDs der INPULS-Kriterien, welche zur Höherstufung der Kategorie dienen;Blood pressure panel with all children optional;38
+IDs der INPULS-Kriterien, welche als Basis zur Kategorie dienen;Blood pressure panel with all children optional;44
+Zeitpunkte der INPULS-Pflegekategorie-Exporte für diese OE;Expiratory gas flow on vent Airway;42
+fachliche Organisationseinheit der Behandlung;Breaths.mechanical on vent;45
+pflegerische Organisationseinheit der Behandlung;Blood pressure panel with all children optional;40
+Beginn der Behandlung;Breaths.mechanical on vent;47
+Ende der Behandlung;Bdy temp Bladder;46
+Code der Diagnose;Body height;43
+Bezeichnung der Diagnose;LV Cardiac index Indicator dilution;41
+Typ der Diagnose;Tymp memb temp;47
+In diesem Objekt werden Verordnungsanforderungen und -befunde zu Diagnostik bzw. Konsilen eingetragen.;Blood pressure panel with all children optional;32
+Diagnostik- bzw. Konsilanforderung angemeldet;Blood pressure panel with all children optional;40
+Befund zur Diagnostik- bzw. Konsilanforderung;PAW @ zero insp flow on vent;43
+Zeitpunkt, zu dem die Diagnostik- bzw. Konsilanforderung geschrieben wurde;Blood pressure panel with all children optional;39
+Fragestellung zur Diagnostik- bzw. Konsilanforderung;PAW @ zero insp flow on vent;37
+Zeitpunkt der erledigten Diagnostik- bzw. Konsilanforderung;Breaths.spont+mech on vent;39
+Name des Arztes, der die Diagnostik- bzw. Konsilanforderung befundet.;Blood pressure panel with all children optional;38
+Kategorie, ob es sich um Diagnostik- oder Konsilanforderung handelt.;Blood pressure panel with all children optional;38
+Lokalisation der zu befundenden Region;Gas flow.O2 O2 delivery sys;39
+Methode der Diagnostik bzw. des Konsils;Breaths.mechanical on vent;44
+Transientes Objekt für Filterkriterien;Insp time set Vent;40
+Filtervariable für ein Beginndatum;O2/Total gas setting VFr Vent;45
+Filtervariable für ein Endedatum;Insp time set Vent;41
+Filtervariable für eine Ganzzahl;Expiratory gas flow on vent Airway;37
+Filtervariable ein Ja-/Nein-Feld;Insp time set Vent;45
+Filtervariable ein Ja-/Nein-Feld;Insp time set Vent;45
+Filtervariable für die VO-Kategorie;LV Cardiac index Indicator dilution;43
+Status der Verordnung/Aufgabe (z.B. offen oder erledigt);Away press delta on vent PressDiff;41
+Termin für die Untersuchung/Massnahme;Insp gas flow on vent Airway;41
+Wiederholung der Untersuchung/Massnahme für x Tage;PAW @ mean exp flow on vent;35
+Anzeigetext der Anordnung/Aufgabe (verwendet für Darstellung in ObjectLine));Insp gas flow on vent Airway;38
+mehrfache Zeiten für Anordnung/Aufgabe;Bdy weight Prctl Per Age;43
+Zeit für Anordnung/Aufgabe;Bdy weight Prctl Per Age;45
+wird zur Anzeige in ObjektLines verwendet und dynamisch angelegt bzw. geändert;Blood pressure panel with all children optional;39
+Filtervariable für die VO-Methode;Away press delta on vent PressDiff;39
+Filtervariable für den VO-Status;Gas flow.O2 O2 delivery sys;44
+Filtervariable für die VO-Termin Von;Inspired min Vol MV;48
+Filtervariable für die VO-Termin Bis;Inspired min Vol MV;44
+Filtervariable für die Schicht, deren Aufgaben in der Verordnungsliste dargestellt werden sollen.;Blood pressure panel with all children optional;35
+Schema für Verordnungen;Breaths.mechanical on vent;42
+Filtervariable für einen Namen;Insp time set Vent;43
+Filtervariable für einen Ort/eine Stadt;LV Output Indicator dilution;39
+Filtervariable für eine Postleitzahl;Bdy weight Prctl Per Age;41
+Filtervariable für eine externe ID;Insp time set Vent;39
+Filter Objekt für multiple String;Low press hold time set Vent;40
+Filtervariable für einen multiplen String;Insp time set Vent;38
+Objekt mit Links auf die zugehörigen Durchführungsobjekte;PAW @ zero insp flow on vent;37
+Texteintrag zum zugehörigen Durchführungsobjekt der VO;Pressure support setting Vent;37
+Link zum zugehörigen Durchführungsobjekt der VO;Insp gas flow on vent Airway;36
+Variable die Berechtigungen für Neuanlage enthält;Blood pressure panel with all children optional;38
+Intervall zwischen den Wiederholungen der Untersuchung/Massnahme in x Tagen;Blood pressure panel with all children optional;39
+Filtervariable um AO absteigend sortieren;Blood pressure panel with all children optional;41
+Filtervariable um Labor auszublenden;LV Cardiac index Indicator dilution;37
+Filtervariable für Freitextsuche;Mean Pres on vent Airway;36
+Gibt an ob die Verordnung nicht visiert ist;LV SVI Indicator dilution;44
+Kopierstatus der Verordnung;Low press hold time set Vent;44
+Link auf Leistungsanforderungsobjekt zur Anordnung;Mean Pres on vent Airway;35
+Filtervariable Prämedikation Nachname;Blood pressure panel with all children optional;39
+Filtervariable Prämedikation Fallnummer;Blood pressure panel with all children optional;40
+Filtervariable PrämedikationGeburtsdatum;LV Cardiac index Indicator dilution;41
+Filtervariable Prämedikation OP Saal;LV SV Indicator dilution;44
+Filtervariable Prämedikation OP Datum;Away press delta on vent PressDiff;43
+Filtervariable Prämedikation Datum;Away press delta on vent PressDiff;42
+Filtervariable Prämedikation Freigabestatus;Away press delta on vent PressDiff;39
+Besucherverinbarung für den Patienten;Pressure support setting Vent;43
+Telefonummer des Patientenbetreuers;O2/Total gas setting VFr Vent;38
+Betreuer des Patienten;PEEP on vent Respiratory;48
+Muttersprache des Patienten;Breaths.spont+mech on vent;49
+Religion des Patienten;PEEP on vent Respiratory;43
+Angehoerigen-Telefon;Exp hold time set Vent;43
+Nachname des Angehörigen;Compliance.dynamic Lung;39
+Familienstand des Patienten;PAW @ mean exp flow on vent;50
+Handy Nummer der Angehörigen des Patienten;High press hold time set Vent;46
+Berufliche Telefonnummer der Angehörigen des Patienten;High press hold time set Vent;41
+Beruf des Patienten;Exp hold time set Vent;49
+Arbeitgeber des Patienten;Bdy weight Prctl Per Age;45
+Score-Variablen zur Erfassung des Braden-Scores zu einem beliebigen Zeitpunkt in der Zeitachse;Blood pressure panel with all children optional;35
+Lokalisation des Atemwegszuganges;Away press delta on vent PressDiff;39
+Lokalisation der enteralen Sonde;SaO2 % Bld Preductal PulseOx;45
+Beschreibung der Wunde, mit Listenauswahl;Compliance.dynamic Lung;38
+Gerät zur Sekretmobilisation, Listenanhang;Pressure support setting Vent;38
+Dokumentation von durchgeführten Systemwechseln bei Enteralen Sonden;Blood pressure panel with all children optional;39
+Dokumentation des eingestellten Modus der V.A.C. Pumpe;Blood pressure panel with all children optional;42
+Dokumentation der eingestellten Intensität der V.A.C. Pumpe;LV Cardiac index Indicator dilution;45
+Verlaufsdokumentation bzgl. des Dekubitusgrades;Away press delta on vent PressDiff;38
+Verlaufdokumentation der Beobachtung bzgl. des Dekubitus;High press hold time set Vent;38
+Dokumentation des V.A.C. Pumpen Modus bei Dekubiti;LV Cardiac index Indicator dilution;43
+Dokumentation der V.A.C. Pumpen Einstellung bzgl. der Intensität;Blood pressure panel with all children optional;46
+Dokumentation der ersten Beobachtung bzgl. Messsonden bei Aufnahme oder Anlage;Blood pressure panel with all children optional;39
+Dokumentation der Erstbeobachtung bzgl. Drainagen bei Anlage oder Aufnahme;Blood pressure panel with all children optional;38
+Dokumentation bei Anlege oder Aufnahme;O2/Total gas setting VFr Vent;39
+Dokumentation der Erstbeobachtung bzgl. Harnwege bei Anlage oder Aufnahme;Blood pressure panel with all children optional;37
+Erste Beobachtungbzgl. des Dekubitus bei Aufnahme oder erstem Erkennen;Away press delta on vent PressDiff;35
+Beschreibung der Dekubitustiefe bei Aufnahme oder Erstbeobachtung;Blood pressure panel with all children optional;34
+Dokumentation der Wundtiefe bei Aufnahme oder Erstauftreten;Blood pressure panel with all children optional;42
+Beschreibung des Lippenstatus bei Aufnahme;Pressure support setting Vent;42
+Beschreibung des Haarstatus bei Aufnahme;Bdy weight Prctl Per Age;38
+Beschreibung des Zahnstatus bei Aufnahme;Away press delta on vent PressDiff;38
+Beschreibung des Ohrenstatus rechts bei Aufnahme;Blood pressure panel with all children optional;42
+Beschreibung des Ohrenstatus links bei Aufnahme;Insp gas flow on vent Airway;40
+Beschreibung des Nasenstatus rechts bei Aufnahme;Blood pressure panel with all children optional;40
+Beschreibung des Nasenstatus links bei Aufnahme;Insp gas flow on vent Airway;40
+Dokumentation der Mege des Nasen- und Rachensekrets;Blood pressure panel with all children optional;41
+Beschreibung des Sprachverhaltens des Patienten;Pressure support setting Vent;44
+Dokumentation des Sprachverhaltens des Patienten bei Aufnahme;Blood pressure panel with all children optional;44
+Dokumentation der Ohrenpflege rechts ab dem 22.02.2010;Mean Pres on vent Airway;38
+Dokumentation des Ohrenstatus links ab dem 22.02.2010;Blood pressure panel with all children optional;38
+Dokumentation der Nasenpflege links ab dem 22.02.2010.;Blood pressure panel with all children optional;38
+Dokumentation des Nasenstatus links ab dem 22.02.2010.;O2/Total gas setting VFr Vent;37
+Dokumentation der Augenpflege links ab dem 22.02.2010;PAW @ mean exp flow on vent;33
+Dokumentation des Augensekrets links ab dem 22.02.2010;Breaths.spont+mech on vent;38
+Beschreibung des AugenStatus links ab 23.02.2010;Breaths.mechanical on vent;38
+Dokumentation von Angehörigengesprächen.;Inspired min Vol MV;46
+Dokumentation von Angehörigenbetreuung;Breaths.mechanical on vent;41
+Dokumentation eines Angehörigengesprächs;Insp/Exp time Ratio;46
+Dokumenttion der Versorgung verstorbener Patienten.;PAW @ mean exp flow on vent;43
+Liste;Oral temp;43
+Beurteilung der Sprache im Verlegungsbericht Pflege;Pressure support setting Vent;43
+Dokumentation des Dekubitus Zusatzrisikos bei Verlegung;Breaths.mechanical on vent;40
+Dokumentation des Status der Lagerungsmaßnahmen bei Verlegung;Breaths.spont+mech on vent;40
+Dokumentation des Mobilisationsgrad zum Zeitpunkt der Verlegung;LV Output Indicator dilution;44
+Dokumentation des Status des Schluckaktes;Pressure support setting Vent;42
+Dokumentation des Nasenstatus im Pflegeverlegungsbericht;Away press delta on vent PressDiff;40
+Dokumentation des Nasenstus links im Pflegeverlegungsbericht;Blood pressure panel with all children optional;39
+Dokumentation des Ohrenstatus rechts im Pflegeverlegungsbericht;Away press delta on vent PressDiff;43
+Dokumentation des Ohrenstatus links im Pflegeverlegungsbericht;Away press delta on vent PressDiff;40
+Dokumentation der Körperpflege des Patienten, die durch das Pflegepersonal übernommen wird.;Blood pressure panel with all children optional;39
+Dokumentation der assistierten Körperpflege im Pflegeverlegungsbericht.;Blood pressure panel with all children optional;40
+Dokumentation der selbstständigen Körperpflege des Pat. im Pflegeverlegungsbericht.;Away press delta on vent PressDiff;37
+Dokumentation des Zahnstatus zum Zeitpunkt der Verlegung im Pflegeverlegungsbericht.;Away press delta on vent PressDiff;36
+Dokumentation des Haarstatus bei Verlegung im Pflegeverlegungsbericht.;Away press delta on vent PressDiff;41
+Dokumentation des Lippenstatus zum Zeitpunkt der Verlegung im Pflegeverlegungsbericht.;Away press delta on vent PressDiff;39
+Dokumentation des Urogenitalstatus zum Zeitpunkt der Verlegung im Pflegeverlegungsbericht.;Away press delta on vent PressDiff;36
+Der letzte in der Verlaufsdokumentation ermittelter Braden Score, der in den Pflegeverlegungsbericht gespiegelt wird.;Blood pressure panel with all children optional;34
+Dokumentation der Urinbeschaffenheit zum zeitpunkt der Verlegung;LV Output Indicator dilution;43
+Dokumentation der Stuhlbeschaffenheit zum zeitpunkt der Verlegung;Breaths.mechanical on vent;39
+Dokumentation des Ventilationsstatus zum Zeitpunkt der Verlegung;LV Output Indicator dilution;41
+Liste;Oral temp;43
+Dokumentationsmöglichkeit für den Qualitätscheck (Kontrollle der eingestellten Verfahrensparameter) des Dialyse- bzw. Hämofiltrationsgerät.;Blood pressure panel with all children optional;32
+"Dekanülierungsplan des Patienten. Anlage mehrerer Pläne ist möglich. ";Away press delta on vent PressDiff;41
+Objekt für die Tabelle der körperlichen Untersuchung der ärztlichen Dokumentation;LV Cardiac index Indicator dilution;37
+Bemerkung zu einer Diagnose;Breaths.mechanical on vent;42
+Dokumentation des Aufnahmegrunds in der Dokumentation Medizinischer Dienst.;LV Cardiac index Indicator dilution;42
+Dokumentation des Patientengewichtes bei Aufnahme.;Blood pressure panel with all children optional;44
+Dokumentation der Patientengröße bei Aufnahme.;Mean Pres on vent Airway;42
+Dokumentation der Aufnahmeart.;Heart rate;46
+ICD-Katalogtext wie er aus SAP übermittelt wird;O2/Total gas setting VFr Vent;43
+Hilfsmittel;Axil temp;40
+Listenauswahl;Nasal temp;43
+Herzfrequenz Zielwert;Heart rate;39
+RR Zielwert;Ideal bdy weight;52
+MAP Zielwert;Ideal bdy weight;50
+ZVD Zielwert;Ideal bdy weight;43
+Temperatur Zielwert;Body temperature;63
+ICP Zielwert;ICP;100
+CPP Zielwert;Ideal bdy weight;50
+SpO2 Zielwert;Ideal bdy weight;48
+BZ Zielwert;Ideal bdy weight;59
+Bilanz Zielwert;Ideal bdy weight;52
+Kostform Intervention;Vt on vent Vent;45
+Lagerung Intervention;Compliance.dynamic Lung;45
+BZ-Kontrolle Messintervall;Spont VT on vent;43
+Bilanz Messintervall;Inspired min Vol MV;41
+Spez.Gew. Messintervall;PAW pressure;41
+Gewicht Messintervall;Spont+mech VT on vent;43
+ICP Messintervall;ICP;100
+ZVD Messintervall;Spont+mech VT on vent;42
+Pupillen Zielwert;Ideal bdy weight;42
+"Bewusstsein Messintervall ";VT setting Vent;45
+Globaler Zwischenspeicherfür die Fallnummer für die Verwendung in Dialogen die aufgrund der Var-Struktur nicht an das Fallobjekt kommen.;Blood pressure panel with all children optional;31
+Dokumentation des gemessenen Blutdruckes unter IABP;Blood pressure panel with all children optional;43
+Dokumentation des prozentualen Anteils des Aufblasens des Ballons;Blood pressure panel with all children optional;42
+Dokumentation der gewählten EKG Ableitung für den IABP Einsatz;Blood pressure panel with all children optional;41
+Dokumentation des Unterstützungdruckes;Blood pressure panel with all children optional;40
+Dokumentation der IABP Frequenz;Mean Pres on vent Airway;44
+Dokumentation des ausgewählten Triggers der IABP;Blood pressure panel with all children optional;40
+Dokumentation des prozentualen Anteils des Leersaugens des Ballons;Blood pressure panel with all children optional;46
+Liste;Oral temp;43
+Liste;Oral temp;43
+Gegangen ohne Arztkontakt;Mean Pres on vent Airway;45
+Auslandsaufenthalt in den letzten 6 Monaten?;Pressure support setting Vent;39
+Auslandsaufenthalt in den letzten 6 Monaten?;Pressure support setting Vent;39
+CODE zum Überspringen der Pflichtfelder Vitalparameter - Anforderung für IT Lizenz;LV Cardiac index Indicator dilution;37
+Freitextfeld;Rectal temp;43
+Pat. wird unter Reanimstionsbedingungen aufgenommen;Away press delta on vent PressDiff;38
+RR_systolisch Zielwert;Ideal bdy weight;42
+RR_diastolisch Zielwert;LV Cardiac index;46
+Atemfrequenz Zielwert;Breaths.mechanical on vent;38
+GCS Zielwert;Ideal bdy weight;50
+NRS Zielwert;Ideal bdy weight;50
+Raumzuweisungsvariable Notaufnahme;Compliance.dynamic Lung;39
+Eingestelltes Körpergewicht;Body height Prctl;42
+Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben;Breaths.spont+mech on vent;37
+Exspiratorische Triggersensitivität, eine Parametereinstellung;Expiratory gas flow on vent Airway;40
+"Eingestellte CMV Frequenz bei dem Respirator G5 in den Beatmungsmodi DUOPAP, APVcmv, Pcmv, ";Blood pressure panel with all children optional;39
+Eingestellt SIMV Frequenz bei dem Respirator T1 in den Beatmungsmodi APVsimv, Psimv.;Blood pressure panel with all children optional;39
+Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.;Blood pressure panel with all children optional;36
+Beatmung_ES_T1_Psupport;Pressure support setting Vent;46
+Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi;PEEP on vent Respiratory;37
+prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird;Blood pressure panel with all children optional;48
+Einstelungswert für die Inspirationszeit;PEEP on vent Respiratory;44
+Sauerstoffeinstellung;Pressure support setting Vent;44
+Für die Kopie Aufnahmemedikation--> Entlassmedikation;LV Cardiac index Indicator dilution;48
+Implementierung für anamnestische Erhebung des Status innerhalb d. Active X Anwendung;Blood pressure panel with all children optional;32
+Allergiestatus unbekannt fallbezogen - Active X Plugin;Insp gas flow on vent Airway;43
+Fall_Allergie_nichtErhoben - Active X Plugin;LV SV Indicator dilution;36
+Status nicht bekannt;Breaths.spont+mech on vent;48
+Peaklfowmeter Messung in % mit Definition <> Messung exspirat. Spitzenfluss;LV Cardiac index Indicator dilution;40
+Listenanhang mit positiv und negativ Auswahl;Away press delta on vent PressDiff;41
+Peakflowmessung mit Angabe > <, daher String;Bdy weight Prctl Per Age;44
+COPY Vormedikation--Entlassmedikation;LV Cardiac index Indicator dilution;45
+bezogen auf kontinuierliche Verordnungen;Mean Pres on vent Airway;41
+Listeneintrag -Fotodokumentation durchgeführt;LV Cardiac index Indicator dilution;44
+Verlaufseintrag bei Erstellung einer Fotodokumentation. Dient nur als Durchführungsnachweis;Blood pressure panel with all children optional;38
+Neuanlage für B_Entlassbefund, da diese den falschen Datentyp hat;LV Cardiac index Indicator dilution;37
+Behandlungsdiagnose;LV SV Indicator dilution;42
+Relevante Vorgeschichte;Resp rate;50
+Ort der Messung ABP1;PAW pressure;50
+Ort der Messung ABP2;PAW pressure;50
+Liste hinterlegt, definierte Peepeinstellungen über Ventil;Pressure support setting Vent;42
+Pertionealdialyse Auslaufmenge in ml;Mean Pres on vent Airway;43
+Auslaufzeit;Nasal temp;38
+Einlaufhöhe in cm;Head Circumf OFC;44
+Peritonealdialyse Einlaufmenge in ml;Mean Pres on vent Airway;43
+Apnoezeit;Body height;40
+Einstellung der Luftfeuchtigkeit im Inkubator;LV Output Indicator dilution;49
+Einstellung der Luftemperatur;Body temperature;53
+Einstellung der O2-Konzentration im Inkubator;LV Output Indicator dilution;44
+Messung der Luftfeuchtigkeit im Inkubator;LV Output Indicator dilution;43
+Messung der Luftemperatur im Inkubator;Body temperature;52
+Messung der O2-Konzentration im Inkubator;Insp/Exp time Ratio;43
+Einstellwert: Zeiteinstellung für das untere Druckniveau;Blood pressure panel with all children optional;38
+Einstellwert: Tidalvolumen;Insp time set Vent;51
+Unerwarteter positiver endexspiratorischer Druck;Expiratory gas flow on vent Airway;44
+Statische Compliance;Compliance.dynamic Lung;67
+Exspiratorisches Minutenvolumen;Inspired min Vol MV;48
+Exspiratorischer Peakflow;Expiratory gas flow on vent Airway;47
+Spontane Atemfrequenz;Breaths.spont+mech on vent;51
+Gesamtfrequenz;Heart rate;42
+gemessenes I:E Verhältnis;Exp hold time set Vent;43
+Inspiratorischer Peakflow;PEEP on vent Respiratory;45
+Sauerstoffkonzentration des abgegebenen Gasgemisches;Away press delta on vent PressDiff;37
+Atemweg-Okklusionsdruck, ein Monitoring-Parameter;Expiratory gas flow on vent Airway;39
+Messwert: Beatmungsdruck Peep/CPAP;PEEP on vent Respiratory;42
+"Inspiratorischer Druck, mit Pinsp wird der Zieldruck (zusätzlich zu PEEP/CPAP) bezeichnet, der im Modus ASV während der Inspirationsphase abgegeben wird";Blood pressure panel with all children optional;32
+Messwert: Beatmungsmitteldruck;Breaths.spont+mech on vent;44
+Minimaler Atemwegsdruck, ein Monitoring Parameter;Breaths.mechanical on vent;41
+Plateau-Atemwegsdruck;Body temperature;43
+Druck Zeit Produkt (Pressure Time Product);PAW pressure;80
+Inspiratorische Flow-Resistance;Insp flow set Vent;57
+Index für schnelle Flachatmung (Rapid Shallow Breathing Index);LV Cardiac index;48
+Wert gemessen am Ventilator;PEEP on vent Respiratory;51
+Inspirationszeit in Sekunden;Insp/Exp time Ratio;51
+Leckagevolumen;Rectal temp;40
+"Messwert, exspiratorisches Tidalvolumen";Exp hold time set Vent;47
+eingestellte maximale Inspirationszeit im Modus NIV;LV SV Indicator dilution;43
+Prozentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus;Blood pressure panel with all children optional;38
+Einstellwert oberes Druckniveau im Modus DuoPAP;LV Cardiac index Indicator dilution;39
+Einstellwert: unteres Druckniveau im Modus APRV;LV Cardiac index Indicator dilution;40
+Peritonealdialyse - Einlaufhöhe in cm;LV SV Indicator dilution;45
+Liste;Oral temp;43
+Aktualisierung der Variablenstruktur , Bestehdner Ramsay Score als String Variable wird hierdurch abgelöst;Blood pressure panel with all children optional;37
+eingestelltes Körpergewicht;Body height Prctl;42
+Eingestellter PEEP, CPAP oder Ptief;PEEP on vent Respiratory;45
+Inspiratorischer Druck;Insp/Exp time Ratio;54
+Eingestellte CMV Frequenz;Insp time set Vent;42
+Eingestellte SIMV Frequenz;VT setting Vent;44
+Inspirationszeit max;Insp/Exp time Ratio;56
+Exspiratorisches Minutenvolumen;Inspired min Vol MV;48
+spontanes Atemminutenvolumen;Breaths.spont+mech on vent;48
+Spontane Atemfrequenz;Breaths.spont+mech on vent;51
+Gesamtatemfrequenz;Heart rate;43
+Endtidaler CO2-Partialdruck;Body height Prctl;41
+Plateau- oder endinspiratorischer Druck;Insp/Exp time Ratio;46
+Inspiratorischer Druck;Insp/Exp time Ratio;54
+AutoPEEP oder intrinsischer PEEP;PEEP on vent Respiratory;46
+Verhältnis Inspirationszeit:Exspirationszeit;Insp/Exp time Ratio;52
+Exspiratorischer Peakflow;Expiratory gas flow on vent Airway;47
+Inspiratorischer Peakflow;PEEP on vent Respiratory;45
+Exspiratorische Zeitkonstante;PEEP on vent Respiratory;49
+Inspiratorische Flow-Resistance;Insp flow set Vent;57
+Statische Compliance;Compliance.dynamic Lung;67
+Atemwegs-Okklusionsdruck;Breaths.spont+mech on vent;36
+"Index für schnelle Flachatmung („Rapid Shallow Breathing Index“) ";LV Cardiac index;48
+Ectopic Status Label;Rectal temp;45
+Arrhytmia Rhytm Status label;Mean Pres on vent Airway;38
+Windelgewicht in g. Wird in Bilanz als ml verrechnet;Bdy weight Prctl Per Age;42
+Magenrestesatz Intervention;Mean Pres on vent Airway;47
+"Kopfumfang Grenzwert ";PAW @ mean exp flow on vent;36
+tcpO2 Grenzwert;Rectal temp;46
+Verordnung AP Ersatz;PEEP on vent Respiratory;45
+Stuhlgang Messintervall;Compliance.dynamic Lung;39
+Magensonde Messintervall;Spont+mech VT on vent;49
+UrinStix Messintervall;Pressure support setting Vent;39
+tcpO2 Messintervall;Rectal temp;47
+Kopfumfang Messintervall;Vt on vent Vent;41
+Gewicht Zielwert;Ideal bdy weight;44
+Kopfumfang Zielwert;PAW @ mean exp flow on vent;41
+tcpO2 Zielwert;Ideal bdy weight;47
+SaO2 Zielwert;SaO2 % BldA;62
+Herkunftsland der Mutter;Heart rate;41
+Geburtsdatum der Mutter;Heart rate;42
+Alkoholgebrauch während der Schwangerschaft;Breaths.mechanical on vent;44
+Alkoholgebrauch während der Schwangerschaft;Breaths.mechanical on vent;44
+Nikotingebrauch während der Schwangerschaft;Breaths.mechanical on vent;41
+Nikotingebrauch während der Schwangerschaft;Breaths.mechanical on vent;41
+Insulinapplikation während der Schwangerschaft;Blood pressure panel with all children optional;41
+Insulinapplikation während der Schwangerschaft;Blood pressure panel with all children optional;41
+Ernährungszustand bei Aufnahme;Mean Pres on vent Airway;38
+Allgemeinzustand bei Aufnahme;Mean Pres on vent Airway;38
+Impfungen nach STIKO durchgeführt;Horowitz index BldA+IhG-Rto;41
+Standard Base Excess;Breaths.spont+mech on vent;43
+Menge der Nahrung in ml, die getrunken wurde. Die Menge wird nicht mit der Bilanz verrechnet;Blood pressure panel with all children optional;37
+Menge der Nahrung in ml, die gestillt wurde. Die Menge wird nicht mit der Bilanz verrechnet;LV Cardiac index Indicator dilution;38
+Menge der Nahrung in ml, die sondiert wurde. Die Menge wird nicht mit der Bilanz verrechnet;Breaths.spont+mech on vent;38
+Mittlerer Arterieller Blutdruck;Blood pressure panel with all children optional;38
+Wachheit/Aufmerksamkeit;Expiratory gas flow on vent Airway;39
+Schwangerschaftswoche;Heart rate;39
+"Betreuung nach AWMF bei Kindern mit Geb. Gew. unter 1500g ";O2/Total gas setting VFr Vent;36
+Kopfumfang bit cm;Breaths.spont+mech on vent;37
+Nichtinvaiver Blutdruck linkes Bein;LV SV Indicator dilution;44
+Nichtinvasiver Blutdruck rechtes Bein;Horowitz index BldA+IhG-Rto;41
+Nichtinvasiver Blutdruck linker Arm;LV Cardiac index Indicator dilution;46
+Nichtinvasiver Blutdruck rechter Arm;LV Cardiac index Indicator dilution;42
+Ort der Messung NBP1;Pressure support setting Vent;49
+transcutan gemessener pO2 Wert.;pO2 ExG;60
+Soziale_Besonderheiten, z.B. Familiensituation;Blood pressure panel with all children optional;42
+Parameter im Modus Highflow - ab 08.06.2017;PAW @ zero insp flow on vent;45
+Elternanleitung;Compliance.dynamic Lung;42
+Pupillenform links bei Aufnahme;LV Cardiac index Indicator dilution;39
+Pupillenform rechts bei Aufnahme;Bdy weight Prctl Per Age;46
+Cornealreflex links bei Aufnahme;Away press delta on vent PressDiff;39
+Cornealreflex rechts bei Aufnahem;Away press delta on vent PressDiff;42
+Pupillenkontrolle links bei Aufnahme (Pupillenweite | Pupillenrekation);Blood pressure panel with all children optional;42
+Pupillenkontrolle rechts bei Aufnahme (Pupillenweite | Pupillenreaktion);Blood pressure panel with all children optional;42
+Stuhlgang Intervention;Vt on vent Vent;44
+Magensonde Intervention;Breaths.spont+mech on vent;45
+Stuhlgang Messintervall;Compliance.dynamic Lung;39
+Stuhltherapie Intervention;Insp/Exp time Ratio;44
+"Urinstix Messinterval ";Pressure support setting Vent;40
+Drainagen/Sog Intervention;Mean Pres on vent Airway;48
+Fototherapie Intervention Wert;Insp/Exp time Ratio;45
+Fototherapie Intervention Maßnahme;Insp/Exp time Ratio;46
+Magenrestersatz Intervention;Mean Pres on vent Airway;46
+Nahrungsersatz Intervention;Mean Pres on vent Airway;43
+AP_Ersatz Intervention;Insp time set Vent;50
+Sonstige Intervention;Insp/Exp time Ratio;50
+Herzfrequenz Grenzwert;Heart rate;38
+Herzfrequenz Messintervall;Inspired min Vol MV;36
+Respiration Grenzwert;PEEP on vent Respiratory;58
+Respiration Messintervall;PEEP on vent Respiratory;53
+Respiration Zielwert;Insp/Exp time Ratio;56
+SpO2 Messintervall;Gas flow.O2 O2 delivery sys;43
+SpO2 Grenzwert;pO2 ExG;48
+tcpO2 Messintervall;Rectal temp;47
+tcpO2 Zielwert;Ideal bdy weight;47
+"tcpCO2 Zielwert ";Ideal bdy weight;45
+tcpO2 Grenzwert;Rectal temp;46
+tcpCO2 Grenzwert;pCO2 end exp ExG;50
+etCO2 Grenzwert;PAW @ mean exp flow on vent;40
+etCO2 Messintervall;Spont+mech VT on vent;45
+"etCO2 Zielwert ";Ideal bdy weight;47
+ABP Grenzwert;Bdy weight Prctl Per Age;43
+ABP Messintervall;PAW pressure;41
+"ABP Zielwert ";Ideal bdy weight;57
+NBP Grenzwert;Rectal temp;42
+NBP Messintervall;Rectal temp;43
+"NBP Zielwert ";Ideal bdy weight;57
+PAP Grenzwert;Heart rate;43
+"PAP Messintervall ";Rectal temp;43
+"PAP Zielwert ";Ideal bdy weight;50
+LAP Grenzwert;Heart rate;43
+"LAP Messintervall ";PAW pressure;41
+"LAP Zielwert ";Ideal bdy weight;50
+"Temperatur Grenzwert ";Body temperature;61
+Temperatur Messintervall;Body temperature;55
+Gewicht Grenzwert;Spont+mech VT on vent;42
+Gewicht Messintervall;Spont+mech VT on vent;43
+Gewicht Zielwert;Ideal bdy weight;44
+Bilanz Grenzwert;Horowitz index BldA+IhG-Rto;47
+ZVD Grenzwert;VT setting Vent;43
+ICP Grenzwert;ICP;100
+Scoreerhebung Messintervall;Pressure support setting Vent;39
+Sonstige Messintervall;Insp/Exp time Ratio;44
+Einstellung des Neigungswinkels;LV SV Indicator dilution;40
+Verordnung des Neigungswinkels;Pressure support setting Vent;41
+Liste;Oral temp;43
+Dokumentation von Interventionen (Operationen, andere Maßnahmen);Blood pressure panel with all children optional;43
+Blutgruppenspezifität der Mutter;LV Output Indicator dilution;41
+Neutrophile Granulozyten absolut;Breaths.mechanical on vent;38
+"automatisch berechnet aus Pset ml/h ";VT setting Vent;40
+Listenauswahl;Nasal temp;43
+Liste Ja Nein;Exp hold time set Vent;46
+Liste Gefäßauswahl;Nasal temp;54
+Delta Temperatur zentral/Temperatur peripher;Body temperature;53
+Verantwortlicher Mitarbeiter;Insp/Exp time Ratio;43
+"Körperlänge Messintervall ";Inspired min Vol MV;43
+"Kopfumfang Messintervall ";Vt on vent Vent;41
+tcpCO2 Messintervall;Rectal temp;45
+Die/Der verantwortliche Arzt/Ärztin der/die die Reakarte freigibt.;PEEP on vent Respiratory;42
+Der/Die verantwortliche Pflegekraft der/die die Reakarte freigibt;Low press hold time set Vent;40
+Auswahl von nummerisch einzugebenden Profilen;Away press delta on vent PressDiff;43
+Gabe von Atemgasen;Mean Pres on vent Airway;43
+Eingestellter Basisfluss im Beatmungssystem;Pressure support setting Vent;39
+Eingestellte Oszillationsfrequenz;Insp time set Vent;43
+Prozentualer Anteil der Insp.Zeit bezogen auf den gesamten Atemzyklus;Insp gas flow on vent Airway;43
+Prozentuale Kolbenauslenkung;Breaths.spont+mech on vent;44
+Eingestellter mittlerer Atemwegsdruck;O2/Total gas setting VFr Vent;39
+O2 Konzentration des Gasgemisches;O2/Total gas setting VFr Vent;45
+gemessene Druckamplitude;Resp rate;42
+Gemessene O2 Konzentration;O2/Total gas setting VFr Vent;51
+Ein/Aus;Nasal temp;47
+Liste ein aus;Breaths.spont+mech on vent;46
+Liste ein aus;Breaths.spont+mech on vent;46
+Liste ein aus;Breaths.spont+mech on vent;46
+Liste ein aus;Breaths.spont+mech on vent;46
+Zeit zwischen 2 SBT;Ca-I BldCRRT-sCnc;44
+Zeit bis zum Start SBT;Insp time set Vent;50
+Einstellung Tidalvolumen;Insp time set Vent;48
+"eingestellte maximale Inspirationszeit ";Insp/Exp time Ratio;53
+Die Nummer der Waage, mit der das Gewicht ermittelt wurde.;Horowitz index BldA+IhG-Rto;38
+MAD Messintervall;LV Cardiac index;42
+"MAD Zielwert ";Ideal bdy weight;57
+"MAD Grenzwert ";Heart rate;43
+Gibt an welchen Inhalt die Windel hat;Blood pressure panel with all children optional;43
+"Menge des Stuhlgangs der vom AP oral in den AP aboral umgefüllt wird. Der Wert wird in der Bilanz als ""Plus"" verrechnet";Oral temp;62
+Differenz zwischen dem aktuellen Gewicht und dem Gewicht des letzten Eintrags;Blood pressure panel with all children optional;41
+I:E Verhältnis (Messung);Insp time set Vent;46
+Validierender Mitarbeiter der Verordnung Medikation für den Zeitraum 06:00 bis 06:00 am aktuellen Tag. Diskontinuierlich.;Blood pressure panel with all children optional;34
+linksartrialer Druck;LV SV Indicator dilution;41
+rechtsartrialer Druck;Heart rate;45
+"Left Cardiac Work Index ";LV Cardiac index;90
+intracranieller Druck;SaO2 % Bld Preductal PulseOx;38
+Anlage im Rahmen PhilipsMonitoring;PEEP on vent Respiratory;41
+Anlage im Rahmen PhilipsMonitoring;PEEP on vent Respiratory;41
+Anlage im Rahmen PhilipsMonitoring;PEEP on vent Respiratory;41
+Anlage im Rahmen PhilipsMonitoring;PEEP on vent Respiratory;41
+Anlage im Rahmen PhilipsMonitoring;PEEP on vent Respiratory;41
+Anlage im Rahmen PhilipsMonitoring;PEEP on vent Respiratory;41
+Anlage im Rahmen Philips Monitoring;Mean Pres on vent Airway;44
+Temperatur iat keinem spezieelnMessort über das Monitoring zugeordnet.;Pressure support setting Vent;39
+Anlage im Rahmen PhilipsMonitoring;PEEP on vent Respiratory;41
+Anlage für Philips Monitoring;Horowitz index BldA+IhG-Rto;40
+Anlage für Philips Monitoring;Horowitz index BldA+IhG-Rto;40
+2. artereille Messung, ab 201712 im Rahmen Umstellung Philips Monitoring;Blood pressure panel with all children optional;36
+Umstellung PhilipsMonitoring;LV Output Indicator dilution;46
+Score FOUR = Full Outline of UnResponsiveness.;Insp gas flow on vent Airway;45
+Hinweis bei abgeschlossener Behandlung - Anzeige Datum behandlungsende;Blood pressure panel with all children optional;37
+Kalium Zielwert;Ideal bdy weight;45
+24h_Urin Zielwert;Ideal bdy weight;42
+paO2 Zielwert;Ideal bdy weight;48
+PEEP Zielwert;Ideal bdy weight;48
+RASS Zielwert;Ideal bdy weight;48
+NRS Zielwert;Ideal bdy weight;50
+Beatmungsmodus Zielwert;Ideal bdy weight;46
+Sedierung Zielwert;VT setting Vent;48
+RRT Zielwert;Ideal bdy weight;50
+Kost Zielwert;Ideal bdy weight;48
+Mobilisation Zielwert;Insp/Exp time Ratio;45
+Freitext Zielwert;Insp time set Vent;46
+Parameter Cerebrospinales Fluidmanagement;PAW @ mean exp flow on vent;42
+Parameter Cerebrospinales Fluidmanagement;PAW @ mean exp flow on vent;42
+Parameter Cwerebrospinales Fluidmanagement;PAW @ mean exp flow on vent;42
+Auswahl Gerätetyp Cerebrospinales Fluidmanagement;Blood pressure panel with all children optional;44
+cerebrale Sauerstoffsättigung links;Insp/Exp time Ratio;42
+cerbebrale Sauerstoffsättigung rechts;Bdy weight Prctl Per Age;40
+spezifische Gewicht Refraktometer;PEEP on vent Respiratory;39
+Listenauswahl Beatmungsoption intelli;Breaths.spont+mech on vent;44
+Spectral Edge Frequency;Bdy weight Prctl Per Age;43
+EEG - Spectral Edge Frequency Channel 1;Bdy weight Prctl Per Age;39
+EEG - Spectral Edge Frequency Channel 2;Bdy weight Prctl Per Age;39
+EEG - Total Power - Channel 1;O2/Total gas setting VFr Vent;48
+EEG - Total Power - Channel 2;O2/Total gas setting VFr Vent;48
+Fixierungsgrund;Pressure support setting Vent;32
+Art und Umfang der Fixierung;Expiratory gas flow on vent Airway;42
+Dokumentierte Dauer der pflegerischen Assistenz bei pflegerischen Maßnahmen - Interventionen mit Zeitaufwand;Blood pressure panel with all children optional;38
+Balken für Kontinuierliches EEG Monitoring;PEEP on vent Respiratory;40
+Einstellung Sauerstoff Flow;PAW @ zero insp flow on vent;53
+Objekt für Speicherung der temporären Daten des klinischen Auftrags;Away press delta on vent PressDiff;36
+Diagnose für klinischen Auftrag;Mean Pres on vent Airway;44
+letzter Eintrag Verlaufsgewicht innerhalb der Behandlung;Blood pressure panel with all children optional;41
+Lungenersatzverfahren;PEEP on vent Respiratory;44
+Leberersatztherapie;Body temperature;46
+alternative Bezeichnung für den Behandlungsort (z.B. Langbezeichung);Blood pressure panel with all children optional;36
+0-Klinik, 1-fachliche OE, 2-pflegerische OE;Blood pressure panel with all children optional;40
+Gibt an, ob Ao aus Vorbehandlungen in eine behandlung dieser OE kopiert werden sollen;Blood pressure panel with all children optional;38
+wer hat die Akte angelegt;Bdy weight Prctl Per Age;45
+Arztkontakt erfolgt !;Heart rate;41
+ScVO2 Zielwert;Ideal bdy weight;47
+SAP Zielwert;Ideal bdy weight;50
+Rass Nacht Zielwert;Low press hold time set Vent;43
+pH-art Zielwert;Heart rate;48
+Monitoring Zielwert;Horowitz index BldA+IhG-Rto;43
+Massnahmen Zielwert;Insp time set Vent;43
+Diagnostik Labor PoC Zielwert;Bdy weight Prctl Per Age;45
+Cl Zielwert;Ideal bdy weight;52
+ACT Zielwert;Ideal bdy weight;50
+geplanter Verlegungszeitpunkt;Resp rate;42
+Verlegungsplanung to do;LV Output Indicator dilution;39
+geplante Verlegung - Station;Compliance.dynamic Lung;53
+Parameter im Modus Highflow;PAW @ zero insp flow on vent;57
+Blutverlust intraoperativ;LV Output Indicator dilution;42
+l/min;Inspired min Vol MV;75
+Dokumentation ob der Spontanatemtest bestanden wurde.;Blood pressure panel with all children optional;42
+Verordnung der Zeitvorgabe der Entwöhnungsphase;Pressure support setting Vent;39
+Verordnung der Einstellung des FiO2 während der Entwöhnungsphase;FIO2;100
+Verordnung der Einstellung des PEEP/CPAP während der Entwöhnungsphase;Pressure support setting Vent;41
+Verordnung der Einstellung des Flusses während der Entwöhnungsphase;Pressure support setting Vent;38
+Verordnung der Einstellung des Psupport während der Entwöhnungsphase;Pressure support setting Vent;48
+Verordnung der Einstellung des Beatmungsmodus während der Entwöhnungsphase;Blood pressure panel with all children optional;37
+Verordnung der Entwöhnungsmethode während der Entwöhnungsphase;Breaths.spont+mech on vent;42
+FIO2 passt zu PEEP;FIO2;100
+dient ausschließlich zu Testzwecken;Spont+mech VT on vent;40
+Gerätekonfiguration DokumentationVentilation ICU_IMC;LV Output Indicator dilution;41
+VO Monitoring Auscheidung/Intervall;LV Cardiac index Indicator dilution;49
+Zusatzgerät bei einer ECMO Therapie;Exp hold time set Vent;43
+Filter - O2Flow zur Ausspülung CO2;O2/Total gas setting VFr Vent;40
