@@ -1,0 +1,1833 @@
+Patient
+Archivdruck-Pfad
+Archivdruck-Hash
+Rate der ersten Gabe. Ist die Rate 0, dann ist das Medikament diskontinuierlich.
+Gesamtvolumen der Mischung.
+DSer COPRArang der Mischung. Dieser ist gleich dem Rang des ersten Medikamentes in der Mischung.
+Name der Mischung. Dieser ergibt sich aus der Liste der Medikamente.
+"Name des Wirkstoffes, auf den sich die Gabe bezieht. Wird für den Event ""Schnelle Medikamentengabe V2"" benötigt."
+Name der Organisationseinheit
+Beschreibung der Organisationseinheit
+Automatendaten werden in diesem Intervall an den Patienten geschrieben
+Zuordnung Ort zu Organisationseinheit
+Zuordnung Beginn
+Zuordnung Ende
+Zuordnung Link auf Ort
+Name des Clients (Workstation)
+Zuordnung Computer zu Behandlungsort
+Zuordnung Computer zu Drucker
+Wert wird bei die Berechtigungsfunktion 'Unbegrenzter Zeitraum, wenn Computerberechtigung' verwendet. Wert ungleich 0, dann gesetzt.
+Information über gestellte Medikamente pro Tag
+Leistungsobjekt
+ExtLeistungsID
+Leistungstext
+ExtMaterialNr
+Einrichtung
+Leistungsklasse
+Extetrne Nummer
+Extetrne Nummer Schweiz
+EANNR
+Leistung gueltig ab
+Leistung gueltig bis
+Leistung loeschen am
+Leistungstyp
+Abrechnung-Stationaer
+Abrechnung-Ambulant
+Textabweichung erlaubt
+Leistungseinheit
+Flag-Hauskatalog
+Basis-Mengeneinheit
+Einzelabgabe moeglich
+Leistungserbringer-Objekt
+ExtLeisterbringerID
+Nachname
+Vorname
+Titel
+Anrede
+Mitarbeitertyp
+Geschlecht
+Geburtsdatum
+Sprache
+Telefonnummer
+Strasse
+Name des Patiente
+Transientes Objekt für Filterkriterien
+Filtervariable für ein Beginndatum
+Filtervariable für die Dauer in Stunden
+Variable kann als Attribut verwendet werden
+Variable kann als Attribut verwendet werden
+Verweis von der Ziel-Behandlung auf die Quell-Behandlung einer Zusammenführung
+Name des Gerätetyps
+Verweis von der Quell-Behandlung auf die Ziel-Behandlung einer Zusammenführung
+Herzfrequenz
+Atemfrequenz
+Puls
+Zentralvenöser Druck
+Körpertemperatur
+Körpertemperatur Messkanal 2
+Sauerstoffsättigung
+arterielle Sauerstoffsättigung
+venöse Sauerstoffsättigung
+nichtinvasiver Blutdruck
+arterielle Blutdruck
+ASA-Klassifikation (Behandlungsrisiko)
+Diagnosen des Patienten
+Erhebungszeitpunkt der Diagnose
+Liste der medizinisch/pflegerischen Fachkräfte
+Familienname des Mitarbeiters
+Vorname des Mitarbeiters
+Titel des Mitarbeiters
+NYHA-Kalassifikation für Anaesthesie
+Verweis auf die für diese Behandlung gültige Prämedikation
+Chargen-Nummer der Blutkonserve
+Diagnosennummer
+Person die die Diagnose erhoben hat
+Nummer der Massnahme
+Dokumentationszeit
+Vorname des Patiente
+Adresse des Patienten: Strasse + Hausnummer
+Nationalität des Patienten
+"Der Patient wurde 'wohin?' verlegt? "
+hat der Patient einen Organspenderausweis?
+Patientenverfügung
+Anschrift des Patientenbetreuers
+Telefonnummer des Patienten
+aktuelle Schwangerschaftswoche des Babys
+Schwangerschaftswoche, in welcher das Baby geboren wurde
+OP-Tag
+Auswahl der Kliniken
+Extravasales Lungenwasser
+Intrathorakales Blutvolumen
+"Schlagvolumenabweichung "
+Herzindex
+"Index des systemischen Gefäßwiderstandes "
+VTe / ex. Atemzugvolumen (Tidal Volumen expir.)
+Mindest Volumen sp
+Mindest Volumen tot.
+Frequenz tot.
+FiO2
+Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)
+Positiver endexspiratorischer Druck (PEEP)
+Atemzeitverhältnis (I:E)
+Inspiratorische Flowrate
+O²- Konzentration im Inspirationsgemisch (FiO2)
+Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)
+Atemminutenvolumen (AMV)
+Beatmungsfrequenz (f/AF)
+Anordnung Atemzugvolumen/Atemhubvolumen [Tidal volume] (VT)
+Anordnung Positiver endexspiratorischer Druck (PEEP)
+Anordnung Atemzeitverhältnis (I:E)
+Anordnung Inspiratorische Flowrate
+Anordnung Inspiratorische Druckunterstützung [inspiratory pressure support] (IPS) bzw. assisted spontaneuous breathig (ASB)
+Anordnung Atemminutenvolumen (AMV)
+Anordnung Beatmungsfrequenz (f/AF)
+beatmungs-Verordung
+Anordnung O² Konzentration im Inspirationsgemisch (FiO2)
+Geburtsdatum des Patienten
+HFOV Frequenz
+Inspirationszeit in %
+Inspiratorische Pause (I:E)
+Interm PEEP
+HFOV Mitteldruck
+Pmax, Maximaldruck
+HFOV Powereinstellung
+Respiratory Rate (spontan)
+Respiratory Minute Volume
+Respiratory Rate (Volume/Flow)
+Peak Airway Pressure
+Apnea Duration
+beinhaltet Ruhen und Schlafen, Befinden, Krampfanfälle, Sedierung, Schmerzdiagnose
+Für Monitoringdatenübernahme
+Schrittmacherdrähte
+Atemwegszugang
+Herzrhythmus
+mit SQL select getdate()
+Verlegungszeit im Verlegungsprotokoll mit Datum und Uhrzeit
+Nervensysteme
+Alter des Patienten in Jahren
+Aufnahmegewicht (fallbezogen)
+Größe Patient (fallbezogen)
+Körperoberfläche des Patienten (fallbezogen)
+Patientenadresse: PLZ
+Patientenadresse: Ort
+Patientenadresse: Land
+Körperoberfläche des Patienten ohne Fallbezug
+Compliance
+CO2-Production
+Resistance
+Spont Minute Volume
+Mean Airway Pressure
+Breathing Frequency
+Minimum Airway Pressure
+Intrinsic PEEP
+Plateau Druck
+Patient_Verlusst_ExtrakorporaleAbnahme
+Patient_Blutverlusst
+Blutgruppe des Patienten
+Verordnung Ziel-Atemfrequenz
+Angeordnete Ziel-Atemfrequenz für Pflege
+Verantwortlicher Arzt für den zugeordneten Bettplatz
+Bettplatz für Zuordnung der verantwortlichen Mitarbeiter
+Verantwortliche Pflegekraft für den zugeordneten Bettplatz
+Physiotherapie
+Kopfumfang des Patienten (Kinder)
+Geschlecht des Patienten
+Herz Funktion Kammerfüllung
+Linksartrialer enddiastolischer Druck
+Herz Funktion Reizbildung
+Diastolischer Druck
+Herzfrequenz
+Pulse
+Systolischer Druck
+Wasserhaushalt
+Kerntemperatur
+intrav. Flüss.-Therapie
+enterale Ernährung (Sonde)
+parentale Ernährung
+Transpoort eines Intensivpatienten
+zentralvenöser Zugang
+Verbesserung der Lufu.
+Labor / Midi
+Standard Monitoring
+Temperatur 1a
+Temperatur 1b
+Temperatur 2a
+Temperatur 2b
+Temperatur 3a
+Temperatur 3b
+Sauerstoffsättigung Pulsoxymetrie
+Pulsrate errechnet aus der SpO2 Messung
+End-tidales CO2
+Rechtsatrial Mitteldruck
+Pulmunaler Wedgedruck
+Mittlerer pulmonale arterieller Druck
+Herzleistung
+"Linksseitiger Herzkranzperfusionsdruck "
+"Linksventrikulärer Schlagarbeit "
+"Linksventrikulärer Schlagarbeitsindex "
+"Pulmunaler Gefäßwiderstand "
+"Pulmunaler Gefäßwiderstandsindex "
+"Rate-/Druck-Produkt "
+"Rechtsvetrikulärer Schlagarbeit "
+"Rechtsvetrikulärer Schlagarbeitsindex "
+"Schlagvolumen "
+"Index des Schlagvolumens "
+"Pulmonaler Gesamtgefäßwiderstand "
+"Gesamtgefäßwiderstand "
+"Pulskontur-Herzzeitvolumen "
+"Herzindex (kontinuirlich) "
+Schlagvolumenindex  (PICCO Modul Dräger Monitoring)
+"Systemischer Gefäßwiderstand (PICCO Modul Dräger Monitoring) "
+"Index des systemischen Gefäßwiderstandes (PICCO Modul Dräger Monitoring)  "
+"Index der linken Ventrikelkontraktilität  "
+"Herzzeitvolumen (PICCO Modul Dräger Monitoring) "
+"Globales enddiastolisches Volumen "
+Gewicht des Patienten
+"Index des enddiastolisches Volumen "
+"Extravaskuläres Lungenwasser "
+"Extravaskuläres Lungenwasserindex "
+"Globale Auswurffraktion "
+"Index des extravaskulären Thermovolumens "
+"Pulmonalvaskuläer Permeabilitätsindex "
+Pulmunalarterieller Druck
+Herzzeitvolumen
+Pulmonalkapillardruck
+Linksventrikulärer Mitteldruck
+Rechtsventrikulärer Mitteldruck
+Arrhythmie Drägermonitoring, VES/min
+Inspirationszeit I:E
+GCS Erwachsene
+GCS Kinder
+TransmembranDruck
+Arterieller Druck
+Zentraler Venendruck
+Systemic vascular resistance
+Systemic vascular resistance index
+Pulmonalkapillardruck
+HerzindexHerzindex
+HerzfrequenzHerzfrequenz
+Schlagvolumen-Variation
+Intrathorakales Blutvolumen
+Intrathorakaler Blutvolumenindex
+Herzzeitvolumen
+ml/b
+Cardiac output / -index
+SchlagvolumenindexSchlagvolumenindex
+Systemic vascular resistance
+Systemic vascular resistance index
+Herzzeitvolumen
+Herzindex
+Schlagvolumen
+Schlagvolumenindex
+Schlagvolumen Variation
+Systemischer Gefäßwiderstand
+Systemischer Gefäßwiderstandsindex
+Pulmonaler vasculärer Widerstand
+Pulmonaler vasculärer Widerstandsindex
+Intrathorakales Blutvolumen
+Extravasales Lungenwasser
+Größe des Patienten
+Schlagvolumen
+Identifikation des Patiente
+Oxidationswasser in ml (einfuhrrelevant)
+Perspiratio Insensibilis in ml (Ausfuhrrelevant in der Bilanz)
+Perspiratio Sensibilis in ml (ausfuhrrelevant in der Bilanz)
+Volumenrate bei kontinuierlichen Medikamentengabe.
+I:E Inspiration
+I:E Exspiration
+Pulsdruckabweichung
+Herzfunktionsindex
+Herzindex
+Index des intrathorakalen Blutvolumens
+Pkontrol (mbar/frequenz/AZ/min)
+Exspiratorische Triggersensibilität
+Amplitude bei HFOV
+Form der Gabe.
+angeordnete Citratdosis
+Bezeichnug der Calcium Lösung
+"CPAP Einstellung in der Maßeinheit cm H2O, Verwendung bei F120 und CF 800"
+Isolierte Ultrafiltration/Bergström
+gemessener CPAP in der Maßeinheit cm H2O
+"Pimax (Maximaler inspiratorischer Atemwegsdruck)  "
+"gemeesener IPAP (Inspiratorisch Positiver Atemwegsdruck) "
+" gemessener EPAP (=Expiratorisch Positiver Atemwegsdruck)  "
+"Ti/Ttot (Inspirationszeit/Dauer des ganzen Zyklus) "
+"Patientenleck - Die Leckage die aufgrund Masken- bzw. Helmleckage unabhängig der Sollleckage gemessen wird  "
+Die gemessene Gesamtleckage inclusive der bestehenden Sollleckage
+"Pat.Trig (Prozentsatz der vom Patienten ausgelösten Atemzüge) "
+" eingestellter IPAP Wert"
+" eingestellter EPAP Wert"
+"IPAP-Anstiegszeit in Sekunden eingestellt "
+System vorfüllen mit Flüssigkeiten aus einer Auswahlliste
+Oszillationsfrequenz Gerät: Alpha Vision Modus: HFO
+Mittlerer Atemwegsdruck (MAP)
+Schlagvolumen (SV) in engl. (cycle volume)
+Basis Continousflow
+Druckeinstellung für manuell ausgelösten Atemhub
+gemessener Mittlerer Atemwegsdruck unter HFO bei Alpha Vision
+Dauer des manuell durchgeführten Atemhubs
+gemessener Basis Continousflow
+Verordnung Schlauchsystem
+"Pressure Support, Alpha Vision"
+Anstiegszeit (Rampenzeit) Alpha Vision
+positiv inspiratorischer Druck
+eingestellte maximale Inspirationszeit beim G5 im Modus NIV
+Einstelungswert für die Inspirationszeit
+Einstellwert: Zeiteinstellung des oberes Druckniveau beim G 5 im Modus DuoPAP
+prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird
+Einstellwert oberes Druckniveau im beim G 5 im Modus DuoPAP
+Einstellwert oberes Druckniveau beim G 5 im Modus P SIMV
+Einstellwert: Druckunterstützung beim G 5  bei Spontanatemzügen
+Einstellwert: Peep bzw. CPAP Niveau in verschiedenen Modi beim G 5
+Einstellwert: Zeiteinstellung für das untere Druckniveau beim G5 im Modus APRV
+Einstellwert: unteres Druckniveau beim G 5 im Modus APRV
+appliziertes Dialysat für Multifiltrate
+Einstellwert: I:E Verhältnis
+Messwert: Beatmungsspitzendruck
+Messwert: Beatmungsmitteldruck
+Messwert: Beatmungsdruck Peep / CPAP
+"Messwert, exspiratorisches Tidalvolumen Einheit: ml"
+Inspiratorischer Peakflow, ein Monitoring-Parameter
+Inspirationszeit in Sekunden, Monitoring-Parameter
+Inspiratorische Flow-Resistance, ein Monitoring-Parameter
+Exspiratorische Flow-Resistance, ein Monitoring-Parameter
+Statische Compliance, ein Monitoringwert
+Inspiratorische Zeitkonstante, ein Monitoring Parameter
+Exspiratorische Zeitkonstante, ein Monitoring-Parameter
+Index für schnelle Flachatmung (Rapid Shallow Breathing Index), Monitoring Parameter
+Zusätzlich auferlegte Atemarbeit, ein Monitoring Parameter
+Unerwarteter positiver endexspiratorischer Druck, ein Monitoring-Parameter
+Druck Zeit Produkt (Pressure Time Product), ein Monitoring Parameter
+Leckagevolumen, ein Monitoring-Parameter
+Exspiratorischer Peakflow, ein Monitoring-Parameter
+Exspirationzeit, ein Monitoring-Parameter
+Dialysekonzentrat mit Listenauswahl
+Dialysekonzentrat Verordnung String
+Sauerstoffeinstellung in der Maßeinheit Vol %
+Messwert des Sauerstoffgehalt in der Maßeinheit Vol %
+gemessenes I:E Verhältnis
+VO Gefäßzugang extracorporale Verfahren
+Filter  für extrakorporale Verfahren
+Hämofiltrationslösung extrakorporale Verfahren
+Predilution Postdilution extrakorporale Verfahren
+Exspiratorische Triggersensitivität, eine Parametereinstellung
+Antikoagulation Medikament
+Spüllösung zum Vorbereiten des extrakorporalen Verfahrens
+Liste hinterlegt mit Lösungen zum Befüllen des Systems vor Anschluss
+Eine Parametereinstellung. Anstiegszeit des Drucks bei druckkontrollierten und druckunterstützten Atemzyklus.
+max Blutpumpengeschwindigkeit VO
+Anzahl der Atemzyklen pro Minute, Parametereinstellung
+Ultrafiltrationsrate
+Substituat in ml/h
+Substituatbolus in ml
+Sauerstoffeinstellung
+Temperatur in Celsius
+Przentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus
+Eine Parametereinstellung im ASV Modus. Sie wird zur Berechnnug des idealen Körpergewichts (IBW) des Patienten verwendet
+Blutpumpengeschwindigkeit
+Ultrafiltrationsrate
+Umsatz ml/h
+Temperatur in Celsius
+Blutpumpengeschwindigkeit
+Entzugsrate ml/h
+"Umsatz, Austausch, Substituat ml/h"
+Temperatur Celcius
+Blutpumpengeschwindigkeit ml/min
+Ultrafiltrationsrate ml/h
+Umsatz, Austausch Substituat ml/h
+Substituatbolus ml
+Tempertatu Celsius
+Blutpumpengeschwindigkeit
+Ultrafiltrationsrate
+Austausch, Substituat, ml/h
+Temperatur Celcius
+Blutpumpengeschwindigkeit
+Entzugsrate, Ultrafiltrationsrate
+Umsatz, Substituat
+arterieller Druck
+venöser Druck
+Transmembrandruck
+Kumulativwert
+Menge bei diskontinuierlichen Medikamentengaben.
+Plateau-Atemwegsdruck, ein Monitoring-Parameter
+Minimaler Atemwegsdruck, ein Monitoring Parameter
+"Exspiratorisches Minutenvolumen, Monitoring-Parameter "
+Gesamtatemfrequenz, ein Monitoring Parameter
+Spontane Atemfrequenz
+Sauerstoffkonzentration des abgegebenen Gasgemisches
+"Inspiratorischer Druck, mit Pinsp wird der Zieldruck (zusätzlich zu PEEP/CPAP) bezeichnet, der im Modus ASV während der Inspirationsphase abgegeben wird"
+Atemweg-Okklusionsdruck, ein Monitoring-Parameter
+Dialysatlösung, Beutel
+Dialysatrate
+Gialysatrate
+kumulatives Dialysatvol
+Citratbeutel
+Calciumbeutel
+Dosierung
+Ca-rate
+Beutel
+Beutel
+Citratrate
+Calciumrate
+kumulativ Citrat
+Zeitpunkt der Medikamentengabe
+kumulativ
+Citratrate
+Calciumrate
+Plasmarate
+Plasmarate
+Plasmarate
+Kumulativ
+Kumulativ
+kumulativ
+Eingestellte Sauerstoffzufuhr
+gemessene Druckdifferenz im HFOV Modus
+gemessene Sauerstoffgehalt des Gasgemisches
+Einstellgrösse: Druck bzw. Flowtrigger
+Exspirationserkennung 10 - 45% des Peak Flow
+Messwert: Anzahl der gemessenen spontanen Atemzüge
+gemessenes spontanes Atemminutenvolumen
+gemessenes Tidalvolumen
+Plasmaaustauschvolumen kumulativ
+Eingestelltes CPAP Niveau
+Einstellwert: Größe des Gasflusses beim F 120
+Einstellparameter: Sauerstoffgehalt des Gasgemisches
+Einstellgröße Gasfluss Sauerstoff
+Einstellgröße: Gasfluss Druckluft
+Sauerstoffgehalt des eingestellten Gasgemisches CF 800
+eingestelltes CPAP Niveau
+Dialysatlösung
+Spülung zur Vorbereitung
+Druck vor Filter Hämoperfusion
+Filter
+HFLösung
+Option
+Spüldauer
+Füllen des Systems
+Variable wird verwendet für Multifiltrate und ADM 08
+Calciumlösung
+Citratlösung
+Einstellparameter CPAP im Modus CPAP
+Einstellparameter: O2 Konzentration des Gasgemisches
+Messparameter: gemessene Atemfrequenz
+Messwert: gemessenes CPAP Niveau
+Messwert: gemessenes AMV
+Messwert: gemessene O2 Konzentration des Gasgemisches
+Messwert: gemessenes Tidalvolumen
+Einstellwert: Zeiteinstellung für die Inspirationszeit
+Einstellwert: eingestellte Mindestatemfrequenz im ST Moodus
+Medikament
+Medikament
+Einstellwert: eingestelltes Peep bzw. CPAP Niveau
+Messwert: gemessener positiver endexspiratorischer Druck
+Ultrafiltrationsziel
+Ultrafiltrationsrate
+Isolierte Ultrafiltration
+Isolierte Ultrafiltration
+Auswahl für die Applikationsform von NIV Anwendungen
+Kumulativer Entzug, bilanzrelevant
+Einstellwert: eingestellter Basisfluss im Beatmungssystem
+Verordnung für ein Medikament.
+"Einstellwert: eingestellte Oszillationsfrequenz "
+Einstellwert: prozentualer Anteil der Inspirationszeit bezogen auf den gesamtem Atemzyklus
+Einstellwert: prozentuale Kolbenauslenkung
+Einstellwert: eingestellter mittlerer Atemwegsdruck
+Einstellwert: O2 Konzentration des Gasgemisches
+Messwert: gemessene Druckamplitude
+Messwert: gemessene O2 Konzentration des Gasgemisches
+Dialysekonzentrat 6 liter gesamt
+Dialyskonzentratbehälter
+Einstellwert: eingestelltes Tidalvolumen
+Einstellwert: eingestellter Spitzenfluss
+Einstellwert: eingestellte Atemfrequenz
+Einstellwert: eingestellte Apnoefrequenz
+Einstellwert: Plateauphase in Sekunden
+Einstellwert: Inspirationszeit in Sekunden
+Einstellwert: eingestellte Druckdifferenz
+Messwert: gemessener Plateaudruck
+Messwert: gemessenes Atemminutenvolumen
+Messwert: gemessene Atemfrequenz
+Messwert: gemessenes I:E Verhältnis
+eingestellte O2 Konzentration des Gases
+eingestellter Inspirationfluss
+eingestellt mandatorische Atemfrquenz
+eingestelltes Verhältnis zwischen Inspiration und Exspiration
+eingestellte Zeit für den Anstieg zwischen unterem und oberen Druckniveau
+eingestelltes Tidalvolumen
+eingestellte Druckbegrenzung
+einstellte IMV Frequenz im SIMV Modus
+eingestelltes PEEP Niveau
+eingestelltes CPAP Niveau
+eingestellte Druckunterstüzung
+eingestelltes oberes Druckniveau
+eingestellte Triggerschwelle (Flowtrigger)
+gemessenes Atemminutenvolumen
+gemessene O2 Konzentration im Inspirationsgas
+gemessener Beatmungsspitzendruck
+gemessener Plateaudruck (inspiratorischer Beatmungsdruck)
+gemessener positer endexspiratorischer Druck
+gemessener Beatmungsmitteldruck
+gemessenes exspiratorisches Tidalvolumen
+gemessene Atemfrequenz
+gemessener Atemwegswiderstand
+gemessene Lungencompliance
+gemessenes spontanes Atemminutenvolumen
+gemessene spontane Atemfrequenz
+gemessenes CPAP Niveau
+"kleinster gemessener Beatmungsdruck während des Atemzyklus "
+Ergebnis eines Messmanövers im Modus IPPV, IPPV assist
+"Messergebnis eines Messmanövers im ASB Spontan Modus "
+eingestellte O2 Konzentration des Frischgases
+eingestellte absolute Inspirationszeit
+eingestellte Atemfrequenz
+eingestellte Anstiegszeit vom unteren zum oberen Druckniveau
+eingestelltes oberes Druckniveau
+eingestelltes PEEP Niveau
+eingestellte Druckunterstützung
+Einstellgröße des Flowtriggers
+Einstellgröße für das Tidalvolumen
+Einstellgröße für das Tidalvolumen in der Apnoeeinstellung
+eingestellte Atemfrequenz in der Apnoeventilation
+Einstellgröße für die Tubuskompensation
+Einstellgröße für den Flowassist im Modus PPS
+Einstellgröße für den VolAssist im PPS Modus
+Zeiteinstellung für das obere Druckniveau im APRV Modus
+Zeiteinstellung für das untere Druckniveau im APRV Modus
+Druckeinstellung für das obere Druckniveau im APRV Modus
+Druckeinstellung für das untere Druckniveau im APRV Modus
+gemessene O2 Konzentration des inspiratorischen Atemgasgemisches
+gemessener Atemwegsspitzendruck
+gemessener Plataeudruck wähend der Inspiration
+gemessener Atemwegsmitteldruck
+gemessener positiver endexspiratorischer Druck
+gemessener minimaler Atemwegsdruck während des Atemzyklus
+gemessenes Atemminutenvolumen
+gemessenes spontanes Atemminutenvolumen
+gemessenes Leckagevolumen pro Minute
+gemessene Gesamtatemfrequenz
+gemessene spontane Atemfrequenz
+gemessene mandatorische Atemfrequenz
+gemessenes exspiratorisches Tidalvolumen
+gemessenes inspiratorisches Tidalvolumen
+gemessener Atemwegswiderstand
+gemessene Lungencompliance
+gemessener Intrinsic Peep nach Meßmanöver
+gemessenes getrapptes Luftvolumen nach Meßmanöver
+gemessener P0.1 Druck nach Meßmanöver
+Einstellwert: Tidalvolumen
+Hochdruckalarmgrenze im 'ASV Modus
+"Desinfektionsprogramme Gerät "
+Kathetertyp
+Listenauswahl
+Listenanhang
+Liste
+Liste
+Liste
+Liste
+Liste
+Liste
+Medtronic 5348
+Medtronic 5348
+Medtronic 5348
+Medtronic 5348
+Medtronic 5375
+Medtronic 5375
+Medtronic 5375
+Medtronic 5388
+Medtronic 5388
+Medtronic 5388
+Medtronic 5388
+Medtronic 5388
+Medtronic 5388
+Medtronic 5388
+Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben
+Die inspiratorische Bemühung des Patienten ( Flow),  die das Beatmungsgerät veranlässt, einen Atemhub abzugeben
+eingestellte mandatorische AF
+eingestelltes Tidalvolumen
+eingestellter Spitzengasfluss
+Zeiteinstellung für die Plateauphase im Modus CMV und SIMV
+eingestelltes PEEP Niveau
+eingestellter Flowtrigger: Schwellenwertt für die inspiratorische Bemühung des Patienten um die Druckunterstützung auszulösen
+eingestellte Sauerstoffkonzentration des inspiratorischen Atemgases
+eingestelltes oberes Druckniveau im Modus P-CMV und P-SIMV
+eingestellte Inspirationszeit eines Atemzuges
+eingestellte Druckunterstützung bei dem Gerät Avea
+Zeiteinstellung des oberen Druckniveaus im Modus APRV / BiPhasisch
+Zeiteinstellung für das untere Druckniveau im Modus APRV / BiPhasisch
+eingestelltes oberes Druckniveau im Modus APRV / BiPhasisch
+eingestelltes unteres Druckniveau im Modus APRV / BiPhasisch
+gemessenes Tidalvolumen
+gemessener Atemwegsspitzendruck
+gemessenes exspiratorisches Volumen
+gemessene Inspirationszeit
+gemessenes PEEP Niveau
+gemessenes I zu E Verhältnis
+gemessene Exspirationszeit
+errechneter Quotient zwischen Frequenz und Tidalvolumen
+gemessener Atemwegsmitteldruck
+gemessene Atemfrequenz
+gemessenes mandatorisches Tidalvolumen
+gemessenes spontanes Tidalvolumen
+gemessenes inspiratorisches Tidalvolumen
+gemessenes spontanes Atemminutenvolumen
+gemessene spontane Atemfrequenz
+gemessene mandatorische Atemfrequenz
+gemessener Plateaudruck
+gemessene Sauerstoffkonzentration im Atemgas
+gemessene statische Compliance
+gemessener AutoPEEP
+Liste
+Liste
+LIste
+Liste
+Liste
+Liste
+Liste
+Drainagen_SekretmlKum: Drainagen-Sekret Kumulativ zur Dokumentation, nicht bilanzrelevant
+Gefäßdefinition
+Katheterart
+Bezeichnung
+Bezeichnung
+Patient Allergie - Datum
+Patient Besonderheit Datum
+Dokumentation der Markierung des Katheters bzgl. der Lage bzw. Tiefe
+Dokumentation der Markierung des Atemwegszugang bzgl. der Tiefe bezogen auf die Anlagedokumentation
+Dokumentation der Markierung der enteralen Sonde
+Gerät zur Sekretmobilisation
+Wunddokumentation der Tiefe bei Aufnahme oder erstem AUftreten
+Dekubitusgröße bei Aufnahme
+Decubitustiefe bei Aufnahme
+Beobachtungsbeschreibung mit Liste hinterlegt
+Gefäßzugang
+Schlauchsystembeschichtung relevant
+Kathetertyp
+Dokumentation des aktuellen Füllstandes vom Auffangbehälter
+Gerätetyp
+Gerät auswählen
+Hypothermiebehandlung
+Hypothermiebehandlung
+Liste
+Liste
+Bilanzrelevante Dokumentation der Sekretmenge, gefördert über die V.A.C. Pumpe
+Dokumentation des Füllstandes vom Auffangbehälter der VAC Pumpe
+Dokumentation des Füllstandes des Auffangbehälters der V.A.C. Pumpe im Rahmen der Dekubitusversorgung
+Bilanzrelevante Dokumentation der Sekretfördermenge im Rahmen der Dekubitusversorgung
+Dokumentation eines internen Pacer
+GCS Aufnahme
+Hypothermiebehandlung
+Hypothermiebehandlung
+Liste
+Gerät auswählen
+Listenauswahl
+Geräteauswahl
+0=Vorerkrankungen, 1=Hauptdiagnose, ab 2 sonstige Diagnosen
+Temperatur bei der PICCO Messung
+Bluttemperatur bei der HZV Messung
+Beschreibung der Magensaftes
+Dokumentation der eingestellten Temperatur am ECMO Gerät
+Dokumentationsmöglichkeit des Füllstandes des Auffangbehältnisses für den Magensaft
+Eingestellter Temperaturwert an der ECMO (Gerät)
+"Dokumentation der Tätigkeit ""Flushen"" bei Einsatz eines ECMO Verfahrens"
+"Dokumentation der Tätigkeit ""Flushen"" bei Einsatz eines ILA Verfahrens"
+Angeordnete Temperatureinstellung bei ECMO Verfahren
+Statusdokumentation eines implantierten AICD
+Listenauswahl
+Liste
+Liste
+Dokumentation der eingestellten Tubuskompensation
+Dokumentation der zeitlichen Dauer der CPR.
+Dokumentierte Dauer der pflegerischen Assistenz bei therapeutischen, diagnostischen und oder operativen Interventionen.
+Dokumentation durchgeführter diagnostischer Maßnahmen.
+indirekte Lichtreaktion
+indirekte Lichtreaktion
+Zeitpunkt für den die Pupillenreaktion erfasst wurde.
+indirekte Lichtreaktion
+indirekte Lichtreaktion
+Zeitpunkt für den die Pupillenreaktion erfasst wurde.
+Liste
+Liste
+Über eine Messsonde transcutan gemessener Prozentwert
+Über eine Sonde gemessener regionaler cerebraler Blutfluss.
+transcutan gemessener pCO2 Wert.
+Zielwert für den ICP Wert unter Hirndrucktherapie
+Zielwert für den CPP unter Hirndrucktherapie
+Zielwert für den intraparenchymen Sauerstoffpartialdruck ermittelt über PtiO2 Sonde
+Gemessener Sauerstoffpartialdruck im Parenchym
+Über eine Messsonde transcutan gemessener Prozentwert
+Dokumentationsmöglichkeit für die Zielvorgabe des Natriumwertes
+Dokumentationsmöglichkeit für die Zielvorgabe des Kaliumwertes
+"Anordnungsmöglichkeit bzgl. der Drainagenhöhe "
+Anordnungsmöglichkeit für den Sog einer Drainage
+Dokumentation der Applikationsform bei Atemtherapie mittels EzPAP
+Messung des PAP unter der Atemtherapie EzPAP
+Liste
+Liste
+Rotationswinkel
+Rotationswinkel
+Rotationszeit/Haltezeit
+Haltedauer
+Schläge /sek
+Listeneintrag
+Listenauswahl
+Einstellung der Lage
+Liste
+Dokumentation der Versorgung von einen sterbenden Patienten.
+Liste
+Liste
+Liste
+Liste
+Beschreibung der Eigenschaft des Sekrets NRR
+Beschreibung der Menge des Trachealsekrets im Verlegungsbericht.
+Beschreibung der Menge des Sekrets NRR im Verlegungsbericht.
+Rchmond Atation Sedtion Sale bei Vrlegung
+Freitext
+Dokumentation des Zugangswegs bei Schrittmachertherapie im Pflegeverlegungsbericht
+Pupillendokumentation im Pflegeverlegungsbericht.
+Pupillendokumentation im Pflegeverlegungsbericht.
+Dokumentation der Pupillenisokorie im Pflegeverlegungsbericht.
+Dokumentation des Cornealreflexes im Pflegeverlegungsbericht.
+Dokumentation de4s Cornealreflexes im Pflegeverlegungsbericht.
+Listendoku zusätzl. Personal
+Dokumentation des Sekretverlustes über den Dekubitus in ml.
+Dokumentation des Sekretverlustes über die Wunden und Defekte in ml.
+Zeile für einen automatisierten Eintrag, für das Merkmal Sterbebegleitung in INPULS.
+Messung des Horowitz-Indexes
+Einstellwert des NO bei NO Beatmung
+Messwert der  NO Konzentration bei NO Beatmung
+Messwert der NO2 Konzentration bei NO Beatmung
+Referenz auf die Verordnung, welche durch diese Gabe erfüllt wurde.
+Einheit des Medikamentengabe-Objektes
+Liste
+Liste
+Liste
+Liste
+Liste
+Liste
+Liste
+Liste
+Liste
+Marker für die Sterbebegleitung in Inpuls 48 h prä Exitus
+Liste
+Liste
+Ist eine Aufnahme geplant chirurgisch, ungeplant chirurgisch oder medizinisch
+Temperatureinstellung am Gerät Airvo
+Einstellunggröße  des Flows am Gerät
+Dokumentation des eingestellten O2 Flusses, welcher am Gerät Airvo angeschlossen ist.
+Dokumentation der O2 Konzentration in Abhängigkeit der Einstellgrößen FlowSetting und O2 Flow.
+Beschreibung der Schnittstelle vom Gerät zum Patienten
+Dokumentation des Apllikationsweges
+Liste Highflow Highflow CPAP
+"Edi-Mindestwert "
+"Edi-Spitzenwert "
+"Shallow Breathing Index (Index für flache Atmung) "
+"P0.1 "
+"Elastanz "
+"Atemarbeit, Patient "
+"Atemarbeit, Ventilator "
+"Exstiratorische Resistenz "
+"Inspiratorische Resistenz "
+"Statische Compliance "
+"Dynamische Charakteristika "
+"Gemessene Sauerstoffkonzentration "
+"Endexspiratorischer Flow "
+"Exsp. Tidalvolumen "
+"Insp. Tidalvolumen "
+"Leckage in % "
+"MVe [l/min] "
+"Insp. Minutenvolumen "
+"Spontanes exsp. Minutenvolumen "
+"Atemfrequenz "
+"Spontane Atemzüge pro Minute "
+"Continuous Positive Airway Pressure "
+"Positiver Endexsp. Druck "
+"Mittlerer Atemwegsdruck "
+"Atemwegsdruck Pause "
+"Atemdruck Spitze "
+"Backup Ti [s] "
+"Backup I:E [Einstellung] "
+"Backup DK über PEEP [cmH2O] "
+"Backup Frequenz [n/min] "
+"Backup Vt [ml] "
+"Automode Triggerfenster (s) "
+"Gewicht (kg) "
+"EDI Trigger "
+"Nava Pegel "
+"Sauerstoffkonzentration "
+"zeit unteres Druckniveau (tniedrig) "
+"zeit oberes Druckniveau (thoch) "
+"PEEP "
+"Druckunterstüzung hoch (cmH2O) "
+"Phoch (cmH2O) "
+"Phoch (cmH2O) "
+"DU über PEEP "
+"DK über PEEP "
+"Drucktrigger "
+"Flowtrigger "
+"TPause (%) "
+"TPause (s) "
+"I:E [Einstellung] "
+"End. Insp. Zyklusende (% des Spitzenflows) "
+"Insp.-Anstiegszeit (%) "
+"Insp.-Anstiegszeit (s) "
+"Pausendauer [s] "
+"Pausendauer "
+"Ti (s) "
+"CMV Frequenz "
+"SIMV Frequenz "
+"Atemfrequenz "
+"Tidalvolumen "
+PLZ
+Dokumentation der durchgeführten Spitzfußprophylaxe.
+Dokumentation der Füllstandsmenge des Auffandbehälters.
+Dokumentation des Wechsels der Beatmungsbeutels.
+Dokumentation des Wechsels der Beatmungsmasken.
+Dokumentation des prozentualen Anteil des Aufblasens des Ballons.
+Dokumentation des prozentualen Anteils des Leersaugens des Ballons.
+Dokumentation des Unterstützungsdruckes.
+Dokumentation des verwendeten Ballonkatheters.
+Dokumentation des Ballonvolumens.
+Dokumentation der gewählten EG Ableitung für den IABP Einsatz.
+Dokumentation der IABP Frequenz.
+Dokumentation des ausgewählten Triggers der IABP.
+Dokumentation des gemessenen Blutdruckes unter IABP.
+Inhalte der Prämedikation
+Präanästhetische Anordnung Option.
+Präanästhetische Anordnung nüchtern ab definiertertem Zeitpunkt.
+Präanästhetische Anordnung spezielle Untersuchung.
+Präanästhetische Anordnung BZ Tagesprofil.
+Präanästhetische Anordnung Gerinnung.
+Präanästhetische Anordnung Wiedervorstellung.
+Präanästhetische Anordnung aktuelles EKG
+Präanästhetische Anordnung Schilddrüsenwerte.
+Präanästhetische Anordnung aktuelles Labor.
+Präanästhetische Anordnung nüchtern bleiben.
+Name des Anästhesisten, der die Prämedikation erstellt.
+Präanästhetische Anordnung: Anzahl der anzufordernden Einheiten an Eigenblut.
+Präanästhetische Anordnung: Anzahl der anzufordernden Einheiten an TKs.
+Präanästhetische Anordnung: Anzahl der anzufordernden Einheiten an FFPs.
+Präanästhetische Anordnung: Anzahl der anzufordernden Einheiten an EKs.
+Dokumentation des geplanten OP Datums.
+Dokumentation freier Arztwahl
+Ort
+Dokumentation der vorläufigen Diagnose
+Dokumentation der Art des geplanten Eingriffes.
+Dokumentation der klinischen Fachrichtung der OP
+Dokumentation, wenn OSAS CPAP versorgt ist.
+Dokumentation, wenn OSAS vorliegt.
+Dokumentation, wenn Opiatgewöhnung vorliegt.
+Dokumentation, wenn eine Infektion vorliegt.
+Dokumentation, wenn schwieriger Atemweg bekannt ist.
+Dokumentation, wenn PONV vorliegt.
+Dokumentation, wenn MH-Disposition vorliegt
+Dokumentation, wenn Reflux besteht.
+Dokumentation Anästhesierelevanter Vorerkrankungen des Patienten.
+Dokumentation früherer durchgeführter Anästhesien
+Doku Noteingriff.
+Doku Dringlicher Eingriff.
+Doku Wahleingriff.
+Doku einer vorliegenden Patientenverfügung.
+Doku ASA Hirntod.
+Doku ASA V.
+Doku ASA IV.
+Doku ASA III.
+Doku ASA II.
+Doku ASA I.
+Doku Einwilligung DE.
+Doku Einwilligung ICU.
+Doku Einwilligung BK.
+Doku Einwilligung DIB.
+Doku Einwilligung Fem. Katheter.
+Doku Einwilligung Art. Katheter.
+Doku Einwilligung BTx.
+Doku Einwilligung TEE.
+Doku Einwilligung PAK.
+Doku Einwilligung ZVK.
+Doku Einwilligung thorakale PDA.
+Doku Einwilligung Plexusanästhesie.
+Doku Einwilligung Chefvwertreter.
+Doku Einwilligung QEA.
+Doku Einwilligung PDA.
+Doku Einwilligung SpA.
+Doku Einwilligung AS.
+Doku Einwilligung Deep Sedierung.
+Doku Einwilligung Sedierung.
+Doku Einwilligung fieberoptische Intubation.
+Doku Einwilligung Kaudale.
+Doku Einwilligung ITN.
+Doku Neurologie Option 2.
+Doku Neurologie ICP Erhöhung.
+Doku Neurologie Krampfleiden.
+Doku Neurologie Parese.
+Doku Neurologie Wert.
+Doku Neurologie Option 1.
+Doku Neurologie GCS.
+Doku Neurologie Ischämie.
+Doku Neurologie ohne pathologischen Befund.
+Doku Allergien Option 2.
+Doku Allergie Kontrastmittel.
+Doku Allergie Kontakt.
+Doku Allergie Allergiepass
+Doku Allergien Option 1.
+Doku Allergie Antibiotikum.
+Doku Allergien Pollen.
+Doku Allergie Keine
+Doku Medikation AT Antagonist.
+Doku Medikation Analgetikum.
+Doku Medikation Antidiabetikum.
+Doku Medikation Keine.
+Doku Medikation Option 3.
+Doku Medikation Antikoagulans.
+Doku Medikation Sartan.
+Doku Medikation ACE Hemmer.
+Doku Medikation Option 1.
+Doku Medikation Nitrat.
+Doku Medikation Antiarrhythmikum
+Doku Medikation NNR Hormon
+Doku Medikation Option 2.
+Doku Medikation Beta blocker.
+Doku Medikation Kalziumantagonist
+Doku Medikation Diuretikum.
+Dokumentation Stoffwechsel Zusatzoption
+Doku Stoffwechsel Hyperthyreose.
+Doku Stoffwechsel Immobilisation.
+Doku Stoffwechsel Gravidität / Gestose.
+Doku Stoffwechsel C2H5OH Tagesdosis.
+Doku Stoffwechsel ohne pathologischen Befund.
+Doku Stoffwechsel Niereninsuffizienz.
+Doku Stoffwechsel C2H5OH.
+Doku Stoffwechsel Hepathopathie.
+Doku Stoffwechsel Diabetes.
+Dokumentation der Mallampati Klassifikation.
+Dokumentation der Mallampati Klassifikation.
+Dokumentation der Mallampati Klassifikation.
+Dokumentation der Mallampati Klassifikation.
+Dokumentation der Mallampati Klassifikation.
+Dokumentation des Abstandes Kinnspitze Kehlkopf.
+Dokumentation des Abstandes Kinnspitze Kehlkopf.
+Dokumentation des Abstandes Kinnspitze Kehlkopf.
+Dokumentation des Abstandes Kinnspitze Kehlkopf.
+Dokumentation der Möglichkeit zur Kopfreklination
+Dokumentation der Möglichkeit zur Kopfreklination
+Dokumentation der Möglichkeit zur Kopfreklination
+"Dokumentation der Möglichkeit zur Kopfreklination "
+Dokumentation der Sauerstoffsättigung.
+Dokumentation des Blutdruckes.
+Dokumentation der Pulsfrequenz.
+Dokumentation der Aufnahmeart.
+Dokumentation der Aufnahmeart.
+Dokumentation der Aufnahmeart.
+Land
+Dokumentation der Aufnahmeart.
+Dokumentation des Patientengewichts.
+Dokumentation der Patienntengröße.
+Dokumentation der Klinik und der Station des Patienten
+Dokumentation einer BGA
+Doku des Thrombozyten Wertes.
+Doku des Hb Wertes.
+Doku des Leukozyten Wertes.
+Doku des Fibrinogen Wertes.
+Doku des APPT Wertes.
+Doku des INR Wertes.
+Doku des Quick Wertes.
+Doku des TSH Wertes.
+Doku des Glucose Wertes.
+Doku des Gamma GT Wertes.
+Doku des GOT Wertes.
+Doku des CRP Wertes.
+Doku des CK Wertes.
+Doku des GPT Wertes.
+Doku des Harnstoo N Wertes.
+Doku des Creatinin Wertes.
+Doku des Calcium Wertes.
+Doku des Kalium Wertes.
+Doku des Natrium Wertes.
+Doku Herz Kreislauf Ödeme.
+Doku Herz Kreislauf AVK
+Doku Herz Kreislauf Schrittmacher.
+Doku Herz Kreislauf Arrhythmie
+Doku Herz Kreislauf Vitium.
+Doku Herz Kreislauf Allen Test rechts.
+Doku Herz Kreislauf Allen Test links.
+Doku Herz Kreislauf Allen Test.
+Doku Herz Kreislauf Infarkt.
+Doku Herz Kreislauf Herzinsuffizinez.
+Doku Herz Kreislauf KHK.
+Doku Herz Kreislauf Flüssigkeits / Volumen Defizit.
+Doku Herz Kreislauf Hypotonieneigung.
+Doku Herz Kreislauf Hypertonie
+"Doku Herz Kreislauf "
+Doku Herz Kreislauf Ruhe EKG.
+Doku Lunge Röntgen Thorax.
+Doku Lunge Auskultation.
+Doku Lunge FEV1.
+Doku Lunge FVC.
+Doku Lunge Beatmungseinstellung.
+Doku Lunge Anzahle der Pack Years.
+Doku Lunge Pack Years.
+Doku Lunge Beatmung vorhanden ja/nein.
+Doku Lunge COPD.
+EMail
+Doku Lunge ohne pathologischen Befund.
+Doku Lunge Asthma Bronchiale.
+Doku Lunge Inspiratorischer Stridor.
+Doku Lunge Restriktion.
+Doku Lunge Infekt.
+Doku Kardiologische Diagnostik P LV.
+Doku Kardiologische Diagnostik R/L Shunt.
+Doku Kardiologische Diagnostik EF.
+Doku Kardiologische Diagnostik L/R Shunt.
+Doku Kardiologische Diagnostik dP.
+Doku Kardiologische Diagnostik P AO.
+Doku Kardiologische Diagnostik P LA.
+Doku kardiologische Diagnostik CI.
+Doku Kardiologische Diagnostik PCWP.
+Doku Kardiologische Diagnostik P PA.
+Doku Kardiologische Diagnostik P RV.
+Doku Kardiologische Diagnostik P RA.
+Doku Kardilogische Diagnostik Option 2.
+Doku Kardiologische Diagnostik Option 1.
+Doku Kardiologische Diagnostik UKG / Angio
+Dokumentation von welcher Person das Medikament verabreicht wurde.
+Dokumentation der Applikationsform des verordneten Medikaments.
+Dokumentation der Dosis des verordneten Medikaments.
+Dokumentation des Medikamentes, welche als Prämedikation appliziert werden soll.
+Dokumentation der Uhrzeit zu der  die Prämedikation appliziert werden soll.
+Dokumentation des Tages an dem die Prämedikation appliziert werden soll. In der Regel Vorabend des OP Tages oder OP Tag.
+Vertretung
+Dokumentation des eingestellten PEEP.
+Dokumentation des Alters des Patienten.
+Dokumentation des eingestellten Pmax.
+Dokumentation des eingestellten Triggers.
+Dokumentation der eingestellten Rampenzeit.
+Dokumentation der Inspirationszeit. Verhältnis zwischen Tip und Tinsp. 0 bis 60 %.
+Dokumentation der Inspirationszeit.
+Dokumentation des eingestellten Pressure Support.
+Dokumentation der eingestellten Frequenz.
+Dokumentation ders eingestellten Vt.
+Dokumentation des gemessenen Beatmungsspitzendruck.
+Dokumentation des gemessenen Plateaudruckes.
+Dokumentation des gemessenen PEEPs.
+Dokumention des gemessenen endtidalen
+Inspiratorisch gemessenes CO2.
+Gemessenes Atemminutenvolumen.
+Gemessenes Tidalvolumen.
+Gemessene Atemfrequenz.
+Gemessene Leckage.
+Die gemessene Gesamtcompliance abzüglich der im Selbsttest ermittelten System- und Schlauchcompliance ergibt die Lungencompliance.
+Gemessene inspiratorische O2 Konzentration.
+Gemessene exspiratorische O2 Konzentration.
+Gemessener MAC Wert. (endexspiratorische mittlere alveoläre Konzentration)
+"Inspiratorisch gemessene Halothan Konzentration. "
+Exspiratorisch gemessene Halothankonzentration.
+Inspiratorisch gemessene Enfluran Konzentration.
+Exspiratorisch gemessene Enfluran Kozentration.
+Inspiratorisch gemessene Isofluran.
+Exspiratorisch gemessene Isofluran Konzentration.
+Inspiratorisch gemessene Desfluran Konzentration.
+Exspiratorisch gemessene Desfluran Konzentration.
+Inspiratorisch gemessene Sevofluran Konzentration.
+Exspiratorisch gemessene Sevofluran Konzentration.
+Gemessener Frischgas Flow.
+An der Flowröhre eingestellter O2 Frischgasflow.
+An der Flowröhre eingestellter Frischgas Flow für Air.
+Eingestellter Inspiration Druck.
+Eingestellte Mindestfrequenz (Apnoeventilation) in dme Modus Pressure Support.
+Dokumentation des eingestellten I : E.
+Arztdoku S. 10
+Vt in der Backupeinstellung
+Frequenzeinstellung inder Backupeinstellung.
+Apnoezeiteinstellung in der Backupeinstellung.
+gemessenes Schlagvolumen
+Wert des gemessenen Schlagvolumenindex.
+Gesamt Frischgasfluss (Summe aus O2 + AIR)
+Eingestelter Patientengewicht am Pallas
+Gemesener Atemwegsmitteldruck
+Test
+Freitext
+Inspirationszeit maximal
+Aktiv
+Grundfrequenz
+Empfindlichkeit
+Stimulation
+Listenauswahl
+Listenauswahl
+Grundfrequenz
+Empfindlichkeit
+Empfindlichkeit Ventrikel
+Stimulation Vorhof
+Stimulation Ventrikel
+AV Überleitungszeit
+Überstimulationsfrequenz Vorhof
+Rapid Pacing Stimulationsfrequenz
+postventrikuläre atriale Refraktärzeit
+atriale Refraktärzeit
+ventrikuläre Stimulationsfrequenz
+obere Frequenzbegrenzung
+Liste
+abhängig in ES der Sense-Liste
+Art d.Narkosegas
+kontrollierte Wassertemperatur, gemessener Wert
+Name des Anästhesisten, der als entlassender Anästhesist auf dem Ausdruck des Anästhesieprotokolls erscheint.
+Der Bispectral Index (BIS) ist ein verarbeiteter EEG Parameter und zeigt die Auswirkungen der Sedierung auf das Gehirn an.
+entspricht der SR Anzeige am Gerät. Burst Supression Ratio
+neu angelegt am 18.05.2012
+Neuanlage 18.05.2012 String
+Anlage 18.05.2012 String
+Anlage 18.05.2012
+Listenauswahl
+Listenauswahl
+Der dokumentierte Füllstand des Auffangbehälters der subglotischen Absaugung.
+Dokumentierte Menge des extrahierten subglottischen Sekrets.
+Der am Gerät gemessene Sog bei der Verwendung eines Gerätes zur subglottischen Absaugung.
+Der eingestellte Modus am Gerät beim Einsatz der subglottischen Absaugung.
+Dokumentierter Zeitpunkt, zu dem der Aufwachversuch abgebrochen wurde.
+Gründe für den Abbruch des dokumentierten Aufwachversuches.
+Möglichkeit Freitext zu einem Aufwachversuch zu dokumentieren.
+CAM ICU Einschätzung des dokumentierten Aufwachversuches.
+Beurteilung der Motorik im dokumentierten Aufwachversuches.
+Beurteilung des Augen öffnens im dokumentierten Aufwachversuches.
+Beurteilung der Schutzreflexe im dokumentierten Aufwachversuches.
+Beurteilung der Vegetativen Reaktion im dokumentierten Aufwachversuches.
+Dokumentation des  Aufwachversuches. Dürchführung Ja /Nein.
+Datum des dokumentierten Aufwachversuches.
+Eingestelltes Körpergewicht beim respirator C2.
+Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben.
+Eingestellte Alarmhochdruckgrenze. Einstellung erfolgtdirekt über die Alarmeinstellung aber auch indirekt über die Einstellung Pasvlimit. Die Alarmhochdruckgrenze liegt automatisch 10 mbar über der Pasvlimit Einstellung.
+Eingestellter PEEP, CPAP oder Ptief am C2.
+Eingestellter Pkontrol oder Phoch am C2.
+"Eingestellte CMV Frequenz bei dem Respirator C2  in den Beatmungsmodi DUOPAP, APVcmv, Pcmv, "
+Eingestellt SIMV Frequenz bei dne Respiratoren C2 5 in den Beatmungsmodi APVsimv, Psimv.
+Eingestelltes Körpergewicht.
+"Eingestellte CMV Frequenz bei dem Respirator G5 in den Beatmungsmodi DUOPAP, APVcmv, Pcmv, "
+Eingestellt SIMV Frequenz bei dem Respirator G5 in den Beatmungsmodi APVsimv, Psimv.
+Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.
+Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi.
+Person, die die Wertsachen angenommen hat
+Ob alle Wertsachen vollständig ausgehändigt wurden (Ja/Nein)
+post operative Empfehlung der Pflege bei Verlegung AWR 24h
+Verknüpfung zum entsprechenden Fall zu dem ein Befund erhoben wurde (muss also ggf. bei Abfrage immer mit berücksichtigt werden!)
+freigebender Arzt der übermittelnden Einrichtung
+Flag für das logische Löschen
+Name des Subsystems, ggf. bereits geändert durch den Trigger
+Dokumentation des Füllstandes des Urinauffang.
+Dokunentiertes Datum, wenn eine Dekanülierungsplan abgeschlossen wurde.
+Datum des Anlagezeitpunkts des Dekanülierungsplans.
+0/1-Repräsentation des Storno-Flags aus SAP
+Transientes Objekt für die temporäre Aufnahme der Vorwerte für die medizinische Dokumentation Untersuchung körperlicher Status
+Erhebungszeitpunkt des BPS Scores.
+Dokumentation ob eine Versorgungsvollmacht vorliegt.
+Dokumentation des ärztlichen Aufnahmebfundes zur Rubrik Abdomen.
+Befundsdokumentation des Aufnahme EKGs
+Dokumentierender Mitarbeiter.
+Link zu einem Befundobjekt
+"Beinhaltet den Namen der Bettplätze, wie er aus SAP bekannt ist. "
+Laufende Nummer aus SAP, zur eindeutigen Identifikation eines Datensatzes
+Keim-Objekt für die Zuordnung von Antibiogrammen und das Speichern der Erregerinformationen
+Objektstruktur für die Aufnahme von strukturierten Antibiogrammen
+Winkel der Extremitätenlagerung/Bett/Kopf
+Spüllösung die intermittierend appliziert wird, Wert wirdals Bilanzwert verrechnet
+Dokumentation Oxygenator - Liste
+%Systole Verhältnis Systolendauer zur Diastolendauer
+Verhältnis Systole zur Diastolendauer
+Liste - Doku Durchführung
+Liste ein aus
+Liste durchgeführt
+"Liste "
+"Liste "
+bei luftblasen, Liste ein aus
+Liste ein aus
+Liste durchgeführt
+Delta P2/P3
+Liste
+interne (durch Presenter erhoben) oder externer (durch Schnittstelle) Befund
+Welcher Befundtyp (Beispiel: Konsil, Bildgebung etc.)
+Objekt für die Keime von mikrobiologischen Befunden
+Erregername zur eindeutigen Identifikation des Objekts
+Antibiogrammobjekt für die MiBi-Befunde
+Link zum Keim eines Antibiogramm-Objekts
+Wirkstoffbezeichnung
+Wirkstoffsensibilität
+Für die Filterung auf der Seite Massnahmen, Bildgebung, Diagnostik und Konsile nach Herkunft (extern, d.h. über Schnittstelle, oder intern, d.h. über Presenter dokumentiert)
+Messung nur unter ASV Intellivent
+Negativ Wert/positiv Wert
+Liste ein aus
+Liste ein aus
+Liste ein aus
+Liste ein aus
+Liste ein aus
+Liste ein aus
+Liste ein aus
+Bereich Decimal - bis +
+Bereich Decimal - bis +
+Uhrzeit
+Zeit zwishen 2 SBT
+Zeit bis zum Start STB
+Tabellen-Object-Variable für den Befundtest aus der Virologie
+Auf was getestet wurde
+Anpassung für automatische Gerätedataenübernahme mit IBUS
+Anpassung für IBUS Anbindung
+Anpassung IBUS Anbindung
+Anpassung für IBUS Anbindung
+Anpassung für IBUS Anbindung
+Anpassung für IBUS
+Anpassung für IBUS Anbindung
+Anpassung für IBUS Anbindung
+Anpassung aufgrund IBUS Anbindung
+Anpassung für die automatische Datenübermnahme IBUS
+Anpassung für die automatische Datenübernahme IBUS
+Änderung für die automatische Datenübernahme IBUS
+Anpassung für automatische Datenübernahme IBUS
+Neuanlage im Zuge der IBUS Anbindung
+Anpassung im Zuge der automatischen Geräteanbindung über IBUS. Änderung in ml
+"Anpassung analog zu Geräten mit automatischer Datenübernahme Änderung in ml "
+automatische Datenübernahme IBUS
+Anpassung im Zuge der automatischen Datenübernahme IBUS
+neue Variable für automatische Datenübernahme IBUS
+Texteintrag
+Anlage für IBUS Datenübermittlung
+Anlage für IBUS Datenübermittlung
+Messwert im Verlaufbis zum erreichen der eingestellten Zieltemperatur
+manueller Modus
+Filtermöglichkeit für Systeme (Eingeführt für den Filter auf MLAB/Viro und MiBi-Befunde)
+Wert gemessen am Ventilator
+VT/IBW
+Flag für eine Fotodokumentation. Gibtkeine Information über Aufnahmezeitpunkt und Anzahl der Fotos
+Enthällt den ConnectionString für die Remote-Verbindung zum COPRA-Pumpeninterface. Dieser folgt dem Schema tcp:--COMPUTERNAME:PORT/ENDPUNKTNAME.
+Eindeutige Identifikation innerhalb des Geratetyp-Namensraums (z.B. Seriennummer)
+Name des Geräts, der innerhalb des Gerätetyps eindeutig ist, damit Mitarbeiter ihn aus der Liste zuordnen können
+Verknüpfung zwischen Patient und einem Gerät
+Leistungserbringer gueltig ab
+Oberer Druckniveau
+Leistungserbringer gueltig bis
+Dienststellung
+Archivdruck
+Archivdruck-Hashalgorithmus
+Archivdruck-Beginn
+Archivdruck-Ende
+Archivdruck-Intervall
+Archivdruck-Container
+Archivdruck-ContainerVersion
+Archivdruck-Fehlernachricht
+Archivdruck-Druckdatum
+Archivdruck-Status
+Archivdruck-Druckobjekt
+Objekt für die Geratedefinition
+Filtervariable Prämedikation Nachname
+Systemischer Gefäßwiderstand
+Schrittmacher AV-Intervall
+Schrittmacher Frequenz
+Schrittmacher Empfindlichkeit
+Schrittmacher Ausgangsleistung (Output) Ventrikel
+Schrittmacher Ausgangsleistung (Output) Atrium
+Schrittmachermodus
+Schrittmacher Art
+Zerebraler Perfusionsdruck
+Intrakranialer Druck
+zweiter arterieller Blutdruck
+"zweiter nichtinvasiver Blutdruck "
+Linksatrial  Mitteldruck
+Ereignisse Vitlaparameter Graphisch als Listenauswahl
+arterieller Blutdruck 1
+Schwangerschaftswoche zum Zeitpunkt der Geburt in ganzen Tagen
+errechneter Geburtstermin
+Kopfumfang des Patienten in Zentimetern
+Zuletzt selektierter Perzentilendatensatz des Patienten
+Bezugsgewicht des Patienten in kg
+Geburtsgewicht des Patienten in Kilogramm
+Bewegungsnummer für die eindeutige Identifizierung der Behandlung
+Behandlungabschluß
+Medizinischer Behandlungsabschluss
+Behandlung_LEP_Ereignis
+Fall
+Aufnahmezeitpunkt für den Fall
+Entlassungszeitpunkt für den Fall
+Identifikationsnummer des Falles
+Behandlung
+Behandlungsort
+Belegung eines Behandlungsortes
+Medikamentengabe
+Medikament
+Grund der Nicht-Nachverordnung von einer Gabe
+Medikament einer Verordnung
+Darstellung der Medikamentengabe als Objekt
+nichtinvasiver Blutdruck 1
+Behandlung_LEP_Information
+Behandlung_LEP_Zeitstrahl
+Typ der Behandlung
+Status des Ausdrucks
+Name des Behandlungsortes
+Der Behandlungsort ist kein Bettplatz
+Anfangszeitpunkt der Belegung eines Behandlungsortes
+Endzeitpunkt der Belegung eines Behandlungsortes
+Grund der Belegung eines Behandlungsortes
+Medikamentenmischung
+Organisationseinheit
+Verordnung von Serien
+Wird beim Dokumentieren und Nachverordnen einer Gabe erzeugt.
+Computer
+INPULS-Pflegekategorie
+gemeldete Beatmungsstunden (in Minuten)
+Tag für den die Pflegekategorie erhoben wurde
+Gemeldet am
+Pflegekategorie
+"IDs der INPULS-Kriterien, welche zur Kategorie geführt haben ... und der zusätzlichen Kategorien"
+Transporte
+Betrachtungszeitraum in Minuten
+Pfad für den Export der INPULS-Kategorien
+IDs der INPULS-Kriterien, welche zur Höherstufung der Kategorie dienen
+IDs der INPULS-Kriterien, welche als Basis zur Kategorie dienen
+Zeitpunkte der INPULS-Pflegekategorie-Exporte für diese OE
+fachliche Organisationseinheit der Behandlung
+pflegerische Organisationseinheit der Behandlung
+Beginn der Behandlung
+Ende der Behandlung
+Code der Diagnose
+Bezeichnung der Diagnose
+Typ der Diagnose
+In diesem Objekt werden Verordnungsanforderungen und -befunde zu Diagnostik bzw. Konsilen eingetragen.
+Diagnostik- bzw. Konsilanforderung angemeldet
+Befund zur Diagnostik- bzw. Konsilanforderung
+Zeitpunkt, zu dem die Diagnostik- bzw. Konsilanforderung geschrieben wurde
+Fragestellung zur Diagnostik- bzw. Konsilanforderung
+Zeitpunkt der erledigten Diagnostik- bzw. Konsilanforderung
+Name des Arztes, der die Diagnostik- bzw. Konsilanforderung befundet.
+Kategorie, ob es sich um Diagnostik- oder Konsilanforderung handelt.
+Lokalisation der zu befundenden Region
+Methode der Diagnostik bzw. des Konsils
+Transientes Objekt für Filterkriterien
+Filtervariable für ein Beginndatum
+Filtervariable für ein Endedatum
+Filtervariable für eine Ganzzahl
+Filtervariable ein Ja-/Nein-Feld
+Filtervariable ein Ja-/Nein-Feld
+Filtervariable für die VO-Kategorie
+Status der Verordnung/Aufgabe (z.B. offen oder erledigt)
+Termin für die Untersuchung/Massnahme
+Wiederholung der Untersuchung/Massnahme für x Tage
+Anzeigetext der Anordnung/Aufgabe (verwendet für Darstellung in ObjectLine))
+mehrfache Zeiten für Anordnung/Aufgabe
+Zeit für Anordnung/Aufgabe
+wird zur Anzeige in ObjektLines verwendet und dynamisch angelegt bzw. geändert
+Filtervariable für die VO-Methode
+Filtervariable für den VO-Status
+Filtervariable für die VO-Termin Von
+Filtervariable für die VO-Termin Bis
+Filtervariable für die Schicht, deren Aufgaben in der Verordnungsliste dargestellt werden sollen.
+Schema für Verordnungen
+Filtervariable für einen Namen
+Filtervariable für einen Ort/eine Stadt
+Filtervariable für eine Postleitzahl
+Filtervariable für eine externe ID
+Filter Objekt für multiple String
+Filtervariable für einen multiplen String
+Objekt mit Links auf die zugehörigen Durchführungsobjekte
+Texteintrag zum zugehörigen Durchführungsobjekt der VO
+Link zum zugehörigen Durchführungsobjekt der VO
+Variable die Berechtigungen für Neuanlage enthält
+Intervall zwischen den Wiederholungen der Untersuchung/Massnahme in x Tagen
+Filtervariable um AO absteigend sortieren
+Filtervariable um Labor auszublenden
+Filtervariable für Freitextsuche
+Gibt an ob die Verordnung nicht visiert ist
+Kopierstatus der Verordnung
+Link auf Leistungsanforderungsobjekt zur Anordnung
+Filtervariable Prämedikation Nachname
+Filtervariable Prämedikation Fallnummer
+Filtervariable PrämedikationGeburtsdatum
+Filtervariable Prämedikation OP Saal
+Filtervariable Prämedikation OP Datum
+Filtervariable Prämedikation Datum
+Filtervariable Prämedikation Freigabestatus
+Besucherverinbarung für den Patienten
+Telefonummer des Patientenbetreuers
+Betreuer des Patienten
+Muttersprache des Patienten
+Religion des Patienten
+Angehoerigen-Telefon
+Nachname des Angehörigen
+Familienstand des Patienten
+Handy Nummer der Angehörigen des Patienten
+Berufliche Telefonnummer der Angehörigen des Patienten
+Beruf des Patienten
+Arbeitgeber des Patienten
+Score-Variablen zur Erfassung des Braden-Scores zu einem beliebigen Zeitpunkt in der Zeitachse
+Lokalisation des Atemwegszuganges
+Lokalisation der enteralen Sonde
+Beschreibung der Wunde, mit Listenauswahl
+Gerät zur Sekretmobilisation, Listenanhang
+Dokumentation von durchgeführten Systemwechseln bei Enteralen Sonden
+Dokumentation des eingestellten Modus der V.A.C. Pumpe
+Dokumentation der eingestellten Intensität der V.A.C. Pumpe
+Verlaufsdokumentation bzgl. des Dekubitusgrades
+Verlaufdokumentation der Beobachtung bzgl. des Dekubitus
+Dokumentation des V.A.C. Pumpen Modus bei Dekubiti
+Dokumentation der V.A.C. Pumpen Einstellung bzgl. der Intensität
+Dokumentation der ersten Beobachtung bzgl. Messsonden bei Aufnahme oder Anlage
+Dokumentation der Erstbeobachtung bzgl. Drainagen bei Anlage oder Aufnahme
+Dokumentation bei Anlege oder Aufnahme
+Dokumentation der Erstbeobachtung bzgl. Harnwege bei Anlage oder Aufnahme
+Erste Beobachtungbzgl. des Dekubitus bei Aufnahme oder erstem Erkennen
+Beschreibung der Dekubitustiefe bei Aufnahme oder Erstbeobachtung
+Dokumentation der Wundtiefe bei Aufnahme oder Erstauftreten
+Beschreibung des Lippenstatus bei Aufnahme
+Beschreibung des Haarstatus bei Aufnahme
+Beschreibung des Zahnstatus bei Aufnahme
+Beschreibung des Ohrenstatus rechts bei Aufnahme
+Beschreibung des Ohrenstatus links bei Aufnahme
+Beschreibung des Nasenstatus rechts bei Aufnahme
+Beschreibung des Nasenstatus links bei Aufnahme
+Dokumentation der Mege des Nasen- und Rachensekrets
+Beschreibung des Sprachverhaltens des Patienten
+Dokumentation des Sprachverhaltens des Patienten bei Aufnahme
+Dokumentation der Ohrenpflege rechts ab dem 22.02.2010
+Dokumentation des Ohrenstatus links ab dem 22.02.2010
+Dokumentation der Nasenpflege links ab dem 22.02.2010.
+Dokumentation des Nasenstatus links ab dem 22.02.2010.
+Dokumentation der Augenpflege links ab dem 22.02.2010
+Dokumentation des Augensekrets links ab dem 22.02.2010
+Beschreibung des AugenStatus links ab 23.02.2010
+Dokumentation von Angehörigengesprächen.
+Dokumentation von Angehörigenbetreuung
+Dokumentation eines Angehörigengesprächs
+Dokumenttion der Versorgung verstorbener Patienten.
+Liste
+Beurteilung der Sprache im Verlegungsbericht Pflege
+Dokumentation des Dekubitus Zusatzrisikos bei Verlegung
+Dokumentation des Status der Lagerungsmaßnahmen bei Verlegung
+Dokumentation des Mobilisationsgrad zum Zeitpunkt der Verlegung
+Dokumentation des Status des Schluckaktes
+Dokumentation des Nasenstatus im Pflegeverlegungsbericht
+Dokumentation des Nasenstus links im Pflegeverlegungsbericht
+Dokumentation des Ohrenstatus rechts im Pflegeverlegungsbericht
+Dokumentation des Ohrenstatus links im Pflegeverlegungsbericht
+Dokumentation der Körperpflege des Patienten, die durch das Pflegepersonal übernommen wird.
+Dokumentation der assistierten Körperpflege im Pflegeverlegungsbericht.
+Dokumentation der selbstständigen Körperpflege des Pat. im Pflegeverlegungsbericht.
+Dokumentation des Zahnstatus zum Zeitpunkt der Verlegung im Pflegeverlegungsbericht.
+Dokumentation des Haarstatus bei Verlegung im Pflegeverlegungsbericht.
+Dokumentation des Lippenstatus zum Zeitpunkt der Verlegung im Pflegeverlegungsbericht.
+Dokumentation des Urogenitalstatus zum Zeitpunkt der Verlegung im Pflegeverlegungsbericht.
+Der letzte in der Verlaufsdokumentation ermittelter Braden Score, der in den Pflegeverlegungsbericht gespiegelt wird.
+Dokumentation der Urinbeschaffenheit zum zeitpunkt der Verlegung
+Dokumentation der Stuhlbeschaffenheit zum zeitpunkt der Verlegung
+Dokumentation des Ventilationsstatus zum Zeitpunkt der Verlegung
+Liste
+Dokumentationsmöglichkeit für den Qualitätscheck (Kontrollle der eingestellten Verfahrensparameter) des Dialyse- bzw. Hämofiltrationsgerät.
+"Dekanülierungsplan des Patienten. Anlage mehrerer Pläne ist möglich. "
+Objekt für die Tabelle der körperlichen Untersuchung der ärztlichen Dokumentation
+Bemerkung zu einer Diagnose
+Dokumentation des Aufnahmegrunds in der Dokumentation Medizinischer Dienst.
+Dokumentation des Patientengewichtes bei Aufnahme.
+Dokumentation der Patientengröße bei Aufnahme.
+Dokumentation der Aufnahmeart.
+ICD-Katalogtext wie er aus SAP übermittelt wird
+Hilfsmittel
+Listenauswahl
+Herzfrequenz Zielwert
+RR Zielwert
+MAP Zielwert
+ZVD Zielwert
+Temperatur Zielwert
+ICP Zielwert
+CPP Zielwert
+SpO2 Zielwert
+BZ Zielwert
+Bilanz Zielwert
+Kostform Intervention
+Lagerung Intervention
+BZ-Kontrolle Messintervall
+Bilanz Messintervall
+Spez.Gew. Messintervall
+Gewicht Messintervall
+ICP Messintervall
+ZVD Messintervall
+Pupillen Zielwert
+"Bewusstsein Messintervall "
+Globaler Zwischenspeicherfür die Fallnummer für die Verwendung in Dialogen die aufgrund der Var-Struktur nicht an das Fallobjekt kommen.
+Dokumentation des gemessenen Blutdruckes unter IABP
+Dokumentation des prozentualen Anteils des Aufblasens des Ballons
+Dokumentation der gewählten EKG Ableitung für den IABP Einsatz
+Dokumentation des Unterstützungdruckes
+Dokumentation der IABP Frequenz
+Dokumentation des ausgewählten Triggers der IABP
+Dokumentation des prozentualen Anteils des Leersaugens des Ballons
+Liste
+Liste
+Gegangen ohne Arztkontakt
+Auslandsaufenthalt in den letzten 6 Monaten?
+Auslandsaufenthalt in den letzten 6 Monaten?
+CODE zum Überspringen der Pflichtfelder Vitalparameter - Anforderung für IT Lizenz
+Freitextfeld
+Pat. wird unter Reanimstionsbedingungen aufgenommen
+RR_systolisch Zielwert
+RR_diastolisch Zielwert
+Atemfrequenz Zielwert
+GCS Zielwert
+NRS Zielwert
+Raumzuweisungsvariable Notaufnahme
+Eingestelltes Körpergewicht
+Inspiratorische Bemühung des Patienten, die das Beatmungsgerät veranlasst, einen Atemhub abzugeben
+Exspiratorische Triggersensitivität, eine Parametereinstellung
+"Eingestellte CMV Frequenz bei dem Respirator G5 in den Beatmungsmodi DUOPAP, APVcmv, Pcmv, "
+Eingestellt SIMV Frequenz bei dem Respirator T1 in den Beatmungsmodi APVsimv, Psimv.
+Eingestelltes unteres Druckniveau bei den Respirator G5 in verschiedenen Beatmungsmodis.
+Beatmung_ES_T1_Psupport
+Eingestelltes oberes Druckniveau bei dem Respirator  G5 in verschiedenen Beatmungsmodi
+prozentualer Anteil der Inspiration, der Plateauphase bestimmt wird
+Einstelungswert für die Inspirationszeit
+Sauerstoffeinstellung
+Für die Kopie Aufnahmemedikation--> Entlassmedikation
+Implementierung für anamnestische Erhebung des Status innerhalb d. Active X Anwendung
+Allergiestatus unbekannt fallbezogen - Active X Plugin
+Fall_Allergie_nichtErhoben - Active X Plugin
+Status nicht bekannt
+Peaklfowmeter Messung in % mit Definition <> Messung exspirat. Spitzenfluss
+Listenanhang mit positiv und negativ Auswahl
+Peakflowmessung mit Angabe > <, daher String
+COPY Vormedikation--Entlassmedikation
+bezogen auf kontinuierliche Verordnungen
+Listeneintrag -Fotodokumentation durchgeführt
+Verlaufseintrag bei Erstellung einer Fotodokumentation. Dient nur als Durchführungsnachweis
+Neuanlage für B_Entlassbefund, da diese den falschen Datentyp hat
+Behandlungsdiagnose
+Relevante Vorgeschichte
+Ort der Messung ABP1
+Ort der Messung ABP2
+Liste hinterlegt, definierte Peepeinstellungen über Ventil
+Pertionealdialyse Auslaufmenge in ml
+Auslaufzeit
+Einlaufhöhe in cm
+Peritonealdialyse Einlaufmenge in ml
+Apnoezeit
+Einstellung der Luftfeuchtigkeit im Inkubator
+Einstellung der Luftemperatur
+Einstellung der O2-Konzentration im Inkubator
+Messung der Luftfeuchtigkeit im Inkubator
+Messung der Luftemperatur im Inkubator
+Messung der O2-Konzentration im Inkubator
+Einstellwert: Zeiteinstellung für das untere Druckniveau
+Einstellwert: Tidalvolumen
+Unerwarteter positiver endexspiratorischer Druck
+Statische Compliance
+Exspiratorisches Minutenvolumen
+Exspiratorischer Peakflow
+Spontane Atemfrequenz
+Gesamtfrequenz
+gemessenes I:E Verhältnis
+Inspiratorischer Peakflow
+Sauerstoffkonzentration des abgegebenen Gasgemisches
+Atemweg-Okklusionsdruck, ein Monitoring-Parameter
+Messwert: Beatmungsdruck Peep/CPAP
+"Inspiratorischer Druck, mit Pinsp wird der Zieldruck (zusätzlich zu PEEP/CPAP) bezeichnet, der im Modus ASV während der Inspirationsphase abgegeben wird"
+Messwert: Beatmungsmitteldruck
+Minimaler Atemwegsdruck, ein Monitoring Parameter
+Plateau-Atemwegsdruck
+Druck Zeit Produkt (Pressure Time Product)
+Inspiratorische Flow-Resistance
+Index für schnelle Flachatmung (Rapid Shallow Breathing Index)
+Wert gemessen am Ventilator
+Inspirationszeit in Sekunden
+Leckagevolumen
+"Messwert, exspiratorisches Tidalvolumen"
+eingestellte maximale Inspirationszeit im Modus NIV
+Prozentsatz des Minutenvolumens, eine Parametereinstellung im ASV Modus
+Einstellwert oberes Druckniveau im Modus DuoPAP
+Einstellwert: unteres Druckniveau im Modus APRV
+Peritonealdialyse - Einlaufhöhe in cm
+Liste
+Aktualisierung der Variablenstruktur , Bestehdner Ramsay Score als String Variable wird hierdurch abgelöst
+eingestelltes Körpergewicht
+Eingestellter PEEP, CPAP oder Ptief
+Inspiratorischer Druck
+Eingestellte CMV Frequenz
+Eingestellte SIMV Frequenz
+Inspirationszeit max
+Exspiratorisches Minutenvolumen
+spontanes Atemminutenvolumen
+Spontane Atemfrequenz
+Gesamtatemfrequenz
+Endtidaler CO2-Partialdruck
+Plateau- oder endinspiratorischer Druck
+Inspiratorischer Druck
+AutoPEEP oder intrinsischer PEEP
+Verhältnis Inspirationszeit:Exspirationszeit
+Exspiratorischer Peakflow
+Inspiratorischer Peakflow
+Exspiratorische Zeitkonstante
+Inspiratorische Flow-Resistance
+Statische Compliance
+Atemwegs-Okklusionsdruck
+"Index für schnelle Flachatmung („Rapid Shallow Breathing Index“) "
+Ectopic Status Label
+Arrhytmia Rhytm Status label
+Windelgewicht in g. Wird in Bilanz als ml verrechnet
+Magenrestesatz Intervention
+"Kopfumfang Grenzwert "
+tcpO2 Grenzwert
+Verordnung AP Ersatz
+Stuhlgang Messintervall
+Magensonde Messintervall
+UrinStix Messintervall
+tcpO2 Messintervall
+Kopfumfang Messintervall
+Gewicht Zielwert
+Kopfumfang Zielwert
+tcpO2 Zielwert
+SaO2 Zielwert
+Herkunftsland der Mutter
+Geburtsdatum der Mutter
+Alkoholgebrauch während der Schwangerschaft
+Alkoholgebrauch während der Schwangerschaft
+Nikotingebrauch während der Schwangerschaft
+Nikotingebrauch während der Schwangerschaft
+Insulinapplikation während der Schwangerschaft
+Insulinapplikation während der Schwangerschaft
+Ernährungszustand bei Aufnahme
+Allgemeinzustand bei Aufnahme
+Impfungen nach STIKO durchgeführt
+Standard Base Excess
+Menge der Nahrung in ml, die getrunken wurde. Die Menge wird nicht mit der Bilanz verrechnet
+Menge der Nahrung in ml, die gestillt wurde. Die Menge wird nicht mit der Bilanz verrechnet
+Menge der Nahrung in ml, die sondiert wurde. Die Menge wird nicht mit der Bilanz verrechnet
+Mittlerer Arterieller Blutdruck
+Wachheit/Aufmerksamkeit
+Schwangerschaftswoche
+"Betreuung nach AWMF bei Kindern mit Geb. Gew. unter 1500g "
+Kopfumfang bit cm
+Nichtinvaiver Blutdruck linkes Bein
+Nichtinvasiver Blutdruck rechtes Bein
+Nichtinvasiver Blutdruck linker Arm
+Nichtinvasiver Blutdruck rechter Arm
+Ort der Messung NBP1
+transcutan gemessener pO2 Wert.
+Soziale_Besonderheiten, z.B. Familiensituation
+Parameter im Modus Highflow - ab 08.06.2017
+Elternanleitung
+Pupillenform links bei Aufnahme
+Pupillenform rechts bei Aufnahme
+Cornealreflex links bei Aufnahme
+Cornealreflex rechts bei Aufnahem
+Pupillenkontrolle links bei Aufnahme (Pupillenweite | Pupillenrekation)
+Pupillenkontrolle rechts bei Aufnahme (Pupillenweite | Pupillenreaktion)
+Stuhlgang Intervention
+Magensonde Intervention
+Stuhlgang Messintervall
+Stuhltherapie Intervention
+"Urinstix Messinterval "
+Drainagen/Sog Intervention
+Fototherapie Intervention Wert
+Fototherapie Intervention Maßnahme
+Magenrestersatz Intervention
+Nahrungsersatz Intervention
+AP_Ersatz Intervention
+Sonstige Intervention
+Herzfrequenz Grenzwert
+Herzfrequenz Messintervall
+Respiration Grenzwert
+Respiration Messintervall
+Respiration Zielwert
+SpO2 Messintervall
+SpO2 Grenzwert
+tcpO2 Messintervall
+tcpO2 Zielwert
+"tcpCO2 Zielwert "
+tcpO2 Grenzwert
+tcpCO2 Grenzwert
+etCO2 Grenzwert
+etCO2 Messintervall
+"etCO2 Zielwert "
+ABP Grenzwert
+ABP Messintervall
+"ABP Zielwert "
+NBP Grenzwert
+NBP Messintervall
+"NBP Zielwert "
+PAP Grenzwert
+"PAP Messintervall "
+"PAP Zielwert "
+LAP Grenzwert
+"LAP Messintervall "
+"LAP Zielwert "
+"Temperatur Grenzwert "
+Temperatur Messintervall
+Gewicht Grenzwert
+Gewicht Messintervall
+Gewicht Zielwert
+Bilanz Grenzwert
+ZVD Grenzwert
+ICP Grenzwert
+Scoreerhebung Messintervall
+Sonstige Messintervall
+Einstellung des Neigungswinkels
+Verordnung des Neigungswinkels
+Liste
+Dokumentation von Interventionen (Operationen, andere Maßnahmen)
+Blutgruppenspezifität der Mutter
+Neutrophile Granulozyten absolut
+"automatisch berechnet aus Pset ml/h "
+Listenauswahl
+Liste Ja Nein
+Liste Gefäßauswahl
+Delta Temperatur zentral/Temperatur peripher
+Verantwortlicher Mitarbeiter
+"Körperlänge Messintervall "
+"Kopfumfang Messintervall "
+tcpCO2 Messintervall
+Die/Der verantwortliche Arzt/Ärztin der/die die Reakarte freigibt.
+Der/Die verantwortliche Pflegekraft der/die die Reakarte freigibt
+Auswahl von nummerisch einzugebenden Profilen
+Gabe von Atemgasen
+Eingestellter Basisfluss im Beatmungssystem
+Eingestellte Oszillationsfrequenz
+Prozentualer Anteil der Insp.Zeit bezogen auf den gesamten Atemzyklus
+Prozentuale Kolbenauslenkung
+Eingestellter mittlerer Atemwegsdruck
+O2 Konzentration des Gasgemisches
+gemessene Druckamplitude
+Gemessene O2 Konzentration
+Ein/Aus
+Liste ein aus
+Liste ein aus
+Liste ein aus
+Liste ein aus
+Zeit zwischen 2 SBT
+Zeit bis zum Start SBT
+Einstellung Tidalvolumen
+"eingestellte maximale Inspirationszeit "
+Die Nummer der Waage, mit der das Gewicht ermittelt wurde.
+MAD Messintervall
+"MAD Zielwert "
+"MAD Grenzwert "
+Gibt an welchen Inhalt die Windel hat
+"Menge des Stuhlgangs der vom AP oral in den AP aboral umgefüllt wird. Der Wert wird in der Bilanz als ""Plus"" verrechnet"
+Differenz zwischen dem aktuellen Gewicht und dem Gewicht des letzten Eintrags
+I:E Verhältnis (Messung)
+Validierender Mitarbeiter der Verordnung Medikation für den Zeitraum 06:00 bis 06:00 am aktuellen Tag. Diskontinuierlich.
+linksartrialer Druck
+rechtsartrialer Druck
+"Left Cardiac Work Index "
+intracranieller Druck
+Anlage im Rahmen PhilipsMonitoring
+Anlage im Rahmen PhilipsMonitoring
+Anlage im Rahmen PhilipsMonitoring
+Anlage im Rahmen PhilipsMonitoring
+Anlage im Rahmen PhilipsMonitoring
+Anlage im Rahmen PhilipsMonitoring
+Anlage im Rahmen Philips Monitoring
+Temperatur iat keinem spezieelnMessort über das Monitoring zugeordnet.
+Anlage im Rahmen PhilipsMonitoring
+Anlage für Philips Monitoring
+Anlage für Philips Monitoring
+2. artereille Messung, ab 201712 im Rahmen Umstellung Philips Monitoring
+Umstellung PhilipsMonitoring
+Score FOUR = Full Outline of UnResponsiveness.
+Hinweis bei abgeschlossener Behandlung - Anzeige Datum behandlungsende
+Kalium Zielwert
+24h_Urin Zielwert
+paO2 Zielwert
+PEEP Zielwert
+RASS Zielwert
+NRS Zielwert
+Beatmungsmodus Zielwert
+Sedierung Zielwert
+RRT Zielwert
+Kost Zielwert
+Mobilisation Zielwert
+Freitext Zielwert
+Parameter Cerebrospinales Fluidmanagement
+Parameter Cerebrospinales Fluidmanagement
+Parameter Cwerebrospinales Fluidmanagement
+Auswahl Gerätetyp Cerebrospinales Fluidmanagement
+cerebrale Sauerstoffsättigung links
+cerbebrale Sauerstoffsättigung rechts
+spezifische Gewicht Refraktometer
+Listenauswahl Beatmungsoption intelli
+Spectral Edge Frequency
+EEG - Spectral Edge Frequency Channel 1
+EEG - Spectral Edge Frequency Channel 2
+EEG - Total Power - Channel 1
+EEG - Total Power - Channel 2
+Fixierungsgrund
+Art und Umfang der Fixierung
+Dokumentierte Dauer der pflegerischen Assistenz bei pflegerischen Maßnahmen - Interventionen mit Zeitaufwand
+Balken für Kontinuierliches EEG Monitoring
+Einstellung Sauerstoff Flow
+Objekt für Speicherung der temporären Daten des klinischen Auftrags
+Diagnose für klinischen Auftrag
+letzter Eintrag Verlaufsgewicht innerhalb der Behandlung
+Lungenersatzverfahren
+Leberersatztherapie
+alternative Bezeichnung für den Behandlungsort (z.B. Langbezeichung)
+0-Klinik, 1-fachliche OE, 2-pflegerische OE
+Gibt an, ob Ao aus Vorbehandlungen in eine behandlung dieser OE kopiert werden sollen
+wer hat die Akte angelegt
+Arztkontakt erfolgt !
+ScVO2 Zielwert
+SAP Zielwert
+Rass Nacht Zielwert
+pH-art Zielwert
+Monitoring Zielwert
+Massnahmen Zielwert
+Diagnostik Labor PoC Zielwert
+Cl Zielwert
+ACT Zielwert
+geplanter Verlegungszeitpunkt
+Verlegungsplanung to do
+geplante Verlegung - Station
+Parameter im Modus Highflow
+Blutverlust intraoperativ
+l/min
+Dokumentation ob der Spontanatemtest bestanden wurde.
+Verordnung der Zeitvorgabe der Entwöhnungsphase
+Verordnung der Einstellung des FiO2 während der Entwöhnungsphase
+Verordnung der Einstellung des PEEP/CPAP während der Entwöhnungsphase
+Verordnung der Einstellung des Flusses während der Entwöhnungsphase
+Verordnung der Einstellung des Psupport während der Entwöhnungsphase
+Verordnung der Einstellung des Beatmungsmodus während der Entwöhnungsphase
+Verordnung der Entwöhnungsmethode während der Entwöhnungsphase
+FIO2 passt zu PEEP
+dient ausschließlich zu Testzwecken
+Gerätekonfiguration DokumentationVentilation ICU_IMC
+VO Monitoring Auscheidung/Intervall
+Zusatzgerät bei einer ECMO Therapie
+Filter - O2Flow zur Ausspülung CO2

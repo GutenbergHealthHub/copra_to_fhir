@@ -1,0 +1,82 @@
+Ca-I BldCRRT-sCnc
+Gas flow.O2 O2 delivery sys
+pCO2 end exp ExG
+PAW @ mean exp flow on vent
+Away press delta on vent PressDiff
+Compliance.dynamic Lung
+Mean Pres on vent Airway
+FIO2
+Expiratory gas flow on vent Airway
+Insp gas flow on vent Airway
+Low press hold time set Vent
+High press hold time set Vent
+Inspired min Vol MV
+Spont VT on vent
+VT setting Vent
+Exp hold time set Vent
+Insp time set Vent
+Breaths.mechanical on vent
+PAW pressure
+Head Circumf OFC
+Resp rate
+Body height
+Bdy weight Prctl Per Age
+Ideal bdy weight
+SaO2 % Bld Preductal PulseOx
+SaO2 % BldA
+LV SVI
+LV SV
+LV SV Indicator dilution
+PV RI
+SV RI
+LV Output
+LV Output Indicator dilution
+Heart rate
+CVP
+Blood pressure panel with all children optional
+Blood pressure panel with all children optional
+Blood pressure panel with all children optional
+Body temperature
+Body temperature
+Body temperature
+Body temperature
+Nasal temp
+Myocard temp
+Blood temp
+Body temperature
+Oral temp
+Body temperature
+Body temperature
+Esoph temp
+Tymp memb temp
+Pressure support setting Vent
+PAW @ zero insp flow on vent
+PEEP on vent Respiratory
+Press.max on vent Airway
+pO2 ExG
+O2/Total gas setting VFr Vent
+Insp flow set Vent
+Spont+mech VT on vent
+Vt on vent Vent
+Insp/Exp time Ratio
+Breaths.spont+mech on vent
+Horowitz index BldA+IhG-Rto
+ICP
+Weight
+Body height Prctl
+Body temperature
+SaO2 % Bld Postductal PulseOx
+LV SVI Indicator dilution
+LV Cardiac index
+LV Cardiac index Indicator dilution
+Blood pressure panel with all children optional
+Blood pressure panel with all children optional
+Blood pressure panel with all children optional
+Blood pressure panel with all children optional
+Body temperature
+Body temperature
+Body temperature
+Airway temp
+Axil temp
+Bdy temp Bladder
+Rectal temp

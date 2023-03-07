@@ -1,0 +1,101 @@
+Extrakorporale Verfahren
+Eingestellte und gemessene Parameter
+Parameter von extrakorporalen Verfahren
+Beatmung
+Eingestellte und gemessene Parameter
+Parameter von Beatmung
+Monitoring und Vitaldaten
+Blutfluss durch cardiovasculäres Gerät
+Ionisiertes Kalzium aus Nierenersatzverfahren Ca-I BldCRRT-sCnc
+Sauerstoffgasfluss Gas flow.O2 O2 delivery sys
+Dauer Hämodialysesitzung
+Hämodialyse Blutfluss
+Substituatfluss
+Substituatvolumen
+Blutfluss extrakorporaler Gasaustausch
+Blutflussindex extrakorporaler Gasaustausch
+Venöser Druck
+Arterieller Druck
+Endexpiratorischer Kohlendioxidpartialdruck pCO2 end exp ExG
+Atemwegsdruck bei mittlerem expiratorischem Gasfluss PAW @ mean exp flow on vent
+Druckdifferenz Beatmung Away press delta on vent PressDiff
+Dynamische Kompliance Compliance.dynamic Lung
+Mittlerer Beatmungsdruck Mean Pres on vent Airway
+Inspiratorische Sauerstofffraktion gemessen FIO2
+Exspiratorischer Gasfluss Expiratory gas flow on vent Airway
+Inspiratorischer Gasfluss Insp gas flow on vent Airway
+Beatmungszeit auf niedrigem Druck Low press hold time set Vent
+Beatmungszeit auf hohem Druck High press hold time set Vent
+Beatmungsvolumen-Pro-Minute-Machineller-Beatmung Inspired min Vol MV
+Spontanes-Atemzugvolumen Spont VT on vent
+Atemzugvolumen-Einstellung VT setting Vent
+Einstellung-Ausatmungszeit-Beatmung Exp hold time set Vent
+Einstellung-Einatmungszeit-Beatmung Insp time set Vent
+Spontane-Atemfrequenz-Beatmet
+Mechanische-Atemfrequenz-Beatmet Breaths.mechanical on vent
+Pulmonalarterieller wedge Blutdruck PAW pressure
+Kopfumfang Head Circumf OFC
+Atemfrequenz Resp rate
+Körpergroesse Body height
+Körpergewicht Percentil altersabhängig Bdy weight Prctl Per Age
+Ideales Körpergewicht Ideal bdy weight
+Sauerstoffsättigung im Blut preduktal durch Pulsoxymetrie SaO2 % Bld Preductal PulseOx
+Sauerstoffsättigung im art. Blut durch Pulsoxymetrie SaO2 % BldA
+Linksventrikulaeres Schlagvolumenindex LV SVI
+Linksventrikulaeres Schlagvolumen LV SV
+Linksv. Schlagvolumen durch Indikatorverdünnung LV SV Indicator dilution
+Pulmonalvaskulärer Widerstandsindex PV RI
+Systemischer vaskulärer Widerstandsindex SV RI
+Herzzeitvolumen LV Output
+Linksv. Herzzeitvolumen durch Indikatorverdünnung LV Output Indicator dilution
+Herzfrequenz Heart rate
+Zentralvenöser Druck CVP
+Linksatrialer Druck Blood pressure panel with all children optional
+Linksventrikulärer Druck Blood pressure panel with all children optional
+Blutdruck Blood pressure panel with all children optional
+Puls
+Körpertemperatur Generisch Body temperature
+Körpertemperatur Lendenwirbelsaeule Body temperature
+Körpertemperatur Gelenk Body temperature
+Körpertemperatur Halswirbelsaeule Body temperature
+Körpertemperatur nasal Nasal temp
+Körpertemperatur Myokard Myocard temp
+Körpertemperatur Blut Blood temp
+Körpertemperatur Leiste Body temperature
+Körpertemperatur unter der Zunge Oral temp
+Körpertemperatur vaginal Body temperature
+Körpertemperatur Nasen-Rachen-Raum Body temperature
+Körpertemperatur Speiseroehre Esoph temp
+Körpertemperatur Trommelfell Tymp memb temp
+Dauer extrakorporaler Gasaustausch
+Unterstützungsdruck Beatmung Pressure support setting Vent
+Atemwegsdruck bei null expiratorischem Gasfluss PAW @ zero insp flow on vent
+Positiv-endexpiratorischer Druck PEEP on vent Respiratory
+Maximaler Beatmungsdruck Press.max on vent Airway
+Exspiratorischer Sauerstoffpartialdruck pO2 ExG
+Inspiratorische Sauerstofffraktion eingestellt O2/Total gas setting VFr Vent
+Eingestellter inspiratorischer Gasfluss Insp flow set Vent
+Spontanes-Plus-Mechanisches-Atemzugvolumen Spont+mech VT on vent
+Atemzugvolumen-Waehrend-Beatmung Vt on vent Vent
+Zeitverhältnis-Ein-Ausatmung Insp/Exp time Ratio
+Spontane-Mechanische-Atemfrequenz-Beatmet Breaths.spont+mech on vent
+Horowitz-In-Arteriellem-Blut Horowitz index BldA+IhG-Rto
+Intrakranieller Druck ICP ICP
+Körpergewicht Weight
+Körpergrösse Percentil Body height Prctl
+Körpertemperatur Kern Body temperature
+Sauerstoffsättigung im Blut postduktal durch Pulsoxymetrie SaO2 % Bld Postductal PulseOx
+Linksv. Schlagvolumenindex durch Indikatorverd. LV SVI Indicator dilution
+Linksventrikulärer Herzindex LV Cardiac index
+Linksv. Herzindex durch Indikatorverdünnung LV Cardiac index Indicator dilution
+Blutdruck Generisch Blood pressure panel with all children optional
+Rechtsatrialer Druck Blood pressure panel with all children optional
+Rechtsventrikulärer Druck Blood pressure panel with all children optional
+Pulmonalarterieller Blutdruck Blood pressure panel with all children optional
+Körpertemperatur Brustwirbelsaeule Body temperature
+Körpertemperatur Stirn Body temperature
+Körpertemperatur Brust Body temperature
+Körpertemperatur Atemwege Airway temp
+Körpertemperatur Achsel Axil temp
+Körpertemperatur Harnblase Bdy temp Bladder
+Körpertemperatur rektal Rectal temp
