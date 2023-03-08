@@ -289,8 +289,8 @@ CREATE TABLE icu_copra.matched_vital_parameter_pulsatil (
     component_sistol_loinc_system character varying,
     component_sistol_loinc_display character varying,
     component_sistol_loinc_detailed character varying,
-    component_sistol_loinc_detaile_system character varying,
-    component_sistol_loinc_detaile_display character varying,
+    component_sistol_loinc_detailed_system character varying,
+    component_sistol_loinc_detailed_display character varying,
     component_sistol_snomed character varying,
     component_sistol_snomed_system character varying,
     component_sistol_snomed_display character varying,
@@ -303,8 +303,8 @@ CREATE TABLE icu_copra.matched_vital_parameter_pulsatil (
     component_mean_loinc_system character varying,
     component_mean_loinc_display character varying,
     component_mean_loinc_detailed character varying,
-    component_mean_loinc_detaile_system character varying,
-    component_mean_loinc_detaile_display character varying,
+    component_mean_loinc_detailed_system character varying,
+    component_mean_loinc_detailed_display character varying,
     component_mean_snomed character varying,
     component_mean_snomed_system character varying,
     component_mean_snomed_display character varying,
@@ -317,8 +317,8 @@ CREATE TABLE icu_copra.matched_vital_parameter_pulsatil (
     component_diastol_loinc_system character varying,
     component_diastol_loinc_display character varying,
     component_diastol_loinc_detailed character varying,
-    component_diastol_loinc_detaile_system character varying,
-    component_diastol_loinc_detaile_display character varying,
+    component_diastol_loinc_detailed_system character varying,
+    component_diastol_loinc_detailed_display character varying,
     component_diastol_snomed character varying,
     component_diastol_snomed_system character varying,
     component_diastol_snomed_display character varying,
@@ -7560,7 +7560,7 @@ COPY icu_copra.matched_vital_parameter_no_pulsatil (id_syst, name, description, 
 -- Data for Name: matched_vital_parameter_pulsatil; Type: TABLE DATA; Schema: icu_copra; Owner: -
 --
 
-COPY icu_copra.matched_vital_parameter_pulsatil (id_syst, name, description, co6_config_variabletypes_id, parent, copra_unit, id, profiles, type, snomed, loinc, ieee, profil_canonical, category_coding_system, category_coding_code, category_coding_display, loinc_system, loinc_display, snomed_system, snomed_display, ieee_system, ieee_display, component_sistol_unit_code, component_sistol_unit, component_sistol_loinc, component_sistol_loinc_system, component_sistol_loinc_display, component_sistol_loinc_detailed, component_sistol_loinc_detaile_system, component_sistol_loinc_detaile_display, component_sistol_snomed, component_sistol_snomed_system, component_sistol_snomed_display, component_sistol_ieee, component_sistol_ieee_system, component_sistol_ieee_display, component_mean_unit_code, component_mean_unit, component_mean_loinc, component_mean_loinc_system, component_mean_loinc_display, component_mean_loinc_detailed, component_mean_loinc_detaile_system, component_mean_loinc_detaile_display, component_mean_snomed, component_mean_snomed_system, component_mean_snomed_display, component_mean_ieee, component_mean_ieee_system, component_mean_ieee_display, component_diastol_unit_code, component_diastol_unit, component_diastol_loinc, component_diastol_loinc_system, component_diastol_loinc_display, component_diastol_loinc_detailed, component_diastol_loinc_detaile_system, component_diastol_loinc_detaile_display, component_diastol_snomed, component_diastol_snomed_system, component_diastol_snomed_display, component_diastol_ieee, component_diastol_ieee_system, component_diastol_ieee_display, unit_transform) FROM stdin;
+COPY icu_copra.matched_vital_parameter_pulsatil (id_syst, name, description, co6_config_variabletypes_id, parent, copra_unit, id, profiles, type, snomed, loinc, ieee, profil_canonical, category_coding_system, category_coding_code, category_coding_display, loinc_system, loinc_display, snomed_system, snomed_display, ieee_system, ieee_display, component_sistol_unit_code, component_sistol_unit, component_sistol_loinc, component_sistol_loinc_system, component_sistol_loinc_display, component_sistol_loinc_detailed, component_sistol_loinc_detailed_system, component_sistol_loinc_detailed_display, component_sistol_snomed, component_sistol_snomed_system, component_sistol_snomed_display, component_sistol_ieee, component_sistol_ieee_system, component_sistol_ieee_display, component_mean_unit_code, component_mean_unit, component_mean_loinc, component_mean_loinc_system, component_mean_loinc_display, component_mean_loinc_detailed, component_mean_loinc_detailed_system, component_mean_loinc_detailed_display, component_mean_snomed, component_mean_snomed_system, component_mean_snomed_display, component_mean_ieee, component_mean_ieee_system, component_mean_ieee_display, component_diastol_unit_code, component_diastol_unit, component_diastol_loinc, component_diastol_loinc_system, component_diastol_loinc_display, component_diastol_loinc_detailed, component_diastol_loinc_detailed_system, component_diastol_loinc_detailed_display, component_diastol_snomed, component_diastol_snomed_system, component_diastol_snomed_display, component_diastol_ieee, component_diastol_ieee_system, component_diastol_ieee_display, unit_transform) FROM stdin;
 108504	P_NBP_reBein	Nichtinvasiver Blutdruck rechtes Bein	12	1	mmHg	74	Blutdruck Generisch	Observation	75367002	85354-9	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/blutdruck-generisch	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Blood pressure panel with all children optional	http://snomed.info/sct	Blood pressure (observable entity)	\N	\N	mm[Hg]	millimeter of mercury	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	mm[Hg]	millimeter of mercury	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	mm[Hg]	millimeter of mercury	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	1.0
 108505	P_NBP_liArm	Nichtinvasiver Blutdruck linker Arm	12	1	mmHg	74	Blutdruck Generisch	Observation	75367002	85354-9	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/blutdruck-generisch	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Blood pressure panel with all children optional	http://snomed.info/sct	Blood pressure (observable entity)	\N	\N	mm[Hg]	millimeter of mercury	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	mm[Hg]	millimeter of mercury	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	mm[Hg]	millimeter of mercury	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	1.0
 108506	P_NBP_reArm	Nichtinvasiver Blutdruck rechter Arm	12	1	mmHg	74	Blutdruck Generisch	Observation	75367002	85354-9	\N	https://www.medizininformatik-initiative.de/fhir/ext/modul-icu/StructureDefinition/blutdruck-generisch	http://terminology.hl7.org/CodeSystem/observation-category	vital-signs	\N	http://loinc.org	Blood pressure panel with all children optional	http://snomed.info/sct	Blood pressure (observable entity)	\N	\N	mm[Hg]	millimeter of mercury	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	mm[Hg]	millimeter of mercury	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	mm[Hg]	millimeter of mercury	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	\N	1.0
