@@ -51,10 +51,3 @@ set profil_canonical = profil_canonical||'p',
   snomed_display = '',
   ieee_display = ''
 where id = 49;
-
-
-alter table icu_copra.matched_vital_parameter_pulsatil 
-rename component_mean_loinc_detaile_system to component_mean_loinc_detailed_system;
-
-alter table icu_copra.matched_vital_parameter_pulsatil 
-rename component_mean_loinc_detaile_display to component_mean_loinc_detailed_display;
